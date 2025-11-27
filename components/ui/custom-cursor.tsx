@@ -17,17 +17,15 @@ export default function CustomCursor() {
       mouseX.set(e.clientX);
       mouseY.set(e.clientY);
 
-      // Check what we are hovering
+      // Check what we are hovering (excluding links)
       const target = e.target as HTMLElement;
       const isInteractive = target.closest(
-        'button, a, input, [role="button"], .interactive'
+        'button, input, [role="button"], .interactive'
       );
 
       if (isInteractive) {
         const tagName = isInteractive.tagName.toLowerCase();
-        if (tagName === 'a') {
-          setHoveredType('LINK');
-        } else if (tagName === 'button') {
+        if (tagName === 'button') {
           setHoveredType('ACTION');
         } else {
           setHoveredType('NODE');
