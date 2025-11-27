@@ -17,7 +17,11 @@ const tickerItems = [
   'HEALTHCARE, LEGAL, FINANCIAL & PUBLIC-SECTOR AI SYSTEMS DESIGNED TO WITHSTAND SCRUTINY',
 ] as const;
 
-const focusTags = ['AI SDLC', 'CTO-FOR-HIRE', 'TECHNICAL EXPERT'] as const;
+const focusTags = [
+  'AI SDLC',
+  'OPERATIONAL AI AGENTS',
+  'TECHNICAL EXPERT',
+] as const;
 
 interface HeroProps {
   alertText?: string;

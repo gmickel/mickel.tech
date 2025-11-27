@@ -3,6 +3,13 @@
 import { Menu } from 'lucide-react';
 import type React from 'react';
 import CustomCursor from '@/components/ui/custom-cursor';
+import {
+  Sheet,
+  SheetClose,
+  SheetContent,
+  SheetTitle,
+  SheetTrigger,
+} from '@/components/ui/sheet';
 import { useWireframe } from '@/hooks/use-wireframe';
 
 interface ShellProps {
@@ -63,14 +70,49 @@ export default function Shell({ children }: ShellProps) {
           ))}
         </nav>
 
-        <div className="flex items-center gap-4">
-          <button
-            aria-label="Open mobile menu"
-            className="text-primary md:hidden"
-            type="button"
-          >
-            <Menu aria-hidden="true" size={18} />
-          </button>
+        <div className="flex items-center gap-4 md:hidden">
+          <Sheet>
+            <SheetTrigger asChild>
+              <button
+                aria-label="Open mobile menu"
+                className="text-primary"
+                type="button"
+              >
+                <Menu aria-hidden="true" size={18} />
+              </button>
+            </SheetTrigger>
+            <SheetContent
+              className="border-white/10 bg-background/95 backdrop-blur-md"
+              side="right"
+            >
+              <SheetTitle className="sr-only">Navigation menu</SheetTitle>
+              <nav
+                aria-label="Mobile navigation"
+                className="mt-8 flex flex-col gap-6"
+              >
+                {navItems.map((item) => (
+                  <SheetClose asChild key={item.label}>
+                    <a
+                      className="font-mono text-lg text-white transition-colors hover:text-primary focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background"
+                      href={item.href}
+                    >
+                      [{item.label}]
+                    </a>
+                  </SheetClose>
+                ))}
+              </nav>
+              <div className="absolute right-6 bottom-8 left-6 border-white/10 border-t pt-6">
+                <div className="flex items-center gap-2">
+                  <span className="animate-pulse font-mono text-primary text-xs tracking-widest">
+                    ● ONLINE
+                  </span>
+                  <span className="font-mono text-muted-foreground text-xs">
+                    MICKEL_TECH_V2.0
+                  </span>
+                </div>
+              </div>
+            </SheetContent>
+          </Sheet>
         </div>
       </header>
 
