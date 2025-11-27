@@ -1,0 +1,61 @@
+{
+  "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
+  "extends": ["ultracite/core", "ultracite/next"],
+  "javascript": {
+    "formatter": {
+      "quoteStyle": "single"
+    },
+    "globals": ["Bun"]
+  },
+  "formatter": {
+    "indentStyle": "space",
+    "indentWidth": 2,
+    "formatWithErrors": true
+  },
+  "linter": {
+    "rules": {
+      "suspicious": {
+        "noExplicitAny": "warn",
+        "noCommentText": "off",
+        "noArrayIndexKey": "warn",
+        "noDocumentCookie": "warn"
+      },
+      "style": {
+        "noNonNullAssertion": "warn",
+        "noMagicNumbers": "off",
+        "useConsistentTypeDefinitions": "off",
+        "useBlockStatements": "warn",
+        "useFilenamingConvention": "off"
+      },
+      "performance": {
+        "noNamespaceImport": "off"
+      },
+      "complexity": {
+        "noExcessiveCognitiveComplexity": "off"
+      },
+      "security": {
+        "noDangerouslySetInnerHtml": "warn"
+      },
+      "a11y": {
+        "useButtonType": "error",
+        "noSvgWithoutTitle": "warn",
+        "useSemanticElements": "off",
+        "noNoninteractiveElementInteractions": "off",
+        "noStaticElementInteractions": "off",
+        "useFocusableInteractive": "off",
+        "useKeyWithClickEvents": "warn",
+        "useAriaPropsForRole": "warn",
+        "noRedundantRoles": "warn"
+      },
+      "nursery": {
+        "noShadow": "off"
+      },
+      "correctness": {
+        "useExhaustiveDependencies": "warn"
+      }
+    }
+  },
+  "files": {
+    "ignoreUnknown": true
+  }
+}
