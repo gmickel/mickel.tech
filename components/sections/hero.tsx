@@ -5,12 +5,12 @@ import { AlertTriangle } from 'lucide-react';
 import { useEffect, useState } from 'react';
 
 const tickerItems = [
-  'AI SDLC & PLATFORM PROGRAMS ACROSS PE PORTFOLIO COMPANIES IN CH / DE / IT',
+  'AI SDLC & PLATFORM PROGRAMS ACROSS PE PORTFOLIO COMPANIES ACROSS EUROPE',
   '20+ YEARS SHIPPING SOFTWARE & PLATFORMS',
   "AI PROGRAM LEAD FOR SWITZERLAND'S LEADING CLINICAL INFORMATION SYSTEM (CIS)",
-  'CLINICAL LLM PLATFORM LIVE IN SWISS HOSPITALS',
   'LEGALTECH CLM PLATFORM FOUNDED, FUNDED & TAKEN TO ACQUISITION STAGE',
   'LISTED TECHNICAL EXPERT (ITDR) FOR COMPLEX ICT & AI DISPUTES',
+  'CLINICAL LLM PLATFORM LIVE IN SWISS HOSPITALS',
   'OPENAI RED-TEAMING NETWORK ALUMNUS ON MODEL SAFETY & ABUSE RESILIENCE',
   'AI & TECHNOLOGY DUE DILIGENCE, MATURITY & READINESS REVIEWS FOR INVESTORS',
   '500+ ENGINEERS ENABLED ON AI CODING TOOLS & AI-NATIVE SDLC PATTERNS',
@@ -114,6 +114,10 @@ export default function Hero({ alertText }: HeroProps) {
               decisions with real financial or legal exposure.
             </li>
           </ul>
+
+          <p className="pt-3 font-mono text-muted-foreground text-xs">
+            Gordon Mickel · AI SDLC &amp; Platform Architect
+          </p>
 
           <div className="flex flex-wrap gap-4 pt-4">
             <a
@@ -237,7 +241,7 @@ export default function Hero({ alertText }: HeroProps) {
           transition={{
             repeat: Number.POSITIVE_INFINITY,
             ease: 'linear',
-            duration: 20,
+            duration: 50,
           }}
         >
           {/* Duplicate items for seamless loop */}
