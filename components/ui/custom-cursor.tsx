@@ -1,21 +1,17 @@
 'use client';
 
-import { motion, useMotionValue, useSpring } from 'framer-motion';
+import { motion, useMotionValue } from 'framer-motion';
 import { useEffect, useState } from 'react';
 
 export default function CustomCursor() {
   const [hoveredType, setHoveredType] = useState<string | null>(null);
-  const mouseX = useMotionValue(-100);
-  const mouseY = useMotionValue(-100);
-
-  const springConfig = { damping: 25, stiffness: 700 };
-  const cursorX = useSpring(mouseX, springConfig);
-  const cursorY = useSpring(mouseY, springConfig);
+  const cursorX = useMotionValue(-100);
+  const cursorY = useMotionValue(-100);
 
   useEffect(() => {
     const moveCursor = (e: MouseEvent) => {
-      mouseX.set(e.clientX);
-      mouseY.set(e.clientY);
+      cursorX.set(e.clientX);
+      cursorY.set(e.clientY);
 
       // Check what we are hovering (excluding links)
       const target = e.target as HTMLElement;
@@ -37,7 +33,7 @@ export default function CustomCursor() {
 
     window.addEventListener('mousemove', moveCursor);
     return () => window.removeEventListener('mousemove', moveCursor);
-  }, [mouseX, mouseY]); // Added stable motion values to dep array
+  }, [cursorX, cursorY]);
 
   return (
     <motion.div
