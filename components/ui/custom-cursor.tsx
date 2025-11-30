@@ -5,8 +5,14 @@ import { useEffect, useState } from 'react';
 
 export default function CustomCursor() {
   const [hoveredType, setHoveredType] = useState<string | null>(null);
+  const [probValue, setProbValue] = useState<string>('--');
   const cursorX = useMotionValue(-100);
   const cursorY = useMotionValue(-100);
+
+  // Generate random value only on client after mount to avoid hydration mismatch
+  useEffect(() => {
+    setProbValue(`${(Math.random() * 20 + 80).toFixed(0)}%`);
+  }, []);
 
   useEffect(() => {
     const moveCursor = (e: MouseEvent) => {
@@ -75,7 +81,7 @@ export default function CustomCursor() {
             </div>
             <div className="flex justify-between">
               <span className="text-muted-foreground">PROB:</span>
-              <span>{(Math.random() * 20 + 80).toFixed(0)}%</span>
+              <span>{probValue}</span>
             </div>
           </motion.div>
         )}

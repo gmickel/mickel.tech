@@ -135,7 +135,7 @@
 @layer utilities {
   /* Subtle cyberpunk glow link */
   .glow-link {
-    @apply text-primary underline-offset-4 transition-all duration-200;
+    @apply text-primary underline underline-offset-4 transition-all duration-200;
   }
 
   .glow-link:hover {

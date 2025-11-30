@@ -53,7 +53,11 @@ export function ContactFooter() {
       </footer>
 
       <p className="pt-20 text-center text-[10px] text-muted-foreground">
-        © {new Date().getFullYear()} MICKEL TECH. ALL SYSTEMS OPERATIONAL.
+        ©{' '}
+        <time dateTime={new Date().getFullYear().toString()}>
+          {new Date().getFullYear()}
+        </time>{' '}
+        MICKEL TECH. ALL SYSTEMS OPERATIONAL.
       </p>
     </>
   );

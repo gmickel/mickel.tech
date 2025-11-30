@@ -29,6 +29,12 @@ const nextConfig: NextConfig = {
       '@radix-ui/react-toast',
       'recharts',
     ],
+    // Inline CSS to reduce render-blocking requests
+    // This replaces <link> tags with <style> tags in the HTML head
+    // Note: Only works in production builds, not development
+    inlineCss: true,
+    // Optimize CSS chunking (default: true - merges CSS when possible)
+    cssChunking: true,
   },
 
   // Compression is handled by hosting platforms, but ensure it's enabled
