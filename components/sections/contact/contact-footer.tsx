@@ -30,7 +30,7 @@ export function ContactFooter() {
             rel="noopener noreferrer"
             target="_blank"
           >
-            [ Profile ]
+            [ LinkedIn Profile ]
           </a>
         </div>
         <div>
@@ -41,7 +41,7 @@ export function ContactFooter() {
             rel="noopener noreferrer"
             target="_blank"
           >
-            [ Profile ]
+            [ X Profile ]
           </a>
         </div>
         <div>
