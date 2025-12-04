@@ -1,6 +1,7 @@
+import type { CompileOptions } from 'next-mdx-remote/rsc';
 import rehypePrettyCode from 'rehype-pretty-code';
 
-export const mdxOptions = {
+export const mdxOptions: CompileOptions = {
   rehypePlugins: [
     [
       rehypePrettyCode,
@@ -11,4 +12,3 @@ export const mdxOptions = {
     ],
   ],
 };
-
