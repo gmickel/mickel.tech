@@ -110,6 +110,7 @@ const ChartTooltipContent = React.forwardRef<
       indicator?: 'line' | 'dot' | 'dashed';
       nameKey?: string;
       labelKey?: string;
+      payload?: RechartsPrimitive.TooltipProps['payload'];
     }
 >(
   (
@@ -130,14 +131,15 @@ const ChartTooltipContent = React.forwardRef<
     },
     ref
   ) => {
+    const safePayload = payload ?? [];
     const { config } = useChart();
 
     const tooltipLabel = React.useMemo(() => {
-      if (hideLabel || !payload?.length) {
+      if (hideLabel || !safePayload.length) {
         return null;
       }
 
-      const [item] = payload;
+      const [item] = safePayload;
       const key = `${labelKey || item?.dataKey || item?.name || 'value'}`;
       const itemConfig = getPayloadConfigFromPayload(config, item, key);
       const value =
@@ -148,7 +150,7 @@ const ChartTooltipContent = React.forwardRef<
       if (labelFormatter) {
         return (
           <div className={cn('font-medium', labelClassName)}>
-            {labelFormatter(value, payload)}
+            {labelFormatter(value, safePayload)}
           </div>
         );
       }
@@ -161,18 +163,18 @@ const ChartTooltipContent = React.forwardRef<
     }, [
       label,
       labelFormatter,
-      payload,
+      safePayload,
       hideLabel,
       labelClassName,
       config,
       labelKey,
     ]);
 
-    if (!(active && payload?.length)) {
+    if (!(active && safePayload.length)) {
       return null;
     }
 
-    const nestLabel = payload.length === 1 && indicator !== 'dot';
+    const nestLabel = safePayload.length === 1 && indicator !== 'dot';
 
     return (
       <div
@@ -184,7 +186,7 @@ const ChartTooltipContent = React.forwardRef<
       >
         {nestLabel ? null : tooltipLabel}
         <div className="grid gap-1.5">
-          {payload
+          {safePayload
             .filter((item) => item.type !== 'none')
             .map((item, index) => {
               const key = `${nameKey || item.name || item.dataKey || 'value'}`;
