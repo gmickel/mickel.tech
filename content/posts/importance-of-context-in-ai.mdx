@@ -1,0 +1,166 @@
+---
+title: "The Importance of Context in AI: Garbage In, Garbage Out"
+summary: "Context quality sets the ceiling for AI outcomes; better retrieval and cleaner signals beat model hype."
+publishedAt: "2023-05-01T11:08:26Z"
+tags:
+  - context
+  - retrieval
+  - prompts
+  - ai quality
+canonicalSource: medium
+mediumUrl: "https://medium.com/byte-sized-brainwaves/the-importance-of-context-in-ai-garbage-in-garbage-out-97c16465c441"
+status: published
+---
+
+# The Importance of Context in AI: Garbage In, Garbage Out
+
+
+## Introduction
+
+When communicating with large language models (LLMs) like ChatGPT, the adage “garbage in, garbage out” holds true. The quality of the AI-generated output and its susceptibility to hallucinations are highly dependent on the quality of the input data. This means that if we provide poorly defined or ambiguous information, we are more likely to receive unsatisfactory responses and potentially face AI-generated hallucinations. Despite the seemingly obvious conclusion that providing more context leads to better output and fewer hallucinations, there is a notable presence of AI tools that promise to “magically” generate useful content based on just a short sentence or a keyword.
+
+![Image](https://miro.medium.com/v2/resize:fit:700/1*c_PJ2ehbEauBim_Ovmrnxw.jpeg)
+
+This phenomenon might seem counterintuitive, as one would expect AI tools to prioritize generating content with sufficient context to ensure accuracy, relevance, and reduced hallucinations. However, as we explore this topic, we will uncover the reasons behind the popularity of such AI tools and discuss their implications for the future of AI content generation.
+
+Throughout this blog post, we will delve into the importance of context when interacting with AI systems, particularly large language models like ChatGPT, and provide examples of how insufficient context can lead to suboptimal results and increased hallucinations. Additionally, we will share strategies and tips for providing adequate context to AI systems, enabling users to harness the full potential of these powerful tools while minimizing the risk of hallucinations. By understanding the significance of context in AI-generated content and learning how to provide it effectively, we can work together to promote the development of more accurate, relevant, and engaging content that better aligns with users’ intentions and captures their unique voice.
+
+## Personal Experience and the Path to Better AI Outputs
+
+While working on the copy for my company’s new product website, [DocIQ](https://dociq.io) (the new site is still a WIP and not yet live 🤔), I found myself facing a significant amount of content to write. Like many readers, I assume, I turned to GPT-4 for assistance in generating outlines and ideas to help overcome my writer’s block. Initially, I used short prompts consisting of just a brief description of our product. Although the AI provided me with adequate results that inspired me, I noticed that the outputs often contained hallucinations and didn’t focus on the specific topics I wanted to emphasize.
+
+As I experimented further, I came to the logical conclusion that by providing more and more context, the AI-generated outputs improved dramatically. My first approach was to create a large prompt based on all of my personal notes. This yielded better results, but I wanted to push the boundaries even further.
+
+To achieve this, I wrote a quick script that consumed almost all of our available written resources, such as our entire documentation, whitepaper, and code examples. By feeding this comprehensive context to GPT-4, the AI-generated outputs became significantly more accurate, relevant, and aligned with my intentions.
+
+In the following sections, we will dive into some of the strategies I discovered along this journey, which can help you harness the full potential of AI tools like GPT-4 and improve the quality of your AI-generated content. By understanding the importance of context and learning how to provide it effectively, you can create content that not only meets your expectations but also minimizes the risk of hallucinations and inaccuracies.
+
+## Strategy 1 — Providing Context in the Prompt
+
+Providing extra context in the form of prompts is a simple and straightforward strategy to improve AI-generated content. You can include additional context as part of a normal prompt or use a system prompt if you’re working with the OpenAI Playground.
+
+**Here’s an example:**
+
+You are a world-class copywriter and marketing professional, you help businesses create effective marketing campaigns and write compelling copy that drives sales. Output high-quality, engaging and professional copy using the provided context. Try to match the tone and voice used in the context.
+
+###
+
+Context:
+
+
+First Prompt:
+
+**Before and after examples using this strategy**
+
+During my work on the DocIQ website copy, I experimented with providing context in the prompt. Here are a few (contrived) examples from my experience (using GPT-4).
+
+_Prompt using limited context:_
+
+DocIQ is an AI-powered DLM/CLM platform. Its unique editor "SmartEdit" can seamlessly craft and edit documents without any technical expertise or coding knowledge. It allows the creation of SmartDocs, programmable documents using objects such as variables, calculations, conditionals and questions.
+
+Please write a SmartEdit feature block for our new homepage.
+
+_Output:_
+
+> \*\*Introducing SmartEdit: AI-Powered Document Editing\*\*
+>
+> Experience seamless document creation and editing with our cutting-edge SmartEdit feature. No technical expertise or coding knowledge required.
+>
+> \- \*\*SmartDocs\*\*: Create programmable documents using objects like variables, calculations, conditionals, and questions, making your documents dynamic and adaptable.
+>
+> \- \*\*AI-Powered Assistance\*\*: Let our AI assistant guide you through the document creation process, ensuring accuracy and efficiency.
+>
+> \- \*\*User-Friendly Interface\*\*: Enjoy a simple and intuitive interface that allows you to craft and edit documents with ease.
+>
+> \- \*\*Collaboration Made Easy\*\*: Share and collaborate on documents with your team in real-time, streamlining the review and approval process.
+
+This example demonstrates that GPT-4 can take a relatively vague prompt and generate content that serves as a useful starting point, albeit with a similar level of vagueness as the context provided. The final feature, “Collaboration Made Easy,” showcases GPT-4’s creative capabilities. We didn’t mention any collaboration features in our prompt, yet GPT-4 generated this feature. Interestingly, in this specific case, “Collaboration Made Easy” is an actual feature of DocIQ, and likely a common feature in many other DLM/CLM platforms. This highlights the potential for AI-generated content to produce relevant and insightful information, even when the initial context is limited.
+
+_Output after providing GPT-4 with around 4,000 tokens of context that describe how the platform works, using the same instruction:_
+
+> SmartEdit: Revolutionize Your Document Creation
+>
+> 1\. Real-time Collaboration: SmartEdit’s real-time collaboration feature allows teams to work together on creating and editing SmartDocs simultaneously. This enhances productivity and ensures that everyone stays on the same page, streamlining the document creation process and fostering effective communication among team members.
+>
+> 2\. AI-powered Assistance: With DocIQ’s cutting-edge AI technology, SmartEdit offers intelligent suggestions and automations during the document creation process. This includes automatic conversion of static documents into dynamic SmartDocs, semantic search, and content generation tailored to your specific needs, saving you time and effort.
+>
+> 3\. Visual Editing of Programmable Documents: SmartEdit enables users to create dynamic, programmable documents without any programming knowledge. By using a familiar, web-based rich text editor, you can easily design complex SmartDocs with SmartObjects such as variables, calculations, questions, and conditionals, making your documents adaptable and customizable for various scenarios.
+>
+> 4\. Centralized SmartBlocks and Global SmartObjects: SmartEdit allows you to create and manage reusable SmartBlocks and Global SmartObjects, which can be easily accessed and inserted into multiple documents. This centralization ensures consistency across your documents and simplifies the updating process, saving you time and reducing the risk of errors.
+
+This example output highlights the significant improvement in the AI-generated content after providing GPT-4 with around 4,000 tokens of context describing the platform’s workings. The result is a more accurate, detailed, and coherent description of the product’s features. By offering more context to the AI, we can generate content that is not only relevant but also tailored to our specific needs. Furthermore, the result exclusively includes actual features that were described in the context provided, demonstrating the AI’s enhanced understanding and ability to produce content that accurately reflects the input information.
+
+**Pros and cons of this strategy**
+
+Pros:
+
+*   Easy to implement and use
+
+Cons:
+
+*   Limited by token constraints, which might restrict the amount of context you can provide.
+*   Can be expensive if you’re using GPT-4 via the API and providing a large amount of context.
+
+When using context in prompts, it’s important to be aware of [token limits](https://help.openai.com/en/articles/4936856-what-are-tokens-and-how-to-count-them), as they can restrict the amount of information you can provide to the AI system. Token limits are imposed by AI platforms to manage computational resources and control the length of input and output text. When dealing with token limits, there are a couple of strategies to consider:
+
+**Ask the AI to summarize your context**
+You can provide a prompt asking the AI to condense the context information, which can help save tokens while still maintaining the essential details.
+
+Here’s an example prompt you can use:
+
+Condense the given information without losing or changing any details or altering its voice and style.
+Information: ...
+
+**Delete previous messages**
+Removing prior messages can free up tokens, but this may lead to a worse experience as the AI loses the context from those messages.
+
+## Strategy 2 — Providing Context Using Embeddings
+
+Another effective strategy for providing context to AI systems is by using OpenAI embeddings. Embeddings are numerical representations of text or other data types, which can be used to capture the meaning and relationships of the original input in a compact and efficient format. Providing context in the form of embeddings allows us to utilize a much larger source of information while only supplying the AI with the relevant context for any given prompt. This approach is well-known from solutions like “Chat with Your Documents” or DocumentVQA.
+
+Here’s a short overview of how the strategy works:
+
+1.  Extract text from your context sources (e.g., text, PDFs, Markdown, YouTube videos, websites, GitHub repositories) and then convert them into embeddings using OpenAI’s API. These embeddings capture the essential information from the original sources in a format that the AI can easily process.
+2.  Provide these embeddings as context when interacting with the AI system.
+
+**Pros and cons of this strategy**
+
+Pros:
+
+*   Allows for limitless amounts of context, although quality may suffer with increasing amounts of input.
+*   More cost-effective if using the OpenAI API, as embeddings are cheaper to create compared to sending a large prompt.
+*   Supports a wide range of context sources, such as text documents, PDFs, YouTube videos, and more.
+
+Cons:
+
+*   Requires the use of the OpenAI API.
+*   Involves programming to implement the solution and can be more challenging to get started with compared to simply providing context in the prompt.
+
+In my next blog post, I will share a step-by-step guide on how to create a script for generating embeddings and using them as context, as well as provide an example repository for readers to reference. By using embeddings as a context-providing strategy, you can unlock the full potential of AI systems like GPT-4, enabling more accurate and relevant content generation while overcoming the limitations of traditional prompts.
+
+## Further Reflections on Context and AI-generated Content
+
+As we explore the importance of context in AI-generated content, it’s essential to consider some additional aspects.
+
+1.  **Hallucinations can sometimes be beneficial**
+    Although hallucinations are generally seen as undesirable, they can occasionally be helpful when generating copy. For instance, in creative writing or brainstorming, AI-generated hallucinations can spark new ideas or provide unexpected perspectives that you might not have considered otherwise. When using AI tools with the strategies detailed above, be sure to account for this potential benefit in your prompt, and don’t be afraid to embrace a bit of creative deviation when appropriate.
+2.  **Consider the implications of sharing sensitive content**
+    While providing context is crucial for generating accurate and relevant content, it’s important to be mindful of the information you share with AI systems (or any system for that matter). If you’re working with proprietary code, sensitive data, or confidential information, be cautious about including such details in your prompts or embeddings. Always ensure that you’re adhering to your organization’s security policies and best practices to protect your valuable assets.
+
+## Conclusion
+
+Throughout this blog post, I have explored the significance of providing context when interacting with AI systems like ChatGPT. I discussed the “garbage in, garbage out” concept and the importance of supplying precise, clear, and adequate context to receive accurate, relevant, and coherent information. I also shared two practical strategies for providing context: including context directly in the prompt and using embeddings.
+
+By emphasizing the importance of context, I aim to address a common concern many people have about the rise of AI tools that “magically” create content: the potential for generating endless amounts of content that all sound the same. Providing context not only results in more useful and better output, but it also helps AI systems generate content using our unique voice, making the content more engaging and personalized.
+
+As I continue to explore this topic, I plan to share more content and resources to help you make the most of AI tools. In my upcoming blog post, I will provide a step-by-step guide on creating a script for generating and using embeddings and offer an example repository for reference. I encourage you to join the discussion and subscribe to stay updated for the latest insights and tips.
+
+_Please support my work on Medium and get unlimited access by becoming a member using my referral link_ [**_here_**](/@gmickel/membership)**.** _Have a nice day!_
+
+**Edit: Part 2 of this blog post is now up. You can find it here:** [/log/unlimited-chatbot-context-langchain-node](/log/unlimited-chatbot-context-langchain-node)
+
+## 💡 Want to Read More?
+
+Subscribe to [my weekly newsletter](https://bytesizedbrainwaves.substack.com/).
+
+Connect on [Twitter here](https://twitter.com/gmickel).

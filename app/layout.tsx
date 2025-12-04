@@ -66,6 +66,13 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: 'https://mickel.tech',
+    types: {
+      'application/rss+xml': 'https://mickel.tech/rss',
+    },
+  },
+  other: {
+    'link:alternate:rss':
+      '<link rel="alternate" type="application/rss+xml" title="Mickel Tech — System Log" href="https://mickel.tech/rss" />',
   },
 };
 

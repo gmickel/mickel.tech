@@ -145,4 +145,89 @@
       0 0 10px rgba(0, 229, 255, 0.8), /* mid halo */
       0 0 22px rgba(0, 229, 255, 0.6); /* outer bloom */
   }
+
+  /* Cyberpunk-styled code blocks for MDX */
+  code {
+    font-family: var(--font-mono);
+  }
+
+  /* Cyberpunk-styled code blocks */
+  pre {
+    @apply border border-primary/30 bg-[#080d14] text-[#c2f9ff];
+    box-shadow:
+      0 0 14px rgba(0, 229, 255, 0.18),
+      inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+    position: relative;
+    overflow: hidden;
+    border-radius: 6px;
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+
+  pre::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(135deg, rgba(0, 229, 255, 0.06), transparent 35%);
+  }
+
+  pre code {
+    font-family: var(--font-mono);
+    color: #e0f7ff;
+    white-space: inherit;
+  }
+
+  /* Syntax highlighting (rehype-pretty-code) */
+  pre code span[data-line] {
+    display: inline-block;
+    width: 100%;
+  }
+
+  pre[data-theme='night-owl'] {
+    background: linear-gradient(120deg, #0a111c 0%, #060a12 55%, #05080f 100%) !important;
+    border: 1px solid rgba(0, 229, 255, 0.3);
+    box-shadow:
+      0 0 18px rgba(0, 229, 255, 0.22),
+      inset 0 0 0 1px rgba(255, 255, 255, 0.04);
+  }
+
+  pre[data-theme='night-owl'] code {
+    color: #d6deeb;
+  }
+
+  /* Token colors */
+  [data-theme='night-owl'] .line {
+    color: #d6deeb;
+  }
+  [data-theme='night-owl'] .comment,
+  [data-theme='night-owl'] .punctuation.definition.comment,
+  [data-theme='night-owl'] .string.regexp {
+    color: #6b7a8b;
+  }
+  [data-theme='night-owl'] .keyword,
+  [data-theme='night-owl'] .storage.type {
+    color: #c792ea;
+  }
+  [data-theme='night-owl'] .string,
+  [data-theme='night-owl'] .constant.other.symbol {
+    color: #f2c792;
+  }
+  [data-theme='night-owl'] .variable,
+  [data-theme='night-owl'] .support {
+    color: #8ad8ff;
+  }
+
+  /* Subtle grid */
+  pre[data-theme='night-owl']::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background-image:
+      linear-gradient(to right, rgba(0, 229, 255, 0.03) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(0, 229, 255, 0.03) 1px, transparent 1px);
+    background-size: 16px 16px;
+    mix-blend-mode: screen;
+  }
 }

@@ -43,7 +43,7 @@ export function useTerminal({ gameActive, onJoshua, onClear }: TerminalProps) {
       switch (cmd) {
         case 'help':
           response =
-            'AVAILABLE COMMANDS: help, email, calendar, linkedin, x, blog, summary, clear';
+            'AVAILABLE COMMANDS: help, email, calendar, linkedin, x, blog, summary, clear, joshua';
           break;
         case 'email':
           response = 'OPENING MAILER >> gordon@mickel.tech';

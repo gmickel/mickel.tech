@@ -17,11 +17,12 @@ interface ShellProps {
 }
 
 const navItems = [
-  { label: 'CONSOLE', href: '#console' },
-  { label: 'SYSTEMS', href: '#systems' },
-  { label: 'MAP', href: '#map' },
-  { label: 'EXPERT', href: '#expert' },
-  { label: 'CONTACT', href: '#contact' },
+  { label: 'CONSOLE', href: '/#console' },
+  { label: 'SYSTEMS', href: '/#systems' },
+  { label: 'MAP', href: '/#map' },
+  { label: 'EXPERT', href: '/#expert' },
+  { label: 'CONTACT', href: '/#contact' },
+  { label: 'LOG', href: '/log' },
 ] as const;
 
 export default function Shell({ children }: ShellProps) {
