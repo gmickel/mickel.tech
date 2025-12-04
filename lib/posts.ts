@@ -107,10 +107,13 @@ export async function getAllPosts(): Promise<PostMeta[]> {
     return [];
   }
 
+  const isPublished = (post: Post | null): post is Post =>
+    post !== null && post.status !== 'draft';
+
   const posts = await Promise.all(slugs.map((slug) => readPostFile(slug)));
 
   return posts
-    .filter((post): post is Post => Boolean(post) && post.status !== 'draft')
+    .filter(isPublished)
     .map((post) => ({
       slug: post.slug,
       title: post.title,

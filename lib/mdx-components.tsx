@@ -1,11 +1,11 @@
-import type { ComponentProps, ReactElement } from 'react';
-
 import type { MDXRemoteProps } from 'next-mdx-remote/rsc';
+import type { ComponentProps, ReactElement } from 'react';
 
 type HeadingProps = ComponentProps<'h1'>;
 type ParagraphProps = ComponentProps<'p'>;
 type AnchorProps = ComponentProps<'a'>;
-type ListProps = ComponentProps<'ul'>;
+type UnorderedListProps = ComponentProps<'ul'>;
+type OrderedListProps = ComponentProps<'ol'>;
 type ListItemProps = ComponentProps<'li'>;
 type CodeProps = ComponentProps<'code'>;
 type PreProps = ComponentProps<'pre'>;
@@ -31,7 +31,7 @@ function H2(props: HeadingProps): ReactElement {
 function H3(props: HeadingProps): ReactElement {
   return (
     <h3
-      className="mt-8 mb-3 font-bold text-xl text-white leading-snug md:text-2xl"
+      className="mt-8 mb-3 font-bold text-white text-xl leading-snug md:text-2xl"
       {...props}
     />
   );
@@ -50,7 +50,7 @@ function A(props: AnchorProps): ReactElement {
   return <a className="glow-link" {...props} />;
 }
 
-function Ul(props: ListProps): ReactElement {
+function Ul(props: UnorderedListProps): ReactElement {
   return (
     <ul
       className="mb-4 list-disc space-y-2 pl-5 text-muted-foreground leading-relaxed"
@@ -59,7 +59,7 @@ function Ul(props: ListProps): ReactElement {
   );
 }
 
-function Ol(props: ListProps): ReactElement {
+function Ol(props: OrderedListProps): ReactElement {
   return (
     <ol
       className="mb-4 list-decimal space-y-2 pl-5 text-muted-foreground leading-relaxed"
@@ -75,7 +75,7 @@ function Li(props: ListItemProps): ReactElement {
 function Code(props: CodeProps): ReactElement {
   return (
     <code
-      className="rounded bg-secondary px-1.5 py-0.5 font-mono text-xs text-primary"
+      className="rounded bg-secondary px-1.5 py-0.5 font-mono text-primary text-xs"
       {...props}
     />
   );
@@ -102,4 +102,3 @@ export const mdxComponents: MDXRemoteProps['components'] = {
   code: Code,
   pre: Pre,
 };
-
