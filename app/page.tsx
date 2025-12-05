@@ -7,7 +7,6 @@ import Quote from '@/components/sections/quote';
 import Services from '@/components/sections/services';
 import SystemLogLatest from '@/components/sections/system-log-latest';
 import SystemMap from '@/components/sections/system-map';
-import WhatICanDo from '@/components/sections/what-i-can-do';
 
 // Skeleton fallback for hero section to prevent CLS
 function HeroSkeleton() {
@@ -41,9 +40,6 @@ export default function Home() {
         fallback={<div aria-hidden="true" className="min-h-[800px] bg-black" />}
       >
         <SystemMap />
-      </Suspense>
-      <Suspense fallback={null}>
-        <WhatICanDo />
       </Suspense>
       <Suspense fallback={null}>
         <SystemLogLatest />
