@@ -4,11 +4,14 @@ import type { ReactNode } from 'react';
 const services: Array<{
   title: string;
   body: string | ReactNode;
+  engagement: string;
   bullets: string[];
 }> = [
   {
     title: 'AI SOFTWARE DEVELOPMENT LIFECYCLE & DELIVERY',
     body: 'I redesign your software development lifecycle using AI at every stage—from planning through build, test and release—so delivery becomes a continuous, low-risk flow of AI changes instead of a handful of big bets per quarter.',
+    engagement:
+      'Engagement: 15–30 day AI SDLC lane — design, run and hand over one lane end-to-end.',
     bullets: [
       'Move from "one release a month" to many safe releases per day by shortening feedback loops and letting AI handle the mechanical work across plan–build–test–run.',
       'Use focused lanes (typically 2–4 people) to prove the pattern, with clear ownership, automated checks and practiced rollback, then roll it out across more teams.',
@@ -18,6 +21,8 @@ const services: Array<{
   {
     title: 'AI PLATFORMS & AGENTIC SYSTEMS',
     body: 'Most "AI platforms" are just thin wrappers around a single model. I design real platforms and agents: unified context, clean data, evals, observability and safety so agents actually ship, don\'t stall as pilots, and map to real revenue, efficiency or risk outcomes.',
+    engagement:
+      'Engagement: 30–45 day platform blueprint + one production-grade agent on your stack.',
     bullets: [
       'Platform blueprints that combine context engineering, data pipelines, retrieval/RAG patterns, eval harnesses and observability into an everything-as-code stack.',
       'Concrete agents for your business: operations co-pilots, RFQ/RFP and quoting assistants, knowledge-base copilots, service-desk automation, document-review agents and voice bots—built on your platform, not as throwaway demos.',
@@ -27,6 +32,8 @@ const services: Array<{
   {
     title: 'STRATEGIC ADVISORY & FRACTIONAL CTO',
     body: 'For boards, CEOs, CTOs and PE investors who need a senior technical counterpart for AI and core software decisions. I join for a limited number of days per month to own the hard conversations about architecture, SDLC, teams and vendors until the internal organisation is ready.',
+    engagement:
+      'Engagement: 1–3 days per month as fractional CTO / AI program lead, aligned with board and release cadences.',
     bullets: [
       'Board- and C-level sparring on AI and technology roadmaps: where to place bets, where to say no, and how to turn experiments into an operating capability.',
       'Architecture and SDLC oversight: review lanes, platforms and major projects, define non-negotiable guardrails, and give clear go/no-go calls on big releases or rewrites.',
@@ -51,6 +58,8 @@ const services: Array<{
         of purely technical ones.
       </>
     ),
+    engagement:
+      'Engagement: written expert opinion / Gutachten with defined questions, evidence review and a live brief-back.',
     bullets: [
       'Expert work for disputes and arbitration: forensic code and system analysis in copyright/Open Source cases, comparison of implementations against contracts and specs, and clear written opinions that withstand cross-examination.',
       'Independent assessment of large IT projects: define and review quality gates, KPIs and acceptance criteria, and give a yes/no view on whether delivered systems meet contractual and technical obligations.',
@@ -93,6 +102,10 @@ export default function Services() {
 
               <p className="mb-8 min-h-[80px] text-muted-foreground leading-relaxed">
                 {service.body}
+              </p>
+
+              <p className="mb-6 font-mono text-[11px] text-muted-foreground uppercase tracking-[0.22em]">
+                {service.engagement}
               </p>
 
               <ul
