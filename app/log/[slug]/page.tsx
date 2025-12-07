@@ -104,6 +104,21 @@ export default async function LogPostPage({
             ))}
           </div>
         ) : null}
+        {post.substackUrl ? (
+          <div className="flex flex-wrap items-center gap-3 rounded border border-primary/30 bg-primary/5 p-4 text-sm text-primary">
+            <span className="font-bold uppercase tracking-wide text-[11px]">
+              Substack
+            </span>
+            <a
+              className="underline underline-offset-4 transition-colors hover:text-white"
+              href={post.substackUrl}
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Read the original on Substack and subscribe for updates →
+            </a>
+          </div>
+        ) : null}
       </header>
 
       <div className="prose prose-invert max-w-none">
