@@ -25,9 +25,15 @@ const focusTags = [
 
 interface HeroProps {
   alertText?: string;
+  mandatePeriodLabel: string;
+  mandateSlotLabel: string;
 }
 
-export default function Hero({ alertText }: HeroProps) {
+export default function Hero({
+  alertText,
+  mandatePeriodLabel,
+  mandateSlotLabel,
+}: HeroProps) {
   const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
   const x = useMotionValue(0);
   const y = useMotionValue(0);
@@ -201,9 +207,9 @@ export default function Hero({ alertText }: HeroProps) {
                     New Mandates
                   </div>
                   <div className="space-y-0.5">
-                    <div className="text-lg text-white">1–2 SLOTS</div>
+                    <div className="text-lg text-white">{mandateSlotLabel}</div>
                     <div className="text-muted-foreground text-xs">
-                      DECEMBER
+                      {mandatePeriodLabel}
                     </div>
                   </div>
                 </div>
