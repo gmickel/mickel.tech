@@ -11,7 +11,7 @@ const services: Array<{
     title: 'AI SOFTWARE DEVELOPMENT LIFECYCLE & DELIVERY',
     body: 'I redesign your software development lifecycle using AI at every stage—from planning through build, test and release—so delivery becomes a continuous, low-risk flow of AI changes instead of a handful of big bets per quarter.',
     engagement:
-      'Engagement: 15–30 day AI SDLC lane — design, run and hand over one lane end-to-end.',
+      'Engagement: 15–30 day AI SDLC speed lane. I teach your team and co-ship one bespoke AI lane on your stack that doubles or triples release velocity, then hand it back clean, end-to-end.',
     bullets: [
       'Move from "one release a month" to many safe releases per day by shortening feedback loops and letting AI handle the mechanical work across plan–build–test–run.',
       'Use focused lanes (typically 2–4 people) to prove the pattern, with clear ownership, automated checks and practiced rollback, then roll it out across more teams.',
@@ -22,7 +22,7 @@ const services: Array<{
     title: 'AI PLATFORMS & AGENTIC SYSTEMS',
     body: 'Most "AI platforms" are just thin wrappers around a single model. I design real platforms and agents: unified context, clean data, evals, observability and safety so agents actually ship, don\'t stall as pilots, and map to real revenue, efficiency or risk outcomes.',
     engagement:
-      'Engagement: 30–45 day platform blueprint + one production-grade agent on your stack.',
+      'Engagement: 7-day production agent. Platform blueprint + one fully evaluated, production-grade agent deployed into your stack — shipped, not a slide.',
     bullets: [
       'Platform blueprints that combine context engineering, data pipelines, retrieval/RAG patterns, eval harnesses and observability into an everything-as-code stack.',
       'Concrete agents for your business: operations co-pilots, RFQ/RFP and quoting assistants, knowledge-base copilots, service-desk automation, document-review agents and voice bots—built on your platform, not as throwaway demos.',
@@ -104,7 +104,7 @@ export default function Services() {
                 {service.body}
               </p>
 
-              <p className="mb-6 font-mono text-[11px] text-muted-foreground uppercase tracking-[0.22em]">
+              <p className="mb-6 font-mono text-xs md:text-sm font-semibold text-primary uppercase tracking-[0.22em]">
                 {service.engagement}
               </p>
 
