@@ -69,7 +69,7 @@ const benchmarks: Array<{
   {
     id: 'mcp',
     title: 'Convex OAuth MCP server',
-    spec: 'Full vertical slice on Convex + Better Auth + MCP; discovery, scopes, admin UI, tests.',
+    spec: 'Dense spec. Full vertical slice on Convex + Better Auth + MCP; discovery, scopes, admin UI, tests.',
     hook: 'Security-sensitive slice with OAuth semantics, streaming MCP transport, and admin surface.',
     takeaways: [
       'Dense plans still leave scope edges (org metadata, pagination, export scopes) uncovered.',
