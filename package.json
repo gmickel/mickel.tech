@@ -48,7 +48,7 @@
     "input-otp": "^1.4.2",
     "gray-matter": "^4.0.3",
     "lucide-react": "^0.556.0",
-    "next": "16.0.7",
+    "next": "16.0.8",
     "next-mdx-remote": "^5.0.0",
     "rehype-pretty-code": "^0.14.1",
     "next-themes": "^0.4.6",
@@ -68,7 +68,7 @@
   "devDependencies": {
     "@biomejs/biome": "2.3.8",
     "@tailwindcss/postcss": "^4",
-    "@types/node": "^20",
+    "@types/node": "^24.10.2",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "autoprefixer": "^10.4.22",
@@ -76,6 +76,6 @@
     "postcss": "^8.5.6",
     "tailwindcss": "^4",
     "typescript": "^5",
-    "ultracite": "6.3.6"
+    "ultracite": "6.3.10"
   }
 }
