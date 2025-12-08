@@ -105,8 +105,8 @@ export default async function LogPostPage({
           </div>
         ) : null}
         {post.substackUrl ? (
-          <div className="flex flex-wrap items-center gap-3 rounded border border-primary/30 bg-primary/5 p-4 text-sm text-primary">
-            <span className="font-bold uppercase tracking-wide text-[11px]">
+          <div className="flex flex-wrap items-center gap-3 rounded border border-primary/30 bg-primary/5 p-4 text-primary text-sm">
+            <span className="font-bold text-[11px] uppercase tracking-wide">
               Substack
             </span>
             <a

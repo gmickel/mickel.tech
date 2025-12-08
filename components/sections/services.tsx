@@ -104,7 +104,7 @@ export default function Services() {
                 {service.body}
               </p>
 
-              <p className="mb-6 font-mono text-xs md:text-sm font-semibold text-primary uppercase tracking-[0.22em]">
+              <p className="mb-6 font-mono font-semibold text-primary text-xs uppercase tracking-[0.22em] md:text-sm">
                 {service.engagement}
               </p>
 
