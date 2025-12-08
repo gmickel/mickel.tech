@@ -83,7 +83,7 @@ const benchmarks: Array<{
     spec: 'Extend existing ACL whitelist to docs/folders; inheritance, Better Auth invites, guest filtering, tests.',
     hook: 'Tests whether agents can extend ACL patterns without regressions when specs are intentionally light.',
     takeaways: [
-      'Inference from existing ACLs is error-prone—owner checks skipped, guest filters incomplete, activation hooks missing.',
+      'Inference from existing ACLs is error-prone: owner checks skipped, guest filters incomplete, activation hooks missing.',
       'UI dialogs often wired incorrectly without explicit triggers; best-of-3 helps catch flukes.',
     ],
     links: [],
@@ -115,7 +115,7 @@ const benchmarks: Array<{
 const upcoming = [
   {
     title: 'macOS menu bar app',
-    detail: 'Swift/SwiftUI native app—scope TBD.',
+    detail: 'Swift/SwiftUI native app, scope TBD.',
   },
 ];
 
@@ -271,7 +271,7 @@ export default function GmickelBenchPage() {
               </CardHeader>
               <CardContent className="space-y-3 text-muted-foreground text-sm">
                 <p>
-                  • All tasks are live work surfaces—Convex auth, Next.js
+                  • All tasks are live work surfaces: Convex auth, Next.js
                   portals, systems code.
                 </p>
                 <p>
@@ -296,11 +296,11 @@ export default function GmickelBenchPage() {
                   Gemini wins low-level systems (Zig).
                 </p>
                 <p>
-                  • Codex is consistently mid-pack—solid structure, weaker on
+                  • Codex is consistently mid-pack: solid structure, weaker on
                   inference and edge cases.
                 </p>
                 <p>
-                  • All models miss pagination, ACL edges, and UI wiring—manual
+                  • All models miss pagination, ACL edges, and UI wiring. Manual
                   review stays mandatory.
                 </p>
               </CardContent>
