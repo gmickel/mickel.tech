@@ -23,6 +23,7 @@ const navItems = [
   { label: 'EXPERT', href: '/#expert' },
   { label: 'CONTACT', href: '/#contact' },
   { label: 'LOG', href: '/log' },
+  { label: 'BENCH', href: '/gmickel-bench' },
 ] as const;
 
 export default function Shell({ children }: ShellProps) {
