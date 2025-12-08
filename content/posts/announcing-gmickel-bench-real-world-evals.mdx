@@ -1,0 +1,55 @@
+---
+title: "Announcing gmickel-bench: Real-World Evals"
+summary: "Most AI benchmarks tell you if a model can solve a LeetCode puzzle. They don't tell you if it can ship a product."
+publishedAt: "2025-12-08T09:00:00Z"
+tags:
+  - ai
+  - benchmarks
+  - evals
+  - claude
+  - gemini
+  - codex
+canonicalSource: substack
+substackUrl: "https://bytesizedbrainwaves.substack.com/p/announcing-gmickel-bench-real-world"
+status: published
+---
+
+_Been wanting to do this for a while._
+
+Most AI benchmarks tell you if a model can solve a LeetCode puzzle. They don't tell you if it can ship a product.
+
+I got tired of wondering which model would actually help me build real things. So I built [gmickel-bench](https://www.mickel.tech/gmickel-bench): a living scoreboard based on the real-world engineering tasks I actually ship.
+
+## What I Test
+
+Three domains. Three very different skill sets:
+
+- **Full-Stack**: Building OAuth 2.1 servers on Convex
+- **Frontend**: Designing complex Next.js dashboards from scratch
+- **Systems**: Writing low-level memory management code in Zig
+
+## The Models
+
+I ran three models through the gauntlet:
+
+- Claude Code with Opus 4.5
+- Gemini CLI with Gemini 3.0 Pro
+- OpenAI Codex with gpt-5.1-codex-max medium
+
+## What I Found
+
+**Claude Code: The Product Architect**
+
+Best overall. Crushes frontend design and auth flows. Struggles when the math gets low-level.
+
+**Gemini CLI: The Systems Hacker**
+
+The only model that survived the Zig torture test (build → train → sample) without crashing. Less polish on the product side.
+
+**OpenAI Codex: The Pattern Matcher**
+
+Good at refactoring. Good at isolated pages. Feels lazy when you need comprehensive implementations.
+
+## See the Data
+
+The full benchmark, scoring methodology, and detailed breakdown is live at [mickel.tech/gmickel-bench](https://www.mickel.tech/gmickel-bench).
