@@ -43,7 +43,7 @@ export function useTerminal({ gameActive, onJoshua, onClear }: TerminalProps) {
       switch (cmd) {
         case 'help':
           response =
-            'AVAILABLE COMMANDS: help, email, calendar, linkedin, x, blog, summary, clear, joshua';
+            'AVAILABLE COMMANDS: help, email, calendar, linkedin, x, blog, benchmark, work, summary, clear, joshua';
           break;
         case 'email':
           response = 'OPENING MAILER >> gordon@mickel.tech';
@@ -65,6 +65,17 @@ export function useTerminal({ gameActive, onJoshua, onClear }: TerminalProps) {
           response =
             'LOADING BYTE-SIZED BRAINWAVES >> [Link opened in new tab]';
           window.open('https://bytesizedbrainwaves.substack.com', '_blank');
+          break;
+        case 'benchmark':
+        case 'bench':
+          response =
+            'LOADING GMICKEL-BENCH >> Real-world AI coding evaluations';
+          window.location.href = '/gmickel-bench';
+          break;
+        case 'work':
+        case 'apps':
+          response = 'LOADING PORTFOLIO >> Things I built';
+          window.location.href = '/apps';
           break;
         case 'summary':
           response =
