@@ -23,6 +23,7 @@ const navItems = [
   { label: 'EXPERT', href: '/#expert' },
   { label: 'CONTACT', href: '/#contact' },
   { label: 'LOG', href: '/log' },
+  { label: 'APPS', href: '/apps' },
   { label: 'BENCH', href: '/gmickel-bench' },
 ] as const;
 
