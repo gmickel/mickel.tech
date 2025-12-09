@@ -24,7 +24,7 @@ type BenchScore = {
 const config: ChartConfig = {
   claude: { label: 'Claude Opus 4.5', color: '#00e5ff' },
   gemini: { label: 'Gemini 3 Pro', color: '#ff6bd6' },
-  codex: { label: 'OpenAI Codex', color: '#9ef36e' },
+  codex: { label: 'GPT-5.1-codex-max', color: '#9ef36e' },
 };
 
 interface BenchScoreChartProps {
@@ -85,7 +85,7 @@ export function BenchScoreChart({ data, className }: BenchScoreChartProps) {
       <BarChart
         barCategoryGap={24}
         data={data}
-        margin={{ top: 8, right: 28, left: 8, bottom: 48 }}
+        margin={{ top: 36, right: 28, left: 16, bottom: 56 }}
       >
         <CartesianGrid
           stroke="hsl(var(--border))"
@@ -98,7 +98,7 @@ export function BenchScoreChart({ data, className }: BenchScoreChartProps) {
           interval={0}
           tick={{ fontSize: 11, fill: 'hsl(var(--muted-foreground))', dy: 10 }}
           tickLine={false}
-          tickMargin={12}
+          tickMargin={10}
         />
         <YAxis
           axisLine={false}
@@ -113,11 +113,14 @@ export function BenchScoreChart({ data, className }: BenchScoreChartProps) {
           wrapperStyle={{ outline: 'none' }}
         />
         <Legend
+          align="center"
           formatter={(value) => (
             <span className="text-muted-foreground text-xs">{value}</span>
           )}
+          height={32}
           iconSize={10}
-          wrapperStyle={{ paddingTop: 16 }}
+          verticalAlign="top"
+          wrapperStyle={{ paddingBottom: 8 }}
         />
         <Bar
           dataKey="claude"
@@ -133,6 +136,19 @@ export function BenchScoreChart({ data, className }: BenchScoreChartProps) {
           ))}
         </Bar>
         <Bar
+          dataKey="codex"
+          fill="var(--color-codex)"
+          name="GPT-5.1-codex-max"
+          radius={[4, 4, 0, 0]}
+        >
+          {data.map((entry) => (
+            <Cell
+              className="cursor-pointer transition-opacity hover:opacity-80"
+              key={`codex-${entry.name}`}
+            />
+          ))}
+        </Bar>
+        <Bar
           dataKey="gemini"
           fill="var(--color-gemini)"
           name="Gemini 3 Pro"
@@ -142,19 +158,6 @@ export function BenchScoreChart({ data, className }: BenchScoreChartProps) {
             <Cell
               className="cursor-pointer transition-opacity hover:opacity-80"
               key={`gemini-${entry.name}`}
-            />
-          ))}
-        </Bar>
-        <Bar
-          dataKey="codex"
-          fill="var(--color-codex)"
-          name="OpenAI Codex"
-          radius={[4, 4, 0, 0]}
-        >
-          {data.map((entry) => (
-            <Cell
-              className="cursor-pointer transition-opacity hover:opacity-80"
-              key={`codex-${entry.name}`}
             />
           ))}
         </Bar>

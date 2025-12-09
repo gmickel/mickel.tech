@@ -2,6 +2,10 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 import { BenchScoreChart } from '@/components/gmickel/bench-score-chart';
+import {
+  CategoryBars,
+  TotalsBar,
+} from '@/components/gmickel/bench-total-chart';
 import Shell from '@/components/layout/shell';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -30,30 +34,28 @@ export const metadata: Metadata = {
 };
 
 const llmScores = [
-  {
-    name: 'Convex OAuth MCP slice',
-    claude: 65,
-    gemini: 63,
-    codex: 60,
-  },
+  { name: 'Convex OAuth MCP slice', claude: 65, gemini: 63, codex: 60 },
   {
     name: 'Convex permissions (docs/folders)',
     claude: 65,
     gemini: 49,
     codex: 58,
   },
-  {
-    name: 'Remote Secretary – Design',
-    claude: 78,
-    gemini: 70,
-    codex: 68,
-  },
-  {
-    name: 'Tiny GPT – Zig',
-    claude: 40,
-    gemini: 73,
-    codex: 36,
-  },
+  { name: 'Remote Secretary – Design', claude: 78, gemini: 70, codex: 68 },
+  { name: 'Tiny GPT – Zig', claude: 40, gemini: 73, codex: 36 },
+  { name: 'SmartTrim macOS utility', claude: 79, gemini: 61, codex: 83 },
+];
+
+const radarData = [
+  { name: 'Instruction following', claude: 82, codex: 73, gemini: 74 },
+  { name: 'Code quality', claude: 74, codex: 74, gemini: 75 },
+  { name: 'Change hygiene', claude: 82, codex: 78, gemini: 80 },
+  { name: 'Functional correctness', claude: 65, codex: 59.5, gemini: 63.5 },
+];
+
+const totals = [
+  { name: 'Total score', claude: 327, gemini: 316, codex: 305 },
+  { name: 'Average per task', claude: 65.4, gemini: 63.2, codex: 61 },
 ];
 
 type BenchmarkLink = { href: string; label: string };
@@ -110,12 +112,31 @@ const benchmarks: Array<{
     ],
     links: [],
   },
+  {
+    id: 'smarttrim',
+    title: 'SmartTrim macOS menu bar utility',
+    spec: 'Swift 6 LSUIElement MenuBarExtra with TextHealer heuristic, clipboard monitor, tests, hotkey, login item.',
+    hook: 'System-integration slice: macOS menu bar UI, clipboard healing, global hotkey, launch-at-login.',
+    takeaways: [
+      'Claude and Codex meet tests and real clipboard healing; Gemini leaves minor ghost indentation.',
+      'Strict concurrency + SwiftUI + system APIs are tractable; heuristics still need human-tuned edges.',
+    ],
+    links: [],
+  },
 ];
 
 const upcoming = [
   {
-    title: 'macOS menu bar app',
-    detail: 'Swift/SwiftUI native app, scope TBD.',
+    title: 'Legacy code port',
+    detail: 'Deep refactor/port of a service with sparse docs.',
+  },
+  {
+    title: 'Microservice integration',
+    detail: 'Cross-service change touching contracts and ACLs.',
+  },
+  {
+    title: 'Next live client task',
+    detail: 'New surface queued; revealed when it ships.',
   },
 ];
 
@@ -160,14 +181,14 @@ export default function GmickelBenchPage() {
 
           <div className="mt-10 grid gap-6 md:grid-cols-3">
             <StatCard
-              hint="OAuth MCP, doc permissions, UI design, char-level GPT"
+              hint="MCP auth, ACL sharing, AI dashboard, tiny GPT, macOS utility"
               label="Benchmarks"
-              value="4"
+              value="5"
             />
             <StatCard
-              hint="Full-stack web · Systems programming"
+              hint="Full-stack web · macOS utility · systems programming"
               label="Stacks covered"
-              value="Next.js · Convex · TanStack · Python · Zig"
+              value="Next.js · Convex · TanStack · Python · Zig · SwiftUI"
             />
             <StatCard
               hint="Mix of LLM judge + human evaluation/acceptance runs"
@@ -178,7 +199,7 @@ export default function GmickelBenchPage() {
         </section>
 
         <section className="relative mx-auto max-w-6xl px-6 pb-16 md:px-10">
-          <Card className="border-primary/20 bg-background/70">
+          <Card className="border-primary/20 bg-card/80">
             <CardHeader className="flex flex-col gap-2 pb-6">
               <div className="flex flex-wrap items-center gap-3">
                 <p className="font-mono text-[11px] text-primary tracking-[0.2em]">
@@ -198,6 +219,50 @@ export default function GmickelBenchPage() {
               <BenchScoreChart className="h-[420px]" data={llmScores} />
             </CardContent>
           </Card>
+        </section>
+
+        <section className="relative mx-auto max-w-6xl px-6 pb-16 md:px-10">
+          <div className="grid gap-6 lg:grid-cols-2">
+            <Card className="border-white/10 bg-card/80">
+              <CardHeader className="flex flex-col gap-2 pb-4">
+                <div className="flex flex-wrap items-center gap-3">
+                  <p className="font-mono text-[11px] text-primary tracking-[0.2em]">
+                    TOTALS // LLM + HUMAN
+                  </p>
+                  <Separator
+                    className="h-4 bg-white/10"
+                    orientation="vertical"
+                  />
+                  <span className="text-muted-foreground text-xs">
+                    Sum + average across all benches (best-of-3 per model)
+                  </span>
+                </div>
+                <CardTitle className="text-2xl text-white">
+                  Overall score totals
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <TotalsBar className="h-[320px]" data={totals} />
+              </CardContent>
+            </Card>
+
+            <Card className="border-white/10 bg-card/80">
+              <CardHeader className="flex flex-col gap-2 pb-4">
+                <p className="font-mono text-[11px] text-primary tracking-[0.2em]">
+                  CATEGORIES // NORMALIZED
+                </p>
+                <CardTitle className="text-2xl text-white">
+                  Strengths across categories
+                </CardTitle>
+                <span className="text-muted-foreground text-xs">
+                  Normalized vs. max per dimension (0–100)
+                </span>
+              </CardHeader>
+              <CardContent>
+                <CategoryBars className="h-[340px]" data={radarData} />
+              </CardContent>
+            </Card>
+          </div>
         </section>
 
         <section className="relative mx-auto max-w-6xl px-6 pb-16 md:px-10">
@@ -272,7 +337,7 @@ export default function GmickelBenchPage() {
               <CardContent className="space-y-3 text-muted-foreground text-sm">
                 <p>
                   • All tasks are live work surfaces: Convex auth, Next.js
-                  portals, systems code.
+                  portals, systems code, macOS utility.
                 </p>
                 <p>
                   • Scores mix LLM judge + human acceptance; best of 3 per
@@ -292,16 +357,16 @@ export default function GmickelBenchPage() {
               </CardHeader>
               <CardContent className="space-y-3 text-muted-foreground text-sm">
                 <p>
-                  • Claude dominates full-stack web (permissions, design);
-                  Gemini wins low-level systems (Zig).
+                  • Claude leads plan-heavy web (permissions); Codex edges
+                  SmartTrim with a slightly higher score (Claude close behind).
                 </p>
                 <p>
-                  • Codex is consistently mid-pack: solid structure, weaker on
-                  inference and edge cases.
+                  • Gemini wins low-level systems (Zig) but lags on
+                  heuristics/detail in SmartTrim.
                 </p>
                 <p>
-                  • All models miss pagination, ACL edges, and UI wiring. Manual
-                  review stays mandatory.
+                  • All models miss pagination, ACL edges, UI wiring, and
+                  nuanced text heuristics—manual review stays mandatory.
                 </p>
               </CardContent>
             </Card>
