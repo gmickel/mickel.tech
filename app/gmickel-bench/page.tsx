@@ -118,9 +118,9 @@ const benchmarks: Array<{
     links: [],
     note: {
       type: 'outlier',
-      title: 'Autonomous self-correction observed',
+      title: 'Why Gemini scored higher',
       content:
-        'Gemini 2.5 Pro exhibited autonomous iterative refinement—continuing to debug and rebuild without human intervention until achieving a successful training run. This agentic self-correction behavior was not explicitly prompted. Whether this is desirable depends on context: it accelerates success when the goal is clear, but may overconsume resources or diverge from intent in ambiguous scenarios. Other models produced higher-quality code and would have achieved working programs with explicit retry prompting—the difference here was Gemini autonomously choosing to persist. YMMV.',
+        'Gemini 3.0 Pro was the only model to achieve a working build→train→sample cycle. This appears to be due to its harness continuing to iterate on errors rather than stopping early. Other models produced comparable code quality but their runs terminated before resolving runtime issues.',
     },
   },
   {
