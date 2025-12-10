@@ -67,6 +67,11 @@ const benchmarks: Array<{
   hook: string;
   takeaways: string[];
   links: BenchmarkLink[];
+  note?: {
+    type: 'outlier' | 'info';
+    title: string;
+    content: string;
+  };
 }> = [
   {
     id: 'mcp',
@@ -111,6 +116,12 @@ const benchmarks: Array<{
       'Initialization hygiene and buffer sizing are frequent failure points even when shape math looks right.',
     ],
     links: [],
+    note: {
+      type: 'outlier',
+      title: 'Autonomous self-correction observed',
+      content:
+        'Gemini 2.5 Pro exhibited autonomous iterative refinement—continuing to debug and rebuild without human intervention until achieving a successful training run. This agentic self-correction behavior was not explicitly prompted. Whether this is desirable depends on context: it accelerates success when the goal is clear, but may overconsume resources or diverge from intent in ambiguous scenarios. Other models produced higher-quality code and would have achieved working programs with explicit retry prompting—the difference here was Gemini autonomously choosing to persist. YMMV.',
+    },
   },
   {
     id: 'smarttrim',
@@ -304,6 +315,24 @@ export default function GmickelBenchPage() {
                       </li>
                     ))}
                   </ul>
+                  {bench.note && (
+                    <div className="mt-4 rounded-lg border border-amber-500/30 bg-amber-500/5 p-4">
+                      <div className="mb-2 flex items-center gap-2">
+                        <div className="h-1.5 w-1.5 rounded-full bg-amber-400" />
+                        <span className="font-mono text-[10px] text-amber-400 uppercase tracking-wider">
+                          {bench.note.type === 'outlier'
+                            ? 'Outlier Note'
+                            : 'Note'}
+                        </span>
+                      </div>
+                      <p className="font-medium text-amber-200/90 text-sm">
+                        {bench.note.title}
+                      </p>
+                      <p className="mt-2 text-muted-foreground text-xs leading-relaxed">
+                        {bench.note.content}
+                      </p>
+                    </div>
+                  )}
                   {bench.links.length > 0 && (
                     <div className="flex flex-wrap gap-3 pt-2">
                       {bench.links.map((link) => (
@@ -539,6 +568,56 @@ export default function GmickelBenchPage() {
                 <p>• Three runs balance signal quality against compute cost.</p>
               </CardContent>
             </Card>
+          </div>
+
+          {/* Tool Versions */}
+          <div className="mt-10 rounded-xl border border-white/10 bg-black/40 p-6">
+            <div className="mb-4 flex flex-wrap items-center gap-2">
+              <Badge
+                className="border-emerald-500/40 bg-emerald-500/10 text-emerald-400"
+                variant="outline"
+              >
+                Transparency
+              </Badge>
+              <span className="text-muted-foreground text-xs">
+                Exact tool versions used for reproducibility
+              </span>
+            </div>
+            <div className="grid gap-4 sm:grid-cols-3">
+              <div className="flex items-center gap-3 rounded-lg border border-white/5 bg-white/5 p-3">
+                <div className="flex h-10 w-10 items-center justify-center rounded-lg border border-cyan-500/30 bg-cyan-500/10">
+                  <span className="font-mono text-cyan-400 text-xs">CL</span>
+                </div>
+                <div>
+                  <p className="font-medium text-sm text-white">Claude Code</p>
+                  <p className="font-mono text-muted-foreground text-xs">
+                    v2.0.64
+                  </p>
+                </div>
+              </div>
+              <div className="flex items-center gap-3 rounded-lg border border-white/5 bg-white/5 p-3">
+                <div className="flex h-10 w-10 items-center justify-center rounded-lg border border-green-500/30 bg-green-500/10">
+                  <span className="font-mono text-green-400 text-xs">CX</span>
+                </div>
+                <div>
+                  <p className="font-medium text-sm text-white">Codex CLI</p>
+                  <p className="font-mono text-muted-foreground text-xs">
+                    v0.66.0
+                  </p>
+                </div>
+              </div>
+              <div className="flex items-center gap-3 rounded-lg border border-white/5 bg-white/5 p-3">
+                <div className="flex h-10 w-10 items-center justify-center rounded-lg border border-blue-500/30 bg-blue-500/10">
+                  <span className="font-mono text-blue-400 text-xs">GM</span>
+                </div>
+                <div>
+                  <p className="font-medium text-sm text-white">Gemini CLI</p>
+                  <p className="font-mono text-muted-foreground text-xs">
+                    v0.19.4
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
 
           <div className="mt-10 rounded-xl border border-white/10 bg-card/60 p-6">
