@@ -25,7 +25,7 @@ It is getting genuinely hard to measure the difference between frontier models n
 
 But benchmarks only tell you half the picture. They measure capability. They do not measure consistency, context inference, or the ability to stay aligned with your intent over a long task. Opus 4.5 wins on the stuff that does not show up in a leaderboard.
 
-[Martin Alderson makes a similar point](https://martinalderson.com/posts/are-we-in-a-gpt4-style-leap-that-evals-cant-see/): we might be in a GPT-4 style leap that evals simply cannot see. The real gains are in "taste," stability over long sessions, and reduced human intervention—none of which standard benchmarks measure.
+[Martin Alderson makes a similar point](https://martinalderson.com/posts/are-we-in-a-gpt4-style-leap-that-evals-cant-see/): we might be in a GPT-4 style leap that evals simply cannot see. The real gains are in "taste," stability over long sessions, and reduced human intervention-none of which standard benchmarks measure.
 
 [McKay Wrigley’s deep dive on Opus 4.5](https://mckaywrigley.substack.com/p/my-thoughts-on-claude-opus-45) captures this well. He calls it the “unlock for agents” and compares it to a Waymo: you tell it where to go, and it takes you there. After a few of these experiences, your brain realises you live in this world now.
 
@@ -45,19 +45,19 @@ My approach is half-spec: I write enough to establish intent and constraints, th
 
 I do not like overloading [Claude Code](https://docs.anthropic.com/en/docs/claude-code) with plugins. Most of them add noise. But there are a few that have earned their place:
 
- **Frontend Design Skill** — This is a must-have. The default output from AI coding tools still trends toward generic slop. This skill fixes that. To install:
+ **Frontend Design Skill** - This is a must-have. The default output from AI coding tools still trends toward generic slop. This skill fixes that. To install:
 
 
     /plugin marketplace add anthropics/claude-code
     /plugin install frontend-design@claude-code-plugins
 
- **[Compound Engineering Plugin](https://github.com/EveryInc/compound-engineering-plugin)** — Your mileage may vary here. The default plan mode in Claude Code is already good. But if you want more structured planning for complex features, give it a try.
+ **[Compound Engineering Plugin](https://github.com/EveryInc/compound-engineering-plugin)** - Your mileage may vary here. The default plan mode in Claude Code is already good. But if you want more structured planning for complex features, give it a try.
 
- **[Beads](https://github.com/steveyegge/beads)** — I use this for task management within Claude Code. Simple and effective.
+ **[Beads](https://github.com/steveyegge/beads)** - I use this for task management within Claude Code. Simple and effective.
 
- **Custom Skills** — I wrote [my own skill](https://github.com/gmickel/my-claude-skills) for [Convex](https://www.convex.dev)-specific patterns. I extracted the common practices from Convex’s Chef project, turned them into a document, and used Claude Code to generate the skill. The key is progressive discovery: you do not dump everything into CLAUDE.md upfront. You let the agent discover context as it needs it.
+ **Custom Skills** - I wrote [my own skill](https://github.com/gmickel/my-claude-skills) for [Convex](https://www.convex.dev)-specific patterns. I extracted the common practices from Convex’s Chef project, turned them into a document, and used Claude Code to generate the skill. The key is progressive discovery: you do not dump everything into CLAUDE.md upfront. You let the agent discover context as it needs it.
 
- **[Ultracite](https://www.ultracite.ai) Hooks** — I run Ultracite for linting on every file write. TypeScript projects get linted and type-checked automatically. This is the verification layer that lets me trust the output. Write good tests, write good evals, set up hooks, and you can let the agent work with high confidence.
+ **[Ultracite](https://www.ultracite.ai) Hooks** - I run Ultracite for linting on every file write. TypeScript projects get linted and type-checked automatically. This is the verification layer that lets me trust the output. Write good tests, write good evals, set up hooks, and you can let the agent work with high confidence.
 
 ## Sub-Agents Are the Multiplier
 
@@ -83,7 +83,7 @@ I will be writing more about these kinds of agents soon.
 
 I have been rebuilding DocIQ, my LegalTech application. It is a complex system: [Convex](https://www.convex.dev) backend, [TanStack Start](https://tanstack.com/start/latest) frontend, separate Python service for document manipulation. Data rooms, detailed permissions, security implications everywhere.
 
-Opus 4.5 is racing through it. I shipped 45 features in a week. On the side. This is not my day job. Martin Alderson argues [the cost of software may have just dropped 90%](https://martinalderson.com/posts/has-the-cost-of-software-just-dropped-90-percent/)—that tracks with what I am seeing.
+Opus 4.5 is racing through it. I shipped 45 features in a week. On the side. This is not my day job. Martin Alderson argues [the cost of software may have just dropped 90%](https://martinalderson.com/posts/has-the-cost-of-software-just-dropped-90-percent/)-that tracks with what I am seeing.
 
 [![](https://substackcdn.com/image/fetch/$s_!kxEg!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F110c6535-fe74-450b-81ad-e8b0256a2329_1686x1309.png)](https://substackcdn.com/image/fetch/$s_!kxEg!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F110c6535-fe74-450b-81ad-e8b0256a2329_1686x1309.png)
 
