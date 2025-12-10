@@ -323,36 +323,187 @@ export default function GmickelBenchPage() {
           </div>
         </section>
 
+        {/* Methodology Section */}
+        <section className="relative mx-auto max-w-6xl px-6 pb-16 md:px-10">
+          <div className="mb-6 flex items-center gap-3">
+            <p className="font-mono text-[11px] text-primary tracking-[0.2em]">
+              METHODOLOGY // HOW SCORES ARE CALCULATED
+            </p>
+          </div>
+
+          <Card className="relative overflow-hidden border-purple-500/30 bg-gradient-to-br from-purple-950/20 via-card/80 to-card/80">
+            {/* Decorative corner accents */}
+            <div className="absolute top-0 left-0 h-16 w-16 border-purple-500/40 border-t border-l" />
+            <div className="absolute right-0 bottom-0 h-16 w-16 border-purple-500/40 border-r border-b" />
+
+            <CardHeader className="pb-4">
+              <div className="flex flex-wrap items-center gap-3">
+                <Badge
+                  className="border-purple-500/60 bg-purple-500/10 text-purple-400"
+                  variant="outline"
+                >
+                  TRANSPARENT PROCESS
+                </Badge>
+              </div>
+              <CardTitle className="mt-2 text-2xl text-white">
+                Evaluation methodology
+              </CardTitle>
+              <p className="mt-1 text-muted-foreground">
+                Real repositories, consistent prompts, rigorous scoring
+              </p>
+            </CardHeader>
+
+            <CardContent className="space-y-8">
+              {/* Step 1: Source */}
+              <div className="grid gap-6 lg:grid-cols-3">
+                <div className="space-y-3">
+                  <div className="flex items-center gap-3">
+                    <div className="flex h-8 w-8 items-center justify-center rounded-full border border-purple-500/40 bg-purple-500/10 font-mono text-purple-400 text-sm">
+                      1
+                    </div>
+                    <h3 className="font-semibold text-white">
+                      Real-world source
+                    </h3>
+                  </div>
+                  <p className="text-muted-foreground text-sm leading-relaxed">
+                    Every eval starts from a{' '}
+                    <span className="text-purple-400">tagged checkpoint</span>{' '}
+                    in an actual repository. DocIQ Sphere provides the bulk of
+                    evals (MCP server, permissions, docshare). Side projects
+                    like SmartTrim and Zig experiments add language diversity.
+                  </p>
+                </div>
+
+                {/* Step 2: Execution */}
+                <div className="space-y-3">
+                  <div className="flex items-center gap-3">
+                    <div className="flex h-8 w-8 items-center justify-center rounded-full border border-purple-500/40 bg-purple-500/10 font-mono text-purple-400 text-sm">
+                      2
+                    </div>
+                    <h3 className="font-semibold text-white">
+                      Best-of-3 execution
+                    </h3>
+                  </div>
+                  <p className="text-muted-foreground text-sm leading-relaxed">
+                    Each model runs the{' '}
+                    <span className="text-purple-400">identical prompt</span>{' '}
+                    three times with consistent settings. The highest score is
+                    recorded—mirrors how humans retry when the first attempt
+                    doesn't land.
+                  </p>
+                </div>
+
+                {/* Step 3: Scoring */}
+                <div className="space-y-3">
+                  <div className="flex items-center gap-3">
+                    <div className="flex h-8 w-8 items-center justify-center rounded-full border border-purple-500/40 bg-purple-500/10 font-mono text-purple-400 text-sm">
+                      3
+                    </div>
+                    <h3 className="font-semibold text-white">Dual scoring</h3>
+                  </div>
+                  <p className="text-muted-foreground text-sm leading-relaxed">
+                    Scores combine{' '}
+                    <span className="text-purple-400">GPT-o1 Pro</span> as LLM
+                    judge (code quality, structure, patterns) with{' '}
+                    <span className="text-purple-400">human review</span>{' '}
+                    (instruction following, functional correctness, does it
+                    actually work?).
+                  </p>
+                </div>
+              </div>
+
+              <Separator className="bg-white/10" />
+
+              {/* Scoring criteria */}
+              <div className="space-y-4">
+                <h3 className="font-semibold text-white">Scoring dimensions</h3>
+                <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+                  <div className="rounded-lg border border-white/10 bg-black/30 p-4">
+                    <p className="font-mono text-primary text-xs">
+                      INSTRUCTION FOLLOWING
+                    </p>
+                    <p className="mt-2 text-muted-foreground text-sm">
+                      Did it do what was asked? All requirements met?
+                    </p>
+                  </div>
+                  <div className="rounded-lg border border-white/10 bg-black/30 p-4">
+                    <p className="font-mono text-primary text-xs">
+                      CODE QUALITY
+                    </p>
+                    <p className="mt-2 text-muted-foreground text-sm">
+                      Clean patterns, proper error handling, maintainable
+                      structure.
+                    </p>
+                  </div>
+                  <div className="rounded-lg border border-white/10 bg-black/30 p-4">
+                    <p className="font-mono text-primary text-xs">
+                      CHANGE HYGIENE
+                    </p>
+                    <p className="mt-2 text-muted-foreground text-sm">
+                      Minimal diffs, no regressions, respects existing patterns.
+                    </p>
+                  </div>
+                  <div className="rounded-lg border border-white/10 bg-black/30 p-4">
+                    <p className="font-mono text-primary text-xs">
+                      FUNCTIONAL CORRECTNESS
+                    </p>
+                    <p className="mt-2 text-muted-foreground text-sm">
+                      Does it compile, run, and pass acceptance criteria?
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <Separator className="bg-white/10" />
+
+              {/* Source repos */}
+              <div className="space-y-4">
+                <h3 className="font-semibold text-white">Evaluation sources</h3>
+                <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                  <div className="flex items-start gap-3 rounded-lg border border-white/5 bg-white/5 p-4">
+                    <div className="mt-0.5 h-2 w-2 shrink-0 rounded-full bg-teal-400" />
+                    <div>
+                      <p className="font-medium text-white">DocIQ Sphere</p>
+                      <p className="text-muted-foreground text-sm">
+                        MCP server, permissions, docshare, upcoming Python evals
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3 rounded-lg border border-white/5 bg-white/5 p-4">
+                    <div className="mt-0.5 h-2 w-2 shrink-0 rounded-full bg-amber-400" />
+                    <div>
+                      <p className="font-medium text-white">SmartTrim</p>
+                      <p className="text-muted-foreground text-sm">
+                        Swift 6 / SwiftUI macOS system integration
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3 rounded-lg border border-white/5 bg-white/5 p-4">
+                    <div className="mt-0.5 h-2 w-2 shrink-0 rounded-full bg-orange-400" />
+                    <div>
+                      <p className="font-medium text-white">Zig experiments</p>
+                      <p className="text-muted-foreground text-sm">
+                        Low-level systems programming, ML from scratch
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </section>
+
         <section className="relative mx-auto max-w-6xl px-6 pb-24 md:px-10">
           <div className="flex flex-wrap items-center gap-3">
             <p className="font-mono text-[11px] text-primary tracking-[0.2em]">
-              WHY THIS BENCH // REAL-WORLD SIGNALS
+              INSIGHTS // WHAT THE SCORES SAY
             </p>
           </div>
           <div className="mt-6 grid gap-6 md:grid-cols-2">
             <Card className="border-white/10 bg-secondary/50">
               <CardHeader className="pb-2">
-                <CardTitle className="text-lg text-white">Method</CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-3 text-muted-foreground text-sm">
-                <p>
-                  • All tasks are live work surfaces: Convex auth, Next.js
-                  portals, systems code, macOS utility.
-                </p>
-                <p>
-                  • Scores mix LLM judge + human acceptance; best of 3 per
-                  model.
-                </p>
-                <p>
-                  • Specs range from dense plans to near-zero guidance to test
-                  adaptability.
-                </p>
-              </CardContent>
-            </Card>
-            <Card className="border-white/10 bg-secondary/50">
-              <CardHeader className="pb-2">
                 <CardTitle className="text-lg text-white">
-                  What the scores say
+                  Model strengths
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-3 text-muted-foreground text-sm">
@@ -368,6 +519,24 @@ export default function GmickelBenchPage() {
                   • All models miss pagination, ACL edges, UI wiring, and
                   nuanced text heuristics—manual review stays mandatory.
                 </p>
+              </CardContent>
+            </Card>
+            <Card className="border-white/10 bg-secondary/50">
+              <CardHeader className="pb-2">
+                <CardTitle className="text-lg text-white">
+                  Why best-of-3?
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-3 text-muted-foreground text-sm">
+                <p>
+                  • Single runs are noisy—models can fluke or get unlucky with
+                  context.
+                </p>
+                <p>
+                  • Humans naturally retry; taking best score reflects real
+                  workflow.
+                </p>
+                <p>• Three runs balance signal quality against compute cost.</p>
               </CardContent>
             </Card>
           </div>
