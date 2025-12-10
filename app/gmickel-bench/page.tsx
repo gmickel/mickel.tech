@@ -416,9 +416,11 @@ export default function GmickelBenchPage() {
                   <p className="text-muted-foreground text-sm leading-relaxed">
                     Each model runs the{' '}
                     <span className="text-purple-400">identical prompt</span>{' '}
-                    three times with consistent settings. The highest score is
-                    recorded—mirrors how humans retry when the first attempt
-                    doesn't land.
+                    three times with consistent settings. All MCP servers,
+                    plugins, custom commands, and subagents are{' '}
+                    <span className="text-purple-400">disabled</span>. The
+                    highest score is recorded - mirrors how humans retry when
+                    the first attempt doesn't land.
                   </p>
                 </div>
 
