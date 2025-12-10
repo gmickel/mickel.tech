@@ -115,12 +115,14 @@ export function BenchScoreChart({ data, className }: BenchScoreChartProps) {
         <Legend
           align="center"
           formatter={(value) => (
-            <span className="text-muted-foreground text-xs">{value}</span>
+            <span className="mr-4 ml-1 text-muted-foreground text-xs">
+              {value}
+            </span>
           )}
-          height={32}
+          height={36}
           iconSize={10}
           verticalAlign="top"
-          wrapperStyle={{ paddingBottom: 8 }}
+          wrapperStyle={{ paddingBottom: 12 }}
         />
         <Bar
           dataKey="claude"
