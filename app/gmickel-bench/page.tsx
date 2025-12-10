@@ -403,7 +403,7 @@ export default function GmickelBenchPage() {
                   </div>
                   <p className="text-muted-foreground text-sm leading-relaxed">
                     Scores combine{' '}
-                    <span className="text-purple-400">GPT-o1 Pro</span> as LLM
+                    <span className="text-purple-400">GPT-5.1 Pro</span> as LLM
                     judge (code quality, structure, patterns) with{' '}
                     <span className="text-purple-400">human review</span>{' '}
                     (instruction following, functional correctness, does it
