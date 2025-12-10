@@ -541,12 +541,13 @@ export default function GmickelBenchPage() {
                   SmartTrim with a slightly higher score (Claude close behind).
                 </p>
                 <p>
-                  • Gemini wins low-level systems (Zig) but lags on
-                  heuristics/detail in SmartTrim.
+                  • Gemini wins low-level systems (Zig) but see the notes for
+                  that test; lags on heuristics/detail in SmartTrim.
                 </p>
                 <p>
-                  • All models miss pagination, ACL edges, UI wiring, and
-                  nuanced text heuristics—manual review stays mandatory.
+                  • Common gaps across models: incomplete edge case handling,
+                  missing routes/UI wiring, security invariants need human
+                  review. Manual verification stays mandatory.
                 </p>
               </CardContent>
             </Card>
