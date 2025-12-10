@@ -120,7 +120,7 @@ const benchmarks: Array<{
       type: 'outlier',
       title: 'Why Gemini scored higher',
       content:
-        'Gemini 3.0 Pro was the only model to achieve a working build→train→sample cycle. This appears to be due to its harness continuing to iterate on errors rather than stopping early. Other models produced comparable code quality but their runs terminated before resolving runtime issues.',
+        "Gemini 3.0 Pro was the only model to achieve a working build→train→sample cycle. Its harness kept iterating on errors rather than stopping early—we didn't explicitly prompt it to do this. Other models produced comparable code quality but their runs terminated before resolving runtime issues. Points for getting everything to run, but instruction following... YMMV, depends on how autonomous you like these things to be.",
     },
   },
   {
