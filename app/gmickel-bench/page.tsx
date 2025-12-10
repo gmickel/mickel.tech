@@ -44,18 +44,19 @@ const llmScores = [
   { name: 'Remote Secretary – Design', claude: 78, gemini: 70, codex: 68 },
   { name: 'Tiny GPT – Zig', claude: 40, gemini: 73, codex: 36 },
   { name: 'SmartTrim macOS utility', claude: 79, gemini: 61, codex: 83 },
+  { name: 'XLSX backend + agent tools', claude: 70, gemini: 56, codex: 70 },
 ];
 
 const radarData = [
-  { name: 'Instruction following', claude: 82, codex: 73, gemini: 74 },
-  { name: 'Code quality', claude: 74, codex: 74, gemini: 75 },
-  { name: 'Change hygiene', claude: 82, codex: 78, gemini: 80 },
-  { name: 'Functional correctness', claude: 65, codex: 59.5, gemini: 63.5 },
+  { name: 'Instruction following', claude: 82, codex: 75, gemini: 72 },
+  { name: 'Code quality', claude: 73, codex: 75, gemini: 74 },
+  { name: 'Change hygiene', claude: 80, codex: 78, gemini: 76 },
+  { name: 'Functional correctness', claude: 66, codex: 60, gemini: 62 },
 ];
 
 const totals = [
-  { name: 'Total score', claude: 327, gemini: 316, codex: 305 },
-  { name: 'Average per task', claude: 65.4, gemini: 63.2, codex: 61 },
+  { name: 'Total score', claude: 397, gemini: 372, codex: 375 },
+  { name: 'Average per task', claude: 66.2, gemini: 62.0, codex: 62.5 },
 ];
 
 type BenchmarkLink = { href: string; label: string };
@@ -134,6 +135,24 @@ const benchmarks: Array<{
     ],
     links: [],
   },
+  {
+    id: 'xlsx',
+    title: 'XLSX backend + agent tools',
+    spec: 'Python FastAPI routes + Convex tool wiring + agent prompts + tests/evals for Excel manipulation.',
+    hook: 'Full-stack agent integration: Python service, TypeScript tools, prompt engineering, formula recalc.',
+    takeaways: [
+      'Codex and Claude tied on LLM score but Claude wins on human review (more tests passing).',
+      'Formula recalculation is a common gap - models stub it rather than integrating LibreOffice.',
+      'Gemini regressed existing tools (dropped refetchParagraphs) showing change hygiene risks.',
+    ],
+    links: [],
+    note: {
+      type: 'info',
+      title: 'Cross-stack complexity',
+      content:
+        'This eval touches Python (FastAPI, openpyxl, pandas), TypeScript (Convex actions, agent tools), and prompt engineering. Even with detailed instructions on Excel manipulation, none of the models fully integrated formula recalculation via LibreOffice as specified. The pattern: models implement the happy path but skip the hard system integration.',
+    },
+  },
 ];
 
 const upcoming = [
@@ -172,7 +191,7 @@ export default function GmickelBenchPage() {
               Best-of-3 runs
             </Badge>
             <Badge className="border-white/10 bg-white/5" variant="outline">
-              Updated 9 Dec 2025
+              Updated 10 Dec 2025
             </Badge>
           </div>
           <h1 className="mt-6 font-bold text-4xl text-white leading-tight md:text-5xl">
@@ -192,9 +211,9 @@ export default function GmickelBenchPage() {
 
           <div className="mt-10 grid gap-6 md:grid-cols-3">
             <StatCard
-              hint="MCP auth, ACL sharing, AI dashboard, tiny GPT, macOS utility"
+              hint="MCP auth, ACL sharing, AI dashboard, tiny GPT, macOS utility, XLSX agent"
               label="Benchmarks"
-              value="5"
+              value="6"
             />
             <StatCard
               hint="Full-stack web · macOS utility · systems programming"
@@ -497,7 +516,7 @@ export default function GmickelBenchPage() {
                     <div>
                       <p className="font-medium text-white">DocIQ Sphere</p>
                       <p className="text-muted-foreground text-sm">
-                        MCP server, permissions, docshare, upcoming Python evals
+                        MCP server, permissions, docshare, XLSX agent tools
                       </p>
                     </div>
                   </div>
@@ -540,17 +559,17 @@ export default function GmickelBenchPage() {
               </CardHeader>
               <CardContent className="space-y-3 text-muted-foreground text-sm">
                 <p>
-                  • Claude leads plan-heavy web (permissions); Codex edges
-                  SmartTrim with a slightly higher score (Claude close behind).
+                  • Claude leads overall with strongest instruction following
+                  and change hygiene; Codex edges on pure code quality.
                 </p>
                 <p>
                   • Gemini wins low-level systems (Zig) but see the notes for
-                  that test; lags on heuristics/detail in SmartTrim.
+                  that test; struggles with change hygiene on cross-stack work.
                 </p>
                 <p>
-                  • Common gaps across models: incomplete edge case handling,
-                  missing routes/UI wiring, security invariants need human
-                  review. Manual verification stays mandatory.
+                  • Common gaps: models implement happy paths but skip hard
+                  system integration (formula recalc, LibreOffice). Manual
+                  verification stays mandatory.
                 </p>
               </CardContent>
             </Card>
