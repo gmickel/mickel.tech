@@ -12,23 +12,29 @@ import {
 } from 'recharts';
 
 import { type ChartConfig, ChartContainer } from '@/components/ui/chart';
+import {
+  getFullLabel,
+  getOrderedModels,
+  MODELS,
+  type ModelId,
+} from '@/lib/bench-models';
 import { cn } from '@/lib/utils';
 
 type BenchScore = {
   name: string;
-  claude: number;
-  gemini: number;
-  codex: number;
-};
+} & Partial<Record<ModelId, number>>;
 
-const config: ChartConfig = {
-  claude: { label: 'Claude Opus 4.5', color: '#00e5ff' },
-  gemini: { label: 'Gemini 3 Pro', color: '#ff6bd6' },
-  codex: { label: 'GPT-5.1-codex-max', color: '#9ef36e' },
-};
+function buildConfig(models: ModelId[]): ChartConfig {
+  const cfg: ChartConfig = {};
+  for (const id of models) {
+    cfg[id] = { label: getFullLabel(id), color: MODELS[id].color };
+  }
+  return cfg;
+}
 
 interface BenchScoreChartProps {
   data: BenchScore[];
+  visibleModels: ModelId[];
   className?: string;
 }
 
@@ -79,12 +85,20 @@ function CustomTooltip({
   );
 }
 
-export function BenchScoreChart({ data, className }: BenchScoreChartProps) {
+export function BenchScoreChart({
+  data,
+  visibleModels,
+  className,
+}: BenchScoreChartProps) {
+  const ordered = getOrderedModels(visibleModels);
+  const config = buildConfig(ordered);
+
   return (
     <ChartContainer className={cn('w-full', className)} config={config}>
       <BarChart
         barCategoryGap={24}
         data={data}
+        key={ordered.join('-')}
         margin={{ top: 36, right: 28, left: 16, bottom: 56 }}
       >
         <CartesianGrid
@@ -124,45 +138,22 @@ export function BenchScoreChart({ data, className }: BenchScoreChartProps) {
           verticalAlign="top"
           wrapperStyle={{ paddingBottom: 12 }}
         />
-        <Bar
-          dataKey="claude"
-          fill="var(--color-claude)"
-          name="Claude Opus 4.5"
-          radius={[4, 4, 0, 0]}
-        >
-          {data.map((entry) => (
-            <Cell
-              className="cursor-pointer transition-opacity hover:opacity-80"
-              key={`claude-${entry.name}`}
-            />
-          ))}
-        </Bar>
-        <Bar
-          dataKey="codex"
-          fill="var(--color-codex)"
-          name="GPT-5.1-codex-max"
-          radius={[4, 4, 0, 0]}
-        >
-          {data.map((entry) => (
-            <Cell
-              className="cursor-pointer transition-opacity hover:opacity-80"
-              key={`codex-${entry.name}`}
-            />
-          ))}
-        </Bar>
-        <Bar
-          dataKey="gemini"
-          fill="var(--color-gemini)"
-          name="Gemini 3 Pro"
-          radius={[4, 4, 0, 0]}
-        >
-          {data.map((entry) => (
-            <Cell
-              className="cursor-pointer transition-opacity hover:opacity-80"
-              key={`gemini-${entry.name}`}
-            />
-          ))}
-        </Bar>
+        {ordered.map((modelId) => (
+          <Bar
+            dataKey={modelId}
+            fill={`var(--color-${modelId})`}
+            key={modelId}
+            name={getFullLabel(modelId)}
+            radius={[4, 4, 0, 0]}
+          >
+            {data.map((entry) => (
+              <Cell
+                className="cursor-pointer transition-opacity hover:opacity-80"
+                key={`${modelId}-${entry.name}`}
+              />
+            ))}
+          </Bar>
+        ))}
       </BarChart>
     </ChartContainer>
   );

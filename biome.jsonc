@@ -48,7 +48,8 @@
         "noRedundantRoles": "warn"
       },
       "nursery": {
-        "noShadow": "off"
+        "noShadow": "off",
+        "noLeakedRender": "off"
       },
       "correctness": {
         "useExhaustiveDependencies": "warn"

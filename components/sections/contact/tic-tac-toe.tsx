@@ -382,17 +382,17 @@ export function TicTacToeBoard({
           );
         })}
       </div>
-      {statusText && (
+      {statusText ? (
         <p className="text-[11px] text-white/60 uppercase tracking-wider">
           {statusText}
         </p>
-      )}
-      {gameActive && (
+      ) : null}
+      {gameActive ? (
         <p className="text-[11px] text-white/50">
           Use keys 1-9 to deploy X. Press Q to abort session.
         </p>
-      )}
-      {gameLog.length > 0 && (
+      ) : null}
+      {gameLog.length > 0 ? (
         <div
           className="no-scrollbar max-h-24 overflow-y-auto rounded border border-white/10 bg-black/30 p-3"
           ref={gameLogRef}
@@ -407,7 +407,7 @@ export function TicTacToeBoard({
             </p>
           ))}
         </div>
-      )}
+      ) : null}
     </div>
   );
 }

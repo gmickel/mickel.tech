@@ -124,6 +124,7 @@ export default async function LogPostPage({
       <div className="prose prose-invert max-w-none">
         <MDXRemote
           components={mdxComponents}
+          // biome-ignore lint/suspicious/noExplicitAny: MDX types are complex
           options={mdxOptions as any}
           source={post.content}
         />

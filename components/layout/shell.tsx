@@ -123,7 +123,7 @@ export default function Shell({ children }: ShellProps) {
       <main className="relative z-10 pt-14">{children}</main>
 
       {/* Wireframe Overlay Label */}
-      {wireframe && (
+      {wireframe ? (
         <div
           aria-live="polite"
           className="fixed right-4 bottom-4 z-50 border border-success bg-black/80 px-2 py-1 font-mono text-success text-xs"
@@ -131,7 +131,7 @@ export default function Shell({ children }: ShellProps) {
         >
           MODE: ARCHITECT_VIEW // WIREFRAME
         </div>
-      )}
+      ) : null}
     </div>
   );
 }

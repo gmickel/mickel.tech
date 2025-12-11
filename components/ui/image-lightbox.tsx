@@ -73,11 +73,11 @@ export function ImageLightbox({
               src={src}
               width={width * 2}
             />
-            {caption && (
+            {caption ? (
               <p className="mt-3 text-center font-mono text-muted-foreground text-sm">
                 {caption}
               </p>
-            )}
+            ) : null}
           </div>
 
           <DialogPrimitive.Close className="-top-12 absolute right-0 rounded-full border border-white/20 bg-black/50 p-2 text-white/70 transition-colors hover:bg-black/70 hover:text-white">

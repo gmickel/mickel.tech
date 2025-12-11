@@ -1,11 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 
-import { BenchScoreChart } from '@/components/gmickel/bench-score-chart';
-import {
-  CategoryBars,
-  TotalsBar,
-} from '@/components/gmickel/bench-total-chart';
+import { BenchDashboard } from '@/components/gmickel/bench-dashboard';
 import Shell from '@/components/layout/shell';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -32,32 +28,6 @@ export const metadata: Metadata = {
     canonical: 'https://mickel.tech/gmickel-bench',
   },
 };
-
-const llmScores = [
-  { name: 'Convex OAuth MCP slice', claude: 65, gemini: 63, codex: 60 },
-  {
-    name: 'Convex permissions (docs/folders)',
-    claude: 65,
-    gemini: 49,
-    codex: 58,
-  },
-  { name: 'Remote Secretary – Design', claude: 78, gemini: 70, codex: 68 },
-  { name: 'Tiny GPT – Zig', claude: 40, gemini: 73, codex: 36 },
-  { name: 'SmartTrim macOS utility', claude: 79, gemini: 61, codex: 83 },
-  { name: 'XLSX backend + agent tools', claude: 70, gemini: 56, codex: 70 },
-];
-
-const radarData = [
-  { name: 'Instruction following', claude: 82, codex: 75, gemini: 72 },
-  { name: 'Code quality', claude: 73, codex: 75, gemini: 74 },
-  { name: 'Change hygiene', claude: 80, codex: 78, gemini: 76 },
-  { name: 'Functional correctness', claude: 66, codex: 60, gemini: 62 },
-];
-
-const totals = [
-  { name: 'Total score', claude: 397, gemini: 372, codex: 375 },
-  { name: 'Average per task', claude: 66.2, gemini: 62.0, codex: 62.5 },
-];
 
 type BenchmarkLink = { href: string; label: string };
 
@@ -228,72 +198,7 @@ export default function GmickelBenchPage() {
           </div>
         </section>
 
-        <section className="relative mx-auto max-w-6xl px-6 pb-16 md:px-10">
-          <Card className="border-primary/20 bg-card/80">
-            <CardHeader className="flex flex-col gap-2 pb-6">
-              <div className="flex flex-wrap items-center gap-3">
-                <p className="font-mono text-[11px] text-primary tracking-[0.2em]">
-                  SCOREBOARD // LLM + HUMAN
-                </p>
-                <Separator className="h-4 bg-white/10" orientation="vertical" />
-                <span className="text-muted-foreground text-xs">
-                  Mix of LLM judge plus human evaluation/acceptance,
-                  best-of-three per model
-                </span>
-              </div>
-              <CardTitle className="text-2xl text-white">
-                Where each model shines per surface
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="pb-8">
-              <BenchScoreChart className="h-[420px]" data={llmScores} />
-            </CardContent>
-          </Card>
-        </section>
-
-        <section className="relative mx-auto max-w-6xl px-6 pb-16 md:px-10">
-          <div className="grid gap-6 lg:grid-cols-2">
-            <Card className="border-white/10 bg-card/80">
-              <CardHeader className="flex flex-col gap-2 pb-4">
-                <div className="flex flex-wrap items-center gap-3">
-                  <p className="font-mono text-[11px] text-primary tracking-[0.2em]">
-                    TOTALS // LLM + HUMAN
-                  </p>
-                  <Separator
-                    className="h-4 bg-white/10"
-                    orientation="vertical"
-                  />
-                  <span className="text-muted-foreground text-xs">
-                    Sum + average across all benches (best-of-3 per model)
-                  </span>
-                </div>
-                <CardTitle className="text-2xl text-white">
-                  Overall score totals
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <TotalsBar className="h-[320px]" data={totals} />
-              </CardContent>
-            </Card>
-
-            <Card className="border-white/10 bg-card/80">
-              <CardHeader className="flex flex-col gap-2 pb-4">
-                <p className="font-mono text-[11px] text-primary tracking-[0.2em]">
-                  CATEGORIES // NORMALIZED
-                </p>
-                <CardTitle className="text-2xl text-white">
-                  Strengths across categories
-                </CardTitle>
-                <span className="text-muted-foreground text-xs">
-                  Normalized vs. max per dimension (0–100)
-                </span>
-              </CardHeader>
-              <CardContent>
-                <CategoryBars className="h-[340px]" data={radarData} />
-              </CardContent>
-            </Card>
-          </div>
-        </section>
+        <BenchDashboard />
 
         <section className="relative mx-auto max-w-6xl px-6 pb-16 md:px-10">
           <div className="mb-6 flex items-center gap-3">
@@ -334,7 +239,7 @@ export default function GmickelBenchPage() {
                       </li>
                     ))}
                   </ul>
-                  {bench.note && (
+                  {bench.note ? (
                     <div className="mt-4 rounded-lg border border-amber-500/30 bg-amber-500/5 p-4">
                       <div className="mb-2 flex items-center gap-2">
                         <div className="h-1.5 w-1.5 rounded-full bg-amber-400" />
@@ -351,7 +256,7 @@ export default function GmickelBenchPage() {
                         {bench.note.content}
                       </p>
                     </div>
-                  )}
+                  ) : null}
                   {bench.links.length > 0 && (
                     <div className="flex flex-wrap gap-3 pt-2">
                       {bench.links.map((link) => (

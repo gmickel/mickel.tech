@@ -16,32 +16,43 @@ import {
 } from 'recharts';
 
 import { type ChartConfig, ChartContainer } from '@/components/ui/chart';
+import {
+  getFullLabel,
+  getOrderedModels,
+  MODELS,
+  type ModelId,
+} from '@/lib/bench-models';
 import { cn } from '@/lib/utils';
 
 type TotalsDatum = {
   name: string;
-  claude: number;
-  gemini: number;
-  codex: number;
-};
+} & Partial<Record<ModelId, number>>;
 
-const palette: ChartConfig = {
-  claude: { label: 'Claude Opus 4.5', color: '#00e5ff' },
-  gemini: { label: 'Gemini 3 Pro', color: '#ff6bd6' },
-  codex: { label: 'GPT-5.1-codex-max', color: '#9ef36e' },
-};
+function buildPalette(models: ModelId[]): ChartConfig {
+  const cfg: ChartConfig = {};
+  for (const id of models) {
+    cfg[id] = { label: getFullLabel(id), color: MODELS[id].color };
+  }
+  return cfg;
+}
 
 export function TotalsBar({
   data,
+  visibleModels,
   className,
 }: {
   data: TotalsDatum[];
+  visibleModels: ModelId[];
   className?: string;
 }) {
+  const ordered = getOrderedModels(visibleModels);
+  const palette = buildPalette(ordered);
+
   return (
     <ChartContainer className={cn('w-full', className)} config={palette}>
       <BarChart
         data={data}
+        key={ordered.join('-')}
         margin={{ top: 12, right: 16, left: 8, bottom: 28 }}
       >
         <CartesianGrid
@@ -89,24 +100,15 @@ export function TotalsBar({
           verticalAlign="top"
           wrapperStyle={{ paddingBottom: 8 }}
         />
-        <Bar
-          dataKey="claude"
-          fill="var(--color-claude)"
-          name="Claude Opus 4.5"
-          radius={[4, 4, 0, 0]}
-        />
-        <Bar
-          dataKey="codex"
-          fill="var(--color-codex)"
-          name="GPT-5.1-codex-max"
-          radius={[4, 4, 0, 0]}
-        />
-        <Bar
-          dataKey="gemini"
-          fill="var(--color-gemini)"
-          name="Gemini 3 Pro"
-          radius={[4, 4, 0, 0]}
-        />
+        {ordered.map((modelId) => (
+          <Bar
+            dataKey={modelId}
+            fill={`var(--color-${modelId})`}
+            key={modelId}
+            name={getFullLabel(modelId)}
+            radius={[4, 4, 0, 0]}
+          />
+        ))}
       </BarChart>
     </ChartContainer>
   );
@@ -114,11 +116,16 @@ export function TotalsBar({
 
 export function RadarStrengths({
   data,
+  visibleModels,
   className,
 }: {
   data: TotalsDatum[];
+  visibleModels: ModelId[];
   className?: string;
 }) {
+  const ordered = getOrderedModels(visibleModels);
+  const palette = buildPalette(ordered);
+
   return (
     <ChartContainer className={cn('w-full', className)} config={palette}>
       <RadarChart
@@ -126,6 +133,7 @@ export function RadarStrengths({
         cy="50%"
         data={data}
         endAngle={-270}
+        key={ordered.join('-')}
         outerRadius="80%"
         startAngle={90}
       >
@@ -164,27 +172,16 @@ export function RadarStrengths({
             </div>
           )}
         />
-        <Radar
-          dataKey="claude"
-          fill="var(--color-claude)"
-          fillOpacity={0.2}
-          name="Claude Opus 4.5"
-          stroke="var(--color-claude)"
-        />
-        <Radar
-          dataKey="codex"
-          fill="var(--color-codex)"
-          fillOpacity={0.2}
-          name="GPT-5.1-codex-max"
-          stroke="var(--color-codex)"
-        />
-        <Radar
-          dataKey="gemini"
-          fill="var(--color-gemini)"
-          fillOpacity={0.2}
-          name="Gemini 3 Pro"
-          stroke="var(--color-gemini)"
-        />
+        {ordered.map((modelId) => (
+          <Radar
+            dataKey={modelId}
+            fill={`var(--color-${modelId})`}
+            fillOpacity={0.2}
+            key={modelId}
+            name={getFullLabel(modelId)}
+            stroke={`var(--color-${modelId})`}
+          />
+        ))}
       </RadarChart>
     </ChartContainer>
   );
@@ -192,15 +189,21 @@ export function RadarStrengths({
 
 export function CategoryBars({
   data,
+  visibleModels,
   className,
 }: {
   data: TotalsDatum[];
+  visibleModels: ModelId[];
   className?: string;
 }) {
+  const ordered = getOrderedModels(visibleModels);
+  const palette = buildPalette(ordered);
+
   return (
     <ChartContainer className={cn('w-full', className)} config={palette}>
       <BarChart
         data={data}
+        key={ordered.join('-')}
         layout="vertical"
         margin={{ top: 12, right: 16, left: 80, bottom: 12 }}
         stackOffset="none"
@@ -247,24 +250,15 @@ export function CategoryBars({
           verticalAlign="top"
           wrapperStyle={{ paddingBottom: 8 }}
         />
-        <Bar
-          dataKey="claude"
-          fill="var(--color-claude)"
-          name="Claude Opus 4.5"
-          radius={[6, 6, 6, 6]}
-        />
-        <Bar
-          dataKey="codex"
-          fill="var(--color-codex)"
-          name="GPT-5.1-codex-max"
-          radius={[6, 6, 6, 6]}
-        />
-        <Bar
-          dataKey="gemini"
-          fill="var(--color-gemini)"
-          name="Gemini 3 Pro"
-          radius={[6, 6, 6, 6]}
-        />
+        {ordered.map((modelId) => (
+          <Bar
+            dataKey={modelId}
+            fill={`var(--color-${modelId})`}
+            key={modelId}
+            name={getFullLabel(modelId)}
+            radius={[6, 6, 6, 6]}
+          />
+        ))}
       </BarChart>
     </ChartContainer>
   );

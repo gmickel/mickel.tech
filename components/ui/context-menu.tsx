@@ -25,7 +25,7 @@ const ContextMenuSubTrigger = React.forwardRef<
   <ContextMenuPrimitive.SubTrigger
     className={cn(
       'flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none focus:bg-accent focus:text-accent-foreground data-[state=open]:bg-accent data-[state=open]:text-accent-foreground',
-      inset && 'pl-8',
+      inset ? 'pl-8' : undefined,
       className
     )}
     ref={ref}
@@ -78,7 +78,7 @@ const ContextMenuItem = React.forwardRef<
   <ContextMenuPrimitive.Item
     className={cn(
       'relative flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50',
-      inset && 'pl-8',
+      inset ? 'pl-8' : undefined,
       className
     )}
     ref={ref}
@@ -142,7 +142,7 @@ const ContextMenuLabel = React.forwardRef<
   <ContextMenuPrimitive.Label
     className={cn(
       'px-2 py-1.5 font-semibold text-foreground text-sm',
-      inset && 'pl-8',
+      inset ? 'pl-8' : undefined,
       className
     )}
     ref={ref}

@@ -63,11 +63,11 @@ export default async function LogIndexPage() {
                 <span>{formatDate(post.publishedAt)}</span>
                 <div className="flex items-center gap-3">
                   <span className="text-primary">LOG ENTRY</span>
-                  {post.canonicalSource && (
+                  {post.canonicalSource ? (
                     <span className="text-muted-foreground text-xs">
                       SOURCE: {post.canonicalSource.toUpperCase()}
                     </span>
-                  )}
+                  ) : null}
                 </div>
               </div>
 

@@ -231,7 +231,9 @@ const ChartTooltipContent = React.forwardRef<
                   )}
                   key={item.dataKey}
                 >
-                  {formatter && item?.value !== undefined && item.name ? (
+                  {formatter &&
+                  item?.value !== undefined &&
+                  item.name !== undefined ? (
                     (
                       formatter as unknown as (
                         value: unknown,
@@ -255,7 +257,7 @@ const ChartTooltipContent = React.forwardRef<
                                 'w-1': indicator === 'line',
                                 'w-0 border-[1.5px] border-dashed bg-transparent':
                                   indicator === 'dashed',
-                                'my-0.5': nestLabel && indicator === 'dashed',
+                                'my-0.5': !!nestLabel && indicator === 'dashed',
                               }
                             )}
                             style={
@@ -279,11 +281,11 @@ const ChartTooltipContent = React.forwardRef<
                             {itemConfig?.label || item.name}
                           </span>
                         </div>
-                        {item.value && (
+                        {item.value !== undefined && item.value !== null ? (
                           <span className="font-medium font-mono text-foreground tabular-nums">
                             {item.value.toLocaleString()}
                           </span>
-                        )}
+                        ) : null}
                       </div>
                     </>
                   )}

@@ -198,10 +198,12 @@ function CalendarDayButton({
       data-range-middle={modifiers.range_middle}
       data-range-start={modifiers.range_start}
       data-selected-single={
-        modifiers.selected &&
-        !modifiers.range_start &&
-        !modifiers.range_end &&
-        !modifiers.range_middle
+        Boolean(
+          modifiers.selected &&
+            !modifiers.range_start &&
+            !modifiers.range_end &&
+            !modifiers.range_middle
+        ) || undefined
       }
       ref={ref}
       size="icon"

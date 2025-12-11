@@ -43,14 +43,14 @@ export default function Contact() {
           <TerminalHeader />
 
           <div className="flex flex-grow flex-col">
-            {game.isVisible && (
+            {game.isVisible ? (
               <TicTacToeBoard
                 board={game.board}
                 gameActive={game.gameActive}
                 gameLog={game.gameLog}
                 statusText={game.statusText}
               />
-            )}
+            ) : null}
 
             <TerminalOutput
               focusInput={terminal.focusInput}

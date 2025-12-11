@@ -1,0 +1,97 @@
+'use client';
+
+import { motion } from 'framer-motion';
+
+import { MODEL_IDS, MODELS, type ModelId } from '@/lib/bench-models';
+import { cn } from '@/lib/utils';
+
+interface ModelFilterProps {
+  visibleModels: ModelId[];
+  onToggle: (modelId: ModelId) => void;
+  className?: string;
+}
+
+export function ModelFilter({
+  visibleModels,
+  onToggle,
+  className,
+}: ModelFilterProps) {
+  return (
+    <div className={cn('flex flex-wrap items-center gap-2', className)}>
+      <span className="mr-1 font-mono text-[10px] text-muted-foreground uppercase tracking-widest">
+        Harness
+      </span>
+      {MODEL_IDS.map((id) => {
+        const m = MODELS[id];
+        const isActive = visibleModels.includes(id);
+
+        return (
+          <button
+            aria-pressed={isActive}
+            className={cn(
+              'group relative flex items-center gap-2.5 rounded-lg border px-3 py-2 transition-all duration-200',
+              isActive
+                ? 'border-white/20 bg-white/5'
+                : 'border-white/5 bg-transparent hover:border-white/10 hover:bg-white/[0.02]'
+            )}
+            key={id}
+            onClick={() => onToggle(id)}
+            type="button"
+          >
+            {/* Color indicator with glow */}
+            <span className="relative flex-shrink-0">
+              <span
+                className={cn(
+                  'block h-2.5 w-2.5 rounded-full transition-all duration-200',
+                  isActive ? 'scale-100' : 'scale-75 opacity-40'
+                )}
+                style={{ backgroundColor: m.color }}
+              />
+              {isActive ? (
+                <motion.span
+                  animate={{ opacity: [0.5, 0.2, 0.5] }}
+                  className="absolute inset-0 rounded-full blur-sm"
+                  style={{ backgroundColor: m.color }}
+                  transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
+                />
+              ) : null}
+            </span>
+
+            {/* Harness / Model stacked */}
+            <span className="flex flex-col items-start leading-none">
+              <span
+                className={cn(
+                  'font-mono text-[9px] uppercase tracking-wider transition-colors duration-200',
+                  isActive ? 'text-white/50' : 'text-white/30'
+                )}
+              >
+                {m.harness}
+              </span>
+              <span
+                className={cn(
+                  'mt-0.5 font-mono text-[11px] transition-colors duration-200',
+                  isActive ? 'text-white' : 'text-muted-foreground'
+                )}
+              >
+                {m.model}
+              </span>
+            </span>
+
+            {/* Checkmark */}
+            <span
+              className={cn(
+                'ml-1 text-[10px] transition-all duration-200',
+                isActive
+                  ? 'translate-x-0 opacity-100'
+                  : '-translate-x-1 opacity-0'
+              )}
+              style={{ color: m.color }}
+            >
+              ✓
+            </span>
+          </button>
+        );
+      })}
+    </div>
+  );
+}

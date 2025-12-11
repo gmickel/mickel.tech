@@ -33,11 +33,11 @@ export default function SystemError({ error, reset }: ErrorProps) {
         </p>
 
         {/* Error Details */}
-        {error.digest && (
+        {error.digest ? (
           <p className="font-mono text-muted-foreground text-xs">
             Error ID: {error.digest}
           </p>
-        )}
+        ) : null}
 
         {/* Action Buttons */}
         <div className="flex flex-col gap-4 pt-4">
