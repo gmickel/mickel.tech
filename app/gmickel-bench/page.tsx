@@ -50,8 +50,8 @@ const benchmarks: Array<{
     spec: 'Dense spec. Full vertical slice on Convex + Better Auth + MCP; discovery, scopes, admin UI, tests.',
     hook: 'Security-sensitive slice with OAuth semantics, streaming MCP transport, and admin surface.',
     takeaways: [
-      'Dense plans still leave scope edges (org metadata, pagination, export scopes) uncovered.',
-      'Vertical slices over Convex stack are viable for LLMs but need human review on security invariants.',
+      'GPT-5.2 leads (76) with cleanest scope handling; Claude second (65), Gemini close (63).',
+      'Dense plans still leave scope edges uncovered—human review mandatory on security invariants.',
     ],
     links: [],
   },
@@ -61,8 +61,8 @@ const benchmarks: Array<{
     spec: 'Extend existing ACL whitelist to docs/folders; inheritance, Better Auth invites, guest filtering, tests.',
     hook: 'Tests whether agents can extend ACL patterns without regressions when specs are intentionally light.',
     takeaways: [
-      'Inference from existing ACLs is error-prone: owner checks skipped, guest filters incomplete, activation hooks missing.',
-      'UI dialogs often wired incorrectly without explicit triggers; best-of-3 helps catch flukes.',
+      'GPT-5.2 dominates (78) with best ACL inference; Claude (65) solid; Gemini struggles (49).',
+      'Owner checks, guest filters, activation hooks—common gaps even with light specs.',
     ],
     links: [],
   },
@@ -72,8 +72,8 @@ const benchmarks: Array<{
     spec: 'High-spec UX brief; Next 16 App Router + Tailwind + shadcn; multi-page customer portal.',
     hook: 'Separates layout craft from data wiring; measures taste + speed under strong aesthetic constraints.',
     takeaways: [
-      'Design plugins boosted polish but navigation completeness still lags (missing routes).',
-      'Codex produced fastest single-page polish; Claude+plugin best overall design score.',
+      'GPT-5.2 edges out Claude (81 vs 78); both benefit from design plugins for polish.',
+      'Navigation completeness still lags across all models—missing routes, incomplete flows.',
     ],
     links: [],
   },
@@ -83,8 +83,8 @@ const benchmarks: Array<{
     spec: 'Medium-spec prompt; char-level GPT, AdamW, warmup/cosine, CPU-only; build/train/sample acceptance.',
     hook: "Cross-language generalisation on Karpathy's minGPT/nanoGPT lineage, rebuilt in Zig without ML libs.",
     takeaways: [
-      'Runtime bonus matters: only Gemini passed build→train→sample; others crashed on backprop/matmul.',
-      'Initialization hygiene and buffer sizing are frequent failure points even when shape math looks right.',
+      'Gemini wins (73) but GPT-5.2 now competitive (66)—huge jump from GPT-5.1 (36).',
+      'Claude/Codex 5.1 still crash on backprop/matmul; init hygiene and buffer sizing remain pain points.',
     ],
     links: [],
     note: {
@@ -100,8 +100,8 @@ const benchmarks: Array<{
     spec: 'Swift 6 LSUIElement MenuBarExtra with TextHealer heuristic, clipboard monitor, tests, hotkey, login item.',
     hook: 'System-integration slice: macOS menu bar UI, clipboard healing, global hotkey, launch-at-login.',
     takeaways: [
-      'Claude and Codex meet tests and real clipboard healing; Gemini leaves minor ghost indentation.',
-      'Strict concurrency + SwiftUI + system APIs are tractable; heuristics still need human-tuned edges.',
+      'GPT-5.1 wins (83), Claude close (79), GPT-5.2 solid (77); Gemini lags (61) with ghost indentation.',
+      'Swift 6 strict concurrency + SwiftUI tractable; heuristics still need human-tuned edges.',
     ],
     links: [],
   },
@@ -111,8 +111,8 @@ const benchmarks: Array<{
     spec: 'Python FastAPI routes + Convex tool wiring + agent prompts + tests/evals for Excel manipulation.',
     hook: 'Full-stack agent integration: Python service, TypeScript tools, prompt engineering, formula recalc.',
     takeaways: [
-      'Codex and Claude tied on LLM score but Claude wins on human review (more tests passing).',
-      'Formula recalculation is a common gap - models stub it rather than integrating LibreOffice.',
+      'GPT-5.2 leads (71); GPT-5.1 (65) and Claude (63) close; Gemini struggles (53).',
+      'Formula recalculation common gap—models stub it rather than integrating LibreOffice.',
       'Gemini regressed existing tools (dropped refetchParagraphs) showing change hygiene risks.',
     ],
     links: [],
