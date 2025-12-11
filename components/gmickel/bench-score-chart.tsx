@@ -22,6 +22,7 @@ import { cn } from '@/lib/utils';
 
 type BenchScore = {
   name: string;
+  shortName?: string;
 } & Partial<Record<ModelId, number>>;
 
 function buildConfig(models: ModelId[]): ChartConfig {
@@ -41,7 +42,6 @@ interface BenchScoreChartProps {
 function CustomTooltip({
   active,
   payload,
-  label,
 }: {
   active?: boolean;
   payload?: Array<{
@@ -50,6 +50,7 @@ function CustomTooltip({
     dataKey: string;
     color?: string;
     fill?: string;
+    payload?: { name?: string };
   }>;
   label?: string;
 }) {
@@ -57,9 +58,12 @@ function CustomTooltip({
     return null;
   }
 
+  // Get full name from the data point
+  const fullName = payload[0]?.payload?.name;
+
   return (
     <div className="rounded-lg border border-border/50 bg-background/95 px-3 py-2.5 shadow-xl backdrop-blur-sm">
-      <p className="mb-2 font-medium text-sm text-white">{label}</p>
+      <p className="mb-2 font-medium text-sm text-white">{fullName}</p>
       <div className="space-y-1.5">
         {payload.map((entry) => (
           <div
@@ -108,7 +112,7 @@ export function BenchScoreChart({
         />
         <XAxis
           axisLine={false}
-          dataKey="name"
+          dataKey="shortName"
           interval={0}
           tick={{ fontSize: 11, fill: 'hsl(var(--muted-foreground))', dy: 10 }}
           tickLine={false}
