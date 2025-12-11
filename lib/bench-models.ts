@@ -22,7 +22,7 @@ export const MODELS: Record<ModelId, ModelConfig> = {
     harnessVersion: 'v2.0.64',
     model: 'Opus 4.5 thinking',
     color: '#00e5ff',
-    order: 1,
+    order: 2,
     benchDate: '2025-12-09',
   },
   codex: {
@@ -31,7 +31,7 @@ export const MODELS: Record<ModelId, ModelConfig> = {
     harnessVersion: 'v0.66.0',
     model: 'GPT-5.1-codex-max medium',
     color: '#9ef36e',
-    order: 2,
+    order: 3,
     benchDate: '2025-12-09',
   },
   codex52: {
@@ -49,7 +49,7 @@ export const MODELS: Record<ModelId, ModelConfig> = {
     harnessVersion: 'v0.19.4',
     model: 'Gemini 3 Pro',
     color: '#ff6bd6',
-    order: 3,
+    order: 4,
     benchDate: '2025-12-09',
   },
 } as const;
