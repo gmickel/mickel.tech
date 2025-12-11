@@ -73,7 +73,8 @@ export function ModelFilter({
                   isActive ? 'text-white/50' : 'text-white/30'
                 )}
               >
-                {m.harness}
+                {m.harness}{' '}
+                <span className="opacity-60">{m.harnessVersion}</span>
               </span>
               <span
                 className={cn(
