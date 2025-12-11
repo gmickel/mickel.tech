@@ -4,7 +4,6 @@ import {
   Bar,
   BarChart,
   CartesianGrid,
-  Legend,
   PolarAngleAxis,
   PolarGrid,
   PolarRadiusAxis,
@@ -93,12 +92,6 @@ export function TotalsBar({
             </div>
           )}
           cursor={{ fill: 'rgba(255,255,255,0.04)', radius: 4 }}
-        />
-        <Legend
-          align="center"
-          height={32}
-          verticalAlign="top"
-          wrapperStyle={{ paddingBottom: 8 }}
         />
         {ordered.map((modelId) => (
           <Bar
@@ -243,12 +236,6 @@ export function CategoryBars({
             </div>
           )}
           cursor={{ fill: 'rgba(255,255,255,0.04)' }}
-        />
-        <Legend
-          align="center"
-          height={32}
-          verticalAlign="top"
-          wrapperStyle={{ paddingBottom: 8 }}
         />
         {ordered.map((modelId) => (
           <Bar

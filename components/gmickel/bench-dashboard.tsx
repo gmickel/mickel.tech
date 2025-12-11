@@ -14,8 +14,29 @@ import { llmScores, radarData, toChartData, totals } from '@/lib/bench-data';
 import {
   getDefaultVisibleModels,
   getOrderedModels,
+  getShortLabel,
+  MODELS,
   type ModelId,
 } from '@/lib/bench-models';
+
+function ChartLegend({ visibleModels }: { visibleModels: ModelId[] }) {
+  const ordered = getOrderedModels(visibleModels);
+  return (
+    <div className="mb-4 flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
+      {ordered.map((id) => (
+        <div className="flex items-center gap-2" key={id}>
+          <span
+            className="h-3 w-3 rounded-sm"
+            style={{ backgroundColor: MODELS[id].color }}
+          />
+          <span className="font-mono text-muted-foreground text-xs">
+            {getShortLabel(id)}
+          </span>
+        </div>
+      ))}
+    </div>
+  );
+}
 
 export function BenchDashboard() {
   const [visibleModels, setVisibleModels] = useState<ModelId[]>(
@@ -81,6 +102,7 @@ export function BenchDashboard() {
 
       {/* Totals & Categories Section */}
       <section className="relative mx-auto max-w-6xl px-6 pb-16 md:px-10">
+        <ChartLegend visibleModels={visibleModels} />
         <div className="grid gap-6 lg:grid-cols-2">
           <Card className="border-white/10 bg-card/80">
             <CardHeader className="flex flex-col gap-2 pb-4">
