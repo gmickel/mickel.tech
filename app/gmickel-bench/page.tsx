@@ -498,56 +498,6 @@ export default function GmickelBenchPage() {
             </Card>
           </div>
 
-          {/* Tool Versions */}
-          <div className="mt-10 rounded-xl border border-white/10 bg-black/40 p-6">
-            <div className="mb-4 flex flex-wrap items-center gap-2">
-              <Badge
-                className="border-emerald-500/40 bg-emerald-500/10 text-emerald-400"
-                variant="outline"
-              >
-                Transparency
-              </Badge>
-              <span className="text-muted-foreground text-xs">
-                Exact tool versions used for reproducibility
-              </span>
-            </div>
-            <div className="grid gap-4 sm:grid-cols-3">
-              <div className="flex items-center gap-3 rounded-lg border border-white/5 bg-white/5 p-3">
-                <div className="flex h-10 w-10 items-center justify-center rounded-lg border border-cyan-500/30 bg-cyan-500/10">
-                  <span className="font-mono text-cyan-400 text-xs">CL</span>
-                </div>
-                <div>
-                  <p className="font-medium text-sm text-white">Claude Code</p>
-                  <p className="font-mono text-muted-foreground text-xs">
-                    v2.0.64
-                  </p>
-                </div>
-              </div>
-              <div className="flex items-center gap-3 rounded-lg border border-white/5 bg-white/5 p-3">
-                <div className="flex h-10 w-10 items-center justify-center rounded-lg border border-green-500/30 bg-green-500/10">
-                  <span className="font-mono text-green-400 text-xs">CX</span>
-                </div>
-                <div>
-                  <p className="font-medium text-sm text-white">Codex CLI</p>
-                  <p className="font-mono text-muted-foreground text-xs">
-                    v0.66.0
-                  </p>
-                </div>
-              </div>
-              <div className="flex items-center gap-3 rounded-lg border border-white/5 bg-white/5 p-3">
-                <div className="flex h-10 w-10 items-center justify-center rounded-lg border border-blue-500/30 bg-blue-500/10">
-                  <span className="font-mono text-blue-400 text-xs">GM</span>
-                </div>
-                <div>
-                  <p className="font-medium text-sm text-white">Gemini CLI</p>
-                  <p className="font-mono text-muted-foreground text-xs">
-                    v0.19.4
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
           <div className="mt-10 rounded-xl border border-white/10 bg-card/60 p-6">
             <div className="flex flex-wrap items-center gap-2">
               <Badge className="border-white/20 text-white" variant="outline">
