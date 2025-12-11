@@ -20,7 +20,7 @@ export const MODELS: Record<ModelId, ModelConfig> = {
     id: 'claude',
     harness: 'Claude Code',
     harnessVersion: 'v2.0.64',
-    model: 'Opus 4.5',
+    model: 'Opus 4.5 thinking',
     color: '#00e5ff',
     order: 1,
     benchDate: '2025-12-09',
@@ -29,7 +29,7 @@ export const MODELS: Record<ModelId, ModelConfig> = {
     id: 'codex',
     harness: 'Codex CLI',
     harnessVersion: 'v0.66.0',
-    model: 'GPT-5.1',
+    model: 'GPT-5.1-codex-max medium',
     color: '#9ef36e',
     order: 2,
     benchDate: '2025-12-09',
@@ -37,8 +37,8 @@ export const MODELS: Record<ModelId, ModelConfig> = {
   codex52: {
     id: 'codex52',
     harness: 'Codex CLI',
-    harnessVersion: 'v0.66.0',
-    model: 'GPT-5.2',
+    harnessVersion: 'v0.71.0',
+    model: 'GPT-5.2', // Update to full name when decided
     color: '#ffd166',
     order: 4, // Move to 1 when data is ready
     benchDate: '2025-12-11',
