@@ -86,7 +86,7 @@ export function ModelFilter({
               <span
                 className={cn(
                   'mt-1 font-mono text-[8px] uppercase tracking-widest transition-colors duration-200',
-                  isActive ? 'text-white/30' : 'text-white/15'
+                  isActive ? 'text-white/50' : 'text-white/25'
                 )}
               >
                 <span className="opacity-60">RAN:</span>{' '}
