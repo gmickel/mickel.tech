@@ -38,7 +38,7 @@ export const MODELS: Record<ModelId, ModelConfig> = {
     id: 'codex52',
     harness: 'Codex CLI',
     harnessVersion: 'v0.71.0',
-    model: 'GPT-5.2', // Update to full name when decided
+    model: 'GPT-5.2 medium',
     color: '#ffd166',
     order: 4, // Move to 1 when data is ready
     benchDate: '2025-12-11',
