@@ -139,6 +139,12 @@ export function BenchScoreChart({
           )}
           height={36}
           iconSize={10}
+          payload={ordered.map((id) => ({
+            value: getFullLabel(id),
+            type: 'square',
+            color: MODELS[id].color,
+            dataKey: id,
+          }))}
           verticalAlign="top"
           wrapperStyle={{ paddingBottom: 12 }}
         />
