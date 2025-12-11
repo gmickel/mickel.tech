@@ -40,7 +40,7 @@ export const MODELS: Record<ModelId, ModelConfig> = {
     harnessVersion: 'v0.71.0',
     model: 'GPT-5.2 medium',
     color: '#ffd166',
-    order: 4, // Move to 1 when data is ready
+    order: 1,
     benchDate: '2025-12-11',
   },
   gemini: {
@@ -67,7 +67,7 @@ export function getShortLabel(id: ModelId): string {
 
 export const MODEL_IDS = Object.keys(MODELS) as ModelId[];
 
-export const DEFAULT_VISIBLE_COUNT = 3;
+export const DEFAULT_VISIBLE_COUNT = 4;
 
 export function getDefaultVisibleModels(): ModelId[] {
   return MODEL_IDS.slice()

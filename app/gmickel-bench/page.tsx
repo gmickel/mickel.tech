@@ -89,9 +89,9 @@ const benchmarks: Array<{
     links: [],
     note: {
       type: 'outlier',
-      title: 'Why Gemini scored higher',
+      title: 'Why Gemini scored highest',
       content:
-        "Gemini 3.0 Pro was the only model to achieve a working build→train→sample cycle. Its harness kept iterating on errors rather than stopping early—we didn't explicitly prompt it to do this. Other models produced comparable or better code quality but their runs terminated before resolving runtime issues. Points for getting everything to run, but instruction following... YMMV, depends on how autonomous you like these things to be.",
+        "Gemini 3.0 Pro was the only model to achieve a working build→train→sample cycle in our original tests. GPT-5.2 now comes close (66 vs 73) with solid Zig output—big jump from GPT-5.1's 36. Claude and Codex 5.1 still struggle with backprop/matmul runtime issues. Initialization hygiene and buffer sizing remain common failure points.",
     },
   },
   {
@@ -161,7 +161,7 @@ export default function GmickelBenchPage() {
               Best-of-3 runs
             </Badge>
             <Badge className="border-white/10 bg-white/5" variant="outline">
-              Updated 10 Dec 2025
+              Updated 11 Dec 2025
             </Badge>
           </div>
           <h1 className="mt-6 font-bold text-4xl text-white leading-tight md:text-5xl">
@@ -464,12 +464,16 @@ export default function GmickelBenchPage() {
               </CardHeader>
               <CardContent className="space-y-3 text-muted-foreground text-sm">
                 <p>
-                  • Claude leads overall with strongest instruction following
-                  and change hygiene; Codex edges on pure code quality.
+                  • GPT-5.2 leads overall (74.8 avg) with dominant instruction
+                  following and change hygiene; big jump from GPT-5.1 (62.5).
+                </p>
+                <p>
+                  • Claude holds second (66.2 avg) with consistent scores across
+                  all evals; Codex 5.1 and Gemini trade blows below.
                 </p>
                 <p>
                   • Gemini wins low-level systems (Zig) but see the notes for
-                  that test; struggles with change hygiene on cross-stack work.
+                  that test; GPT-5.2 now second after previously being weakest.
                 </p>
                 <p>
                   • Common gaps: models implement happy paths but skip hard

@@ -20,62 +20,62 @@ export const llmScores: BenchScore[] = [
   {
     name: 'Convex OAuth MCP slice',
     shortName: 'MCP',
-    scores: { claude: 65, codex: 60, codex52: 0, gemini: 63 },
+    scores: { claude: 65, codex: 60, codex52: 76, gemini: 63 },
   },
   {
     name: 'Convex permissions (docs/folders)',
     shortName: 'Permissions',
-    scores: { claude: 65, codex: 58, codex52: 0, gemini: 49 },
+    scores: { claude: 65, codex: 58, codex52: 78, gemini: 49 },
   },
   {
     name: 'Remote Secretary – Design',
     shortName: 'Design',
-    scores: { claude: 78, codex: 68, codex52: 0, gemini: 70 },
+    scores: { claude: 78, codex: 68, codex52: 81, gemini: 70 },
   },
   {
     name: 'Tiny GPT – Zig',
     shortName: 'Zig',
-    scores: { claude: 40, codex: 36, codex52: 0, gemini: 73 },
+    scores: { claude: 40, codex: 36, codex52: 66, gemini: 73 },
   },
   {
     name: 'SmartTrim macOS utility',
     shortName: 'SmartTrim',
-    scores: { claude: 79, codex: 83, codex52: 0, gemini: 61 },
+    scores: { claude: 79, codex: 83, codex52: 77, gemini: 61 },
   },
   {
     name: 'XLSX backend + agent tools',
     shortName: 'XLSX',
-    scores: { claude: 70, codex: 70, codex52: 0, gemini: 56 },
+    scores: { claude: 63, codex: 65, codex52: 71, gemini: 53 },
   },
 ];
 
 export const radarData: CategoryScore[] = [
   {
     name: 'Instruction following',
-    scores: { claude: 82, codex: 75, codex52: 0, gemini: 72 },
+    scores: { claude: 82, codex: 75, codex52: 89, gemini: 72 },
   },
   {
     name: 'Code quality',
-    scores: { claude: 73, codex: 75, codex52: 0, gemini: 74 },
+    scores: { claude: 73, codex: 75, codex52: 87, gemini: 74 },
   },
   {
     name: 'Change hygiene',
-    scores: { claude: 80, codex: 78, codex52: 0, gemini: 76 },
+    scores: { claude: 80, codex: 78, codex52: 90, gemini: 76 },
   },
   {
     name: 'Functional correctness',
-    scores: { claude: 66, codex: 60, codex52: 0, gemini: 62 },
+    scores: { claude: 66, codex: 60, codex52: 77, gemini: 62 },
   },
 ];
 
 export const totals: TotalScore[] = [
   {
     name: 'Total score',
-    scores: { claude: 397, codex: 375, codex52: 0, gemini: 372 },
+    scores: { claude: 397, codex: 375, codex52: 449, gemini: 372 },
   },
   {
     name: 'Average per task',
-    scores: { claude: 66.2, codex: 62.5, codex52: 0, gemini: 62.0 },
+    scores: { claude: 66.2, codex: 62.5, codex52: 74.8, gemini: 62.0 },
   },
 ];
 
