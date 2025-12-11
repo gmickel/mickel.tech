@@ -132,21 +132,22 @@ export function BenchScoreChart({
         />
         <Legend
           align="center"
-          formatter={(value) => (
-            <span className="mr-4 ml-1 text-muted-foreground text-xs">
-              {value}
-            </span>
+          content={() => (
+            <div className="mb-3 flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
+              {ordered.map((id) => (
+                <div className="flex items-center gap-2" key={id}>
+                  <span
+                    className="h-2.5 w-2.5 rounded-sm"
+                    style={{ backgroundColor: MODELS[id].color }}
+                  />
+                  <span className="text-muted-foreground text-xs">
+                    {getFullLabel(id)}
+                  </span>
+                </div>
+              ))}
+            </div>
           )}
-          height={36}
-          iconSize={10}
-          payload={ordered.map((id) => ({
-            value: getFullLabel(id),
-            type: 'square',
-            color: MODELS[id].color,
-            dataKey: id,
-          }))}
           verticalAlign="top"
-          wrapperStyle={{ paddingBottom: 12 }}
         />
         {ordered.map((modelId) => (
           <Bar
