@@ -2,7 +2,12 @@
 
 import { motion } from 'framer-motion';
 
-import { MODEL_IDS, MODELS, type ModelId } from '@/lib/bench-models';
+import {
+  getOrderedModels,
+  MODEL_IDS,
+  MODELS,
+  type ModelId,
+} from '@/lib/bench-models';
 import { cn } from '@/lib/utils';
 
 /** Format ISO date to terminal-style: "09 DEC" */
@@ -24,12 +29,13 @@ export function ModelFilter({
   onToggle,
   className,
 }: ModelFilterProps) {
+  const orderedIds = getOrderedModels(MODEL_IDS);
   return (
     <div className={cn('flex flex-wrap items-center gap-2', className)}>
       <span className="mr-1 font-mono text-[10px] text-muted-foreground uppercase tracking-widest">
         Harness
       </span>
-      {MODEL_IDS.map((id) => {
+      {orderedIds.map((id) => {
         const m = MODELS[id];
         const isActive = visibleModels.includes(id);
 
