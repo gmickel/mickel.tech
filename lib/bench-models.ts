@@ -11,6 +11,7 @@ export interface ModelConfig {
   model: string; // Specific model version
   color: string;
   order: number; // lower = newer/higher priority
+  benchDate: string; // ISO date when benchmarks were run
 }
 
 export const MODELS: Record<ModelId, ModelConfig> = {
@@ -20,6 +21,7 @@ export const MODELS: Record<ModelId, ModelConfig> = {
     model: 'Opus 4.5',
     color: '#00e5ff',
     order: 1,
+    benchDate: '2025-12-09',
   },
   codex: {
     id: 'codex',
@@ -27,6 +29,7 @@ export const MODELS: Record<ModelId, ModelConfig> = {
     model: 'GPT-5.1-codex-max',
     color: '#9ef36e',
     order: 2,
+    benchDate: '2025-12-09',
   },
   gemini: {
     id: 'gemini',
@@ -34,6 +37,7 @@ export const MODELS: Record<ModelId, ModelConfig> = {
     model: 'Gemini 3 Pro',
     color: '#ff6bd6',
     order: 3,
+    benchDate: '2025-12-09',
   },
 } as const;
 

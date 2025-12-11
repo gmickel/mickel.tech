@@ -5,6 +5,14 @@ import { motion } from 'framer-motion';
 import { MODEL_IDS, MODELS, type ModelId } from '@/lib/bench-models';
 import { cn } from '@/lib/utils';
 
+/** Format ISO date to terminal-style: "09 DEC" */
+function formatBenchDate(isoDate: string): string {
+  const date = new Date(isoDate);
+  const day = date.getDate().toString().padStart(2, '0');
+  const month = date.toLocaleString('en-US', { month: 'short' }).toUpperCase();
+  return `${day} ${month}`;
+}
+
 interface ModelFilterProps {
   visibleModels: ModelId[];
   onToggle: (modelId: ModelId) => void;
@@ -57,7 +65,7 @@ export function ModelFilter({
               ) : null}
             </span>
 
-            {/* Harness / Model stacked */}
+            {/* Harness / Model / Date stacked */}
             <span className="flex flex-col items-start leading-none">
               <span
                 className={cn(
@@ -74,6 +82,15 @@ export function ModelFilter({
                 )}
               >
                 {m.model}
+              </span>
+              <span
+                className={cn(
+                  'mt-1 font-mono text-[8px] uppercase tracking-widest transition-colors duration-200',
+                  isActive ? 'text-white/30' : 'text-white/15'
+                )}
+              >
+                <span className="opacity-60">RAN:</span>{' '}
+                {formatBenchDate(m.benchDate)}
               </span>
             </span>
 
