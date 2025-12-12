@@ -3,7 +3,7 @@
  * Order determines display priority (newest first)
  * Harness = CLI tool, Model = specific LLM
  */
-export type ModelId = 'claude' | 'codex' | 'codex52' | 'gemini';
+export type ModelId = 'claude' | 'codex' | 'codex52' | 'codex52xh' | 'gemini';
 
 export interface ModelConfig {
   id: ModelId;
@@ -22,7 +22,7 @@ export const MODELS: Record<ModelId, ModelConfig> = {
     harnessVersion: 'v2.0.64',
     model: 'Opus 4.5 thinking',
     color: '#00e5ff',
-    order: 2,
+    order: 3,
     benchDate: '2025-12-09',
   },
   codex: {
@@ -31,7 +31,7 @@ export const MODELS: Record<ModelId, ModelConfig> = {
     harnessVersion: 'v0.66.0',
     model: 'GPT-5.1-codex-max medium',
     color: '#9ef36e',
-    order: 3,
+    order: 4,
     benchDate: '2025-12-09',
   },
   codex52: {
@@ -40,6 +40,15 @@ export const MODELS: Record<ModelId, ModelConfig> = {
     harnessVersion: 'v0.71.0',
     model: 'GPT-5.2 medium',
     color: '#ffd166',
+    order: 2,
+    benchDate: '2025-12-11',
+  },
+  codex52xh: {
+    id: 'codex52xh',
+    harness: 'Codex CLI',
+    harnessVersion: 'v0.71.0',
+    model: 'GPT-5.2 xhigh',
+    color: '#ff9f1c',
     order: 1,
     benchDate: '2025-12-11',
   },
@@ -49,7 +58,7 @@ export const MODELS: Record<ModelId, ModelConfig> = {
     harnessVersion: 'v0.19.4',
     model: 'Gemini 3 Pro',
     color: '#ff6bd6',
-    order: 4,
+    order: 5,
     benchDate: '2025-12-09',
   },
 } as const;
@@ -67,7 +76,7 @@ export function getShortLabel(id: ModelId): string {
 
 export const MODEL_IDS = Object.keys(MODELS) as ModelId[];
 
-export const DEFAULT_VISIBLE_COUNT = 4;
+export const DEFAULT_VISIBLE_COUNT = 5;
 
 export function getDefaultVisibleModels(): ModelId[] {
   return MODEL_IDS.slice()

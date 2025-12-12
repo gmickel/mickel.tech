@@ -121,3 +121,33 @@ Biome's linter will catch most issues automatically. Focus your attention on:
 ---
 
 Most formatting and common issues are automatically fixed by Biome. Run `npx ultracite fix` before committing to ensure compliance.
+
+---
+
+## gmickel-bench Scoring Rules
+
+**CRITICAL**: Benchmark scores must be exact. People rely on this data.
+
+### Score Calculation by Eval Type
+
+| Eval | Formula | Max |
+|------|---------|-----|
+| MCP, Permissions | `llm_subtotal` only | 90 |
+| SmartTrim | `llm_subtotal + human_functionality_bonus` | 100 |
+| Zig | `llm_subtotal + human_runtime_bonus` | 100 |
+| XLSX | `llm_subtotal + human_review` | 100 |
+| Design | `(llm_subtotal/90)*70 + (design_review/10)*30` | 100 |
+
+### Verification Checklist
+
+When updating `lib/bench-data.ts`:
+1. Cross-reference EVERY score against the source eval document
+2. Use the correct formula for each eval type (some include human bonuses, some don't)
+3. Recalculate totals manually: sum all 6 evals per model
+4. Recalculate averages: total / 6
+5. Update ALL takeaways in `app/gmickel-bench/page.tsx` with correct numbers
+6. Double-check the Model Strengths section averages match totals
+
+### Source of Truth
+
+The eval results document contains the authoritative scores. Never use approximations or round intermediate values differently than specified.

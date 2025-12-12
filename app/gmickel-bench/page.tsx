@@ -10,11 +10,11 @@ import { Separator } from '@/components/ui/separator';
 export const metadata: Metadata = {
   title: 'gmickel bench — Real Client-Grade AI Evals',
   description:
-    'Living scoreboard for agentic coding tasks pulled from real work surfaces. Best-of-3 runs across Claude Opus, Gemini Pro, and OpenAI Codex on Convex, Next.js, Zig and more.',
+    'Living scoreboard for agentic coding tasks pulled from real work surfaces. Best-of-3 runs across GPT-5.2, Claude Opus 4.5, Gemini 3 Pro on Convex, Next.js, Zig, Swift and more.',
   openGraph: {
     title: 'gmickel bench — Real Client-Grade AI Evals',
     description:
-      'Living scoreboard for agentic coding tasks pulled from real work surfaces. Best-of-3 runs across Claude Opus, Gemini Pro, and OpenAI Codex.',
+      'Living scoreboard for agentic coding tasks pulled from real work surfaces. GPT-5.2 xhigh leads at 82.5 avg across 6 evals.',
     type: 'website',
     url: 'https://mickel.tech/gmickel-bench',
   },
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'gmickel bench — Real Client-Grade AI Evals',
     description:
-      'Living scoreboard for agentic coding tasks pulled from real work surfaces. Best-of-3 runs across Claude Opus, Gemini Pro, and OpenAI Codex.',
+      'Living scoreboard for agentic coding tasks pulled from real work surfaces. GPT-5.2 xhigh leads at 82.5 avg across 6 evals.',
   },
   alternates: {
     canonical: 'https://mickel.tech/gmickel-bench',
@@ -50,7 +50,7 @@ const benchmarks: Array<{
     spec: 'Dense spec. Full vertical slice on Convex + Better Auth + MCP; discovery, scopes, admin UI, tests.',
     hook: 'Security-sensitive slice with OAuth semantics, streaming MCP transport, and admin surface.',
     takeaways: [
-      'GPT-5.2 leads (76) with cleanest scope handling; Claude second (65), Gemini close (63).',
+      'GPT-5.2 medium edges xhigh (76 vs 75); both dominate Claude (65), Gemini (63).',
       'Dense plans still leave scope edges uncovered—human review mandatory on security invariants.',
     ],
     links: [],
@@ -61,7 +61,7 @@ const benchmarks: Array<{
     spec: 'Extend existing ACL whitelist to docs/folders; inheritance, Better Auth invites, guest filtering, tests.',
     hook: 'Tests whether agents can extend ACL patterns without regressions when specs are intentionally light.',
     takeaways: [
-      'GPT-5.2 dominates (78) with best ACL inference; Claude (65) solid; Gemini struggles (49).',
+      'GPT-5.2 medium and xhigh tie (78) with best ACL inference; Claude (65) solid; Gemini struggles (49).',
       'Owner checks, guest filters, activation hooks—common gaps even with light specs.',
     ],
     links: [],
@@ -72,10 +72,17 @@ const benchmarks: Array<{
     spec: 'High-spec UX brief; Next 16 App Router + Tailwind + shadcn; multi-page customer portal.',
     hook: 'Separates layout craft from data wiring; measures taste + speed under strong aesthetic constraints.',
     takeaways: [
-      'GPT-5.2 edges out Claude (81 vs 78); both benefit from design plugins for polish.',
-      'Navigation completeness still lags across all models—missing routes, incomplete flows.',
+      'Claude + frontend-design plugin wins (86) with polished visuals; xhigh second (82) despite higher LLM score.',
+      'GPT-5.1 (77) had better aesthetics than 5.2 despite lower functional scores—proves taste ≠ code quality.',
+      'Without explicit design prompting, models converge on AI slop—navigation completeness still lags.',
     ],
     links: [],
+    note: {
+      type: 'info',
+      title: 'Design eval reweighted 11 Dec 2025',
+      content:
+        'Originally scored LLM 0-90 + design 0-10 = 100 max. This underweighted aesthetics—a model could score 83/90 functionally but lose only 3 pts for mediocre design. Reweighted to 70/30 split: llm_weighted = (llm/90)*70, design_weighted = (design/10)*30. High design scores now properly amplified; functional-but-boring outputs penalized.',
+    },
   },
   {
     id: 'zig',
@@ -83,15 +90,15 @@ const benchmarks: Array<{
     spec: 'Medium-spec prompt; char-level GPT, AdamW, warmup/cosine, CPU-only; build/train/sample acceptance.',
     hook: "Cross-language generalisation on Karpathy's minGPT/nanoGPT lineage, rebuilt in Zig without ML libs.",
     takeaways: [
-      'Gemini wins (73) but GPT-5.2 now competitive (66)—huge jump from GPT-5.1 (36).',
+      'GPT-5.2 xhigh (82) beats Gemini (81)—first OpenAI model to win Zig; medium (70) also solid.',
       'Claude/Codex 5.1 still crash on backprop/matmul; init hygiene and buffer sizing remain pain points.',
     ],
     links: [],
     note: {
       type: 'outlier',
-      title: 'Why Gemini scored highest',
+      title: 'GPT-5.2 xhigh takes Zig crown',
       content:
-        "Gemini 3.0 Pro was the only model to achieve a working build→train→sample cycle in our original tests. GPT-5.2 now comes close (66 vs 73) with solid Zig output—big jump from GPT-5.1's 36. Claude and Codex 5.1 still struggle with backprop/matmul runtime issues. Initialization hygiene and buffer sizing remain common failure points.",
+        'GPT-5.2 xhigh (82) beats Gemini 3.0 Pro (81) on the Zig eval—a first for OpenAI models. Medium (70) close behind. GPT-5.1 (36) was previously the weakest. Claude (40) and Codex 5.1 still struggle with backprop/matmul runtime issues.',
     },
   },
   {
@@ -100,7 +107,7 @@ const benchmarks: Array<{
     spec: 'Swift 6 LSUIElement MenuBarExtra with TextHealer heuristic, clipboard monitor, tests, hotkey, login item.',
     hook: 'System-integration slice: macOS menu bar UI, clipboard healing, global hotkey, launch-at-login.',
     takeaways: [
-      'GPT-5.1 wins (83), Claude close (79), GPT-5.2 solid (77); Gemini lags (61) with ghost indentation.',
+      'GPT-5.1 wins (92), Claude/xhigh tied (88), medium (85); Gemini lags (67) with ghost indentation.',
       'Swift 6 strict concurrency + SwiftUI tractable; heuristics still need human-tuned edges.',
     ],
     links: [],
@@ -111,7 +118,7 @@ const benchmarks: Array<{
     spec: 'Python FastAPI routes + Convex tool wiring + agent prompts + tests/evals for Excel manipulation.',
     hook: 'Full-stack agent integration: Python service, TypeScript tools, prompt engineering, formula recalc.',
     takeaways: [
-      'GPT-5.2 leads (71); GPT-5.1 (65) and Claude (63) close; Gemini struggles (53).',
+      'GPT-5.2 xhigh dominates (90); medium (76), Claude/5.1 tied (70); Gemini struggles (56).',
       'Formula recalculation common gap—models stub it rather than integrating LibreOffice.',
       'Gemini regressed existing tools (dropped refetchParagraphs) showing change hygiene risks.',
     ],
@@ -464,21 +471,20 @@ export default function GmickelBenchPage() {
               </CardHeader>
               <CardContent className="space-y-3 text-muted-foreground text-sm">
                 <p>
-                  • GPT-5.2 leads overall (74.8 avg) with dominant instruction
-                  following and change hygiene; big jump from GPT-5.1 (62.5).
+                  • GPT-5.2 xhigh leads (82.5 avg), medium second (77.5); both
+                  dominate vs GPT-5.1 (65.5) and Claude (69.0).
                 </p>
                 <p>
-                  • Claude holds second (66.2 avg) with consistent scores across
-                  all evals; Codex 5.1 and Gemini trade blows below.
+                  • Claude + frontend-design plugin wins design eval (86);
+                  GPT-5.1 wins SmartTrim (92) despite lagging elsewhere.
                 </p>
                 <p>
-                  • Gemini wins low-level systems (Zig) but see the notes for
-                  that test; GPT-5.2 now second after previously being weakest.
+                  • xhigh takes the Zig crown (82) from Gemini (81)—first time
+                  an OpenAI model wins low-level systems.
                 </p>
                 <p>
-                  • Common gaps: models implement happy paths but skip hard
-                  system integration (formula recalc, LibreOffice). Manual
-                  verification stays mandatory.
+                  • Design caveat: high LLM scores ≠ good aesthetics. After
+                  70/30 reweighting, taste matters more than functional code.
                 </p>
               </CardContent>
             </Card>
