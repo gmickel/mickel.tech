@@ -571,6 +571,38 @@ export default function GmickelBenchPage() {
                 </p>
               </div>
             </div>
+            <div className="mt-4 rounded-lg border border-white/5 bg-black/20 p-3">
+              <p className="font-mono text-amber-400 text-xs">
+                DIMENSION BREAKDOWN (excl. Zig outlier)
+              </p>
+              <div className="mt-2 grid grid-cols-2 gap-2 text-xs">
+                <div>
+                  <span className="text-muted-foreground">
+                    Functional Correctness:
+                  </span>
+                  <span className="ml-1 text-red-400">−5.2 avg</span>
+                </div>
+                <div>
+                  <span className="text-muted-foreground">
+                    Instruction Following:
+                  </span>
+                  <span className="ml-1 text-red-400">−2.0 avg</span>
+                </div>
+                <div>
+                  <span className="text-muted-foreground">Code Quality:</span>
+                  <span className="ml-1 text-red-400">−1.6 avg</span>
+                </div>
+                <div>
+                  <span className="text-muted-foreground">Change Hygiene:</span>
+                  <span className="ml-1 text-yellow-400">−0.6 avg</span>
+                </div>
+              </div>
+              <p className="mt-2 text-muted-foreground text-xs">
+                Functional correctness hit hardest—builds complex stuff that
+                doesn&apos;t work. Instruction following second—deviates from
+                explicit specs.
+              </p>
+            </div>
             <p className="mt-4 text-muted-foreground text-xs">
               <span className="text-amber-400">Takeaway:</span> Reserve high
               reasoning for open-ended problems where default fails entirely, or
