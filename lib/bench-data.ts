@@ -35,7 +35,7 @@ export const llmScores: BenchScore[] = [
   {
     name: 'Tiny GPT – Zig',
     shortName: 'Zig',
-    scores: { claude: 40, codex: 36, codex52: 70, codex52xh: 82, gemini: 81 },
+    scores: { claude: 62, codex: 36, codex52: 70, codex52xh: 82, gemini: 81 },
   },
   {
     name: 'SmartTrim macOS utility',
@@ -72,7 +72,7 @@ export const totals: TotalScore[] = [
   {
     name: 'Total score',
     scores: {
-      claude: 414,
+      claude: 436,
       codex: 393,
       codex52: 465,
       codex52xh: 495,
@@ -82,7 +82,7 @@ export const totals: TotalScore[] = [
   {
     name: 'Average per task',
     scores: {
-      claude: 69.0,
+      claude: 72.7,
       codex: 65.5,
       codex52: 77.5,
       codex52xh: 82.5,

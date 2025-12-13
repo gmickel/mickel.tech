@@ -91,14 +91,14 @@ const benchmarks: Array<{
     hook: "Cross-language generalisation on Karpathy's minGPT/nanoGPT lineage, rebuilt in Zig without ML libs.",
     takeaways: [
       'GPT-5.2 xhigh (82) beats Gemini (81)—first OpenAI model to win Zig; medium (70) also solid.',
-      'Claude/Codex 5.1 still crash on backprop/matmul; init hygiene and buffer sizing remain pain points.',
+      'Claude (62) succeeded on 3rd attempt via self-correction; Codex 5.1 (36) still crashes on matmul.',
     ],
     links: [],
     note: {
-      type: 'outlier',
-      title: 'GPT-5.2 xhigh takes Zig crown',
+      type: 'info',
+      title: 'Claude recovers via best-of-3',
       content:
-        'GPT-5.2 xhigh (82) beats Gemini 3.0 Pro (81) on the Zig eval—a first for OpenAI models. Medium (70) close behind. GPT-5.1 (36) was previously the weakest. Claude (40) and Codex 5.1 still struggle with backprop/matmul runtime issues.',
+        'GPT-5.2 xhigh (82) beats Gemini 3.0 Pro (81) on the Zig eval—first OpenAI model to win Zig. Claude (62) initially crashed but succeeded on 3rd attempt through self-correction. Codex 5.1 (36) still crashes on matmul assertions.',
     },
   },
   {
@@ -168,7 +168,7 @@ export default function GmickelBenchPage() {
               Best-of-3 runs
             </Badge>
             <Badge className="border-white/10 bg-white/5" variant="outline">
-              Updated 12 Dec 2025
+              Updated 13 Dec 2025
             </Badge>
           </div>
           <h1 className="mt-6 font-bold text-4xl text-white leading-tight md:text-5xl">
@@ -472,7 +472,7 @@ export default function GmickelBenchPage() {
               <CardContent className="space-y-3 text-muted-foreground text-sm">
                 <p>
                   • GPT-5.2 xhigh leads (82.5 avg), medium second (77.5); both
-                  dominate vs GPT-5.1 (65.5) and Claude (69.0).
+                  dominate vs Claude (72.7) and GPT-5.1 (65.5).
                 </p>
                 <p>
                   • Claude + frontend-design plugin wins design eval (86);
@@ -551,7 +551,7 @@ export default function GmickelBenchPage() {
             <p className="mt-2 text-muted-foreground text-sm leading-relaxed">
               Claude Opus 4.5 with high reasoning mode scored{' '}
               <span className="text-amber-400">393.3</span> vs default&apos;s{' '}
-              <span className="text-amber-400">414</span> (−20.7 pts). The
+              <span className="text-amber-400">436</span> (−42.7 pts). The
               pattern: overthinking with detailed specs leads to custom
               solutions instead of following prescribed patterns, incomplete
               integration despite good individual components, and
@@ -567,13 +567,13 @@ export default function GmickelBenchPage() {
               <div className="rounded-lg border border-white/5 bg-black/20 p-3">
                 <p className="font-mono text-green-400 text-xs">BETTER</p>
                 <p className="mt-1 text-muted-foreground text-sm">
-                  Zig (+26 — default crashed), Design (+6.6)
+                  Design (+6.6), Zig (+4)
                 </p>
               </div>
             </div>
             <div className="mt-4 rounded-lg border border-white/5 bg-black/20 p-3">
               <p className="font-mono text-amber-400 text-xs">
-                DIMENSION BREAKDOWN (excl. Zig outlier)
+                DIMENSION BREAKDOWN
               </p>
               <div className="mt-2 grid grid-cols-2 gap-2 text-xs">
                 <div>
