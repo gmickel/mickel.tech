@@ -531,6 +531,54 @@ export default function GmickelBenchPage() {
               ))}
             </div>
           </div>
+
+          {/* Research Finding: High Reasoning Mode */}
+          <div className="mt-10 rounded-xl border border-amber-500/30 bg-gradient-to-br from-amber-950/20 via-card/80 to-card/80 p-6">
+            <div className="flex flex-wrap items-center gap-2">
+              <Badge
+                className="border-amber-500/60 bg-amber-500/10 text-amber-400"
+                variant="outline"
+              >
+                Research finding
+              </Badge>
+              <span className="text-muted-foreground text-xs">
+                Excluded from main benchmark
+              </span>
+            </div>
+            <h3 className="mt-4 font-semibold text-lg text-white">
+              High reasoning mode underperforms on implementation tasks
+            </h3>
+            <p className="mt-2 text-muted-foreground text-sm leading-relaxed">
+              Claude Opus 4.5 with high reasoning mode scored{' '}
+              <span className="text-amber-400">393.3</span> vs default&apos;s{' '}
+              <span className="text-amber-400">406.7</span> (−13.4 pts). The
+              pattern: overthinking with detailed specs leads to custom
+              solutions instead of following prescribed patterns, incomplete
+              integration despite good individual components, and
+              over-engineered concurrency that introduces bugs.
+            </p>
+            <div className="mt-4 grid gap-3 sm:grid-cols-2">
+              <div className="rounded-lg border border-white/5 bg-black/20 p-3">
+                <p className="font-mono text-red-400 text-xs">WORSE</p>
+                <p className="mt-1 text-muted-foreground text-sm">
+                  SmartTrim (−21), Sharing (−11), MCP (−8), XLSX (−6)
+                </p>
+              </div>
+              <div className="rounded-lg border border-white/5 bg-black/20 p-3">
+                <p className="font-mono text-green-400 text-xs">BETTER</p>
+                <p className="mt-1 text-muted-foreground text-sm">
+                  Zig (+26 — default crashed), Design (+6.6)
+                </p>
+              </div>
+            </div>
+            <p className="mt-4 text-muted-foreground text-xs">
+              <span className="text-amber-400">Implication:</span> High
+              reasoning helps when default completely fails (Zig) or on
+              open-ended creative tasks (Design), but hurts on implementation
+              tasks with detailed specs. Less thinking = more faithful
+              execution.
+            </p>
+          </div>
         </section>
       </div>
     </Shell>
