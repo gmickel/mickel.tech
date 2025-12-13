@@ -572,11 +572,10 @@ export default function GmickelBenchPage() {
               </div>
             </div>
             <p className="mt-4 text-muted-foreground text-xs">
-              <span className="text-amber-400">Implication:</span> High
-              reasoning helps when default completely fails (Zig) or on
-              open-ended creative tasks (Design), but hurts on implementation
-              tasks with detailed specs. Less thinking = more faithful
-              execution.
+              <span className="text-amber-400">Takeaway:</span> Reserve high
+              reasoning for open-ended problems where default fails entirely, or
+              for planning/reviewing. For implementation tasks with detailed
+              specs, less thinking = more faithful execution.
             </p>
           </div>
         </section>
