@@ -551,7 +551,7 @@ export default function GmickelBenchPage() {
             <p className="mt-2 text-muted-foreground text-sm leading-relaxed">
               Claude Opus 4.5 with high reasoning mode scored{' '}
               <span className="text-amber-400">393.3</span> vs default&apos;s{' '}
-              <span className="text-amber-400">406.7</span> (−13.4 pts). The
+              <span className="text-amber-400">414</span> (−20.7 pts). The
               pattern: overthinking with detailed specs leads to custom
               solutions instead of following prescribed patterns, incomplete
               integration despite good individual components, and
