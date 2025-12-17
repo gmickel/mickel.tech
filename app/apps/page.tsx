@@ -54,6 +54,18 @@ const apps = [
     statusDate: 'january',
   },
   {
+    id: 'outlookctl',
+    name: 'outlookctl',
+    tagline: 'Control Outlook from CLI',
+    description:
+      'Local CLI bridge for Outlook Classic automation via COM. AI-assisted email and calendar management with Claude Code. No API keys, no OAuth.',
+    tags: ['Windows', 'Python', 'Open Source'],
+    href: '/apps/outlookctl',
+    image: '/outlookctl/outlookctl-hero.png',
+    status: 'Released',
+    statusDate: null,
+  },
+  {
     id: 'smarttrim',
     name: 'SmartTrim',
     tagline: 'Fix AI clipboard chaos',
