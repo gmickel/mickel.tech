@@ -77,6 +77,7 @@ export default function OGImage() {
         {/* Title */}
         <div
           style={{
+            display: 'flex',
             fontSize: 72,
             fontWeight: 800,
             lineHeight: 1.0,
@@ -87,13 +88,14 @@ export default function OGImage() {
         </div>
 
         {/* Tagline */}
-        <div style={{ fontSize: 32, color: '#00d9ff' }}>
+        <div style={{ display: 'flex', fontSize: 32, color: '#00d9ff' }}>
           Control Outlook from the Command Line
         </div>
 
         {/* Description */}
         <div
           style={{
+            display: 'flex',
             fontSize: 24,
             color: '#8b949e',
             maxWidth: 700,
@@ -114,6 +116,7 @@ export default function OGImage() {
         >
           <div
             style={{
+              display: 'flex',
               padding: '8px 16px',
               border: '1px solid rgba(34, 197, 94, 0.4)',
               background: 'rgba(34, 197, 94, 0.1)',
@@ -126,6 +129,7 @@ export default function OGImage() {
           </div>
           <div
             style={{
+              display: 'flex',
               padding: '8px 16px',
               border: '1px solid rgba(0, 217, 255, 0.3)',
               background: 'rgba(0, 217, 255, 0.1)',
@@ -137,6 +141,7 @@ export default function OGImage() {
           </div>
           <div
             style={{
+              display: 'flex',
               padding: '8px 16px',
               border: '1px solid rgba(255, 255, 255, 0.15)',
               background: 'rgba(0, 0, 0, 0.4)',
@@ -227,7 +232,7 @@ export default function OGImage() {
             <span style={{ color: '#f0883e', marginLeft: 8 }}>--count</span>
             <span style={{ color: '#3fb950', marginLeft: 8 }}>3</span>
           </div>
-          <div style={{ color: '#8b949e', paddingLeft: 16 }}>
+          <div style={{ display: 'flex', color: '#8b949e', paddingLeft: 16 }}>
             <span style={{ color: '#f0883e' }}>3 messages</span> from Inbox
           </div>
           <div style={{ display: 'flex', flexWrap: 'wrap' }}>
@@ -236,7 +241,7 @@ export default function OGImage() {
               outlookctl calendar list
             </span>
           </div>
-          <div style={{ color: '#8b949e', paddingLeft: 16 }}>
+          <div style={{ display: 'flex', color: '#8b949e', paddingLeft: 16 }}>
             <span style={{ color: '#f0883e' }}>5 events</span> upcoming
           </div>
         </div>
