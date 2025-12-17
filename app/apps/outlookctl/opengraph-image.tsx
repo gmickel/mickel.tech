@@ -30,6 +30,7 @@ export default function OGImage() {
         style={{
           position: 'absolute',
           inset: 0,
+          display: 'flex',
           backgroundImage:
             'linear-gradient(to right, rgba(0, 217, 255, 0.05) 1px, transparent 1px), linear-gradient(to bottom, rgba(0, 217, 255, 0.05) 1px, transparent 1px)',
           backgroundSize: '50px 50px',
@@ -41,6 +42,7 @@ export default function OGImage() {
         style={{
           position: 'absolute',
           inset: 0,
+          display: 'flex',
           background:
             'radial-gradient(circle at 20% 20%, rgba(0, 217, 255, 0.15), transparent 40%), radial-gradient(circle at 80% 80%, rgba(88, 166, 255, 0.1), transparent 40%)',
         }}
@@ -245,6 +247,7 @@ export default function OGImage() {
         style={{
           display: 'flex',
           alignItems: 'center',
+          alignSelf: 'flex-start',
           gap: 10,
           padding: '12px 18px',
           border: '1px solid rgba(255, 255, 255, 0.15)',
