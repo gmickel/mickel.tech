@@ -484,8 +484,9 @@ export default function GmickelBenchPage() {
                   an OpenAI model wins low-level systems.
                 </p>
                 <p>
-                  • Pattern: model generation matters more than reasoning level.
-                  5.2 medium beats 5.1 max.
+                  • Pattern: higher reasoning can overthink detailed specs.
+                  Medium-reasoning 5.2 beats high-reasoning 5.1 on plan
+                  execution.
                 </p>
               </CardContent>
             </Card>
