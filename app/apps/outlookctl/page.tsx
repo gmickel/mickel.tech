@@ -265,6 +265,27 @@ export default function OutlookctlPage() {
           </div>
         </section>
 
+        {/* Agent Skills callout */}
+        <section className="relative mx-auto max-w-6xl px-6 pb-12 md:px-10">
+          <Card className="border-[#00d9ff]/20 bg-card/60">
+            <CardContent className="pt-6">
+              <div className="space-y-2 text-muted-foreground text-sm">
+                <p className="font-mono text-[#00d9ff] text-[11px] tracking-[0.2em]">
+                  AGENT SKILLS
+                </p>
+                <p className="leading-relaxed">
+                  Agent Skills support in VS Code is currently in preview and
+                  only available in VS Code Insiders. Enable the{' '}
+                  <code className="rounded bg-[#00d9ff]/10 px-2 py-1 font-mono text-[#00d9ff] text-xs">
+                    chat.useAgentSkills
+                  </code>{' '}
+                  setting to use Agent Skills.
+                </p>
+              </div>
+            </CardContent>
+          </Card>
+        </section>
+
         {/* How it works */}
         <section className="relative mx-auto max-w-6xl px-6 pb-16 md:px-10">
           <div className="mb-6 flex items-center gap-3">
