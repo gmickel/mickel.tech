@@ -134,16 +134,16 @@ const benchmarks: Array<{
 
 const upcoming = [
   {
+    title: 'GPT-5.2-codex-max',
+    detail: 'High-reasoning Codex variant; will it match xhigh or overthink?',
+  },
+  {
     title: 'Legacy code port',
     detail: 'Deep refactor/port of a service with sparse docs.',
   },
   {
     title: 'Microservice integration',
     detail: 'Cross-service change touching contracts and ACLs.',
-  },
-  {
-    title: 'Next live client task',
-    detail: 'New surface queued; revealed when it ships.',
   },
 ];
 
@@ -168,7 +168,7 @@ export default function GmickelBenchPage() {
               Best-of-3 runs
             </Badge>
             <Badge className="border-white/10 bg-white/5" variant="outline">
-              Updated 13 Dec 2025
+              Updated 19 Dec 2025
             </Badge>
           </div>
           <h1 className="mt-6 font-bold text-4xl text-white leading-tight md:text-5xl">
@@ -471,20 +471,20 @@ export default function GmickelBenchPage() {
               </CardHeader>
               <CardContent className="space-y-3 text-muted-foreground text-sm">
                 <p>
-                  • GPT-5.2 xhigh leads (82.5 avg), medium second (77.5); both
-                  dominate vs Claude (72.7) and GPT-5.1 (65.5).
+                  • GPT-5.2 xhigh leads (82.5 avg), medium second (77.5),
+                  5.2-codex third (73.7)—all beat Claude (72.7) and 5.1 (65.5).
                 </p>
                 <p>
-                  • Claude + frontend-design plugin wins design eval (86);
-                  GPT-5.1 wins SmartTrim (92) despite lagging elsewhere.
+                  • 5.2-codex biggest gains vs 5.1 on dense specs: MCP (+12),
+                  XLSX (+13), Permissions (+8)—plan execution is the strength.
                 </p>
                 <p>
                   • xhigh takes the Zig crown (82) from Gemini (81)—first time
                   an OpenAI model wins low-level systems.
                 </p>
                 <p>
-                  • Design caveat: high LLM scores ≠ good aesthetics. After
-                  70/30 reweighting, taste matters more than functional code.
+                  • Pattern: default-reasoning models excel at implementing
+                  detailed plans; lighter specs still favor higher reasoning.
                 </p>
               </CardContent>
             </Card>

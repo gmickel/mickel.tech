@@ -3,7 +3,13 @@
  * Order determines display priority (newest first)
  * Harness = CLI tool, Model = specific LLM
  */
-export type ModelId = 'claude' | 'codex' | 'codex52' | 'codex52xh' | 'gemini';
+export type ModelId =
+  | 'claude'
+  | 'codex'
+  | 'codex52'
+  | 'codex52xh'
+  | 'codex52c'
+  | 'gemini';
 
 export interface ModelConfig {
   id: ModelId;
@@ -22,7 +28,7 @@ export const MODELS: Record<ModelId, ModelConfig> = {
     harnessVersion: 'v2.0.69',
     model: 'Opus 4.5 thinking',
     color: '#00e5ff',
-    order: 3,
+    order: 4,
     benchDate: '2025-12-13',
   },
   codex: {
@@ -31,7 +37,7 @@ export const MODELS: Record<ModelId, ModelConfig> = {
     harnessVersion: 'v0.72.0',
     model: 'GPT-5.1-codex-max medium',
     color: '#9ef36e',
-    order: 4,
+    order: 5,
     benchDate: '2025-12-13',
   },
   codex52: {
@@ -40,7 +46,7 @@ export const MODELS: Record<ModelId, ModelConfig> = {
     harnessVersion: 'v0.72.0',
     model: 'GPT-5.2 medium',
     color: '#ffd166',
-    order: 2,
+    order: 3,
     benchDate: '2025-12-13',
   },
   codex52xh: {
@@ -49,8 +55,17 @@ export const MODELS: Record<ModelId, ModelConfig> = {
     harnessVersion: 'v0.72.0',
     model: 'GPT-5.2 xhigh',
     color: '#ff9f1c',
-    order: 1,
+    order: 2,
     benchDate: '2025-12-13',
+  },
+  codex52c: {
+    id: 'codex52c',
+    harness: 'Codex CLI',
+    harnessVersion: 'v0.75.0',
+    model: 'GPT-5.2-codex medium',
+    color: '#7dd3fc',
+    order: 1,
+    benchDate: '2025-12-19',
   },
   gemini: {
     id: 'gemini',
@@ -58,7 +73,7 @@ export const MODELS: Record<ModelId, ModelConfig> = {
     harnessVersion: 'v0.20.2',
     model: 'Gemini 3 Pro',
     color: '#ff6bd6',
-    order: 5,
+    order: 6,
     benchDate: '2025-12-13',
   },
 } as const;
@@ -76,7 +91,7 @@ export function getShortLabel(id: ModelId): string {
 
 export const MODEL_IDS = Object.keys(MODELS) as ModelId[];
 
-export const DEFAULT_VISIBLE_COUNT = 5;
+export const DEFAULT_VISIBLE_COUNT = 6;
 
 export function getDefaultVisibleModels(): ModelId[] {
   return MODEL_IDS.slice()
