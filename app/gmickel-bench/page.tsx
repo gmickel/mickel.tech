@@ -134,7 +134,7 @@ const benchmarks: Array<{
 
 const upcoming = [
   {
-    title: 'GPT-5.2-codex-max',
+    title: 'GPT-5.2-codex-xhigh',
     detail: 'High-reasoning Codex variant; will it match xhigh or overthink?',
   },
   {
