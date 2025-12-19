@@ -475,16 +475,17 @@ export default function GmickelBenchPage() {
                   5.2-codex third (73.7)—all beat Claude (72.7) and 5.1 (65.5).
                 </p>
                 <p>
-                  • 5.2-codex biggest gains vs 5.1 on dense specs: MCP (+12),
-                  XLSX (+13), Permissions (+8)—plan execution is the strength.
+                  • Medium-reasoning 5.2-codex beats high-reasoning
+                  5.1-codex-max on 4/6 evals: MCP (+12), XLSX (+13), Permissions
+                  (+8), Zig (+22).
                 </p>
                 <p>
                   • xhigh takes the Zig crown (82) from Gemini (81)—first time
                   an OpenAI model wins low-level systems.
                 </p>
                 <p>
-                  • Pattern: default-reasoning models excel at implementing
-                  detailed plans; lighter specs still favor higher reasoning.
+                  • Pattern: model generation matters more than reasoning level.
+                  5.2 medium beats 5.1 max.
                 </p>
               </CardContent>
             </Card>
