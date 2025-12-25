@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 import { getAllPosts } from '@/lib/posts';
+import { slugifyTag } from '@/lib/tag-utils';
 
 export const metadata: Metadata = {
   title: 'System Log',
@@ -83,12 +84,13 @@ export default async function LogIndexPage() {
                 {post.tags?.length ? (
                   <div className="flex flex-wrap gap-2">
                     {post.tags.map((tag) => (
-                      <span
-                        className="inline-flex items-center gap-1 rounded border border-white/10 px-2 py-1 font-mono text-[10px] text-muted-foreground uppercase"
+                      <Link
+                        className="inline-flex items-center gap-1 rounded border border-white/10 px-2 py-1 font-mono text-[10px] text-muted-foreground uppercase transition-colors hover:border-primary/40 hover:text-primary"
+                        href={`/log/tag/${slugifyTag(tag)}`}
                         key={`${post.slug}-${tag}`}
                       >
                         # {tag}
-                      </span>
+                      </Link>
                     ))}
                   </div>
                 ) : null}

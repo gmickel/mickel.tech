@@ -12,6 +12,7 @@ import {
 } from 'recharts';
 
 import { type ChartConfig, ChartContainer } from '@/components/ui/chart';
+import type { EvalId } from '@/lib/bench-evals';
 import {
   getFullLabel,
   getOrderedModels,
@@ -23,6 +24,7 @@ import { cn } from '@/lib/utils';
 type BenchScore = {
   name: string;
   shortName?: string;
+  evalId?: EvalId;
 } & Partial<Record<ModelId, number>>;
 
 function buildConfig(models: ModelId[]): ChartConfig {
@@ -89,6 +91,68 @@ function CustomTooltip({
   );
 }
 
+interface CustomTickProps {
+  x?: number;
+  y?: number;
+  payload?: {
+    value: string;
+    index: number;
+  };
+  data: BenchScore[];
+}
+
+function CustomXAxisTick({ x, y, payload, data }: CustomTickProps) {
+  if (!payload || x === undefined || y === undefined) {
+    return null;
+  }
+
+  const item = data[payload.index];
+  const evalId = item?.evalId;
+  const label = payload.value;
+
+  if (evalId) {
+    return (
+      <g className="eval-link-tick" transform={`translate(${x},${y})`}>
+        <a href={`/gmickel-bench/${evalId}`}>
+          <text
+            dy={16}
+            fill="hsl(var(--muted-foreground))"
+            fontSize={11}
+            textAnchor="middle"
+          >
+            {label}
+          </text>
+        </a>
+        <style>
+          {`
+            .eval-link-tick a { cursor: pointer; }
+            .eval-link-tick a text {
+              transition: fill 0.2s ease, filter 0.2s ease;
+            }
+            .eval-link-tick a:hover text {
+              fill: hsl(var(--primary));
+              filter: drop-shadow(0 0 6px hsl(var(--primary) / 0.5));
+            }
+          `}
+        </style>
+      </g>
+    );
+  }
+
+  return (
+    <g transform={`translate(${x},${y})`}>
+      <text
+        dy={16}
+        fill="hsl(var(--muted-foreground))"
+        fontSize={11}
+        textAnchor="middle"
+      >
+        {label}
+      </text>
+    </g>
+  );
+}
+
 export function BenchScoreChart({
   data,
   visibleModels,
@@ -114,7 +178,7 @@ export function BenchScoreChart({
           axisLine={false}
           dataKey="shortName"
           interval={0}
-          tick={{ fontSize: 11, fill: 'hsl(var(--muted-foreground))', dy: 10 }}
+          tick={<CustomXAxisTick data={data} />}
           tickLine={false}
           tickMargin={10}
         />

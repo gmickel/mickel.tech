@@ -7,6 +7,7 @@ import Quote from '@/components/sections/quote';
 import Services from '@/components/sections/services';
 import SystemLogLatest from '@/components/sections/system-log-latest';
 import SystemMap from '@/components/sections/system-map';
+import { JsonLd, personSchema } from '@/lib/json-ld';
 
 // Skeleton fallback for hero section to prevent CLS
 function HeroSkeleton() {
@@ -26,6 +27,7 @@ function HeroSkeleton() {
 export default function Home() {
   return (
     <Shell>
+      <JsonLd data={personSchema()} />
       <Suspense fallback={<HeroSkeleton />}>
         <HeroLoader />
       </Suspense>

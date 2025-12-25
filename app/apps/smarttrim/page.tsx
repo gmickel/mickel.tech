@@ -1,11 +1,19 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-
 import Shell from '@/components/layout/shell';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { ImageLightbox } from '@/components/ui/image-lightbox';
 import { Separator } from '@/components/ui/separator';
+import { breadcrumbSchema, JsonLd, softwareAppSchema } from '@/lib/json-ld';
+
+const APP_DATA = {
+  name: 'SmartTrim',
+  description:
+    'macOS menu bar utility that automatically fixes formatting issues when you copy-paste from AI coding assistants.',
+  slug: 'smarttrim',
+  category: 'DeveloperApplication',
+};
 
 export const metadata: Metadata = {
   title: 'SmartTrim — Fix AI Clipboard Chaos',
@@ -87,6 +95,13 @@ const problems = [
 export default function SmartTrimPage() {
   return (
     <Shell>
+      <JsonLd data={softwareAppSchema(APP_DATA)} />
+      <JsonLd
+        data={breadcrumbSchema([
+          { name: 'Apps', url: '/apps' },
+          { name: 'SmartTrim', url: '/apps/smarttrim' },
+        ])}
+      />
       <div className="relative cursor-auto overflow-hidden">
         {/* Ambient glow - orange/amber for SmartTrim brand */}
         <div

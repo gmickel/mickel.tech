@@ -1,10 +1,10 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-
 import Shell from '@/components/layout/shell';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Separator } from '@/components/ui/separator';
+import { breadcrumbSchema, JsonLd, softwareAppSchema } from '@/lib/json-ld';
 
 export const metadata: Metadata = {
   title: 'outlookctl — Control Outlook from the Command Line',
@@ -91,9 +91,24 @@ const constraints = [
   },
 ];
 
+const APP_DATA = {
+  name: 'outlookctl',
+  description:
+    'Local CLI bridge for Outlook Classic automation via COM. AI-assisted email and calendar management with Claude Code. No API keys, no OAuth.',
+  slug: 'outlookctl',
+  category: 'DeveloperApplication',
+};
+
 export default function OutlookctlPage() {
   return (
     <Shell>
+      <JsonLd data={softwareAppSchema(APP_DATA)} />
+      <JsonLd
+        data={breadcrumbSchema([
+          { name: 'Apps', url: '/apps' },
+          { name: 'outlookctl', url: '/apps/outlookctl' },
+        ])}
+      />
       <div className="relative cursor-auto overflow-hidden">
         {/* Grid background - matching outlookctl docs aesthetic */}
         <div

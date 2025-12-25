@@ -1,9 +1,8 @@
-'use server';
-
 import fs from 'node:fs/promises';
 import path from 'node:path';
-
 import matter from 'gray-matter';
+import { cache } from 'react';
+import { slugifyTag } from './tag-utils';
 
 const POSTS_DIR = path.join(process.cwd(), 'content', 'posts');
 const MDX_EXTENSION = /\.mdx$/;
@@ -100,7 +99,7 @@ export async function getPostBySlug(slug: string): Promise<Post | null> {
   return post;
 }
 
-export async function getAllPosts(): Promise<PostMeta[]> {
+async function getAllPostsInternal(): Promise<PostMeta[]> {
   const slugs = await getPostSlugs();
 
   if (!slugs.length) {
@@ -133,8 +132,87 @@ export async function getAllPosts(): Promise<PostMeta[]> {
     });
 }
 
+// Memoize to avoid re-parsing MDX files during build
+export const getAllPosts = cache(getAllPostsInternal);
+
 export async function getLatestPosts(limit = 3): Promise<PostMeta[]> {
   const posts = await getAllPosts();
 
   return posts.slice(0, limit);
+}
+
+export async function getPublishedSlugs(): Promise<string[]> {
+  const posts = await getAllPosts();
+  return posts.map((p) => p.slug);
+}
+
+// Tag infrastructure
+export interface TagIndex {
+  slugToDisplay: Map<string, string>;
+  postsBySlug: Map<string, PostMeta[]>;
+  slugs: string[];
+}
+
+async function getTagIndexInternal(): Promise<TagIndex> {
+  const posts = await getAllPosts();
+  const slugToDisplay = new Map<string, string>();
+  const postsBySlug = new Map<string, PostMeta[]>();
+  const collisions: Array<{ slug: string; tags: string[] }> = [];
+
+  for (const post of posts) {
+    for (const tag of post.tags ?? []) {
+      const slug = slugifyTag(tag);
+
+      const existingDisplay = slugToDisplay.get(slug);
+      if (existingDisplay && existingDisplay !== tag) {
+        const collision = collisions.find((c) => c.slug === slug);
+        if (collision) {
+          if (!collision.tags.includes(tag)) {
+            collision.tags.push(tag);
+          }
+        } else {
+          collisions.push({ slug, tags: [existingDisplay, tag] });
+        }
+      }
+
+      if (!slugToDisplay.has(slug)) {
+        slugToDisplay.set(slug, tag);
+      }
+
+      const existing = postsBySlug.get(slug) ?? [];
+      existing.push(post);
+      postsBySlug.set(slug, existing);
+    }
+  }
+
+  if (collisions.length > 0) {
+    const msg = collisions
+      .map((c) => `  "${c.slug}" ← [${c.tags.map((t) => `"${t}"`).join(', ')}]`)
+      .join('\n');
+    throw new Error(
+      `Tag slug collisions detected:\n${msg}\n` +
+        'Fix by normalizing tags in frontmatter.'
+    );
+  }
+
+  return {
+    slugToDisplay,
+    postsBySlug,
+    slugs: Array.from(slugToDisplay.keys()).sort(),
+  };
+}
+
+// Memoize to avoid rebuilding tag index during build
+export const getTagIndex = cache(getTagIndexInternal);
+
+export async function getPostsByTag(tagSlug: string): Promise<PostMeta[]> {
+  const index = await getTagIndex();
+  return index.postsBySlug.get(tagSlug) ?? [];
+}
+
+export async function getTagDisplayName(
+  tagSlug: string
+): Promise<string | null> {
+  const index = await getTagIndex();
+  return index.slugToDisplay.get(tagSlug) ?? null;
 }

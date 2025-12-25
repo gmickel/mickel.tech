@@ -1,11 +1,11 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-
 import { BenchDashboard } from '@/components/gmickel/bench-dashboard';
 import Shell from '@/components/layout/shell';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Separator } from '@/components/ui/separator';
+import { BENCH_EVALS } from '@/lib/bench-evals';
 
 export const metadata: Metadata = {
   title: 'gmickel bench — Real Client-Grade AI Evals',
@@ -28,109 +28,6 @@ export const metadata: Metadata = {
     canonical: 'https://mickel.tech/gmickel-bench',
   },
 };
-
-type BenchmarkLink = { href: string; label: string };
-
-const benchmarks: Array<{
-  id: string;
-  title: string;
-  spec: string;
-  hook: string;
-  takeaways: string[];
-  links: BenchmarkLink[];
-  note?: {
-    type: 'outlier' | 'info';
-    title: string;
-    content: string;
-  };
-}> = [
-  {
-    id: 'mcp',
-    title: 'Convex OAuth MCP server',
-    spec: 'Dense spec. Full vertical slice on Convex + Better Auth + MCP; discovery, scopes, admin UI, tests.',
-    hook: 'Security-sensitive slice with OAuth semantics, streaming MCP transport, and admin surface.',
-    takeaways: [
-      'GPT-5.2 medium edges xhigh (76 vs 75); both dominate Claude (65), Gemini (63).',
-      'Dense plans still leave scope edges uncovered—human review mandatory on security invariants.',
-    ],
-    links: [],
-  },
-  {
-    id: 'permissions',
-    title: 'Convex document & folder permissions',
-    spec: 'Extend existing ACL whitelist to docs/folders; inheritance, Better Auth invites, guest filtering, tests.',
-    hook: 'Tests whether agents can extend ACL patterns without regressions when specs are intentionally light.',
-    takeaways: [
-      'GPT-5.2 medium and xhigh tie (78) with best ACL inference; Claude (65) solid; Gemini struggles (49).',
-      'Owner checks, guest filters, activation hooks—common gaps even with light specs.',
-    ],
-    links: [],
-  },
-  {
-    id: 'design',
-    title: 'Remote secretarial service dashboard',
-    spec: 'High-spec UX brief; Next 16 App Router + Tailwind + shadcn; multi-page customer portal.',
-    hook: 'Separates layout craft from data wiring; measures taste + speed under strong aesthetic constraints.',
-    takeaways: [
-      'Claude + frontend-design plugin wins (86) with polished visuals; xhigh second (82) despite higher LLM score.',
-      'GPT-5.1 (77) had better aesthetics than 5.2 despite lower functional scores—proves taste ≠ code quality.',
-      'Without explicit design prompting, models converge on AI slop—navigation completeness still lags.',
-    ],
-    links: [],
-    note: {
-      type: 'info',
-      title: 'Design eval reweighted 11 Dec 2025',
-      content:
-        'Originally scored LLM 0-90 + design 0-10 = 100 max. This underweighted aesthetics—a model could score 83/90 functionally but lose only 3 pts for mediocre design. Reweighted to 70/30 split: llm_weighted = (llm/90)*70, design_weighted = (design/10)*30. High design scores now properly amplified; functional-but-boring outputs penalized.',
-    },
-  },
-  {
-    id: 'zig',
-    title: 'Tiny GPT in pure Zig',
-    spec: 'Medium-spec prompt; char-level GPT, AdamW, warmup/cosine, CPU-only; build/train/sample acceptance.',
-    hook: "Cross-language generalisation on Karpathy's minGPT/nanoGPT lineage, rebuilt in Zig without ML libs.",
-    takeaways: [
-      'GPT-5.2 xhigh (82) beats Gemini (81)—first OpenAI model to win Zig; medium (70) also solid.',
-      'Claude (62) succeeded on 3rd attempt via self-correction; Codex 5.1 (36) still crashes on matmul.',
-    ],
-    links: [],
-    note: {
-      type: 'info',
-      title: 'Claude recovers via best-of-3',
-      content:
-        'GPT-5.2 xhigh (82) beats Gemini 3.0 Pro (81) on the Zig eval—first OpenAI model to win Zig. Claude (62) initially crashed but succeeded on 3rd attempt through self-correction. Codex 5.1 (36) still crashes on matmul assertions.',
-    },
-  },
-  {
-    id: 'smarttrim',
-    title: 'SmartTrim macOS menu bar utility',
-    spec: 'Swift 6 LSUIElement MenuBarExtra with TextHealer heuristic, clipboard monitor, tests, hotkey, login item.',
-    hook: 'System-integration slice: macOS menu bar UI, clipboard healing, global hotkey, launch-at-login.',
-    takeaways: [
-      'GPT-5.1 wins (92), Claude/xhigh tied (88), medium (85); Gemini lags (67) with ghost indentation.',
-      'Swift 6 strict concurrency + SwiftUI tractable; heuristics still need human-tuned edges.',
-    ],
-    links: [],
-  },
-  {
-    id: 'xlsx',
-    title: 'XLSX backend + agent tools',
-    spec: 'Python FastAPI routes + Convex tool wiring + agent prompts + tests/evals for Excel manipulation.',
-    hook: 'Full-stack agent integration: Python service, TypeScript tools, prompt engineering, formula recalc.',
-    takeaways: [
-      'GPT-5.2 xhigh dominates (90); medium (76), Claude/5.1 tied (70); Gemini struggles (56).',
-      'Formula recalculation common gap—models stub it rather than integrating LibreOffice.',
-      'Gemini regressed existing tools (dropped refetchParagraphs) showing change hygiene risks.',
-    ],
-    links: [],
-    note: {
-      type: 'info',
-      title: 'Cross-stack complexity',
-      content:
-        'This eval touches Python (FastAPI, openpyxl, pandas), TypeScript (Convex actions, agent tools), and prompt engineering. Even with detailed instructions on Excel manipulation, none of the models fully integrated formula recalculation via LibreOffice as specified. The pattern: models implement the happy path but skip the hard system integration.',
-    },
-  },
-];
 
 const upcoming = [
   {
@@ -218,22 +115,38 @@ export default function GmickelBenchPage() {
             </span>
           </div>
           <div className="grid gap-6 lg:grid-cols-2">
-            {benchmarks.map((bench) => (
-              <Card className="border-white/10 bg-card/70" key={bench.id}>
+            {BENCH_EVALS.map((bench) => (
+              <Card
+                className="group border-white/10 bg-card/70 transition-all duration-300 hover:border-primary/40 hover:shadow-[0_0_20px_-5px_hsl(var(--primary)/0.3)]"
+                key={bench.id}
+              >
                 <CardHeader className="space-y-2 pb-3">
-                  <div className="flex flex-wrap items-center gap-2">
-                    <Badge
-                      className="border-primary/40 text-primary"
-                      variant="outline"
+                  <div className="flex flex-wrap items-center justify-between gap-2">
+                    <div className="flex flex-wrap items-center gap-2">
+                      <Badge
+                        className="border-primary/40 text-primary"
+                        variant="outline"
+                      >
+                        {bench.id}
+                      </Badge>
+                      <span className="font-mono text-[11px] text-muted-foreground">
+                        {bench.spec}
+                      </span>
+                    </div>
+                    <Link
+                      className="font-mono text-[10px] text-muted-foreground uppercase tracking-wide transition-colors hover:text-primary"
+                      href={`/gmickel-bench/${bench.id}`}
                     >
-                      {bench.id}
-                    </Badge>
-                    <span className="font-mono text-[11px] text-muted-foreground">
-                      {bench.spec}
-                    </span>
+                      View Details →
+                    </Link>
                   </div>
                   <CardTitle className="text-white text-xl">
-                    {bench.title}
+                    <Link
+                      className="transition-colors hover:text-primary"
+                      href={`/gmickel-bench/${bench.id}`}
+                    >
+                      {bench.title}
+                    </Link>
                   </CardTitle>
                   <p className="text-muted-foreground text-sm">{bench.hook}</p>
                 </CardHeader>
@@ -264,19 +177,6 @@ export default function GmickelBenchPage() {
                       </p>
                     </div>
                   ) : null}
-                  {bench.links.length > 0 && (
-                    <div className="flex flex-wrap gap-3 pt-2">
-                      {bench.links.map((link) => (
-                        <Link
-                          className="glow-link font-mono text-[11px] uppercase"
-                          href={link.href}
-                          key={link.href}
-                        >
-                          {link.label}
-                        </Link>
-                      ))}
-                    </div>
-                  )}
                 </CardContent>
               </Card>
             ))}
