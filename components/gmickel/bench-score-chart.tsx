@@ -12,7 +12,7 @@ import {
 } from 'recharts';
 
 import { type ChartConfig, ChartContainer } from '@/components/ui/chart';
-import type { EvalId } from '@/lib/bench-data';
+import type { EvalId } from '@/lib/bench-evals';
 import {
   getFullLabel,
   getOrderedModels,

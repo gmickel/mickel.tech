@@ -6,8 +6,8 @@ import Shell from '@/components/layout/shell';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Separator } from '@/components/ui/separator';
-import { type EvalId, getScoresForEval } from '@/lib/bench-data';
-import { BENCH_EVALS, getEvalById } from '@/lib/bench-evals';
+import { getScoresForEval } from '@/lib/bench-data';
+import { BENCH_EVALS, type EvalId, getEvalById } from '@/lib/bench-evals';
 import {
   getOrderedModels,
   MODEL_IDS,

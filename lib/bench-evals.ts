@@ -117,6 +117,18 @@ export const BENCH_EVALS: BenchEval[] = [
   },
 ];
 
+// Single source of truth for eval IDs
+export const EVAL_IDS = [
+  'mcp',
+  'permissions',
+  'design',
+  'zig',
+  'smarttrim',
+  'xlsx',
+] as const;
+
+export type EvalId = (typeof EVAL_IDS)[number];
+
 export function getEvalById(id: string): BenchEval | undefined {
   return BENCH_EVALS.find((e) => e.id === id);
 }

@@ -1,12 +1,5 @@
+import type { EvalId } from './bench-evals';
 import type { ModelId } from './bench-models';
-
-export type EvalId =
-  | 'mcp'
-  | 'permissions'
-  | 'design'
-  | 'zig'
-  | 'smarttrim'
-  | 'xlsx';
 
 export type BenchScore = {
   evalId: EvalId;
