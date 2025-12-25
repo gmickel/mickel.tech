@@ -121,3 +121,57 @@ Biome's linter will catch most issues automatically. Focus your attention on:
 ---
 
 Most formatting and common issues are automatically fixed by Biome. Run `npx ultracite fix` before committing to ensure compliance.
+
+---
+
+## Programmatic SEO (pSEO) Architecture
+
+This site uses programmatic SEO to generate crawlable pages from structured data.
+
+### Core Libraries
+
+| File | Purpose |
+|------|---------|
+| `lib/posts.ts` | Blog posts, tag index, `cache()` memoization |
+| `lib/tag-utils.ts` | `slugifyTag()` for URL-safe tag slugs |
+| `lib/bench-data.ts` | Benchmark scores, `toChartData()` with evalId |
+| `lib/bench-evals.ts` | `BENCH_EVALS` single source of truth for evals |
+| `lib/json-ld.tsx` | JSON-LD schemas: article, breadcrumb, softwareApp, person |
+
+### pSEO Patterns
+
+**Every dynamic page MUST have:**
+1. `generateStaticParams()` — pre-render all routes at build
+2. `generateMetadata()` — title, description, canonical, openGraph
+3. JSON-LD structured data — breadcrumbs at minimum
+4. OG image route — `opengraph-image.tsx` with edge runtime
+5. Internal links — connect to parent pages and related content
+6. Sitemap entry — auto-generated via `app/sitemap.ts`
+
+**Tag/Category Pages:**
+- Use `slugifyTag()` from `lib/tag-utils.ts` for URL slugs
+- Store display name → slug mapping in index
+- Detect slug collisions at build time
+- Link posts to their tag pages (clickable tags)
+
+**Data Pages (evals, apps):**
+- Single source of truth array in `lib/` (e.g., `BENCH_EVALS`)
+- `getById()` helper for lookups
+- Include `evalId`/`appId` in chart data for linking
+- Link from listing pages to detail pages
+
+### JSON-LD Requirements
+
+```tsx
+import { JsonLd, breadcrumbSchema } from '@/lib/json-ld';
+
+// Every page needs breadcrumbs
+<JsonLd data={breadcrumbSchema([
+  { name: 'Parent', url: '/parent' },
+  { name: 'Current', url: '/parent/current' },
+])} />
+```
+
+### Subdirectory Documentation
+
+See `app/log/CLAUDE.md` and `app/gmickel-bench/CLAUDE.md` for area-specific SEO rules.

@@ -1,11 +1,11 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-
 import Shell from '@/components/layout/shell';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { ImageLightbox } from '@/components/ui/image-lightbox';
 import { Separator } from '@/components/ui/separator';
+import { breadcrumbSchema, JsonLd, softwareAppSchema } from '@/lib/json-ld';
 
 export const metadata: Metadata = {
   title: 'DocIQ 1.0 — Pioneering Document Intelligence (2018-2020)',
@@ -138,9 +138,24 @@ const customers = [
   'SMEs',
 ];
 
+const APP_DATA = {
+  name: 'DocIQ 1.0',
+  description:
+    'One of the first legal tech platforms to use NLP and machine learning for document lifecycle management.',
+  slug: 'dociq',
+  category: 'BusinessApplication',
+};
+
 export default function DocIQPage() {
   return (
     <Shell>
+      <JsonLd data={softwareAppSchema(APP_DATA)} />
+      <JsonLd
+        data={breadcrumbSchema([
+          { name: 'Apps', url: '/apps' },
+          { name: 'DocIQ 1.0', url: '/apps/dociq' },
+        ])}
+      />
       <div className="relative cursor-auto overflow-hidden">
         {/* Ambient glow - warm gold/amber for DocIQ 1.0 heritage brand */}
         <div

@@ -1,6 +1,15 @@
 import type { ModelId } from './bench-models';
 
+export type EvalId =
+  | 'mcp'
+  | 'permissions'
+  | 'design'
+  | 'zig'
+  | 'smarttrim'
+  | 'xlsx';
+
 export type BenchScore = {
+  evalId: EvalId;
   name: string;
   shortName: string;
   scores: Record<ModelId, number>;
@@ -18,6 +27,7 @@ export type TotalScore = {
 
 export const llmScores: BenchScore[] = [
   {
+    evalId: 'mcp',
     name: 'Convex OAuth MCP slice',
     shortName: 'MCP',
     scores: {
@@ -30,6 +40,7 @@ export const llmScores: BenchScore[] = [
     },
   },
   {
+    evalId: 'permissions',
     name: 'Convex permissions (docs/folders)',
     shortName: 'Permissions',
     scores: {
@@ -42,6 +53,7 @@ export const llmScores: BenchScore[] = [
     },
   },
   {
+    evalId: 'design',
     name: 'Remote Secretary – Design',
     shortName: 'Design',
     scores: {
@@ -54,6 +66,7 @@ export const llmScores: BenchScore[] = [
     },
   },
   {
+    evalId: 'zig',
     name: 'Tiny GPT – Zig',
     shortName: 'Zig',
     scores: {
@@ -66,6 +79,7 @@ export const llmScores: BenchScore[] = [
     },
   },
   {
+    evalId: 'smarttrim',
     name: 'SmartTrim macOS utility',
     shortName: 'SmartTrim',
     scores: {
@@ -78,6 +92,7 @@ export const llmScores: BenchScore[] = [
     },
   },
   {
+    evalId: 'xlsx',
     name: 'XLSX backend + agent tools',
     shortName: 'XLSX',
     scores: {
@@ -90,6 +105,10 @@ export const llmScores: BenchScore[] = [
     },
   },
 ];
+
+export function getScoresForEval(evalId: EvalId): BenchScore | undefined {
+  return llmScores.find((s) => s.evalId === evalId);
+}
 
 export const radarData: CategoryScore[] = [
   {
@@ -171,19 +190,25 @@ export function toChartData<
     name: string;
     scores: Record<ModelId, number>;
     shortName?: string;
+    evalId?: EvalId;
   },
 >(
   data: T[],
   visibleModels: ModelId[]
 ): Array<
-  { name: string; shortName?: string } & Partial<Record<ModelId, number>>
+  { name: string; shortName?: string; evalId?: EvalId } & Partial<
+    Record<ModelId, number>
+  >
 > {
   return data.map((item) => {
-    const result: { name: string; shortName?: string } & Partial<
-      Record<ModelId, number>
-    > = {
+    const result: {
+      name: string;
+      shortName?: string;
+      evalId?: EvalId;
+    } & Partial<Record<ModelId, number>> = {
       name: item.name,
       shortName: item.shortName,
+      evalId: item.evalId,
     };
     for (const modelId of visibleModels) {
       result[modelId] = item.scores[modelId];

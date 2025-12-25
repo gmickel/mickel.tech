@@ -1,11 +1,11 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-
 import Shell from '@/components/layout/shell';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { ImageLightbox } from '@/components/ui/image-lightbox';
 import { Separator } from '@/components/ui/separator';
+import { breadcrumbSchema, JsonLd, softwareAppSchema } from '@/lib/json-ld';
 
 export const metadata: Metadata = {
   title: 'DocIQ Shield — AI Document Anonymisation for Swiss Courts',
@@ -119,9 +119,24 @@ const techSpecs = [
   { label: 'Standards', value: 'Swiss court (Aug 2016)' },
 ];
 
+const APP_DATA = {
+  name: 'DocIQ Shield',
+  description:
+    'Court document anonymisation with Swiss court standard compliance. No data stored, ever. 10 seconds instead of 2 hours.',
+  slug: 'dociq-shield',
+  category: 'BusinessApplication',
+};
+
 export default function DocIQShieldPage() {
   return (
     <Shell>
+      <JsonLd data={softwareAppSchema(APP_DATA)} />
+      <JsonLd
+        data={breadcrumbSchema([
+          { name: 'Apps', url: '/apps' },
+          { name: 'DocIQ Shield', url: '/apps/dociq-shield' },
+        ])}
+      />
       <div className="relative cursor-auto overflow-hidden">
         {/* Ambient glow - navy/red for Shield brand (Swiss colors) */}
         <div
