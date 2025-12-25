@@ -5,7 +5,8 @@ export const runtime = 'edge';
 export const size = { width: 1200, height: 630 };
 export const contentType = 'image/png';
 
-// Static override map for case-sensitive tags (no fs access in edge runtime)
+// Static override map for case-sensitive tags (edge runtime cannot access tag index)
+// SYNC: Keep in sync with actual tags used in content/posts/*.mdx frontmatter
 const TAG_DISPLAY_OVERRIDES: Record<string, string> = {
   ai: 'AI',
   mcp: 'MCP',

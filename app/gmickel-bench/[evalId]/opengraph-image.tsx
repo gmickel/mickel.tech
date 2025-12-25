@@ -5,7 +5,8 @@ export const runtime = 'edge';
 export const size = { width: 1200, height: 630 };
 export const contentType = 'image/png';
 
-// Static map for eval display names (no fs access in edge runtime)
+// Static map for eval display names (edge runtime cannot import from lib/bench-evals.ts)
+// SYNC: Keep in sync with BENCH_EVALS in lib/bench-evals.ts
 const EVAL_DISPLAY: Record<string, { title: string; shortName: string }> = {
   mcp: { title: 'Convex OAuth MCP server', shortName: 'MCP' },
   permissions: {
