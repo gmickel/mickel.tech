@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Shell from '@/components/layout/shell';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { APPS } from '@/lib/apps';
 
 export const metadata: Metadata = {
   title: 'Apps — Things I Built',
@@ -28,68 +29,17 @@ export const metadata: Metadata = {
   },
 };
 
-const apps = [
-  {
-    id: 'dociq-sphere',
-    name: 'DocIQ Sphere',
-    tagline: 'Privacy-first legal intelligence',
-    description:
-      'Legal document intelligence platform. AI-powered contract analysis with partner law firm playbooks, complete audit trails, and document fidelity.',
-    tags: ['AI', 'Legal Tech', 'Enterprise'],
-    href: '/apps/dociq-sphere',
-    image: '/sphere/sphere-research.png',
-    status: 'December 2025',
-    statusDate: 'december',
-  },
-  {
-    id: 'dociq-shield',
-    name: 'DocIQ Shield',
-    tagline: 'Zero-persistence anonymisation',
-    description:
-      'Court document anonymisation with Swiss court standard compliance. No data stored, ever. 10 seconds instead of 2 hours.',
-    tags: ['AI', 'Privacy', 'Swiss Courts'],
-    href: '/apps/dociq-shield',
-    image: '/shield/shield.png',
-    status: 'January 2026',
-    statusDate: 'january',
-  },
-  {
-    id: 'outlookctl',
-    name: 'outlookctl',
-    tagline: 'Control Outlook from CLI',
-    description:
-      'Local CLI bridge for Outlook Classic automation via COM. AI-assisted email and calendar management with Claude Code. No API keys, no OAuth.',
-    tags: ['Windows', 'Python', 'Open Source'],
-    href: '/apps/outlookctl',
-    image: '/outlookctl/outlookctl-hero.png',
-    status: 'Released',
-    statusDate: null,
-  },
-  {
-    id: 'smarttrim',
-    name: 'SmartTrim',
-    tagline: 'Fix AI clipboard chaos',
-    description:
-      'macOS menu bar utility that automatically fixes formatting issues when you copy-paste from AI coding assistants.',
-    tags: ['macOS', 'Swift', 'Open Source'],
-    href: '/apps/smarttrim',
-    image: '/smarttrim-dark.png',
-    status: 'Released',
-    statusDate: null,
-  },
-  {
-    id: 'dociq',
-    name: 'DocIQ 1.0',
-    tagline: 'Pioneering document intelligence',
-    description:
-      'One of the first legal tech platforms to use NLP and machine learning for document lifecycle management. Visual no-code template builder, e-signatures, real-time collaboration.',
-    tags: ['Legal Tech', 'NLP', '2017-2020'],
-    href: '/apps/dociq',
-    image: '/dociq/dociq-template-editor.png',
-    status: 'In Production',
-    statusDate: null,
-  },
-] as const;
+// Derive apps list from single source of truth
+const apps = APPS.map((app) => ({
+  id: app.slug,
+  name: app.name,
+  tagline: app.tagline,
+  description: app.description,
+  tags: [...app.tags],
+  href: `/apps/${app.slug}`,
+  image: app.image,
+  status: app.status,
+}));
 
 export default function AppsPage() {
   return (
