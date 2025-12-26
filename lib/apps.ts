@@ -13,6 +13,16 @@ export interface AppMeta {
 
 export const APPS: AppMeta[] = [
   {
+    slug: 'flow',
+    name: 'Flow',
+    tagline: 'Plan first, work second',
+    description:
+      'Claude Code marketplace plugin for structured development workflow. Research agents, gap analysis, and disciplined execution.',
+    category: 'DeveloperApplication',
+    tags: ['Claude Code', 'Plugin', 'Open Source'],
+    status: 'Released',
+  },
+  {
     slug: 'dociq-sphere',
     name: 'DocIQ Sphere',
     tagline: 'Privacy-first legal intelligence',
