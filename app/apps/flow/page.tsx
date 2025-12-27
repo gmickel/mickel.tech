@@ -426,6 +426,137 @@ export default function FlowPage() {
           </Card>
         </section>
 
+        {/* Beads Integration */}
+        <section className="relative mx-auto max-w-6xl px-6 pb-16 md:px-10">
+          <Card className="border-violet-500/20 bg-card/70">
+            <CardHeader className="pb-4">
+              <div className="flex items-center gap-3">
+                <p className="font-mono text-[11px] text-primary tracking-[0.2em]">
+                  BEADS INTEGRATION
+                </p>
+                <Badge
+                  className="border-white/20 bg-white/5 text-[10px] text-muted-foreground"
+                  variant="outline"
+                >
+                  Optional
+                </Badge>
+              </div>
+              <CardTitle className="text-white text-xl">
+                Dependency-aware tracking via{' '}
+                <a
+                  className="text-violet-400 underline decoration-violet-400/40 underline-offset-2 transition-colors hover:text-violet-300"
+                  href="https://github.com/steveyegge/beads"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  Beads
+                </a>
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-5">
+              <p className="text-muted-foreground">
+                Flow optionally integrates with Beads (
+                <code className="text-violet-400">bd</code>) for
+                dependency-aware issue tracking. When{' '}
+                <code className="text-white">.beads/</code> exists, Flow adapts
+                automatically.
+              </p>
+
+              {/* Comparison grid */}
+              <div className="grid gap-px overflow-hidden rounded-lg border border-white/10 bg-white/5 sm:grid-cols-2">
+                <div className="bg-black/40 p-4">
+                  <p className="mb-3 font-mono text-muted-foreground text-xs uppercase tracking-wide">
+                    Standard Mode
+                  </p>
+                  <ul className="space-y-2 text-sm">
+                    <li className="flex items-start gap-2">
+                      <span className="text-muted-foreground">Plans →</span>
+                      <code className="text-white">plans/&lt;slug&gt;.md</code>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-muted-foreground">Tasks →</span>
+                      <span className="text-white">TodoWrite</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-muted-foreground">Context →</span>
+                      <span className="text-white">Plan file</span>
+                    </li>
+                  </ul>
+                </div>
+                <div className="bg-violet-500/5 p-4">
+                  <p className="mb-3 font-mono text-violet-400 text-xs uppercase tracking-wide">
+                    Beads Mode
+                  </p>
+                  <ul className="space-y-2 text-sm">
+                    <li className="flex items-start gap-2">
+                      <span className="text-muted-foreground">Plans →</span>
+                      <span className="text-white">Epic with child tasks</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-muted-foreground">Tasks →</span>
+                      <code className="text-violet-400">
+                        bd ready / bd close
+                      </code>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-muted-foreground">Context →</span>
+                      <code className="text-violet-400">bd show</code>
+                      <span className="text-white">output</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              {/* Code example */}
+              <div className="overflow-x-auto rounded-lg border border-white/10 bg-black/40 p-4">
+                <code className="block whitespace-pre font-mono text-sm leading-relaxed">
+                  <span className="text-white/40"># With Beads configured</span>
+                  {'\n'}
+                  <span className="text-violet-400">/flow:plan</span>{' '}
+                  <span className="text-muted-foreground">Add OAuth login</span>
+                  {'\n'}
+                  <span className="text-white/40">
+                    # Creates epic bd-a3f8e9 with child tasks
+                  </span>
+                  {'\n\n'}
+                  <span className="text-primary">/flow:work</span>{' '}
+                  <span className="text-white">bd-a3f8e9</span>
+                  {'\n'}
+                  <span className="text-white/40">
+                    # Tracks progress via bd ready/update/close
+                  </span>
+                </code>
+              </div>
+
+              {/* Key points */}
+              <ul className="space-y-2 text-muted-foreground text-sm">
+                <li className="flex gap-2">
+                  <span className="text-violet-400">›</span>
+                  <span>
+                    <span className="text-white">No configuration</span>—detects{' '}
+                    <code className="text-violet-400">.beads/</code>{' '}
+                    automatically
+                  </span>
+                </li>
+                <li className="flex gap-2">
+                  <span className="text-violet-400">›</span>
+                  <span>
+                    <span className="text-white">Graceful fallback</span>—works
+                    without Beads installed
+                  </span>
+                </li>
+                <li className="flex gap-2">
+                  <span className="text-violet-400">›</span>
+                  <span>
+                    <span className="text-white">Dependency tracking</span>
+                    —knows which tasks block others
+                  </span>
+                </li>
+              </ul>
+            </CardContent>
+          </Card>
+        </section>
+
         {/* Agents */}
         <section className="relative mx-auto max-w-6xl px-6 pb-16 md:px-10">
           <div className="mb-6 flex items-center gap-3">
