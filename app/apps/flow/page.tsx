@@ -704,7 +704,7 @@ export default function FlowPage() {
                   </li>
                   <li className="flex gap-2">
                     <span className="text-primary">›</span>
-                    Issue creation auto-detects GitHub/Linear/Beads
+                    Issue creation auto-detects GitHub/Linear
                   </li>
                 </ul>
               </CardContent>
