@@ -691,8 +691,8 @@ export default function FlowPage() {
                 <ul className="space-y-2 text-muted-foreground text-sm">
                   <li className="flex gap-2">
                     <span className="text-primary">›</span>
-                    Plan files live in{' '}
-                    <code className="text-white">plans/</code>
+                    Plans live in <code className="text-white">plans/</code> or
+                    Beads epics
                   </li>
                   <li className="flex gap-2">
                     <span className="text-primary">›</span>
@@ -704,7 +704,7 @@ export default function FlowPage() {
                   </li>
                   <li className="flex gap-2">
                     <span className="text-primary">›</span>
-                    Issue creation auto-detects GitHub/Linear
+                    Issues auto-detect GitHub/Linear/Beads
                   </li>
                 </ul>
               </CardContent>
