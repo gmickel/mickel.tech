@@ -125,7 +125,7 @@ export default function OGImage() {
               color: '#fff',
             }}
           >
-            5 Agents • 2 Commands
+            4 Commands • 5 Agents • 5 Skills
           </div>
         </div>
       </div>

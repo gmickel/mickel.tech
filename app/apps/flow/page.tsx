@@ -36,6 +36,25 @@ export const metadata: Metadata = {
   },
 };
 
+const commands = [
+  {
+    name: '/flow:plan',
+    description: 'Research + produce plans/<slug>.md',
+  },
+  {
+    name: '/flow:work',
+    description: 'Execute a plan end-to-end',
+  },
+  {
+    name: '/flow:plan-review',
+    description: 'Carmack-level plan review via rp-cli',
+  },
+  {
+    name: '/flow:impl-review',
+    description: 'Carmack-level impl review (current branch)',
+  },
+];
+
 const agents = [
   {
     name: 'repo-scout',
@@ -69,6 +88,14 @@ const agents = [
   },
 ];
 
+const skills = [
+  { name: 'flow-plan', purpose: 'Planning workflow logic' },
+  { name: 'flow-work', purpose: 'Execution workflow logic' },
+  { name: 'flow-plan-review', purpose: 'Plan review via rp-cli + chat' },
+  { name: 'flow-impl-review', purpose: 'Impl review via rp-cli + chat' },
+  { name: 'worktree-kit', purpose: 'Safe parallel git workspaces' },
+];
+
 const planSteps = [
   { step: '01', action: 'Run three research agents in parallel' },
   { step: '02', action: 'Run flow gap check' },
@@ -82,7 +109,7 @@ const workSteps = [
   { step: '03', action: 'Turn plan into TodoWrite tasks' },
   { step: '04', action: 'Execute task loop with plan re-read' },
   { step: '05', action: 'Test + optional audit' },
-  { step: '06', action: 'Ship' },
+  { step: '06', action: 'Ship with Definition of Done' },
 ];
 
 export default function FlowPage() {
@@ -155,8 +182,8 @@ export default function FlowPage() {
             </p>
 
             <p className="mt-4 max-w-2xl text-muted-foreground leading-relaxed">
-              Two commands. Five specialized agents. One disciplined workflow
-              that actually ships.
+              4 commands. 5 agents. 5 skills. One disciplined workflow that
+              actually ships.
             </p>
 
             {/* Note about not being strictly an app */}
@@ -237,11 +264,37 @@ export default function FlowPage() {
           </Card>
         </section>
 
-        {/* Two Commands */}
+        {/* Commands Overview */}
         <section className="relative mx-auto max-w-6xl px-6 pb-16 md:px-10">
           <div className="mb-6 flex items-center gap-3">
             <p className="font-mono text-[11px] text-primary tracking-[0.2em]">
-              TWO COMMANDS
+              COMMANDS
+            </p>
+          </div>
+
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {commands.map((cmd) => (
+              <Card className="border-white/10 bg-card/60" key={cmd.name}>
+                <CardHeader className="pb-2">
+                  <code className="w-fit rounded bg-violet-500/20 px-2 py-1 font-mono text-violet-400 text-xs">
+                    {cmd.name}
+                  </code>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground text-sm">
+                    {cmd.description}
+                  </p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </section>
+
+        {/* Core Workflow */}
+        <section className="relative mx-auto max-w-6xl px-6 pb-16 md:px-10">
+          <div className="mb-6 flex items-center gap-3">
+            <p className="font-mono text-[11px] text-primary tracking-[0.2em]">
+              CORE WORKFLOW
             </p>
           </div>
 
@@ -330,6 +383,49 @@ export default function FlowPage() {
           </div>
         </section>
 
+        {/* Review Commands */}
+        <section className="relative mx-auto max-w-6xl px-6 pb-16 md:px-10">
+          <Card className="border-primary/20 bg-card/70">
+            <CardHeader className="pb-4">
+              <div className="flex items-center gap-3">
+                <p className="font-mono text-[11px] text-primary tracking-[0.2em]">
+                  BUILT-IN REVIEWS
+                </p>
+              </div>
+              <CardTitle className="text-white text-xl">
+                Carmack-level code reviews via rp-cli
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <p className="text-muted-foreground">
+                Reviews use RepoPrompt's context builder to gather relevant
+                files, then run a thorough chat-based review covering
+                correctness, simplicity, DRY, architecture, edge cases, tests,
+                performance, security, and maintainability.
+              </p>
+
+              <div className="space-y-3">
+                <div className="overflow-x-auto rounded-lg border border-white/10 bg-black/40 p-4">
+                  <code className="block whitespace-pre font-mono text-muted-foreground text-sm">
+                    <span className="text-violet-400">/flow:plan-review</span>{' '}
+                    plans/add-oauth-login.md
+                  </code>
+                </div>
+
+                <div className="overflow-x-auto rounded-lg border border-white/10 bg-black/40 p-4">
+                  <code className="block whitespace-pre font-mono text-muted-foreground text-sm">
+                    <span className="text-primary">/flow:impl-review</span>
+                    <span className="text-white/40">
+                      {' '}
+                      (reviews current branch changes)
+                    </span>
+                  </code>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </section>
+
         {/* Agents */}
         <section className="relative mx-auto max-w-6xl px-6 pb-16 md:px-10">
           <div className="mb-6 flex items-center gap-3">
@@ -356,91 +452,46 @@ export default function FlowPage() {
                 </CardContent>
               </Card>
             ))}
-
-            {/* worktree-kit skill */}
-            <Card className="border-violet-500/20 bg-violet-500/5">
-              <CardHeader className="pb-2">
-                <div className="flex items-center gap-2">
-                  <code className="rounded bg-violet-500/20 px-2 py-1 font-mono text-violet-400 text-xs">
-                    worktree-kit
-                  </code>
-                  <Badge
-                    className="border-violet-500/30 text-violet-400"
-                    variant="outline"
-                  >
-                    SKILL
-                  </Badge>
-                </div>
-                <CardTitle className="text-base text-white">
-                  Safe parallel workspaces
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground text-sm">
-                  Git worktree management for isolated development without
-                  polluting your main branch.
-                </p>
-              </CardContent>
-            </Card>
           </div>
         </section>
 
-        {/* RepoPrompt Integration */}
+        {/* Skills */}
         <section className="relative mx-auto max-w-6xl px-6 pb-16 md:px-10">
-          <Card className="border-primary/20 bg-card/70">
-            <CardHeader className="pb-4">
-              <div className="flex items-center gap-3">
-                <p className="font-mono text-[11px] text-primary tracking-[0.2em]">
-                  INTEGRATION
-                </p>
-              </div>
-              <CardTitle className="text-white text-xl">
-                Works with RepoPrompt reviews
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-4">
-              <p className="text-muted-foreground">
-                If you use{' '}
-                <a
-                  className="glow-link"
-                  href="https://github.com/gmickel/claude-code-config"
-                  rel="noopener noreferrer"
-                  target="_blank"
-                >
-                  gmickel/claude-code-config
-                </a>
-                , chain Flow with RepoPrompt review commands:
-              </p>
+          <div className="mb-6 flex items-center gap-3">
+            <p className="font-mono text-[11px] text-primary tracking-[0.2em]">
+              SKILLS
+            </p>
+            <Separator className="h-4 bg-white/10" orientation="vertical" />
+            <span className="text-muted-foreground text-xs">
+              Progressive disclosure: ~100 tokens at startup
+            </span>
+          </div>
 
-              <div className="space-y-3">
-                <div className="overflow-x-auto rounded-lg border border-white/10 bg-black/40 p-4">
-                  <code className="block whitespace-pre font-mono text-muted-foreground text-sm">
-                    <span className="text-violet-400">/flow:plan</span> Add
-                    OAuth login for users{' '}
-                    <span className="text-white/40">
-                      then review the plan using
-                    </span>{' '}
-                    <span className="text-primary">/rp-plan-review</span>
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {skills.map((skill) => (
+              <Card
+                className="border-violet-500/20 bg-violet-500/5"
+                key={skill.name}
+              >
+                <CardHeader className="pb-2">
+                  <code className="w-fit rounded bg-violet-500/20 px-2 py-1 font-mono text-violet-400 text-xs">
+                    {skill.name}
                   </code>
-                </div>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground text-sm">
+                    {skill.purpose}
+                  </p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
 
-                <div className="overflow-x-auto rounded-lg border border-white/10 bg-black/40 p-4">
-                  <code className="block whitespace-pre font-mono text-muted-foreground text-sm">
-                    <span className="text-primary">/flow:work</span>{' '}
-                    plans/add-oauth-login.md{' '}
-                    <span className="text-white/40">then review using</span>{' '}
-                    <span className="text-primary">/rp-impl-review</span>
-                  </code>
-                </div>
-              </div>
-
-              <p className="text-muted-foreground text-sm">
-                RepoPrompt commands are powered by{' '}
-                <code className="text-primary">rp-cli</code>—the same tool used
-                throughout this site.
-              </p>
-            </CardContent>
-          </Card>
+          <p className="mt-4 text-muted-foreground text-sm">
+            Skills auto-trigger from natural language. Say "help me plan adding
+            OAuth" and Claude triggers{' '}
+            <code className="text-violet-400">flow-plan</code> automatically.
+          </p>
         </section>
 
         {/* Installation */}
