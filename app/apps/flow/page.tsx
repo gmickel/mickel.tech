@@ -5,6 +5,7 @@ import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Separator } from '@/components/ui/separator';
 import { breadcrumbSchema, JsonLd, softwareAppSchema } from '@/lib/json-ld';
+import { FlowSchematic } from './flow-schematic';
 
 const APP_DATA = {
   name: 'Flow',
@@ -383,6 +384,16 @@ export default function FlowPage() {
           </div>
         </section>
 
+        {/* Visual Flow Schematic */}
+        <section className="relative mx-auto max-w-6xl px-6 pb-16 md:px-10">
+          <div className="mb-6 flex items-center gap-3">
+            <p className="font-mono text-[11px] text-primary tracking-[0.2em]">
+              HOW IT WORKS
+            </p>
+          </div>
+          <FlowSchematic />
+        </section>
+
         {/* Review Commands */}
         <section className="relative mx-auto max-w-6xl px-6 pb-16 md:px-10">
           <Card className="border-primary/20 bg-card/70">
@@ -398,10 +409,19 @@ export default function FlowPage() {
             </CardHeader>
             <CardContent className="space-y-4">
               <p className="text-muted-foreground">
-                Reviews use RepoPrompt's context builder to gather relevant
-                files, then run a thorough chat-based review covering
-                correctness, simplicity, DRY, architecture, edge cases, tests,
-                performance, security, and maintainability.
+                Reviews use{' '}
+                <a
+                  className="text-primary underline decoration-primary/40 underline-offset-2 transition-colors hover:text-primary/80"
+                  href="https://repoprompt.com"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  RepoPrompt
+                </a>
+                's context builder to gather relevant files, then run a thorough
+                chat-based review covering correctness, simplicity, DRY,
+                architecture, edge cases, tests, performance, security, and
+                maintainability.
               </p>
 
               <div className="space-y-3">
