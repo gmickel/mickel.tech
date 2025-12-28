@@ -129,6 +129,19 @@ export function FlowSchematic() {
                 Beads epic
               </code>
             </div>
+
+            {/* Auto-review indicator */}
+            <div
+              className={`flex items-center justify-center gap-2 rounded border border-violet-500/40 border-dashed bg-violet-500/5 p-2 transition-all duration-500 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'}`}
+              style={{ transitionDelay: isVisible ? '650ms' : '0ms' }}
+            >
+              <span className="font-mono text-[10px] text-violet-400">
+                → auto-review
+              </span>
+              <span className="text-[9px] text-muted-foreground">
+                (if rp-cli)
+              </span>
+            </div>
           </div>
 
           {/* CENTER: Arrow connector */}
@@ -165,7 +178,8 @@ export function FlowSchematic() {
                   done: true,
                 },
                 { step: 'Quality', desc: 'tests + lint', done: true },
-                { step: 'Ship', desc: 'commit → PR', done: false },
+                { step: 'Ship', desc: 'commit → PR', done: true },
+                { step: 'Review', desc: 'auto if rp-cli', done: false },
               ].map((item, i) => (
                 <div
                   className={`flex items-center gap-3 rounded border border-white/10 bg-white/5 p-2 transition-all duration-300 ${isVisible ? 'translate-x-0 opacity-100' : 'translate-x-4 opacity-0'}`}
@@ -203,32 +217,43 @@ export function FlowSchematic() {
           </div>
         </div>
 
-        {/* BOTTOM: Review loop */}
+        {/* BOTTOM: Review integration */}
         <div
           className={`mt-8 border-white/10 border-t pt-6 transition-all duration-700 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'}`}
           style={{ transitionDelay: isVisible ? '1400ms' : '0ms' }}
         >
           <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
             <div className="flex items-center gap-2 rounded-lg border border-violet-500/30 bg-violet-500/10 px-4 py-2">
+              <span className="text-emerald-400 text-xs">✓</span>
               <span className="font-mono text-violet-400 text-xs">
-                /flow:plan-review
+                plan-review
               </span>
-              <span className="text-muted-foreground">↺</span>
+              <span className="text-[9px] text-muted-foreground">auto</span>
             </div>
 
             <div className="hidden h-px w-12 bg-gradient-to-r from-violet-500/50 to-primary/50 sm:block" />
             <div className="h-4 w-px bg-gradient-to-b from-violet-500/50 to-primary/50 sm:hidden" />
 
             <div className="flex items-center gap-2 rounded-lg border border-primary/30 bg-primary/10 px-4 py-2">
+              <span className="text-emerald-400 text-xs">✓</span>
               <span className="font-mono text-primary text-xs">
-                /flow:impl-review
+                impl-review
               </span>
-              <span className="text-muted-foreground">↺</span>
+              <span className="text-[9px] text-muted-foreground">auto</span>
             </div>
           </div>
 
           <p className="mt-3 text-center font-mono text-[10px] text-muted-foreground tracking-wide">
-            CARMACK-LEVEL REVIEWS AT EVERY STEP
+            AUTO-INTEGRATED WHEN{' '}
+            <a
+              className="text-primary underline-offset-2 hover:underline"
+              href="https://repoprompt.com"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              REPOPROMPT
+            </a>{' '}
+            rp-cli DETECTED
           </p>
         </div>
       </div>

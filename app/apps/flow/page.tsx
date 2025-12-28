@@ -40,11 +40,11 @@ export const metadata: Metadata = {
 const commands = [
   {
     name: '/flow:plan',
-    description: 'Research + produce plans/<slug>.md',
+    description: 'Research + produce plan (auto-review if rp-cli)',
   },
   {
     name: '/flow:work',
-    description: 'Execute a plan end-to-end',
+    description: 'Execute plan end-to-end (auto-review if rp-cli)',
   },
   {
     name: '/flow:plan-review',
@@ -101,7 +101,8 @@ const planSteps = [
   { step: '01', action: 'Run three research agents in parallel' },
   { step: '02', action: 'Run flow gap check' },
   { step: '03', action: 'Write plan with references + acceptance checks' },
-  { step: '04', action: 'Offer next step (open, work, create issue)' },
+  { step: '04', action: 'Auto-review (if opted in at start)' },
+  { step: '05', action: 'Offer next step (work, create issue)' },
 ];
 
 const workSteps = [
@@ -111,6 +112,7 @@ const workSteps = [
   { step: '04', action: 'Execute task loop with plan re-read' },
   { step: '05', action: 'Test + optional audit' },
   { step: '06', action: 'Ship with Definition of Done' },
+  { step: '07', action: 'Auto-review (if opted in at start)' },
 ];
 
 export default function FlowPage() {
@@ -402,6 +404,12 @@ export default function FlowPage() {
                 <p className="font-mono text-[11px] text-primary tracking-[0.2em]">
                   BUILT-IN REVIEWS
                 </p>
+                <Badge
+                  className="border-emerald-500/40 bg-emerald-500/10 text-[10px] text-emerald-400"
+                  variant="outline"
+                >
+                  Now Auto-Integrated
+                </Badge>
               </div>
               <CardTitle className="text-white text-xl">
                 Carmack-level code reviews via rp-cli
@@ -409,7 +417,7 @@ export default function FlowPage() {
             </CardHeader>
             <CardContent className="space-y-4">
               <p className="text-muted-foreground">
-                Reviews use{' '}
+                When{' '}
                 <a
                   className="text-primary underline decoration-primary/40 underline-offset-2 transition-colors hover:text-primary/80"
                   href="https://repoprompt.com"
@@ -417,28 +425,55 @@ export default function FlowPage() {
                   target="_blank"
                 >
                   RepoPrompt
-                </a>
-                's context builder to gather relevant files, then run a thorough
-                chat-based review covering correctness, simplicity, DRY,
-                architecture, edge cases, tests, performance, security, and
-                maintainability.
+                </a>{' '}
+                rp-cli is detected, both{' '}
+                <code className="text-violet-400">/flow:plan</code> and{' '}
+                <code className="text-primary">/flow:work</code> ask upfront
+                whether to include a review. If yes, review runs automatically
+                at the end—no separate command needed.
               </p>
 
-              <div className="space-y-3">
-                <div className="overflow-x-auto rounded-lg border border-white/10 bg-black/40 p-4">
-                  <code className="block whitespace-pre font-mono text-muted-foreground text-sm">
+              {/* Auto-review flow example */}
+              <div className="overflow-x-auto rounded-lg border border-white/10 bg-black/40 p-4">
+                <code className="block whitespace-pre font-mono text-sm leading-relaxed">
+                  <span className="text-muted-foreground">{'>'}</span>{' '}
+                  <span className="text-violet-400">/flow:plan</span>{' '}
+                  <span className="text-muted-foreground">Add OAuth login</span>
+                  {'\n'}
+                  <span className="text-primary">?</span>{' '}
+                  <span className="text-white">
+                    Run Carmack-level review after planning?
+                  </span>{' '}
+                  <span className="text-emerald-400">[Yes]</span>
+                  {'\n'}
+                  <span className="text-white/40">
+                    ... (research + planning) ...
+                  </span>
+                  {'\n'}
+                  <span className="text-emerald-400">✓</span>{' '}
+                  <span className="text-muted-foreground">
+                    Plan complete, starting review...
+                  </span>
+                  {'\n'}
+                  <span className="text-white/40">
+                    ... (review runs automatically) ...
+                  </span>
+                </code>
+              </div>
+
+              <p className="text-muted-foreground text-sm">
+                Manual invocation still available:
+              </p>
+              <div className="grid gap-3 sm:grid-cols-2">
+                <div className="overflow-x-auto rounded-lg border border-white/10 bg-black/40 p-3">
+                  <code className="block font-mono text-muted-foreground text-sm">
                     <span className="text-violet-400">/flow:plan-review</span>{' '}
-                    plans/add-oauth-login.md
+                    <span className="text-white/60">plans/oauth.md</span>
                   </code>
                 </div>
-
-                <div className="overflow-x-auto rounded-lg border border-white/10 bg-black/40 p-4">
-                  <code className="block whitespace-pre font-mono text-muted-foreground text-sm">
+                <div className="overflow-x-auto rounded-lg border border-white/10 bg-black/40 p-3">
+                  <code className="block font-mono text-muted-foreground text-sm">
                     <span className="text-primary">/flow:impl-review</span>
-                    <span className="text-white/40">
-                      {' '}
-                      (reviews current branch changes)
-                    </span>
                   </code>
                 </div>
               </div>
@@ -695,6 +730,24 @@ export default function FlowPage() {
                 </p>
               </CardContent>
             </Card>
+          </div>
+
+          {/* Optional RepoPrompt */}
+          <div className="mt-6 rounded-lg border border-primary/20 bg-primary/5 p-4">
+            <p className="text-muted-foreground text-sm">
+              <span className="font-mono text-primary text-xs">OPTIONAL</span> —
+              Install{' '}
+              <a
+                className="text-primary underline decoration-primary/40 underline-offset-2 transition-colors hover:text-primary/80"
+                href="https://repoprompt.com"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                RepoPrompt
+              </a>{' '}
+              for auto-review. Flow detects rp-cli and offers integrated
+              Carmack-level reviews.
+            </p>
           </div>
         </section>
 
