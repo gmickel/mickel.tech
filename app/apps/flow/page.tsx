@@ -803,6 +803,173 @@ export default function FlowPage() {
           </p>
         </section>
 
+        {/* Direct Invocation */}
+        <section className="relative mx-auto max-w-6xl px-6 pb-16 md:px-10">
+          <div className="mb-6 flex items-center gap-3">
+            <p className="font-mono text-[11px] text-primary tracking-[0.2em]">
+              BEYOND PLAN → WORK
+            </p>
+          </div>
+
+          <Card className="border-white/10 bg-card/70">
+            <CardHeader className="pb-4">
+              <CardTitle className="text-white text-xl">
+                Direct invocation: skills & agents
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-6">
+              <p className="text-muted-foreground">
+                Flow's core workflow is{' '}
+                <code className="text-violet-400">/flow:plan</code> →{' '}
+                <code className="text-primary">/flow:work</code>, but you can
+                invoke individual components directly for specific tasks.
+              </p>
+
+              {/* Skill vs Agent */}
+              <div className="grid gap-px overflow-hidden rounded-lg border border-white/10 bg-white/5 sm:grid-cols-2">
+                <div className="bg-violet-500/5 p-4">
+                  <div className="mb-2 font-mono text-violet-400 text-xs uppercase tracking-wide">
+                    Skills
+                  </div>
+                  <ul className="space-y-1 text-[11px] text-muted-foreground">
+                    <li>Run in current conversation</li>
+                    <li>See full chat history</li>
+                    <li>Trigger via natural language</li>
+                  </ul>
+                </div>
+                <div className="bg-primary/5 p-4">
+                  <div className="mb-2 font-mono text-primary text-xs uppercase tracking-wide">
+                    Agents
+                  </div>
+                  <ul className="space-y-1 text-[11px] text-muted-foreground">
+                    <li>Run as isolated subprocess</li>
+                    <li>Fresh context per task</li>
+                    <li>Trigger via "Use X to..."</li>
+                  </ul>
+                </div>
+              </div>
+
+              {/* Skill triggers */}
+              <div>
+                <p className="mb-3 font-mono text-muted-foreground text-xs uppercase tracking-wide">
+                  Skill Triggers
+                </p>
+                <div className="space-y-2 text-sm">
+                  <div className="flex flex-wrap items-center gap-2">
+                    <code className="rounded bg-violet-500/20 px-2 py-0.5 font-mono text-violet-400 text-xs">
+                      rp-explorer
+                    </code>
+                    <span className="text-muted-foreground">
+                      "use rp to explore how auth works"
+                    </span>
+                  </div>
+                  <div className="flex flex-wrap items-center gap-2">
+                    <code className="rounded bg-violet-500/20 px-2 py-0.5 font-mono text-violet-400 text-xs">
+                      flow-plan
+                    </code>
+                    <span className="text-muted-foreground">
+                      "help me plan adding OAuth"
+                    </span>
+                  </div>
+                  <div className="flex flex-wrap items-center gap-2">
+                    <code className="rounded bg-violet-500/20 px-2 py-0.5 font-mono text-violet-400 text-xs">
+                      worktree-kit
+                    </code>
+                    <span className="text-muted-foreground">
+                      "create a worktree for feature X"
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Agent invocation */}
+              <div>
+                <p className="mb-3 font-mono text-muted-foreground text-xs uppercase tracking-wide">
+                  Agent Invocation
+                </p>
+                <div className="space-y-2 text-sm">
+                  <div className="flex flex-wrap items-center gap-2">
+                    <code className="rounded bg-primary/20 px-2 py-0.5 font-mono text-primary text-xs">
+                      context-scout
+                    </code>
+                    <span className="text-muted-foreground">
+                      "Use context-scout to understand the payment system"
+                    </span>
+                  </div>
+                  <div className="flex flex-wrap items-center gap-2">
+                    <code className="rounded bg-primary/20 px-2 py-0.5 font-mono text-primary text-xs">
+                      repo-scout
+                    </code>
+                    <span className="text-muted-foreground">
+                      "Use repo-scout to find all API endpoints"
+                    </span>
+                  </div>
+                  <div className="flex flex-wrap items-center gap-2">
+                    <code className="rounded bg-primary/20 px-2 py-0.5 font-mono text-primary text-xs">
+                      practice-scout
+                    </code>
+                    <span className="text-muted-foreground">
+                      "Use practice-scout for React Server Components"
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Quick reference */}
+              <div className="rounded-lg border border-white/10 bg-black/40 p-4">
+                <p className="mb-3 font-mono text-white/60 text-xs uppercase tracking-wide">
+                  Quick Reference
+                </p>
+                <div className="grid gap-2 text-[11px] sm:grid-cols-2">
+                  <div className="flex justify-between">
+                    <span className="text-muted-foreground">
+                      Full feature planning
+                    </span>
+                    <code className="text-violet-400">/flow:plan</code>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-muted-foreground">
+                      Execute a plan
+                    </span>
+                    <code className="text-primary">/flow:work</code>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-muted-foreground">
+                      Quick codebase exploration
+                    </span>
+                    <span className="text-white/60">"use rp to..."</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-muted-foreground">
+                      Deep architecture analysis
+                    </span>
+                    <span className="text-white/60">
+                      "Use context-scout..."
+                    </span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-muted-foreground">
+                      Review my plan
+                    </span>
+                    <code className="text-violet-400">/flow:plan-review</code>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-muted-foreground">
+                      Review my implementation
+                    </span>
+                    <code className="text-primary">/flow:impl-review</code>
+                  </div>
+                </div>
+              </div>
+
+              <p className="text-muted-foreground text-sm">
+                <span className="text-white">Rule of thumb:</span> Use skills
+                for inline help, agents for delegated deep dives.
+              </p>
+            </CardContent>
+          </Card>
+        </section>
+
         {/* Installation */}
         <section className="relative mx-auto max-w-6xl px-6 pb-16 md:px-10">
           <div className="mb-6 flex items-center gap-3">
