@@ -101,6 +101,7 @@ const skills = [
   { name: 'flow-plan-review', purpose: 'Plan review via rp-cli + chat' },
   { name: 'flow-impl-review', purpose: 'Impl review via rp-cli + chat' },
   { name: 'worktree-kit', purpose: 'Safe parallel git workspaces' },
+  { name: 'rp-explorer', purpose: 'Token-efficient codebase exploration' },
 ];
 
 const planSteps = [
@@ -192,7 +193,7 @@ export default function FlowPage() {
             </p>
 
             <p className="mt-4 max-w-2xl text-muted-foreground leading-relaxed">
-              4 commands. 5 agents. 5 skills. One disciplined workflow that
+              4 commands. 6 agents. 6 skills. One disciplined workflow that
               actually ships.
             </p>
 
@@ -542,6 +543,18 @@ export default function FlowPage() {
                 whether to include a review. If yes, review runs automatically
                 at the end—no separate command needed.
               </p>
+
+              {/* Cross-model benefit */}
+              <div className="rounded-lg border border-primary/20 bg-primary/5 p-3">
+                <p className="text-muted-foreground text-sm">
+                  <span className="font-mono text-primary text-xs">
+                    CROSS-MODEL
+                  </span>{' '}
+                  — Reviews use RepoPrompt's chat with a different model (e.g.,
+                  GPT-5.2 High). Catches blind spots that same-model self-review
+                  misses.
+                </p>
+              </div>
 
               {/* Auto-review flow example */}
               <div className="overflow-x-auto rounded-lg border border-white/10 bg-black/40 p-4">
