@@ -1,0 +1,101 @@
+---
+title: "The \"Context Hygiene\" Problem: Why I Rewrote My Claude Code Workflows"
+summary: "I was losing 40k tokens on startup. So I built Flow—a plugin that uses command stubs, progressive disclosure, and adversarial review loops."
+publishedAt: "2025-12-28T09:00:00Z"
+tags:
+  - Claude Code
+  - AI Coding
+  - Flow
+  - Tooling
+canonicalSource: substack
+substackUrl: "https://bytesizedbrainwaves.substack.com/p/the-context-hygiene-problem-why-i"
+status: published
+---
+
+_I wasn't procrastinating, I swear._
+
+Instead of finishing my actual projects this weekend, I got engrossed in rebuilding my tooling.
+
+I just released [Flow](/apps/flow). It's a Claude Code plugin that streamlines the development lifecycle. It stands on the shoulders of giants, fully integrating with both [RepoPrompt](https://repoprompt.com) and optionally [Steve Yegge's Beads](https://github.com/steveyegge/beads).
+
+![Flow: Streamlined Development Lifecycle](/flow/flow.jpg)
+
+---
+
+## The Motivation: 40k Tokens of Waste
+
+I realized I was losing around **40k tokens** of my context window on startup. It was polluted by loaded MCPs, plugins, and massive command definitions I rarely touched.
+
+I also got tired of the manual friction involved in sending plans and implementations out for architectural review. I do not believe in complex agent workflows. I want a disciplined, deterministic loop:
+
+**Plan → Review → Implement → Review.**
+
+---
+
+## The Pattern: Command Stubs & Progressive Disclosure
+
+I rewrote the workflow using a **Command Stub → Skill** pattern. I have not seen this used elsewhere yet, but it works incredibly well.
+
+1. **The Stub**: A tiny ~20 token definition that sits in the context window.
+2. **The Skill**: The heavy logic only loads when triggered.
+
+This gives you the best of both worlds:
+
+- **Progressive Disclosure** — keeping the context clean
+- **Dual Triggering** — trigger via natural language ("Help me plan X") OR explicit slash command (`/flow:plan`)
+
+---
+
+## The Subagent Orchestra
+
+The real power is in the coordination. The plugin orchestrates **6 specialized subagents** that run in parallel phases.
+
+### 1. The Scouts (Context Gathering)
+
+The agent intelligently chooses the right tool for the job:
+
+- **context-scout**: If `rp-cli` is detected, it uses the RepoPrompt builder to map architecture and function signatures. Slow, deep, and context-aware.
+- **repo-scout**: If not, it falls back to fast grep/glob operations to find existing patterns. Cheap and fast.
+
+### 2. The Researchers
+
+- **practice-scout**: Researches community best practices for the specific task at hand.
+- **docs-scout**: Fetches relevant official documentation to ensure we're not hallucinating APIs.
+
+### 3. The Analyst
+
+- **gap-analyst**: This is critical. It takes the drafted plan and explicitly hunts for missing user flows, unhandled edge cases, and logical gaps before the plan goes to review.
+
+---
+
+## The "John Carmack" Adversarial Loops
+
+I married the workflow with RepoPrompt to create an **adversarial review loop**. If the plugin detects `rp-cli`, it automatically delegates reviews to a separate model (e.g., GPT-5.2 High).
+
+It's not a single pass. It's a **fix-until-pass loop**. This applies to both core workflows:
+
+**The Planning Workflow (`/flow:plan`)**
+The agent scouts, researches, drafts a plan, and submits it to RepoPrompt. It implements fixes and re-submits until the reviewer is satisfied.
+
+**The Implementation Workflow (`/flow:work`)**
+The agent executes the plan and writes tests. It grabs the git diff, builds context, and submits it for a correctness/security check. It fixes the code and re-submits.
+
+---
+
+## Beads Integration
+
+If it sees a `.beads` folder, it automatically adapts. It creates Epics and Tasks instead of Markdown files, tracking dependencies natively.
+
+![Flow Result](/flow/result.png)
+
+---
+
+## The Result
+
+This is not just "chatting with code." It's an enforced, disciplined engineering process that happens to be executed by agents.
+
+**Links:**
+- [Flow App Page](/apps/flow)
+- [GitHub Repo](https://github.com/gmickel/gmickel-claude-marketplace)
+
+Give it a try or help me improve it—I've received great feedback so far.
