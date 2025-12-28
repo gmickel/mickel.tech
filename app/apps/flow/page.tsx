@@ -218,7 +218,7 @@ export default function FlowPage() {
                 rel="noopener noreferrer"
                 target="_blank"
               >
-                View Marketplace
+                GitHub
               </a>
               <a
                 className="inline-flex items-center gap-2 border border-white/20 bg-white/5 px-6 py-3 font-mono text-sm text-white uppercase tracking-wide transition-all hover:border-white/40 hover:bg-white/10"
