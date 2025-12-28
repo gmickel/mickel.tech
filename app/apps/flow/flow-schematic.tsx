@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from 'react';
 
 const agents = [
-  { name: 'repo-scout', stats: '12 uses · 46.7k', icon: '🔍' },
+  { name: 'context/repo', stats: 'choose depth', icon: '🔍' },
   { name: 'practice-scout', stats: '5 uses · 21.2k', icon: '💡' },
   { name: 'docs-scout', stats: '15 uses · 29.5k', icon: '📚' },
 ];
@@ -67,6 +67,28 @@ export function FlowSchematic() {
               </code>
             </div>
 
+            {/* Setup phase */}
+            <div
+              className={`rounded-lg border border-primary/30 bg-primary/5 p-3 transition-all duration-500 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'}`}
+              style={{ transitionDelay: isVisible ? '100ms' : '0ms' }}
+            >
+              <div className="mb-2 font-mono text-[10px] text-primary uppercase tracking-wide">
+                Setup (if rp-cli)
+              </div>
+              <div className="space-y-1 text-[10px] text-muted-foreground">
+                <div className="flex items-center gap-2">
+                  <span className="text-primary">?</span>
+                  <span>
+                    Research: context-scout (deep) or repo-scout (fast)
+                  </span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="text-primary">?</span>
+                  <span>Auto-review after planning?</span>
+                </div>
+              </div>
+            </div>
+
             {/* Parallel agents */}
             <div className="grid grid-cols-3 gap-2">
               {agents.map((agent, i) => (
@@ -74,7 +96,7 @@ export function FlowSchematic() {
                   className={`group rounded-lg border border-white/10 bg-white/5 p-2 text-center transition-all duration-500 hover:border-violet-500/40 hover:bg-violet-500/10 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'}`}
                   key={agent.name}
                   style={{
-                    transitionDelay: isVisible ? `${150 + i * 100}ms` : '0ms',
+                    transitionDelay: isVisible ? `${250 + i * 100}ms` : '0ms',
                   }}
                 >
                   <div className="mb-1 text-lg motion-safe:group-hover:animate-bounce">

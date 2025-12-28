@@ -59,9 +59,15 @@ const commands = [
 const agents = [
   {
     name: 'repo-scout',
-    purpose: 'Find existing patterns',
+    purpose: 'Find patterns (fast)',
     description:
-      'Searches your codebase for reusable code, established patterns, and conventions to leverage.',
+      'Searches codebase with Grep/Glob/Read for patterns and conventions. Fast, ~65k tokens.',
+  },
+  {
+    name: 'context-scout',
+    purpose: 'Deep context (rp-cli)',
+    description:
+      'Uses RepoPrompt AI builder for architecture understanding. Slower but 30% fewer tokens.',
   },
   {
     name: 'practice-scout',
@@ -98,11 +104,12 @@ const skills = [
 ];
 
 const planSteps = [
-  { step: '01', action: 'Run three research agents in parallel' },
-  { step: '02', action: 'Run flow gap check' },
-  { step: '03', action: 'Write plan with references + acceptance checks' },
-  { step: '04', action: 'Auto-review (if opted in at start)' },
-  { step: '05', action: 'Offer next step (work, create issue)' },
+  { step: '01', action: 'Setup: choose research depth + review pref' },
+  { step: '02', action: 'Run three research agents in parallel' },
+  { step: '03', action: 'Run flow gap check' },
+  { step: '04', action: 'Write plan with references + acceptance checks' },
+  { step: '05', action: 'Auto-review (if opted in)' },
+  { step: '06', action: 'Offer next step (work, create issue)' },
 ];
 
 const workSteps = [
@@ -394,6 +401,109 @@ export default function FlowPage() {
             </p>
           </div>
           <FlowSchematic />
+        </section>
+
+        {/* Research Approach Comparison */}
+        <section className="relative mx-auto max-w-6xl px-6 pb-16 md:px-10">
+          <Card className="border-violet-500/20 bg-card/70">
+            <CardHeader className="pb-4">
+              <div className="flex items-center gap-3">
+                <p className="font-mono text-[11px] text-primary tracking-[0.2em]">
+                  RESEARCH DEPTH
+                </p>
+              </div>
+              <CardTitle className="text-white text-xl">
+                Choose your research approach
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <p className="text-muted-foreground">
+                When{' '}
+                <a
+                  className="text-primary underline decoration-primary/40 underline-offset-2 transition-colors hover:text-primary/80"
+                  href="https://repoprompt.com"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  RepoPrompt
+                </a>{' '}
+                rp-cli is detected,{' '}
+                <code className="text-violet-400">/flow:plan</code> asks which
+                research approach to use before starting.
+              </p>
+
+              {/* Comparison grid */}
+              <div className="grid gap-px overflow-hidden rounded-lg border border-white/10 bg-white/5 sm:grid-cols-2">
+                <div className="bg-black/40 p-4">
+                  <div className="mb-3 flex items-center gap-2">
+                    <code className="font-mono text-primary text-xs">
+                      repo-scout
+                    </code>
+                    <span className="rounded bg-emerald-500/20 px-1.5 py-0.5 font-mono text-[9px] text-emerald-400">
+                      FAST
+                    </span>
+                  </div>
+                  <ul className="space-y-2 text-[11px] text-muted-foreground">
+                    <li>
+                      <span className="text-white/60">Tools:</span> Grep, Glob,
+                      Read
+                    </li>
+                    <li>
+                      <span className="text-white/60">Speed:</span> ~45 seconds
+                    </li>
+                    <li>
+                      <span className="text-white/60">Tokens:</span> ~65k
+                    </li>
+                    <li>
+                      <span className="text-white/60">Output:</span> Line refs,
+                      conventions
+                    </li>
+                    <li>
+                      <span className="text-white/60">Best for:</span> Quick bug
+                      fixes, simple changes
+                    </li>
+                  </ul>
+                </div>
+                <div className="bg-violet-500/5 p-4">
+                  <div className="mb-3 flex items-center gap-2">
+                    <code className="font-mono text-violet-400 text-xs">
+                      context-scout
+                    </code>
+                    <span className="rounded bg-violet-500/20 px-1.5 py-0.5 font-mono text-[9px] text-violet-400">
+                      DEEP
+                    </span>
+                  </div>
+                  <ul className="space-y-2 text-[11px] text-muted-foreground">
+                    <li>
+                      <span className="text-white/60">Tools:</span> RepoPrompt
+                      rp-cli
+                    </li>
+                    <li>
+                      <span className="text-white/60">Speed:</span> Slower
+                      (builder takes time)
+                    </li>
+                    <li>
+                      <span className="text-white/60">Tokens:</span> ~45k (30%
+                      less)
+                    </li>
+                    <li>
+                      <span className="text-white/60">Output:</span>{' '}
+                      Architecture, function sigs
+                    </li>
+                    <li>
+                      <span className="text-white/60">Best for:</span> Complex
+                      features, architecture
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <p className="text-muted-foreground text-sm">
+                <span className="text-white">Without RepoPrompt:</span>{' '}
+                repo-scout is used automatically—no prompt needed.
+              </p>
+            </CardContent>
+          </Card>
         </section>
 
         {/* Review Commands */}
