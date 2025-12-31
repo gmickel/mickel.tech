@@ -43,7 +43,7 @@ export const APPS: AppMeta[] = [
     category: 'BusinessApplication',
     tags: ['AI', 'Legal Tech', 'Enterprise'],
     image: '/sphere/sphere-research.png',
-    status: 'December 2025',
+    status: 'January 2026',
   },
   {
     slug: 'dociq-shield',
