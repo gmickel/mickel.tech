@@ -161,9 +161,69 @@ export default function FlowPage() {
           </div>
 
           <div className="mt-6">
-            <h1 className="font-bold text-4xl text-white leading-tight md:text-5xl">
-              Flow
-            </h1>
+            <div className="flex items-center gap-4">
+              <svg
+                aria-hidden="true"
+                className="h-12 w-12 text-white md:h-14 md:w-14"
+                fill="none"
+                role="img"
+                viewBox="0 0 32 32"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <title>Flow Logo</title>
+                {/* Plan node */}
+                <rect
+                  fill="none"
+                  height="10"
+                  rx="2"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  width="10"
+                  x="3"
+                  y="4"
+                />
+                {/* Work node */}
+                <rect
+                  fill="none"
+                  height="10"
+                  rx="2"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  width="10"
+                  x="19"
+                  y="18"
+                />
+                {/* Arrow connector */}
+                <path
+                  d="M13 9h4l6 9"
+                  stroke="#a78bfa"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                />
+                {/* Arrow head */}
+                <path
+                  d="M19 18l4-2-2 4"
+                  fill="#a78bfa"
+                  stroke="#a78bfa"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="1.5"
+                />
+                {/* Plan checkmark */}
+                <path
+                  d="M5.5 9l2 2 3-4"
+                  opacity="0.7"
+                  stroke="#a78bfa"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="1.5"
+                />
+              </svg>
+              <h1 className="font-bold text-4xl text-white leading-tight md:text-5xl">
+                Flow
+              </h1>
+            </div>
             <p className="mt-2 font-mono text-violet-400 text-xl">
               Plan first, work second
             </p>

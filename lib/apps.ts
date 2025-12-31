@@ -31,6 +31,7 @@ export const APPS: AppMeta[] = [
       'Claude Code marketplace plugin for structured development workflow. Research agents, gap analysis, and disciplined execution.',
     category: 'DeveloperApplication',
     tags: ['Claude Code', 'Plugin', 'Open Source'],
+    image: '/flow/logo.svg',
     status: 'Released',
   },
   {

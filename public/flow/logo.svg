@@ -1,0 +1,12 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Plan node -->
+  <rect x="3" y="4" width="10" height="10" rx="2" stroke="currentColor" stroke-width="2" fill="none"/>
+  <!-- Work node -->
+  <rect x="19" y="18" width="10" height="10" rx="2" stroke="currentColor" stroke-width="2" fill="none"/>
+  <!-- Arrow connector -->
+  <path d="M13 9h4l6 9" stroke="#a78bfa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Arrow head -->
+  <path d="M19 18l4-2-2 4" fill="#a78bfa" stroke="#a78bfa" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Plan checkmark -->
+  <path d="M5.5 9l2 2 3-4" stroke="#a78bfa" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.7"/>
+</svg>
