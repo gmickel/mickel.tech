@@ -600,9 +600,45 @@ export default function FlowPage() {
                 rp-cli is detected, both{' '}
                 <code className="text-violet-400">/flow:plan</code> and{' '}
                 <code className="text-primary">/flow:work</code> ask upfront
-                whether to include a review. If yes, review runs automatically
-                at the end—no separate command needed.
+                which review mode to use:
               </p>
+
+              {/* Review options grid */}
+              <div className="grid gap-px overflow-hidden rounded-lg border border-white/10 bg-white/5 sm:grid-cols-3">
+                <div className="bg-primary/5 p-3">
+                  <div className="mb-2 flex items-center gap-2">
+                    <span className="font-mono text-primary text-xs">a)</span>
+                    <span className="font-mono text-white text-xs">RepoPrompt</span>
+                  </div>
+                  <p className="text-[10px] text-muted-foreground">
+                    Review via rp-cli chat with a different model (GPT-5.2 High recommended)
+                  </p>
+                </div>
+                <div className="bg-violet-500/5 p-3">
+                  <div className="mb-2 flex items-center gap-2">
+                    <span className="font-mono text-violet-400 text-xs">b)</span>
+                    <span className="font-mono text-white text-xs">Export</span>
+                    <Badge
+                      className="border-violet-500/40 bg-violet-500/10 text-[8px] text-violet-400"
+                      variant="outline"
+                    >
+                      NEW
+                    </Badge>
+                  </div>
+                  <p className="text-[10px] text-muted-foreground">
+                    Export context to file for ChatGPT Pro, Claude web, or any LLM
+                  </p>
+                </div>
+                <div className="bg-black/20 p-3">
+                  <div className="mb-2 flex items-center gap-2">
+                    <span className="font-mono text-muted-foreground text-xs">c)</span>
+                    <span className="font-mono text-white text-xs">No</span>
+                  </div>
+                  <p className="text-[10px] text-muted-foreground">
+                    Skip review entirely
+                  </p>
+                </div>
+              </div>
 
               {/* Cross-model benefit */}
               <div className="rounded-lg border border-primary/20 bg-primary/5 p-3">
@@ -610,9 +646,20 @@ export default function FlowPage() {
                   <span className="font-mono text-primary text-xs">
                     CROSS-MODEL
                   </span>{' '}
-                  — Reviews use RepoPrompt's chat with a different model (e.g.,
-                  GPT-5.2 High). Catches blind spots that same-model self-review
-                  misses.
+                  — Different models catch different blind spots. Same-model self-review
+                  misses things a fresh perspective finds.
+                </p>
+              </div>
+
+              {/* Export mode explanation */}
+              <div className="rounded-lg border border-violet-500/20 bg-violet-500/5 p-3">
+                <p className="text-muted-foreground text-sm">
+                  <span className="font-mono text-violet-400 text-xs">
+                    EXPORT MODE
+                  </span>{' '}
+                  — Creates a markdown file with full context: file tree, code maps,
+                  selected files, and the Carmack-level review prompt. Opens automatically
+                  so you can paste into your preferred LLM.
                 </p>
               </div>
 
@@ -625,9 +672,22 @@ export default function FlowPage() {
                   {'\n'}
                   <span className="text-primary">?</span>{' '}
                   <span className="text-white">
-                    Run Carmack-level review after planning?
-                  </span>{' '}
-                  <span className="text-emerald-400">[Yes]</span>
+                    Review — Run Carmack-level review after?
+                  </span>
+                  {'\n'}
+                  <span className="text-muted-foreground">{'  '}</span>
+                  <span className="text-primary">a)</span>{' '}
+                  <span className="text-white/80">RepoPrompt chat</span>
+                  {'\n'}
+                  <span className="text-muted-foreground">{'  '}</span>
+                  <span className="text-violet-400">b)</span>{' '}
+                  <span className="text-white/80">Export for external LLM</span>
+                  {'\n'}
+                  <span className="text-muted-foreground">{'  '}</span>
+                  <span className="text-white/40">c) No</span>
+                  {'\n'}
+                  <span className="text-emerald-400">{'>'}</span>{' '}
+                  <span className="text-white">b</span>
                   {'\n'}
                   <span className="text-white/40">
                     ... (research + planning) ...
@@ -635,11 +695,7 @@ export default function FlowPage() {
                   {'\n'}
                   <span className="text-emerald-400">✓</span>{' '}
                   <span className="text-muted-foreground">
-                    Plan complete, starting review...
-                  </span>
-                  {'\n'}
-                  <span className="text-white/40">
-                    ... (review runs automatically) ...
+                    Exported to ~/Desktop/plan-review-oauth.md
                   </span>
                 </code>
               </div>
