@@ -9,7 +9,7 @@ import { breadcrumbSchema, JsonLd, softwareAppSchema } from '@/lib/json-ld';
 const APP_DATA = {
   name: 'GNO',
   description:
-    'Local hybrid search CLI for personal knowledge bases. Index Markdown, PDFs, code. BM25 + vector search with HyDE expansion. Runs entirely on your machine.',
+    'Local hybrid search engine for personal knowledge bases. Index Markdown, PDFs, Office docs, code. BM25 + vector + reranking. Web UI, REST API, MCP server. 100% private.',
   slug: 'gno',
   category: 'DeveloperApplication',
 };
@@ -17,11 +17,11 @@ const APP_DATA = {
 export const metadata: Metadata = {
   title: 'GNO — Local Search for Your Second Brain',
   description:
-    'Local hybrid search CLI that indexes Markdown, PDFs, and code. BM25 + vector search with HyDE query expansion and cross-encoder reranking. Give your AI agents long-term memory.',
+    'Local hybrid search engine with Web UI & REST API. Index Markdown, PDFs, Office docs, code. BM25 + vector + reranking. MCP server for 10+ AI tools. 100% private.',
   openGraph: {
     title: 'GNO — Local Search for Your Second Brain',
     description:
-      'Local hybrid search CLI. BM25 + vector + reranking. Index everything, search semantically, stay private.',
+      'Local hybrid search engine. Web UI, REST API, MCP server. Index everything, search semantically, stay private.',
     type: 'website',
     url: 'https://mickel.tech/apps/gno',
   },
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'GNO — Local Search for Your Second Brain',
     description:
-      'Local hybrid search CLI. Index Markdown, PDFs, code. Give AI agents memory.',
+      'Local hybrid search engine. Web UI, REST API, MCP server. 100% private.',
   },
   alternates: {
     canonical: 'https://mickel.tech/apps/gno',
@@ -38,20 +38,20 @@ export const metadata: Metadata = {
 
 const commands = [
   {
-    name: 'gno search',
-    description: 'BM25 full-text keyword search',
-  },
-  {
-    name: 'gno vsearch',
-    description: 'Vector similarity semantic search',
-  },
-  {
     name: 'gno query',
-    description: 'Hybrid search with RRF fusion',
+    description: 'Hybrid search (BM25 + vector + reranking)',
   },
   {
     name: 'gno ask',
     description: 'Search + AI-generated answer',
+  },
+  {
+    name: 'gno serve',
+    description: 'Start Web UI on localhost:3000',
+  },
+  {
+    name: 'gno mcp install',
+    description: 'Add to Claude, Cursor, Zed, etc.',
   },
 ];
 
@@ -81,47 +81,53 @@ const pipelineStages = [
 
 const features = [
   {
+    name: 'Web UI',
+    description:
+      'Visual dashboard for search, browsing, and AI Q&A. Switch model presets live.',
+    icon: '◐',
+  },
+  {
+    name: 'REST API',
+    description:
+      'HTTP endpoints for search, documents, AI answers. Build custom tools, automate workflows.',
+    icon: '◈',
+  },
+  {
     name: 'Hybrid Search',
     description:
-      'BM25 for exact terms, vectors for concepts. RRF fusion combines both for best results.',
+      'BM25 + vector + cross-encoder reranking. RRF fusion combines results for best accuracy.',
     icon: '⊕',
-  },
-  {
-    name: 'HyDE Expansion',
-    description:
-      'LLM generates a hypothetical answer to your question, then searches for similar documents.',
-    icon: '◇',
-  },
-  {
-    name: 'Local Models',
-    description:
-      'Embed, rerank, and generate with GGUF models via node-llama-cpp. No API keys needed.',
-    icon: '⬡',
   },
   {
     name: 'MCP Server',
     description:
-      'Connect to Claude Desktop or Cursor. Your AI can search and cite your local files.',
-    icon: '◈',
-  },
-  {
-    name: 'Skills',
-    description:
-      'Install as a skill for Claude Code or Codex. CLI integration with zero context pollution.',
-    icon: '⬢',
+      'One command to add GNO to Claude, Cursor, Zed, Windsurf, Codex, and 5+ more tools.',
+    icon: '⬡',
   },
   {
     name: 'Multi-Format',
     description:
-      'Index Markdown, PDF, code, and more. Automatic chunking and content-addressed deduplication.',
+      'Index Markdown, PDF, DOCX, XLSX, PPTX, code. Auto chunking and deduplication.',
     icon: '▣',
+  },
+  {
+    name: 'Multilingual',
+    description:
+      '30+ languages with auto-detection. Cross-lingual search: German query finds English docs.',
+    icon: '◇',
   },
 ];
 
 const integrations = [
-  { name: 'Claude Desktop', method: 'MCP server', command: 'gno mcp' },
+  { name: 'Claude Desktop', method: 'MCP', command: 'gno mcp install' },
+  { name: 'Cursor', method: 'MCP', command: 'gno mcp install --target cursor' },
+  { name: 'Zed', method: 'MCP', command: 'gno mcp install --target zed' },
+  {
+    name: 'Windsurf',
+    method: 'MCP',
+    command: 'gno mcp install --target windsurf',
+  },
   { name: 'Claude Code', method: 'Skill', command: 'gno skill install' },
-  { name: 'Cursor', method: 'MCP server', command: 'gno mcp' },
   {
     name: 'Codex',
     method: 'Skill',
@@ -550,6 +556,143 @@ export default function GnoPage() {
           </div>
         </section>
 
+        {/* Web UI & API */}
+        <section className="relative mx-auto max-w-6xl px-6 pb-16 md:px-10">
+          <div className="mb-6 flex items-center gap-3">
+            <p className="font-mono text-[11px] text-primary tracking-[0.2em]">
+              WEB UI & REST API
+            </p>
+          </div>
+
+          <div className="grid gap-6 lg:grid-cols-2">
+            {/* Web UI */}
+            <Card className="border-cyan-500/30 bg-gradient-to-br from-cyan-500/5 to-transparent">
+              <CardHeader className="pb-4">
+                <div className="flex items-center justify-between">
+                  <code className="rounded bg-cyan-500/20 px-3 py-1.5 font-mono text-cyan-400 text-lg">
+                    gno serve
+                  </code>
+                  <Badge
+                    className="border-cyan-500/40 bg-cyan-500/10 text-cyan-400"
+                    variant="outline"
+                  >
+                    NEW
+                  </Badge>
+                </div>
+                <CardTitle className="mt-3 text-lg text-white">
+                  Visual Dashboard
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <p className="text-muted-foreground text-sm">
+                  Search, browse documents, and get AI answers—right in your
+                  browser. Switch model presets live without restart.
+                </p>
+                <div className="space-y-2 text-muted-foreground text-sm">
+                  <p className="flex gap-2">
+                    <span className="text-cyan-400">›</span>
+                    <span>
+                      <span className="text-white">Search</span> — BM25, vector,
+                      or hybrid modes
+                    </span>
+                  </p>
+                  <p className="flex gap-2">
+                    <span className="text-cyan-400">›</span>
+                    <span>
+                      <span className="text-white">Browse</span> — Paginated
+                      docs, filter by collection
+                    </span>
+                  </p>
+                  <p className="flex gap-2">
+                    <span className="text-cyan-400">›</span>
+                    <span>
+                      <span className="text-white">Ask</span> — AI-powered Q&A
+                      with citations
+                    </span>
+                  </p>
+                </div>
+                <div className="rounded-lg border border-white/10 bg-black/40 p-3">
+                  <code className="block font-mono text-muted-foreground text-sm">
+                    <span className="text-cyan-400">gno serve</span>{' '}
+                    <span className="text-muted-foreground">
+                      # Open localhost:3000
+                    </span>
+                  </code>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* REST API */}
+            <Card className="border-primary/30 bg-gradient-to-br from-primary/5 to-transparent">
+              <CardHeader className="pb-4">
+                <div className="flex items-center justify-between">
+                  <code className="rounded bg-primary/20 px-3 py-1.5 font-mono text-lg text-primary">
+                    /api/*
+                  </code>
+                  <Badge
+                    className="border-primary/40 bg-primary/10 text-primary"
+                    variant="outline"
+                  >
+                    HTTP
+                  </Badge>
+                </div>
+                <CardTitle className="mt-3 text-lg text-white">
+                  Programmatic Access
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <p className="text-muted-foreground text-sm">
+                  Full HTTP API for search, documents, and AI answers. Build
+                  custom tools or automate workflows.
+                </p>
+                <div className="space-y-2 text-muted-foreground text-sm">
+                  <p className="flex gap-2">
+                    <span className="text-primary">›</span>
+                    <code className="text-white">/api/query</code> — Hybrid
+                    search
+                  </p>
+                  <p className="flex gap-2">
+                    <span className="text-primary">›</span>
+                    <code className="text-white">/api/ask</code> — AI-powered
+                    Q&A
+                  </p>
+                  <p className="flex gap-2">
+                    <span className="text-primary">›</span>
+                    <code className="text-white">/api/docs</code> — List &
+                    retrieve docs
+                  </p>
+                </div>
+                <div className="rounded-lg border border-white/10 bg-black/40 p-3">
+                  <code className="block font-mono text-muted-foreground text-xs">
+                    <span className="text-primary">curl</span>{' '}
+                    <span className="text-white">
+                      -X POST localhost:3000/api/query
+                    </span>
+                    <br />
+                    <span className="text-muted-foreground">
+                      {' '}
+                      -d '{'{'}"query": "..."{'}'}'
+                    </span>
+                  </code>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+
+          {/* Security note */}
+          <div className="mt-6 rounded-lg border border-white/10 bg-black/40 p-4">
+            <p className="text-muted-foreground text-sm">
+              <span className="font-mono text-cyan-400 text-xs">
+                LOCALHOST ONLY
+              </span>{' '}
+              — Binds to 127.0.0.1. CSP headers, CORS protection, no external
+              resources. Use <span className="text-white">Tailscale Serve</span>{' '}
+              or <span className="text-white">Cloudflare Tunnel</span> for
+              secure remote access.
+            </p>
+          </div>
+        </section>
+
         {/* Features Grid */}
         <section className="relative mx-auto max-w-6xl px-6 pb-16 md:px-10">
           <div className="mb-6 flex items-center gap-3">
@@ -603,21 +746,21 @@ export default function GnoPage() {
               </p>
 
               {/* Integration grid */}
-              <div className="grid gap-4 sm:grid-cols-2">
+              <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
                 {integrations.map((item) => (
                   <div
-                    className="rounded-lg border border-white/10 bg-black/40 p-4"
+                    className="rounded-lg border border-white/10 bg-black/40 p-3"
                     key={item.name}
                   >
-                    <div className="mb-2 flex items-center justify-between">
-                      <span className="font-medium text-white">
+                    <div className="mb-1.5 flex items-center justify-between">
+                      <span className="font-medium text-sm text-white">
                         {item.name}
                       </span>
                       <span className="rounded bg-cyan-500/20 px-1.5 py-0.5 font-mono text-[9px] text-cyan-400">
                         {item.method}
                       </span>
                     </div>
-                    <code className="block font-mono text-muted-foreground text-xs">
+                    <code className="block truncate font-mono text-[10px] text-muted-foreground">
                       <span className="text-cyan-400">{item.command}</span>
                     </code>
                   </div>
@@ -682,7 +825,7 @@ export default function GnoPage() {
                 </div>
                 <div className="rounded-lg border border-white/10 bg-black/40 p-3">
                   <code className="block font-mono text-muted-foreground text-sm">
-                    <span className="text-cyan-400">gno update</span>
+                    <span className="text-cyan-400">gno index</span>
                   </code>
                 </div>
               </CardContent>
@@ -712,8 +855,8 @@ export default function GnoPage() {
                   </code>
                 </div>
                 <p className="text-muted-foreground text-sm">
-                  Then run <code className="text-cyan-400">gno update</code> to
-                  index.
+                  Then run <code className="text-cyan-400">gno index</code> to
+                  build index + embeddings.
                 </p>
               </CardContent>
             </Card>
@@ -746,7 +889,7 @@ export default function GnoPage() {
                   <li className="flex gap-2">
                     <span className="text-cyan-400">›</span>
                     <span className="text-white">Bun</span> — Runtime + package
-                    manager
+                    manager + fullstack dev server
                   </li>
                   <li className="flex gap-2">
                     <span className="text-cyan-400">›</span>
@@ -765,8 +908,7 @@ export default function GnoPage() {
                   </li>
                   <li className="flex gap-2">
                     <span className="text-cyan-400">›</span>
-                    <span className="text-white">MCP</span> — Model Context
-                    Protocol
+                    <span className="text-white">React</span> — Web UI SPA
                   </li>
                 </ul>
               </CardContent>
@@ -774,20 +916,46 @@ export default function GnoPage() {
 
             <Card className="border-white/10 bg-secondary/50">
               <CardHeader className="pb-2">
-                <CardTitle className="text-lg text-white">
-                  Who it's for
-                </CardTitle>
+                <CardTitle className="text-lg text-white">Use Cases</CardTitle>
               </CardHeader>
-              <CardContent className="space-y-4 text-muted-foreground text-sm">
-                <p>
-                  Developers, researchers, and writers with years of accumulated
-                  notes who want AI assistants to actually use that knowledge
-                  instead of hallucinating.
-                </p>
-                <p>
-                  If you've ever asked Claude "have I worked on this before?"
-                  and wished it could search your notes—GNO makes that real.
-                </p>
+              <CardContent className="space-y-3 text-muted-foreground text-sm">
+                <ul className="space-y-2">
+                  <li className="flex gap-2">
+                    <span className="text-cyan-400">›</span>
+                    <span>
+                      <span className="text-white">Personal notes</span> —
+                      Obsidian, Notion exports, journals
+                    </span>
+                  </li>
+                  <li className="flex gap-2">
+                    <span className="text-cyan-400">›</span>
+                    <span>
+                      <span className="text-white">Code documentation</span> —
+                      ADRs, RFCs, specs
+                    </span>
+                  </li>
+                  <li className="flex gap-2">
+                    <span className="text-cyan-400">›</span>
+                    <span>
+                      <span className="text-white">Research</span> — PDFs,
+                      papers, literature reviews
+                    </span>
+                  </li>
+                  <li className="flex gap-2">
+                    <span className="text-cyan-400">›</span>
+                    <span>
+                      <span className="text-white">Legal docs</span> —
+                      Contracts, policies, compliance
+                    </span>
+                  </li>
+                  <li className="flex gap-2">
+                    <span className="text-cyan-400">›</span>
+                    <span>
+                      <span className="text-white">Team knowledge</span> —
+                      Wikis, runbooks, shared docs
+                    </span>
+                  </li>
+                </ul>
                 <div className="pt-2">
                   <a
                     className="glow-link font-mono text-[11px] uppercase"
