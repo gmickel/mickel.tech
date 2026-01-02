@@ -558,120 +558,189 @@ export default function GnoPage() {
 
         {/* Web UI & API */}
         <section className="relative mx-auto max-w-6xl px-6 pb-16 md:px-10">
-          <div className="mb-6 flex items-center gap-3">
+          <div className="mb-8 flex items-center gap-3">
             <p className="font-mono text-[11px] text-primary tracking-[0.2em]">
               WEB UI & REST API
             </p>
           </div>
 
-          <div className="grid gap-6 lg:grid-cols-2">
-            {/* Web UI */}
-            <Card className="border-cyan-500/30 bg-gradient-to-br from-cyan-500/5 to-transparent">
-              <CardHeader className="pb-4">
+          <div className="grid gap-8 lg:grid-cols-2">
+            {/* Web UI - Hero card with keyboard emphasis */}
+            <Card className="group relative overflow-hidden border-cyan-500/40 bg-gradient-to-br from-cyan-500/10 via-cyan-500/5 to-transparent transition-all duration-300 hover:border-cyan-500/60 hover:shadow-[0_0_40px_-10px_rgba(6,182,212,0.3)]">
+              {/* Subtle animated gradient overlay */}
+              <div
+                aria-hidden
+                className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(6,182,212,0.15),transparent_60%)] opacity-60 transition-opacity duration-500 group-hover:opacity-100"
+              />
+              <CardHeader className="relative pb-4">
                 <div className="flex items-center justify-between">
-                  <code className="rounded bg-cyan-500/20 px-3 py-1.5 font-mono text-cyan-400 text-lg">
+                  <code className="rounded-md border border-cyan-500/30 bg-cyan-500/20 px-3 py-1.5 font-mono text-cyan-300 text-lg shadow-[inset_0_1px_0_rgba(255,255,255,0.1)]">
                     gno serve
                   </code>
-                  <Badge
-                    className="border-cyan-500/40 bg-cyan-500/10 text-cyan-400"
-                    variant="outline"
-                  >
-                    NEW
-                  </Badge>
+                  <span className="relative inline-flex items-center rounded-full border border-cyan-400/50 bg-cyan-500/20 px-2.5 py-1 font-mono text-[10px] text-cyan-300 uppercase tracking-wider shadow-[0_0_12px_rgba(6,182,212,0.4)]">
+                    <span
+                      aria-hidden
+                      className="absolute inset-0 animate-pulse rounded-full bg-cyan-400/20"
+                    />
+                    <span className="relative">New</span>
+                  </span>
                 </div>
-                <CardTitle className="mt-3 text-lg text-white">
+                <CardTitle className="mt-4 text-xl text-white">
                   Visual Dashboard
                 </CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <p className="text-muted-foreground text-sm">
-                  Create, edit, search, and browse documents. Get AI answers
-                  with citations. Manage collections. All keyboard-first.
+                <p className="mt-2 text-muted-foreground text-sm leading-relaxed">
+                  Create, edit, search, and browse documents. AI answers with
+                  citations. Collections management. Everything keyboard-first.
                 </p>
-                <div className="space-y-2 text-muted-foreground text-sm">
-                  <p className="flex gap-2">
-                    <span className="text-cyan-400">›</span>
-                    <span>
-                      <span className="text-white">Editor</span> — Split-view
-                      markdown with live preview, auto-save
+              </CardHeader>
+              <CardContent className="relative space-y-5">
+                {/* Feature list with better visual rhythm */}
+                <div className="space-y-3">
+                  <div className="flex items-start gap-3">
+                    <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded bg-cyan-500/20 font-mono text-cyan-400 text-[10px]">
+                      ✎
                     </span>
-                  </p>
-                  <p className="flex gap-2">
-                    <span className="text-cyan-400">›</span>
-                    <span>
-                      <span className="text-white">Search</span> — BM25, vector,
-                      hybrid + AI Q&A
+                    <div>
+                      <span className="font-medium text-white">
+                        Split-view Editor
+                      </span>
+                      <span className="text-muted-foreground">
+                        {' '}— Markdown + live preview, auto-save
+                      </span>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded bg-cyan-500/20 font-mono text-cyan-400 text-[10px]">
+                      ⊕
                     </span>
-                  </p>
-                  <p className="flex gap-2">
-                    <span className="text-cyan-400">›</span>
-                    <span>
-                      <span className="text-white">Shortcuts</span> — ⌘N capture,
-                      ⌘K search, ⌘B/I/K formatting
-                    </span>
-                  </p>
+                    <div>
+                      <span className="font-medium text-white">
+                        Hybrid Search
+                      </span>
+                      <span className="text-muted-foreground">
+                        {' '}— BM25, vector, AI Q&A in one interface
+                      </span>
+                    </div>
+                  </div>
                 </div>
+
+                {/* Keyboard shortcuts - tactile key style */}
+                <div className="rounded-lg border border-cyan-500/20 bg-black/50 p-4">
+                  <p className="mb-3 font-mono text-[10px] text-cyan-400/80 uppercase tracking-wider">
+                    Keyboard Shortcuts
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    {[
+                      { keys: '⌘N', label: 'capture' },
+                      { keys: '⌘K', label: 'search' },
+                      { keys: '⌘B', label: 'bold' },
+                      { keys: '⌘I', label: 'italic' },
+                      { keys: '⌘S', label: 'save' },
+                    ].map((shortcut) => (
+                      <div
+                        className="flex items-center gap-1.5"
+                        key={shortcut.keys}
+                      >
+                        <kbd className="inline-flex items-center justify-center rounded border border-white/20 bg-gradient-to-b from-white/10 to-white/5 px-2 py-1 font-mono text-[11px] text-white shadow-[0_2px_0_rgba(0,0,0,0.3),inset_0_1px_0_rgba(255,255,255,0.1)]">
+                          {shortcut.keys}
+                        </kbd>
+                        <span className="text-muted-foreground text-[11px]">
+                          {shortcut.label}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
                 <div className="rounded-lg border border-white/10 bg-black/40 p-3">
-                  <code className="block font-mono text-muted-foreground text-sm">
+                  <code className="block font-mono text-sm">
                     <span className="text-cyan-400">gno serve</span>{' '}
                     <span className="text-muted-foreground">
-                      # Open localhost:3000
+                      # → localhost:3000
                     </span>
                   </code>
                 </div>
               </CardContent>
             </Card>
 
-            {/* REST API */}
-            <Card className="border-primary/30 bg-gradient-to-br from-primary/5 to-transparent">
+            {/* REST API - Clean, professional */}
+            <Card className="group relative overflow-hidden border-primary/30 bg-gradient-to-br from-primary/8 via-primary/4 to-transparent transition-all duration-300 hover:border-primary/50">
               <CardHeader className="pb-4">
                 <div className="flex items-center justify-between">
-                  <code className="rounded bg-primary/20 px-3 py-1.5 font-mono text-lg text-primary">
+                  <code className="rounded-md border border-primary/30 bg-primary/15 px-3 py-1.5 font-mono text-lg text-primary shadow-[inset_0_1px_0_rgba(255,255,255,0.05)]">
                     /api/*
                   </code>
-                  <Badge
-                    className="border-primary/40 bg-primary/10 text-primary"
-                    variant="outline"
-                  >
-                    HTTP
-                  </Badge>
+                  <span className="rounded-full border border-primary/40 bg-primary/10 px-2.5 py-1 font-mono text-[10px] text-primary uppercase tracking-wider">
+                    REST
+                  </span>
                 </div>
-                <CardTitle className="mt-3 text-lg text-white">
+                <CardTitle className="mt-4 text-xl text-white">
                   Full CRUD Access
                 </CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <p className="text-muted-foreground text-sm">
-                  HTTP API for search, CRUD operations, collections, and AI
-                  answers. Build custom tools or automate workflows.
+                <p className="mt-2 text-muted-foreground text-sm leading-relaxed">
+                  HTTP API for documents, collections, search, and AI answers.
+                  Build custom integrations or automate workflows.
                 </p>
-                <div className="space-y-2 text-muted-foreground text-sm">
-                  <p className="flex gap-2">
-                    <span className="text-primary">›</span>
-                    <code className="text-white">/api/docs</code> — Create,
-                    read, update, delete
-                  </p>
-                  <p className="flex gap-2">
-                    <span className="text-primary">›</span>
-                    <code className="text-white">/api/query</code> — Hybrid
-                    search + AI Q&A
-                  </p>
-                  <p className="flex gap-2">
-                    <span className="text-primary">›</span>
-                    <code className="text-white">/api/collections</code> — Add,
-                    remove, re-index
-                  </p>
+              </CardHeader>
+              <CardContent className="space-y-5">
+                {/* Endpoints with HTTP method badges */}
+                <div className="space-y-2.5">
+                  <div className="flex items-center gap-3">
+                    <span className="w-12 shrink-0 rounded bg-emerald-500/20 px-1.5 py-0.5 text-center font-mono text-[9px] text-emerald-400">
+                      CRUD
+                    </span>
+                    <code className="font-mono text-sm text-white">
+                      /api/docs
+                    </code>
+                    <span className="text-muted-foreground text-sm">
+                      — Documents
+                    </span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <span className="w-12 shrink-0 rounded bg-cyan-500/20 px-1.5 py-0.5 text-center font-mono text-[9px] text-cyan-400">
+                      POST
+                    </span>
+                    <code className="font-mono text-sm text-white">
+                      /api/query
+                    </code>
+                    <span className="text-muted-foreground text-sm">
+                      — Hybrid search
+                    </span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <span className="w-12 shrink-0 rounded bg-violet-500/20 px-1.5 py-0.5 text-center font-mono text-[9px] text-violet-400">
+                      POST
+                    </span>
+                    <code className="font-mono text-sm text-white">
+                      /api/ask
+                    </code>
+                    <span className="text-muted-foreground text-sm">
+                      — AI answers
+                    </span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <span className="w-12 shrink-0 rounded bg-amber-500/20 px-1.5 py-0.5 text-center font-mono text-[9px] text-amber-400">
+                      CRUD
+                    </span>
+                    <code className="font-mono text-sm text-white">
+                      /api/collections
+                    </code>
+                    <span className="text-muted-foreground text-sm">
+                      — Manage
+                    </span>
+                  </div>
                 </div>
+
                 <div className="rounded-lg border border-white/10 bg-black/40 p-3">
-                  <code className="block font-mono text-muted-foreground text-xs">
+                  <code className="block font-mono text-xs leading-relaxed">
                     <span className="text-primary">curl</span>{' '}
-                    <span className="text-white">
-                      -X POST localhost:3000/api/docs
+                    <span className="text-white">-X POST</span>{' '}
+                    <span className="text-muted-foreground">
+                      localhost:3000/api/docs
                     </span>
                     <br />
                     <span className="text-muted-foreground">
-                      {' '}
-                      -d '{'{'}"collection": "notes", ...{'}'}'
+                      {'     '}-d '{'{'}"title": "New note", ...{'}'}'
                     </span>
                   </code>
                 </div>
@@ -679,48 +748,80 @@ export default function GnoPage() {
             </Card>
           </div>
 
-          {/* Security note */}
-          <div className="mt-6 rounded-lg border border-white/10 bg-black/40 p-4">
-            <p className="text-muted-foreground text-sm">
-              <span className="font-mono text-cyan-400 text-xs">
-                LOCALHOST ONLY
-              </span>{' '}
-              — Binds to 127.0.0.1. CSP headers, CORS protection, no external
-              resources. Use <span className="text-white">Tailscale Serve</span>{' '}
-              or <span className="text-white">Cloudflare Tunnel</span> for
-              secure remote access.
+          {/* Security note - refined */}
+          <div className="mt-8 flex items-start gap-3 rounded-lg border border-white/10 bg-black/30 p-4">
+            <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded bg-cyan-500/20 font-mono text-[10px] text-cyan-400">
+              🔒
+            </span>
+            <p className="text-muted-foreground text-sm leading-relaxed">
+              <span className="font-medium text-cyan-400">Localhost only</span>{' '}
+              — Binds to 127.0.0.1 with CSP headers and CORS protection. Use{' '}
+              <span className="text-white">Tailscale Serve</span> or{' '}
+              <span className="text-white">Cloudflare Tunnel</span> for secure
+              remote access.
             </p>
           </div>
         </section>
 
         {/* Features Grid */}
         <section className="relative mx-auto max-w-6xl px-6 pb-16 md:px-10">
-          <div className="mb-6 flex items-center gap-3">
+          <div className="mb-8 flex items-center gap-3">
             <p className="font-mono text-[11px] text-primary tracking-[0.2em]">
               FEATURES
             </p>
           </div>
 
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {features.map((feature) => (
-              <Card className="border-white/10 bg-card/60" key={feature.name}>
-                <CardHeader className="pb-2">
-                  <div className="flex items-center gap-3">
-                    <span className="font-mono text-cyan-400 text-lg">
-                      {feature.icon}
-                    </span>
-                    <CardTitle className="text-base text-white">
-                      {feature.name}
-                    </CardTitle>
-                  </div>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground text-sm">
-                    {feature.description}
-                  </p>
-                </CardContent>
-              </Card>
-            ))}
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {features.map((feature) => {
+              const isHighlighted =
+                feature.name === 'Document Editor' ||
+                feature.name === 'Keyboard First';
+              return (
+                <Card
+                  className={`group relative overflow-hidden transition-all duration-300 ${
+                    isHighlighted
+                      ? 'border-cyan-500/30 bg-gradient-to-br from-cyan-500/8 to-transparent hover:border-cyan-500/50 hover:shadow-[0_0_30px_-10px_rgba(6,182,212,0.25)]'
+                      : 'border-white/10 bg-card/60 hover:border-white/20'
+                  }`}
+                  key={feature.name}
+                >
+                  {isHighlighted && (
+                    <div
+                      aria-hidden
+                      className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(6,182,212,0.1),transparent_50%)] opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+                    />
+                  )}
+                  <CardHeader className="relative pb-2">
+                    <div className="flex items-center gap-3">
+                      <span
+                        className={`flex h-8 w-8 items-center justify-center rounded-md font-mono text-base ${
+                          isHighlighted
+                            ? 'bg-cyan-500/20 text-cyan-400'
+                            : 'bg-white/5 text-cyan-400'
+                        }`}
+                      >
+                        {feature.icon}
+                      </span>
+                      <div className="flex items-center gap-2">
+                        <CardTitle className="text-base text-white">
+                          {feature.name}
+                        </CardTitle>
+                        {isHighlighted && (
+                          <span className="rounded bg-cyan-500/20 px-1.5 py-0.5 font-mono text-[8px] text-cyan-400 uppercase">
+                            New
+                          </span>
+                        )}
+                      </div>
+                    </div>
+                  </CardHeader>
+                  <CardContent className="relative">
+                    <p className="text-muted-foreground text-sm leading-relaxed">
+                      {feature.description}
+                    </p>
+                  </CardContent>
+                </Card>
+              );
+            })}
           </div>
         </section>
 
