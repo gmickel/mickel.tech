@@ -81,15 +81,21 @@ const pipelineStages = [
 
 const features = [
   {
+    name: 'Document Editor',
+    description:
+      'Split-view markdown editor with live preview, auto-save, and keyboard shortcuts (⌘B/I/K/S).',
+    icon: '✎',
+  },
+  {
     name: 'Web UI',
     description:
-      'Visual dashboard for search, browsing, and AI Q&A. Switch model presets live.',
+      'Create, edit, search, and browse documents. Manage collections. AI Q&A with citations.',
     icon: '◐',
   },
   {
     name: 'REST API',
     description:
-      'HTTP endpoints for search, documents, AI answers. Build custom tools, automate workflows.',
+      'Full CRUD for documents + collections. Search, sync, AI answers. Build custom tools.',
     icon: '◈',
   },
   {
@@ -105,16 +111,10 @@ const features = [
     icon: '⬡',
   },
   {
-    name: 'Multi-Format',
+    name: 'Keyboard First',
     description:
-      'Index Markdown, PDF, DOCX, XLSX, PPTX, code. Auto chunking and deduplication.',
-    icon: '▣',
-  },
-  {
-    name: 'Multilingual',
-    description:
-      '30+ languages with auto-detection. Cross-lingual search: German query finds English docs.',
-    icon: '◇',
+      '⌘N capture, ⌘K search, ⌘/ shortcuts. Full editing without touching the mouse.',
+    icon: '⌨',
   },
 ];
 
@@ -585,29 +585,29 @@ export default function GnoPage() {
               </CardHeader>
               <CardContent className="space-y-4">
                 <p className="text-muted-foreground text-sm">
-                  Search, browse documents, and get AI answers—right in your
-                  browser. Switch model presets live without restart.
+                  Create, edit, search, and browse documents. Get AI answers
+                  with citations. Manage collections. All keyboard-first.
                 </p>
                 <div className="space-y-2 text-muted-foreground text-sm">
                   <p className="flex gap-2">
                     <span className="text-cyan-400">›</span>
                     <span>
+                      <span className="text-white">Editor</span> — Split-view
+                      markdown with live preview, auto-save
+                    </span>
+                  </p>
+                  <p className="flex gap-2">
+                    <span className="text-cyan-400">›</span>
+                    <span>
                       <span className="text-white">Search</span> — BM25, vector,
-                      or hybrid modes
+                      hybrid + AI Q&A
                     </span>
                   </p>
                   <p className="flex gap-2">
                     <span className="text-cyan-400">›</span>
                     <span>
-                      <span className="text-white">Browse</span> — Paginated
-                      docs, filter by collection
-                    </span>
-                  </p>
-                  <p className="flex gap-2">
-                    <span className="text-cyan-400">›</span>
-                    <span>
-                      <span className="text-white">Ask</span> — AI-powered Q&A
-                      with citations
+                      <span className="text-white">Shortcuts</span> — ⌘N capture,
+                      ⌘K search, ⌘B/I/K formatting
                     </span>
                   </p>
                 </div>
@@ -637,41 +637,41 @@ export default function GnoPage() {
                   </Badge>
                 </div>
                 <CardTitle className="mt-3 text-lg text-white">
-                  Programmatic Access
+                  Full CRUD Access
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
                 <p className="text-muted-foreground text-sm">
-                  Full HTTP API for search, documents, and AI answers. Build
-                  custom tools or automate workflows.
+                  HTTP API for search, CRUD operations, collections, and AI
+                  answers. Build custom tools or automate workflows.
                 </p>
                 <div className="space-y-2 text-muted-foreground text-sm">
                   <p className="flex gap-2">
                     <span className="text-primary">›</span>
+                    <code className="text-white">/api/docs</code> — Create,
+                    read, update, delete
+                  </p>
+                  <p className="flex gap-2">
+                    <span className="text-primary">›</span>
                     <code className="text-white">/api/query</code> — Hybrid
-                    search
+                    search + AI Q&A
                   </p>
                   <p className="flex gap-2">
                     <span className="text-primary">›</span>
-                    <code className="text-white">/api/ask</code> — AI-powered
-                    Q&A
-                  </p>
-                  <p className="flex gap-2">
-                    <span className="text-primary">›</span>
-                    <code className="text-white">/api/docs</code> — List &
-                    retrieve docs
+                    <code className="text-white">/api/collections</code> — Add,
+                    remove, re-index
                   </p>
                 </div>
                 <div className="rounded-lg border border-white/10 bg-black/40 p-3">
                   <code className="block font-mono text-muted-foreground text-xs">
                     <span className="text-primary">curl</span>{' '}
                     <span className="text-white">
-                      -X POST localhost:3000/api/query
+                      -X POST localhost:3000/api/docs
                     </span>
                     <br />
                     <span className="text-muted-foreground">
                       {' '}
-                      -d '{'{'}"query": "..."{'}'}'
+                      -d '{'{'}"collection": "notes", ...{'}'}'
                     </span>
                   </code>
                 </div>
