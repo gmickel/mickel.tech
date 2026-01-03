@@ -59,6 +59,27 @@ export function FlowSchematic() {
           <div
             className={`flex-1 space-y-4 transition-all duration-700 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'}`}
           >
+            {/* Optional interview step */}
+            <div className="rounded-lg border border-dashed border-amber-500/40 bg-amber-500/5 p-3">
+              <div className="mb-1 font-mono text-[9px] text-amber-400/80 uppercase tracking-wide">
+                Optional First
+              </div>
+              <code className="font-mono text-sm">
+                <span className="text-amber-400">/flow:interview</span>{' '}
+                <span className="text-muted-foreground">spec.md</span>
+              </code>
+              <div className="mt-1 text-[10px] text-muted-foreground">
+                40+ deep questions → refined spec
+              </div>
+            </div>
+
+            {/* Arrow down */}
+            <div className="flex justify-center">
+              <div className="flex h-5 w-5 items-center justify-center text-muted-foreground/50 text-xs">
+                ↓
+              </div>
+            </div>
+
             {/* Command */}
             <div className="overflow-hidden rounded-lg border border-violet-500/30 bg-violet-500/5 p-3">
               <code className="font-mono text-sm">

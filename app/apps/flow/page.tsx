@@ -39,6 +39,10 @@ export const metadata: Metadata = {
 
 const commands = [
   {
+    name: '/flow:interview',
+    description: 'Deep interview to flesh out spec/bead (optional)',
+  },
+  {
     name: '/flow:plan',
     description: 'Research + produce plan (auto-review if rp-cli)',
   },
@@ -96,6 +100,7 @@ const agents = [
 ];
 
 const skills = [
+  { name: 'interview', purpose: 'Deep interview to flesh out specs/beads' },
   { name: 'flow-plan', purpose: 'Planning workflow logic' },
   { name: 'flow-work', purpose: 'Execution workflow logic' },
   { name: 'flow-plan-review', purpose: 'Plan review via rp-cli + chat' },
@@ -253,7 +258,7 @@ export default function FlowPage() {
             </p>
 
             <p className="mt-4 max-w-2xl text-muted-foreground leading-relaxed">
-              4 commands. 6 agents. 6 skills. One disciplined workflow that
+              5 commands. 6 agents. 7 skills. One disciplined workflow that
               actually ships.
             </p>
 
@@ -608,15 +613,20 @@ export default function FlowPage() {
                 <div className="bg-primary/5 p-3">
                   <div className="mb-2 flex items-center gap-2">
                     <span className="font-mono text-primary text-xs">a)</span>
-                    <span className="font-mono text-white text-xs">RepoPrompt</span>
+                    <span className="font-mono text-white text-xs">
+                      RepoPrompt
+                    </span>
                   </div>
                   <p className="text-[10px] text-muted-foreground">
-                    Review via rp-cli chat with a different model (GPT-5.2 High recommended)
+                    Review via rp-cli chat with a different model (GPT-5.2 High
+                    recommended)
                   </p>
                 </div>
                 <div className="bg-violet-500/5 p-3">
                   <div className="mb-2 flex items-center gap-2">
-                    <span className="font-mono text-violet-400 text-xs">b)</span>
+                    <span className="font-mono text-violet-400 text-xs">
+                      b)
+                    </span>
                     <span className="font-mono text-white text-xs">Export</span>
                     <Badge
                       className="border-violet-500/40 bg-violet-500/10 text-[8px] text-violet-400"
@@ -626,12 +636,15 @@ export default function FlowPage() {
                     </Badge>
                   </div>
                   <p className="text-[10px] text-muted-foreground">
-                    Export context to file for ChatGPT Pro, Claude web, or any LLM
+                    Export context to file for ChatGPT Pro, Claude web, or any
+                    LLM
                   </p>
                 </div>
                 <div className="bg-black/20 p-3">
                   <div className="mb-2 flex items-center gap-2">
-                    <span className="font-mono text-muted-foreground text-xs">c)</span>
+                    <span className="font-mono text-muted-foreground text-xs">
+                      c)
+                    </span>
                     <span className="font-mono text-white text-xs">No</span>
                   </div>
                   <p className="text-[10px] text-muted-foreground">
@@ -646,8 +659,8 @@ export default function FlowPage() {
                   <span className="font-mono text-primary text-xs">
                     CROSS-MODEL
                   </span>{' '}
-                  — Different models catch different blind spots. Same-model self-review
-                  misses things a fresh perspective finds.
+                  — Different models catch different blind spots. Same-model
+                  self-review misses things a fresh perspective finds.
                 </p>
               </div>
 
@@ -657,9 +670,9 @@ export default function FlowPage() {
                   <span className="font-mono text-violet-400 text-xs">
                     EXPORT MODE
                   </span>{' '}
-                  — Creates a markdown file with full context: file tree, code maps,
-                  selected files, and the Carmack-level review prompt. Opens automatically
-                  so you can paste into your preferred LLM.
+                  — Creates a markdown file with full context: file tree, code
+                  maps, selected files, and the Carmack-level review prompt.
+                  Opens automatically so you can paste into your preferred LLM.
                 </p>
               </div>
 
@@ -972,6 +985,14 @@ export default function FlowPage() {
                 </p>
                 <div className="space-y-2 text-sm">
                   <div className="flex flex-wrap items-center gap-2">
+                    <code className="rounded bg-amber-500/20 px-2 py-0.5 font-mono text-amber-400 text-xs">
+                      interview
+                    </code>
+                    <span className="text-muted-foreground">
+                      "interview me about this spec"
+                    </span>
+                  </div>
+                  <div className="flex flex-wrap items-center gap-2">
                     <code className="rounded bg-violet-500/20 px-2 py-0.5 font-mono text-violet-400 text-xs">
                       rp-explorer
                     </code>
@@ -1037,6 +1058,12 @@ export default function FlowPage() {
                   Quick Reference
                 </p>
                 <div className="grid gap-2 text-[11px] sm:grid-cols-2">
+                  <div className="flex justify-between">
+                    <span className="text-muted-foreground">
+                      Flesh out a spec
+                    </span>
+                    <code className="text-amber-400">/flow:interview</code>
+                  </div>
                   <div className="flex justify-between">
                     <span className="text-muted-foreground">
                       Full feature planning
