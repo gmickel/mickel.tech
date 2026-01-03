@@ -57,6 +57,17 @@ export const APPS: AppMeta[] = [
     status: 'January 2026',
   },
   {
+    slug: 'sheets-cli',
+    name: 'sheets-cli',
+    tagline: 'Google Sheets for humans & agents',
+    description:
+      'Command-line interface for Google Sheets with JSON I/O. Key-based updates, batch operations, dry-run mode. Installs as AI agent skill.',
+    category: 'DeveloperApplication',
+    tags: ['CLI', 'Google Sheets', 'Open Source'],
+    image: '/sheets-cli/icon.png',
+    status: 'Released',
+  },
+  {
     slug: 'outlookctl',
     name: 'outlookctl',
     tagline: 'Control Outlook from CLI',
