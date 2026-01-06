@@ -50,6 +50,22 @@ const commands = [
     description: 'Start Web UI on localhost:3000',
   },
   {
+    name: 'gno graph',
+    description: 'Knowledge graph visualization',
+  },
+  {
+    name: 'gno links',
+    description: 'Outgoing wiki/markdown links',
+  },
+  {
+    name: 'gno backlinks',
+    description: 'Documents linking TO a doc',
+  },
+  {
+    name: 'gno similar',
+    description: 'Semantically related documents',
+  },
+  {
     name: 'gno mcp install',
     description: 'Add to Claude, Cursor, Zed, etc.',
   },
@@ -80,6 +96,27 @@ const pipelineStages = [
 ];
 
 const features = [
+  {
+    name: 'Knowledge Graph',
+    description:
+      'Interactive force-directed visualization. Wiki links, markdown links, and similarity edges rendered as navigable constellation.',
+    icon: '◉',
+    isNew: true,
+  },
+  {
+    name: 'Note Linking',
+    description:
+      'Wiki-style [[links]], backlinks panel, and AI-powered related notes. Cross-collection navigation.',
+    icon: '⟷',
+    isNew: true,
+  },
+  {
+    name: 'Tag System',
+    description:
+      'Frontmatter tags with hierarchical paths. Filter searches with --tags-any/--tags-all.',
+    icon: '⊟',
+    isNew: true,
+  },
   {
     name: 'Document Editor',
     description:
@@ -127,11 +164,31 @@ const integrations = [
     method: 'MCP',
     command: 'gno mcp install --target windsurf',
   },
+  {
+    name: 'LM Studio',
+    method: 'MCP',
+    command: 'gno mcp install --target lmstudio',
+  },
+  {
+    name: 'LibreChat',
+    method: 'MCP',
+    command: 'gno mcp install --target librechat',
+  },
   { name: 'Claude Code', method: 'Skill', command: 'gno skill install' },
   {
     name: 'Codex',
     method: 'Skill',
     command: 'gno skill install --target codex',
+  },
+  {
+    name: 'OpenCode',
+    method: 'Skill',
+    command: 'gno skill install --target opencode',
+  },
+  {
+    name: 'Amp',
+    method: 'Skill',
+    command: 'gno skill install --target amp',
   },
 ];
 
@@ -556,6 +613,233 @@ export default function GnoPage() {
           </div>
         </section>
 
+        {/* Knowledge Graph & Note Linking - NEW v0.12/v0.13 */}
+        <section className="relative mx-auto max-w-6xl px-6 pb-16 md:px-10">
+          <div className="mb-6 flex items-center gap-3">
+            <p className="font-mono text-[11px] text-primary tracking-[0.2em]">
+              KNOWLEDGE GRAPH
+            </p>
+            <span className="relative inline-flex items-center rounded-full border border-amber-400/50 bg-amber-500/20 px-2.5 py-1 font-mono text-[10px] text-amber-300 uppercase tracking-wider">
+              <span
+                aria-hidden
+                className="absolute inset-0 animate-pulse rounded-full bg-amber-400/10"
+              />
+              <span className="relative">v0.13</span>
+            </span>
+          </div>
+
+          <Card className="group relative overflow-hidden border-amber-500/30 bg-gradient-to-br from-amber-500/5 via-cyan-500/5 to-transparent">
+            {/* Constellation-like background effect */}
+            <div
+              aria-hidden
+              className="pointer-events-none absolute inset-0 opacity-30"
+              style={{
+                backgroundImage: `radial-gradient(circle at 20% 30%, rgba(251,191,36,0.3) 1px, transparent 1px),
+                                  radial-gradient(circle at 60% 20%, rgba(6,182,212,0.3) 1px, transparent 1px),
+                                  radial-gradient(circle at 80% 60%, rgba(251,191,36,0.2) 1px, transparent 1px),
+                                  radial-gradient(circle at 40% 70%, rgba(6,182,212,0.2) 1px, transparent 1px),
+                                  radial-gradient(circle at 10% 80%, rgba(251,191,36,0.15) 1px, transparent 1px)`,
+                backgroundSize: '100% 100%',
+              }}
+            />
+            <CardHeader className="relative pb-4">
+              <div className="flex items-center justify-between">
+                <code className="rounded-md border border-amber-500/30 bg-amber-500/20 px-3 py-1.5 font-mono text-amber-300 text-lg">
+                  gno graph
+                </code>
+                <div className="flex gap-2">
+                  <span className="rounded bg-cyan-500/20 px-2 py-0.5 font-mono text-[9px] text-cyan-400">
+                    CLI
+                  </span>
+                  <span className="rounded bg-cyan-500/20 px-2 py-0.5 font-mono text-[9px] text-cyan-400">
+                    WEB
+                  </span>
+                  <span className="rounded bg-cyan-500/20 px-2 py-0.5 font-mono text-[9px] text-cyan-400">
+                    API
+                  </span>
+                  <span className="rounded bg-cyan-500/20 px-2 py-0.5 font-mono text-[9px] text-cyan-400">
+                    MCP
+                  </span>
+                </div>
+              </div>
+              <CardTitle className="mt-4 text-white text-xl">
+                See your knowledge as a constellation
+              </CardTitle>
+              <p className="mt-2 text-muted-foreground text-sm leading-relaxed">
+                Interactive force-directed visualization of document connections.
+                Wiki links, markdown links, and{' '}
+                <span className="text-amber-300">
+                  semantic similarity edges
+                </span>{' '}
+                (golden lines) rendered as a navigable graph.
+              </p>
+            </CardHeader>
+            <CardContent className="relative space-y-5">
+              {/* Visual representation of graph types */}
+              <div className="grid gap-3 sm:grid-cols-3">
+                <div className="rounded-lg border border-white/10 bg-black/40 p-3 text-center">
+                  <div className="mb-2 flex items-center justify-center gap-2">
+                    <span className="h-2 w-2 rounded-full bg-cyan-400" />
+                    <span className="h-px w-8 bg-cyan-400/60" />
+                    <span className="h-2 w-2 rounded-full bg-cyan-400" />
+                  </div>
+                  <p className="font-mono text-[10px] text-muted-foreground">
+                    Wiki [[links]]
+                  </p>
+                </div>
+                <div className="rounded-lg border border-white/10 bg-black/40 p-3 text-center">
+                  <div className="mb-2 flex items-center justify-center gap-2">
+                    <span className="h-2 w-2 rounded-full bg-violet-400" />
+                    <span className="h-px w-8 bg-violet-400/60" />
+                    <span className="h-2 w-2 rounded-full bg-violet-400" />
+                  </div>
+                  <p className="font-mono text-[10px] text-muted-foreground">
+                    Markdown [links]()
+                  </p>
+                </div>
+                <div className="rounded-lg border border-amber-500/20 bg-amber-500/5 p-3 text-center">
+                  <div className="mb-2 flex items-center justify-center gap-2">
+                    <span className="h-2 w-2 rounded-full bg-amber-400" />
+                    <span className="h-px w-8 bg-gradient-to-r from-amber-400/80 to-amber-400/20" />
+                    <span className="h-2 w-2 rounded-full bg-amber-400/60" />
+                  </div>
+                  <p className="font-mono text-[10px] text-amber-300">
+                    Similarity edges
+                  </p>
+                </div>
+              </div>
+
+              {/* Commands */}
+              <div className="space-y-2">
+                <div className="rounded-lg border border-white/10 bg-black/40 p-3">
+                  <code className="block font-mono text-sm">
+                    <span className="text-cyan-400">gno graph</span>{' '}
+                    <span className="text-muted-foreground">
+                      --collection notes --similarity
+                    </span>
+                  </code>
+                </div>
+                <div className="grid gap-2 sm:grid-cols-3">
+                  <div className="rounded border border-white/10 bg-black/30 p-2">
+                    <code className="font-mono text-[10px] text-muted-foreground">
+                      <span className="text-cyan-400">/graph</span> Web UI page
+                    </code>
+                  </div>
+                  <div className="rounded border border-white/10 bg-black/30 p-2">
+                    <code className="font-mono text-[10px] text-muted-foreground">
+                      <span className="text-cyan-400">/api/graph</span> REST
+                    </code>
+                  </div>
+                  <div className="rounded border border-white/10 bg-black/30 p-2">
+                    <code className="font-mono text-[10px] text-muted-foreground">
+                      <span className="text-cyan-400">gno_graph</span> MCP tool
+                    </code>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Note Linking - v0.12 */}
+          <div className="mt-8 grid gap-6 lg:grid-cols-2">
+            <Card className="border-cyan-500/20 bg-card/70">
+              <CardHeader className="pb-4">
+                <div className="flex items-center justify-between">
+                  <p className="font-mono text-[11px] text-primary tracking-[0.2em]">
+                    NOTE LINKING
+                  </p>
+                  <span className="rounded-full border border-cyan-400/40 bg-cyan-500/10 px-2 py-0.5 font-mono text-[9px] text-cyan-400">
+                    v0.12
+                  </span>
+                </div>
+                <CardTitle className="mt-2 text-lg text-white">
+                  Wiki-style connections
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <p className="text-muted-foreground text-sm">
+                  Link documents with{' '}
+                  <code className="text-cyan-400">[[wiki links]]</code>. See
+                  outgoing links, backlinks, and AI-powered related notes.
+                </p>
+                <div className="space-y-2">
+                  <div className="flex items-center gap-3 rounded border border-white/10 bg-black/40 p-2">
+                    <code className="font-mono text-cyan-400 text-xs">
+                      gno links
+                    </code>
+                    <span className="text-muted-foreground text-xs">
+                      Outgoing links from doc
+                    </span>
+                  </div>
+                  <div className="flex items-center gap-3 rounded border border-white/10 bg-black/40 p-2">
+                    <code className="font-mono text-cyan-400 text-xs">
+                      gno backlinks
+                    </code>
+                    <span className="text-muted-foreground text-xs">
+                      Docs linking TO this doc
+                    </span>
+                  </div>
+                  <div className="flex items-center gap-3 rounded border border-white/10 bg-black/40 p-2">
+                    <code className="font-mono text-cyan-400 text-xs">
+                      gno similar
+                    </code>
+                    <span className="text-muted-foreground text-xs">
+                      Semantically related docs
+                    </span>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="border-cyan-500/20 bg-card/70">
+              <CardHeader className="pb-4">
+                <div className="flex items-center justify-between">
+                  <p className="font-mono text-[11px] text-primary tracking-[0.2em]">
+                    TAG SYSTEM
+                  </p>
+                  <span className="rounded-full border border-cyan-400/40 bg-cyan-500/10 px-2 py-0.5 font-mono text-[9px] text-cyan-400">
+                    v0.12
+                  </span>
+                </div>
+                <CardTitle className="mt-2 text-lg text-white">
+                  Hierarchical filtering
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <p className="text-muted-foreground text-sm">
+                  Frontmatter tags with hierarchical paths like{' '}
+                  <code className="text-cyan-400">project/alpha</code>. Filter
+                  any search by tags.
+                </p>
+                <div className="space-y-2">
+                  <div className="rounded border border-white/10 bg-black/40 p-2">
+                    <code className="block font-mono text-xs">
+                      <span className="text-cyan-400">gno query</span>{' '}
+                      <span className="text-white">"auth"</span>{' '}
+                      <span className="text-muted-foreground">
+                        --tags-any work,urgent
+                      </span>
+                    </code>
+                  </div>
+                  <div className="rounded border border-white/10 bg-black/40 p-2">
+                    <code className="block font-mono text-xs">
+                      <span className="text-cyan-400">gno query</span>{' '}
+                      <span className="text-white">"deploy"</span>{' '}
+                      <span className="text-muted-foreground">
+                        --tags-all project/alpha,reviewed
+                      </span>
+                    </code>
+                  </div>
+                </div>
+                <p className="text-muted-foreground text-xs">
+                  <span className="text-cyan-400">--tags-any</span> = OR,{' '}
+                  <span className="text-cyan-400">--tags-all</span> = AND
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+        </section>
+
         {/* Web UI & API */}
         <section className="relative mx-auto max-w-6xl px-6 pb-16 md:px-10">
           <div className="mb-8 flex items-center gap-3">
@@ -585,7 +869,7 @@ export default function GnoPage() {
                     <span className="relative">New</span>
                   </span>
                 </div>
-                <CardTitle className="mt-4 text-xl text-white">
+                <CardTitle className="mt-4 text-white text-xl">
                   Visual Dashboard
                 </CardTitle>
                 <p className="mt-2 text-muted-foreground text-sm leading-relaxed">
@@ -597,7 +881,7 @@ export default function GnoPage() {
                 {/* Feature list with better visual rhythm */}
                 <div className="space-y-3">
                   <div className="flex items-start gap-3">
-                    <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded bg-cyan-500/20 font-mono text-cyan-400 text-[10px]">
+                    <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded bg-cyan-500/20 font-mono text-[10px] text-cyan-400">
                       ✎
                     </span>
                     <div>
@@ -605,12 +889,13 @@ export default function GnoPage() {
                         Split-view Editor
                       </span>
                       <span className="text-muted-foreground">
-                        {' '}— Markdown + live preview, auto-save
+                        {' '}
+                        — Markdown + live preview, auto-save
                       </span>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
-                    <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded bg-cyan-500/20 font-mono text-cyan-400 text-[10px]">
+                    <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded bg-cyan-500/20 font-mono text-[10px] text-cyan-400">
                       ⊕
                     </span>
                     <div>
@@ -618,7 +903,8 @@ export default function GnoPage() {
                         Hybrid Search
                       </span>
                       <span className="text-muted-foreground">
-                        {' '}— BM25, vector, AI Q&A in one interface
+                        {' '}
+                        — BM25, vector, AI Q&A in one interface
                       </span>
                     </div>
                   </div>
@@ -644,7 +930,7 @@ export default function GnoPage() {
                         <kbd className="inline-flex items-center justify-center rounded border border-white/20 bg-gradient-to-b from-white/10 to-white/5 px-2 py-1 font-mono text-[11px] text-white shadow-[0_2px_0_rgba(0,0,0,0.3),inset_0_1px_0_rgba(255,255,255,0.1)]">
                           {shortcut.keys}
                         </kbd>
-                        <span className="text-muted-foreground text-[11px]">
+                        <span className="text-[11px] text-muted-foreground">
                           {shortcut.label}
                         </span>
                       </div>
@@ -674,7 +960,7 @@ export default function GnoPage() {
                     REST
                   </span>
                 </div>
-                <CardTitle className="mt-4 text-xl text-white">
+                <CardTitle className="mt-4 text-white text-xl">
                   Full CRUD Access
                 </CardTitle>
                 <p className="mt-2 text-muted-foreground text-sm leading-relaxed">
@@ -773,9 +1059,7 @@ export default function GnoPage() {
 
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {features.map((feature) => {
-              const isHighlighted =
-                feature.name === 'Document Editor' ||
-                feature.name === 'Keyboard First';
+              const isHighlighted = 'isNew' in feature && feature.isNew;
               return (
                 <Card
                   className={`group relative overflow-hidden transition-all duration-300 ${
