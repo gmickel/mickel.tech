@@ -60,7 +60,7 @@ export function FlowSchematic() {
             className={`flex-1 space-y-4 transition-all duration-700 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'}`}
           >
             {/* Optional interview step */}
-            <div className="rounded-lg border border-dashed border-amber-500/40 bg-amber-500/5 p-3">
+            <div className="rounded-lg border border-amber-500/40 border-dashed bg-amber-500/5 p-3">
               <div className="mb-1 font-mono text-[9px] text-amber-400/80 uppercase tracking-wide">
                 Optional First
               </div>

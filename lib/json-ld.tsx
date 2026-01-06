@@ -53,6 +53,9 @@ export function softwareAppSchema(app: {
   description: string;
   slug: string;
   category: string;
+  version?: string;
+  operatingSystem?: string;
+  programmingLanguage?: string;
 }) {
   return {
     '@context': 'https://schema.org',
@@ -61,8 +64,30 @@ export function softwareAppSchema(app: {
     description: app.description,
     url: `${BASE_URL}/apps/${app.slug}`,
     applicationCategory: app.category,
+    ...(app.version && { softwareVersion: app.version }),
+    ...(app.operatingSystem && { operatingSystem: app.operatingSystem }),
+    ...(app.programmingLanguage && {
+      programmingLanguage: app.programmingLanguage,
+    }),
     author: { '@type': 'Person', name: 'Gordon Mickel' },
     offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+  };
+}
+
+export function faqSchema(
+  faqs: Array<{ question: string; answer: string }>
+) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((faq) => ({
+      '@type': 'Question',
+      name: faq.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: faq.answer,
+      },
+    })),
   };
 }
 
