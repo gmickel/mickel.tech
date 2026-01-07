@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import Link from 'next/link';
 import Shell from '@/components/layout/shell';
 import { Badge } from '@/components/ui/badge';
@@ -110,6 +111,10 @@ const commands = [
   {
     name: '/flow-next:impl-review',
     description: 'Carmack-level impl review (current branch)',
+  },
+  {
+    name: '/flow-next:ralph-init',
+    description: 'Scaffold autonomous operation loop (Ralph mode)',
   },
 ];
 
@@ -234,6 +239,12 @@ export default function FlowNextPage() {
               variant="outline"
             >
               Experimental
+            </Badge>
+            <Badge
+              className="border-cyan-400/50 bg-cyan-950/80 text-cyan-300 backdrop-blur-sm"
+              variant="outline"
+            >
+              🤖 RALPH MODE AVAILABLE
             </Badge>
           </div>
 
@@ -644,6 +655,259 @@ export default function FlowNextPage() {
           </div>
         </section>
 
+        {/* Ralph Autonomous Mode - Major Feature */}
+        <section className="relative mx-auto max-w-6xl px-6 pb-24 md:px-10">
+          <div className="relative overflow-hidden rounded-2xl border border-cyan-500/30 bg-gradient-to-br from-cyan-950/50 via-emerald-950/30 to-transparent">
+            {/* Ambient glow */}
+            <div
+              aria-hidden
+              className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(6,182,212,0.15),transparent_50%),radial-gradient(circle_at_70%_80%,rgba(16,185,129,0.1),transparent_40%)]"
+            />
+
+            {/* Header with image */}
+            <div className="relative grid gap-8 p-8 md:p-12 lg:grid-cols-2 lg:gap-12">
+              {/* Left: Text content */}
+              <div className="relative z-10">
+                <div className="mb-6 flex flex-wrap items-center gap-3">
+                  <Badge
+                    className="border-cyan-400/50 bg-cyan-500/10 text-cyan-300 backdrop-blur-sm"
+                    variant="outline"
+                  >
+                    <span className="mr-1.5 inline-block h-2 w-2 animate-pulse rounded-full bg-cyan-400" />
+                    AUTONOMOUS MODE
+                  </Badge>
+                  <Badge
+                    className="border-amber-400/40 bg-amber-950/60 text-amber-300"
+                    variant="outline"
+                  >
+                    AFK-Ready
+                  </Badge>
+                </div>
+
+                <h2 className="font-bold text-4xl text-white leading-tight md:text-5xl">
+                  Ralph Mode
+                  <br />
+                  <span className="bg-gradient-to-r from-cyan-400 to-emerald-400 bg-clip-text text-transparent">
+                    Agents that run overnight
+                  </span>
+                </h2>
+
+                <p className="mt-6 text-lg text-white/80 leading-relaxed">
+                  Opt-in autonomous operation that orchestrates plan/work cycles
+                  while you sleep. Fresh context windows every iteration prevent
+                  drift. Attempt backstops block stuck tasks automatically.
+                </p>
+
+                <div className="mt-8 space-y-3">
+                  {[
+                    {
+                      icon: '🎯',
+                      title: 'Smart Selector',
+                      desc: 'flowctl next chooses plan gate vs work gate',
+                    },
+                    {
+                      icon: '🔄',
+                      title: 'Fresh Context',
+                      desc: 'New session per iteration prevents 200K token drift',
+                    },
+                    {
+                      icon: '🛡️',
+                      title: 'Auto Backstop',
+                      desc: 'Blocks tasks after N failed attempts',
+                    },
+                    {
+                      icon: '📦',
+                      title: 'Repo-Local',
+                      desc: 'Everything in scripts/ralph/ - no external services',
+                    },
+                  ].map((item) => (
+                    <div
+                      className="flex items-start gap-4 rounded-lg border border-white/5 bg-white/[0.02] p-4 backdrop-blur-sm transition-colors hover:border-cyan-500/20 hover:bg-cyan-500/5"
+                      key={item.title}
+                    >
+                      <span className="text-2xl">{item.icon}</span>
+                      <div>
+                        <p className="font-semibold text-white">{item.title}</p>
+                        <p className="text-sm text-white/60">{item.desc}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Quick start */}
+                <div className="mt-8 overflow-hidden rounded-lg border border-emerald-500/30 bg-black/60">
+                  <div className="flex items-center gap-2 border-emerald-500/10 border-b bg-emerald-500/5 px-4 py-2">
+                    <div className="h-3 w-3 rounded-full bg-red-500/60" />
+                    <div className="h-3 w-3 rounded-full bg-yellow-500/60" />
+                    <div className="h-3 w-3 rounded-full bg-green-500/60" />
+                    <span className="ml-2 font-mono text-white/40 text-xs">
+                      quickstart.sh
+                    </span>
+                  </div>
+                  <div className="p-4">
+                    <code className="block whitespace-pre font-mono text-sm leading-relaxed">
+                      <span className="text-white/40"># Scaffold autonomous harness</span>
+                      {'\n'}
+                      <span className="text-cyan-400">/flow-next:ralph-init</span>
+                      {'\n\n'}
+                      <span className="text-white/40"># Run one iteration (interactive)</span>
+                      {'\n'}
+                      <span className="text-emerald-400">./scripts/ralph/ralph_once.sh</span>
+                      {'\n\n'}
+                      <span className="text-white/40"># Run overnight loop</span>
+                      {'\n'}
+                      <span className="text-emerald-400">./scripts/ralph/ralph.sh</span>
+                    </code>
+                  </div>
+                </div>
+              </div>
+
+              {/* Right: Image + Loop diagram */}
+              <div className="relative z-10 space-y-6">
+                {/* Ralph image */}
+                <div className="relative overflow-hidden rounded-xl border border-cyan-500/20 bg-black/40">
+                  <Image
+                    alt="Ralph Wiggum - autonomous agent mascot"
+                    className="h-auto w-full"
+                    height={360}
+                    src="/ralph.avif"
+                    width={640}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                </div>
+
+                {/* Loop visualization */}
+                <div className="overflow-hidden rounded-xl border border-emerald-500/20 bg-black/60">
+                  <div className="border-emerald-500/10 border-b bg-emerald-500/5 px-4 py-2">
+                    <span className="font-mono text-emerald-400 text-xs uppercase tracking-wider">
+                      Ralph Loop Architecture
+                    </span>
+                  </div>
+                  <div className="p-5">
+                    <div className="space-y-3 font-mono text-sm">
+                      <div className="flex items-center gap-3">
+                        <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-cyan-500/20 text-cyan-400">
+                          1
+                        </span>
+                        <div>
+                          <p className="text-white">
+                            <code className="text-cyan-400">flowctl next</code>{' '}
+                            selects unit
+                          </p>
+                          <p className="text-xs text-white/40">plan gate or work gate</p>
+                        </div>
+                      </div>
+                      <div className="ml-4 border-l-2 border-white/10 pl-4">
+                        <div className="space-y-2 text-xs text-white/60">
+                          <p>
+                            <span className="text-emerald-400">plan:</span> review loop
+                            until SHIP
+                          </p>
+                          <p>
+                            <span className="text-cyan-400">work:</span> one task until
+                            pass
+                          </p>
+                          <p>
+                            <span className="text-white/40">none:</span>{' '}
+                            <code className="text-amber-400">COMPLETE</code>
+                          </p>
+                        </div>
+                      </div>
+                      <div className="flex items-center gap-3">
+                        <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-emerald-500/20 text-emerald-400">
+                          2
+                        </span>
+                        <div>
+                          <p className="text-white">Fresh Claude session</p>
+                          <p className="text-xs text-white/40">clean context window</p>
+                        </div>
+                      </div>
+                      <div className="flex items-center gap-3">
+                        <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-cyan-500/20 text-cyan-400">
+                          3
+                        </span>
+                        <div>
+                          <p className="text-white">Record attempt + loop</p>
+                          <p className="text-xs text-white/40">auto-block if stuck</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Bottom: Config and safety */}
+            <div className="relative z-10 border-white/5 border-t bg-black/20 p-8 md:p-12">
+              <div className="grid gap-8 lg:grid-cols-2">
+                {/* Configuration */}
+                <div>
+                  <h3 className="flex items-center gap-3 font-semibold text-xl text-white">
+                    <span className="text-2xl">⚙️</span>
+                    Configuration
+                  </h3>
+                  <div className="mt-4 space-y-2 rounded-lg border border-white/10 bg-white/[0.02] p-4 font-mono text-sm">
+                    <div className="flex justify-between">
+                      <span className="text-white/50">BRANCH_MODE</span>
+                      <span className="text-emerald-400">new</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-white/50">PLAN_REVIEW</span>
+                      <span className="text-cyan-400">rp | none</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-white/50">WORK_REVIEW</span>
+                      <span className="text-cyan-400">rp | none</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-white/50">MAX_ITERATIONS</span>
+                      <span className="text-white">25</span>
+                    </div>
+                    <div className="flex justify-between border-t border-white/10 pt-2">
+                      <span className="text-white/50">YOLO</span>
+                      <span className="text-amber-400">0 (safe default)</span>
+                    </div>
+                  </div>
+                  <p className="mt-3 text-sm text-white/50">
+                    Edit <code className="text-white/70">scripts/ralph/config.env</code>{' '}
+                    to customize
+                  </p>
+                </div>
+
+                {/* Safety & Uninstall */}
+                <div>
+                  <h3 className="flex items-center gap-3 font-semibold text-xl text-white">
+                    <span className="text-2xl">🛡️</span>
+                    Safety & Uninstall
+                  </h3>
+                  <div className="mt-4 space-y-3">
+                    <div className="rounded-lg border border-amber-500/20 bg-amber-500/5 p-4">
+                      <p className="font-semibold text-amber-400 text-sm">
+                        YOLO Mode Warning
+                      </p>
+                      <p className="mt-1 text-sm text-white/60">
+                        YOLO=1 skips permission prompts. Use in sandbox/container
+                        only. No secrets in env.
+                      </p>
+                    </div>
+                    <div className="rounded-lg border border-emerald-500/20 bg-emerald-500/5 p-4">
+                      <p className="font-semibold text-emerald-400 text-sm">
+                        Uninstall Ralph
+                      </p>
+                      <code className="mt-2 block rounded bg-black/40 px-3 py-2 font-mono text-sm text-white">
+                        rm -rf scripts/ralph/
+                      </code>
+                      <p className="mt-2 text-xs text-white/40">
+                        Removes harness + vendored flowctl. .flow/ remains.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Visual Schematic */}
         <section className="relative mx-auto max-w-6xl px-6 pb-24 md:px-10">
           <div className="mb-8">
@@ -996,14 +1260,22 @@ export default function FlowNextPage() {
               <div className="border-red-500/10 border-b bg-red-500/5 px-5 py-3">
                 <span className="font-semibold text-white">Uninstall</span>
               </div>
-              <div className="p-5">
+              <div className="space-y-3 p-5">
                 <div className="rounded-lg bg-black/40 p-4">
                   <code className="block font-mono text-lg text-red-400">
                     rm -rf .flow/
                   </code>
                 </div>
-                <p className="mt-4 text-sm text-white/50">
-                  That's it. No hooks to remove. No config to clean up. No traces.
+                <div className="rounded-lg border border-cyan-500/20 bg-cyan-500/5 p-4">
+                  <p className="font-mono text-cyan-400 text-xs uppercase">
+                    If Ralph Mode enabled
+                  </p>
+                  <code className="mt-2 block font-mono text-sm text-white">
+                    rm -rf scripts/ralph/
+                  </code>
+                </div>
+                <p className="text-sm text-white/50">
+                  No hooks to remove. No config to clean up. No traces.
                 </p>
               </div>
             </div>
