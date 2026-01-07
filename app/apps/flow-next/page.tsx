@@ -39,6 +39,7 @@ const FLOW_NEXT_FAQS = [
       'Flow-Next bundles its own task tracking (flowctl.py) with zero external dependencies. No hooks, no daemons, no CLAUDE.md edits, no config files. Beads is a separate issue tracking CLI that the original Flow plugin can optionally integrate with. Choose Flow-Next for simpler setup and clean uninstall; choose Flow with Beads if you need full issue management features.',
   },
 ];
+
 import { FlowNextSchematic } from './flow-next-schematic';
 
 const APP_DATA = {
@@ -53,7 +54,8 @@ const APP_DATA = {
 };
 
 export const metadata: Metadata = {
-  title: 'Flow-Next: Zero-Dependency AI Agent Orchestration | Claude Code Plugin',
+  title:
+    'Flow-Next: Zero-Dependency AI Agent Orchestration | Claude Code Plugin',
   description:
     'Claude Code plugin for AI agent orchestration with zero dependencies. Bundled task tracking, dependency graphs, re-anchoring, and cross-model reviews. Install in 30 seconds, delete a folder to uninstall.',
   keywords: [
@@ -255,7 +257,7 @@ export default function FlowNextPage() {
                 {/* Glow behind icon */}
                 <div
                   aria-hidden
-                  className="absolute -inset-3 rounded-full bg-emerald-500/20 blur-xl"
+                  className="-inset-3 absolute rounded-full bg-emerald-500/20 blur-xl"
                 />
                 <svg
                   aria-hidden="true"
@@ -315,7 +317,7 @@ export default function FlowNextPage() {
                 <h1 className="font-bold text-5xl text-white tracking-tight md:text-6xl">
                   Flow-Next
                 </h1>
-                <p className="mt-1 font-mono text-emerald-400 text-sm tracking-widest uppercase md:text-base">
+                <p className="mt-1 font-mono text-emerald-400 text-sm uppercase tracking-widest md:text-base">
                   Zero-Dep Agent Orchestration
                 </p>
               </div>
@@ -339,7 +341,7 @@ export default function FlowNextPage() {
 
             {/* Value proposition - terminal style card */}
             <div className="relative mt-12 max-w-3xl">
-              <div className="absolute -inset-px rounded-lg bg-gradient-to-r from-emerald-500/50 via-cyan-500/30 to-emerald-500/50 blur-sm" />
+              <div className="-inset-px absolute rounded-lg bg-gradient-to-r from-emerald-500/50 via-cyan-500/30 to-emerald-500/50 blur-sm" />
               <div className="relative rounded-lg border border-emerald-500/30 bg-black/80 p-6 backdrop-blur-sm md:p-8">
                 <div className="mb-4 flex items-center gap-2">
                   <div className="h-3 w-3 rounded-full bg-red-500/80" />
@@ -359,9 +361,7 @@ export default function FlowNextPage() {
                     losing context in long sessions
                   </span>
                   ,{' '}
-                  <span className="text-emerald-400">
-                    drifting from intent
-                  </span>
+                  <span className="text-emerald-400">drifting from intent</span>
                   .
                 </p>
                 <p className="mt-4 text-white/70 leading-relaxed">
@@ -369,7 +369,8 @@ export default function FlowNextPage() {
                   <span className="font-mono text-emerald-400">
                     fully-featured task system
                   </span>{' '}
-                  in a single Python script. No npm. No daemons. No config edits.
+                  in a single Python script. No npm. No daemons. No config
+                  edits.
                 </p>
                 <div className="mt-6 flex items-center gap-4 border-white/10 border-t pt-6">
                   <code className="rounded bg-white/5 px-3 py-1.5 font-mono text-emerald-400 text-sm">
@@ -408,12 +409,12 @@ export default function FlowNextPage() {
             {/* CTA buttons - more prominent */}
             <div className="mt-10 flex flex-wrap gap-4">
               <a
-                className="group relative inline-flex items-center gap-2 overflow-hidden rounded border border-emerald-500 bg-emerald-500/10 px-8 py-4 font-mono text-sm text-emerald-400 uppercase tracking-wider transition-all hover:bg-emerald-500/20"
+                className="group relative inline-flex items-center gap-2 overflow-hidden rounded border border-emerald-500 bg-emerald-500/10 px-8 py-4 font-mono text-emerald-400 text-sm uppercase tracking-wider transition-all hover:bg-emerald-500/20"
                 href="https://github.com/gmickel/gmickel-claude-marketplace"
                 rel="noopener noreferrer"
                 target="_blank"
               >
-                <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-emerald-500/10 to-transparent transition-transform duration-500 group-hover:translate-x-full" />
+                <span className="-translate-x-full absolute inset-0 bg-gradient-to-r from-transparent via-emerald-500/10 to-transparent transition-transform duration-500 group-hover:translate-x-full" />
                 <svg
                   className="h-4 w-4"
                   fill="currentColor"
@@ -439,7 +440,7 @@ export default function FlowNextPage() {
         <section className="relative mx-auto max-w-6xl px-6 pb-24 md:px-10">
           <div className="grid gap-8 lg:grid-cols-5">
             <div className="lg:col-span-2">
-              <p className="font-mono text-[11px] text-red-400/80 tracking-[0.3em] uppercase">
+              <p className="font-mono text-[11px] text-red-400/80 uppercase tracking-[0.3em]">
                 The Problem
               </p>
               <h2 className="mt-3 font-bold text-3xl text-white leading-tight md:text-4xl">
@@ -486,7 +487,7 @@ export default function FlowNextPage() {
         {/* Features - Bento grid style */}
         <section className="relative mx-auto max-w-6xl px-6 pb-24 md:px-10">
           <div className="mb-10 text-center">
-            <p className="font-mono text-[11px] text-emerald-400/80 tracking-[0.3em] uppercase">
+            <p className="font-mono text-[11px] text-emerald-400/80 uppercase tracking-[0.3em]">
               Key Features
             </p>
             <h2 className="mt-3 font-bold text-3xl text-white md:text-4xl">
@@ -497,7 +498,7 @@ export default function FlowNextPage() {
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
             {features.map((feature, i) => (
               <div
-                className={`group relative overflow-hidden rounded-xl border p-6 transition-all duration-300 hover:-translate-y-1 ${
+                className={`group hover:-translate-y-1 relative overflow-hidden rounded-xl border p-6 transition-all duration-300 ${
                   feature.accent === 'emerald'
                     ? 'border-emerald-500/20 bg-gradient-to-br from-emerald-500/10 via-transparent to-transparent hover:border-emerald-500/40'
                     : 'border-cyan-500/20 bg-gradient-to-br from-cyan-500/10 via-transparent to-transparent hover:border-cyan-500/40'
@@ -538,7 +539,7 @@ export default function FlowNextPage() {
         {/* Commands - Horizontal scroll on mobile */}
         <section className="relative mx-auto max-w-6xl px-6 pb-24 md:px-10">
           <div className="mb-8">
-            <p className="font-mono text-[11px] text-emerald-400/80 tracking-[0.3em] uppercase">
+            <p className="font-mono text-[11px] text-emerald-400/80 uppercase tracking-[0.3em]">
               Commands
             </p>
             <h2 className="mt-3 font-bold text-2xl text-white md:text-3xl">
@@ -564,7 +565,7 @@ export default function FlowNextPage() {
         {/* Core Workflow - Side by side with connecting line */}
         <section className="relative mx-auto max-w-6xl px-6 pb-24 md:px-10">
           <div className="mb-10 text-center">
-            <p className="font-mono text-[11px] text-emerald-400/80 tracking-[0.3em] uppercase">
+            <p className="font-mono text-[11px] text-emerald-400/80 uppercase tracking-[0.3em]">
               Core Workflow
             </p>
             <h2 className="mt-3 font-bold text-3xl text-white md:text-4xl">
@@ -576,17 +577,17 @@ export default function FlowNextPage() {
             {/* Connecting line - desktop only */}
             <div
               aria-hidden
-              className="absolute top-1/2 left-1/2 hidden h-px w-16 -translate-x-1/2 -translate-y-1/2 lg:block"
+              className="-translate-x-1/2 -translate-y-1/2 absolute top-1/2 left-1/2 hidden h-px w-16 lg:block"
             >
               <div className="h-full w-full bg-gradient-to-r from-emerald-500/50 to-cyan-500/50" />
-              <div className="absolute top-1/2 left-1/2 h-3 w-3 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white/20" />
+              <div className="-translate-x-1/2 -translate-y-1/2 absolute top-1/2 left-1/2 h-3 w-3 rounded-full bg-white/20" />
             </div>
 
             {/* Plan */}
             <Card className="overflow-hidden border-emerald-500/30 bg-gradient-to-br from-emerald-950/50 to-transparent">
               <CardHeader className="border-emerald-500/20 border-b pb-4">
                 <div className="flex items-center justify-between">
-                  <code className="rounded-full bg-emerald-500/20 px-4 py-2 font-mono text-lg text-emerald-400">
+                  <code className="rounded-full bg-emerald-500/20 px-4 py-2 font-mono text-emerald-400 text-lg">
                     /flow-next:plan
                   </code>
                   <Badge
@@ -596,7 +597,7 @@ export default function FlowNextPage() {
                     STEP 1
                   </Badge>
                 </div>
-                <CardTitle className="mt-4 text-xl text-white">
+                <CardTitle className="mt-4 text-white text-xl">
                   Research and plan
                 </CardTitle>
                 <p className="mt-1 text-sm text-white/50">
@@ -611,7 +612,9 @@ export default function FlowNextPage() {
                       <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-emerald-500/20 font-mono text-emerald-400 text-xs">
                         {item.step}
                       </span>
-                      <span className="text-sm text-white/70">{item.action}</span>
+                      <span className="text-sm text-white/70">
+                        {item.action}
+                      </span>
                     </li>
                   ))}
                 </ol>
@@ -622,7 +625,7 @@ export default function FlowNextPage() {
             <Card className="overflow-hidden border-cyan-500/30 bg-gradient-to-br from-cyan-950/50 to-transparent">
               <CardHeader className="border-cyan-500/20 border-b pb-4">
                 <div className="flex items-center justify-between">
-                  <code className="rounded-full bg-cyan-500/20 px-4 py-2 font-mono text-lg text-cyan-400">
+                  <code className="rounded-full bg-cyan-500/20 px-4 py-2 font-mono text-cyan-400 text-lg">
                     /flow-next:work
                   </code>
                   <Badge
@@ -632,7 +635,7 @@ export default function FlowNextPage() {
                     STEP 2
                   </Badge>
                 </div>
-                <CardTitle className="mt-4 text-xl text-white">
+                <CardTitle className="mt-4 text-white text-xl">
                   Execute with re-anchoring
                 </CardTitle>
                 <p className="mt-1 text-sm text-white/50">
@@ -646,7 +649,9 @@ export default function FlowNextPage() {
                       <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-cyan-500/20 font-mono text-cyan-400 text-xs">
                         {item.step}
                       </span>
-                      <span className="text-sm text-white/70">{item.action}</span>
+                      <span className="text-sm text-white/70">
+                        {item.action}
+                      </span>
                     </li>
                   ))}
                 </ol>
@@ -693,9 +698,10 @@ export default function FlowNextPage() {
                 </h2>
 
                 <p className="mt-6 text-lg text-white/80 leading-relaxed">
-                  Opt-in autonomous operation that orchestrates plan/work cycles
-                  while you sleep. Fresh context windows every iteration prevent
-                  drift. Attempt backstops block stuck tasks automatically.
+                  Opt-in autonomous operation built on top of the flow-next
+                  plan/work loop. Orchestrates complete cycles while you
+                  sleep—fresh context windows every iteration prevent drift.
+                  Attempt backstops block stuck tasks automatically.
                 </p>
 
                 <div className="mt-8 space-y-3">
@@ -746,17 +752,29 @@ export default function FlowNextPage() {
                   </div>
                   <div className="p-4">
                     <code className="block whitespace-pre font-mono text-sm leading-relaxed">
-                      <span className="text-white/40"># Scaffold autonomous harness</span>
+                      <span className="text-white/40">
+                        # Scaffold autonomous harness
+                      </span>
                       {'\n'}
-                      <span className="text-cyan-400">/flow-next:ralph-init</span>
+                      <span className="text-cyan-400">
+                        /flow-next:ralph-init
+                      </span>
                       {'\n\n'}
-                      <span className="text-white/40"># Run one iteration (interactive)</span>
+                      <span className="text-white/40">
+                        # Run one iteration (interactive)
+                      </span>
                       {'\n'}
-                      <span className="text-emerald-400">./scripts/ralph/ralph_once.sh</span>
+                      <span className="text-emerald-400">
+                        ./scripts/ralph/ralph_once.sh
+                      </span>
                       {'\n\n'}
-                      <span className="text-white/40"># Run overnight loop</span>
+                      <span className="text-white/40">
+                        # Run overnight loop
+                      </span>
                       {'\n'}
-                      <span className="text-emerald-400">./scripts/ralph/ralph.sh</span>
+                      <span className="text-emerald-400">
+                        ./scripts/ralph/ralph.sh
+                      </span>
                     </code>
                   </div>
                 </div>
@@ -794,22 +812,31 @@ export default function FlowNextPage() {
                             <code className="text-cyan-400">flowctl next</code>{' '}
                             selects unit
                           </p>
-                          <p className="text-xs text-white/40">plan gate or work gate</p>
+                          <p className="text-white/40 text-xs">
+                            plan gate or work gate
+                          </p>
                         </div>
                       </div>
-                      <div className="ml-4 border-l-2 border-white/10 pl-4">
-                        <div className="space-y-2 text-xs text-white/60">
+                      <div className="ml-4 border-white/10 border-l-2 pl-4">
+                        <div className="space-y-2 text-white/60 text-xs">
                           <p>
-                            <span className="text-emerald-400">plan:</span> review loop
-                            until SHIP
+                            <span className="text-emerald-400">plan:</span> runs{' '}
+                            <code className="text-emerald-400">
+                              /flow-next:plan
+                            </code>{' '}
+                            + review loop until SHIP
                           </p>
                           <p>
-                            <span className="text-cyan-400">work:</span> one task until
-                            pass
+                            <span className="text-cyan-400">work:</span> runs{' '}
+                            <code className="text-cyan-400">
+                              /flow-next:work
+                            </code>{' '}
+                            for one task until pass
                           </p>
                           <p>
                             <span className="text-white/40">none:</span>{' '}
-                            <code className="text-amber-400">COMPLETE</code>
+                            <code className="text-amber-400">COMPLETE</code> —
+                            all epics done
                           </p>
                         </div>
                       </div>
@@ -819,7 +846,9 @@ export default function FlowNextPage() {
                         </span>
                         <div>
                           <p className="text-white">Fresh Claude session</p>
-                          <p className="text-xs text-white/40">clean context window</p>
+                          <p className="text-white/40 text-xs">
+                            clean context window
+                          </p>
                         </div>
                       </div>
                       <div className="flex items-center gap-3">
@@ -828,7 +857,9 @@ export default function FlowNextPage() {
                         </span>
                         <div>
                           <p className="text-white">Record attempt + loop</p>
-                          <p className="text-xs text-white/40">auto-block if stuck</p>
+                          <p className="text-white/40 text-xs">
+                            auto-block if stuck
+                          </p>
                         </div>
                       </div>
                     </div>
@@ -842,7 +873,7 @@ export default function FlowNextPage() {
               <div className="grid gap-8 lg:grid-cols-2">
                 {/* Configuration */}
                 <div>
-                  <h3 className="flex items-center gap-3 font-semibold text-xl text-white">
+                  <h3 className="flex items-center gap-3 font-semibold text-white text-xl">
                     <span className="text-2xl">⚙️</span>
                     Configuration
                   </h3>
@@ -863,20 +894,23 @@ export default function FlowNextPage() {
                       <span className="text-white/50">MAX_ITERATIONS</span>
                       <span className="text-white">25</span>
                     </div>
-                    <div className="flex justify-between border-t border-white/10 pt-2">
+                    <div className="flex justify-between border-white/10 border-t pt-2">
                       <span className="text-white/50">YOLO</span>
                       <span className="text-amber-400">0 (safe default)</span>
                     </div>
                   </div>
                   <p className="mt-3 text-sm text-white/50">
-                    Edit <code className="text-white/70">scripts/ralph/config.env</code>{' '}
+                    Edit{' '}
+                    <code className="text-white/70">
+                      scripts/ralph/config.env
+                    </code>{' '}
                     to customize
                   </p>
                 </div>
 
                 {/* Safety & Uninstall */}
                 <div>
-                  <h3 className="flex items-center gap-3 font-semibold text-xl text-white">
+                  <h3 className="flex items-center gap-3 font-semibold text-white text-xl">
                     <span className="text-2xl">🛡️</span>
                     Safety & Uninstall
                   </h3>
@@ -886,8 +920,8 @@ export default function FlowNextPage() {
                         YOLO Mode Warning
                       </p>
                       <p className="mt-1 text-sm text-white/60">
-                        YOLO=1 skips permission prompts. Use in sandbox/container
-                        only. No secrets in env.
+                        YOLO=1 skips permission prompts. Use in
+                        sandbox/container only. No secrets in env.
                       </p>
                     </div>
                     <div className="rounded-lg border border-emerald-500/20 bg-emerald-500/5 p-4">
@@ -897,7 +931,7 @@ export default function FlowNextPage() {
                       <code className="mt-2 block rounded bg-black/40 px-3 py-2 font-mono text-sm text-white">
                         rm -rf scripts/ralph/
                       </code>
-                      <p className="mt-2 text-xs text-white/40">
+                      <p className="mt-2 text-white/40 text-xs">
                         Removes harness + vendored flowctl. .flow/ remains.
                       </p>
                     </div>
@@ -911,7 +945,7 @@ export default function FlowNextPage() {
         {/* Visual Schematic */}
         <section className="relative mx-auto max-w-6xl px-6 pb-24 md:px-10">
           <div className="mb-8">
-            <p className="font-mono text-[11px] text-emerald-400/80 tracking-[0.3em] uppercase">
+            <p className="font-mono text-[11px] text-emerald-400/80 uppercase tracking-[0.3em]">
               How It Works
             </p>
           </div>
@@ -922,21 +956,22 @@ export default function FlowNextPage() {
         <section className="relative mx-auto max-w-6xl px-6 pb-24 md:px-10">
           <div className="grid gap-10 lg:grid-cols-5">
             <div className="lg:col-span-2">
-              <p className="font-mono text-[11px] text-emerald-400/80 tracking-[0.3em] uppercase">
+              <p className="font-mono text-[11px] text-emerald-400/80 uppercase tracking-[0.3em]">
                 Storage
               </p>
               <h2 className="mt-3 font-bold text-3xl text-white">
-                Everything in{' '}
-                <code className="text-emerald-400">.flow/</code>
+                Everything in <code className="text-emerald-400">.flow/</code>
               </h2>
               <p className="mt-4 text-white/60">
-                No external databases. No config elsewhere. One directory you can
-                delete to fully uninstall.
+                No external databases. No config elsewhere. One directory you
+                can delete to fully uninstall.
               </p>
               <div className="mt-6 space-y-3">
                 <div className="flex items-center gap-3">
                   <div className="h-2 w-2 rounded-full bg-emerald-500" />
-                  <span className="text-sm text-white/70">One file per task</span>
+                  <span className="text-sm text-white/70">
+                    One file per task
+                  </span>
                 </div>
                 <div className="flex items-center gap-3">
                   <div className="h-2 w-2 rounded-full bg-cyan-500" />
@@ -968,52 +1003,42 @@ export default function FlowNextPage() {
                     {'\n'}
                     <span className="text-white/30">├── </span>
                     <span className="text-white/80">meta.json</span>
-                    <span className="text-white/30">
-                      {'         '}
-                    </span>
+                    <span className="text-white/30">{'         '}</span>
                     <span className="text-white/20"># schema version</span>
                     {'\n'}
                     <span className="text-white/30">├── </span>
                     <span className="text-emerald-400/80">epics/</span>
                     {'\n'}
-                    <span className="text-white/30">│   └── </span>
+                    <span className="text-white/30">│ └── </span>
                     <span className="text-white/80">fn-1.json</span>
                     {'\n'}
                     <span className="text-white/30">├── </span>
                     <span className="text-emerald-400/80">specs/</span>
                     {'\n'}
-                    <span className="text-white/30">│   └── </span>
+                    <span className="text-white/30">│ └── </span>
                     <span className="text-white/80">fn-1.md</span>
-                    <span className="text-white/30">
-                      {'       '}
-                    </span>
+                    <span className="text-white/30">{'       '}</span>
                     <span className="text-white/20"># epic plan</span>
                     {'\n'}
                     <span className="text-white/30">├── </span>
                     <span className="text-cyan-400/80">tasks/</span>
                     {'\n'}
-                    <span className="text-white/30">│   ├── </span>
+                    <span className="text-white/30">│ ├── </span>
                     <span className="text-white/80">fn-1.1.json</span>
-                    <span className="text-white/30">
-                      {'   '}
-                    </span>
+                    <span className="text-white/30">{'   '}</span>
                     <span className="text-white/20"># metadata + deps</span>
                     {'\n'}
-                    <span className="text-white/30">│   ├── </span>
+                    <span className="text-white/30">│ ├── </span>
                     <span className="text-white/80">fn-1.1.md</span>
-                    <span className="text-white/30">
-                      {'     '}
-                    </span>
+                    <span className="text-white/30">{'     '}</span>
                     <span className="text-white/20"># spec + done summary</span>
                     {'\n'}
-                    <span className="text-white/30">│   └── </span>
+                    <span className="text-white/30">│ └── </span>
                     <span className="text-white/40">...</span>
                     {'\n'}
                     <span className="text-white/30">└── </span>
                     <span className="text-white/40">memory/</span>
-                    <span className="text-white/30">
-                      {'         '}
-                    </span>
+                    <span className="text-white/30">{'         '}</span>
                     <span className="text-white/20"># reserved</span>
                   </code>
                 </div>
@@ -1026,13 +1051,15 @@ export default function FlowNextPage() {
         <section className="relative mx-auto max-w-6xl px-6 pb-24 md:px-10">
           <Card className="overflow-hidden border-cyan-500/20 bg-gradient-to-br from-cyan-950/30 to-transparent">
             <CardHeader className="pb-6">
-              <p className="font-mono text-[11px] text-cyan-400/80 tracking-[0.3em] uppercase">
+              <p className="font-mono text-[11px] text-cyan-400/80 uppercase tracking-[0.3em]">
                 Multi-user Safety
               </p>
               <CardTitle className="mt-2 text-2xl text-white md:text-3xl">
                 Teams work parallel branches
                 <br />
-                <span className="text-white/50">without coordination servers</span>
+                <span className="text-white/50">
+                  without coordination servers
+                </span>
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-6">
@@ -1055,7 +1082,9 @@ export default function FlowNextPage() {
                     className="rounded-lg border border-cyan-500/10 bg-cyan-500/5 p-4"
                     key={item.title}
                   >
-                    <p className="font-mono text-cyan-400 text-sm">{item.title}</p>
+                    <p className="font-mono text-cyan-400 text-sm">
+                      {item.title}
+                    </p>
                     <p className="mt-1 text-sm text-white/50">{item.desc}</p>
                   </div>
                 ))}
@@ -1063,7 +1092,9 @@ export default function FlowNextPage() {
 
               <div className="overflow-hidden rounded-xl border border-white/10 bg-black/40">
                 <div className="flex items-center gap-2 border-white/5 border-b px-4 py-2">
-                  <span className="font-mono text-white/30 text-xs">example</span>
+                  <span className="font-mono text-white/30 text-xs">
+                    example
+                  </span>
                 </div>
                 <div className="p-4">
                   <code className="block whitespace-pre font-mono text-sm leading-relaxed">
@@ -1075,7 +1106,9 @@ export default function FlowNextPage() {
                       {'   '}# sets assignee
                     </span>
                     {'\n\n'}
-                    <span className="text-white/40"># Actor B tries same task</span>
+                    <span className="text-white/40">
+                      # Actor B tries same task
+                    </span>
                     {'\n'}
                     <span className="text-emerald-400">flowctl start</span>{' '}
                     <span className="text-white">fn-1.1</span>
@@ -1086,9 +1119,7 @@ export default function FlowNextPage() {
                     {'\n\n'}
                     <span className="text-emerald-400">flowctl start</span>{' '}
                     <span className="text-white">fn-1.1 --force</span>
-                    <span className="text-white/30">
-                      {'  '}# override
-                    </span>
+                    <span className="text-white/30">{'  '}# override</span>
                   </code>
                 </div>
               </div>
@@ -1099,11 +1130,12 @@ export default function FlowNextPage() {
         {/* flowctl CLI */}
         <section className="relative mx-auto max-w-6xl px-6 pb-24 md:px-10">
           <div className="mb-8">
-            <p className="font-mono text-[11px] text-emerald-400/80 tracking-[0.3em] uppercase">
+            <p className="font-mono text-[11px] text-emerald-400/80 uppercase tracking-[0.3em]">
               Bundled CLI
             </p>
             <h2 className="mt-3 font-bold text-2xl text-white md:text-3xl">
-              <code className="text-emerald-400">flowctl.py</code> manages all state
+              <code className="text-emerald-400">flowctl.py</code> manages all
+              state
             </h2>
             <p className="mt-2 text-white/60">
               Skills call this automatically. Use it directly if you want.
@@ -1139,9 +1171,7 @@ export default function FlowNextPage() {
                 {'\n'}
                 <span className="text-emerald-400">flowctl ready</span>{' '}
                 <span className="text-white">--epic fn-1</span>
-                <span className="text-white/30">
-                  {'     '}# ready/blocked
-                </span>
+                <span className="text-white/30">{'     '}# ready/blocked</span>
                 {'\n'}
                 <span className="text-emerald-400">flowctl start</span>{' '}
                 <span className="text-white">fn-1.1</span>
@@ -1156,9 +1186,7 @@ export default function FlowNextPage() {
                 {'\n'}
                 <span className="text-emerald-400">flowctl validate</span>{' '}
                 <span className="text-white">--all</span>
-                <span className="text-white/30">
-                  {'       '}# CI gate
-                </span>
+                <span className="text-white/30">{'       '}# CI gate</span>
               </code>
             </div>
           </div>
@@ -1169,7 +1197,7 @@ export default function FlowNextPage() {
           <Card className="border-violet-500/20 bg-gradient-to-br from-violet-950/30 to-transparent">
             <CardHeader className="pb-6">
               <div className="flex items-center gap-3">
-                <p className="font-mono text-[11px] text-violet-400/80 tracking-[0.3em] uppercase">
+                <p className="font-mono text-[11px] text-violet-400/80 uppercase tracking-[0.3em]">
                   Cross-Model Reviews
                 </p>
                 <Badge
@@ -1193,29 +1221,36 @@ export default function FlowNextPage() {
             </CardHeader>
             <CardContent className="space-y-4">
               <p className="text-white/60">
-                When rp-cli is installed, both plan and work phases can run reviews
-                using a separate model. Different models catch different blind spots.
+                When rp-cli is installed, both plan and work phases can run
+                reviews using a separate model. Different models catch different
+                blind spots.
               </p>
 
               <div className="rounded-lg border border-white/10 bg-white/5 p-4">
                 <p className="text-sm text-white/70">
-                  <span className="font-mono text-white/40">Without rp-cli:</span>{' '}
+                  <span className="font-mono text-white/40">
+                    Without rp-cli:
+                  </span>{' '}
                   Reviews are skipped. Everything else works normally.
                 </p>
               </div>
 
               <div className="grid gap-3 sm:grid-cols-2">
                 <div className="rounded-lg border border-violet-500/20 bg-violet-500/5 p-4">
-                  <code className="font-mono text-violet-400 text-sm">
+                  <code className="font-mono text-sm text-violet-400">
                     /flow-next:plan-review
                   </code>
-                  <p className="mt-1 text-sm text-white/40">Review plan before work</p>
+                  <p className="mt-1 text-sm text-white/40">
+                    Review plan before work
+                  </p>
                 </div>
                 <div className="rounded-lg border border-violet-500/20 bg-violet-500/5 p-4">
-                  <code className="font-mono text-violet-400 text-sm">
+                  <code className="font-mono text-sm text-violet-400">
                     /flow-next:impl-review
                   </code>
-                  <p className="mt-1 text-sm text-white/40">Review current branch</p>
+                  <p className="mt-1 text-sm text-white/40">
+                    Review current branch
+                  </p>
                 </div>
               </div>
             </CardContent>
@@ -1225,7 +1260,7 @@ export default function FlowNextPage() {
         {/* Installation - Clean and prominent */}
         <section className="relative mx-auto max-w-6xl px-6 pb-24 md:px-10">
           <div className="mb-10 text-center">
-            <p className="font-mono text-[11px] text-emerald-400/80 tracking-[0.3em] uppercase">
+            <p className="font-mono text-[11px] text-emerald-400/80 uppercase tracking-[0.3em]">
               Get Started
             </p>
             <h2 className="mt-3 font-bold text-3xl text-white md:text-4xl">
@@ -1241,7 +1276,9 @@ export default function FlowNextPage() {
               <div className="space-y-3 p-5">
                 <div className="rounded-lg bg-black/40 p-4">
                   <code className="block font-mono text-sm">
-                    <span className="text-emerald-400">/plugin marketplace add</span>{' '}
+                    <span className="text-emerald-400">
+                      /plugin marketplace add
+                    </span>{' '}
                     <span className="break-all text-white/80">
                       https://github.com/gmickel/gmickel-claude-marketplace
                     </span>
@@ -1283,8 +1320,8 @@ export default function FlowNextPage() {
 
           <div className="mt-8 rounded-lg border border-white/10 bg-white/5 p-5 text-center">
             <p className="text-white/70">
-              <span className="font-mono text-emerald-400">Requires:</span> Python
-              3.8+ and git.{' '}
+              <span className="font-mono text-emerald-400">Requires:</span>{' '}
+              Python 3.8+ and git.{' '}
               <a
                 className="text-violet-400 underline decoration-violet-400/40 underline-offset-2 hover:text-violet-300"
                 href="https://repoprompt.com"
@@ -1306,9 +1343,9 @@ export default function FlowNextPage() {
                 Flow vs Flow-Next
               </h2>
             </div>
-            <div className="grid divide-white/10 divide-x md:grid-cols-2">
+            <div className="grid divide-x divide-white/10 md:grid-cols-2">
               <div className="bg-violet-500/5 p-6">
-                <p className="font-mono text-violet-400 text-sm uppercase tracking-wider">
+                <p className="font-mono text-sm text-violet-400 uppercase tracking-wider">
                   Flow
                 </p>
                 <ul className="mt-4 space-y-3 text-sm">
@@ -1320,7 +1357,9 @@ export default function FlowNextPage() {
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="text-white/40">Install:</span>
-                    <span className="text-white/80">Plugin + optionally Beads</span>
+                    <span className="text-white/80">
+                      Plugin + optionally Beads
+                    </span>
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="text-white/40">Config:</span>
@@ -1351,9 +1390,10 @@ export default function FlowNextPage() {
             <div className="border-white/10 border-t bg-white/[0.02] p-6">
               <div className="flex flex-wrap items-center justify-between gap-4">
                 <p className="text-sm text-white/60">
-                  <span className="text-white">Choose Flow-Next</span> for zero deps
-                  and clean uninstall.{' '}
-                  <span className="text-white">Choose Flow</span> if you use Beads.
+                  <span className="text-white">Choose Flow-Next</span> for zero
+                  deps and clean uninstall.{' '}
+                  <span className="text-white">Choose Flow</span> if you use
+                  Beads.
                 </p>
                 <Link
                   className="font-mono text-sm text-violet-400 underline decoration-violet-400/40 underline-offset-2 transition-colors hover:text-violet-300"
