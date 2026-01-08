@@ -290,7 +290,7 @@ export function FlowSchematic() {
             AUTO-INTEGRATED WHEN{' '}
             <a
               className="text-primary underline-offset-2 hover:underline"
-              href="https://repoprompt.com"
+              href="https://repoprompt.com/?atp=KJbuL4"
               rel="noopener noreferrer"
               target="_blank"
             >

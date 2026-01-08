@@ -235,9 +235,7 @@ export function FlowNextSchematic() {
 
     setActiveIndex(0);
 
-    const reduceMotion = window.matchMedia(
-      '(prefers-reduced-motion: reduce)'
-    );
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
     if (reduceMotion.matches) {
       return;
@@ -286,7 +284,7 @@ export function FlowNextSchematic() {
               <p className="font-mono text-[10px] text-emerald-300 uppercase tracking-[0.3em]">
                 Plan
               </p>
-              <span className="text-white/40 text-[10px]">epic-first</span>
+              <span className="text-[10px] text-white/40">epic-first</span>
             </div>
 
             {planTimeline.map((item) => {
@@ -337,8 +335,8 @@ export function FlowNextSchematic() {
                   detail={item.detail}
                   key={item.title}
                   sequenceIndex={item.sequenceIndex}
-                  tone={item.tone}
                   title={item.title}
+                  tone={item.tone}
                 />
               );
             })}
@@ -346,7 +344,7 @@ export function FlowNextSchematic() {
 
           <div className="hidden items-stretch justify-center lg:flex">
             <div className="relative flex w-12 justify-center overflow-hidden">
-              <div className="flow-rail absolute inset-y-2 left-1/2 w-px -translate-x-1/2" />
+              <div className="flow-rail -translate-x-1/2 absolute inset-y-2 left-1/2 w-px" />
               {[0, 6, 12].map((delay) => (
                 <div
                   className="flow-pulse"
@@ -363,7 +361,7 @@ export function FlowNextSchematic() {
               <p className="font-mono text-[10px] text-cyan-300 uppercase tracking-[0.3em]">
                 Work
               </p>
-              <span className="text-white/40 text-[10px]">looped</span>
+              <span className="text-[10px] text-white/40">looped</span>
             </div>
 
             {workStages.map((stage) => (
@@ -373,8 +371,8 @@ export function FlowNextSchematic() {
                 detail={stage.detail}
                 key={stage.title}
                 sequenceIndex={stage.sequenceIndex}
-                tone={stage.tone}
                 title={stage.title}
+                tone={stage.tone}
               />
             ))}
 
@@ -394,7 +392,7 @@ export function FlowNextSchematic() {
                   >
                     <span className="text-[10px] text-white/60">●</span>
                     <div>
-                      <span className="flow-task-title font-mono text-xs text-white">
+                      <span className="flow-task-title font-mono text-white text-xs">
                         {task.title}
                       </span>
                       <span className="ml-2 text-[10px] text-white/40">

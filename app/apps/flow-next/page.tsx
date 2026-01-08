@@ -1211,7 +1211,7 @@ export default function FlowNextPage() {
                 Carmack-level reviews via{' '}
                 <a
                   className="text-violet-400 underline decoration-violet-400/40 underline-offset-4 transition-colors hover:text-violet-300"
-                  href="https://repoprompt.com"
+                  href="https://repoprompt.com/?atp=KJbuL4"
                   rel="noopener noreferrer"
                   target="_blank"
                 >
@@ -1324,7 +1324,7 @@ export default function FlowNextPage() {
               Python 3.8+ and git.{' '}
               <a
                 className="text-violet-400 underline decoration-violet-400/40 underline-offset-2 hover:text-violet-300"
-                href="https://repoprompt.com"
+                href="https://repoprompt.com/?atp=KJbuL4"
                 rel="noopener noreferrer"
                 target="_blank"
               >
