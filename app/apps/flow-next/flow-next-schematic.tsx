@@ -2,14 +2,212 @@
 
 import { useEffect, useRef, useState } from 'react';
 
+const STEP_MS = 1400;
+const SEQUENCE_LENGTH = 12;
+
 const researchAgents = [
   { name: 'repo-scout', icon: '🔍' },
   { name: 'practice-scout', icon: '💡' },
   { name: 'docs-scout', icon: '📚' },
 ];
 
+type Tone = 'emerald' | 'cyan' | 'amber' | 'violet' | 'slate';
+
+const toneClasses: Record<Tone, string> = {
+  emerald: 'border-emerald-500/30 bg-emerald-500/5 text-emerald-400',
+  cyan: 'border-cyan-500/30 bg-cyan-500/5 text-cyan-300',
+  amber: 'border-amber-500/40 bg-amber-500/5 text-amber-300',
+  violet: 'border-violet-500/30 bg-violet-500/5 text-violet-300',
+  slate: 'border-white/10 bg-white/5 text-white/80',
+};
+
+const activeToneClasses: Record<Tone, string> = {
+  emerald:
+    'ring-1 ring-emerald-400/60 shadow-[0_0_0_1px_rgba(16,185,129,0.4),0_18px_32px_-24px_rgba(16,185,129,0.45)]',
+  cyan: 'ring-1 ring-cyan-400/60 shadow-[0_0_0_1px_rgba(34,211,238,0.4),0_18px_32px_-24px_rgba(34,211,238,0.45)]',
+  amber:
+    'ring-1 ring-amber-400/60 shadow-[0_0_0_1px_rgba(251,191,36,0.4),0_18px_32px_-24px_rgba(251,191,36,0.45)]',
+  violet:
+    'ring-1 ring-violet-400/60 shadow-[0_0_0_1px_rgba(167,139,250,0.4),0_18px_32px_-24px_rgba(167,139,250,0.45)]',
+  slate: 'ring-1 ring-white/40 shadow-[0_0_0_1px_rgba(255,255,255,0.15)]',
+};
+
+type Stage = {
+  title: string;
+  detail: string;
+  tone: Tone;
+  dashed?: boolean;
+  sequenceIndex: number;
+};
+
+type PlanItem =
+  | ({ type: 'stage' } & Stage)
+  | { type: 'scouts'; sequenceIndex: number };
+
+const planTimeline: PlanItem[] = [
+  {
+    type: 'stage',
+    title: 'Idea or short spec',
+    detail: 'Prompt or doc → epic container',
+    tone: 'slate',
+    sequenceIndex: 0,
+  },
+  {
+    type: 'stage',
+    title: '/flow-next:interview',
+    detail: 'Optional: 40+ deep questions',
+    tone: 'amber',
+    dashed: true,
+    sequenceIndex: 1,
+  },
+  {
+    type: 'stage',
+    title: '/flow-next:plan',
+    detail: 'Research + dependency-ordered tasks',
+    tone: 'emerald',
+    sequenceIndex: 2,
+  },
+  { type: 'scouts', sequenceIndex: 3 },
+  {
+    type: 'stage',
+    title: 'gap-analyst',
+    detail: 'Edge cases + missing reqs',
+    tone: 'cyan',
+    sequenceIndex: 4,
+  },
+  {
+    type: 'stage',
+    title: '.flow/specs/fn-1.md',
+    detail: 'Writes epic + task graph',
+    tone: 'emerald',
+    sequenceIndex: 5,
+  },
+  {
+    type: 'stage',
+    title: '/flow-next:plan-review',
+    detail: 'Optional rp-cli gate',
+    tone: 'violet',
+    sequenceIndex: 6,
+  },
+];
+
+const workStages: Stage[] = [
+  {
+    title: '/flow-next:work fn-1',
+    detail: 'Exec in dependency order',
+    tone: 'cyan',
+    sequenceIndex: 7,
+  },
+  {
+    title: 'Re-anchor',
+    detail: 'Read epic + task + git state',
+    tone: 'amber',
+    dashed: true,
+    sequenceIndex: 8,
+  },
+  {
+    title: 'flowctl done',
+    detail: 'Summary + evidence',
+    tone: 'emerald',
+    sequenceIndex: 9,
+  },
+  {
+    title: 'Next ready task',
+    detail: 'Loop until empty',
+    tone: 'emerald',
+    sequenceIndex: 10,
+  },
+  {
+    title: 'flowctl epic close fn-1',
+    detail: 'Done',
+    tone: 'emerald',
+    sequenceIndex: 11,
+  },
+];
+
+const taskLoop = [
+  {
+    title: 'Implement',
+    detail: 'follow patterns',
+    tone: 'emerald',
+  },
+  {
+    title: 'Test',
+    detail: 'verify acceptance',
+    tone: 'emerald',
+  },
+  {
+    title: 'Record',
+    detail: 'flowctl done',
+    tone: 'cyan',
+  },
+  {
+    title: 'Review',
+    detail: 'if rp-cli',
+    tone: 'violet',
+  },
+] as const;
+
+const loopExtras = [
+  {
+    title: 'Ralph Mode',
+    detail: 'Plan + work loop (AFK)',
+    tone: 'cyan',
+    tag: 'autonomous',
+  },
+  {
+    title: 'flowctl validate --all',
+    detail: 'CI gate',
+    tone: 'emerald',
+    tag: 'ci-ready',
+  },
+  {
+    title: 'rm -rf .flow/',
+    detail: 'Clean uninstall',
+    tone: 'emerald',
+    tag: 'zero-deps',
+  },
+] as const;
+
+function FlowStage({
+  title,
+  detail,
+  tone,
+  dashed,
+  sequenceIndex,
+  activeIndex,
+}: Stage & { activeIndex: number }) {
+  const isActive = activeIndex === sequenceIndex;
+
+  return (
+    <div
+      className={`flow-stage relative overflow-hidden rounded-lg border p-3 ${toneClasses[tone]} ${
+        dashed ? 'border-dashed' : ''
+      } ${isActive ? activeToneClasses[tone] : ''}`}
+      data-active={isActive ? 'true' : 'false'}
+      data-tone={tone}
+    >
+      <div
+        className={`flow-stage-title font-mono text-xs tracking-wide ${
+          isActive ? 'text-white' : ''
+        }`}
+      >
+        {title}
+      </div>
+      <div
+        className={`flow-stage-detail mt-1 text-[11px] ${
+          isActive ? 'text-white/70' : 'text-white/50'
+        }`}
+      >
+        {detail}
+      </div>
+    </div>
+  );
+}
+
 export function FlowNextSchematic() {
   const [isVisible, setIsVisible] = useState(false);
+  const [activeIndex, setActiveIndex] = useState(0);
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -20,7 +218,7 @@ export function FlowNextSchematic() {
           observer.disconnect();
         }
       },
-      { threshold: 0.2 }
+      { threshold: 0.25 }
     );
 
     if (ref.current) {
@@ -30,244 +228,399 @@ export function FlowNextSchematic() {
     return () => observer.disconnect();
   }, []);
 
+  useEffect(() => {
+    if (!isVisible) {
+      return;
+    }
+
+    setActiveIndex(0);
+
+    const reduceMotion = window.matchMedia(
+      '(prefers-reduced-motion: reduce)'
+    );
+
+    if (reduceMotion.matches) {
+      return;
+    }
+
+    const id = window.setInterval(() => {
+      setActiveIndex((prev) => (prev + 1) % SEQUENCE_LENGTH);
+    }, STEP_MS);
+
+    return () => window.clearInterval(id);
+  }, [isVisible]);
+
   return (
     <div
-      className="relative overflow-hidden rounded-xl border border-white/10 bg-black/60 p-6 md:p-8"
+      className="flow-anim relative overflow-hidden rounded-xl border border-white/10 bg-black/60 p-6 md:p-8"
+      data-active={isVisible ? 'true' : 'false'}
       ref={ref}
     >
-      {/* Animated grid background */}
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 opacity-30"
+        className="pointer-events-none absolute inset-0 opacity-25"
         style={{
           backgroundImage:
-            'linear-gradient(to right, rgba(16,185,129,0.1) 1px, transparent 1px), linear-gradient(to bottom, rgba(16,185,129,0.1) 1px, transparent 1px)',
-          backgroundSize: '24px 24px',
+            'linear-gradient(to right, rgba(16,185,129,0.12) 1px, transparent 1px), linear-gradient(to bottom, rgba(16,185,129,0.12) 1px, transparent 1px)',
+          backgroundSize: '32px 32px',
         }}
       />
-
-      {/* Flowing gradient accent */}
       <div
         aria-hidden
-        className="pointer-events-none absolute top-0 left-1/4 h-px w-1/2 bg-gradient-to-r from-transparent via-emerald-500/50 to-transparent motion-safe:animate-pulse"
+        className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-emerald-500/40 to-transparent"
       />
 
       <div className="relative">
-        {/* Main flow container */}
-        <div className="flex flex-col gap-8 lg:flex-row lg:items-start lg:gap-4">
-          {/* LEFT: /flow-next:plan */}
-          <div
-            className={`flex-1 space-y-4 transition-all duration-700 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'}`}
-          >
-            {/* Optional interview step */}
-            <div className="rounded-lg border border-amber-500/40 border-dashed bg-amber-500/5 p-3">
-              <div className="mb-1 font-mono text-[9px] text-amber-400/80 uppercase tracking-wide">
-                Optional First
-              </div>
-              <code className="font-mono text-sm">
-                <span className="text-amber-400">/flow-next:interview</span>{' '}
-                <span className="text-muted-foreground">fn-1</span>
-              </code>
-              <div className="mt-1 text-[10px] text-muted-foreground">
-                40+ deep questions → refined spec
-              </div>
+        <div className="flex flex-wrap items-center gap-3">
+          <span className="rounded border border-emerald-500/30 bg-emerald-500/10 px-2 py-1 font-mono text-[10px] text-emerald-300 uppercase tracking-widest">
+            Flow-Next in motion
+          </span>
+          <span className="text-white/40 text-xs">
+            Plan → Work → Review → Done
+          </span>
+        </div>
+
+        <div className="mt-6 grid gap-6 lg:grid-cols-[1fr_auto_1fr]">
+          <div className="space-y-4">
+            <div className="flex items-center justify-between">
+              <p className="font-mono text-[10px] text-emerald-300 uppercase tracking-[0.3em]">
+                Plan
+              </p>
+              <span className="text-white/40 text-[10px]">epic-first</span>
             </div>
 
-            {/* Arrow down */}
-            <div className="flex justify-center">
-              <div className="flex h-5 w-5 items-center justify-center text-muted-foreground/50 text-xs">
-                ↓
-              </div>
-            </div>
-
-            {/* Command */}
-            <div className="overflow-hidden rounded-lg border border-emerald-500/30 bg-emerald-500/5 p-3">
-              <code className="font-mono text-sm">
-                <span className="text-emerald-400">/flow-next:plan</span>{' '}
-                <span className="text-muted-foreground">Add contact form</span>
-              </code>
-            </div>
-
-            {/* Parallel research */}
-            <div className="grid grid-cols-3 gap-2">
-              {researchAgents.map((agent, i) => (
-                <div
-                  className={`group rounded-lg border border-white/10 bg-white/5 p-2 text-center transition-all duration-500 hover:border-emerald-500/40 hover:bg-emerald-500/10 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'}`}
-                  key={agent.name}
-                  style={{
-                    transitionDelay: isVisible ? `${150 + i * 100}ms` : '0ms',
-                  }}
-                >
-                  <div className="mb-1 text-lg motion-safe:group-hover:animate-bounce">
-                    {agent.icon}
-                  </div>
-                  <div className="truncate font-mono text-[10px] text-white">
-                    {agent.name}
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            {/* Merge arrow */}
-            <div className="flex justify-center">
-              <div className="flex h-6 w-6 items-center justify-center rounded-full border border-white/20 bg-white/5 text-muted-foreground text-xs">
-                ↓
-              </div>
-            </div>
-
-            {/* Gap analyst */}
-            <div
-              className={`rounded-lg border border-cyan-500/30 bg-cyan-500/5 p-3 transition-all duration-500 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'}`}
-              style={{ transitionDelay: isVisible ? '400ms' : '0ms' }}
-            >
-              <code className="font-mono text-cyan-400 text-xs">
-                gap-analyst
-              </code>
-              <div className="mt-2 space-y-1 text-[10px] text-muted-foreground">
-                <div>→ Edge cases identified</div>
-                <div>→ User flow gaps found</div>
-              </div>
-            </div>
-
-            {/* Output to .flow/ */}
-            <div
-              className={`rounded-lg border border-emerald-500/30 bg-emerald-500/5 p-3 text-center transition-all duration-500 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'}`}
-              style={{ transitionDelay: isVisible ? '550ms' : '0ms' }}
-            >
-              <code className="font-mono text-emerald-400 text-xs">
-                .flow/specs/fn-1.md
-              </code>
-              <div className="mt-1 text-[10px] text-muted-foreground">
-                + tasks with dependencies
-              </div>
-            </div>
-          </div>
-
-          {/* CENTER: Arrow connector */}
-          <div
-            className={`flex items-center justify-center transition-all duration-500 lg:self-center ${isVisible ? 'scale-100 opacity-100' : 'scale-50 opacity-0'}`}
-            style={{ transitionDelay: isVisible ? '650ms' : '0ms' }}
-          >
-            <div className="flex h-10 w-10 items-center justify-center rounded-full border border-emerald-500/40 bg-emerald-500/10 lg:h-12 lg:w-12">
-              <span className="hidden text-emerald-400 text-xl lg:block">
-                →
-              </span>
-              <span className="text-emerald-400 text-xl lg:hidden">↓</span>
-            </div>
-          </div>
-
-          {/* RIGHT: /flow-next:work */}
-          <div
-            className={`flex-1 space-y-4 transition-all duration-700 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'}`}
-            style={{ transitionDelay: isVisible ? '750ms' : '0ms' }}
-          >
-            {/* Command */}
-            <div className="overflow-hidden rounded-lg border border-primary/30 bg-primary/5 p-3">
-              <code className="font-mono text-sm">
-                <span className="text-primary">/flow-next:work</span>{' '}
-                <span className="text-muted-foreground">fn-1</span>
-              </code>
-            </div>
-
-            {/* Re-anchor highlight */}
-            <div
-              className={`rounded-lg border border-amber-500/40 border-dashed bg-amber-500/5 p-3 transition-all duration-500 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'}`}
-              style={{ transitionDelay: isVisible ? '850ms' : '0ms' }}
-            >
-              <div className="mb-1 font-mono text-[9px] text-amber-400/80 uppercase tracking-wide">
-                Before EVERY task
-              </div>
-              <div className="font-mono text-amber-400 text-xs">
-                🎯 Re-anchor
-              </div>
-              <div className="mt-1 text-[10px] text-muted-foreground">
-                Re-read epic + task specs + git state
-              </div>
-            </div>
-
-            {/* Task loop */}
-            <div className="space-y-2">
-              {[
-                { step: 'Implement', desc: 'follow patterns', done: true },
-                { step: 'Test', desc: 'verify acceptance', done: true },
-                { step: 'Record', desc: 'flowctl done', done: true },
-                { step: 'Review', desc: 'if rp-cli', done: false },
-              ].map((item, i) => (
-                <div
-                  className={`flex items-center gap-3 rounded border border-white/10 bg-white/5 p-2 transition-all duration-300 ${isVisible ? 'translate-x-0 opacity-100' : 'translate-x-4 opacity-0'}`}
-                  key={item.step}
-                  style={{
-                    transitionDelay: isVisible ? `${950 + i * 100}ms` : '0ms',
-                  }}
-                >
+            {planTimeline.map((item) => {
+              if (item.type === 'scouts') {
+                return (
                   <div
-                    className={`flex h-5 w-5 items-center justify-center rounded-full text-[10px] ${item.done ? 'bg-emerald-500/20 text-emerald-400' : 'bg-primary/20 text-primary motion-safe:animate-pulse'}`}
+                    className={`flow-stage relative overflow-hidden rounded-lg border border-white/10 bg-white/5 p-3 ${
+                      activeIndex === item.sequenceIndex
+                        ? activeToneClasses.emerald
+                        : ''
+                    }`}
+                    data-active={
+                      activeIndex === item.sequenceIndex ? 'true' : 'false'
+                    }
+                    data-tone="emerald"
+                    key={`scouts-${item.sequenceIndex}`}
                   >
-                    {item.done ? '✓' : '◌'}
+                    <div
+                      className={`flow-stage-title font-mono text-[10px] uppercase tracking-wide ${
+                        activeIndex === item.sequenceIndex
+                          ? 'text-white'
+                          : 'text-white/60'
+                      }`}
+                    >
+                      Parallel scouts
+                    </div>
+                    <div className="mt-2 grid grid-cols-3 gap-2">
+                      {researchAgents.map((agent) => (
+                        <div
+                          className="rounded border border-white/10 bg-black/40 px-2 py-1 text-center"
+                          key={agent.name}
+                        >
+                          <div className="text-sm">{agent.icon}</div>
+                          <div className="mt-1 truncate font-mono text-[9px] text-white/70">
+                            {agent.name}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
                   </div>
-                  <div>
-                    <span className="font-mono text-white text-xs">
-                      {item.step}
-                    </span>
-                    <span className="ml-2 text-[10px] text-muted-foreground">
-                      {item.desc}
-                    </span>
-                  </div>
-                </div>
+                );
+              }
+
+              return (
+                <FlowStage
+                  activeIndex={activeIndex}
+                  dashed={item.dashed}
+                  detail={item.detail}
+                  key={item.title}
+                  sequenceIndex={item.sequenceIndex}
+                  tone={item.tone}
+                  title={item.title}
+                />
+              );
+            })}
+          </div>
+
+          <div className="hidden items-stretch justify-center lg:flex">
+            <div className="relative flex w-12 justify-center overflow-hidden">
+              <div className="flow-rail absolute inset-y-2 left-1/2 w-px -translate-x-1/2" />
+              {[0, 6, 12].map((delay) => (
+                <div
+                  className="flow-pulse"
+                  data-anim="true"
+                  key={delay}
+                  style={{ ['--delay' as string]: `${delay}s` }}
+                />
               ))}
             </div>
+          </div>
 
-            {/* Loop indicator */}
-            <div
-              className={`flex items-center justify-center gap-2 transition-all duration-500 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'}`}
-              style={{ transitionDelay: isVisible ? '1300ms' : '0ms' }}
-            >
-              <div className="h-px flex-1 bg-gradient-to-r from-transparent via-emerald-500/30 to-transparent" />
-              <span className="font-mono text-[10px] text-emerald-400">
-                loop → next ready task
-              </span>
-              <div className="h-px flex-1 bg-gradient-to-l from-transparent via-emerald-500/30 to-transparent" />
+          <div className="space-y-4">
+            <div className="flex items-center justify-between">
+              <p className="font-mono text-[10px] text-cyan-300 uppercase tracking-[0.3em]">
+                Work
+              </p>
+              <span className="text-white/40 text-[10px]">looped</span>
             </div>
 
-            {/* Epic done */}
-            <div
-              className={`rounded-lg border border-emerald-500/30 bg-emerald-500/5 p-3 text-center transition-all duration-500 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'}`}
-              style={{ transitionDelay: isVisible ? '1400ms' : '0ms' }}
-            >
-              <div className="text-center font-mono text-emerald-400 text-xs">
-                flowctl epic close fn-1 ✓
+            {workStages.map((stage) => (
+              <FlowStage
+                activeIndex={activeIndex}
+                dashed={stage.dashed}
+                detail={stage.detail}
+                key={stage.title}
+                sequenceIndex={stage.sequenceIndex}
+                tone={stage.tone}
+                title={stage.title}
+              />
+            ))}
+
+            <div className="rounded-lg border border-white/10 bg-white/5 p-3">
+              <div className="flex items-center justify-between">
+                <span className="font-mono text-[10px] text-white/60 uppercase tracking-wide">
+                  Task loop
+                </span>
+                <span className="text-emerald-400 text-xs">↻</span>
+              </div>
+              <div className="mt-3 space-y-2">
+                {taskLoop.map((task) => (
+                  <div
+                    className="flow-task relative flex items-center gap-3 rounded border border-white/10 bg-black/40 px-2 py-1.5"
+                    data-tone={task.tone}
+                    key={task.title}
+                  >
+                    <span className="text-[10px] text-white/60">●</span>
+                    <div>
+                      <span className="flow-task-title font-mono text-xs text-white">
+                        {task.title}
+                      </span>
+                      <span className="ml-2 text-[10px] text-white/40">
+                        {task.detail}
+                      </span>
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
         </div>
 
-        {/* BOTTOM: Key differentiators */}
-        <div
-          className={`mt-8 border-white/10 border-t pt-6 transition-all duration-700 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'}`}
-          style={{ transitionDelay: isVisible ? '1500ms' : '0ms' }}
-        >
-          <div className="flex flex-wrap items-center justify-center gap-4">
-            <div className="flex items-center gap-2 rounded-lg border border-emerald-500/30 bg-emerald-500/10 px-3 py-1.5">
-              <span className="text-[10px]">📦</span>
-              <span className="font-mono text-[10px] text-emerald-400">
-                Zero deps
-              </span>
-            </div>
-            <div className="flex items-center gap-2 rounded-lg border border-emerald-500/30 bg-emerald-500/10 px-3 py-1.5">
-              <span className="text-[10px]">👥</span>
-              <span className="font-mono text-[10px] text-emerald-400">
-                Multi-user
-              </span>
-            </div>
-            <div className="flex items-center gap-2 rounded-lg border border-emerald-500/30 bg-emerald-500/10 px-3 py-1.5">
-              <span className="text-[10px]">🧹</span>
-              <span className="font-mono text-[10px] text-emerald-400">
-                rm -rf .flow/ = gone
-              </span>
-            </div>
+        <div className="mt-8 border-white/10 border-t pt-6">
+          <div className="grid gap-3 md:grid-cols-3">
+            {loopExtras.map((item) => (
+              <div
+                className={`rounded-lg border p-3 ${toneClasses[item.tone]}`}
+                data-tone={item.tone}
+                key={item.title}
+              >
+                <div className="flex items-center justify-between">
+                  <span className="font-mono text-xs">{item.title}</span>
+                  <span className="text-[10px] text-white/40 uppercase">
+                    {item.tag}
+                  </span>
+                </div>
+                <div className="mt-1 text-[11px] text-white/50">
+                  {item.detail}
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </div>
+
+      <style jsx>{`
+        .flow-anim {
+          --glow-emerald: rgba(16, 185, 129, 0.5);
+          --glow-cyan: rgba(34, 211, 238, 0.45);
+          --glow-amber: rgba(251, 191, 36, 0.45);
+          --glow-violet: rgba(167, 139, 250, 0.45);
+          --glow-slate: rgba(255, 255, 255, 0.25);
+        }
+
+        .flow-stage {
+          transition: transform 400ms ease, filter 400ms ease;
+        }
+
+        .flow-stage::after {
+          content: '';
+          position: absolute;
+          inset: 0;
+          border-radius: 12px;
+          background: linear-gradient(
+            110deg,
+            transparent 0%,
+            rgba(255, 255, 255, 0.08) 40%,
+            var(--glow-color) 50%,
+            rgba(255, 255, 255, 0.08) 60%,
+            transparent 100%
+          );
+          opacity: 0;
+          transform: translateX(-120%);
+          pointer-events: none;
+        }
+
+        .flow-stage::before {
+          content: '';
+          position: absolute;
+          inset: 0;
+          border-radius: 12px;
+          border: 1px solid transparent;
+          opacity: 0;
+          box-shadow: 0 0 16px var(--glow-color);
+          pointer-events: none;
+          transition: opacity 300ms ease;
+        }
+
+        .flow-stage[data-active='true'] {
+          transform: translateY(-2px);
+          filter: saturate(1.15) brightness(1.08);
+          border-color: var(--glow-color);
+          background-image: linear-gradient(
+            180deg,
+            rgba(255, 255, 255, 0.06),
+            transparent 70%
+          );
+          box-shadow: 0 0 0 1px var(--glow-color),
+            0 16px 32px -24px var(--glow-color);
+        }
+
+        .flow-stage[data-active='true'] .flow-stage-title {
+          color: rgba(255, 255, 255, 0.95);
+        }
+
+        .flow-stage[data-active='true'] .flow-stage-detail {
+          color: rgba(255, 255, 255, 0.75);
+        }
+
+        .flow-stage[data-active='true']::before {
+          opacity: 1;
+        }
+
+        .flow-stage[data-active='true']::after {
+          opacity: 1;
+          animation: stageSweep 1s ease;
+        }
+
+        .flow-task {
+          transition: transform 300ms ease, filter 300ms ease;
+        }
+
+        .flow-task::after {
+          content: '';
+          position: absolute;
+          inset: -1px;
+          border-radius: 10px;
+          border: 1px solid rgba(255, 255, 255, 0.12);
+          opacity: 0;
+          pointer-events: none;
+          transition: opacity 250ms ease;
+        }
+
+        .flow-task[data-active='true'] {
+          transform: translateY(-1px);
+          filter: saturate(1.1) brightness(1.05);
+          border-color: var(--glow-color);
+          box-shadow: 0 0 0 1px var(--glow-color);
+        }
+
+        .flow-task[data-active='true']::after {
+          opacity: 1;
+        }
+
+        .flow-stage[data-tone='emerald'],
+        .flow-task[data-tone='emerald'] {
+          --glow-color: var(--glow-emerald);
+        }
+        .flow-stage[data-tone='cyan'],
+        .flow-task[data-tone='cyan'] {
+          --glow-color: var(--glow-cyan);
+        }
+        .flow-stage[data-tone='amber'],
+        .flow-task[data-tone='amber'] {
+          --glow-color: var(--glow-amber);
+        }
+        .flow-stage[data-tone='violet'],
+        .flow-task[data-tone='violet'] {
+          --glow-color: var(--glow-violet);
+        }
+        .flow-stage[data-tone='slate'] {
+          --glow-color: var(--glow-slate);
+        }
+
+        .flow-rail {
+          background: linear-gradient(
+            to bottom,
+            transparent,
+            rgba(16, 185, 129, 0.35),
+            transparent
+          );
+        }
+
+        .flow-pulse {
+          position: absolute;
+          left: 50%;
+          top: 10px;
+          width: 10px;
+          height: 10px;
+          border-radius: 999px;
+          background: rgba(16, 185, 129, 0.9);
+          transform: translateX(-50%);
+          filter: blur(0.2px);
+          box-shadow: 0 0 12px rgba(16, 185, 129, 0.65);
+          animation: pulseDown 10s linear infinite;
+          animation-delay: var(--delay, 0s);
+        }
+
+        .flow-anim [data-anim='true'] {
+          animation-play-state: paused;
+        }
+
+        .flow-anim[data-active='true'] [data-anim='true'] {
+          animation-play-state: running;
+        }
+
+        @keyframes stageSweep {
+          0% {
+            transform: translateX(-120%);
+            opacity: 0;
+          }
+          40% {
+            opacity: 0.8;
+          }
+          100% {
+            transform: translateX(120%);
+            opacity: 0;
+          }
+        }
+
+
+        @keyframes pulseDown {
+          0% {
+            top: 10px;
+            opacity: 0;
+          }
+          10% {
+            opacity: 1;
+          }
+          70% {
+            top: calc(100% - 18px);
+            opacity: 0.8;
+          }
+          100% {
+            top: calc(100% - 6px);
+            opacity: 0;
+          }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+          .flow-anim [data-anim='true'] {
+            animation: none !important;
+          }
+        }
+      `}</style>
     </div>
   );
 }
