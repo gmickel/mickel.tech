@@ -149,7 +149,9 @@ export function FlowNextSchematic() {
             style={{ transitionDelay: isVisible ? '650ms' : '0ms' }}
           >
             <div className="flex h-10 w-10 items-center justify-center rounded-full border border-emerald-500/40 bg-emerald-500/10 lg:h-12 lg:w-12">
-              <span className="hidden text-emerald-400 text-xl lg:block">→</span>
+              <span className="hidden text-emerald-400 text-xl lg:block">
+                →
+              </span>
               <span className="text-emerald-400 text-xl lg:hidden">↓</span>
             </div>
           </div>

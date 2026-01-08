@@ -74,9 +74,7 @@ export function softwareAppSchema(app: {
   };
 }
 
-export function faqSchema(
-  faqs: Array<{ question: string; answer: string }>
-) {
+export function faqSchema(faqs: Array<{ question: string; answer: string }>) {
   return {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',

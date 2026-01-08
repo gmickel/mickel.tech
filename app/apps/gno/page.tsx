@@ -666,8 +666,8 @@ export default function GnoPage() {
                 See your knowledge as a constellation
               </CardTitle>
               <p className="mt-2 text-muted-foreground text-sm leading-relaxed">
-                Interactive force-directed visualization of document connections.
-                Wiki links, markdown links, and{' '}
+                Interactive force-directed visualization of document
+                connections. Wiki links, markdown links, and{' '}
                 <span className="text-amber-300">
                   semantic similarity edges
                 </span>{' '}
