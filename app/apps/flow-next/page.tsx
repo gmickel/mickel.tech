@@ -740,6 +740,60 @@ export default function FlowNextPage() {
                   ))}
                 </div>
 
+                {/* Quality Gates - Production-grade enforcement */}
+                <div className="mt-8 overflow-hidden rounded-xl border border-emerald-500/30 bg-gradient-to-br from-emerald-950/40 to-transparent">
+                  <div className="flex items-center justify-between border-emerald-500/20 border-b bg-emerald-500/5 px-4 py-3">
+                    <div className="flex items-center gap-2">
+                      <span className="text-lg">🔐</span>
+                      <span className="font-semibold text-emerald-400 text-sm uppercase tracking-wider">
+                        Quality Gates
+                      </span>
+                    </div>
+                    <Badge
+                      className="border-emerald-400/40 bg-emerald-500/10 text-emerald-300"
+                      variant="outline"
+                    >
+                      Production-Grade
+                    </Badge>
+                  </div>
+                  <div className="p-5 space-y-4">
+                    <p className="text-sm text-white/70">
+                      Deterministic enforcement prevents agents from skipping steps or drifting from the workflow.
+                    </p>
+                    <div className="space-y-2">
+                      {[
+                        {
+                          label: 'Receipt-Based Gating',
+                          desc: 'Every review must produce a receipt proving it ran. No receipt = no progress.',
+                        },
+                        {
+                          label: 'Review Until SHIP',
+                          desc: 'Reviews don\'t just flag issues—they block until the reviewer returns SHIP.',
+                        },
+                        {
+                          label: 'Workflow Enforcement',
+                          desc: 'Guard rails ensure the agent follows the prescribed flow exactly.',
+                        },
+                      ].map((gate) => (
+                        <div
+                          className="flex items-start gap-3 rounded-lg border border-emerald-500/10 bg-emerald-500/5 p-3"
+                          key={gate.label}
+                        >
+                          <span className="mt-0.5 text-emerald-400">✓</span>
+                          <div>
+                            <p className="font-mono text-emerald-400 text-xs uppercase tracking-wide">
+                              {gate.label}
+                            </p>
+                            <p className="mt-0.5 text-sm text-white/50">
+                              {gate.desc}
+                            </p>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+
                 {/* Quick start */}
                 <div className="mt-8 overflow-hidden rounded-lg border border-emerald-500/30 bg-black/60">
                   <div className="flex items-center gap-2 border-emerald-500/10 border-b bg-emerald-500/5 px-4 py-2">
@@ -1192,23 +1246,39 @@ export default function FlowNextPage() {
           </div>
         </section>
 
-        {/* Reviews */}
+        {/* Reviews - Major differentiator */}
         <section className="relative mx-auto max-w-6xl px-6 pb-24 md:px-10">
-          <Card className="border-violet-500/20 bg-gradient-to-br from-violet-950/30 to-transparent">
-            <CardHeader className="pb-6">
-              <div className="flex items-center gap-3">
-                <p className="font-mono text-[11px] text-violet-400/80 uppercase tracking-[0.3em]">
-                  Cross-Model Reviews
-                </p>
+          <div className="relative overflow-hidden rounded-2xl border border-violet-500/30 bg-gradient-to-br from-violet-950/40 via-purple-950/20 to-transparent">
+            {/* Ambient glow */}
+            <div
+              aria-hidden
+              className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,rgba(139,92,246,0.15),transparent_50%)]"
+            />
+
+            <div className="relative z-10 p-8 md:p-12">
+              <div className="flex flex-wrap items-center gap-3 mb-6">
                 <Badge
-                  className="border-violet-500/40 bg-violet-500/10 text-violet-400"
+                  className="border-violet-400/50 bg-violet-500/10 text-violet-300 backdrop-blur-sm"
                   variant="outline"
                 >
-                  Recommended
+                  <span className="mr-1.5 inline-block h-2 w-2 animate-pulse rounded-full bg-violet-400" />
+                  MULTI-MODEL REVIEW
+                </Badge>
+                <Badge
+                  className="border-emerald-400/40 bg-emerald-950/60 text-emerald-300"
+                  variant="outline"
+                >
+                  Key Differentiator
                 </Badge>
               </div>
-              <CardTitle className="mt-2 text-2xl text-white">
-                Carmack-level reviews via{' '}
+
+              <h2 className="font-bold text-3xl text-white leading-tight md:text-4xl">
+                Two models catch what one misses
+              </h2>
+
+              <p className="mt-4 max-w-2xl text-lg text-white/70 leading-relaxed">
+                Send your plans and implementations to a{' '}
+                <span className="text-violet-400">different AI model</span> for review via{' '}
                 <a
                   className="text-violet-400 underline decoration-violet-400/40 underline-offset-4 transition-colors hover:text-violet-300"
                   href="https://repoprompt.com/?atp=KJbuL4"
@@ -1217,44 +1287,82 @@ export default function FlowNextPage() {
                 >
                   RepoPrompt
                 </a>
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-4">
-              <p className="text-white/60">
-                When rp-cli is installed, both plan and work phases can run
-                reviews using a separate model. Different models catch different
-                blind spots.
+                . The reviewing model sees full file context, not just diffs.
               </p>
 
-              <div className="rounded-lg border border-white/10 bg-white/5 p-4">
-                <p className="text-sm text-white/70">
-                  <span className="font-mono text-white/40">
-                    Without rp-cli:
-                  </span>{' '}
-                  Reviews are skipped. Everything else works normally.
-                </p>
+              <div className="mt-8 grid gap-6 md:grid-cols-3">
+                {[
+                  {
+                    icon: '👁️',
+                    title: 'Fresh Perspective',
+                    desc: 'A second model catches blind spots that self-review misses',
+                  },
+                  {
+                    icon: '🚫',
+                    title: 'Blocks Until SHIP',
+                    desc: 'No "LGTM with nits" that get ignored—reviews enforce resolution',
+                  },
+                  {
+                    icon: '📄',
+                    title: 'Full Context',
+                    desc: 'Reviewer sees complete files via RepoPrompt builder, not patches',
+                  },
+                ].map((item) => (
+                  <div
+                    className="rounded-lg border border-violet-500/20 bg-violet-500/5 p-5 backdrop-blur-sm"
+                    key={item.title}
+                  >
+                    <span className="text-2xl">{item.icon}</span>
+                    <p className="mt-3 font-semibold text-white">{item.title}</p>
+                    <p className="mt-1 text-sm text-white/50">{item.desc}</p>
+                  </div>
+                ))}
               </div>
 
-              <div className="grid gap-3 sm:grid-cols-2">
-                <div className="rounded-lg border border-violet-500/20 bg-violet-500/5 p-4">
-                  <code className="font-mono text-sm text-violet-400">
-                    /flow-next:plan-review
-                  </code>
-                  <p className="mt-1 text-sm text-white/40">
-                    Review plan before work
-                  </p>
+              <div className="mt-8 grid gap-4 md:grid-cols-2">
+                <div className="overflow-hidden rounded-lg border border-violet-500/20 bg-black/40">
+                  <div className="border-violet-500/10 border-b bg-violet-500/5 px-4 py-2">
+                    <code className="font-mono text-sm text-violet-400">
+                      /flow-next:plan-review
+                    </code>
+                  </div>
+                  <div className="p-4">
+                    <p className="text-sm text-white/60">
+                      Review the plan before any code is written. Catches architectural issues early.
+                    </p>
+                  </div>
                 </div>
-                <div className="rounded-lg border border-violet-500/20 bg-violet-500/5 p-4">
-                  <code className="font-mono text-sm text-violet-400">
-                    /flow-next:impl-review
-                  </code>
-                  <p className="mt-1 text-sm text-white/40">
-                    Review current branch
-                  </p>
+                <div className="overflow-hidden rounded-lg border border-violet-500/20 bg-black/40">
+                  <div className="border-violet-500/10 border-b bg-violet-500/5 px-4 py-2">
+                    <code className="font-mono text-sm text-violet-400">
+                      /flow-next:impl-review
+                    </code>
+                  </div>
+                  <div className="p-4">
+                    <p className="text-sm text-white/60">
+                      Review the implementation. Loops fix → re-review until SHIP verdict.
+                    </p>
+                  </div>
                 </div>
               </div>
-            </CardContent>
-          </Card>
+
+              <div className="mt-6 rounded-lg border border-white/10 bg-white/5 p-4">
+                <p className="text-sm text-white/60">
+                  <span className="font-mono text-white/40">Without RepoPrompt:</span>{' '}
+                  Reviews are skipped—everything else works normally. Install{' '}
+                  <a
+                    className="text-violet-400 underline decoration-violet-400/40 underline-offset-2 hover:text-violet-300"
+                    href="https://repoprompt.com/?atp=KJbuL4"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
+                    rp-cli
+                  </a>{' '}
+                  to enable cross-model review.
+                </p>
+              </div>
+            </div>
+          </div>
         </section>
 
         {/* Installation - Clean and prominent */}
