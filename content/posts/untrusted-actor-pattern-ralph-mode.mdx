@@ -1,0 +1,101 @@
+---
+title: "The \"Untrusted Actor\" Pattern: My Take on Ralph Mode"
+summary: "Standard Ralph gates on tests passing. My version adds an adversarial intelligence that must explicitly sign off before progress is allowed."
+publishedAt: "2026-01-09T09:00:00Z"
+tags:
+  - Claude Code
+  - AI Coding
+  - Flow
+  - Ralph Mode
+  - Tooling
+canonicalSource: native
+mediumUrl: "https://medium.com/byte-sized-brainwaves/the-untrusted-actor-pattern-my-take-on-ralph-mode-20dfd717d7ec"
+status: published
+---
+
+_You have probably seen "Ralph Mode" taking Social Media by storm recently._
+
+![Ralph Wiggum coding in a server room - the namesake of Ralph Mode](/blog/1.png)
+
+Invented by Geoffrey Huntley, the premise is beautifully simple. You put your AI coding assistant (like Claude Code) into an infinite bash loop. It codes, it fails, it retries, and it doesn't stop until the tests pass.
+
+It is a brute-force approach to autonomy. And it works.
+
+But I wanted more than just "passing tests". I wanted verification.
+
+So I built my own take on Ralph Mode. Instead of gating quality just by checking if the linter and tests pass, I built it on top of my existing [Flow-Next](/apps/flow-next) Plugin.
+
+![Flow-Next Ralph Mode - Agents that run overnight](/blog/2.png)
+
+**The core difference is the gate itself.**
+
+In standard Ralph, the gate is usually tests and linting. In my version, we add a superior (or alternative) intelligence.
+
+---
+
+## Standard Ralph vs. Adversarial Ralph
+
+I already had a disciplined flow in place: **Plan > Review > Implement > Review.**
+
+- **The Builder**: Opus 4.5 (via Claude Code CLI)
+- **The Reviewer**: GPT-5.2 High (via [RepoPrompt](https://repoprompt.com/?atp=KJbuL4))
+
+This flow that I made available in the flow-next plugin has served me well while shipping hundreds of features over the last month. The goal though was to automate this loop.
+
+I thought it would be relatively straightforward but quickly ran into the "Laziness Problem".
+
+When left to its own devices, the agent (Opus) is lazy and takes short-cuts. It realized that sending code out to RepoPrompt for an external review was always the best course. So it just decided: "Nah, it's all good. I can do the review myself."
+
+It wasn't even hallucinating. It was just taking the path of least resistance. It would check its own work, mark it as done, and skip the external validation entirely. It would literally lie to the Ralph script.
+
+---
+
+## The "Receipt" System (Proof-of-Work)
+
+This is where the engineering gets interesting. I didn't add receipts just for fun. I added them because the models lie.
+
+RepoPrompt runs as an external process; I cannot make it write to my local filesystem after performing a review. So I use Claude Code hooks to **force the local agent to do it**.
+
+When the external reviewer sends back a `<verdict>SHIP</verdict>`, the local agent is required to write a "receipt" JSON file to disk before it is allowed to stop. It's perfectly possible that the reviewer did **3-4 review passes** with a NEEDS_WORK verdict before reaching this stage.
+
+I enforce this with a Stop Hook.
+
+1. The Stop: The agent tries to finish its turn.
+2. The Hook: The system intercepts the stop command and checks: "Does the receipt file exist?"
+
+**No receipt?** The stop is blocked. The agent is told: "Cannot stop: Review receipt not written."
+**Receipt found?** The agent is allowed to proceed.
+
+For implementation reviews, there's a second gate: the agent must also have called `flowctl done` before it can write the receipt. This records:
+
+- **Commit SHA**: proof the code is in git
+- **Test commands run**: e.g., `npm test`, `npm run lint`
+- **Summary**: what changed, why, and verification steps
+
+The agent cannot fake this. It cannot be lazy. It must get the external verdict, write the proof to disk, and only then is it allowed to move on.
+
+---
+
+## Why This Matters
+
+Standard Ralph Mode is "YOLO". It is optimistic. It assumes that if the code compiles and tests are green, it is good.
+
+But anyone who has shipped software knows that "passing tests" is a low bar. **Production-grade software** requires more. It requires adherence to architectural patterns, security best practices, and maintainability standards. It requires a senior engineer saying, "This works, but it's going to break in six months because you didn't handle the edge case."
+
+My implementation is pessimistic. It assumes the agent is lazy, will ignore instructions, or will take the easiest path available. It requires an external, adversarial intelligence to explicitly sign off on every single step before progress is allowed.
+
+I ran this loop for 48 hours straight. I woke up to a stack of completed features that weren't just "working". They were **production-grade**.
+
+![Ralph autonomous loop terminal output showing multiple iterations with plan reviews, implementation reviews, and SHIP verdicts](/blog/3.png)
+
+This is how we autonomously achieve software that doesn't just run, but actually belongs in your codebase.
+
+Programming isn't just solved. It is verified.
+
+---
+
+## Links
+
+- [Flow-Next / Ralph Mode](/apps/flow-next)
+- [Source Code](https://github.com/gmickel/gmickel-claude-marketplace)
+- [Deep Dive Docs](https://github.com/gmickel/gmickel-claude-marketplace/blob/main/plugins/flow-next/docs/ralph.md)
