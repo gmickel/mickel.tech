@@ -352,33 +352,34 @@ export default function FlowNextPage() {
                   </span>
                 </div>
                 <p className="text-lg text-white/90 leading-relaxed md:text-xl">
-                  AI agents fail for predictable reasons:{' '}
-                  <span className="text-emerald-400">
-                    forgetting the plan mid-task
+                  <span className="text-emerald-400">One task at a time</span>{' '}
+                  with full review cycles, or{' '}
+                  <span className="text-cyan-400">throw the whole epic</span> at
+                  it and walk away.{' '}
+                  <span className="text-white/60">
+                    Either way: re-anchoring, evidence, cross-model review.
                   </span>
-                  ,{' '}
-                  <span className="text-cyan-400">
-                    losing context in long sessions
-                  </span>
-                  ,{' '}
-                  <span className="text-emerald-400">drifting from intent</span>
-                  .
                 </p>
                 <p className="mt-4 text-white/70 leading-relaxed">
-                  Flow-Next bundles a{' '}
+                  Planning ensures every task{' '}
                   <span className="font-mono text-emerald-400">
-                    fully-featured task system
-                  </span>{' '}
-                  in a single Python script. No npm. No daemons. No config
-                  edits.
+                    fits the context window
+                  </span>
+                  . Re-anchoring after each task—and after compaction—means{' '}
+                  <span className="font-mono text-cyan-400">zero drift</span>.
                 </p>
-                <div className="mt-6 flex items-center gap-4 border-white/10 border-t pt-6">
-                  <code className="rounded bg-white/5 px-3 py-1.5 font-mono text-emerald-400 text-sm">
-                    30 seconds to try
+                <div className="mt-6 grid grid-cols-2 gap-3 border-white/10 border-t pt-6">
+                  <code className="rounded bg-emerald-500/10 px-3 py-2 font-mono text-emerald-400 text-sm">
+                    /flow-next:work fn-1.1
+                    <span className="block text-white/40 text-xs">
+                      single task
+                    </span>
                   </code>
-                  <span className="text-white/30">→</span>
-                  <code className="rounded bg-white/5 px-3 py-1.5 font-mono text-cyan-400 text-sm">
-                    rm -rf .flow/ to uninstall
+                  <code className="rounded bg-cyan-500/10 px-3 py-2 font-mono text-cyan-400 text-sm">
+                    /flow-next:work fn-1
+                    <span className="block text-white/40 text-xs">
+                      entire epic
+                    </span>
                   </code>
                 </div>
               </div>
@@ -432,6 +433,264 @@ export default function FlowNextPage() {
               >
                 Documentation →
               </a>
+            </div>
+          </div>
+        </section>
+
+        {/* WHY IT WORKS - Key Differentiators */}
+        <section className="relative mx-auto max-w-6xl px-6 pb-24 md:px-10">
+          {/* Section header */}
+          <div className="mb-12 text-center">
+            <Badge
+              className="mb-4 border-emerald-400/50 bg-emerald-950/80 text-emerald-300 backdrop-blur-sm"
+              variant="outline"
+            >
+              WHY IT ACTUALLY WORKS
+            </Badge>
+            <h2 className="font-bold text-3xl text-white md:text-4xl">
+              The secret:{' '}
+              <span className="bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">
+                you control the granularity
+              </span>
+            </h2>
+            <p className="mx-auto mt-4 max-w-2xl text-white/60">
+              Work task-by-task with full review cycles for maximum control. Or
+              throw the whole epic at it and let Flow-Next handle everything.
+              Same guarantees either way.
+            </p>
+          </div>
+
+          {/* Three pillars */}
+          <div className="grid gap-6 lg:grid-cols-3">
+            {/* Pillar 1: Flexible Execution */}
+            <div className="group relative overflow-hidden rounded-2xl border border-emerald-500/30 bg-gradient-to-br from-emerald-950/60 via-emerald-950/20 to-transparent p-6 transition-all hover:border-emerald-500/50">
+              <div
+                aria-hidden
+                className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(16,185,129,0.15),transparent_50%)]"
+              />
+              <div className="relative">
+                <div className="mb-4 flex items-center gap-3">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-emerald-500/20 text-2xl">
+                    🎛️
+                  </div>
+                  <Badge
+                    className="border-emerald-400/40 bg-emerald-500/10 text-emerald-300"
+                    variant="outline"
+                  >
+                    YOUR CHOICE
+                  </Badge>
+                </div>
+                <h3 className="font-bold text-xl text-white">
+                  Flexible Execution
+                </h3>
+                <p className="mt-2 text-sm text-white/60 leading-relaxed">
+                  Same workflow, different scopes. Both get re-anchoring,
+                  reviews, and evidence.
+                </p>
+
+                {/* Side-by-side commands */}
+                <div className="mt-5 space-y-3">
+                  <div className="overflow-hidden rounded-lg border border-emerald-500/20 bg-black/60">
+                    <div className="flex items-center justify-between border-emerald-500/10 border-b bg-emerald-500/5 px-3 py-1.5">
+                      <span className="font-mono text-emerald-400 text-[10px] uppercase tracking-wider">
+                        Single Task
+                      </span>
+                      <span className="text-white/30 text-xs">with reviews</span>
+                    </div>
+                    <code className="block p-3 font-mono text-sm text-white">
+                      /flow-next:work{' '}
+                      <span className="text-emerald-400">fn-1.1</span>
+                    </code>
+                  </div>
+                  <div className="overflow-hidden rounded-lg border border-cyan-500/20 bg-black/60">
+                    <div className="flex items-center justify-between border-cyan-500/10 border-b bg-cyan-500/5 px-3 py-1.5">
+                      <span className="font-mono text-cyan-400 text-[10px] uppercase tracking-wider">
+                        Entire Epic
+                      </span>
+                      <span className="text-white/30 text-xs">automated</span>
+                    </div>
+                    <code className="block p-3 font-mono text-sm text-white">
+                      /flow-next:work{' '}
+                      <span className="text-cyan-400">fn-1</span>
+                    </code>
+                  </div>
+                </div>
+
+                <p className="mt-4 text-xs text-white/40">
+                  → Pick your level of supervision. The workflow stays the same.
+                </p>
+              </div>
+            </div>
+
+            {/* Pillar 2: No Context Worries */}
+            <div className="group relative overflow-hidden rounded-2xl border border-cyan-500/30 bg-gradient-to-br from-cyan-950/60 via-cyan-950/20 to-transparent p-6 transition-all hover:border-cyan-500/50">
+              <div
+                aria-hidden
+                className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(6,182,212,0.15),transparent_50%)]"
+              />
+              <div className="relative">
+                <div className="mb-4 flex items-center gap-3">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-cyan-500/20 text-2xl">
+                    🧠
+                  </div>
+                  <Badge
+                    className="border-cyan-400/40 bg-cyan-500/10 text-cyan-300"
+                    variant="outline"
+                  >
+                    AUTOMATIC
+                  </Badge>
+                </div>
+                <h3 className="font-bold text-xl text-white">
+                  No Context Worries
+                </h3>
+                <p className="mt-2 text-sm text-white/60 leading-relaxed">
+                  Planning ensures tasks fit context. Re-anchoring handles the
+                  rest.
+                </p>
+
+                {/* Visual explanation */}
+                <div className="mt-5 space-y-2">
+                  {[
+                    {
+                      icon: '📐',
+                      label: 'Tasks sized at planning',
+                      desc: 'Every task fits one work iteration',
+                    },
+                    {
+                      icon: '🔄',
+                      label: 'Re-anchor every task',
+                      desc: 'Fresh context from .flow/ specs',
+                    },
+                    {
+                      icon: '📦',
+                      label: 'Survives compaction',
+                      desc: 'Re-anchor after summarization too',
+                    },
+                  ].map((item) => (
+                    <div
+                      className="flex items-start gap-3 rounded-lg border border-white/5 bg-white/[0.02] p-3"
+                      key={item.label}
+                    >
+                      <span className="text-lg">{item.icon}</span>
+                      <div>
+                        <p className="font-mono text-cyan-400 text-xs">
+                          {item.label}
+                        </p>
+                        <p className="text-white/40 text-xs">{item.desc}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                <p className="mt-4 text-xs text-white/40">
+                  → Never worry about 200K token limits again.
+                </p>
+              </div>
+            </div>
+
+            {/* Pillar 3: Reviewer Safety Net */}
+            <div className="group relative overflow-hidden rounded-2xl border border-violet-500/30 bg-gradient-to-br from-violet-950/60 via-violet-950/20 to-transparent p-6 transition-all hover:border-violet-500/50">
+              <div
+                aria-hidden
+                className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(139,92,246,0.15),transparent_50%)]"
+              />
+              <div className="relative">
+                <div className="mb-4 flex items-center gap-3">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-violet-500/20 text-2xl">
+                    🛡️
+                  </div>
+                  <Badge
+                    className="border-violet-400/40 bg-violet-500/10 text-violet-300"
+                    variant="outline"
+                  >
+                    SAFETY NET
+                  </Badge>
+                </div>
+                <h3 className="font-bold text-xl text-white">
+                  Two Models &gt; One
+                </h3>
+                <p className="mt-2 text-sm text-white/60 leading-relaxed">
+                  If drift happens despite re-anchoring, a different model
+                  catches it.
+                </p>
+
+                {/* Flow visualization */}
+                <div className="mt-5 overflow-hidden rounded-lg border border-violet-500/20 bg-black/60 p-4">
+                  <div className="space-y-3 font-mono text-xs">
+                    <div className="flex items-center gap-2">
+                      <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-emerald-500/20 text-emerald-400">
+                        1
+                      </span>
+                      <span className="text-white/70">
+                        Claude implements task
+                      </span>
+                    </div>
+                    <div className="ml-3 border-violet-500/20 border-l-2 py-1 pl-4">
+                      <span className="text-white/40">
+                        even with re-anchoring, drift can happen
+                      </span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-violet-500/20 text-violet-400">
+                        2
+                      </span>
+                      <span className="text-white/70">
+                        GPT reviews via RepoPrompt
+                      </span>
+                    </div>
+                    <div className="ml-3 border-violet-500/20 border-l-2 py-1 pl-4">
+                      <span className="text-white/40">
+                        blocks until{' '}
+                        <code className="text-violet-400">SHIP</code>
+                      </span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-cyan-500/20 text-cyan-400">
+                        ✓
+                      </span>
+                      <span className="text-white/70">
+                        Drift caught before it compounds
+                      </span>
+                    </div>
+                  </div>
+                </div>
+
+                <p className="mt-4 text-xs text-white/40">
+                  → Two models catch what one misses.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Bottom callout */}
+          <div className="mt-10 overflow-hidden rounded-xl border border-white/10 bg-gradient-to-r from-emerald-500/5 via-cyan-500/5 to-violet-500/5">
+            <div className="flex flex-col items-center justify-between gap-6 p-6 md:flex-row md:p-8">
+              <div>
+                <p className="font-semibold text-lg text-white">
+                  The result: agents that actually finish what they start
+                </p>
+                <p className="mt-1 text-sm text-white/50">
+                  Pre-sized tasks + re-anchoring + cross-model review = minimal
+                  drift, maximum reliability
+                </p>
+              </div>
+              <div className="flex shrink-0 gap-3">
+                <code className="rounded bg-emerald-500/10 px-4 py-2 font-mono text-emerald-400 text-sm">
+                  Plan
+                </code>
+                <span className="self-center text-white/30">→</span>
+                <code className="rounded bg-cyan-500/10 px-4 py-2 font-mono text-cyan-400 text-sm">
+                  Work
+                </code>
+                <span className="self-center text-white/30">→</span>
+                <code className="rounded bg-violet-500/10 px-4 py-2 font-mono text-violet-400 text-sm">
+                  Review
+                </code>
+                <span className="self-center text-white/30">→</span>
+                <code className="rounded bg-emerald-500/10 px-4 py-2 font-mono text-emerald-400 text-sm">
+                  Done
+                </code>
+              </div>
             </div>
           </div>
         </section>
@@ -756,9 +1015,10 @@ export default function FlowNextPage() {
                       Production-Grade
                     </Badge>
                   </div>
-                  <div className="p-5 space-y-4">
+                  <div className="space-y-4 p-5">
                     <p className="text-sm text-white/70">
-                      Deterministic enforcement prevents agents from skipping steps or drifting from the workflow.
+                      Deterministic enforcement prevents agents from skipping
+                      steps or drifting from the workflow.
                     </p>
                     <div className="space-y-2">
                       {[
@@ -768,7 +1028,7 @@ export default function FlowNextPage() {
                         },
                         {
                           label: 'Review Until SHIP',
-                          desc: 'Reviews don\'t just flag issues—they block until the reviewer returns SHIP.',
+                          desc: "Reviews don't just flag issues—they block until the reviewer returns SHIP.",
                         },
                         {
                           label: 'Workflow Enforcement',
@@ -1256,7 +1516,7 @@ export default function FlowNextPage() {
             />
 
             <div className="relative z-10 p-8 md:p-12">
-              <div className="flex flex-wrap items-center gap-3 mb-6">
+              <div className="mb-6 flex flex-wrap items-center gap-3">
                 <Badge
                   className="border-violet-400/50 bg-violet-500/10 text-violet-300 backdrop-blur-sm"
                   variant="outline"
@@ -1278,7 +1538,8 @@ export default function FlowNextPage() {
 
               <p className="mt-4 max-w-2xl text-lg text-white/70 leading-relaxed">
                 Send your plans and implementations to a{' '}
-                <span className="text-violet-400">different AI model</span> for review via{' '}
+                <span className="text-violet-400">different AI model</span> for
+                review via{' '}
                 <a
                   className="text-violet-400 underline decoration-violet-400/40 underline-offset-4 transition-colors hover:text-violet-300"
                   href="https://repoprompt.com/?atp=KJbuL4"
@@ -1313,7 +1574,9 @@ export default function FlowNextPage() {
                     key={item.title}
                   >
                     <span className="text-2xl">{item.icon}</span>
-                    <p className="mt-3 font-semibold text-white">{item.title}</p>
+                    <p className="mt-3 font-semibold text-white">
+                      {item.title}
+                    </p>
                     <p className="mt-1 text-sm text-white/50">{item.desc}</p>
                   </div>
                 ))}
@@ -1328,7 +1591,8 @@ export default function FlowNextPage() {
                   </div>
                   <div className="p-4">
                     <p className="text-sm text-white/60">
-                      Review the plan before any code is written. Catches architectural issues early.
+                      Review the plan before any code is written. Catches
+                      architectural issues early.
                     </p>
                   </div>
                 </div>
@@ -1340,7 +1604,8 @@ export default function FlowNextPage() {
                   </div>
                   <div className="p-4">
                     <p className="text-sm text-white/60">
-                      Review the implementation. Loops fix → re-review until SHIP verdict.
+                      Review the implementation. Loops fix → re-review until
+                      SHIP verdict.
                     </p>
                   </div>
                 </div>
@@ -1348,7 +1613,9 @@ export default function FlowNextPage() {
 
               <div className="mt-6 rounded-lg border border-white/10 bg-white/5 p-4">
                 <p className="text-sm text-white/60">
-                  <span className="font-mono text-white/40">Without RepoPrompt:</span>{' '}
+                  <span className="font-mono text-white/40">
+                    Without RepoPrompt:
+                  </span>{' '}
                   Reviews are skipped—everything else works normally. Install{' '}
                   <a
                     className="text-violet-400 underline decoration-violet-400/40 underline-offset-2 hover:text-violet-300"
