@@ -480,7 +480,7 @@ export default function FlowNextPage() {
                     YOUR CHOICE
                   </Badge>
                 </div>
-                <h3 className="font-bold text-xl text-white">
+                <h3 className="font-bold text-white text-xl">
                   Flexible Execution
                 </h3>
                 <p className="mt-2 text-sm text-white/60 leading-relaxed">
@@ -492,10 +492,12 @@ export default function FlowNextPage() {
                 <div className="mt-5 space-y-3">
                   <div className="overflow-hidden rounded-lg border border-emerald-500/20 bg-black/60">
                     <div className="flex items-center justify-between border-emerald-500/10 border-b bg-emerald-500/5 px-3 py-1.5">
-                      <span className="font-mono text-emerald-400 text-[10px] uppercase tracking-wider">
+                      <span className="font-mono text-[10px] text-emerald-400 uppercase tracking-wider">
                         Single Task
                       </span>
-                      <span className="text-white/30 text-xs">with reviews</span>
+                      <span className="text-white/30 text-xs">
+                        with reviews
+                      </span>
                     </div>
                     <code className="block p-3 font-mono text-sm text-white">
                       /flow-next:work{' '}
@@ -504,7 +506,7 @@ export default function FlowNextPage() {
                   </div>
                   <div className="overflow-hidden rounded-lg border border-cyan-500/20 bg-black/60">
                     <div className="flex items-center justify-between border-cyan-500/10 border-b bg-cyan-500/5 px-3 py-1.5">
-                      <span className="font-mono text-cyan-400 text-[10px] uppercase tracking-wider">
+                      <span className="font-mono text-[10px] text-cyan-400 uppercase tracking-wider">
                         Entire Epic
                       </span>
                       <span className="text-white/30 text-xs">automated</span>
@@ -516,7 +518,7 @@ export default function FlowNextPage() {
                   </div>
                 </div>
 
-                <p className="mt-4 text-xs text-white/40">
+                <p className="mt-4 text-white/40 text-xs">
                   → Pick your level of supervision. The workflow stays the same.
                 </p>
               </div>
@@ -540,7 +542,7 @@ export default function FlowNextPage() {
                     AUTOMATIC
                   </Badge>
                 </div>
-                <h3 className="font-bold text-xl text-white">
+                <h3 className="font-bold text-white text-xl">
                   No Context Worries
                 </h3>
                 <p className="mt-2 text-sm text-white/60 leading-relaxed">
@@ -582,7 +584,7 @@ export default function FlowNextPage() {
                   ))}
                 </div>
 
-                <p className="mt-4 text-xs text-white/40">
+                <p className="mt-4 text-white/40 text-xs">
                   → Never worry about 200K token limits again.
                 </p>
               </div>
@@ -606,7 +608,7 @@ export default function FlowNextPage() {
                     SAFETY NET
                   </Badge>
                 </div>
-                <h3 className="font-bold text-xl text-white">
+                <h3 className="font-bold text-white text-xl">
                   Two Models &gt; One
                 </h3>
                 <p className="mt-2 text-sm text-white/60 leading-relaxed">
@@ -655,7 +657,7 @@ export default function FlowNextPage() {
                   </div>
                 </div>
 
-                <p className="mt-4 text-xs text-white/40">
+                <p className="mt-4 text-white/40 text-xs">
                   → Two models catch what one misses.
                 </p>
               </div>
@@ -683,7 +685,7 @@ export default function FlowNextPage() {
                   Work
                 </code>
                 <span className="self-center text-white/30">→</span>
-                <code className="rounded bg-violet-500/10 px-4 py-2 font-mono text-violet-400 text-sm">
+                <code className="rounded bg-violet-500/10 px-4 py-2 font-mono text-sm text-violet-400">
                   Review
                 </code>
                 <span className="self-center text-white/30">→</span>

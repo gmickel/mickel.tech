@@ -1,5 +1,7 @@
 import { Suspense } from 'react';
 import Shell from '@/components/layout/shell';
+import AppsPreview from '@/components/sections/apps-preview';
+import BenchPreview from '@/components/sections/bench-preview';
 import Chronology from '@/components/sections/chronology';
 import Contact from '@/components/sections/contact/index';
 import HeroLoader from '@/components/sections/hero-loader';
@@ -38,31 +40,24 @@ export default function Home() {
       >
         <Services />
       </Suspense>
-      <section className="border-white/10 border-y bg-background/40 px-6 py-10 md:px-20">
-        <div className="mx-auto max-w-5xl">
-          <aside
-            aria-label="Agent Skills support note"
-            className="flex flex-col gap-2 border border-primary/20 bg-primary/5 p-4"
-            role="note"
-          >
-            <p className="font-mono text-primary text-xs tracking-[0.2em]">
-              AGENT SKILLS
-            </p>
-            <p className="text-muted-foreground text-sm leading-relaxed">
-              Agent Skills support in VS Code is currently in preview and only
-              available in VS Code Insiders. Enable the{' '}
-              <code className="rounded bg-primary/10 px-1.5 py-0.5 font-mono text-primary text-xs">
-                chat.useAgentSkills
-              </code>{' '}
-              setting to use Agent Skills.
-            </p>
-          </aside>
-        </div>
-      </section>
       <Suspense
         fallback={<div aria-hidden="true" className="min-h-[800px] bg-black" />}
       >
         <SystemMap />
+      </Suspense>
+      <Suspense
+        fallback={
+          <div aria-hidden="true" className="min-h-[400px] bg-black/80" />
+        }
+      >
+        <BenchPreview />
+      </Suspense>
+      <Suspense
+        fallback={
+          <div aria-hidden="true" className="min-h-[400px] bg-secondary/30" />
+        }
+      >
+        <AppsPreview />
       </Suspense>
       <Suspense fallback={null}>
         <SystemLogLatest />
