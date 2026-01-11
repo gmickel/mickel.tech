@@ -31,7 +31,12 @@ const FLOW_NEXT_FAQS = [
   {
     question: 'What are the requirements for Flow-Next?',
     answer:
-      'Flow-Next requires Python 3.8+ and git. RepoPrompt (rp-cli) is optional but highly recommended for cross-model code reviews.',
+      'Flow-Next requires Python 3.8+ and git. For cross-model reviews, use either OpenAI Codex CLI (cross-platform, GPT 5.2 High) or RepoPrompt rp-cli (macOS).',
+  },
+  {
+    question: 'What is the difference between Codex and RepoPrompt reviews?',
+    answer:
+      'Both provide Carmack-level cross-model review with identical criteria. Codex CLI works cross-platform and uses GPT 5.2 High by default. RepoPrompt (rp-cli) is macOS-only but offers a visual builder for context selection. Choose based on your platform and preference.',
   },
   {
     question: 'What is the difference between Flow-Next and Beads?',
@@ -68,6 +73,9 @@ export const metadata: Metadata = {
     'developer tools',
     'Beads alternative',
     'flowctl',
+    'OpenAI Codex',
+    'cross-model review',
+    'RepoPrompt',
   ],
   openGraph: {
     title: 'Flow-Next: Zero-Dependency AI Agent Orchestration',
@@ -108,11 +116,11 @@ const commands = [
   },
   {
     name: '/flow-next:plan-review',
-    description: 'Carmack-level plan review via rp-cli',
+    description: 'Carmack-level plan review (Codex or RepoPrompt)',
   },
   {
     name: '/flow-next:impl-review',
-    description: 'Carmack-level impl review (current branch)',
+    description: 'Carmack-level impl review (Codex or RepoPrompt)',
   },
   {
     name: '/flow-next:ralph-init',
@@ -170,7 +178,7 @@ const planSteps = [
   { step: '02', action: 'Run gap analysis for edge cases' },
   { step: '03', action: 'Create epic in .flow/specs/' },
   { step: '04', action: 'Break into dependency-ordered tasks' },
-  { step: '05', action: 'Auto-review (if rp-cli available)' },
+  { step: '05', action: 'Auto-review (Codex or RepoPrompt)' },
 ];
 
 const workSteps = [
@@ -637,7 +645,7 @@ export default function FlowNextPage() {
                         2
                       </span>
                       <span className="text-white/70">
-                        GPT reviews via RepoPrompt
+                        GPT reviews via Codex or RepoPrompt
                       </span>
                     </div>
                     <div className="ml-3 border-violet-500/20 border-l-2 py-1 pl-4">
@@ -1200,11 +1208,11 @@ export default function FlowNextPage() {
                     </div>
                     <div className="flex justify-between">
                       <span className="text-white/50">PLAN_REVIEW</span>
-                      <span className="text-cyan-400">rp | none</span>
+                      <span className="text-cyan-400">codex | rp | none</span>
                     </div>
                     <div className="flex justify-between">
                       <span className="text-white/50">WORK_REVIEW</span>
-                      <span className="text-cyan-400">rp | none</span>
+                      <span className="text-cyan-400">codex | rp | none</span>
                     </div>
                     <div className="flex justify-between">
                       <span className="text-white/50">MAX_ITERATIONS</span>
@@ -1532,6 +1540,12 @@ export default function FlowNextPage() {
                 >
                   Key Differentiator
                 </Badge>
+                <Badge
+                  className="border-cyan-400/40 bg-cyan-950/60 text-cyan-300"
+                  variant="outline"
+                >
+                  NEW: Codex Backend
+                </Badge>
               </div>
 
               <h2 className="font-bold text-3xl text-white leading-tight md:text-4xl">
@@ -1541,7 +1555,9 @@ export default function FlowNextPage() {
               <p className="mt-4 max-w-2xl text-lg text-white/70 leading-relaxed">
                 Send your plans and implementations to a{' '}
                 <span className="text-violet-400">different AI model</span> for
-                review via{' '}
+                review. Choose{' '}
+                <span className="text-cyan-400">Codex CLI</span> (cross-platform,
+                GPT 5.2 High) or{' '}
                 <a
                   className="text-violet-400 underline decoration-violet-400/40 underline-offset-4 transition-colors hover:text-violet-300"
                   href="https://repoprompt.com/?atp=KJbuL4"
@@ -1549,8 +1565,8 @@ export default function FlowNextPage() {
                   target="_blank"
                 >
                   RepoPrompt
-                </a>
-                . The reviewing model sees full file context, not just diffs.
+                </a>{' '}
+                (macOS). Both use identical Carmack-level review criteria.
               </p>
 
               <div className="mt-8 grid gap-6 md:grid-cols-3">
@@ -1566,9 +1582,9 @@ export default function FlowNextPage() {
                     desc: 'No "LGTM with nits" that get ignored—reviews enforce resolution',
                   },
                   {
-                    icon: '📄',
-                    title: 'Full Context',
-                    desc: 'Reviewer sees complete files via RepoPrompt builder, not patches',
+                    icon: '🌐',
+                    title: 'Cross-Platform',
+                    desc: 'Codex CLI works on Linux, macOS, Windows. RepoPrompt for macOS power users',
                   },
                 ].map((item) => (
                   <div
@@ -1582,6 +1598,89 @@ export default function FlowNextPage() {
                     <p className="mt-1 text-sm text-white/50">{item.desc}</p>
                   </div>
                 ))}
+              </div>
+
+              {/* Backend Comparison */}
+              <div className="mt-8 overflow-hidden rounded-xl border border-white/10">
+                <div className="grid divide-x divide-white/10 md:grid-cols-2">
+                  <div className="bg-cyan-500/5 p-5">
+                    <div className="mb-3 flex items-center gap-2">
+                      <span className="font-mono text-cyan-400 text-sm uppercase tracking-wider">
+                        Codex CLI
+                      </span>
+                      <Badge
+                        className="border-cyan-400/40 bg-cyan-500/10 text-cyan-300"
+                        variant="outline"
+                      >
+                        NEW
+                      </Badge>
+                    </div>
+                    <ul className="space-y-2 text-sm">
+                      <li className="flex items-start gap-2">
+                        <span className="text-cyan-400">✓</span>
+                        <span className="text-white/70">Cross-platform (Linux, macOS, Windows)</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <span className="text-cyan-400">✓</span>
+                        <span className="text-white/70">GPT 5.2 High reasoning by default</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <span className="text-cyan-400">✓</span>
+                        <span className="text-white/70">Context hints: symbols + references</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <span className="text-cyan-400">✓</span>
+                        <span className="text-white/70">Session continuity across fix cycles</span>
+                      </li>
+                    </ul>
+                    <div className="mt-4 rounded-lg bg-black/40 p-3">
+                      <code className="font-mono text-xs text-white/80">
+                        npm i -g @openai/codex && codex auth
+                      </code>
+                    </div>
+                  </div>
+                  <div className="bg-violet-500/5 p-5">
+                    <div className="mb-3 flex items-center gap-2">
+                      <span className="font-mono text-sm text-violet-400 uppercase tracking-wider">
+                        RepoPrompt
+                      </span>
+                      <Badge
+                        className="border-violet-400/40 bg-violet-500/10 text-violet-300"
+                        variant="outline"
+                      >
+                        macOS
+                      </Badge>
+                    </div>
+                    <ul className="space-y-2 text-sm">
+                      <li className="flex items-start gap-2">
+                        <span className="text-violet-400">✓</span>
+                        <span className="text-white/70">Visual context builder UI</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <span className="text-violet-400">✓</span>
+                        <span className="text-white/70">Any model via RepoPrompt interface</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <span className="text-violet-400">✓</span>
+                        <span className="text-white/70">Full file context, not patches</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <span className="text-violet-400">✓</span>
+                        <span className="text-white/70">Token-efficient codebase exploration</span>
+                      </li>
+                    </ul>
+                    <div className="mt-4 rounded-lg bg-black/40 p-3">
+                      <a
+                        className="font-mono text-xs text-violet-400 underline decoration-violet-400/40 underline-offset-2 hover:text-violet-300"
+                        href="https://repoprompt.com/?atp=KJbuL4"
+                        rel="noopener noreferrer"
+                        target="_blank"
+                      >
+                        repoprompt.com → Install rp-cli
+                      </a>
+                    </div>
+                  </div>
+                </div>
               </div>
 
               <div className="mt-8 grid gap-4 md:grid-cols-2">
@@ -1616,18 +1715,14 @@ export default function FlowNextPage() {
               <div className="mt-6 rounded-lg border border-white/10 bg-white/5 p-4">
                 <p className="text-sm text-white/60">
                   <span className="font-mono text-white/40">
-                    Without RepoPrompt:
+                    Auto-detection:
                   </span>{' '}
-                  Reviews are skipped—everything else works normally. Install{' '}
-                  <a
-                    className="text-violet-400 underline decoration-violet-400/40 underline-offset-2 hover:text-violet-300"
-                    href="https://repoprompt.com/?atp=KJbuL4"
-                    rel="noopener noreferrer"
-                    target="_blank"
-                  >
-                    rp-cli
-                  </a>{' '}
-                  to enable cross-model review.
+                  Flow-Next checks for available backends automatically. Configure
+                  preference via{' '}
+                  <code className="text-cyan-400">flowctl config set review.backend codex</code>{' '}
+                  or{' '}
+                  <code className="text-violet-400">FLOW_REVIEW_BACKEND</code>{' '}
+                  env var.
                 </p>
               </div>
             </div>
@@ -1699,6 +1794,7 @@ export default function FlowNextPage() {
             <p className="text-white/70">
               <span className="font-mono text-emerald-400">Requires:</span>{' '}
               Python 3.8+ and git.{' '}
+              <span className="font-mono text-cyan-400">Codex CLI</span> (cross-platform) or{' '}
               <a
                 className="text-violet-400 underline decoration-violet-400/40 underline-offset-2 hover:text-violet-300"
                 href="https://repoprompt.com/?atp=KJbuL4"
@@ -1707,7 +1803,7 @@ export default function FlowNextPage() {
               >
                 RepoPrompt
               </a>{' '}
-              highly recommended for cross-model reviews.
+              (macOS) recommended for cross-model reviews.
             </p>
           </div>
         </section>
