@@ -15,7 +15,10 @@ status: published
 
 _You have probably seen "Ralph Mode" taking Social Media by storm recently._
 
-![Ralph Wiggum coding in a server room - the namesake of Ralph Mode](/blog/1.png)
+<BlogImage
+  src="/blog/1.png"
+  alt="Ralph Wiggum coding in a server room - the namesake of Ralph Mode"
+/>
 
 Invented by Geoffrey Huntley, the premise is beautifully simple. You put your AI coding assistant (like Claude Code) into an infinite bash loop. It codes, it fails, it retries, and it doesn't stop until the tests pass.
 
@@ -25,7 +28,10 @@ But I wanted more than just "passing tests". I wanted verification.
 
 So I built my own take on Ralph Mode. Instead of gating quality just by checking if the linter and tests pass, I built it on top of my existing [Flow-Next](/apps/flow-next) Plugin.
 
-![Flow-Next Ralph Mode - Agents that run overnight](/blog/2.png)
+<BlogImage
+  src="/blog/2.png"
+  alt="Flow-Next Ralph Mode - Agents that run overnight"
+/>
 
 **The core difference is the gate itself.**
 
@@ -86,7 +92,10 @@ My implementation is pessimistic. It assumes the agent is lazy, will ignore inst
 
 I ran this loop for 48 hours straight. I woke up to a stack of completed features that weren't just "working". They were **production-grade**.
 
-![Ralph autonomous loop terminal output showing multiple iterations with plan reviews, implementation reviews, and SHIP verdicts](/blog/3.png)
+<BlogImage
+  src="/blog/3.png"
+  alt="Ralph autonomous loop terminal output showing multiple iterations with plan reviews, implementation reviews, and SHIP verdicts"
+/>
 
 This is how we autonomously achieve software that doesn't just run, but actually belongs in your codebase.
 

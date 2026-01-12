@@ -1,0 +1,312 @@
+---
+title: "Ralph Mode: Why AI Agents Should Forget"
+summary: "The technique behind viral AI agent loops: treat context like managed memory. State lives in files, not conversation. Progress persists. Failures evaporate."
+publishedAt: "2026-01-12T10:00:00Z"
+tags:
+  - Claude Code
+  - AI Coding
+  - Flow
+  - Ralph Mode
+  - Tooling
+canonicalSource: native
+status: published
+---
+
+Since I started posting about autonomous agent loops, I've been getting questions. "How do I set this flow-next thing up?" "What's Ralph?" "How do you use it?"
+
+This tweet started it all:
+
+<TweetEmbed
+  username="gmickel"
+  displayName="Gordon Mickel"
+  content="Looked at Anthropic's ralph-wiggum plugin again. Single session, accumulating context, no re-anchoring.
+
+This really defeats the purpose.
+
+The original vision by @GeoffreyHuntley:
+- Fresh context per iteration
+- File I/O as state (not transcript)
+- Dumb bash loop, deterministic setup
+
+Anthropic's version? Stop hook that blocks exit and re-feeds the prompt in the SAME session. Transcript grows. Context fills up. Failed attempts pollute future iterations.
+
+The irony: Anthropic's own long-context guidance says 'agents must re-anchor from sources of truth to prevent drift.'
+
+Their plugin doesn't re-anchor. At all."
+  tweetUrl="https://x.com/gmickel/status/2009939771171434867"
+  date="Jan 2026"
+  impressions={200000}
+  impressionsContext="(199K more than my second best)"
+/>
+
+Also had to explain to my wife why I'm searching for Ralph Wiggum images. With modest results.
+
+But before I explain my [flow-next plugin](/apps/flow-next), understand Ralph first. Not my implementation-the technique itself.
+
+As [Geoffrey Huntley](https://x.com/GeoffreyHuntley) says, start with first principles.
+
+<TableOfContents items={[
+  { id: "start-at-the-source", title: "Start at the Source" },
+  { id: "what-ralph-actually-is", title: "What Ralph Actually Is" },
+  { id: "the-anthropic-connection", title: "The Anthropic Connection" },
+  { id: "what-flow-next-adds", title: "What Flow-Next Adds", children: [
+    { id: "cross-model-review-gates", title: "Cross-Model Review Gates" },
+    { id: "reviews-block-not-flag", title: "Reviews Block, Not Flag" },
+    { id: "plan-before-work", title: "Plan Before Work" },
+    { id: "structured-task-management", title: "Structured Task Management" },
+    { id: "auto-block-stuck-tasks", title: "Auto-Block Stuck Tasks" },
+    { id: "re-anchoring-every-iteration", title: "Re-Anchoring Every Iteration" },
+    { id: "watch-mode", title: "Watch Mode" },
+  ]},
+  { id: "how-i-actually-use-flow-next", title: "How I Actually Use Flow-Next", children: [
+    { id: "phase-1-spec", title: "Phase 1: Spec" },
+    { id: "phase-2-interview", title: "Phase 2: Interview" },
+    { id: "phase-3-plan", title: "Phase 3: Plan" },
+    { id: "phase-4a-interactive-work", title: "Phase 4a: Interactive Work" },
+    { id: "phase-4b-ralph-mode", title: "Phase 4b: Ralph Mode" },
+    { id: "phase-5-review-and-merge", title: "Phase 5: Review and Merge" },
+  ]},
+  { id: "when-to-use-what", title: "When to Use What" },
+  { id: "get-started", title: "Get Started" },
+]} />
+
+<SectionDivider variant="gradient" />
+
+## Start at the Source
+
+**Essential reading:**
+
+- [ghuntley.com/ralph](https://ghuntley.com/ralph) - Origin story by Ralph's creator, the "malloc orchestrator" philosophy
+- [Matt Pocock's video guide](https://www.youtube.com/watch?v=_IK18goX4X8) - Practical walkthrough
+- [Ryan Carson's breakdown](https://x.com/ryancarson/status/2008548371712135632) - The Startup Ideas Podcast
+
+My point: try building a dumb bash loop yourself first. See what happens when you externalize state to files. You'll learn more in an hour than from any thread.
+
+<SectionDivider variant="dots" />
+
+## What Ralph Actually Is
+
+Ralph isn't "an agent that remembers forever." It's an agent that **controls** what it remembers.
+
+<BlogImage
+  src="/ralph/context.jpeg"
+  alt="Context pollution vs fresh context - traditional agent loops accumulate garbage while Ralph mode starts fresh each iteration"
+/>
+
+LLM context windows only grow-add tokens, never delete. Wrong turns, failed attempts, hallucinations accumulate. Context pollution.
+
+Most tools try "compaction"-summarizing when context gets long. But summarization is lossy. Details vanish. The model invents things. Forgets to implement the task as requested.
+
+Ralph takes a different approach: **treat context like managed memory.**
+
+Geoff calls it a "malloc orchestrator." Don't dump everything in and hope. Deliberately control what goes in. Pin a stable frame of reference. Let the session end. Start fresh.
+
+```bash
+while :; do cat task.md | agent; done
+```
+
+Simple loop. Deeper insight: **state lives in files, not conversation.**
+
+Each iteration reconstructs reality from the filesystem-not from a polluted transcript of what went wrong.
+
+**Progress persists. Failures evaporate.**
+
+<SectionDivider variant="dots" />
+
+## The Anthropic Connection
+
+Anthropic's own context engineering guidance emphasizes re-anchoring from sources of truth. Their long-context documentation warns about context rot. They recommend fresh context windows with structured progress files.
+
+Their sample ralph-wiggum plugin takes a different approach-single session, accumulating context, a stop hook that re-feeds the prompt without clearing history.
+
+[Flow-next](/apps/flow-next) follows the re-anchoring philosophy. Fresh context each iteration.
+
+<SectionDivider variant="gradient" />
+
+## What Flow-Next Adds
+
+<BlogImage
+  src="/ralph/loop.jpeg"
+  alt="Flow-Next cross-model review loop - Claude builds, GPT reviews, nobody ships until SHIP verdict"
+/>
+
+### Cross-Model Review Gates
+
+Same model writing code AND reviewing it = same blind spots. Context steers generation. The system converges to local coherence, not global correctness.
+
+Self-testing is self-consistency. Not falsification.
+
+Flow-next gates on **cross-model review**. A different model checks the work. Different weights, different priors. Use [RepoPrompt](https://repoprompt.com/?atp=KJbuL4) (macOS) or Codex CLI (any platform) with GPT 5.2 High, or whatever reviewer you trust.
+
+Two models > one.
+
+### Reviews Block, Not Flag
+
+Most tools: "warning, proceed anyway?"
+
+Flow-next: SHIP or fix it. No proceeding until the reviewer approves. Enforced re-reviews until SHIP verdict or max retry attempts (configurable, default 3).
+
+### Plan Before Work
+
+Subagents gather context, analyze patterns, fetch docs, run gap analysis.
+
+Plans get reviewed too-architecture, approach, scope checked by a different model before implementation starts.
+
+Catches design issues when they're cheap to fix.
+
+### Structured Task Management
+
+Full task graph in `.flow/`:
+
+- Epics and tasks with dependencies
+- Status tracking (todo → in_progress → done)
+- Evidence (commits, tests, PRs)
+- Review receipts
+
+Everything version-controlled. Full audit trail.
+
+### Auto-Block Stuck Tasks
+
+After N failures (default 3), the system blocks the task and moves on. No infinite loops burning your API budget or Claude Max subscription.
+
+### Re-Anchoring Every Iteration
+
+Every iteration re-reads the epic spec, task spec, and git state. Reconstruct reality from sources of truth. Drift-proof.
+
+### Watch Mode
+
+`--watch` streams tool calls in real-time so you can see what's happening without blocking autonomy. `--watch verbose` includes model responses too.
+
+<SectionDivider variant="gradient" />
+
+## How I Actually Use Flow-Next
+
+Full loop from idea to shipped code.
+
+### Phase 1: Spec
+
+Start with what I want to build. Rough notes, bullet points, whatever works. Thinking time, not typing time.
+
+### Phase 2: Interview
+
+```
+/flow-next:interview
+```
+
+This is the underrated step. Claude asks probing questions:
+
+- Edge cases I didn't consider
+- Ambiguities that would cause implementation drift
+- Dependencies I forgot
+- Acceptance criteria that are actually testable
+
+10-15 minutes of back-and-forth refines a rough spec into something precise.
+
+**This is where most of the value is.** A crisp spec prevents 10x the debugging later. Often surfaces 2-3 things I didn't even consider.
+
+### Phase 3: Plan
+
+```
+/flow-next:plan <spec>
+```
+
+Claude breaks the spec into:
+
+- Epic (the objective)
+- Tasks (specific implementable units)
+- Task specs with acceptance criteria
+- Dependencies and ordering
+
+**This is the manual/automated cutoff.**
+
+After planning, I review. Does the breakdown make sense? Tasks small enough? Dependencies right?
+
+If doing **interactive work**: run `/flow-next:work <task>` one at a time, staying in the loop.
+
+If going **fully autonomous**: run the Ralph loop and let it execute the entire backlog.
+
+For full autonomous mode, I prepare 5-10 plans before starting.
+
+### Phase 4a: Interactive Work
+
+```
+/flow-next:work fn-1.1 --review=rp
+```
+
+Work on an entire epic (fn-1) or single task (fn-1.1).
+
+For each task:
+
+1. Claude implements
+2. Cross-model review via RepoPrompt or Codex
+3. If NEEDS_WORK → fix, re-review
+4. If SHIP → commit, next task
+
+I'm watching, can intervene. Good for complex tasks, learning a new codebase, anything where taste matters.
+
+### Phase 4b: Ralph Mode
+
+```bash
+/flow-next:ralph-init  # one-time setup
+scripts/ralph/ralph.sh --watch
+```
+
+The loop runs unattended:
+
+1. Fresh Claude session
+2. Re-anchor from filesystem (epic spec, task spec, git state)
+3. Plan review until SHIP
+4. Implement each task with review gates
+5. Auto-block after N failures
+6. Continue until epic complete
+
+Kick it off before bed. Wake up to completed features or clear visibility into what's stuck.
+
+<BlogImage
+  src="/blog/3.png"
+  alt="Ralph autonomous loop terminal output showing multiple iterations with plan reviews, implementation reviews, and SHIP verdicts"
+/>
+
+### Phase 5: Review and Merge
+
+Whether interactive or autonomous, I review the PR before merging. AI generates, human approves.
+
+Full audit trail-every review receipt, every commit, every status change.
+
+<SectionDivider variant="dots" />
+
+## When to Use What
+
+- **Interview** - Refining rough idea into crisp spec
+- **Interactive work** - Complex tasks, judgment calls, learning codebase
+- **Ralph mode** - Clear specs, bulk implementation, overnight runs
+
+**The heuristic:** If you can write checkboxes, you can Ralph it. If you can't, you're not ready to loop-you're ready to think.
+
+<SectionDivider variant="gradient" />
+
+## Get Started
+
+Install:
+
+```bash
+/plugin marketplace add https://github.com/gmickel/gmickel-claude-marketplace
+/plugin install flow-next
+/flow-next:setup
+```
+
+Initialize Ralph mode:
+
+```bash
+/flow-next:ralph-init
+```
+
+**Resources:**
+
+- [Flow-Next app page](/apps/flow-next) - Full docs and schematic
+- [Source code](https://github.com/gmickel/gmickel-claude-marketplace) - GitHub repo
+- [Ralph deep dive](https://github.com/gmickel/gmickel-claude-marketplace/blob/main/plugins/flow-next/docs/ralph.md) - Technical details
+
+<SectionDivider />
+
+Two models > one. Process failures, not model failures. Agents that actually finish what they start.

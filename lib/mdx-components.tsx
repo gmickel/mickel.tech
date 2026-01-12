@@ -1,5 +1,9 @@
 import type { MDXRemoteProps } from 'next-mdx-remote/rsc';
 import type { ComponentProps, ReactElement } from 'react';
+import { BlogImage } from '@/components/blog/blog-image';
+import { SectionDivider } from '@/components/blog/section-divider';
+import { TableOfContents } from '@/components/blog/table-of-contents';
+import { TweetEmbed } from '@/components/blog/tweet-embed';
 
 type HeadingProps = ComponentProps<'h1'>;
 type ParagraphProps = ComponentProps<'p'>;
@@ -101,4 +105,8 @@ export const mdxComponents: MDXRemoteProps['components'] = {
   li: Li,
   code: Code,
   pre: Pre,
+  BlogImage,
+  SectionDivider,
+  TableOfContents,
+  TweetEmbed,
 };

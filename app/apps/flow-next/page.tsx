@@ -1555,9 +1555,8 @@ export default function FlowNextPage() {
               <p className="mt-4 max-w-2xl text-lg text-white/70 leading-relaxed">
                 Send your plans and implementations to a{' '}
                 <span className="text-violet-400">different AI model</span> for
-                review. Choose{' '}
-                <span className="text-cyan-400">Codex CLI</span> (cross-platform,
-                GPT 5.2 High) or{' '}
+                review. Choose <span className="text-cyan-400">Codex CLI</span>{' '}
+                (cross-platform, GPT 5.2 High) or{' '}
                 <a
                   className="text-violet-400 underline decoration-violet-400/40 underline-offset-4 transition-colors hover:text-violet-300"
                   href="https://repoprompt.com/?atp=KJbuL4"
@@ -1618,23 +1617,31 @@ export default function FlowNextPage() {
                     <ul className="space-y-2 text-sm">
                       <li className="flex items-start gap-2">
                         <span className="text-cyan-400">✓</span>
-                        <span className="text-white/70">Cross-platform (Linux, macOS, Windows)</span>
+                        <span className="text-white/70">
+                          Cross-platform (Linux, macOS, Windows)
+                        </span>
                       </li>
                       <li className="flex items-start gap-2">
                         <span className="text-cyan-400">✓</span>
-                        <span className="text-white/70">GPT 5.2 High reasoning by default</span>
+                        <span className="text-white/70">
+                          GPT 5.2 High reasoning by default
+                        </span>
                       </li>
                       <li className="flex items-start gap-2">
                         <span className="text-cyan-400">✓</span>
-                        <span className="text-white/70">Context hints: symbols + references</span>
+                        <span className="text-white/70">
+                          Context hints: symbols + references
+                        </span>
                       </li>
                       <li className="flex items-start gap-2">
                         <span className="text-cyan-400">✓</span>
-                        <span className="text-white/70">Session continuity across fix cycles</span>
+                        <span className="text-white/70">
+                          Session continuity across fix cycles
+                        </span>
                       </li>
                     </ul>
                     <div className="mt-4 rounded-lg bg-black/40 p-3">
-                      <code className="font-mono text-xs text-white/80">
+                      <code className="font-mono text-white/80 text-xs">
                         npm i -g @openai/codex && codex auth
                       </code>
                     </div>
@@ -1654,24 +1661,32 @@ export default function FlowNextPage() {
                     <ul className="space-y-2 text-sm">
                       <li className="flex items-start gap-2">
                         <span className="text-violet-400">✓</span>
-                        <span className="text-white/70">Visual context builder UI</span>
+                        <span className="text-white/70">
+                          Visual context builder UI
+                        </span>
                       </li>
                       <li className="flex items-start gap-2">
                         <span className="text-violet-400">✓</span>
-                        <span className="text-white/70">Any model via RepoPrompt interface</span>
+                        <span className="text-white/70">
+                          Any model via RepoPrompt interface
+                        </span>
                       </li>
                       <li className="flex items-start gap-2">
                         <span className="text-violet-400">✓</span>
-                        <span className="text-white/70">Full file context, not patches</span>
+                        <span className="text-white/70">
+                          Full file context, not patches
+                        </span>
                       </li>
                       <li className="flex items-start gap-2">
                         <span className="text-violet-400">✓</span>
-                        <span className="text-white/70">Token-efficient codebase exploration</span>
+                        <span className="text-white/70">
+                          Token-efficient codebase exploration
+                        </span>
                       </li>
                     </ul>
                     <div className="mt-4 rounded-lg bg-black/40 p-3">
                       <a
-                        className="font-mono text-xs text-violet-400 underline decoration-violet-400/40 underline-offset-2 hover:text-violet-300"
+                        className="font-mono text-violet-400 text-xs underline decoration-violet-400/40 underline-offset-2 hover:text-violet-300"
                         href="https://repoprompt.com/?atp=KJbuL4"
                         rel="noopener noreferrer"
                         target="_blank"
@@ -1717,9 +1732,11 @@ export default function FlowNextPage() {
                   <span className="font-mono text-white/40">
                     Auto-detection:
                   </span>{' '}
-                  Flow-Next checks for available backends automatically. Configure
-                  preference via{' '}
-                  <code className="text-cyan-400">flowctl config set review.backend codex</code>{' '}
+                  Flow-Next checks for available backends automatically.
+                  Configure preference via{' '}
+                  <code className="text-cyan-400">
+                    flowctl config set review.backend codex
+                  </code>{' '}
                   or{' '}
                   <code className="text-violet-400">FLOW_REVIEW_BACKEND</code>{' '}
                   env var.
@@ -1794,7 +1811,8 @@ export default function FlowNextPage() {
             <p className="text-white/70">
               <span className="font-mono text-emerald-400">Requires:</span>{' '}
               Python 3.8+ and git.{' '}
-              <span className="font-mono text-cyan-400">Codex CLI</span> (cross-platform) or{' '}
+              <span className="font-mono text-cyan-400">Codex CLI</span>{' '}
+              (cross-platform) or{' '}
               <a
                 className="text-violet-400 underline decoration-violet-400/40 underline-offset-2 hover:text-violet-300"
                 href="https://repoprompt.com/?atp=KJbuL4"
