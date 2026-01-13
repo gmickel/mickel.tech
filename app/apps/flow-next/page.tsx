@@ -1266,6 +1266,127 @@ export default function FlowNextPage() {
           </div>
         </section>
 
+        {/* TUI Monitor - Real-time visibility */}
+        <section className="relative mx-auto max-w-6xl px-6 pb-24 md:px-10">
+          <div className="relative overflow-hidden rounded-2xl border border-cyan-500/20 bg-gradient-to-br from-slate-950 via-cyan-950/20 to-slate-950">
+            {/* Subtle scan lines effect */}
+            <div
+              aria-hidden
+              className="pointer-events-none absolute inset-0 opacity-[0.03]"
+              style={{
+                backgroundImage:
+                  'repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(6,182,212,0.5) 2px, rgba(6,182,212,0.5) 4px)',
+              }}
+            />
+
+            <div className="relative grid gap-8 p-8 md:p-12 lg:grid-cols-2 lg:gap-12">
+              {/* Left: Screenshot */}
+              <div className="relative z-10">
+                <div className="overflow-hidden rounded-xl border border-cyan-500/30 bg-black shadow-2xl shadow-cyan-500/10">
+                  {/* Terminal chrome */}
+                  <div className="flex items-center gap-2 border-cyan-500/10 border-b bg-cyan-500/5 px-4 py-2.5">
+                    <div className="h-3 w-3 rounded-full bg-red-500/70" />
+                    <div className="h-3 w-3 rounded-full bg-yellow-500/70" />
+                    <div className="h-3 w-3 rounded-full bg-green-500/70" />
+                    <span className="ml-3 font-mono text-cyan-400/60 text-xs">
+                      flow-next-tui
+                    </span>
+                  </div>
+                  <Image
+                    alt="flow-next-tui terminal interface showing task progress, live logs, and run state"
+                    className="h-auto w-full"
+                    height={600}
+                    quality={90}
+                    src="/flow/tui.png"
+                    width={1000}
+                  />
+                </div>
+              </div>
+
+              {/* Right: Content */}
+              <div className="relative z-10 flex flex-col justify-center">
+                <div className="mb-6 flex flex-wrap items-center gap-3">
+                  <Badge
+                    className="border-cyan-400/50 bg-cyan-500/10 text-cyan-300 backdrop-blur-sm"
+                    variant="outline"
+                  >
+                    <span className="mr-1.5 inline-block h-2 w-2 rounded-full bg-cyan-400" />
+                    REAL-TIME MONITOR
+                  </Badge>
+                  <Badge
+                    className="border-emerald-400/40 bg-emerald-950/60 text-emerald-300"
+                    variant="outline"
+                  >
+                    Optional
+                  </Badge>
+                </div>
+
+                <h2 className="font-bold text-4xl text-white leading-tight md:text-5xl">
+                  Terminal UI
+                  <br />
+                  <span className="bg-gradient-to-r from-cyan-400 to-emerald-400 bg-clip-text text-transparent">
+                    for Ralph Runs
+                  </span>
+                </h2>
+
+                <p className="mt-6 text-lg text-white/80 leading-relaxed">
+                  Watch your autonomous runs in real-time. Task progress,
+                  streaming logs, and run state—all in a beautiful terminal
+                  interface.
+                </p>
+
+                <div className="mt-8 grid grid-cols-2 gap-4">
+                  {[
+                    { icon: '📋', label: 'Task Progress', desc: 'Visual status tracking' },
+                    { icon: '📜', label: 'Live Logs', desc: 'Streaming output' },
+                    { icon: '🎨', label: 'Themes', desc: 'Dark & light modes' },
+                    { icon: '⌨️', label: 'Vim Keys', desc: 'j/k navigation' },
+                  ].map((item) => (
+                    <div
+                      className="rounded-lg border border-white/5 bg-white/[0.02] p-3 backdrop-blur-sm"
+                      key={item.label}
+                    >
+                      <span className="text-xl">{item.icon}</span>
+                      <p className="mt-1 font-semibold text-sm text-white">
+                        {item.label}
+                      </p>
+                      <p className="text-white/50 text-xs">{item.desc}</p>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Install command */}
+                <div className="mt-8 overflow-hidden rounded-lg border border-cyan-500/30 bg-black/60">
+                  <div className="flex items-center gap-2 border-cyan-500/10 border-b bg-cyan-500/5 px-4 py-2">
+                    <span className="font-mono text-cyan-400/60 text-xs">
+                      install
+                    </span>
+                  </div>
+                  <div className="p-4">
+                    <code className="block whitespace-pre font-mono text-sm leading-relaxed">
+                      <span className="text-white/40"># Requires Bun runtime</span>
+                      {'\n'}
+                      <span className="text-cyan-400">bun add -g</span>{' '}
+                      <span className="text-emerald-400">@gmickel/flow-next-tui</span>
+                      {'\n\n'}
+                      <span className="text-white/40"># Start monitoring</span>
+                      {'\n'}
+                      <span className="text-emerald-400">flow-next-tui</span>
+                      <span className="text-white/40">  # or: fntui</span>
+                    </code>
+                  </div>
+                </div>
+
+                <p className="mt-4 text-sm text-white/50">
+                  Auto-selects latest run. Detach with{' '}
+                  <code className="text-cyan-400/70">q</code>—Ralph keeps
+                  running.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Visual Schematic */}
         <section className="relative mx-auto max-w-6xl px-6 pb-24 md:px-10">
           <div className="mb-8">
