@@ -394,25 +394,55 @@ export default function FlowNextPage() {
             </div>
 
             {/* Experimental callout */}
-            <div className="mt-8 inline-flex items-center gap-3 rounded border border-amber-500/30 bg-amber-500/5 px-4 py-2">
-              <span className="relative flex h-2 w-2">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-amber-400 opacity-75" />
-                <span className="relative inline-flex h-2 w-2 rounded-full bg-amber-500" />
-              </span>
-              <p className="text-amber-200/80 text-sm">
-                <span className="font-mono text-amber-400 text-xs uppercase">
-                  Experimental
-                </span>{' '}
-                —{' '}
-                <a
-                  className="underline decoration-amber-400/40 underline-offset-2 transition-colors hover:text-amber-200"
-                  href="https://github.com/gmickel/gmickel-claude-marketplace/issues"
-                  rel="noopener noreferrer"
-                  target="_blank"
+            <div className="mt-8 flex flex-wrap gap-3">
+              <div className="inline-flex items-center gap-3 rounded border border-amber-500/30 bg-amber-500/5 px-4 py-2">
+                <span className="relative flex h-2 w-2">
+                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-amber-400 opacity-75" />
+                  <span className="relative inline-flex h-2 w-2 rounded-full bg-amber-500" />
+                </span>
+                <p className="text-amber-200/80 text-sm">
+                  <span className="font-mono text-amber-400 text-xs uppercase">
+                    Experimental
+                  </span>{' '}
+                  —{' '}
+                  <a
+                    className="underline decoration-amber-400/40 underline-offset-2 transition-colors hover:text-amber-200"
+                    href="https://github.com/gmickel/gmickel-claude-marketplace/issues"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
+                    Report issues
+                  </a>
+                </p>
+              </div>
+
+              {/* OpenCode port callout */}
+              <a
+                className="group inline-flex items-center gap-3 rounded border border-cyan-500/30 bg-cyan-500/5 px-4 py-2 transition-all hover:border-cyan-500/50 hover:bg-cyan-500/10"
+                href="https://github.com/gmickel/flow-next-opencode"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                <span className="font-mono text-cyan-400 text-xs uppercase">
+                  🧪 New
+                </span>
+                <span className="text-cyan-200/80 text-sm">
+                  OpenCode port available
+                </span>
+                <svg
+                  className="h-3.5 w-3.5 text-cyan-400/60 transition-transform group-hover:translate-x-0.5"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  viewBox="0 0 24 24"
                 >
-                  Report issues
-                </a>
-              </p>
+                  <path
+                    d="M7 17L17 7M17 7H7M17 7v10"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </a>
             </div>
 
             {/* CTA buttons - more prominent */}
