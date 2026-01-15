@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { MDXRemote } from 'next-mdx-remote/rsc';
 
+import Shell from '@/components/layout/shell';
 import { articleSchema, breadcrumbSchema, JsonLd } from '@/lib/json-ld';
 import { mdxComponents } from '@/lib/mdx-components';
 import { mdxOptions } from '@/lib/mdx-options';
@@ -92,7 +93,7 @@ export default async function LogPostPage({
   }
 
   return (
-    <>
+    <Shell>
       <JsonLd data={articleSchema(post)} />
       <JsonLd
         data={breadcrumbSchema([
@@ -167,6 +168,6 @@ export default async function LogPostPage({
           />
         </div>
       </article>
-    </>
+    </Shell>
   );
 }

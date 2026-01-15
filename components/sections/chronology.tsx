@@ -1,4 +1,6 @@
 // Server Component - no 'use client' needed since this is static content
+import SectionTitle from '@/components/ui/section-title';
+
 const timeline = [
   {
     period: 'NOW',
@@ -49,9 +51,10 @@ export default function Chronology() {
     >
       {/* Left: Why Trust Me */}
       <div className="space-y-12">
-        <h2 className="font-bold text-4xl">
-          WHY PEOPLE TRUST ME WITH HARD PROBLEMS
-        </h2>
+        <SectionTitle
+          className="font-bold text-4xl text-white"
+          text="WHY PEOPLE TRUST ME WITH HARD PROBLEMS"
+        />
 
         <ul
           aria-label="Trust credentials"

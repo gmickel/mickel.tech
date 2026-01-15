@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { useState } from 'react';
+import SectionTitle from '@/components/ui/section-title';
 
 const nodes = [
   {
@@ -55,7 +56,10 @@ export default function SystemMap() {
       id="map"
     >
       <div className="z-10 mx-auto flex h-full w-full max-w-7xl flex-col">
-        <h2 className="mb-12 font-bold text-4xl">SYSTEM MAP</h2>
+        <SectionTitle
+          className="mb-12 font-bold text-4xl text-white"
+          text="SYSTEM MAP"
+        />
 
         <div className="relative min-h-[600px] w-full flex-grow rounded-lg border border-white/10 bg-white/[0.02] p-8 backdrop-blur-sm">
           {/* Grid Background */}

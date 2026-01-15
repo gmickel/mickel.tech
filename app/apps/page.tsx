@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Shell from '@/components/layout/shell';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import PageTitle from '@/components/ui/page-title';
 import { APPS } from '@/lib/apps';
 
 export const metadata: Metadata = {
@@ -66,7 +67,7 @@ export default function AppsPage() {
           </div>
 
           <h1 className="mt-6 font-bold text-4xl text-white leading-tight md:text-5xl">
-            Things I Built
+            <PageTitle text="Things I Built" />
           </h1>
           <Link
             className="glow-link mt-2 inline-flex items-center gap-2 font-mono text-[11px] uppercase"
