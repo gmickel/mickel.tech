@@ -4,6 +4,7 @@ import { BenchDashboard } from '@/components/gmickel/bench-dashboard';
 import Shell from '@/components/layout/shell';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import PageTitle from '@/components/ui/page-title';
 import { Separator } from '@/components/ui/separator';
 import { BENCH_EVALS } from '@/lib/bench-evals';
 
@@ -69,7 +70,7 @@ export default function GmickelBenchPage() {
             </Badge>
           </div>
           <h1 className="mt-6 font-bold text-4xl text-white leading-tight md:text-5xl">
-            gmickel bench — real client-grade evals
+            <PageTitle text="gmickel bench — real client-grade evals" />
           </h1>
           <Link
             className="glow-link mt-2 inline-flex items-center gap-2 font-mono text-[11px] uppercase"

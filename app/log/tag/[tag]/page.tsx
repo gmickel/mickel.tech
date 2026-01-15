@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 
+import Shell from '@/components/layout/shell';
 import { breadcrumbSchema, JsonLd } from '@/lib/json-ld';
 import { getPostsByTag, getTagDisplayName, getTagIndex } from '@/lib/posts';
 import { slugifyTag } from '@/lib/tag-utils';
@@ -57,7 +58,7 @@ export default async function TagPage({ params }: Props) {
   }
 
   return (
-    <>
+    <Shell>
       <JsonLd
         data={breadcrumbSchema([
           { name: 'Log', url: '/log' },
@@ -139,6 +140,6 @@ export default async function TagPage({ params }: Props) {
           ))}
         </div>
       </section>
-    </>
+    </Shell>
   );
 }

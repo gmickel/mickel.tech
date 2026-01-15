@@ -1,5 +1,6 @@
 // Server Component - static content with CSS animations for the static shell
 import type { ReactNode } from 'react';
+import SectionTitle from '@/components/ui/section-title';
 
 const services: Array<{
   title: string;
@@ -76,7 +77,10 @@ export default function Services() {
     >
       <div className="mx-auto max-w-7xl space-y-16">
         <header className="max-w-2xl">
-          <h2 className="mb-4 font-bold text-4xl">WHAT I BUILD</h2>
+          <SectionTitle
+            className="mb-4 font-bold text-4xl text-white"
+            text="WHAT I BUILD"
+          />
           <p className="text-lg text-muted-foreground">
             Four ways I create value. Pick the one that hurts most right now.
           </p>

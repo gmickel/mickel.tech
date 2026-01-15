@@ -3,6 +3,7 @@
 import { motion, useMotionValue, useTransform } from 'framer-motion';
 import { AlertTriangle } from 'lucide-react';
 import { useEffect, useState } from 'react';
+import DecryptedText from '@/components/ui/decrypted-text';
 
 const tickerItems = [
   'AI SDLC & PLATFORM PROGRAMS ACROSS PE PORTFOLIO COMPANIES ACROSS EUROPE',
@@ -80,9 +81,16 @@ export default function Hero({
               id="hero-heading"
             >
               I design AI systems that{' '}
-              <span className="bg-gradient-to-r from-white to-white/50 bg-clip-text text-transparent">
-                actually work
-              </span>
+              <DecryptedText
+                animateOn="view"
+                characters="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz01█▓░▒"
+                className="bg-gradient-to-r from-white to-white/50 bg-clip-text text-transparent"
+                encryptedClassName="text-primary/60"
+                maxIterations={15}
+                sequential
+                speed={40}
+                text="actually work"
+              />
               .
             </h1>
             <p className="max-w-lg text-muted-foreground text-xl leading-relaxed">

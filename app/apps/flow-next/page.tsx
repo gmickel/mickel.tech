@@ -1367,8 +1367,16 @@ export default function FlowNextPage() {
 
                 <div className="mt-8 grid grid-cols-2 gap-4">
                   {[
-                    { icon: '📋', label: 'Task Progress', desc: 'Visual status tracking' },
-                    { icon: '📜', label: 'Live Logs', desc: 'Streaming output' },
+                    {
+                      icon: '📋',
+                      label: 'Task Progress',
+                      desc: 'Visual status tracking',
+                    },
+                    {
+                      icon: '📜',
+                      label: 'Live Logs',
+                      desc: 'Streaming output',
+                    },
                     { icon: '🎨', label: 'Themes', desc: 'Dark & light modes' },
                     { icon: '⌨️', label: 'Vim Keys', desc: 'j/k navigation' },
                   ].map((item) => (
@@ -1394,15 +1402,19 @@ export default function FlowNextPage() {
                   </div>
                   <div className="p-4">
                     <code className="block whitespace-pre font-mono text-sm leading-relaxed">
-                      <span className="text-white/40"># Requires Bun runtime</span>
+                      <span className="text-white/40">
+                        # Requires Bun runtime
+                      </span>
                       {'\n'}
                       <span className="text-cyan-400">bun add -g</span>{' '}
-                      <span className="text-emerald-400">@gmickel/flow-next-tui</span>
+                      <span className="text-emerald-400">
+                        @gmickel/flow-next-tui
+                      </span>
                       {'\n\n'}
                       <span className="text-white/40"># Start monitoring</span>
                       {'\n'}
                       <span className="text-emerald-400">flow-next-tui</span>
-                      <span className="text-white/40">  # or: fntui</span>
+                      <span className="text-white/40"> # or: fntui</span>
                     </code>
                   </div>
                 </div>

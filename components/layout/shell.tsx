@@ -3,6 +3,7 @@
 import { Menu } from 'lucide-react';
 import type React from 'react';
 import CustomCursor from '@/components/ui/custom-cursor';
+import Noise from '@/components/ui/noise';
 import {
   Sheet,
   SheetClose,
@@ -41,14 +42,18 @@ export default function Shell({ children }: ShellProps) {
         aria-hidden="true"
         className="pointer-events-none fixed inset-0 z-40 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(0,0,0,0.4)_100%)]"
       />
+      {/* Film grain noise overlay */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none fixed inset-0 z-30 opacity-40"
+      >
+        <Noise patternAlpha={8} patternRefreshInterval={3} />
+      </div>
 
       <CustomCursor />
 
       {/* Header / HUD */}
-      <header
-        className="fixed top-0 right-0 left-0 z-40 flex h-14 items-center justify-between border-white/10 border-b bg-background/80 px-6 backdrop-blur-md"
-        // Removed explicit role="banner" as it is implicit for <header>
-      >
+      <header className="fixed top-0 right-0 left-0 z-40 flex h-14 items-center justify-between border-white/10 border-b bg-background/80 px-6 backdrop-blur-md">
         <div className="flex items-center gap-4">
           <span className="animate-pulse font-mono text-primary text-xs tracking-widest">
             <span className="sr-only">System status: online</span>● ONLINE
