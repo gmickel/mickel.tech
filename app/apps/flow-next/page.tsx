@@ -167,17 +167,31 @@ const features = [
   {
     name: 'Dependency Graphs',
     description:
-      'Tasks declare blockers. Nothing starts until dependencies resolve. Execution order is automatic.',
+      'Tasks declare blockers. Epic-scout auto-detects cross-epic dependencies during planning.',
     icon: '🔗',
+    accent: 'cyan',
+  },
+  {
+    name: 'Plan-Sync',
+    description:
+      'Opt-in sync keeps downstream task specs updated when implementation drifts. Cross-epic mode available.',
+    icon: '🔄',
+    accent: 'emerald',
+  },
+  {
+    name: 'Memory System',
+    description:
+      'Persistent learnings survive context compaction. Auto-captures pitfalls from NEEDS_WORK reviews.',
+    icon: '🧠',
     accent: 'cyan',
   },
 ];
 
 const planSteps = [
-  { step: '01', action: 'Research codebase patterns in parallel' },
-  { step: '02', action: 'Run gap analysis for edge cases' },
-  { step: '03', action: 'Create epic in .flow/specs/' },
-  { step: '04', action: 'Break into dependency-ordered tasks' },
+  { step: '01', action: 'Run 7 research scouts in parallel' },
+  { step: '02', action: 'Gap analysis for edge cases' },
+  { step: '03', action: 'Create epic + set epic dependencies' },
+  { step: '04', action: 'Break into tasks + add doc update criteria' },
   { step: '05', action: 'Auto-review (Codex or RepoPrompt)' },
 ];
 
@@ -959,6 +973,144 @@ export default function FlowNextPage() {
           </div>
         </section>
 
+        {/* Research Scouts - Planning Intelligence */}
+        <section className="relative mx-auto max-w-6xl px-6 pb-24 md:px-10">
+          <div className="mb-10 text-center">
+            <Badge
+              className="mb-4 border-emerald-400/50 bg-emerald-950/80 text-emerald-300 backdrop-blur-sm"
+              variant="outline"
+            >
+              12 SUBAGENTS
+            </Badge>
+            <h2 className="font-bold text-3xl text-white md:text-4xl">
+              Planning Intelligence
+            </h2>
+            <p className="mx-auto mt-4 max-w-2xl text-white/60">
+              Seven research scouts run in parallel during planning, gathering
+              context from multiple sources before a single line of code is
+              written.
+            </p>
+          </div>
+
+          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+            {[
+              {
+                name: 'repo-scout',
+                desc: 'Finds existing patterns and conventions',
+                model: 'opus',
+                color: 'emerald',
+              },
+              {
+                name: 'practice-scout',
+                desc: 'Gathers modern best practices',
+                model: 'opus',
+                color: 'cyan',
+              },
+              {
+                name: 'docs-scout',
+                desc: 'Finds relevant framework docs',
+                model: 'opus',
+                color: 'emerald',
+              },
+              {
+                name: 'github-scout',
+                desc: 'Cross-repo code search',
+                model: 'opus',
+                color: 'cyan',
+              },
+              {
+                name: 'epic-scout',
+                desc: 'Detects epic dependencies',
+                model: 'haiku',
+                color: 'emerald',
+                isNew: true,
+              },
+              {
+                name: 'docs-gap-scout',
+                desc: 'Identifies docs needing updates',
+                model: 'haiku',
+                color: 'cyan',
+                isNew: true,
+              },
+              {
+                name: 'memory-scout',
+                desc: 'Retrieves project learnings',
+                model: 'haiku',
+                color: 'emerald',
+              },
+              {
+                name: 'gap-analyst',
+                desc: 'Finds missing requirements',
+                model: 'opus',
+                color: 'cyan',
+              },
+            ].map((scout) => (
+              <div
+                className={`group relative overflow-hidden rounded-xl border p-4 transition-all hover:-translate-y-1 ${
+                  scout.color === 'emerald'
+                    ? 'border-emerald-500/20 bg-gradient-to-br from-emerald-500/10 via-transparent to-transparent hover:border-emerald-500/40'
+                    : 'border-cyan-500/20 bg-gradient-to-br from-cyan-500/10 via-transparent to-transparent hover:border-cyan-500/40'
+                }`}
+                key={scout.name}
+              >
+                {scout.isNew && (
+                  <div className="absolute top-2 right-2">
+                    <Badge
+                      className="border-amber-400/40 bg-amber-500/10 px-1.5 py-0.5 text-[10px] text-amber-300"
+                      variant="outline"
+                    >
+                      NEW
+                    </Badge>
+                  </div>
+                )}
+                <code
+                  className={`font-mono text-sm ${
+                    scout.color === 'emerald'
+                      ? 'text-emerald-400'
+                      : 'text-cyan-400'
+                  }`}
+                >
+                  {scout.name}
+                </code>
+                <p className="mt-1 text-sm text-white/60">{scout.desc}</p>
+                <div className="mt-2 flex items-center gap-2">
+                  <span
+                    className={`rounded px-1.5 py-0.5 font-mono text-[10px] ${
+                      scout.model === 'haiku'
+                        ? 'bg-violet-500/20 text-violet-300'
+                        : 'bg-white/10 text-white/50'
+                    }`}
+                  >
+                    {scout.model}
+                  </span>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-8 overflow-hidden rounded-xl border border-white/10 bg-gradient-to-r from-emerald-500/5 via-cyan-500/5 to-violet-500/5">
+            <div className="flex flex-col items-center justify-between gap-4 p-6 md:flex-row">
+              <div>
+                <p className="font-semibold text-white">
+                  4 scouts use Haiku for speed, 4 use Opus for depth
+                </p>
+                <p className="mt-1 text-sm text-white/50">
+                  Plus: worker, plan-sync, quality-auditor, context-scout = 12
+                  total subagents
+                </p>
+              </div>
+              <div className="flex gap-2">
+                <span className="rounded bg-violet-500/20 px-3 py-1.5 font-mono text-sm text-violet-300">
+                  haiku × 4
+                </span>
+                <span className="rounded bg-white/10 px-3 py-1.5 font-mono text-sm text-white/60">
+                  opus × 8
+                </span>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Ralph Autonomous Mode - Major Feature */}
         <section className="relative mx-auto max-w-6xl px-6 pb-24 md:px-10">
           <div className="relative overflow-hidden rounded-2xl border border-cyan-500/30 bg-gradient-to-br from-cyan-950/50 via-emerald-950/30 to-transparent">
@@ -1494,6 +1646,11 @@ export default function FlowNextPage() {
                     <span className="text-white/20"># schema version</span>
                     {'\n'}
                     <span className="text-white/30">├── </span>
+                    <span className="text-violet-400/80">config.json</span>
+                    <span className="text-white/30">{'       '}</span>
+                    <span className="text-white/20"># opt-in features</span>
+                    {'\n'}
+                    <span className="text-white/30">├── </span>
                     <span className="text-emerald-400/80">epics/</span>
                     {'\n'}
                     <span className="text-white/30">│ └── </span>
@@ -1518,15 +1675,24 @@ export default function FlowNextPage() {
                     <span className="text-white/30">│ ├── </span>
                     <span className="text-white/80">fn-1.1.md</span>
                     <span className="text-white/30">{'     '}</span>
-                    <span className="text-white/20"># spec + done summary</span>
+                    <span className="text-white/20"># spec + done</span>
                     {'\n'}
                     <span className="text-white/30">│ └── </span>
                     <span className="text-white/40">...</span>
                     {'\n'}
                     <span className="text-white/30">└── </span>
-                    <span className="text-white/40">memory/</span>
+                    <span className="text-cyan-400/80">memory/</span>
                     <span className="text-white/30">{'         '}</span>
-                    <span className="text-white/20"># reserved</span>
+                    <span className="text-white/20"># opt-in</span>
+                    {'\n'}
+                    <span className="text-white/30">{'  '}├── </span>
+                    <span className="text-white/60">pitfalls.md</span>
+                    {'\n'}
+                    <span className="text-white/30">{'  '}├── </span>
+                    <span className="text-white/60">conventions.md</span>
+                    {'\n'}
+                    <span className="text-white/30">{'  '}└── </span>
+                    <span className="text-white/60">decisions.md</span>
                   </code>
                 </div>
               </div>
@@ -1675,6 +1841,154 @@ export default function FlowNextPage() {
                 <span className="text-white">--all</span>
                 <span className="text-white/30">{'       '}# CI gate</span>
               </code>
+            </div>
+          </div>
+        </section>
+
+        {/* Opt-in Features */}
+        <section className="relative mx-auto max-w-6xl px-6 pb-24 md:px-10">
+          <div className="mb-10 text-center">
+            <Badge
+              className="mb-4 border-violet-400/50 bg-violet-950/80 text-violet-300 backdrop-blur-sm"
+              variant="outline"
+            >
+              OPT-IN FEATURES
+            </Badge>
+            <h2 className="font-bold text-3xl text-white md:text-4xl">
+              Power features when you need them
+            </h2>
+            <p className="mx-auto mt-4 max-w-2xl text-white/60">
+              Off by default. Enable via{' '}
+              <code className="text-emerald-400">/flow-next:setup</code> or{' '}
+              <code className="text-emerald-400">flowctl config set</code>.
+            </p>
+          </div>
+
+          <div className="grid gap-6 lg:grid-cols-2">
+            {/* Plan-Sync */}
+            <div className="overflow-hidden rounded-xl border border-emerald-500/30 bg-gradient-to-br from-emerald-950/40 to-transparent">
+              <div className="flex items-center justify-between border-emerald-500/20 border-b bg-emerald-500/5 px-5 py-3">
+                <div className="flex items-center gap-2">
+                  <span className="text-xl">🔄</span>
+                  <span className="font-semibold text-emerald-400">
+                    Plan-Sync
+                  </span>
+                </div>
+                <Badge
+                  className="border-amber-400/40 bg-amber-500/10 text-amber-300"
+                  variant="outline"
+                >
+                  NEW
+                </Badge>
+              </div>
+              <div className="space-y-4 p-5">
+                <p className="text-sm text-white/70">
+                  Syncs downstream task specs when implementation drifts from
+                  the plan. Keeps future tasks accurate.
+                </p>
+                <div className="space-y-2">
+                  <div className="flex items-start gap-3 rounded-lg border border-emerald-500/10 bg-emerald-500/5 p-3">
+                    <span className="mt-0.5 text-emerald-400">✓</span>
+                    <div>
+                      <p className="font-mono text-emerald-400 text-xs">
+                        Same-epic sync
+                      </p>
+                      <p className="text-sm text-white/50">
+                        Updates downstream tasks in current epic
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3 rounded-lg border border-cyan-500/10 bg-cyan-500/5 p-3">
+                    <span className="mt-0.5 text-cyan-400">✓</span>
+                    <div>
+                      <p className="font-mono text-cyan-400 text-xs">
+                        Cross-epic sync
+                      </p>
+                      <p className="text-sm text-white/50">
+                        Also checks other open epics (opt-in, off by default)
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div className="rounded-lg bg-black/40 p-3">
+                  <code className="block font-mono text-sm">
+                    <span className="text-emerald-400">flowctl config set</span>{' '}
+                    <span className="text-white">planSync.enabled true</span>
+                    {'\n'}
+                    <span className="text-emerald-400">flowctl config set</span>{' '}
+                    <span className="text-white/50">
+                      planSync.crossEpic true
+                    </span>
+                  </code>
+                </div>
+              </div>
+            </div>
+
+            {/* Memory System */}
+            <div className="overflow-hidden rounded-xl border border-cyan-500/30 bg-gradient-to-br from-cyan-950/40 to-transparent">
+              <div className="flex items-center justify-between border-cyan-500/20 border-b bg-cyan-500/5 px-5 py-3">
+                <div className="flex items-center gap-2">
+                  <span className="text-xl">🧠</span>
+                  <span className="font-semibold text-cyan-400">
+                    Memory System
+                  </span>
+                </div>
+                <Badge
+                  className="border-emerald-400/40 bg-emerald-500/10 text-emerald-300"
+                  variant="outline"
+                >
+                  Ralph-Enhanced
+                </Badge>
+              </div>
+              <div className="space-y-4 p-5">
+                <p className="text-sm text-white/70">
+                  Persistent learnings survive context compaction. Retrieves
+                  relevant entries during planning and work.
+                </p>
+                <div className="space-y-2">
+                  <div className="flex items-start gap-3 rounded-lg border border-white/5 bg-white/[0.02] p-3">
+                    <span className="text-lg">📝</span>
+                    <div>
+                      <p className="font-mono text-white/70 text-xs">
+                        pitfalls.md
+                      </p>
+                      <p className="text-sm text-white/50">
+                        Auto-captured from NEEDS_WORK reviews
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3 rounded-lg border border-white/5 bg-white/[0.02] p-3">
+                    <span className="text-lg">📋</span>
+                    <div>
+                      <p className="font-mono text-white/70 text-xs">
+                        conventions.md
+                      </p>
+                      <p className="text-sm text-white/50">
+                        Project patterns not in CLAUDE.md
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3 rounded-lg border border-white/5 bg-white/[0.02] p-3">
+                    <span className="text-lg">🏛️</span>
+                    <div>
+                      <p className="font-mono text-white/70 text-xs">
+                        decisions.md
+                      </p>
+                      <p className="text-sm text-white/50">
+                        Architectural choices with rationale
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div className="rounded-lg bg-black/40 p-3">
+                  <code className="block font-mono text-sm">
+                    <span className="text-cyan-400">flowctl config set</span>{' '}
+                    <span className="text-white">memory.enabled true</span>
+                    {'\n'}
+                    <span className="text-cyan-400">flowctl memory init</span>
+                  </code>
+                </div>
+              </div>
             </div>
           </div>
         </section>
