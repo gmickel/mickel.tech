@@ -19,6 +19,11 @@ const FLOW_NEXT_FAQS = [
       'Flow-Next is a Claude Code plugin for AI agent orchestration with zero external dependencies. It provides bundled task tracking, dependency graphs, and automated code reviews.',
   },
   {
+    question: 'What is /flow-next:prime?',
+    answer:
+      'Prime is an agent readiness assessment command that scans your codebase across 6 pillars (Style & Validation, Build System, Testing, Documentation, Dev Environment, Code Quality) and proposes non-destructive improvements. It uses 6 parallel haiku scouts for fast assessment (~15 seconds) and calculates a maturity level from 1-5.',
+  },
+  {
     question: 'How do I install Flow-Next?',
     answer:
       'Run /plugin marketplace add https://github.com/gmickel/gmickel-claude-marketplace then /plugin install flow-next. Installation takes about 30 seconds.',
@@ -76,6 +81,8 @@ export const metadata: Metadata = {
     'OpenAI Codex',
     'cross-model review',
     'RepoPrompt',
+    'agent readiness',
+    'codebase assessment',
   ],
   openGraph: {
     title: 'Flow-Next: Zero-Dependency AI Agent Orchestration',
@@ -121,6 +128,15 @@ const commands = [
   {
     name: '/flow-next:impl-review',
     description: 'Carmack-level impl review (Codex or RepoPrompt)',
+  },
+  {
+    name: '/flow-next:prime',
+    description: 'Assess codebase agent-readiness, propose fixes',
+    isNew: true,
+  },
+  {
+    name: '/flow-next:sync',
+    description: 'Update downstream tasks after implementation drift',
   },
   {
     name: '/flow-next:ralph-init',
@@ -856,16 +872,26 @@ export default function FlowNextPage() {
               Commands
             </p>
             <h2 className="mt-3 font-bold text-2xl text-white md:text-3xl">
-              Five commands, complete workflow
+              Eight commands, complete workflow
             </h2>
           </div>
 
           <div className="grid gap-3 md:grid-cols-2 lg:grid-cols-3">
             {commands.map((cmd, i) => (
               <div
-                className="group rounded-lg border border-white/10 bg-white/[0.02] p-4 transition-all hover:border-emerald-500/30 hover:bg-emerald-500/5"
+                className="group relative rounded-lg border border-white/10 bg-white/[0.02] p-4 transition-all hover:border-emerald-500/30 hover:bg-emerald-500/5"
                 key={cmd.name}
               >
+                {'isNew' in cmd && cmd.isNew && (
+                  <div className="absolute top-2 right-2">
+                    <Badge
+                      className="border-amber-400/40 bg-amber-500/10 px-1.5 py-0.5 text-[10px] text-amber-300"
+                      variant="outline"
+                    >
+                      NEW
+                    </Badge>
+                  </div>
+                )}
                 <code className="block font-mono text-emerald-400 text-sm group-hover:text-emerald-300">
                   {cmd.name}
                 </code>
@@ -980,7 +1006,7 @@ export default function FlowNextPage() {
               className="mb-4 border-emerald-400/50 bg-emerald-950/80 text-emerald-300 backdrop-blur-sm"
               variant="outline"
             >
-              12 SUBAGENTS
+              17 SUBAGENTS
             </Badge>
             <h2 className="font-bold text-3xl text-white md:text-4xl">
               Planning Intelligence
@@ -1092,20 +1118,222 @@ export default function FlowNextPage() {
             <div className="flex flex-col items-center justify-between gap-4 p-6 md:flex-row">
               <div>
                 <p className="font-semibold text-white">
-                  4 scouts use Haiku for speed, 4 use Opus for depth
+                  9 scouts use Haiku for speed, 4 use Opus for depth
                 </p>
                 <p className="mt-1 text-sm text-white/50">
-                  Plus: worker, plan-sync, quality-auditor, context-scout = 12
+                  Plus: worker, plan-sync, quality-auditor, context-scout = 17
                   total subagents
                 </p>
               </div>
               <div className="flex gap-2">
                 <span className="rounded bg-violet-500/20 px-3 py-1.5 font-mono text-sm text-violet-300">
-                  haiku × 4
+                  haiku × 9
                 </span>
                 <span className="rounded bg-white/10 px-3 py-1.5 font-mono text-sm text-white/60">
                   opus × 8
                 </span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Agent Readiness Assessment - NEW */}
+        <section className="relative mx-auto max-w-6xl px-6 pb-24 md:px-10">
+          <div className="relative overflow-hidden rounded-2xl border border-violet-500/30 bg-gradient-to-br from-violet-950/50 via-emerald-950/30 to-transparent">
+            {/* Ambient glow */}
+            <div
+              aria-hidden
+              className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(139,92,246,0.15),transparent_50%),radial-gradient(circle_at_70%_80%,rgba(16,185,129,0.1),transparent_40%)]"
+            />
+
+            <div className="relative p-8 md:p-12">
+              <div className="mb-6 flex flex-wrap items-center gap-3">
+                <Badge
+                  className="border-violet-400/50 bg-violet-500/10 text-violet-300 backdrop-blur-sm"
+                  variant="outline"
+                >
+                  <span className="mr-1.5 inline-block h-2 w-2 animate-pulse rounded-full bg-violet-400" />
+                  NEW IN 0.18
+                </Badge>
+                <Badge
+                  className="border-emerald-400/40 bg-emerald-950/60 text-emerald-300"
+                  variant="outline"
+                >
+                  Inspired by Factory.ai
+                </Badge>
+              </div>
+
+              <h2 className="font-bold text-4xl text-white leading-tight md:text-5xl">
+                Agent Readiness
+                <br />
+                <span className="bg-gradient-to-r from-violet-400 to-emerald-400 bg-clip-text text-transparent">
+                  Assessment
+                </span>
+              </h2>
+
+              <p className="mt-6 max-w-2xl text-lg text-white/80 leading-relaxed">
+                Agents waste cycles when codebases lack pre-commit hooks,
+                documented env vars, or clear conventions. These are{' '}
+                <span className="text-violet-400">environment problems</span>,
+                not agent problems.{' '}
+                <code className="text-emerald-400">/flow-next:prime</code> scans
+                your codebase and proposes fixes.
+              </p>
+
+              {/* Two column layout */}
+              <div className="mt-10 grid gap-8 lg:grid-cols-2">
+                {/* Left: Six Pillars */}
+                <div>
+                  <h3 className="mb-4 font-semibold text-lg text-white">
+                    Six Assessment Pillars
+                  </h3>
+                  <div className="space-y-2">
+                    {[
+                      {
+                        name: 'Style & Validation',
+                        desc: 'Linters, formatters, type checking, pre-commit',
+                      },
+                      {
+                        name: 'Build System',
+                        desc: 'Build commands, CI, lock files',
+                      },
+                      {
+                        name: 'Testing',
+                        desc: 'Test framework, coverage, E2E',
+                      },
+                      {
+                        name: 'Documentation',
+                        desc: 'README, CLAUDE.md, ADRs',
+                      },
+                      {
+                        name: 'Dev Environment',
+                        desc: '.env.example, Docker, devcontainer',
+                      },
+                      {
+                        name: 'Code Quality',
+                        desc: 'CONTRIBUTING, PR templates, CODEOWNERS',
+                      },
+                    ].map((pillar, i) => (
+                      <div
+                        className="flex items-start gap-3 rounded-lg border border-violet-500/10 bg-violet-500/5 p-3"
+                        key={pillar.name}
+                      >
+                        <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-violet-500/20 font-mono text-violet-400 text-xs">
+                          {i + 1}
+                        </span>
+                        <div>
+                          <p className="font-mono text-sm text-violet-400">
+                            {pillar.name}
+                          </p>
+                          <p className="text-sm text-white/50">{pillar.desc}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Right: Maturity Levels + Quick Start */}
+                <div className="space-y-6">
+                  <div>
+                    <h3 className="mb-4 font-semibold text-lg text-white">
+                      Maturity Levels
+                    </h3>
+                    <div className="overflow-hidden rounded-lg border border-white/10 bg-black/40">
+                      <div className="divide-y divide-white/5">
+                        {[
+                          { level: 1, name: 'Minimal', score: '<30%' },
+                          { level: 2, name: 'Functional', score: '30-49%' },
+                          {
+                            level: 3,
+                            name: 'Standardized',
+                            score: '50-69%',
+                            target: true,
+                          },
+                          { level: 4, name: 'Optimized', score: '70-84%' },
+                          { level: 5, name: 'Autonomous', score: '85%+' },
+                        ].map((item) => (
+                          <div
+                            className={`flex items-center justify-between px-4 py-2 ${item.target ? 'bg-emerald-500/10' : ''}`}
+                            key={item.level}
+                          >
+                            <div className="flex items-center gap-3">
+                              <span
+                                className={`flex h-6 w-6 items-center justify-center rounded-full font-mono text-xs ${item.target ? 'bg-emerald-500/30 text-emerald-400' : 'bg-white/10 text-white/50'}`}
+                              >
+                                {item.level}
+                              </span>
+                              <span
+                                className={
+                                  item.target ? 'text-emerald-400' : 'text-white/70'
+                                }
+                              >
+                                {item.name}
+                              </span>
+                              {item.target && (
+                                <Badge
+                                  className="border-emerald-400/40 bg-emerald-500/10 text-[10px] text-emerald-300"
+                                  variant="outline"
+                                >
+                                  TARGET
+                                </Badge>
+                              )}
+                            </div>
+                            <span className="font-mono text-sm text-white/40">
+                              {item.score}
+                            </span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Quick start terminal */}
+                  <div className="overflow-hidden rounded-lg border border-violet-500/30 bg-black/60">
+                    <div className="flex items-center gap-2 border-violet-500/10 border-b bg-violet-500/5 px-4 py-2">
+                      <div className="h-3 w-3 rounded-full bg-red-500/60" />
+                      <div className="h-3 w-3 rounded-full bg-yellow-500/60" />
+                      <div className="h-3 w-3 rounded-full bg-green-500/60" />
+                      <span className="ml-2 font-mono text-white/40 text-xs">
+                        prime.sh
+                      </span>
+                    </div>
+                    <div className="p-4">
+                      <code className="block whitespace-pre font-mono text-sm leading-relaxed">
+                        <span className="text-white/40">
+                          # Full assessment + interactive fixes
+                        </span>
+                        {'\n'}
+                        <span className="text-violet-400">/flow-next:prime</span>
+                        {'\n\n'}
+                        <span className="text-white/40"># Report only</span>
+                        {'\n'}
+                        <span className="text-emerald-400">
+                          /flow-next:prime --report-only
+                        </span>
+                      </code>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Bottom stats */}
+              <div className="mt-8 grid grid-cols-2 gap-4 md:grid-cols-4">
+                {[
+                  { value: '6', label: 'Haiku scouts' },
+                  { value: '36', label: 'Criteria checked' },
+                  { value: '~15s', label: 'Assessment time' },
+                  { value: '∞', label: 'Templates included' },
+                ].map((stat) => (
+                  <div
+                    className="rounded-lg border border-white/10 bg-white/[0.02] p-4 text-center"
+                    key={stat.label}
+                  >
+                    <p className="font-mono text-2xl text-violet-400">
+                      {stat.value}
+                    </p>
+                    <p className="mt-1 text-sm text-white/50">{stat.label}</p>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
