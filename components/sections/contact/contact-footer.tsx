@@ -1,7 +1,7 @@
 export function ContactFooter() {
   return (
     <>
-      <footer className="grid grid-cols-1 gap-8 border-white/10 border-t pt-8 font-mono text-xs md:grid-cols-5">
+      <footer className="grid grid-cols-1 gap-8 border-white/10 border-t pt-8 font-mono text-xs md:grid-cols-6">
         <div>
           <h3 className="mb-2 text-muted-foreground">EMAIL</h3>
           <a
@@ -42,6 +42,17 @@ export function ContactFooter() {
             target="_blank"
           >
             [ X Profile ]
+          </a>
+        </div>
+        <div>
+          <h3 className="mb-2 text-muted-foreground">DISCORD</h3>
+          <a
+            className="glow-link interactive focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background"
+            href="https://discord.gg/nHEmyJB5tg"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            [ Join Server ]
           </a>
         </div>
         <div>
