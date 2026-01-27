@@ -1,7 +1,7 @@
 export function ContactFooter() {
   return (
     <>
-      <footer className="grid grid-cols-1 gap-8 border-white/10 border-t pt-8 font-mono text-xs md:grid-cols-6">
+      <footer className="grid grid-cols-1 gap-8 border-white/10 border-t pt-8 font-mono text-xs sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6">
         <div>
           <h3 className="mb-2 text-muted-foreground">EMAIL</h3>
           <a
