@@ -19,7 +19,7 @@ export function ContactFooter() {
             rel="noopener noreferrer"
             target="_blank"
           >
-            [ Book a session ]
+            [ Book ]
           </a>
         </div>
         <div>
@@ -30,7 +30,7 @@ export function ContactFooter() {
             rel="noopener noreferrer"
             target="_blank"
           >
-            [ LinkedIn Profile ]
+            [ Profile ]
           </a>
         </div>
         <div>
@@ -58,7 +58,7 @@ export function ContactFooter() {
         <div>
           <h3 className="mb-2 text-muted-foreground">LOCATION</h3>
           <address className="text-white not-italic">
-            Basel, Switzerland · working globally
+            Basel, CH · global
           </address>
         </div>
       </footer>
