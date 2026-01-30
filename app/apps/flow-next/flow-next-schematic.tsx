@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from 'react';
 
 const STEP_MS = 1400;
-const SEQUENCE_LENGTH = 13;
+const SEQUENCE_LENGTH = 12;
 
 const researchAgents = [
   { name: 'repo-scout', icon: '🔍' },
@@ -110,28 +110,22 @@ const workStages: Stage[] = [
     sequenceIndex: 8,
   },
   {
-    title: 'flowctl done',
-    detail: 'Summary + evidence',
+    title: 'Next ready task',
+    detail: 'Loop until empty',
     tone: 'emerald',
     sequenceIndex: 9,
   },
   {
-    title: 'Next ready task',
-    detail: 'Loop until empty',
-    tone: 'emerald',
+    title: '/flow-next:epic-review',
+    detail: 'All tasks done → verify spec',
+    tone: 'violet',
     sequenceIndex: 10,
   },
   {
-    title: '/flow-next:epic-review',
-    detail: 'Verify spec coverage',
-    tone: 'violet',
-    sequenceIndex: 11,
-  },
-  {
     title: 'flowctl epic close fn-1',
-    detail: 'Done',
+    detail: 'Ship it',
     tone: 'emerald',
-    sequenceIndex: 12,
+    sequenceIndex: 11,
   },
 ];
 
