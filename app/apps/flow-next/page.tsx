@@ -1010,7 +1010,7 @@ export default function FlowNextPage() {
             <Card className="overflow-hidden border-amber-500/30 bg-gradient-to-br from-amber-950/50 to-transparent">
               <CardHeader className="border-amber-500/20 border-b pb-4">
                 <div className="flex items-center justify-between">
-                  <code className="rounded-full bg-amber-500/20 px-4 py-2 font-mono text-amber-400 text-lg">
+                  <code className="whitespace-nowrap rounded-full bg-amber-500/20 px-3 py-2 font-mono text-amber-400 text-base">
                     /flow-next:epic-review
                   </code>
                   <Badge
