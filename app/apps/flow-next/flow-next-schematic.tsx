@@ -3,12 +3,16 @@
 import { useEffect, useRef, useState } from 'react';
 
 const STEP_MS = 1400;
-const SEQUENCE_LENGTH = 12;
+const SEQUENCE_LENGTH = 13;
 
 const researchAgents = [
   { name: 'repo-scout', icon: '🔍' },
   { name: 'practice-scout', icon: '💡' },
   { name: 'docs-scout', icon: '📚' },
+  { name: 'context-scout', icon: '🗺️' },
+  { name: 'github-scout', icon: '🐙' },
+  { name: 'epic-scout', icon: '📋' },
+  { name: 'docs-gap-scout', icon: '📝' },
 ];
 
 type Tone = 'emerald' | 'cyan' | 'amber' | 'violet' | 'slate';
@@ -118,10 +122,16 @@ const workStages: Stage[] = [
     sequenceIndex: 10,
   },
   {
+    title: '/flow-next:epic-review',
+    detail: 'Verify spec coverage',
+    tone: 'violet',
+    sequenceIndex: 11,
+  },
+  {
     title: 'flowctl epic close fn-1',
     detail: 'Done',
     tone: 'emerald',
-    sequenceIndex: 11,
+    sequenceIndex: 12,
   },
 ];
 
@@ -137,14 +147,19 @@ const taskLoop = [
     tone: 'emerald',
   },
   {
+    title: 'Review',
+    detail: 'impl-review',
+    tone: 'violet',
+  },
+  {
     title: 'Record',
     detail: 'flowctl done',
     tone: 'cyan',
   },
   {
-    title: 'Review',
-    detail: 'if rp-cli',
-    tone: 'violet',
+    title: 'Sync',
+    detail: 'plan-sync',
+    tone: 'amber',
   },
 ] as const;
 
@@ -274,7 +289,7 @@ export function FlowNextSchematic() {
             Flow-Next in motion
           </span>
           <span className="text-white/40 text-xs">
-            Plan → Work → Review → Done
+            Plan → Work → Ship
           </span>
         </div>
 
@@ -311,15 +326,15 @@ export function FlowNextSchematic() {
                     >
                       Parallel scouts
                     </div>
-                    <div className="mt-2 grid grid-cols-3 gap-2">
+                    <div className="mt-2 flex flex-wrap gap-1.5">
                       {researchAgents.map((agent) => (
                         <div
-                          className="rounded border border-white/10 bg-black/40 px-2 py-1 text-center"
+                          className="rounded border border-white/10 bg-black/40 px-1.5 py-1 text-center"
                           key={agent.name}
                         >
-                          <div className="text-sm">{agent.icon}</div>
-                          <div className="mt-1 truncate font-mono text-[9px] text-white/70">
-                            {agent.name}
+                          <div className="text-xs">{agent.icon}</div>
+                          <div className="truncate font-mono text-[8px] text-white/70">
+                            {agent.name.replace('-scout', '')}
                           </div>
                         </div>
                       ))}
