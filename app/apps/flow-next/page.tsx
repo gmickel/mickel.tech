@@ -19,6 +19,11 @@ const FLOW_NEXT_FAQS = [
       'Flow-Next is a Claude Code plugin for AI agent orchestration with zero external dependencies. It provides bundled task tracking, dependency graphs, and automated code reviews.',
   },
   {
+    question: 'What is /flow-next:epic-review?',
+    answer:
+      'Epic-review is a completion gate that runs when all tasks are done, before the epic closes. It compares implementation against the spec to catch gaps that per-task impl-review misses: decomposition gaps (spec items that never became tasks), cross-task requirements, and scope drift. Two-phase approach: extract requirements from spec, then verify each against code. Loops until SHIP.',
+  },
+  {
     question: 'What is /flow-next:prime?',
     answer:
       'Prime is an agent readiness assessment command that scans your codebase across 6 pillars (Style & Validation, Build System, Testing, Documentation, Dev Environment, Code Quality) and proposes non-destructive improvements. It uses 6 parallel haiku scouts for fast assessment (~15 seconds) and calculates a maturity level from 1-5.',
@@ -130,9 +135,13 @@ const commands = [
     description: 'Carmack-level impl review (Codex or RepoPrompt)',
   },
   {
+    name: '/flow-next:epic-review',
+    description: 'Epic completion review before epic closes',
+    isNew: true,
+  },
+  {
     name: '/flow-next:prime',
     description: 'Assess codebase agent-readiness, propose fixes',
-    isNew: true,
   },
   {
     name: '/flow-next:sync',
@@ -217,6 +226,14 @@ const workSteps = [
   { step: '03', action: 'Test + verify acceptance criteria' },
   { step: '04', action: 'Record summary + evidence via flowctl' },
   { step: '05', action: 'Loop to next ready task' },
+];
+
+const shipSteps = [
+  { step: '01', action: 'All tasks done, review not shipped' },
+  { step: '02', action: 'Extract requirements from spec' },
+  { step: '03', action: 'Verify each requirement vs code' },
+  { step: '04', action: 'Fix gaps inline (loops until SHIP)' },
+  { step: '05', action: 'Set status=ship, epic closes' },
 ];
 
 export default function FlowNextPage() {
@@ -901,26 +918,18 @@ export default function FlowNextPage() {
           </div>
         </section>
 
-        {/* Core Workflow - Side by side with connecting line */}
-        <section className="relative mx-auto max-w-6xl px-6 pb-24 md:px-10">
+        {/* Core Workflow - Three phases with connecting lines */}
+        <section className="relative mx-auto max-w-7xl px-6 pb-24 md:px-10">
           <div className="mb-10 text-center">
             <p className="font-mono text-[11px] text-emerald-400/80 uppercase tracking-[0.3em]">
               Core Workflow
             </p>
             <h2 className="mt-3 font-bold text-3xl text-white md:text-4xl">
-              Plan → Work
+              Plan → Work → Ship
             </h2>
           </div>
 
-          <div className="relative grid gap-8 lg:grid-cols-2 lg:gap-16">
-            {/* Connecting line - desktop only */}
-            <div
-              aria-hidden
-              className="-translate-x-1/2 -translate-y-1/2 absolute top-1/2 left-1/2 hidden h-px w-16 lg:block"
-            >
-              <div className="h-full w-full bg-gradient-to-r from-emerald-500/50 to-cyan-500/50" />
-              <div className="-translate-x-1/2 -translate-y-1/2 absolute top-1/2 left-1/2 h-3 w-3 rounded-full bg-white/20" />
-            </div>
+          <div className="relative grid gap-6 lg:grid-cols-3 lg:gap-8">
 
             {/* Plan */}
             <Card className="overflow-hidden border-emerald-500/30 bg-gradient-to-br from-emerald-950/50 to-transparent">
@@ -986,6 +995,43 @@ export default function FlowNextPage() {
                   {workSteps.map((item) => (
                     <li className="flex items-start gap-4" key={item.step}>
                       <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-cyan-500/20 font-mono text-cyan-400 text-xs">
+                        {item.step}
+                      </span>
+                      <span className="text-sm text-white/70">
+                        {item.action}
+                      </span>
+                    </li>
+                  ))}
+                </ol>
+              </CardContent>
+            </Card>
+
+            {/* Ship */}
+            <Card className="overflow-hidden border-amber-500/30 bg-gradient-to-br from-amber-950/50 to-transparent">
+              <CardHeader className="border-amber-500/20 border-b pb-4">
+                <div className="flex items-center justify-between">
+                  <code className="rounded-full bg-amber-500/20 px-4 py-2 font-mono text-amber-400 text-lg">
+                    /flow-next:epic-review
+                  </code>
+                  <Badge
+                    className="border-amber-500/40 bg-amber-500/10 text-amber-400"
+                    variant="outline"
+                  >
+                    STEP 3
+                  </Badge>
+                </div>
+                <CardTitle className="mt-4 text-white text-xl">
+                  Verify before shipping
+                </CardTitle>
+                <p className="mt-1 text-sm text-white/50">
+                  Catches gaps per-task review misses
+                </p>
+              </CardHeader>
+              <CardContent className="pt-6">
+                <ol className="space-y-3">
+                  {shipSteps.map((item) => (
+                    <li className="flex items-start gap-4" key={item.step}>
+                      <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-amber-500/20 font-mono text-amber-400 text-xs">
                         {item.step}
                       </span>
                       <span className="text-sm text-white/70">
