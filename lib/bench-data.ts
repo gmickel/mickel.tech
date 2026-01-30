@@ -24,6 +24,7 @@ export const llmScores: BenchScore[] = [
     name: 'Convex OAuth MCP slice',
     shortName: 'MCP',
     scores: {
+      flownext: 81,
       claude: 65,
       codex: 60,
       codex52: 76,
@@ -37,6 +38,7 @@ export const llmScores: BenchScore[] = [
     name: 'Convex permissions (docs/folders)',
     shortName: 'Permissions',
     scores: {
+      flownext: 83,
       claude: 65,
       codex: 58,
       codex52: 78,
@@ -50,6 +52,7 @@ export const llmScores: BenchScore[] = [
     name: 'Remote Secretary – Design',
     shortName: 'Design',
     scores: {
+      flownext: 87,
       claude: 86,
       codex: 77,
       codex52: 80,
@@ -63,6 +66,7 @@ export const llmScores: BenchScore[] = [
     name: 'Tiny GPT – Zig',
     shortName: 'Zig',
     scores: {
+      flownext: 91,
       claude: 62,
       codex: 36,
       codex52: 70,
@@ -76,6 +80,7 @@ export const llmScores: BenchScore[] = [
     name: 'SmartTrim macOS utility',
     shortName: 'SmartTrim',
     scores: {
+      flownext: 96,
       claude: 88,
       codex: 92,
       codex52: 85,
@@ -89,6 +94,7 @@ export const llmScores: BenchScore[] = [
     name: 'XLSX backend + agent tools',
     shortName: 'XLSX',
     scores: {
+      flownext: 92,
       claude: 70,
       codex: 70,
       codex52: 76,
@@ -107,6 +113,7 @@ export const radarData: CategoryScore[] = [
   {
     name: 'Instruction following',
     scores: {
+      flownext: 95,
       claude: 82,
       codex: 75,
       codex52: 89,
@@ -118,6 +125,7 @@ export const radarData: CategoryScore[] = [
   {
     name: 'Code quality',
     scores: {
+      flownext: 97,
       claude: 73,
       codex: 75,
       codex52: 87,
@@ -129,6 +137,7 @@ export const radarData: CategoryScore[] = [
   {
     name: 'Change hygiene',
     scores: {
+      flownext: 93,
       claude: 80,
       codex: 78,
       codex52: 90,
@@ -140,6 +149,7 @@ export const radarData: CategoryScore[] = [
   {
     name: 'Functional correctness',
     scores: {
+      flownext: 93,
       claude: 66,
       codex: 60,
       codex52: 77,
@@ -154,6 +164,7 @@ export const totals: TotalScore[] = [
   {
     name: 'Total score',
     scores: {
+      flownext: 530,
       claude: 436,
       codex: 393,
       codex52: 465,
@@ -165,6 +176,7 @@ export const totals: TotalScore[] = [
   {
     name: 'Average per task',
     scores: {
+      flownext: 88.3,
       claude: 72.7,
       codex: 65.5,
       codex52: 77.5,

@@ -930,7 +930,6 @@ export default function FlowNextPage() {
           </div>
 
           <div className="relative grid gap-6 lg:grid-cols-3 lg:gap-8">
-
             {/* Plan */}
             <Card className="overflow-hidden border-emerald-500/30 bg-gradient-to-br from-emerald-950/50 to-transparent">
               <CardHeader className="border-emerald-500/20 border-b pb-4">
@@ -1118,7 +1117,7 @@ export default function FlowNextPage() {
               },
             ].map((scout) => (
               <div
-                className={`group relative overflow-hidden rounded-xl border p-4 transition-all hover:-translate-y-1 ${
+                className={`group hover:-translate-y-1 relative overflow-hidden rounded-xl border p-4 transition-all ${
                   scout.color === 'emerald'
                     ? 'border-emerald-500/20 bg-gradient-to-br from-emerald-500/10 via-transparent to-transparent hover:border-emerald-500/40'
                     : 'border-cyan-500/20 bg-gradient-to-br from-cyan-500/10 via-transparent to-transparent hover:border-cyan-500/40'
@@ -1310,7 +1309,9 @@ export default function FlowNextPage() {
                               </span>
                               <span
                                 className={
-                                  item.target ? 'text-emerald-400' : 'text-white/70'
+                                  item.target
+                                    ? 'text-emerald-400'
+                                    : 'text-white/70'
                                 }
                               >
                                 {item.name}
@@ -1349,7 +1350,9 @@ export default function FlowNextPage() {
                           # Full assessment + interactive fixes
                         </span>
                         {'\n'}
-                        <span className="text-violet-400">/flow-next:prime</span>
+                        <span className="text-violet-400">
+                          /flow-next:prime
+                        </span>
                         {'\n\n'}
                         <span className="text-white/40"># Report only</span>
                         {'\n'}

@@ -11,11 +11,11 @@ import { BENCH_EVALS } from '@/lib/bench-evals';
 export const metadata: Metadata = {
   title: 'gmickel bench — Real Client-Grade AI Evals',
   description:
-    'Living scoreboard for agentic coding tasks pulled from real work surfaces. Best-of-3 runs across GPT-5.2, Claude Opus 4.5, Gemini 3 Pro on Convex, Next.js, Zig, Swift and more.',
+    'Living scoreboard for agentic coding tasks pulled from real work surfaces. Best-of-3 runs across Flow-Next, GPT-5.2, Claude Opus 4.5, Gemini 3 Pro on Convex, Next.js, Zig, Swift and more.',
   openGraph: {
     title: 'gmickel bench — Real Client-Grade AI Evals',
     description:
-      'Living scoreboard for agentic coding tasks pulled from real work surfaces. GPT-5.2 xhigh leads at 82.5 avg across 6 evals.',
+      'Living scoreboard for agentic coding tasks pulled from real work surfaces. Flow-Next leads at 88.3 avg across 6 evals.',
     type: 'website',
     url: 'https://mickel.tech/gmickel-bench',
   },
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'gmickel bench — Real Client-Grade AI Evals',
     description:
-      'Living scoreboard for agentic coding tasks pulled from real work surfaces. GPT-5.2 xhigh leads at 82.5 avg across 6 evals.',
+      'Living scoreboard for agentic coding tasks pulled from real work surfaces. Flow-Next leads at 88.3 avg across 6 evals.',
   },
   alternates: {
     canonical: 'https://mickel.tech/gmickel-bench',
@@ -32,8 +32,9 @@ export const metadata: Metadata = {
 
 const upcoming = [
   {
-    title: 'GPT-5.2-codex-xhigh',
-    detail: 'High-reasoning Codex variant; will it match xhigh or overthink?',
+    title: 'Flow-swarm',
+    detail:
+      'Parallelized orchestration with token efficiency and cost optimization.',
   },
   {
     title: 'Legacy code port',
@@ -66,7 +67,7 @@ export default function GmickelBenchPage() {
               Best-of-3 runs
             </Badge>
             <Badge className="border-white/10 bg-white/5" variant="outline">
-              Updated 19 Dec 2025
+              Updated 30 Jan 2026
             </Badge>
           </div>
           <h1 className="mt-6 font-bold text-4xl text-white leading-tight md:text-5xl">
@@ -372,22 +373,23 @@ export default function GmickelBenchPage() {
               </CardHeader>
               <CardContent className="space-y-3 text-muted-foreground text-sm">
                 <p>
-                  • GPT-5.2 xhigh leads (82.5 avg), medium second (77.5),
-                  5.2-codex third (73.7)—all beat Claude (72.7) and 5.1 (65.5).
+                  • Flow-Next leads (88.3 avg), +7% over GPT-5.2 xhigh
+                  (82.5)—orchestration and cross-model review delivers
+                  consistent gains across all 6 evals.
                 </p>
                 <p>
-                  • Medium-reasoning 5.2-codex beats high-reasoning
-                  5.1-codex-max on 4/6 evals: MCP (+12), XLSX (+13), Permissions
-                  (+8), Zig (+22).
+                  • Biggest Flow-Next gains on open-ended tasks: Zig (+9 vs
+                  xhigh), SmartTrim (+8 vs 5.1), MCP (+6 vs xhigh).
                 </p>
                 <p>
-                  • xhigh takes the Zig crown (82) from Gemini (81)—first time
-                  an OpenAI model wins low-level systems.
+                  • Brownfield strength: Flow-Next&apos;s docs analyzer and
+                  pattern matching excels on Convex evals (MCP +6, Permissions
+                  +5, XLSX +2 vs xhigh).
                 </p>
                 <p>
-                  • Pattern: higher reasoning can overthink detailed specs.
-                  Medium-reasoning 5.2 beats high-reasoning 5.1 on plan
-                  execution.
+                  • Tradeoff: Flow-Next uses more tokens and takes longer—but
+                  extra compute buys quality. Review loops catch blind spots
+                  single-model runs miss.
                 </p>
               </CardContent>
             </Card>
@@ -433,6 +435,93 @@ export default function GmickelBenchPage() {
                 </div>
               ))}
             </div>
+          </div>
+
+          {/* Flow-Next Orchestration Insight */}
+          <div className="mt-10 rounded-xl border border-pink-500/30 bg-gradient-to-br from-pink-950/20 via-card/80 to-card/80 p-6">
+            <div className="flex flex-wrap items-center gap-2">
+              <Badge
+                className="border-pink-500/60 bg-pink-500/10 text-pink-400"
+                variant="outline"
+              >
+                Orchestration benchmark
+              </Badge>
+              <Link
+                className="font-mono text-[10px] text-muted-foreground uppercase tracking-wide transition-colors hover:text-pink-400"
+                href="/apps/flow-next"
+              >
+                About Flow-Next →
+              </Link>
+            </div>
+            <h3 className="mt-4 font-semibold text-lg text-white">
+              Cross-model orchestration delivers +7% gains
+            </h3>
+            <p className="mt-2 text-muted-foreground text-sm leading-relaxed">
+              <Link
+                className="text-pink-400 transition-colors hover:text-pink-300"
+                href="/apps/flow-next"
+              >
+                Flow-Next
+              </Link>{' '}
+              combines Opus 4.5 for implementation with GPT-5.2 High for review
+              loops. The dual-model approach catches blind spots that
+              single-model runs miss—different models have different failure
+              modes.
+            </p>
+            <div className="mt-4 grid gap-3 sm:grid-cols-2">
+              <div className="rounded-lg border border-white/5 bg-black/20 p-3">
+                <p className="font-mono text-pink-400 text-xs">WHY IT WORKS</p>
+                <p className="mt-1 text-muted-foreground text-sm">
+                  Review loops + acceptance criteria + epic-review gating.
+                  Brownfield pattern matching via docs analyzer.
+                </p>
+              </div>
+              <div className="rounded-lg border border-white/5 bg-black/20 p-3">
+                <p className="font-mono text-pink-400 text-xs">TRADEOFFS</p>
+                <p className="mt-1 text-muted-foreground text-sm">
+                  Slower execution. Higher token usage. More expensive—but extra
+                  compute buys quality.
+                </p>
+              </div>
+            </div>
+            <div className="mt-4 rounded-lg border border-white/5 bg-black/20 p-3">
+              <p className="font-mono text-pink-400 text-xs">
+                EVAL-BY-EVAL GAINS VS XHIGH
+              </p>
+              <div className="mt-2 grid grid-cols-3 gap-2 text-xs">
+                <div>
+                  <span className="text-muted-foreground">Zig:</span>
+                  <span className="ml-1 text-green-400">+9</span>
+                </div>
+                <div>
+                  <span className="text-muted-foreground">SmartTrim:</span>
+                  <span className="ml-1 text-green-400">+8</span>
+                </div>
+                <div>
+                  <span className="text-muted-foreground">MCP:</span>
+                  <span className="ml-1 text-green-400">+6</span>
+                </div>
+                <div>
+                  <span className="text-muted-foreground">Design:</span>
+                  <span className="ml-1 text-green-400">+5</span>
+                </div>
+                <div>
+                  <span className="text-muted-foreground">Permissions:</span>
+                  <span className="ml-1 text-green-400">+5</span>
+                </div>
+                <div>
+                  <span className="text-muted-foreground">XLSX:</span>
+                  <span className="ml-1 text-green-400">+2</span>
+                </div>
+              </div>
+            </div>
+            <p className="mt-4 text-muted-foreground text-xs">
+              <span className="text-pink-400">Note:</span> This isn&apos;t
+              apples-to-apples—Flow-Next includes skills, review loops, gating,
+              and acceptance criteria that baseline harnesses lack. The point:
+              &quot;you don&apos;t need a complicated setup&quot; isn&apos;t
+              universally true. Orchestration can yield meaningful improvements.
+            </p>
           </div>
 
           {/* Research Finding: High Reasoning Mode */}

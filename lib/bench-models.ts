@@ -4,6 +4,7 @@
  * Harness = CLI tool, Model = specific LLM
  */
 export type ModelId =
+  | 'flownext'
   | 'claude'
   | 'codex'
   | 'codex52'
@@ -22,6 +23,15 @@ export interface ModelConfig {
 }
 
 export const MODELS: Record<ModelId, ModelConfig> = {
+  flownext: {
+    id: 'flownext',
+    harness: 'Flow-Next',
+    harnessVersion: 'v1.0.0',
+    model: 'Opus 4.5 + GPT-5.2 High',
+    color: '#f472b6',
+    order: 0,
+    benchDate: '2025-01-30',
+  },
   claude: {
     id: 'claude',
     harness: 'Claude Code',

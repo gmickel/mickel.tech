@@ -282,9 +282,7 @@ export function FlowNextSchematic() {
           <span className="rounded border border-emerald-500/30 bg-emerald-500/10 px-2 py-1 font-mono text-[10px] text-emerald-300 uppercase tracking-widest">
             Flow-Next in motion
           </span>
-          <span className="text-white/40 text-xs">
-            Plan → Work → Ship
-          </span>
+          <span className="text-white/40 text-xs">Plan → Work → Ship</span>
         </div>
 
         <div className="mt-6 grid gap-6 lg:grid-cols-[1fr_auto_1fr]">
