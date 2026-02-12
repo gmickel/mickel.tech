@@ -7,14 +7,14 @@ type MandateStatus = {
 };
 
 function getMandateStatus(now = new Date()): MandateStatus {
-  const jan2026 = new Date('2026-01-01T00:00:00Z');
-  const mar2026 = new Date('2026-03-01T00:00:00Z');
+  const q1Start = new Date('2026-02-01T00:00:00Z');
+  const q1End = new Date('2026-04-01T00:00:00Z');
 
-  if (now >= jan2026 && now < mar2026) {
-    return { periodLabel: 'JAN/FEB 26', slotLabel: '4 SLOTS' };
+  if (now >= q1Start && now < q1End) {
+    return { periodLabel: 'FEB/MAR 26', slotLabel: '3 SLOTS' };
   }
 
-  return { periodLabel: 'DECEMBER', slotLabel: '1 SLOT LEFT' };
+  return { periodLabel: 'Q2 2026', slotLabel: '4 SLOTS' };
 }
 
 export default async function HeroLoader() {

@@ -1,5 +1,7 @@
 import { Suspense } from 'react';
+import CourseCallout from '@/components/course-callout';
 import Shell from '@/components/layout/shell';
+import AgenticSdlc from '@/components/sections/agentic-sdlc';
 import AppsPreview from '@/components/sections/apps-preview';
 import BenchPreview from '@/components/sections/bench-preview';
 import Chronology from '@/components/sections/chronology';
@@ -33,12 +35,21 @@ export default function Home() {
       <Suspense fallback={<HeroSkeleton />}>
         <HeroLoader />
       </Suspense>
+      <CourseCallout />
       <Suspense
         fallback={
           <div aria-hidden="true" className="min-h-[400px] bg-secondary/20" />
         }
       >
         <Services />
+      </Suspense>
+      <Suspense
+        fallback={<div aria-hidden="true" className="min-h-[400px] bg-black" />}
+      >
+        <AgenticSdlc />
+      </Suspense>
+      <Suspense fallback={null}>
+        <Quote />
       </Suspense>
       <Suspense
         fallback={<div aria-hidden="true" className="min-h-[800px] bg-black" />}
@@ -64,9 +75,6 @@ export default function Home() {
       </Suspense>
       <Suspense fallback={null}>
         <Chronology />
-      </Suspense>
-      <Suspense fallback={null}>
-        <Quote />
       </Suspense>
       <Suspense fallback={null}>
         <Contact />

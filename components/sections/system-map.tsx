@@ -39,9 +39,9 @@ const nodes = [
   },
   {
     id: 5,
-    title: 'AI SDLC & OPERATIONAL AGENTS',
-    role: 'SDLC, Platform & Ops Architect',
-    desc: 'Designs AI-native SDLC, platforms and operational agents that automate support, service and internal workflows—using everything-as-code, eval-driven gating and runbooks so operations teams can safely own and evolve the agents.',
+    title: 'AGENTIC SDLC & OPERATIONAL AGENTS',
+    role: 'Agentic SDLC & Ops Architect',
+    desc: 'Designs and rolls out agentic SDLC methodology — process, tooling and culture change for brownfield teams. Eval-driven gating, everything-as-code and runbooks so teams safely own and evolve their agents in production.',
     x: 50,
     y: 50,
   },

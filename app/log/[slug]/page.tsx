@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { MDXRemote } from 'next-mdx-remote/rsc';
 
+import CourseCallout from '@/components/course-callout';
 import Shell from '@/components/layout/shell';
 import { articleSchema, breadcrumbSchema, JsonLd } from '@/lib/json-ld';
 import { mdxComponents } from '@/lib/mdx-components';
@@ -166,6 +167,10 @@ export default async function LogPostPage({
             options={mdxOptions as any}
             source={post.content}
           />
+        </div>
+
+        <div className="mt-16 border-white/10 border-t pt-8">
+          <CourseCallout />
         </div>
       </article>
     </Shell>

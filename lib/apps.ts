@@ -13,17 +13,6 @@ export interface AppMeta {
 
 export const APPS: AppMeta[] = [
   {
-    slug: 'gno',
-    name: 'GNO',
-    tagline: 'Local search for your second brain',
-    description:
-      'Local hybrid search CLI. Index Markdown, PDFs, code. BM25 + vector search with HyDE expansion. Give AI agents memory over your files.',
-    category: 'DeveloperApplication',
-    tags: ['CLI', 'Search', 'Open Source'],
-    image: '/gno/logo.svg',
-    status: 'Released',
-  },
-  {
     slug: 'flow-next',
     name: 'Flow-Next',
     tagline: 'Zero-dep agent orchestration',
@@ -32,6 +21,17 @@ export const APPS: AppMeta[] = [
     category: 'DeveloperApplication',
     tags: ['Claude Code', 'Plugin', 'Open Source'],
     image: '/flow/logo.svg',
+    status: 'Released',
+  },
+  {
+    slug: 'gno',
+    name: 'GNO',
+    tagline: 'Local search for your second brain',
+    description:
+      'Local hybrid search CLI. Index Markdown, PDFs, code. BM25 + vector search with HyDE expansion. Give AI agents memory over your files.',
+    category: 'DeveloperApplication',
+    tags: ['CLI', 'Search', 'Open Source'],
+    image: '/gno/logo.svg',
     status: 'Released',
   },
   {

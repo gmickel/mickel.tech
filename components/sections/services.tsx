@@ -9,14 +9,14 @@ const services: Array<{
   bullets: string[];
 }> = [
   {
-    title: 'AI SOFTWARE DEVELOPMENT LIFECYCLE & DELIVERY',
-    body: 'I redesign your software development lifecycle using AI at every stage—from planning through build, test and release—so delivery becomes a continuous, low-risk flow of AI changes instead of a handful of big bets per quarter.',
+    title: 'AGENTIC SDLC & DELIVERY',
+    body: 'I redesign how your teams build software with AI agents — not a tooling rollout, a full methodology shift. Process, verification, team structure and culture change that works on brownfield codebases and existing teams, not just greenfield demos. Already rolled out to 10+ teams across industries.',
     engagement:
-      'Engagement: 15–30 day AI SDLC speed lane. I teach your team and co-ship one bespoke AI lane on your stack that doubles or triples release velocity, then hand it back clean, end-to-end.',
+      'Engagement: 15–30 day agentic SDLC lane. I teach your team and co-ship one bespoke AI lane on your stack that doubles or triples release velocity, then hand it back clean.',
     bullets: [
-      'Move from "one release a month" to many safe releases per day by shortening feedback loops and letting AI handle the mechanical work across plan–build–test–run.',
-      'Use focused lanes (typically 2–4 people) to prove the pattern, with clear ownership, automated checks and practiced rollback, then roll it out across more teams.',
-      'Treat infra, configs, prompts, evals, guardrails and skills as code with full traceability and telemetry, so you can see what changed, why, and what it did to your KPIs.',
+      'Replace agile ceremonies with AI-native plan–build–test–run: specs not stories, one-pizza pods not two-pizza squads, eval-driven gating not manual QA.',
+      'Use focused lanes (2–4 people + agents) to prove the pattern with clear ownership, automated checks and practiced rollback, then scale across teams.',
+      'Everything-as-code: infra, prompts, evals, guardrails and agent skills with full traceability and telemetry, so you see what changed, why, and what it did to KPIs.',
     ],
   },
   {

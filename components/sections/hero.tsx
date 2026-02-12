@@ -6,21 +6,20 @@ import { useEffect, useState } from 'react';
 import DecryptedText from '@/components/ui/decrypted-text';
 
 const tickerItems = [
-  'AI SDLC & PLATFORM PROGRAMS ACROSS PE PORTFOLIO COMPANIES ACROSS EUROPE',
+  'AGENTIC SDLC ROLLED OUT TO 10+ TEAMS ACROSS PE PORTFOLIO COMPANIES IN EUROPE',
+  '500+ ENGINEERS ENABLED ON AI-NATIVE SDLC — METHODOLOGY, TOOLING & PROCESS',
   '20+ YEARS SHIPPING SOFTWARE & PLATFORMS',
   "AI PROGRAM LEAD FOR SWITZERLAND'S LEADING CLINICAL INFORMATION SYSTEM (CIS)",
   'LEGALTECH CLM PLATFORM FOUNDED, FUNDED & TAKEN TO ACQUISITION STAGE',
   'LISTED TECHNICAL EXPERT (ITDR) FOR COMPLEX ICT & AI DISPUTES',
-  'CLINICAL LLM PLATFORM LIVE IN SWISS HOSPITALS',
   'OPENAI RED-TEAMING NETWORK ALUMNUS ON MODEL SAFETY & ABUSE RESILIENCE',
-  'AI & TECHNOLOGY DUE DILIGENCE, MATURITY & READINESS REVIEWS FOR INVESTORS',
-  '500+ ENGINEERS ENABLED ON AI CODING TOOLS & AI-NATIVE SDLC PATTERNS',
+  'OPEN-SOURCE AI TOOLING USED BY HUNDREDS OF DEVELOPERS WORLDWIDE',
   'HEALTHCARE, LEGAL, FINANCIAL & PUBLIC-SECTOR AI SYSTEMS DESIGNED TO WITHSTAND SCRUTINY',
 ] as const;
 
 const focusTags = [
-  'AI SDLC',
-  'OPERATIONAL AI AGENTS',
+  'AGENTIC SDLC',
+  'AI PLATFORMS & AGENTS',
   'TECHNICAL EXPERT',
 ] as const;
 
@@ -73,7 +72,7 @@ export default function Hero({
             <div className="flex items-center gap-2">
               <div aria-hidden="true" className="h-px w-8 bg-primary" />
               <span className="font-mono text-primary text-xs uppercase tracking-widest">
-                Mickel Tech / AI SDLC, Platforms & Technical Expertise
+                Mickel Tech / Agentic SDLC, Platforms & Technical Expertise
               </span>
             </div>
             <h1
@@ -94,11 +93,10 @@ export default function Hero({
               .
             </h1>
             <p className="max-w-lg text-muted-foreground text-xl leading-relaxed">
-              Most AI projects stop at a clever demo. I bridge hands-on
-              engineering, venture-building and value creation to design AI
-              software development lifecycles (AI SDLC), platforms and agents
-              that actually ship, are measurable, and hold up when decisions get
-              expensive.
+              I lead agentic software engineering rollouts for real teams —
+              brownfield codebases, regulated industries, complex orgs. Not
+              tooling demos. Full SDLC redesigns with methodology, process and
+              tooling that stick, scale and show measurable results.
             </p>
           </div>
 
@@ -107,30 +105,28 @@ export default function Hero({
             className="space-y-2 border-white/10 border-l-2 pl-4 font-mono text-muted-foreground text-sm"
           >
             <li>
-              • AI SDLC &amp; delivery: de-risk release cycles by replacing
-              cultural debt and non-AI-native agile theatre with AI woven
-              through plan–build–test–run and everything—infra, prompts, evals
-              and policies—treated as code.
+              • Agentic SDLC &amp; delivery: replace agile theatre with
+              AI-native plan–build–test–run. Methodology, eval-driven gating and
+              everything-as-code — rolled out to 10+ teams, 500+ engineers.
             </li>
             <li>
-              • AI platforms &amp; agents: unified context, clean data and evals
-              baked into the stack so systems actually ship, don&apos;t stall as
-              pilots and show measurable uplift in revenue, efficiency and risk.
+              • AI platforms &amp; agents: production systems with unified
+              context, evals, observability and safety — not demos that stall as
+              pilots.
             </li>
             <li>
-              • Strategic advisory &amp; fractional CTO: board-level partner for
-              AI roadmaps, lanes, teams and vendor posture when you need someone
-              to own the change, not just write a slide deck.
+              • Strategic advisory &amp; fractional CTO: board-level partner who
+              owns the change across architecture, teams and vendors — not just
+              a slide deck.
             </li>
             <li>
               • Independent expert (ITDR Switzerland): formal Technical Expert
-              for AI/software disputes, due diligence and other high-stakes
-              decisions with real financial or legal exposure.
+              for AI/software disputes, due diligence and high-stakes decisions.
             </li>
           </ul>
 
           <p className="pt-3 font-mono text-muted-foreground text-xs">
-            Gordon Mickel · AI SDLC &amp; Platform Architect
+            Gordon Mickel · Agentic SDLC &amp; Platform Architect
           </p>
 
           <div className="flex flex-wrap gap-4 pt-4">
@@ -199,7 +195,7 @@ export default function Hero({
                     Role
                   </div>
                   <div className="text-lg text-white">
-                    AI SDLC &amp; PLATFORM ARCHITECT
+                    AGENTIC SDLC &amp; PLATFORM ARCHITECT
                   </div>
                 </div>
 

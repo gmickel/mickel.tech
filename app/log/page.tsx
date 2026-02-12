@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 
+import CourseCallout from '@/components/course-callout';
 import Shell from '@/components/layout/shell';
 import PageTitle from '@/components/ui/page-title';
 import { getAllPosts } from '@/lib/posts';
@@ -52,6 +53,10 @@ export default async function LogIndexPage() {
             agents.
           </p>
         </header>
+
+        <div className="mb-8">
+          <CourseCallout />
+        </div>
 
         {posts.length === 0 ? (
           <p className="font-mono text-muted-foreground text-sm">

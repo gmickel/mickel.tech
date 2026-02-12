@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import CourseCallout from '@/components/course-callout';
 import Shell from '@/components/layout/shell';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -296,6 +297,10 @@ export default function FlowPage() {
             </div>
           </div>
         </section>
+
+        <div className="my-12">
+          <CourseCallout />
+        </div>
 
         {/* The Problem */}
         <section className="relative mx-auto max-w-6xl px-6 pb-16 md:px-10">

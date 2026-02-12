@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import CourseCallout from '@/components/course-callout';
 import { BenchDashboard } from '@/components/gmickel/bench-dashboard';
 import Shell from '@/components/layout/shell';
 import { Badge } from '@/components/ui/badge';
@@ -103,6 +104,10 @@ export default function GmickelBenchPage() {
             />
           </div>
         </section>
+
+        <div className="my-12">
+          <CourseCallout />
+        </div>
 
         <BenchDashboard />
 
