@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { APPS } from '@/lib/apps';
 
 // Feature a curated selection of apps
-const featuredSlugs = ['gno', 'flow-next', 'dociq-sphere', 'dociq-shield'];
+const featuredSlugs = ['flow-next', 'gno', 'dociq-sphere', 'dociq-shield'];
 const featuredApps = featuredSlugs
   .map((slug) => APPS.find((a) => a.slug === slug))
   .filter((a): a is NonNullable<typeof a> => a !== undefined);

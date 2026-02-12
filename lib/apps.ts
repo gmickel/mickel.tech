@@ -28,11 +28,11 @@ export const APPS: AppMeta[] = [
     name: 'Flow-Next',
     tagline: 'Zero-dep agent orchestration',
     description:
-      'Claude Code plugin with bundled task tracking. Dependency graphs, re-anchoring, cross-model reviews. Delete a folder to uninstall.',
+      'The AI coding workflow people call "simply the best, not even close." Task graphs, re-anchoring, cross-model reviews — zero dependencies.',
     category: 'DeveloperApplication',
     tags: ['Claude Code', 'Plugin', 'Open Source'],
     image: '/flow/logo.svg',
-    status: 'Experimental',
+    status: 'Released',
   },
   {
     slug: 'flow',

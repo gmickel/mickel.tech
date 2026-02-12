@@ -212,6 +212,77 @@ const features = [
   },
 ];
 
+const testimonials = [
+  {
+    name: 'Claire Novotny',
+    handle: 'clairernovotny',
+    quote:
+      "I've found it generating production-quality code. Far far better than any of the other tools I've tried so far.",
+    url: 'https://x.com/clairernovotny/status/1886200988044026046',
+    borderColor: 'border-l-emerald-500/60',
+    handleColor: 'text-emerald-400/70',
+    initialBg: 'bg-emerald-500/15 text-emerald-400',
+  },
+  {
+    name: 'David P',
+    handle: 'Lat3ntG3nius',
+    quote:
+      "Cross-model review is genius because it exploits model diversity as a feature, not a bug. Different models make different mistakes, so using them as mutual reviewers creates a safety net that single-model workflows can't match.",
+    url: 'https://x.com/Lat3ntG3nius/status/1882438011868553581',
+    borderColor: 'border-l-violet-500/60',
+    handleColor: 'text-violet-400/70',
+    initialBg: 'bg-violet-500/15 text-violet-400',
+  },
+  {
+    name: 'Baran Güneysel',
+    handle: 'chnoblist',
+    quote:
+      'As a designer, I always felt a gap between prototyping and delivering production-ready code, but flow-next bridges that gap and empowers me to ship with confidence.',
+    url: 'https://x.com/chnoblist/status/1889599966391750888',
+    borderColor: 'border-l-cyan-500/60',
+    handleColor: 'text-cyan-400/70',
+    initialBg: 'bg-cyan-500/15 text-cyan-400',
+  },
+  {
+    name: 'Tiago Freitas',
+    handle: 'tiagoefreitas',
+    quote:
+      'Flow-next is simply the best coding flow not even close, and still a side project!',
+    url: 'https://x.com/tiagoefreitas/status/1883665283568869572',
+    borderColor: 'border-l-emerald-500/60',
+    handleColor: 'text-emerald-400/70',
+    initialBg: 'bg-emerald-500/15 text-emerald-400',
+  },
+  {
+    name: 'Ben',
+    handle: 'BuildItWithBen',
+    quote:
+      'RepoPrompt + flow-next combo has been a force multiplier for me. Keep the updates flowing!',
+    url: 'https://x.com/BuildItWithBen/status/1881534375655604424',
+    borderColor: 'border-l-cyan-500/60',
+    handleColor: 'text-cyan-400/70',
+    initialBg: 'bg-cyan-500/15 text-cyan-400',
+  },
+  {
+    name: 'Mark Feighery',
+    handle: 'MarkFeighery1',
+    quote: "Ok never mind I used it all and it's brilliant.",
+    url: 'https://x.com/MarkFeighery1/status/1880331261099487684',
+    borderColor: 'border-l-violet-500/60',
+    handleColor: 'text-violet-400/70',
+    initialBg: 'bg-violet-500/15 text-violet-400',
+  },
+  {
+    name: 'dailyreader',
+    handle: '010110O0',
+    quote: 'Been running flow-next for the last week and boy am I happy!',
+    url: 'https://x.com/010110O0/status/1882438011868553581',
+    borderColor: 'border-l-emerald-500/60',
+    handleColor: 'text-emerald-400/70',
+    initialBg: 'bg-emerald-500/15 text-emerald-400',
+  },
+];
+
 const planSteps = [
   { step: '01', action: 'Run 7 research scouts in parallel' },
   { step: '02', action: 'Gap analysis for edge cases' },
@@ -290,12 +361,6 @@ export default function FlowNextPage() {
             >
               <span className="mr-1.5 inline-block h-1.5 w-1.5 animate-pulse rounded-full bg-emerald-400" />
               CLAUDE CODE PLUGIN
-            </Badge>
-            <Badge
-              className="border-amber-400/40 bg-amber-950/60 text-amber-300"
-              variant="outline"
-            >
-              Experimental
             </Badge>
             <Badge
               className="border-cyan-400/50 bg-cyan-950/80 text-cyan-300 backdrop-blur-sm"
@@ -440,29 +505,7 @@ export default function FlowNextPage() {
               </div>
             </div>
 
-            {/* Experimental callout */}
             <div className="mt-8 flex flex-wrap gap-3">
-              <div className="inline-flex items-center gap-3 rounded border border-amber-500/30 bg-amber-500/5 px-4 py-2">
-                <span className="relative flex h-2 w-2">
-                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-amber-400 opacity-75" />
-                  <span className="relative inline-flex h-2 w-2 rounded-full bg-amber-500" />
-                </span>
-                <p className="text-amber-200/80 text-sm">
-                  <span className="font-mono text-amber-400 text-xs uppercase">
-                    Experimental
-                  </span>{' '}
-                  —{' '}
-                  <a
-                    className="underline decoration-amber-400/40 underline-offset-2 transition-colors hover:text-amber-200"
-                    href="https://github.com/gmickel/gmickel-claude-marketplace/issues"
-                    rel="noopener noreferrer"
-                    target="_blank"
-                  >
-                    Report issues
-                  </a>
-                </p>
-              </div>
-
               {/* OpenCode port callout */}
               <a
                 className="group inline-flex items-center gap-3 rounded border border-cyan-500/30 bg-cyan-500/5 px-4 py-2 transition-all hover:border-cyan-500/50 hover:bg-cyan-500/10"
@@ -519,6 +562,57 @@ export default function FlowNextPage() {
                 Documentation →
               </a>
             </div>
+          </div>
+        </section>
+
+        {/* Testimonials - Social proof wall */}
+        <section className="relative mx-auto max-w-6xl px-6 pb-24 md:px-10">
+          <div className="mb-10 text-center">
+            <p className="font-mono text-[11px] text-emerald-400/80 uppercase tracking-[0.3em]">
+              Signal Intercepts
+            </p>
+            <h2 className="mt-3 font-bold text-3xl text-white md:text-4xl">
+              What people are saying
+            </h2>
+          </div>
+
+          <div className="columns-1 gap-4 sm:columns-2 lg:columns-3">
+            {testimonials.map((t) => (
+              <a
+                className={`group mb-4 block break-inside-avoid rounded-lg border border-white/10 border-l-2 bg-white/[0.02] p-4 transition-all hover:border-white/20 hover:bg-white/[0.04] ${t.borderColor}`}
+                href={t.url}
+                key={t.handle}
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                <div className="flex items-center gap-3">
+                  <div
+                    className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full font-medium text-xs ${t.initialBg}`}
+                  >
+                    {t.name.charAt(0)}
+                  </div>
+                  <div className="min-w-0">
+                    <p className="truncate font-medium text-sm text-white">
+                      {t.name}
+                    </p>
+                    <p className={`font-mono text-xs ${t.handleColor}`}>
+                      @{t.handle}
+                    </p>
+                  </div>
+                  <svg
+                    aria-hidden="true"
+                    className="ml-auto h-4 w-4 shrink-0 text-white/20 transition-colors group-hover:text-white/40"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                  </svg>
+                </div>
+                <p className="mt-3 text-sm text-white/70 leading-relaxed">
+                  &ldquo;{t.quote}&rdquo;
+                </p>
+              </a>
+            ))}
           </div>
         </section>
 
