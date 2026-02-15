@@ -24,7 +24,7 @@ const timeline = [
     period: 'EARLIER',
     role: 'FOUNDER, CEO & LEAD DEVELOPER',
     company: 'CONTRACT VAULT / DOCIQ',
-    desc: 'Founded and built an AI-powered contract lifecycle management platform, raised seed funding and landed major enterprises such as Swisscom.',
+    desc: 'Founded and built an AI-powered contract lifecycle management platform, raised seed funding and landed major enterprises including the Swiss Insurance Association (SVV).',
   },
   {
     period: 'LONGER ARC',
@@ -36,7 +36,7 @@ const timeline = [
 
 const trustItems = [
   'Production AI in regulated domains: clinical AI for Swiss hospitals (KISIM) and an AI-native CLM platform used by enterprises and law firms.',
-  'Operating Principal (AI & Tech) at GrowthFactors / BU Bregal Unternehmerkapital, running AI SDLC and platform programmes across mid-market B2B companies across Europe.',
+  'Operating Principal (AI & Tech) at GrowthFactors / BU Bregal Unternehmerkapital, running agentic SDLC and platform programmes across mid-market B2B companies across Europe.',
   'ITDR-listed Technical Expert for ICT and AI systems: independent expert reports for disputes, arbitration and large-project acceptance.',
   'Agentic SDLC methodology rolled out to 10+ teams and 500+ engineers — process, tooling and culture change, not just tool adoption. Everything-as-code with eval-driven gating.',
   'Hands-on architecture and advisory across healthcare, legal, finance, DeFi and public sector – used to navigating regulation and internal politics, not just code.',

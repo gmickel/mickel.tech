@@ -93,8 +93,8 @@ export default function OGImage() {
             lineHeight: 1.4,
           }}
         >
-          Court document anonymisation with Swiss court standard compliance. No
-          data stored, ever. 10 seconds instead of 2 hours.
+          Fine-tuned local NER and LLM models. Swiss court standard compliance.
+          No data stored, ever. 10 seconds instead of 2 hours.
         </div>
 
         {/* Status */}
@@ -108,14 +108,14 @@ export default function OGImage() {
           <div
             style={{
               padding: '8px 16px',
-              border: '1px solid rgba(251,191,36,0.4)',
-              background: 'rgba(251,191,36,0.1)',
+              border: '1px solid rgba(59,130,246,0.4)',
+              background: 'rgba(59,130,246,0.1)',
               fontSize: 14,
-              color: '#fbbf24',
+              color: '#3b82f6',
               letterSpacing: '0.1em',
             }}
           >
-            JANUARY 2026
+            RELEASED FEB 2026
           </div>
           <div
             style={{

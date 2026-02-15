@@ -127,14 +127,14 @@ const techStack = [
 ];
 
 const customers = [
-  'Swisscom',
+  'Swiss Insurance Association (SVV)',
+  'Laux Lawyers',
   'Insurance companies',
   'Large law firms',
   'Boutique firms',
   'Notaries',
   'Tax advisors',
   'Accountants',
-  'Associations',
   'SMEs',
 ];
 

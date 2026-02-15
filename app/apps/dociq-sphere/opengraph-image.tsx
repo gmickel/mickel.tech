@@ -2,7 +2,7 @@ import { ImageResponse } from 'next/og';
 
 export const runtime = 'edge';
 
-export const alt = 'DocIQ Sphere — Privacy-First Legal Intelligence';
+export const alt = 'DocIQ Sphere — AI Document Intelligence for Legal Teams';
 export const size = {
   width: 1200,
   height: 630,
@@ -80,7 +80,7 @@ export default function OGImage() {
 
         {/* Tagline */}
         <div style={{ fontSize: 32, color: '#14b8a6' }}>
-          Privacy-first legal intelligence
+          AI that actually edits your Word documents
         </div>
 
         {/* Description */}
@@ -92,8 +92,8 @@ export default function OGImage() {
             lineHeight: 1.4,
           }}
         >
-          AI-powered contract analysis with partner law firm playbooks, complete
-          audit trails, and document fidelity.
+          Tracked changes, legal research across six databases, clause
+          negotiation, playbooks, data rooms, and complete audit trails.
         </div>
 
         {/* Status */}
@@ -107,14 +107,14 @@ export default function OGImage() {
           <div
             style={{
               padding: '8px 16px',
-              border: '1px solid rgba(251,191,36,0.4)',
-              background: 'rgba(251,191,36,0.1)',
+              border: '1px solid rgba(20,184,166,0.4)',
+              background: 'rgba(20,184,166,0.1)',
               fontSize: 14,
-              color: '#fbbf24',
+              color: '#14b8a6',
               letterSpacing: '0.1em',
             }}
           >
-            DECEMBER 2025
+            RELEASED FEB 2026
           </div>
           <div
             style={{
@@ -125,7 +125,7 @@ export default function OGImage() {
               color: '#fff',
             }}
           >
-            Enterprise
+            Swiss-Engineered
           </div>
         </div>
       </div>
