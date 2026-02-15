@@ -48,24 +48,24 @@ export const APPS: AppMeta[] = [
   {
     slug: 'dociq-sphere',
     name: 'DocIQ Sphere',
-    tagline: 'Privacy-first legal intelligence',
+    tagline: 'AI that actually edits your Word documents',
     description:
-      'Legal document intelligence platform. AI-powered contract analysis with partner law firm playbooks, complete audit trails, and document fidelity.',
+      'Tracked changes, legal research across six databases, clause negotiation, playbooks, data rooms, and complete audit trails. Swiss-engineered.',
     category: 'BusinessApplication',
     tags: ['AI', 'Legal Tech', 'Enterprise'],
     image: '/sphere/sphere-research.png',
-    status: 'January 2026',
+    status: 'Released',
   },
   {
     slug: 'dociq-shield',
     name: 'DocIQ Shield',
     tagline: 'Zero-persistence anonymisation',
     description:
-      'Court document anonymisation with Swiss court standard compliance. No data stored, ever. 10 seconds instead of 2 hours.',
+      'Fine-tuned local NER and LLM models. Swiss court standard compliance. No data stored, ever. 10 seconds instead of 2 hours.',
     category: 'BusinessApplication',
     tags: ['AI', 'Privacy', 'Swiss Courts'],
     image: '/shield/shield.png',
-    status: 'January 2026',
+    status: 'Released',
   },
   {
     slug: 'sheets-cli',

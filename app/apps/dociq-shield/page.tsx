@@ -10,11 +10,11 @@ import { breadcrumbSchema, JsonLd, softwareAppSchema } from '@/lib/json-ld';
 export const metadata: Metadata = {
   title: 'DocIQ Shield — AI Document Anonymisation for Swiss Courts',
   description:
-    'Zero-persistence, LLM-powered anonymisation of court documents with full Swiss court standard compliance. 10 seconds instead of 2 hours.',
+    'Zero-persistence anonymisation powered by fine-tuned local NER and LLM models. Full Swiss court standard compliance. 10 seconds instead of 2 hours. No data stored, ever.',
   openGraph: {
     title: 'DocIQ Shield — AI Document Anonymisation for Swiss Courts',
     description:
-      'Zero-persistence, LLM-powered anonymisation of court documents with full Swiss court standard compliance.',
+      'Zero-persistence anonymisation with fine-tuned local NER and LLM models. Swiss court standard compliance. 10 seconds instead of 2 hours.',
     type: 'website',
     url: 'https://mickel.tech/apps/dociq-shield',
   },
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'DocIQ Shield — AI Document Anonymisation',
     description:
-      'Zero-persistence anonymisation for Swiss court documents. No data stored, ever.',
+      'Zero-persistence anonymisation with fine-tuned local models. No data stored, ever.',
   },
   alternates: {
     canonical: 'https://mickel.tech/apps/dociq-shield',
@@ -31,27 +31,27 @@ export const metadata: Metadata = {
 
 const features = [
   {
-    title: 'Intelligent Anonymisation',
+    title: 'Fine-Tuned Local Models',
     description:
-      'Open-source LLMs and NLP pipelines. Consistent A., B., C.____ placeholders exactly as Swiss courts require.',
+      'Runs on fine-tuned local NER models and fine-tuned local LLM models on your infrastructure. No data leaves your network. Optional managed cloud deployment hosted in Switzerland.',
     icon: '🧠',
   },
   {
     title: 'Smart Preservation',
     description:
-      'Preserves judges, lawyers, authorities, professional titles. Anonymises parties, witnesses, addresses, personal dates.',
+      'Role-based rules preserve judges, lawyers, and authorities. Anonymises parties, witnesses, minors, addresses, and personal dates. Identifies every variation — abbreviations, misspellings, cross-references.',
     icon: '⚖️',
   },
   {
     title: 'Zero Data Persistence',
     description:
-      'In-memory only processing. No database, no disk storage, no logs. Automatic memory cleanup after every document.',
+      'In-memory only processing. No database — not an empty one, literally none. No disk storage, no logs. Memory cleared immediately after processing. Nothing to breach, subpoena, or audit.',
     icon: '🔒',
   },
   {
     title: 'Entity Transparency',
     description:
-      'Color-coded entity cards, confidence scores, side-by-side comparison. See exactly what was anonymised and why.',
+      'Color-coded entity cards with classification rationale. Confidence scores, side-by-side comparison. Review each entity with reasons — see exactly what was anonymised and why.',
     icon: '👁️',
   },
 ];
@@ -87,11 +87,12 @@ const preserveList = [
 ];
 
 const anonymiseList = [
-  'Parties (Kläger, Beklagte)',
-  'Witnesses (Zeugen)',
+  'Parties (Kläger, Beklagte) — all name variations',
+  'Witnesses (Zeugen) — including abbreviated forms',
   'All doctors (treating + experts)',
-  'Addresses (street names)',
+  'Addresses (street names, postal codes)',
   'Dates (birth, marriage, divorce)',
+  'Minors — always anonymised',
 ];
 
 const audiences = [
@@ -108,21 +109,22 @@ const audiences = [
   {
     title: 'Banks & Healthcare',
     pain: 'FINMA requirements, patient confidentiality',
-    benefit: 'Swiss hosting, on-premises option, no external transmission.',
+    benefit: 'Fine-tuned local models. On-premises deployment. No external transmission.',
   },
 ];
 
 const techSpecs = [
   { label: 'Processing Time', value: '~10 seconds' },
   { label: 'Input Formats', value: '.docx, plain text' },
-  { label: 'AI Stack', value: 'Open-source LLMs + NLP' },
+  { label: 'AI Stack', value: 'Fine-tuned local NER + LLM' },
   { label: 'Standards', value: 'Swiss court (Aug 2016)' },
+  { label: 'Deployment', value: 'On-Premises, Air-Gapped, Cloud (CH)' },
 ];
 
 const APP_DATA = {
   name: 'DocIQ Shield',
   description:
-    'Court document anonymisation with Swiss court standard compliance. No data stored, ever. 10 seconds instead of 2 hours.',
+    'Court document anonymisation with fine-tuned local NER and LLM models. Swiss court standard compliance. Zero data persistence. 10 seconds instead of 2 hours.',
   slug: 'dociq-shield',
   category: 'BusinessApplication',
 };
@@ -157,10 +159,10 @@ export default function DocIQShieldPage() {
               Swiss Courts
             </Badge>
             <Badge
-              className="border-alert/40 bg-alert/10 text-alert"
+              className="border-teal-500/40 bg-teal-500/10 text-teal-400"
               variant="outline"
             >
-              Coming January 2026
+              Released
             </Badge>
           </div>
 
@@ -170,7 +172,7 @@ export default function DocIQShieldPage() {
                 DocIQ Shield
               </h1>
               <p className="mt-2 font-mono text-blue-400 text-xl">
-                AI-powered document anonymisation
+                Zero-persistence document anonymisation
               </p>
 
               <div className="mt-2 flex flex-wrap gap-3">
@@ -190,9 +192,10 @@ export default function DocIQShieldPage() {
               </div>
 
               <p className="mt-6 max-w-2xl text-lg text-muted-foreground leading-relaxed">
-                Swiss-engineered, enterprise-grade document anonymisation for
-                judicial, government, and highly regulated sectors. LLM-powered
-                with full Swiss court standard compliance.
+                Swiss-engineered anonymisation for judicial, government, and
+                regulated sectors. Powered by fine-tuned local NER and LLM
+                models — no data leaves your network. Full Swiss court standard
+                compliance.
               </p>
 
               <p className="mt-4 font-mono text-2xl text-white">
@@ -201,26 +204,25 @@ export default function DocIQShieldPage() {
 
               <p className="mt-4 text-muted-foreground leading-relaxed">
                 Zero-persistence architecture means no database, no logs, no
-                trace. Your data is processed in memory and immediately
-                discarded.
+                trace. Documents processed entirely in memory and immediately
+                discarded. Nothing to breach, nothing to subpoena.
               </p>
 
               {/* Release info */}
               <div className="mt-8 rounded-xl border border-blue-600/20 bg-blue-600/5 p-4">
                 <p className="font-mono text-blue-400 text-sm">
-                  Expected release: January 2026
+                  Released February 2026
                 </p>
                 <p className="mt-1 text-muted-foreground text-sm">
-                  Entering service in Swiss cantonal courts. Stay tuned at{' '}
+                  Learn more at{' '}
                   <a
                     className="glow-link"
-                    href="https://www.dociq.io"
+                    href="https://www.dociq.io/shield"
                     rel="noopener noreferrer"
                     target="_blank"
                   >
-                    www.dociq.io
-                  </a>{' '}
-                  for updates.
+                    dociq.io/shield
+                  </a>
                 </p>
               </div>
             </div>
@@ -387,9 +389,6 @@ export default function DocIQShieldPage() {
                   <p className="mt-1 text-sm">Disk writes</p>
                 </div>
               </div>
-              <p className="font-mono text-sm">
-                "Process sensitive documents without storing a single byte."
-              </p>
             </CardContent>
           </Card>
         </section>
@@ -473,7 +472,7 @@ export default function DocIQShieldPage() {
                     <div>
                       <p className="text-white">On-Premises</p>
                       <p className="text-xs">
-                        Docker deployment on your infrastructure
+                        Docker deployment with fine-tuned local NER + LLM models
                       </p>
                     </div>
                   </li>
@@ -482,7 +481,16 @@ export default function DocIQShieldPage() {
                     <div>
                       <p className="text-white">Air-Gapped</p>
                       <p className="text-xs">
-                        Local LLM (Ollama, vLLM) — no external network
+                        Zero external network dependencies — fully offline
+                      </p>
+                    </div>
+                  </li>
+                  <li className="flex gap-3">
+                    <span className="font-mono text-blue-400">3.</span>
+                    <div>
+                      <p className="text-white">Managed Cloud (Switzerland)</p>
+                      <p className="text-xs">
+                        Hosted in Switzerland for organizations that prefer managed
                       </p>
                     </div>
                   </li>
@@ -490,7 +498,7 @@ export default function DocIQShieldPage() {
                 <div className="pt-2">
                   <a
                     className="glow-link font-mono text-[11px] uppercase"
-                    href="https://www.dociq.io"
+                    href="https://www.dociq.io/shield"
                     rel="noopener noreferrer"
                     target="_blank"
                   >
