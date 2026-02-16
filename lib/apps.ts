@@ -24,28 +24,6 @@ export const APPS: AppMeta[] = [
     status: 'Released',
   },
   {
-    slug: 'gno',
-    name: 'GNO',
-    tagline: 'Local search for your second brain',
-    description:
-      'Local hybrid search CLI. Index Markdown, PDFs, code. BM25 + vector search with HyDE expansion. Give AI agents memory over your files.',
-    category: 'DeveloperApplication',
-    tags: ['CLI', 'Search', 'Open Source'],
-    image: '/gno/logo.svg',
-    status: 'Released',
-  },
-  {
-    slug: 'flow',
-    name: 'Flow',
-    tagline: 'Plan first, work second',
-    description:
-      'Claude Code marketplace plugin for structured development workflow. Research agents, gap analysis, and disciplined execution.',
-    category: 'DeveloperApplication',
-    tags: ['Claude Code', 'Plugin', 'Open Source'],
-    image: '/flow/logo.svg',
-    status: 'Released',
-  },
-  {
     slug: 'dociq-sphere',
     name: 'DocIQ Sphere',
     tagline: 'AI that actually edits your Word documents',
@@ -65,6 +43,28 @@ export const APPS: AppMeta[] = [
     category: 'BusinessApplication',
     tags: ['AI', 'Privacy', 'Swiss Courts'],
     image: '/shield/shield.png',
+    status: 'Released',
+  },
+  {
+    slug: 'gno',
+    name: 'GNO',
+    tagline: 'Local search for your second brain',
+    description:
+      'Local hybrid search CLI. Index Markdown, PDFs, code. BM25 + vector search with HyDE expansion. Give AI agents memory over your files.',
+    category: 'DeveloperApplication',
+    tags: ['CLI', 'Search', 'Open Source'],
+    image: '/gno/logo.svg',
+    status: 'Released',
+  },
+  {
+    slug: 'flow',
+    name: 'Flow',
+    tagline: 'Plan first, work second',
+    description:
+      'Claude Code marketplace plugin for structured development workflow. Research agents, gap analysis, and disciplined execution.',
+    category: 'DeveloperApplication',
+    tags: ['Claude Code', 'Plugin', 'Open Source'],
+    image: '/flow/logo.svg',
     status: 'Released',
   },
   {
