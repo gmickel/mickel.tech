@@ -17,7 +17,7 @@ const FLOW_NEXT_FAQS = [
   {
     question: 'What is Flow-Next?',
     answer:
-      'Flow-Next is a Claude Code plugin for AI agent orchestration with zero external dependencies. It provides bundled task tracking, dependency graphs, and automated code reviews.',
+      'Flow-Next is a multi-platform AI agent orchestration tool with zero external dependencies. It works on Claude Code, Factory Droid, Codex CLI, and OpenCode. Provides bundled task tracking, dependency graphs, and automated code reviews.',
   },
   {
     question: 'What is /flow-next:epic-review?',
@@ -32,7 +32,7 @@ const FLOW_NEXT_FAQS = [
   {
     question: 'How do I install Flow-Next?',
     answer:
-      'Run /plugin marketplace add https://github.com/gmickel/gmickel-claude-marketplace then /plugin install flow-next. Installation takes about 30 seconds.',
+      'Claude Code: /plugin marketplace add https://github.com/gmickel/gmickel-claude-marketplace then /plugin install flow-next. Factory Droid: same marketplace flow via droid plugin marketplace add. Codex CLI: clone the repo and run ./scripts/install-codex.sh flow-next. OpenCode: see the experimental port at github.com/gmickel/flow-next-opencode.',
   },
   {
     question: 'How do I uninstall Flow-Next?',
@@ -42,12 +42,17 @@ const FLOW_NEXT_FAQS = [
   {
     question: 'What are the requirements for Flow-Next?',
     answer:
-      'Flow-Next requires Python 3.8+ and git. For cross-model reviews, use either OpenAI Codex CLI (cross-platform, GPT 5.2 High) or RepoPrompt rp-cli (macOS).',
+      'Python 3.8+ and git. Works on Claude Code, Factory Droid, Codex CLI, and OpenCode. For cross-model reviews, use either OpenAI Codex CLI (cross-platform, GPT 5.2 High) or RepoPrompt rp-cli (macOS).',
   },
   {
     question: 'What is the difference between Codex and RepoPrompt reviews?',
     answer:
       'Both provide Carmack-level cross-model review with identical criteria. Codex CLI works cross-platform and uses GPT 5.2 High by default. RepoPrompt (rp-cli) is macOS-only but offers a visual builder for context selection. Choose based on your platform and preference.',
+  },
+  {
+    question: 'Does Flow-Next work with Factory Droid?',
+    answer:
+      'Yes. Full compatibility since v0.20.10. Cross-platform variable references, hook matchers (Bash|Execute), and agent permissions all work natively. Same marketplace install flow. Community integration available via FlowFactory by @Gitmaxd.',
   },
   {
     question: 'What is the difference between Flow-Next and Beads?',
@@ -61,7 +66,7 @@ import { FlowNextSchematic } from './flow-next-schematic';
 const APP_DATA = {
   name: 'Flow-Next',
   description:
-    'Claude Code plugin for AI agent orchestration with zero external dependencies. Bundled task tracking, dependency graphs, multi-user safety, and automated code reviews.',
+    'Multi-platform AI agent orchestration with zero dependencies. Works on Claude Code, Factory Droid, Codex CLI, and OpenCode.',
   slug: 'flow-next',
   category: 'DeveloperApplication',
   version: '0.1.0',
@@ -71,38 +76,40 @@ const APP_DATA = {
 
 export const metadata: Metadata = {
   title:
-    'Flow-Next: Zero-Dependency AI Agent Orchestration | Claude Code Plugin',
+    'Flow-Next: Multi-Platform AI Agent Orchestration | Claude Code, Factory Droid, Codex CLI',
   description:
-    'Claude Code plugin for AI agent orchestration with zero dependencies. Bundled task tracking, dependency graphs, re-anchoring, and cross-model reviews. Install in 30 seconds, delete a folder to uninstall.',
+    'Multi-platform AI agent orchestration with zero dependencies. Works on Claude Code, Factory Droid, Codex CLI, and OpenCode. Task tracking, dependency graphs, re-anchoring, and cross-model reviews.',
   keywords: [
     'Claude Code plugin',
+    'Factory Droid',
+    'OpenAI Codex',
+    'OpenCode',
+    'multi-platform',
     'AI agent orchestration',
     'task tracking',
     'zero dependencies',
     'workflow automation',
     'code review',
     'developer tools',
-    'Beads alternative',
     'flowctl',
-    'OpenAI Codex',
     'cross-model review',
     'RepoPrompt',
     'agent readiness',
     'codebase assessment',
   ],
   openGraph: {
-    title: 'Flow-Next: Zero-Dependency AI Agent Orchestration',
+    title: 'Flow-Next: Multi-Platform AI Agent Orchestration',
     description:
-      'Claude Code plugin with bundled task tracking and AI agent orchestration. Zero deps. Multi-user safe. Delete a folder to uninstall.',
+      'AI agent orchestration for Claude Code, Factory Droid, Codex CLI, and OpenCode. Zero deps. Multi-user safe. Delete a folder to uninstall.',
     type: 'website',
     url: 'https://mickel.tech/apps/flow-next',
     siteName: 'Mickel Tech',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Flow-Next: AI Agent Orchestration Plugin',
+    title: 'Flow-Next: Multi-Platform AI Agent Orchestration',
     description:
-      'AI agents that finish what they start. Bundled task tracking, re-anchoring, cross-model reviews. Zero dependencies.',
+      'AI agents that finish what they start. Works on Claude Code, Factory Droid, Codex CLI. Task tracking, re-anchoring, cross-model reviews.',
     creator: '@gmickel',
   },
   alternates: {
@@ -361,13 +368,19 @@ export default function FlowNextPage() {
               variant="outline"
             >
               <span className="mr-1.5 inline-block h-1.5 w-1.5 animate-pulse rounded-full bg-emerald-400" />
-              CLAUDE CODE PLUGIN
+              MULTI-PLATFORM
             </Badge>
             <Badge
               className="border-cyan-400/50 bg-cyan-950/80 text-cyan-300 backdrop-blur-sm"
               variant="outline"
             >
               🤖 RALPH MODE AVAILABLE
+            </Badge>
+            <Badge
+              className="border-violet-400/50 bg-violet-950/80 text-violet-300 backdrop-blur-sm"
+              variant="outline"
+            >
+              4 PLATFORMS
             </Badge>
           </div>
 
@@ -506,33 +519,35 @@ export default function FlowNextPage() {
               </div>
             </div>
 
-            <div className="mt-8 flex flex-wrap gap-3">
-              {/* OpenCode port callout */}
+            <div className="mt-8 flex flex-wrap items-center gap-2">
+              <span className="mr-1 font-mono text-[10px] text-white/30 uppercase tracking-wider">
+                Runs on
+              </span>
+              <span className="inline-flex items-center gap-1.5 rounded border border-emerald-500/40 bg-emerald-500/10 px-3 py-1.5 font-mono text-emerald-400 text-xs">
+                <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
+                Claude Code
+              </span>
               <a
-                className="group inline-flex items-center gap-3 rounded border border-cyan-500/30 bg-cyan-500/5 px-4 py-2 transition-all hover:border-cyan-500/50 hover:bg-cyan-500/10"
+                className="inline-flex items-center gap-1.5 rounded border border-cyan-500/30 bg-cyan-500/5 px-3 py-1.5 font-mono text-cyan-400 text-xs transition-all hover:border-cyan-500/50 hover:bg-cyan-500/10"
+                href="https://github.com/nicepkg/droid"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                Factory Droid
+              </a>
+              <span className="inline-flex items-center gap-1.5 rounded border border-violet-500/30 bg-violet-500/5 px-3 py-1.5 font-mono text-violet-400 text-xs">
+                Codex CLI
+              </span>
+              <a
+                className="group inline-flex items-center gap-1.5 rounded border border-white/15 bg-white/5 px-3 py-1.5 font-mono text-white/50 text-xs transition-all hover:border-white/30 hover:text-white/70"
                 href="https://github.com/gmickel/flow-next-opencode"
                 rel="noopener noreferrer"
                 target="_blank"
               >
-                <span className="font-mono text-cyan-400 text-xs uppercase">
-                  🧪 New
+                OpenCode
+                <span className="rounded bg-white/10 px-1 py-0.5 text-[9px] text-white/40">
+                  exp
                 </span>
-                <span className="text-cyan-200/80 text-sm">
-                  OpenCode port available
-                </span>
-                <svg
-                  className="h-3.5 w-3.5 text-cyan-400/60 transition-transform group-hover:translate-x-0.5"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M7 17L17 7M17 7H7M17 7v10"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
               </a>
             </div>
 
@@ -618,6 +633,270 @@ export default function FlowNextPage() {
                 </p>
               </a>
             ))}
+          </div>
+        </section>
+
+        {/* ECOSYSTEM - Multi-Platform Support */}
+        <section className="relative mx-auto max-w-6xl px-6 pb-24 md:px-10">
+          {/* Section header */}
+          <div className="mb-12 text-center">
+            <p className="font-mono text-[11px] text-emerald-400/80 uppercase tracking-[0.3em]">
+              Ecosystem
+            </p>
+            <h2 className="mt-3 font-bold text-3xl text-white md:text-4xl">
+              One workflow,{' '}
+              <span className="bg-gradient-to-r from-emerald-400 via-cyan-400 to-violet-400 bg-clip-text text-transparent">
+                four platforms
+              </span>
+            </h2>
+            <p className="mx-auto mt-4 max-w-2xl text-white/60">
+              Same <code className="text-emerald-400">.flow/</code> directory,
+              same <code className="text-emerald-400">flowctl</code>, same
+              workflow — regardless of which AI coding tool you use.
+            </p>
+          </div>
+
+          {/* Platform cards */}
+          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+            {/* Claude Code - Primary */}
+            <div className="group relative overflow-hidden rounded-xl border border-emerald-500/40 bg-gradient-to-br from-emerald-950/60 via-emerald-950/20 to-transparent p-5 transition-all hover:border-emerald-500/60">
+              <div
+                aria-hidden
+                className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(16,185,129,0.12),transparent_60%)]"
+              />
+              <div className="relative">
+                <div className="mb-3 flex items-center justify-between">
+                  <span className="font-mono text-emerald-400 text-sm font-semibold tracking-wide">
+                    Claude Code
+                  </span>
+                  <span className="rounded bg-emerald-500/20 px-1.5 py-0.5 text-[9px] text-emerald-400 uppercase tracking-wider">
+                    Primary
+                  </span>
+                </div>
+                <ul className="space-y-1.5 text-sm text-white/60">
+                  <li className="flex items-start gap-2">
+                    <span className="mt-1 text-emerald-400 text-xs">+</span>
+                    Native plugin marketplace
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="mt-1 text-emerald-400 text-xs">+</span>
+                    Full commands, hooks, 17 subagents
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="mt-1 text-emerald-400 text-xs">+</span>
+                    Ralph autonomous mode
+                  </li>
+                </ul>
+                <div className="mt-4 overflow-hidden rounded border border-emerald-500/20 bg-black/50">
+                  <div className="flex items-center gap-1.5 border-emerald-500/10 border-b bg-emerald-500/5 px-2 py-1">
+                    <div className="h-1.5 w-1.5 rounded-full bg-red-500/60" />
+                    <div className="h-1.5 w-1.5 rounded-full bg-yellow-500/60" />
+                    <div className="h-1.5 w-1.5 rounded-full bg-green-500/60" />
+                  </div>
+                  <code className="block p-2 font-mono text-[10px] text-emerald-400/80 leading-relaxed">
+                    <span className="text-white/40"># add marketplace</span>
+                    <br />
+                    /plugin marketplace add
+                    <br />
+                    <span className="break-all text-white/60">
+                      github.com/gmickel/
+                      <br />
+                      gmickel-claude-marketplace
+                    </span>
+                    <br />
+                    <br />
+                    <span className="text-white/40"># install</span>
+                    <br />
+                    /plugin install flow-next
+                  </code>
+                </div>
+              </div>
+            </div>
+
+            {/* Factory Droid */}
+            <div className="group relative overflow-hidden rounded-xl border border-cyan-500/30 bg-gradient-to-br from-cyan-950/40 via-cyan-950/10 to-transparent p-5 transition-all hover:border-cyan-500/50">
+              <div
+                aria-hidden
+                className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(6,182,212,0.1),transparent_60%)]"
+              />
+              <div className="relative">
+                <div className="mb-3 flex items-center justify-between">
+                  <span className="font-mono text-cyan-400 text-sm font-semibold tracking-wide">
+                    Factory Droid
+                  </span>
+                  <span className="rounded bg-cyan-500/15 px-1.5 py-0.5 text-[9px] text-cyan-400 uppercase tracking-wider">
+                    Full
+                  </span>
+                </div>
+                <ul className="space-y-1.5 text-sm text-white/60">
+                  <li className="flex items-start gap-2">
+                    <span className="mt-1 text-cyan-400 text-xs">+</span>
+                    Cross-platform compatibility
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="mt-1 text-cyan-400 text-xs">+</span>
+                    Same marketplace install flow
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="mt-1 text-cyan-400 text-xs">+</span>
+                    Bash|Execute hook matchers
+                  </li>
+                </ul>
+                <div className="mt-4 overflow-hidden rounded border border-cyan-500/20 bg-black/50">
+                  <div className="flex items-center gap-1.5 border-cyan-500/10 border-b bg-cyan-500/5 px-2 py-1">
+                    <div className="h-1.5 w-1.5 rounded-full bg-red-500/60" />
+                    <div className="h-1.5 w-1.5 rounded-full bg-yellow-500/60" />
+                    <div className="h-1.5 w-1.5 rounded-full bg-green-500/60" />
+                  </div>
+                  <code className="block p-2 font-mono text-[10px] text-cyan-400/80 leading-relaxed">
+                    <span className="text-white/40"># add marketplace</span>
+                    <br />
+                    droid plugin marketplace add
+                    <br />
+                    <span className="break-all text-white/60">
+                      github.com/gmickel/
+                      <br />
+                      gmickel-claude-marketplace
+                    </span>
+                    <br />
+                    <br />
+                    <span className="text-white/40"># install</span>
+                    <br />
+                    /plugin install flow-next
+                  </code>
+                </div>
+              </div>
+            </div>
+
+            {/* Codex CLI */}
+            <div className="group relative overflow-hidden rounded-xl border border-violet-500/30 bg-gradient-to-br from-violet-950/40 via-violet-950/10 to-transparent p-5 transition-all hover:border-violet-500/50">
+              <div
+                aria-hidden
+                className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(139,92,246,0.1),transparent_60%)]"
+              />
+              <div className="relative">
+                <div className="mb-3 flex items-center justify-between">
+                  <span className="font-mono text-sm font-semibold text-violet-400 tracking-wide">
+                    Codex CLI
+                  </span>
+                  <span className="rounded bg-violet-500/15 px-1.5 py-0.5 text-[9px] text-violet-400 uppercase tracking-wider">
+                    Full
+                  </span>
+                </div>
+                <ul className="space-y-1.5 text-sm text-white/60">
+                  <li className="flex items-start gap-2">
+                    <span className="mt-1 text-violet-400 text-xs">+</span>
+                    20 multi-agent roles
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="mt-1 text-violet-400 text-xs">+</span>
+                    3-tier model mapping (GPT 5.3)
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="mt-1 text-violet-400 text-xs">+</span>
+                    Linux, macOS, Windows
+                  </li>
+                </ul>
+                <div className="mt-4 overflow-hidden rounded border border-violet-500/20 bg-black/50">
+                  <div className="flex items-center gap-1.5 border-violet-500/10 border-b bg-violet-500/5 px-2 py-1">
+                    <div className="h-1.5 w-1.5 rounded-full bg-red-500/60" />
+                    <div className="h-1.5 w-1.5 rounded-full bg-yellow-500/60" />
+                    <div className="h-1.5 w-1.5 rounded-full bg-green-500/60" />
+                  </div>
+                  <code className="block p-2 font-mono text-[10px] text-violet-400/80 leading-relaxed">
+                    <span className="text-white/40"># clone + install</span>
+                    <br />
+                    git clone{' '}
+                    <span className="break-all text-white/60">
+                      gmickel/
+                      <br />
+                      gmickel-claude-marketplace
+                    </span>
+                    <br />
+                    <br />
+                    ./scripts/install-codex.sh
+                    <br />
+                    <span className="text-white/60">flow-next</span>
+                  </code>
+                </div>
+              </div>
+            </div>
+
+            {/* OpenCode */}
+            <div className="group relative overflow-hidden rounded-xl border border-white/15 bg-gradient-to-br from-white/[0.03] via-transparent to-transparent p-5 transition-all hover:border-white/25">
+              <div className="relative">
+                <div className="mb-3 flex items-center justify-between">
+                  <span className="font-mono text-sm font-semibold text-white/70 tracking-wide">
+                    OpenCode
+                  </span>
+                  <span className="rounded bg-white/10 px-1.5 py-0.5 text-[9px] text-white/40 uppercase tracking-wider">
+                    Experimental
+                  </span>
+                </div>
+                <ul className="space-y-1.5 text-sm text-white/50">
+                  <li className="flex items-start gap-2">
+                    <span className="mt-1 text-white/40 text-xs">+</span>
+                    Community port
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="mt-1 text-white/40 text-xs">+</span>
+                    Separate repository
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="mt-1 text-white/40 text-xs">+</span>
+                    Same .flow/ format
+                  </li>
+                </ul>
+                <div className="mt-4 overflow-hidden rounded border border-white/10 bg-black/50">
+                  <div className="flex items-center gap-1.5 border-white/5 border-b bg-white/[0.03] px-2 py-1">
+                    <div className="h-1.5 w-1.5 rounded-full bg-red-500/60" />
+                    <div className="h-1.5 w-1.5 rounded-full bg-yellow-500/60" />
+                    <div className="h-1.5 w-1.5 rounded-full bg-green-500/60" />
+                  </div>
+                  <code className="block p-2 font-mono text-[11px] text-white/50 leading-relaxed">
+                    <a
+                      className="text-white/60 underline decoration-white/20 underline-offset-2 hover:text-white/80"
+                      href="https://github.com/gmickel/flow-next-opencode"
+                      rel="noopener noreferrer"
+                      target="_blank"
+                    >
+                      github.com/gmickel/
+                      <br />
+                      flow-next-opencode
+                    </a>
+                  </code>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Bottom callout */}
+          <div className="mt-8 overflow-hidden rounded-xl border border-white/10 bg-gradient-to-r from-emerald-500/5 via-cyan-500/5 to-violet-500/5">
+            <div className="flex flex-col items-center justify-between gap-4 p-6 md:flex-row">
+              <div>
+                <p className="font-semibold text-white">
+                  Zero vendor lock-in
+                </p>
+                <p className="mt-1 text-sm text-white/50">
+                  File-based state in{' '}
+                  <code className="text-emerald-400">.flow/</code> — works
+                  everywhere, move between platforms freely
+                </p>
+              </div>
+              <div className="flex shrink-0 gap-2">
+                <span className="rounded bg-emerald-500/10 px-3 py-1.5 font-mono text-emerald-400 text-xs">
+                  .flow/
+                </span>
+                <span className="self-center text-white/30">=</span>
+                <span className="rounded bg-cyan-500/10 px-3 py-1.5 font-mono text-cyan-400 text-xs">
+                  flowctl
+                </span>
+                <span className="self-center text-white/30">=</span>
+                <span className="rounded bg-violet-500/10 px-3 py-1.5 font-mono text-sm text-violet-400">
+                  portable
+                </span>
+              </div>
+            </div>
           </div>
         </section>
 
@@ -941,7 +1220,7 @@ export default function FlowNextPage() {
           </div>
 
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-            {features.map((feature, i) => (
+            {features.map((feature) => (
               <div
                 className={`group hover:-translate-y-1 relative overflow-hidden rounded-xl border p-6 transition-all duration-300 ${
                   feature.accent === 'emerald'
@@ -993,7 +1272,7 @@ export default function FlowNextPage() {
           </div>
 
           <div className="grid gap-3 md:grid-cols-2 lg:grid-cols-3">
-            {commands.map((cmd, i) => (
+            {commands.map((cmd) => (
               <div
                 className="group relative rounded-lg border border-white/10 bg-white/[0.02] p-4 transition-all hover:border-emerald-500/30 hover:bg-emerald-500/5"
                 key={cmd.name}
@@ -2599,24 +2878,28 @@ export default function FlowNextPage() {
           </div>
         </section>
 
-        {/* Installation - Clean and prominent */}
+        {/* Installation - Multi-Platform */}
         <section className="relative mx-auto max-w-6xl px-6 pb-24 md:px-10">
           <div className="mb-10 text-center">
             <p className="font-mono text-[11px] text-emerald-400/80 uppercase tracking-[0.3em]">
               Get Started
             </p>
             <h2 className="mt-3 font-bold text-3xl text-white md:text-4xl">
-              Try it now
+              Pick your platform
             </h2>
           </div>
 
-          <div className="grid gap-6 lg:grid-cols-2">
+          {/* Primary: Claude Code + Factory Droid */}
+          <div className="grid gap-4 md:grid-cols-2">
             <div className="overflow-hidden rounded-xl border border-emerald-500/30 bg-gradient-to-br from-emerald-950/50 to-transparent">
-              <div className="border-emerald-500/20 border-b bg-emerald-500/5 px-5 py-3">
-                <span className="font-semibold text-white">Install</span>
+              <div className="flex items-center justify-between border-emerald-500/20 border-b bg-emerald-500/5 px-5 py-3">
+                <span className="font-semibold text-white">Claude Code</span>
+                <span className="rounded bg-emerald-500/20 px-2 py-0.5 font-mono text-[10px] text-emerald-400 uppercase">
+                  Recommended
+                </span>
               </div>
               <div className="space-y-3 p-5">
-                <div className="rounded-lg bg-black/40 p-4">
+                <div className="rounded-lg bg-black/40 p-3">
                   <code className="block font-mono text-sm">
                     <span className="text-emerald-400">
                       /plugin marketplace add
@@ -2626,7 +2909,7 @@ export default function FlowNextPage() {
                     </span>
                   </code>
                 </div>
-                <div className="rounded-lg bg-black/40 p-4">
+                <div className="rounded-lg bg-black/40 p-3">
                   <code className="block font-mono text-sm">
                     <span className="text-emerald-400">/plugin install</span>{' '}
                     <span className="text-white">flow-next</span>
@@ -2635,6 +2918,92 @@ export default function FlowNextPage() {
               </div>
             </div>
 
+            <div className="overflow-hidden rounded-xl border border-cyan-500/30 bg-gradient-to-br from-cyan-950/40 to-transparent">
+              <div className="flex items-center justify-between border-cyan-500/20 border-b bg-cyan-500/5 px-5 py-3">
+                <span className="font-semibold text-white">Factory Droid</span>
+                <span className="rounded bg-cyan-500/15 px-2 py-0.5 font-mono text-[10px] text-cyan-400 uppercase">
+                  Full Support
+                </span>
+              </div>
+              <div className="space-y-3 p-5">
+                <div className="rounded-lg bg-black/40 p-3">
+                  <code className="block font-mono text-sm">
+                    <span className="text-cyan-400">
+                      droid plugin marketplace add
+                    </span>{' '}
+                    <span className="break-all text-white/80">
+                      https://github.com/gmickel/gmickel-claude-marketplace
+                    </span>
+                  </code>
+                </div>
+                <div className="rounded-lg bg-black/40 p-3">
+                  <code className="block font-mono text-sm">
+                    <span className="text-cyan-400">
+                      /plugins → Marketplace →
+                    </span>{' '}
+                    <span className="text-white">install flow-next</span>
+                  </code>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Secondary: Codex CLI + OpenCode */}
+          <div className="mt-4 grid gap-4 md:grid-cols-2">
+            <div className="overflow-hidden rounded-xl border border-violet-500/20 bg-gradient-to-br from-violet-950/30 to-transparent">
+              <div className="flex items-center justify-between border-violet-500/10 border-b bg-violet-500/5 px-5 py-3">
+                <span className="font-semibold text-white">Codex CLI</span>
+                <span className="rounded bg-violet-500/15 px-2 py-0.5 font-mono text-[10px] text-violet-400 uppercase">
+                  Cross-Platform
+                </span>
+              </div>
+              <div className="space-y-3 p-5">
+                <div className="rounded-lg bg-black/40 p-3">
+                  <code className="block whitespace-pre font-mono text-sm leading-relaxed">
+                    <span className="text-violet-400">git clone</span>{' '}
+                    <span className="text-white/80">
+                      gmickel/gmickel-claude-marketplace
+                    </span>
+                    {'\n'}
+                    <span className="text-violet-400">
+                      ./scripts/install-codex.sh
+                    </span>{' '}
+                    <span className="text-white">flow-next</span>
+                  </code>
+                </div>
+                <p className="text-white/40 text-xs">
+                  Installs 20 multi-agent roles to ~/.codex/
+                </p>
+              </div>
+            </div>
+
+            <div className="overflow-hidden rounded-xl border border-white/10 bg-gradient-to-br from-white/[0.02] to-transparent">
+              <div className="flex items-center justify-between border-white/5 border-b bg-white/[0.03] px-5 py-3">
+                <span className="font-semibold text-white">OpenCode</span>
+                <span className="rounded bg-white/10 px-2 py-0.5 font-mono text-[10px] text-white/40 uppercase">
+                  Experimental
+                </span>
+              </div>
+              <div className="space-y-3 p-5">
+                <div className="rounded-lg bg-black/40 p-3">
+                  <a
+                    className="block font-mono text-sm text-white/60 underline decoration-white/20 underline-offset-2 hover:text-white/80"
+                    href="https://github.com/gmickel/flow-next-opencode"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
+                    github.com/gmickel/flow-next-opencode
+                  </a>
+                </div>
+                <p className="text-white/40 text-xs">
+                  Community port — see repo README for setup
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Uninstall + Requirements */}
+          <div className="mt-6 grid gap-4 md:grid-cols-2">
             <div className="overflow-hidden rounded-xl border border-red-500/20 bg-gradient-to-br from-red-950/30 to-transparent">
               <div className="border-red-500/10 border-b bg-red-500/5 px-5 py-3">
                 <span className="font-semibold text-white">Uninstall</span>
@@ -2645,37 +3014,47 @@ export default function FlowNextPage() {
                     rm -rf .flow/
                   </code>
                 </div>
-                <div className="rounded-lg border border-cyan-500/20 bg-cyan-500/5 p-4">
+                <div className="rounded-lg border border-cyan-500/20 bg-cyan-500/5 p-3">
                   <p className="font-mono text-cyan-400 text-xs uppercase">
                     If Ralph Mode enabled
                   </p>
-                  <code className="mt-2 block font-mono text-sm text-white">
+                  <code className="mt-1 block font-mono text-sm text-white">
                     rm -rf scripts/ralph/
                   </code>
                 </div>
                 <p className="text-sm text-white/50">
-                  No hooks to remove. No config to clean up. No traces.
+                  No hooks. No config. No traces.
                 </p>
               </div>
             </div>
-          </div>
 
-          <div className="mt-8 rounded-lg border border-white/10 bg-white/5 p-5 text-center">
-            <p className="text-white/70">
-              <span className="font-mono text-emerald-400">Requires:</span>{' '}
-              Python 3.8+ and git.{' '}
-              <span className="font-mono text-cyan-400">Codex CLI</span>{' '}
-              (cross-platform) or{' '}
-              <a
-                className="text-violet-400 underline decoration-violet-400/40 underline-offset-2 hover:text-violet-300"
-                href="https://repoprompt.com/?atp=KJbuL4"
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                RepoPrompt
-              </a>{' '}
-              (macOS) recommended for cross-model reviews.
-            </p>
+            <div className="rounded-xl border border-white/10 bg-white/5 p-5">
+              <p className="font-mono text-emerald-400 text-xs uppercase tracking-wider">
+                Requirements
+              </p>
+              <ul className="mt-3 space-y-2 text-sm text-white/70">
+                <li className="flex items-start gap-2">
+                  <span className="text-emerald-400">+</span>
+                  Python 3.8+ and git
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-cyan-400">+</span>
+                  <span>
+                    <span className="font-mono text-cyan-400">Codex CLI</span>{' '}
+                    (cross-platform) or{' '}
+                    <a
+                      className="text-violet-400 underline decoration-violet-400/40 underline-offset-2 hover:text-violet-300"
+                      href="https://repoprompt.com/?atp=KJbuL4"
+                      rel="noopener noreferrer"
+                      target="_blank"
+                    >
+                      RepoPrompt
+                    </a>{' '}
+                    (macOS) for cross-model reviews
+                  </span>
+                </li>
+              </ul>
+            </div>
           </div>
         </section>
 
