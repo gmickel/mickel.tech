@@ -107,7 +107,9 @@ export default function DecryptedText({
           .map((p) => {
             if (p.isSpace) return ' ';
             if (p.isRevealed) return originalText[p.index];
-            return nonSpaceChars[charIndex++];
+            const c = nonSpaceChars[charIndex];
+            charIndex += 1;
+            return c;
           })
           .join('');
       }
@@ -140,7 +142,7 @@ export default function DecryptedText({
             return prevRevealed;
           }
           setDisplayText(shuffleText(text, prevRevealed));
-          currentIteration++;
+          currentIteration += 1;
           if (currentIteration >= maxIterations) {
             clearInterval(interval);
             setIsScrambling(false);
@@ -173,12 +175,12 @@ export default function DecryptedText({
     if (animateOn !== 'view' && animateOn !== 'both') return;
 
     const observerCallback = (entries: IntersectionObserverEntry[]) => {
-      entries.forEach((entry) => {
+      for (const entry of entries) {
         if (entry.isIntersecting && !hasAnimated) {
           setIsHovering(true);
           setHasAnimated(true);
         }
-      });
+      }
     };
 
     const observerOptions = {

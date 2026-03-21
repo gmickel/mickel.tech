@@ -16,15 +16,15 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL('https://mickel.tech'),
   title: {
-    default: 'Mickel Tech – AI SDLC, Platforms & Operational Agents',
+    default: 'Mickel Tech – Agentic SDLC, Platforms & AI Agents',
     template: '%s | Mickel Tech',
   },
   description:
-    'Gordon Mickel, AI SDLC & platform architect. Operating Principal (AI & Tech) at GrowthFactors / BU Bregal and ITDR-listed expert for ICT & AI. I design AI SDLC, platforms and operational agents, and act as fractional CTO for high-stakes AI & software decisions in regulated B2B environments.',
+    'Gordon Mickel, agentic SDLC & platform architect. Operating Principal (AI & Tech) at GrowthFactors / BU Bregal and ITDR-listed expert for ICT & AI. I roll out agentic software engineering methodology, platforms and AI agents, and act as fractional CTO for high-stakes AI & software decisions in regulated B2B environments.',
   keywords: [
-    'AI SDLC',
+    'Agentic SDLC',
     'AI Agents',
-    'AI software development lifecycle',
+    'agentic software development lifecycle',
     'AI platforms',
     'operational agents',
     'agentic systems',
@@ -38,9 +38,9 @@ export const metadata: Metadata = {
   authors: [{ name: 'Gordon Mickel', url: 'https://mickel.tech' }],
   creator: 'Gordon Mickel',
   openGraph: {
-    title: 'Mickel Tech – AI SDLC, Platforms & Operational Agents',
+    title: 'Mickel Tech – Agentic SDLC, Platforms & AI Agents',
     description:
-      'AI SDLC & platform architect, Operating Principal (AI & Tech) at GrowthFactors / BU Bregal and ITDR-listed expert. Helping boards, investors and legal teams move from AI slideware to working, defensible systems with robust SDLC, platforms and operational AI agents.',
+      'Agentic SDLC & platform architect, Operating Principal (AI & Tech) at GrowthFactors / BU Bregal and ITDR-listed expert. Helping boards, investors and legal teams move from AI slideware to working, defensible systems with agentic SDLC methodology, platforms and AI agents.',
     type: 'website',
     locale: 'en_US',
     url: 'https://mickel.tech',
@@ -48,9 +48,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Mickel Tech – AI SDLC, Platforms & Operational Agents',
+    title: 'Mickel Tech – Agentic SDLC, Platforms & AI Agents',
     description:
-      'AI SDLC & platform architect, Operating Principal (AI & Tech) at GrowthFactors / BU Bregal and ITDR-listed expert. AI SDLC, platforms, operational AI agents and fractional CTO advisory for high-stakes AI & software decisions.',
+      'Agentic SDLC & platform architect, Operating Principal (AI & Tech) at GrowthFactors / BU Bregal and ITDR-listed expert. Agentic SDLC methodology, platforms, AI agents and fractional CTO advisory for high-stakes AI & software decisions.',
     creator: '@gmickel',
   },
   robots: {

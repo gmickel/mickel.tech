@@ -4,17 +4,18 @@ import Link from 'next/link';
 import CourseCallout from '@/components/course-callout';
 import Shell from '@/components/layout/shell';
 import PageTitle from '@/components/ui/page-title';
+import { breadcrumbSchema, JsonLd } from '@/lib/json-ld';
 import { getAllPosts } from '@/lib/posts';
 import { slugifyTag } from '@/lib/tag-utils';
 
 export const metadata: Metadata = {
   title: 'System Log',
   description:
-    'System log of AI SDLC, platform and agentic work: short, precise write-ups from real mandates rather than theory.',
+    'System log of agentic SDLC, platform and AI agent work: short, precise write-ups from real mandates rather than theory.',
   openGraph: {
     title: 'System Log – Mickel Tech',
     description:
-      'Latest writing on AI SDLC, platforms and operational agents from Gordon Mickel.',
+      'Latest writing on agentic SDLC, platforms and AI agents from Gordon Mickel.',
     type: 'website',
     url: 'https://mickel.tech/log',
   },
@@ -39,17 +40,18 @@ export default async function LogIndexPage() {
 
   return (
     <Shell>
+      <JsonLd data={breadcrumbSchema([{ name: 'Log', url: '/log' }])} />
       <section className="mx-auto max-w-5xl px-6 pt-24 pb-32 md:px-0">
         <header className="mb-12 space-y-4 border-white/10 border-b pb-8">
           <p className="font-mono text-[11px] text-primary tracking-[0.25em]">
             SYSTEM_LOG
           </p>
           <h1 className="font-bold text-4xl text-white md:text-5xl">
-            <PageTitle text="System log: AI SDLC, platforms and agents in the field" />
+            <PageTitle text="System log: agentic SDLC, platforms and agents in the field" />
           </h1>
           <p className="max-w-2xl text-base text-muted-foreground">
             Short, precise notes from actual mandates—what worked, what broke
-            and patterns that repeat across AI SDLC, platforms and operational
+            and patterns that repeat across agentic SDLC, platforms and AI
             agents.
           </p>
         </header>

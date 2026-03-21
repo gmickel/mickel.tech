@@ -33,7 +33,7 @@ export async function generateMetadata({
 
   const description =
     post.summary ??
-    'System log entry from Gordon Mickel on AI SDLC, platforms and operational agents.';
+    'System log entry from Gordon Mickel on agentic SDLC, platforms and AI agents.';
 
   const url = `https://mickel.tech/log/${post.slug}`;
 

@@ -33,7 +33,7 @@ const valueProps = [
   {
     title: 'Word-Native Tracked Changes',
     description:
-      'ChatGPT and Claude destroy your formatting. Sphere doesn\'t. Atomic OOXML operations preserve every detail — numbering, styles, tables, cross-references — even in 200-page contracts. AI edits appear as tracked changes you accept or reject in Word.',
+      "ChatGPT and Claude destroy your formatting. Sphere doesn't. Atomic OOXML operations preserve every detail — numbering, styles, tables, cross-references — even in 200-page contracts. AI edits appear as tracked changes you accept or reject in Word.",
     icon: '📄',
   },
   {
@@ -81,14 +81,32 @@ const valueProps = [
 ];
 
 const playbooks = [
-  { name: 'GDPR Compliance Check', desc: 'Sub-processor lists, audit rights, cross-border transfers' },
+  {
+    name: 'GDPR Compliance Check',
+    desc: 'Sub-processor lists, audit rights, cross-border transfers',
+  },
   { name: 'NDA Risk Assessment', desc: 'Non-standard and one-sided clauses' },
   { name: 'IP Ownership Review', desc: 'Assignment, licensing, background IP' },
-  { name: 'SLA Analysis', desc: 'Uptime commitments, penalty mechanisms, exclusions' },
-  { name: 'Key Terms Extraction', desc: 'Parties, dates, obligations, termination triggers' },
-  { name: 'Risk Red Flag Analysis', desc: 'Liability, indemnity, limitation gaps' },
-  { name: 'Financial Data Extraction', desc: 'Payment terms, caps, escalation clauses' },
-  { name: 'Document Classifier', desc: 'Auto-categorize document type and jurisdiction' },
+  {
+    name: 'SLA Analysis',
+    desc: 'Uptime commitments, penalty mechanisms, exclusions',
+  },
+  {
+    name: 'Key Terms Extraction',
+    desc: 'Parties, dates, obligations, termination triggers',
+  },
+  {
+    name: 'Risk Red Flag Analysis',
+    desc: 'Liability, indemnity, limitation gaps',
+  },
+  {
+    name: 'Financial Data Extraction',
+    desc: 'Payment terms, caps, escalation clauses',
+  },
+  {
+    name: 'Document Classifier',
+    desc: 'Auto-categorize document type and jurisdiction',
+  },
 ];
 
 const audiences = [
@@ -124,7 +142,10 @@ const techSpecs = [
   { label: 'Backend', value: 'Convex (TypeScript)' },
   { label: 'Document Engine', value: 'Python + OOXML' },
   { label: 'AI Models', value: 'Model-agnostic (Claude, GPT-4, Gemini)' },
-  { label: 'Legal Sources', value: 'Fedlex, EUR-Lex, BGE, CJEU, ECHR, Commentary' },
+  {
+    label: 'Legal Sources',
+    value: 'Fedlex, EUR-Lex, BGE, CJEU, ECHR, Commentary',
+  },
   { label: 'Compliance', value: 'GDPR, FADP, ZertES' },
   { label: 'Deployment', value: 'Cloud, On-Premise, Air-Gapped' },
 ];
@@ -209,8 +230,8 @@ export default function DocIQSpherePage() {
               <p className="mt-4 text-muted-foreground leading-relaxed">
                 Every AI interaction auditable. Every edit traceable to the
                 exact prompt that created it. Model-agnostic — uses Claude,
-                GPT-4, and Gemini, automatically selecting the optimal model
-                per task.
+                GPT-4, and Gemini, automatically selecting the optimal model per
+                task.
               </p>
 
               {/* Release info */}
@@ -270,8 +291,8 @@ export default function DocIQSpherePage() {
                   <p className="font-semibold text-white">Broken formatting</p>
                   <p className="mt-1 text-sm">
                     ChatGPT, Claude, and Copilot destroy numbering, styles,
-                    tables, and tracked changes. You spend more time fixing
-                    than editing.
+                    tables, and tracked changes. You spend more time fixing than
+                    editing.
                   </p>
                 </div>
                 <div className="rounded-lg border border-white/5 bg-background/60 p-4">
@@ -279,8 +300,8 @@ export default function DocIQSpherePage() {
                     No data sovereignty
                   </p>
                   <p className="mt-1 text-sm">
-                    US-hosted tools fail Swiss and EU client requirements.
-                    Where is your data going?
+                    US-hosted tools fail Swiss and EU client requirements. Where
+                    is your data going?
                   </p>
                 </div>
                 <div className="rounded-lg border border-white/5 bg-background/60 p-4">
@@ -293,8 +314,8 @@ export default function DocIQSpherePage() {
                 <div className="rounded-lg border border-white/5 bg-background/60 p-4">
                   <p className="font-semibold text-white">Generic AI</p>
                   <p className="mt-1 text-sm">
-                    No legal domain expertise. No firm-specific knowledge.
-                    No access to legal databases.
+                    No legal domain expertise. No firm-specific knowledge. No
+                    access to legal databases.
                   </p>
                 </div>
               </div>
@@ -395,7 +416,9 @@ export default function DocIQSpherePage() {
                     className="rounded-lg border border-white/5 bg-background/60 p-4"
                     key={playbook.name}
                   >
-                    <p className="font-semibold text-sm text-white">{playbook.name}</p>
+                    <p className="font-semibold text-sm text-white">
+                      {playbook.name}
+                    </p>
                     <p className="mt-1 text-muted-foreground text-xs">
                       {playbook.desc}
                     </p>
@@ -479,11 +502,13 @@ export default function DocIQSpherePage() {
                 <ul className="space-y-2">
                   <li className="flex gap-2">
                     <span className="text-teal-400">›</span>
-                    Every AI agent run logged — prompts, reasoning, tool calls, tokens
+                    Every AI agent run logged — prompts, reasoning, tool calls,
+                    tokens
                   </li>
                   <li className="flex gap-2">
                     <span className="text-teal-400">›</span>
-                    Data room immutable audit log — access, downloads, views, IP + user agent
+                    Data room immutable audit log — access, downloads, views, IP
+                    + user agent
                   </li>
                   <li className="flex gap-2">
                     <span className="text-teal-400">›</span>
@@ -491,7 +516,8 @@ export default function DocIQSpherePage() {
                   </li>
                   <li className="flex gap-2">
                     <span className="text-teal-400">›</span>
-                    Admin audit exports as structured JSON for compliance evidence
+                    Admin audit exports as structured JSON for compliance
+                    evidence
                   </li>
                   <li className="flex gap-2">
                     <span className="text-teal-400">›</span>

@@ -3,8 +3,13 @@ import Link from 'next/link';
 
 import { APPS } from '@/lib/apps';
 
+const statusColorMap: Record<string, string> = {
+  Released: 'border-emerald-500/40 bg-emerald-500/20 text-emerald-400',
+  Experimental: 'border-amber-500/40 bg-amber-500/20 text-amber-400',
+};
+
 // Feature a curated selection of apps
-const featuredSlugs = ['flow-next', 'gno', 'dociq-sphere', 'dociq-shield'];
+const featuredSlugs = ['flow-next', 'flow', 'gno', 'sheets-cli'];
 const featuredApps = featuredSlugs
   .map((slug) => APPS.find((a) => a.slug === slug))
   .filter((a): a is NonNullable<typeof a> => a !== undefined);
@@ -82,13 +87,7 @@ export default function AppsPreview() {
                 {/* Status badge */}
                 <div className="absolute top-2 right-2">
                   <span
-                    className={`inline-block border px-2 py-0.5 font-mono text-[9px] uppercase ${
-                      app.status === 'Released'
-                        ? 'border-emerald-500/40 bg-emerald-500/20 text-emerald-400'
-                        : app.status === 'Experimental'
-                          ? 'border-amber-500/40 bg-amber-500/20 text-amber-400'
-                          : 'border-white/20 bg-white/10 text-white/60'
-                    }`}
+                    className={`inline-block border px-2 py-0.5 font-mono text-[9px] uppercase ${statusColorMap[app.status] ?? 'border-white/20 bg-white/10 text-white/60'}`}
                   >
                     {app.status}
                   </span>

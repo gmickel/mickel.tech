@@ -35,7 +35,7 @@ export async function GET() {
 <channel>
   <title>Mickel Tech — System Log</title>
   <link>${siteUrl}/log</link>
-  <description>System log entries on AI SDLC, platforms and operational agents.</description>
+  <description>System log entries on agentic SDLC, platforms and AI agents.</description>
   <language>en</language>
   <lastBuildDate>${new Date().toUTCString()}</lastBuildDate>
   ${items}

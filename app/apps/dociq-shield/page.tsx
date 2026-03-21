@@ -109,7 +109,8 @@ const audiences = [
   {
     title: 'Banks & Healthcare',
     pain: 'FINMA requirements, patient confidentiality',
-    benefit: 'Fine-tuned local models. On-premises deployment. No external transmission.',
+    benefit:
+      'Fine-tuned local models. On-premises deployment. No external transmission.',
   },
 ];
 
@@ -490,7 +491,8 @@ export default function DocIQShieldPage() {
                     <div>
                       <p className="text-white">Managed Cloud (Switzerland)</p>
                       <p className="text-xs">
-                        Hosted in Switzerland for organizations that prefer managed
+                        Hosted in Switzerland for organizations that prefer
+                        managed
                       </p>
                     </div>
                   </li>

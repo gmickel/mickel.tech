@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import type { ReactElement } from 'react';
 
 interface TweetEmbedProps {
@@ -47,10 +48,13 @@ export function TweetEmbed({
             {/* Avatar */}
             <div className="h-10 w-10 shrink-0 overflow-hidden rounded-full bg-zinc-700">
               {avatarUrl ? (
-                <img
+                <Image
                   alt={displayName}
                   className="h-full w-full object-cover"
+                  height={40}
                   src={avatarUrl}
+                  unoptimized
+                  width={40}
                 />
               ) : (
                 <div className="flex h-full w-full items-center justify-center font-medium text-sm text-white">

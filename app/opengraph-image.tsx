@@ -2,7 +2,7 @@ import { ImageResponse } from 'next/og';
 
 export const runtime = 'edge';
 
-export const alt = 'Mickel Tech – AI SDLC, Platforms & Operational AI Agents';
+export const alt = 'Mickel Tech – Agentic SDLC, Platforms & AI Agents';
 export const size = {
   width: 1200,
   height: 630,
@@ -116,7 +116,7 @@ export default function OGImage() {
             maxWidth: '800px',
           }}
         >
-          AI SDLC &amp; Platforms • Operational AI Agents • Fractional CTO &amp;
+          Agentic SDLC &amp; Platforms • AI Agents • Fractional CTO &amp;
           ITDR-Listed Expert
         </p>
       </div>
@@ -139,7 +139,7 @@ export default function OGImage() {
           color: '#A0A4A8',
         }}
       >
-        <span>AI SDLC &amp; Platform Architect</span>
+        <span>Agentic SDLC &amp; Platform Architect</span>
         <span style={{ color: '#00E5FF' }}>•</span>
         <span>
           Operating Principal (AI &amp; Tech), GrowthFactors / BU Bregal

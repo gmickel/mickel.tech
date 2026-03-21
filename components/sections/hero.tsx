@@ -93,10 +93,11 @@ export default function Hero({
               .
             </h1>
             <p className="max-w-lg text-muted-foreground text-xl leading-relaxed">
-              I lead agentic software engineering rollouts for real teams —
-              brownfield codebases, regulated industries, complex orgs. Not
-              tooling demos. Full SDLC redesigns with methodology, process and
-              tooling that stick, scale and show measurable results.
+              I map processes, redesign how teams build software with AI agents,
+              and deploy production agentic systems — brownfield codebases,
+              regulated industries, complex orgs. Not tooling demos. Process
+              mapping, methodology and tooling that stick, scale and show
+              measurable results.
             </p>
           </div>
 
@@ -110,9 +111,9 @@ export default function Hero({
               everything-as-code — rolled out to 10+ teams, 500+ engineers.
             </li>
             <li>
-              • AI platforms &amp; agents: production systems with unified
-              context, evals, observability and safety — not demos that stall as
-              pilots.
+              • AI platforms &amp; agents: process mapping first, then context
+              layer, then production agents with evals, observability and safety
+              — not demos that stall as pilots.
             </li>
             <li>
               • Strategic advisory &amp; fractional CTO: board-level partner who

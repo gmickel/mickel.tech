@@ -77,7 +77,7 @@ export default function LogOGImage() {
         </div>
 
         <div style={{ fontSize: 56, fontWeight: 800, lineHeight: 1.1 }}>
-          Latest entries on AI SDLC, platforms & operational agents.
+          Latest entries on agentic SDLC, platforms & AI agents.
         </div>
 
         <div style={{ fontSize: 22, color: '#A0A4A8' }}>

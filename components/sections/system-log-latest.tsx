@@ -38,8 +38,8 @@ export default async function SystemLogLatest() {
               Recent signals from the field
             </h2>
             <p className="max-w-xl text-muted-foreground text-sm">
-              Short, technical dispatches on AI SDLC, platforms and agents from
-              real work rather than theory.
+              Short, technical dispatches on agentic SDLC, platforms and agents
+              from real work rather than theory.
             </p>
           </div>
           <Link

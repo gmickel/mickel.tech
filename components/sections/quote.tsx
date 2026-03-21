@@ -73,27 +73,46 @@ export default function Quote() {
   return (
     <section className="border-white/10 border-y bg-black">
       <div className="grid min-h-[300px] grid-cols-1 md:grid-cols-2">
-        {/* Quote */}
+        {/* Intercepted testimonial */}
         <div className="flex flex-col justify-center space-y-6 border-white/10 border-b p-12 md:border-r md:border-b-0 md:p-20">
-          <h3 className="mb-4 font-mono text-muted-foreground text-xs">
-            FIELD RECORDING
-          </h3>
+          <div className="flex items-center gap-3">
+            <span className="font-mono text-muted-foreground text-xs uppercase tracking-[0.2em]">
+              Signal intercept
+            </span>
+            <span className="inline-flex items-center gap-1.5 border border-primary/30 bg-primary/10 px-2 py-0.5 font-mono text-[10px] text-primary uppercase">
+              <span className="inline-block h-1.5 w-1.5 rounded-full bg-primary" />
+              Verified source
+            </span>
+          </div>
           <blockquote className="font-medium text-2xl text-white leading-tight md:text-3xl">
-            &quot;People trust me with high-stakes AI problems because I turn
-            messy ideas into precise decisions and agentic systems that
-            don&apos;t die as pilots— they work in production and stand up to
-            regulators.&quot;
+            &ldquo;I&apos;ve found it generating production-quality code. Far
+            far better than any of the other tools I&apos;ve tried so
+            far.&rdquo;
           </blockquote>
-          <div className="font-mono text-muted-foreground text-sm">
-            — Gordon Mickel · Mickel Tech
+          <div className="space-y-1">
+            <div className="font-mono text-sm text-white">— Claire Novotny</div>
+            <a
+              className="font-mono text-primary text-xs transition-colors hover:text-white"
+              href="https://x.com/clairernovotny/status/1886200988044026046"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              @clairernovotny · .NET Foundation / Microsoft MVP
+            </a>
           </div>
         </div>
 
         {/* Waveform */}
         <div className="relative min-h-[200px] overflow-hidden bg-[#0a0a0a]">
           <canvas className="h-full w-full opacity-60" ref={canvasRef} />
-          <div className="absolute right-4 bottom-4 animate-pulse font-mono text-[10px] text-success">
-            AUDIO: RECORDING...
+          {/* Signal metadata overlay */}
+          <div className="absolute top-4 left-4 space-y-1 font-mono text-[10px] text-white/30">
+            <div>SRC: X/TWITTER</div>
+            <div>FREQ: PUBLIC</div>
+            <div>AUTH: EXTERNAL</div>
+          </div>
+          <div className="absolute right-4 bottom-4 animate-pulse font-mono text-[10px] text-primary">
+            SIGNAL: LOCKED ●
           </div>
         </div>
       </div>

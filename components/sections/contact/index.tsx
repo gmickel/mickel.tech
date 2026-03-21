@@ -31,11 +31,16 @@ export default function Contact() {
       id="contact"
     >
       <div className="mx-auto max-w-4xl space-y-12">
-        <header className="mb-8 flex items-center gap-4">
-          <h2 className="font-bold text-4xl" id="contact-heading">
-            OPEN CHANNEL
-          </h2>
-          <div aria-hidden="true" className="h-px flex-grow bg-white/10" />
+        <header className="mb-8 space-y-3">
+          <p className="font-mono text-[11px] text-primary tracking-[0.25em]">
+            COMMS_LINK // DIRECT
+          </p>
+          <div className="flex items-center gap-4">
+            <h2 className="font-bold text-4xl" id="contact-heading">
+              OPEN CHANNEL
+            </h2>
+            <div aria-hidden="true" className="h-px flex-grow bg-white/10" />
+          </div>
         </header>
 
         {/* Terminal */}

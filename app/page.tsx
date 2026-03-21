@@ -35,7 +35,9 @@ export default function Home() {
       <Suspense fallback={<HeroSkeleton />}>
         <HeroLoader />
       </Suspense>
-      <CourseCallout />
+      <div className="my-12">
+        <CourseCallout />
+      </div>
       <Suspense
         fallback={
           <div aria-hidden="true" className="min-h-[400px] bg-secondary/20" />
@@ -52,11 +54,6 @@ export default function Home() {
         <Quote />
       </Suspense>
       <Suspense
-        fallback={<div aria-hidden="true" className="min-h-[800px] bg-black" />}
-      >
-        <SystemMap />
-      </Suspense>
-      <Suspense
         fallback={
           <div aria-hidden="true" className="min-h-[400px] bg-black/80" />
         }
@@ -69,6 +66,11 @@ export default function Home() {
         }
       >
         <AppsPreview />
+      </Suspense>
+      <Suspense
+        fallback={<div aria-hidden="true" className="min-h-[800px] bg-black" />}
+      >
+        <SystemMap />
       </Suspense>
       <Suspense fallback={null}>
         <SystemLogLatest />

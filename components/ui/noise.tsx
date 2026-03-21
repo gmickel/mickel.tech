@@ -60,7 +60,7 @@ const Noise: React.FC<NoiseProps> = ({
       if (frame % patternRefreshInterval === 0) {
         drawGrain();
       }
-      frame++;
+      frame += 1;
       animationId = window.requestAnimationFrame(loop);
     };
 

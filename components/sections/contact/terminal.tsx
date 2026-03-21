@@ -79,7 +79,7 @@ export function useTerminal({ gameActive, onJoshua, onClear }: TerminalProps) {
           break;
         case 'summary':
           response =
-            'Gordon Mickel: AI SDLC & platform architect, Operating Principal at GrowthFactors / BU Bregal and ITDR-listed expert. I design AI SDLC, platforms and operational agents, and act as fractional CTO for high-stakes AI & software decisions.';
+            'Gordon Mickel: Agentic SDLC & platform architect, Operating Principal at GrowthFactors / BU Bregal and ITDR-listed expert. I roll out agentic software engineering methodology, platforms and AI agents, and act as fractional CTO for high-stakes AI & software decisions.';
           break;
         case 'clear':
           setOutput([]);

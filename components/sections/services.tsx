@@ -21,13 +21,13 @@ const services: Array<{
   },
   {
     title: 'AI PLATFORMS & AGENTIC SYSTEMS',
-    body: 'Most "AI platforms" are just thin wrappers around a single model. I design real platforms and agents: unified context, clean data, evals, observability and safety so agents actually ship, don\'t stall as pilots, and map to real revenue, efficiency or risk outcomes.',
+    body: 'Every engagement starts with a process map, not a tool. AI alone will not fix broken operations. I map how the business actually runs — where the data lives, where the bottlenecks are, what is manual that should not be, what breaks when volume goes up — then build the context layer and deploy agents on top.',
     engagement:
-      'Engagement: 7-day production agent. Platform blueprint + one fully evaluated, production-grade agent deployed into your stack — shipped, not a slide.',
+      'Engagement: process map + platform blueprint + one production-grade agent, shipped into your stack.',
     bullets: [
-      'Platform blueprints that combine context engineering, data pipelines, retrieval/RAG patterns, eval harnesses and observability into an everything-as-code stack.',
-      'Concrete agents for your business: operations co-pilots, RFQ/RFP and quoting assistants, knowledge-base copilots, service-desk automation, document-review agents and voice bots—built on your platform, not as throwaway demos.',
-      'Skills, tools, prompts, workflows and guardrails as versioned code with gold-set evals and telemetry so you can see which agents earn their keep and which should be retired.',
+      'Process-first: map workflows end-to-end, identify automation candidates, score by impact and feasibility — before writing a single line of agent code.',
+      'Context layer first, automation second: build a secure knowledge and data foundation (enterprise search, CRM enrichment, transcription) then deploy agentic workflows on clean, governed data.',
+      'Concrete agents for your business: operations co-pilots, RFQ/RFP assistants, service-desk automation, document-review agents, voice bots — built on your platform with gold-set evals and telemetry, not throwaway demos.',
     ],
   },
   {

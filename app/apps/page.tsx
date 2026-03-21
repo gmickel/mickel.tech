@@ -7,6 +7,7 @@ import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import PageTitle from '@/components/ui/page-title';
 import { APPS } from '@/lib/apps';
+import { breadcrumbSchema, JsonLd } from '@/lib/json-ld';
 
 export const metadata: Metadata = {
   title: 'Apps — Things I Built',
@@ -45,6 +46,7 @@ const apps = APPS.map((app) => ({
 export default function AppsPage() {
   return (
     <Shell>
+      <JsonLd data={breadcrumbSchema([{ name: 'Apps', url: '/apps' }])} />
       <div className="relative cursor-auto overflow-hidden">
         {/* Ambient glow background */}
         <div

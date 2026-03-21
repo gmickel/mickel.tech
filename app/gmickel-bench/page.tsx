@@ -8,6 +8,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import PageTitle from '@/components/ui/page-title';
 import { Separator } from '@/components/ui/separator';
 import { BENCH_EVALS } from '@/lib/bench-evals';
+import { breadcrumbSchema, JsonLd } from '@/lib/json-ld';
 
 export const metadata: Metadata = {
   title: 'gmickel bench — Real Client-Grade AI Evals',
@@ -50,6 +51,11 @@ const upcoming = [
 export default function GmickelBenchPage() {
   return (
     <Shell>
+      <JsonLd
+        data={breadcrumbSchema([
+          { name: 'gmickel-bench', url: '/gmickel-bench' },
+        ])}
+      />
       <div className="relative cursor-auto overflow-hidden">
         <div
           aria-hidden
@@ -68,7 +74,7 @@ export default function GmickelBenchPage() {
               Best-of-3 runs
             </Badge>
             <Badge className="border-white/10 bg-white/5" variant="outline">
-              Updated 30 Jan 2026
+              Updated Feb 2026
             </Badge>
           </div>
           <h1 className="mt-6 font-bold text-4xl text-white leading-tight md:text-5xl">

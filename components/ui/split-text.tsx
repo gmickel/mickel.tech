@@ -9,6 +9,11 @@ import { useEffect, useRef, useState } from 'react';
 
 gsap.registerPlugin(ScrollTrigger, GSAPSplitText, useGSAP);
 
+const ROOT_MARGIN_RE = /^(-?\d+(?:\.\d+)?)(px|em|rem|%)?$/;
+
+const formatMarginSign = (value: number, unit: string): string =>
+  value < 0 ? `-=${Math.abs(value)}${unit}` : `+=${value}${unit}`;
+
 export interface SplitTextProps {
   text: string;
   className?: string;
@@ -72,20 +77,18 @@ const SplitText: React.FC<SplitTextProps> = ({
       if (el._rbsplitInstance) {
         try {
           el._rbsplitInstance.revert();
-        } catch (_) {}
+        } catch (_) {
+          // intentionally empty
+        }
         el._rbsplitInstance = undefined;
       }
 
       const startPct = (1 - threshold) * 100;
-      const marginMatch = /^(-?\d+(?:\.\d+)?)(px|em|rem|%)?$/.exec(rootMargin);
+      const marginMatch = ROOT_MARGIN_RE.exec(rootMargin);
       const marginValue = marginMatch ? Number.parseFloat(marginMatch[1]) : 0;
       const marginUnit = marginMatch ? marginMatch[2] || 'px' : 'px';
       const sign =
-        marginValue === 0
-          ? ''
-          : marginValue < 0
-            ? `-=${Math.abs(marginValue)}${marginUnit}`
-            : `+=${marginValue}${marginUnit}`;
+        marginValue === 0 ? '' : formatMarginSign(marginValue, marginUnit);
       const start = `top ${startPct}%${sign}`;
       let targets: Element[] = [];
       const assignTargets = (self: GSAPSplitText) => {
@@ -137,12 +140,16 @@ const SplitText: React.FC<SplitTextProps> = ({
       });
       el._rbsplitInstance = splitInstance;
       return () => {
-        ScrollTrigger.getAll().forEach((st) => {
-          if (st.trigger === el) st.kill();
-        });
+        for (const st of ScrollTrigger.getAll()) {
+          if (st.trigger === el) {
+            st.kill();
+          }
+        }
         try {
           splitInstance.revert();
-        } catch (_) {}
+        } catch (_) {
+          // intentionally empty
+        }
         el._rbsplitInstance = undefined;
       };
     },
