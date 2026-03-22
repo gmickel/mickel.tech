@@ -182,7 +182,7 @@ export default function Hero({
           className="perspective-1000 hidden justify-center lg:flex"
         >
           <motion.div
-            className="group relative h-[500px] w-[400px] border border-primary/30 bg-black/40 backdrop-blur-sm"
+            className="group relative h-[580px] w-[400px] border border-primary/30 bg-black/40 backdrop-blur-sm"
             style={{ rotateX, rotateY, transformStyle: 'preserve-3d' }}
           >
             {/* Card Glow */}
@@ -196,13 +196,13 @@ export default function Hero({
             <div className="absolute right-0 bottom-0 h-4 w-4 border-primary border-r border-b" />
 
             {/* Content */}
-            <div className="relative z-10 space-y-8 p-8 font-mono">
-              <div className="flex items-center justify-between border-primary/20 border-b pb-4">
+            <div className="relative z-10 space-y-6 p-7 font-mono">
+              <div className="flex items-center justify-between border-primary/20 border-b pb-3">
                 <span className="text-primary text-xs">SYSTEM STATUS</span>
                 <div className="h-2 w-2 animate-pulse rounded-full bg-success" />
               </div>
 
-              <div className="space-y-6 pb-20">
+              <div className="space-y-5 pb-16">
                 <div className="space-y-1">
                   <div className="text-[10px] text-muted-foreground uppercase">
                     Role
@@ -216,11 +216,9 @@ export default function Hero({
                   <div className="text-[10px] text-muted-foreground uppercase">
                     Base
                   </div>
-                  <div className="text-lg text-white">
-                    BASEL, SWITZERLAND
-                  </div>
-                  <div className="text-muted-foreground text-xs">
-                    DE · EN · CH/DACH + Europe
+                  <div className="text-white">BASEL, SWITZERLAND</div>
+                  <div className="text-muted-foreground text-[11px]">
+                    DE · EN · DACH + Europe
                   </div>
                 </div>
 
@@ -244,7 +242,7 @@ export default function Hero({
                 </div>
               </div>
 
-              <div className="absolute right-8 bottom-8 left-8">
+              <div className="absolute right-7 bottom-7 left-7">
                 <div className="mb-2 text-[10px] text-muted-foreground">
                   FOCUS PROTOCOLS
                 </div>
