@@ -17,15 +17,17 @@ interface ShellProps {
   children: React.ReactNode;
 }
 
-const navItems = [
-  { label: 'CONSOLE', href: '/#console' },
-  { label: 'SYSTEMS', href: '/#systems' },
-  { label: 'MAP', href: '/#map' },
-  { label: 'EXPERT', href: '/#expert' },
-  { label: 'CONTACT', href: '/#contact' },
+const serviceLinks = [
+  { label: 'AI ENGINEERING', href: '/sdlc' },
+  { label: 'AI SYSTEMS', href: '/ai-transformation' },
+  { label: 'EXPERT & DD', href: '/expert' },
+] as const;
+
+const utilLinks = [
   { label: 'LOG', href: '/log' },
   { label: 'APPS', href: '/apps' },
   { label: 'BENCH', href: '/gmickel-bench' },
+  { label: 'CONTACT', href: '/#contact' },
 ] as const;
 
 export default function Shell({ children }: ShellProps) {
@@ -55,21 +57,50 @@ export default function Shell({ children }: ShellProps) {
       {/* Header / HUD */}
       <header className="fixed top-0 right-0 left-0 z-40 flex h-14 items-center justify-between border-white/10 border-b bg-background/80 px-6 backdrop-blur-md">
         <div className="flex items-center gap-4">
-          <span className="animate-pulse font-mono text-primary text-xs tracking-widest">
-            <span className="sr-only">System status: online</span>● ONLINE
-          </span>
-          <span className="font-mono text-muted-foreground text-xs">
-            SYSTEM_ID: MICKEL_TECH_V2.0
-          </span>
+          <a
+            className="flex items-center gap-4 cursor-none"
+            href="/"
+          >
+            <span className="animate-pulse font-mono text-primary text-xs tracking-widest">
+              <span className="sr-only">System status: online</span>● ONLINE
+            </span>
+            <span className="font-mono text-muted-foreground text-xs">
+              MICKEL_TECH
+            </span>
+          </a>
         </div>
 
         <nav
           aria-label="Main navigation"
-          className="hidden items-center gap-8 md:flex"
+          className="hidden items-center gap-1 lg:flex"
         >
-          {navItems.map((item) => (
+          {/* Service links — grouped with SVC/ prefix */}
+          <span
+            aria-hidden="true"
+            className="mr-1 font-mono text-primary/40 text-[10px]"
+          >
+            SVC/
+          </span>
+          {serviceLinks.map((item) => (
             <a
-              className="cursor-none font-mono text-muted-foreground text-xs transition-colors hover:text-primary focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background"
+              className="cursor-none border-primary/0 border-l-2 px-3 py-1 font-mono text-white/80 text-xs transition-all hover:border-primary/60 hover:text-primary focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background"
+              href={item.href}
+              key={item.label}
+            >
+              {item.label}
+            </a>
+          ))}
+
+          {/* Separator */}
+          <span
+            aria-hidden="true"
+            className="mx-3 h-3 w-px bg-white/15"
+          />
+
+          {/* Utility links */}
+          {utilLinks.map((item) => (
+            <a
+              className="cursor-none px-2 py-1 font-mono text-muted-foreground text-xs transition-colors hover:text-primary focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background"
               href={item.href}
               key={item.label}
             >
@@ -78,7 +109,7 @@ export default function Shell({ children }: ShellProps) {
           ))}
         </nav>
 
-        <div className="flex items-center gap-4 md:hidden">
+        <div className="flex items-center gap-4 lg:hidden">
           <Sheet>
             <SheetTrigger asChild>
               <button
@@ -96,18 +127,38 @@ export default function Shell({ children }: ShellProps) {
               <SheetTitle className="sr-only">Navigation menu</SheetTitle>
               <nav
                 aria-label="Mobile navigation"
-                className="mt-8 flex flex-col gap-6"
+                className="mt-8 flex flex-col gap-8"
               >
-                {navItems.map((item) => (
-                  <SheetClose asChild key={item.label}>
-                    <a
-                      className="font-mono text-lg text-white transition-colors hover:text-primary focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background"
-                      href={item.href}
-                    >
-                      [{item.label}]
-                    </a>
-                  </SheetClose>
-                ))}
+                {/* Services group */}
+                <div className="space-y-4">
+                  <span className="font-mono text-primary/50 text-[10px] uppercase tracking-[0.3em]">
+                    Services
+                  </span>
+                  {serviceLinks.map((item) => (
+                    <SheetClose asChild key={item.label}>
+                      <a
+                        className="block border-primary/30 border-l-2 pl-4 font-mono text-lg text-white transition-colors hover:text-primary focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background"
+                        href={item.href}
+                      >
+                        {item.label}
+                      </a>
+                    </SheetClose>
+                  ))}
+                </div>
+
+                {/* Utility links */}
+                <div className="space-y-4 border-white/10 border-t pt-6">
+                  {utilLinks.map((item) => (
+                    <SheetClose asChild key={item.label}>
+                      <a
+                        className="block font-mono text-muted-foreground text-lg transition-colors hover:text-primary focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background"
+                        href={item.href}
+                      >
+                        [{item.label}]
+                      </a>
+                    </SheetClose>
+                  ))}
+                </div>
               </nav>
               <div className="absolute right-6 bottom-8 left-6 border-white/10 border-t pt-6">
                 <div className="flex items-center gap-2">
@@ -115,7 +166,7 @@ export default function Shell({ children }: ShellProps) {
                     ● ONLINE
                   </span>
                   <span className="font-mono text-muted-foreground text-xs">
-                    MICKEL_TECH_V2.0
+                    MICKEL_TECH
                   </span>
                 </div>
               </div>

@@ -6,21 +6,42 @@ import { useEffect, useState } from 'react';
 import DecryptedText from '@/components/ui/decrypted-text';
 
 const tickerItems = [
-  'AGENTIC SDLC ROLLED OUT TO 10+ TEAMS ACROSS PE PORTFOLIO COMPANIES IN EUROPE',
-  '500+ ENGINEERS ENABLED ON AI-NATIVE SDLC — METHODOLOGY, TOOLING & PROCESS',
+  'AI-NATIVE ENGINEERING ROLLED OUT TO 10+ TEAMS',
+  '500+ ENGINEERS ENABLED ON AI-NATIVE METHODOLOGY',
   '20+ YEARS SHIPPING SOFTWARE & PLATFORMS',
-  "AI PROGRAM LEAD FOR SWITZERLAND'S LEADING CLINICAL INFORMATION SYSTEM (CIS)",
-  'LEGALTECH CLM PLATFORM FOUNDED, FUNDED & TAKEN TO ACQUISITION STAGE',
+  "AI PROGRAM LEAD FOR SWITZERLAND'S LEADING CLINICAL INFORMATION SYSTEM",
+  'AI-NATIVE CLM PLATFORM FOUNDED, FUNDED & TAKEN TO ACQUISITION STAGE',
   'LISTED TECHNICAL EXPERT (ITDR) FOR COMPLEX ICT & AI DISPUTES',
   'OPENAI RED-TEAMING NETWORK ALUMNUS ON MODEL SAFETY & ABUSE RESILIENCE',
-  'OPEN-SOURCE AI TOOLING USED BY HUNDREDS OF DEVELOPERS WORLDWIDE',
-  'HEALTHCARE, LEGAL, FINANCIAL & PUBLIC-SECTOR AI SYSTEMS DESIGNED TO WITHSTAND SCRUTINY',
+  'AI TRANSFORMATION ACROSS 10+ MID-MARKET B2B COMPANIES',
+  'HEALTHCARE, LEGAL, FINANCIAL & PUBLIC-SECTOR AI SYSTEMS',
+] as const;
+
+const pillars = [
+  {
+    tag: '01',
+    label: 'AI ENGINEERING',
+    short: 'From legacy to autonomous code factories',
+    href: '/sdlc',
+  },
+  {
+    tag: '02',
+    label: 'AI SYSTEMS',
+    short: 'Process mapping to production AI systems',
+    href: '/ai-transformation',
+  },
+  {
+    tag: '03',
+    label: 'EXPERT & DD',
+    short: 'When software becomes a legal question',
+    href: '/expert',
+  },
 ] as const;
 
 const focusTags = [
-  'AGENTIC SDLC',
-  'AI PLATFORMS & AGENTS',
-  'TECHNICAL EXPERT',
+  'AI ENGINEERING',
+  'AI SYSTEMS',
+  'EXPERT & DD',
 ] as const;
 
 interface HeroProps {
@@ -68,11 +89,11 @@ export default function Hero({
       <div className="mx-auto grid w-full max-w-7xl grid-cols-1 items-center gap-12 lg:grid-cols-2">
         {/* Left: Content */}
         <div className="z-10 space-y-8">
-          <div className="space-y-2">
+          <div className="space-y-3">
             <div className="flex items-center gap-2">
               <div aria-hidden="true" className="h-px w-8 bg-primary" />
               <span className="font-mono text-primary text-xs uppercase tracking-widest">
-                Mickel Tech / Agentic SDLC, Platforms & Technical Expertise
+                Gordon Mickel / AI Systems &amp; Technical Expertise
               </span>
             </div>
             <h1
@@ -92,45 +113,36 @@ export default function Hero({
               />
               .
             </h1>
-            <p className="max-w-lg text-muted-foreground text-xl leading-relaxed">
-              I map processes, redesign how teams build software with AI agents,
-              and deploy production agentic systems — brownfield codebases,
-              regulated industries, complex orgs. Not tooling demos. Process
-              mapping, methodology and tooling that stick, scale and show
-              measurable results.
+            <p className="max-w-lg text-muted-foreground text-lg leading-relaxed">
+              Not slides. Not demos. Production AI systems, SDLC
+              transformations and expert technical opinions for companies that
+              need it to work the first time.
             </p>
           </div>
 
-          <ul
-            aria-label="Core services"
-            className="space-y-2 border-white/10 border-l-2 pl-4 font-mono text-muted-foreground text-sm"
-          >
-            <li>
-              • Agentic SDLC &amp; delivery: replace agile theatre with
-              AI-native plan–build–test–run. Methodology, eval-driven gating and
-              everything-as-code — rolled out to 10+ teams, 500+ engineers.
-            </li>
-            <li>
-              • AI platforms &amp; agents: process mapping first, then context
-              layer, then production agents with evals, observability and safety
-              — not demos that stall as pilots.
-            </li>
-            <li>
-              • Strategic advisory &amp; fractional CTO: board-level partner who
-              owns the change across architecture, teams and vendors — not just
-              a slide deck.
-            </li>
-            <li>
-              • Independent expert (ITDR Switzerland): formal Technical Expert
-              for AI/software disputes, due diligence and high-stakes decisions.
-            </li>
-          </ul>
+          {/* 3 Pillar Cards — scannable in 3 seconds */}
+          <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
+            {pillars.map((p) => (
+              <a
+                className="group relative border border-white/10 bg-white/[0.02] p-4 transition-all hover:border-primary/50 hover:bg-primary/[0.04]"
+                href={p.href}
+                key={p.tag}
+              >
+                <div className="absolute top-0 right-0 left-0 h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
+                <span className="font-mono text-[10px] text-primary/60">
+                  {p.tag}
+                </span>
+                <h2 className="mt-1 font-bold font-mono text-sm text-white leading-tight">
+                  {p.label}
+                </h2>
+                <p className="mt-1.5 text-muted-foreground text-xs leading-snug">
+                  {p.short}
+                </p>
+              </a>
+            ))}
+          </div>
 
-          <p className="pt-3 font-mono text-muted-foreground text-xs">
-            Gordon Mickel · Agentic SDLC &amp; Platform Architect
-          </p>
-
-          <div className="flex flex-wrap gap-4 pt-4">
+          <div className="flex flex-wrap gap-4 pt-2">
             <a
               className="interactive inline-flex items-center justify-center bg-primary px-8 py-4 font-bold font-mono text-black text-sm tracking-wider transition-colors hover:bg-white focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background"
               href="#contact"
@@ -148,7 +160,7 @@ export default function Hero({
           {/* System Alert */}
           <aside
             aria-label="System diagnostic"
-            className="mt-8 flex max-w-md gap-4 border border-alert/30 bg-alert/5 p-4 backdrop-blur-sm"
+            className="mt-4 flex max-w-md gap-4 border border-alert/30 bg-alert/5 p-4 backdrop-blur-sm"
             role="note"
           >
             <AlertTriangle aria-hidden="true" className="shrink-0 text-alert" />
@@ -196,7 +208,7 @@ export default function Hero({
                     Role
                   </div>
                   <div className="text-lg text-white">
-                    AGENTIC SDLC &amp; PLATFORM ARCHITECT
+                    AI ENGINEERING &amp; SYSTEMS ARCHITECT
                   </div>
                 </div>
 
@@ -255,7 +267,6 @@ export default function Hero({
             duration: 50,
           }}
         >
-          {/* Duplicate items for seamless loop */}
           {[...tickerItems, ...tickerItems].map((text, i) => (
             <span
               className="flex items-center gap-2"

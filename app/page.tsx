@@ -1,16 +1,13 @@
 import { Suspense } from 'react';
-import CourseCallout from '@/components/course-callout';
 import Shell from '@/components/layout/shell';
-import AgenticSdlc from '@/components/sections/agentic-sdlc';
-import AppsPreview from '@/components/sections/apps-preview';
-import BenchPreview from '@/components/sections/bench-preview';
+// AgenticSdlc moved to /sdlc subpage
 import Chronology from '@/components/sections/chronology';
 import Contact from '@/components/sections/contact/index';
 import HeroLoader from '@/components/sections/hero-loader';
+import HowIWork from '@/components/sections/how-i-work';
+import Pillars from '@/components/sections/pillars';
 import Quote from '@/components/sections/quote';
-import Services from '@/components/sections/services';
 import SystemLogLatest from '@/components/sections/system-log-latest';
-import SystemMap from '@/components/sections/system-map';
 import { JsonLd, personSchema } from '@/lib/json-ld';
 
 // Skeleton fallback for hero section to prevent CLS
@@ -35,43 +32,24 @@ export default function Home() {
       <Suspense fallback={<HeroSkeleton />}>
         <HeroLoader />
       </Suspense>
-      <div className="my-12">
-        <CourseCallout />
-      </div>
       <Suspense
         fallback={
           <div aria-hidden="true" className="min-h-[400px] bg-secondary/20" />
         }
       >
-        <Services />
+        <Pillars />
       </Suspense>
       <Suspense
-        fallback={<div aria-hidden="true" className="min-h-[400px] bg-black" />}
+        fallback={
+          <div aria-hidden="true" className="min-h-[300px] bg-black" />
+        }
       >
-        <AgenticSdlc />
+        <HowIWork />
       </Suspense>
       <Suspense fallback={null}>
         <Quote />
       </Suspense>
-      <Suspense
-        fallback={
-          <div aria-hidden="true" className="min-h-[400px] bg-black/80" />
-        }
-      >
-        <BenchPreview />
-      </Suspense>
-      <Suspense
-        fallback={
-          <div aria-hidden="true" className="min-h-[400px] bg-secondary/30" />
-        }
-      >
-        <AppsPreview />
-      </Suspense>
-      <Suspense
-        fallback={<div aria-hidden="true" className="min-h-[800px] bg-black" />}
-      >
-        <SystemMap />
-      </Suspense>
+      {/* SDLC deep-dive moved to /sdlc — linked from Pillar 1 card */}
       <Suspense fallback={null}>
         <SystemLogLatest />
       </Suspense>

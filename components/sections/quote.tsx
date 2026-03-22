@@ -88,6 +88,9 @@ export default function Quote() {
             &ldquo;I&apos;ve found it generating production-quality code. Far
             far better than any of the other tools I&apos;ve tried so
             far.&rdquo;
+            <span className="mt-2 block font-mono text-muted-foreground text-sm">
+              on Flow-Next
+            </span>
           </blockquote>
           <div className="space-y-1">
             <div className="font-mono text-sm text-white">— Claire Novotny</div>

@@ -4,15 +4,15 @@ import SectionTitle from '@/components/ui/section-title';
 const timeline = [
   {
     period: 'NOW',
-    role: 'OPERATING PRINCIPAL, AI & TECH',
-    company: 'GROWTHFACTORS (BU BREGAL UNTERNEHMERKAPITAL)',
-    desc: 'Value-creation mandate for AI and technology across mid-market B2B portfolio companies across Europe: agentic SDLC rollouts to 10+ teams, platforms, agents and vendor posture.',
+    role: 'VALUE CREATION PRINCIPAL, AI & TECHNOLOGY',
+    company: 'GROWTHFACTORS (BREGAL UNTERNEHMERKAPITAL)',
+    desc: 'AI and technology transformation across mid-market B2B portfolio companies in Europe: agentic SDLC rollouts to 10+ teams, enterprise AI platforms, agents and vendor posture.',
   },
   {
     period: 'PARALLEL',
     role: 'OWNER & PRINCIPAL ADVISOR',
     company: 'MICKEL TECH',
-    desc: 'Independent AI & tech advisor to C-suites and investors on AI strategy, architecture, disputes and large IT decisions.',
+    desc: 'Independent AI and technology advisor to C-suites, boards and investors on AI strategy, architecture, disputes and high-stakes technical decisions.',
   },
   {
     period: 'BEFORE',
@@ -36,7 +36,7 @@ const timeline = [
 
 const trustItems = [
   'Production AI in regulated domains: clinical AI for Swiss hospitals (KISIM) and an AI-native CLM platform used by enterprises and law firms.',
-  'Operating Principal (AI & Tech) at GrowthFactors / BU Bregal Unternehmerkapital, running agentic SDLC and platform programmes across mid-market B2B companies across Europe.',
+  'AI and technology transformation across 15+ mid-market B2B companies: agentic SDLC rollouts, enterprise AI platforms, architecture and vendor posture.',
   'ITDR-listed Technical Expert for ICT and AI systems: independent expert reports for disputes, arbitration and large-project acceptance.',
   'Agentic SDLC methodology rolled out to 10+ teams and 500+ engineers — process, tooling and culture change, not just tool adoption. Everything-as-code with eval-driven gating.',
   'Hands-on architecture and advisory across healthcare, legal, finance, DeFi and public sector – used to navigating regulation and internal politics, not just code.',

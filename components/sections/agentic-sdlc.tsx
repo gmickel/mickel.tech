@@ -3,7 +3,7 @@ import CourseSignup from '@/components/course-signup';
 import SectionTitle from '@/components/ui/section-title';
 
 const proofPoints = [
-  { value: '10+', label: 'Teams rolled out', detail: 'across PE portfolio' },
+  { value: '10+', label: 'Teams rolled out', detail: 'mid-market B2B' },
   {
     value: '500+',
     label: 'Engineers enabled',
@@ -371,7 +371,7 @@ export default function AgenticSdlc() {
                     <div className="font-bold font-mono text-3xl text-success">
                       {s.impact}
                     </div>
-                    <div className="font-mono text-muted-foreground text-[10px] uppercase">
+                    <div className="font-mono text-[10px] text-muted-foreground uppercase">
                       {s.impactLabel}
                     </div>
                   </div>
@@ -469,7 +469,7 @@ export default function AgenticSdlc() {
                 {i < pipeline.length - 1 && (
                   <div
                     aria-hidden="true"
-                    className="absolute top-1/2 -right-1.5 z-10 hidden -translate-y-1/2 font-mono text-primary/30 text-xs md:block"
+                    className="-right-1.5 -translate-y-1/2 absolute top-1/2 z-10 hidden font-mono text-primary/30 text-xs md:block"
                   >
                     →
                   </div>
@@ -498,9 +498,7 @@ export default function AgenticSdlc() {
                 <span className="font-mono text-[10px] text-primary">
                   {ap.tag}
                 </span>
-                <h4 className="mt-1 font-bold text-sm text-white">
-                  {ap.name}
-                </h4>
+                <h4 className="mt-1 font-bold text-sm text-white">{ap.name}</h4>
                 <ul className="mt-3 space-y-1.5">
                   {ap.items.map((item) => (
                     <li

@@ -16,31 +16,31 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL('https://mickel.tech'),
   title: {
-    default: 'Mickel Tech – Agentic SDLC, Platforms & AI Agents',
+    default: 'Gordon Mickel – AI Systems, SDLC Transformation & Technical Expertise',
     template: '%s | Mickel Tech',
   },
   description:
-    'Gordon Mickel, agentic SDLC & platform architect. Operating Principal (AI & Tech) at GrowthFactors / BU Bregal and ITDR-listed expert for ICT & AI. I roll out agentic software engineering methodology, platforms and AI agents, and act as fractional CTO for high-stakes AI & software decisions in regulated B2B environments.',
+    'Gordon Mickel designs AI systems that actually work. AI-native SDLC transformation (10+ teams, 500+ engineers), enterprise AI and agentic systems (RAG, private LLM, process automation), and ITDR-listed technical expert for ICT and AI disputes. 20+ years shipping production systems in regulated industries.',
   keywords: [
-    'Agentic SDLC',
-    'AI Agents',
-    'agentic software development lifecycle',
-    'AI platforms',
-    'operational agents',
-    'agentic systems',
-    'fractional CTO',
+    'AI SDLC transformation',
+    'agentic SDLC',
+    'enterprise AI',
+    'enterprise RAG',
+    'AI agents',
+    'private LLM infrastructure',
+    'AI consulting',
     'technical expert ITDR',
     'AI due diligence',
-    'AI governance',
-    'AI architecture',
+    'Gutachten IT',
+    'process automation AI',
     'Gordon Mickel',
   ],
   authors: [{ name: 'Gordon Mickel', url: 'https://mickel.tech' }],
   creator: 'Gordon Mickel',
   openGraph: {
-    title: 'Mickel Tech – Agentic SDLC, Platforms & AI Agents',
+    title: 'Gordon Mickel – AI Systems, SDLC Transformation & Technical Expertise',
     description:
-      'Agentic SDLC & platform architect, Operating Principal (AI & Tech) at GrowthFactors / BU Bregal and ITDR-listed expert. Helping boards, investors and legal teams move from AI slideware to working, defensible systems with agentic SDLC methodology, platforms and AI agents.',
+      'AI-native SDLC transformation, enterprise AI systems (RAG, agents, private LLM) and ITDR-listed technical expert. Production AI in regulated industries. 10+ teams, 500+ engineers, 20+ years.',
     type: 'website',
     locale: 'en_US',
     url: 'https://mickel.tech',
@@ -48,9 +48,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Mickel Tech – Agentic SDLC, Platforms & AI Agents',
+    title: 'Gordon Mickel – AI Systems & Technical Expertise',
     description:
-      'Agentic SDLC & platform architect, Operating Principal (AI & Tech) at GrowthFactors / BU Bregal and ITDR-listed expert. Agentic SDLC methodology, platforms, AI agents and fractional CTO advisory for high-stakes AI & software decisions.',
+      'AI-native SDLC transformation, enterprise AI systems and ITDR-listed technical expert. Production AI in regulated industries.',
     creator: '@gmickel',
   },
   robots: {

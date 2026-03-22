@@ -26,7 +26,37 @@ export function personSchema() {
       'https://twitter.com/gmickel',
       'https://linkedin.com/in/gmickel',
     ],
-    jobTitle: 'Software Engineer',
+    jobTitle: 'AI Systems & Platform Architect',
+    knowsAbout: [
+      'Agentic SDLC',
+      'AI Platforms',
+      'Enterprise RAG',
+      'Private LLM Infrastructure',
+      'Technical Expert Witness',
+      'AI Due Diligence',
+    ],
+  };
+}
+
+export function serviceSchema(service: {
+  name: string;
+  description: string;
+  url: string;
+}) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: service.name,
+    description: service.description,
+    url: service.url.startsWith('http')
+      ? service.url
+      : `${BASE_URL}${service.url}`,
+    provider: {
+      '@type': 'Person',
+      name: 'Gordon Mickel',
+      url: BASE_URL,
+    },
+    areaServed: { '@type': 'Place', name: 'Europe' },
   };
 }
 
