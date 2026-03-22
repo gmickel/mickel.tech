@@ -31,6 +31,31 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: 'monthly',
       lastModified: now,
     },
+    // German pages
+    {
+      url: `${siteUrl}/de`,
+      priority: 0.9,
+      changeFrequency: 'monthly',
+      lastModified: now,
+    },
+    {
+      url: `${siteUrl}/de/sdlc`,
+      priority: 0.85,
+      changeFrequency: 'monthly',
+      lastModified: now,
+    },
+    {
+      url: `${siteUrl}/de/ai-transformation`,
+      priority: 0.85,
+      changeFrequency: 'monthly',
+      lastModified: now,
+    },
+    {
+      url: `${siteUrl}/de/expert`,
+      priority: 0.85,
+      changeFrequency: 'monthly',
+      lastModified: now,
+    },
     {
       url: `${siteUrl}/log`,
       priority: 0.8,

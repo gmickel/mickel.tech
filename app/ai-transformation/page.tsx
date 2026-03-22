@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     url: 'https://mickel.tech/ai-transformation',
     type: 'website',
   },
-  alternates: { canonical: 'https://mickel.tech/ai-transformation' },
+  alternates: { canonical: 'https://mickel.tech/ai-transformation', languages: { en: '/ai-transformation', de: '/de/ai-transformation' } },
 };
 
 export default function AiTransformationPage() {

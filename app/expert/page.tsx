@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     url: 'https://mickel.tech/expert',
     type: 'website',
   },
-  alternates: { canonical: 'https://mickel.tech/expert' },
+  alternates: { canonical: 'https://mickel.tech/expert', languages: { en: '/expert', de: '/de/expert' } },
 };
 
 export default function ExpertPage() {

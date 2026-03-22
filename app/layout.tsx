@@ -69,6 +69,10 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: 'https://mickel.tech',
+    languages: {
+      en: 'https://mickel.tech',
+      de: 'https://mickel.tech/de',
+    },
     types: {
       'application/rss+xml': 'https://mickel.tech/rss',
     },

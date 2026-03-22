@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     url: 'https://mickel.tech/sdlc',
     type: 'website',
   },
-  alternates: { canonical: 'https://mickel.tech/sdlc' },
+  alternates: { canonical: 'https://mickel.tech/sdlc', languages: { en: '/sdlc', de: '/de/sdlc' } },
 };
 
 export default function SdlcPage() {

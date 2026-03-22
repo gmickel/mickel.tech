@@ -2,6 +2,7 @@
 
 import { Menu } from 'lucide-react';
 import type React from 'react';
+import LocaleSwitcher from '@/components/locale-switcher';
 import CustomCursor from '@/components/ui/custom-cursor';
 import Noise from '@/components/ui/noise';
 import {
@@ -107,6 +108,10 @@ export default function Shell({ children }: ShellProps) {
               [{item.label}]
             </a>
           ))}
+
+          {/* Language switcher */}
+          <span aria-hidden="true" className="mx-1 h-3 w-px bg-white/15" />
+          <LocaleSwitcher />
         </nav>
 
         <div className="flex items-center gap-4 lg:hidden">
@@ -161,7 +166,10 @@ export default function Shell({ children }: ShellProps) {
                 </div>
               </nav>
               <div className="absolute right-6 bottom-8 left-6 border-white/10 border-t pt-6">
-                <div className="flex items-center gap-2">
+                <div className="flex items-center justify-between">
+                  <LocaleSwitcher />
+                </div>
+                <div className="mt-3 flex items-center gap-2">
                   <span className="animate-pulse font-mono text-primary text-xs tracking-widest">
                     ● ONLINE
                   </span>
