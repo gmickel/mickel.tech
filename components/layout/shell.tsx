@@ -1,6 +1,7 @@
 'use client';
 
 import { Menu } from 'lucide-react';
+import { usePathname } from 'next/navigation';
 import type React from 'react';
 import LocaleSwitcher from '@/components/locale-switcher';
 import CustomCursor from '@/components/ui/custom-cursor';
@@ -18,10 +19,16 @@ interface ShellProps {
   children: React.ReactNode;
 }
 
-const serviceLinks = [
+const serviceLinksEN = [
   { label: 'AI ENGINEERING', href: '/sdlc' },
   { label: 'AI SYSTEMS', href: '/ai-transformation' },
   { label: 'EXPERT & DD', href: '/expert' },
+] as const;
+
+const serviceLinksDE = [
+  { label: 'AI ENGINEERING', href: '/de/sdlc' },
+  { label: 'AI SYSTEME', href: '/de/ai-transformation' },
+  { label: 'EXPERTE & DD', href: '/de/expert' },
 ] as const;
 
 const utilLinks = [
@@ -32,6 +39,9 @@ const utilLinks = [
 ] as const;
 
 export default function Shell({ children }: ShellProps) {
+  const pathname = usePathname();
+  const isDE = pathname.startsWith('/de');
+  const serviceLinks = isDE ? serviceLinksDE : serviceLinksEN;
   const wireframe = useWireframe();
 
   return (
@@ -58,10 +68,7 @@ export default function Shell({ children }: ShellProps) {
       {/* Header / HUD */}
       <header className="fixed top-0 right-0 left-0 z-40 flex h-14 items-center justify-between border-white/10 border-b bg-background/80 px-6 backdrop-blur-md">
         <div className="flex items-center gap-4">
-          <a
-            className="flex items-center gap-4 cursor-none"
-            href="/"
-          >
+          <a className="flex cursor-none items-center gap-4" href="/">
             <span className="animate-pulse font-mono text-primary text-xs tracking-widest">
               <span className="sr-only">System status: online</span>● ONLINE
             </span>
@@ -78,7 +85,7 @@ export default function Shell({ children }: ShellProps) {
           {/* Service links — grouped with SVC/ prefix */}
           <span
             aria-hidden="true"
-            className="mr-1 font-mono text-primary/40 text-[10px]"
+            className="mr-1 font-mono text-[10px] text-primary/40"
           >
             SVC/
           </span>
@@ -93,10 +100,7 @@ export default function Shell({ children }: ShellProps) {
           ))}
 
           {/* Separator */}
-          <span
-            aria-hidden="true"
-            className="mx-3 h-3 w-px bg-white/15"
-          />
+          <span aria-hidden="true" className="mx-3 h-3 w-px bg-white/15" />
 
           {/* Utility links */}
           {utilLinks.map((item) => (
@@ -136,7 +140,7 @@ export default function Shell({ children }: ShellProps) {
               >
                 {/* Services group */}
                 <div className="space-y-4">
-                  <span className="font-mono text-primary/50 text-[10px] uppercase tracking-[0.3em]">
+                  <span className="font-mono text-[10px] text-primary/50 uppercase tracking-[0.3em]">
                     Services
                   </span>
                   {serviceLinks.map((item) => (
@@ -156,7 +160,7 @@ export default function Shell({ children }: ShellProps) {
                   {utilLinks.map((item) => (
                     <SheetClose asChild key={item.label}>
                       <a
-                        className="block font-mono text-muted-foreground text-lg transition-colors hover:text-primary focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background"
+                        className="block font-mono text-lg text-muted-foreground transition-colors hover:text-primary focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background"
                         href={item.href}
                       >
                         [{item.label}]

@@ -96,7 +96,7 @@ export default function Hero({
               className="font-bold text-5xl text-white leading-tight tracking-tight md:text-7xl"
               id="hero-heading"
             >
-              Ich baue AI-Systeme, die{' '}
+              AI-Systeme, die{' '}
               <DecryptedText
                 animateOn="view"
                 characters="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz01█▓░▒"
@@ -105,7 +105,7 @@ export default function Hero({
                 maxIterations={15}
                 sequential
                 speed={40}
-                text="actually work"
+                text="wirklich funktionieren"
               />
               .
             </h1>
@@ -147,7 +147,7 @@ export default function Hero({
             </a>
             <a
               className="interactive inline-flex items-center justify-center border border-white/20 px-8 py-4 font-mono text-sm text-white transition-colors hover:bg-white/5 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background"
-              href="#expert"
+              href="/de/expert"
             >
               EXPERTENPROFIL ANSEHEN
             </a>
