@@ -666,7 +666,7 @@ export default function FlowNextPage() {
               />
               <div className="relative">
                 <div className="mb-3 flex items-center justify-between">
-                  <span className="font-mono text-emerald-400 text-sm font-semibold tracking-wide">
+                  <span className="font-mono font-semibold text-emerald-400 text-sm tracking-wide">
                     Claude Code
                   </span>
                   <span className="rounded bg-emerald-500/20 px-1.5 py-0.5 text-[9px] text-emerald-400 uppercase tracking-wider">
@@ -721,7 +721,7 @@ export default function FlowNextPage() {
               />
               <div className="relative">
                 <div className="mb-3 flex items-center justify-between">
-                  <span className="font-mono text-cyan-400 text-sm font-semibold tracking-wide">
+                  <span className="font-mono font-semibold text-cyan-400 text-sm tracking-wide">
                     Factory Droid
                   </span>
                   <span className="rounded bg-cyan-500/15 px-1.5 py-0.5 text-[9px] text-cyan-400 uppercase tracking-wider">
@@ -776,7 +776,7 @@ export default function FlowNextPage() {
               />
               <div className="relative">
                 <div className="mb-3 flex items-center justify-between">
-                  <span className="font-mono text-sm font-semibold text-violet-400 tracking-wide">
+                  <span className="font-mono font-semibold text-sm text-violet-400 tracking-wide">
                     Codex CLI
                   </span>
                   <span className="rounded bg-violet-500/15 px-1.5 py-0.5 text-[9px] text-violet-400 uppercase tracking-wider">
@@ -826,7 +826,7 @@ export default function FlowNextPage() {
             <div className="group relative overflow-hidden rounded-xl border border-white/15 bg-gradient-to-br from-white/[0.03] via-transparent to-transparent p-5 transition-all hover:border-white/25">
               <div className="relative">
                 <div className="mb-3 flex items-center justify-between">
-                  <span className="font-mono text-sm font-semibold text-white/70 tracking-wide">
+                  <span className="font-mono font-semibold text-sm text-white/70 tracking-wide">
                     OpenCode
                   </span>
                   <span className="rounded bg-white/10 px-1.5 py-0.5 text-[9px] text-white/40 uppercase tracking-wider">
@@ -874,9 +874,7 @@ export default function FlowNextPage() {
           <div className="mt-8 overflow-hidden rounded-xl border border-white/10 bg-gradient-to-r from-emerald-500/5 via-cyan-500/5 to-violet-500/5">
             <div className="flex flex-col items-center justify-between gap-4 p-6 md:flex-row">
               <div>
-                <p className="font-semibold text-white">
-                  Zero vendor lock-in
-                </p>
+                <p className="font-semibold text-white">Zero vendor lock-in</p>
                 <p className="mt-1 text-sm text-white/50">
                   File-based state in{' '}
                   <code className="text-emerald-400">.flow/</code> — works

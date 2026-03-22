@@ -214,7 +214,19 @@ export default function Hero({
 
                 <div className="space-y-1">
                   <div className="text-[10px] text-muted-foreground uppercase">
-                    Current Status
+                    Base
+                  </div>
+                  <div className="text-lg text-white">
+                    BASEL, SWITZERLAND
+                  </div>
+                  <div className="text-muted-foreground text-xs">
+                    DE · EN · CH/DACH + Europe
+                  </div>
+                </div>
+
+                <div className="space-y-1">
+                  <div className="text-[10px] text-muted-foreground uppercase">
+                    Status
                   </div>
                   <div className="text-lg text-success">ACTIVE</div>
                 </div>

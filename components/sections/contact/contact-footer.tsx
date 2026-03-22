@@ -58,8 +58,11 @@ export function ContactFooter() {
         <div>
           <h3 className="mb-2 text-muted-foreground">LOCATION</h3>
           <address className="text-white not-italic">
-            Basel, CH · global
+            Basel, Switzerland
           </address>
+          <div className="mt-1 text-muted-foreground">
+            DE · EN · DACH + Europe
+          </div>
         </div>
       </footer>
 

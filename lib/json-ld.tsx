@@ -27,6 +27,12 @@ export function personSchema() {
       'https://linkedin.com/in/gmickel',
     ],
     jobTitle: 'AI Systems & Platform Architect',
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: 'Basel',
+      addressCountry: 'CH',
+    },
+    knowsLanguage: ['en', 'de'],
     knowsAbout: [
       'Agentic SDLC',
       'AI Platforms',
