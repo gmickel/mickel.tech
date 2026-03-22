@@ -2,11 +2,7 @@ import type { Metadata } from 'next';
 import Shell from '@/components/layout/shell';
 import AiTransformation from '@/components/sections/ai-transformation';
 import Contact from '@/components/sections/contact/index';
-import {
-  JsonLd,
-  breadcrumbSchema,
-  serviceSchema,
-} from '@/lib/json-ld';
+import { breadcrumbSchema, JsonLd, serviceSchema } from '@/lib/json-ld';
 
 export const metadata: Metadata = {
   title: 'Total AI Transformation',
@@ -31,7 +27,10 @@ export const metadata: Metadata = {
     url: 'https://mickel.tech/ai-transformation',
     type: 'website',
   },
-  alternates: { canonical: 'https://mickel.tech/ai-transformation', languages: { en: '/ai-transformation', de: '/de/ai-transformation' } },
+  alternates: {
+    canonical: 'https://mickel.tech/ai-transformation',
+    languages: { en: 'https://mickel.tech/ai-transformation', de: 'https://mickel.tech/de/ai-transformation' },
+  },
 };
 
 export default function AiTransformationPage() {

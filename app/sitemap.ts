@@ -6,56 +6,41 @@ import { getAllPosts, getTagIndex } from '@/lib/posts';
 
 const siteUrl = 'https://mickel.tech';
 
+// Pages with both EN + DE versions
+const translatedPaths = ['', '/sdlc', '/ai-transformation', '/expert'];
+
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const now = new Date();
   const [posts, tagIndex] = await Promise.all([getAllPosts(), getTagIndex()]);
   const appSlugs = getAppSlugs();
 
+  // Translated pages with hreflang alternates
+  const i18nPages: MetadataRoute.Sitemap = translatedPaths.flatMap((path) => {
+    const enUrl = `${siteUrl}${path || ''}`;
+    const deUrl = `${siteUrl}/de${path}`;
+    const alternates = {
+      languages: { en: enUrl, de: deUrl },
+    };
+
+    return [
+      {
+        url: enUrl,
+        priority: path === '' ? 1 : 0.9,
+        changeFrequency: 'monthly' as const,
+        lastModified: now,
+        alternates,
+      },
+      {
+        url: deUrl,
+        priority: path === '' ? 0.9 : 0.85,
+        changeFrequency: 'monthly' as const,
+        lastModified: now,
+        alternates,
+      },
+    ];
+  });
+
   const staticPages: MetadataRoute.Sitemap = [
-    { url: siteUrl, priority: 1, changeFrequency: 'weekly', lastModified: now },
-    {
-      url: `${siteUrl}/sdlc`,
-      priority: 0.9,
-      changeFrequency: 'monthly',
-      lastModified: now,
-    },
-    {
-      url: `${siteUrl}/ai-transformation`,
-      priority: 0.9,
-      changeFrequency: 'monthly',
-      lastModified: now,
-    },
-    {
-      url: `${siteUrl}/expert`,
-      priority: 0.9,
-      changeFrequency: 'monthly',
-      lastModified: now,
-    },
-    // German pages
-    {
-      url: `${siteUrl}/de`,
-      priority: 0.9,
-      changeFrequency: 'monthly',
-      lastModified: now,
-    },
-    {
-      url: `${siteUrl}/de/sdlc`,
-      priority: 0.85,
-      changeFrequency: 'monthly',
-      lastModified: now,
-    },
-    {
-      url: `${siteUrl}/de/ai-transformation`,
-      priority: 0.85,
-      changeFrequency: 'monthly',
-      lastModified: now,
-    },
-    {
-      url: `${siteUrl}/de/expert`,
-      priority: 0.85,
-      changeFrequency: 'monthly',
-      lastModified: now,
-    },
     {
       url: `${siteUrl}/log`,
       priority: 0.8,
@@ -104,5 +89,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     lastModified: now,
   }));
 
-  return [...staticPages, ...appPages, ...postPages, ...tagPages, ...evalPages];
+  return [
+    ...i18nPages,
+    ...staticPages,
+    ...appPages,
+    ...postPages,
+    ...tagPages,
+    ...evalPages,
+  ];
 }

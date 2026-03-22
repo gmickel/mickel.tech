@@ -2,11 +2,7 @@ import type { Metadata } from 'next';
 import Shell from '@/components/layout/shell';
 import AgenticSdlc from '@/components/sections/agentic-sdlc';
 import Contact from '@/components/sections/contact/index';
-import {
-  JsonLd,
-  breadcrumbSchema,
-  serviceSchema,
-} from '@/lib/json-ld';
+import { breadcrumbSchema, JsonLd, serviceSchema } from '@/lib/json-ld';
 
 export const metadata: Metadata = {
   title: 'AI-Native SDLC Transformation',
@@ -30,7 +26,10 @@ export const metadata: Metadata = {
     url: 'https://mickel.tech/sdlc',
     type: 'website',
   },
-  alternates: { canonical: 'https://mickel.tech/sdlc', languages: { en: '/sdlc', de: '/de/sdlc' } },
+  alternates: {
+    canonical: 'https://mickel.tech/sdlc',
+    languages: { en: 'https://mickel.tech/sdlc', de: 'https://mickel.tech/de/sdlc' },
+  },
 };
 
 export default function SdlcPage() {
@@ -45,9 +44,7 @@ export default function SdlcPage() {
         })}
       />
       <JsonLd
-        data={breadcrumbSchema([
-          { name: 'AI-Native SDLC', url: '/sdlc' },
-        ])}
+        data={breadcrumbSchema([{ name: 'AI-Native SDLC', url: '/sdlc' }])}
       />
       <AgenticSdlc />
       <Contact />

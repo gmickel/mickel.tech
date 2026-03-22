@@ -1,9 +1,9 @@
 import type { Metadata } from 'next';
 
 import Shell from '@/components/layout/shell';
-import DeAiTransformation from '@/components/sections/de/ai-transformation';
 import Contact from '@/components/sections/contact/index';
-import { JsonLd, breadcrumbSchema, serviceSchema } from '@/lib/json-ld';
+import DeAiTransformation from '@/components/sections/de/ai-transformation';
+import { breadcrumbSchema, JsonLd, serviceSchema } from '@/lib/json-ld';
 
 export const metadata: Metadata = {
   title: 'KI-Transformation',
@@ -20,9 +20,14 @@ export const metadata: Metadata = {
     'KI Beratung Schweiz',
     'KI Implementierung',
   ],
+  openGraph: {
+    title: 'KI-Transformation | Gordon Mickel',
+    description: 'Prozess-Mapping zu Produktions-KI-Systemen. Enterprise RAG, autonome Agenten, Private LLM.',
+    locale: 'de_CH',
+  },
   alternates: {
     canonical: 'https://mickel.tech/de/ai-transformation',
-    languages: { en: '/ai-transformation', de: '/de/ai-transformation' },
+    languages: { en: 'https://mickel.tech/ai-transformation', de: 'https://mickel.tech/de/ai-transformation' },
   },
 };
 

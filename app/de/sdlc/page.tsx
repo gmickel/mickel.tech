@@ -1,9 +1,9 @@
 import type { Metadata } from 'next';
 
 import Shell from '@/components/layout/shell';
-import DeAgenticSdlc from '@/components/sections/de/agentic-sdlc';
 import Contact from '@/components/sections/contact/index';
-import { JsonLd, breadcrumbSchema, serviceSchema } from '@/lib/json-ld';
+import DeAgenticSdlc from '@/components/sections/de/agentic-sdlc';
+import { breadcrumbSchema, JsonLd, serviceSchema } from '@/lib/json-ld';
 
 export const metadata: Metadata = {
   title: 'KI-Native SDLC-Transformation',
@@ -18,9 +18,14 @@ export const metadata: Metadata = {
     'KI Coding Agenten',
     'Entwicklerproduktivität KI',
   ],
+  openGraph: {
+    title: 'KI-Native SDLC-Transformation | Gordon Mickel',
+    description: 'Von Legacy-Prozessen zu autonomen Code-Fabriken. L0-L4 Reifegradmodell, 500+ Ingenieure.',
+    locale: 'de_CH',
+  },
   alternates: {
     canonical: 'https://mickel.tech/de/sdlc',
-    languages: { en: '/sdlc', de: '/de/sdlc' },
+    languages: { en: 'https://mickel.tech/sdlc', de: 'https://mickel.tech/de/sdlc' },
   },
 };
 

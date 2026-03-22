@@ -2,11 +2,7 @@ import type { Metadata } from 'next';
 import Shell from '@/components/layout/shell';
 import Contact from '@/components/sections/contact/index';
 import TechnicalExpert from '@/components/sections/technical-expert';
-import {
-  JsonLd,
-  breadcrumbSchema,
-  serviceSchema,
-} from '@/lib/json-ld';
+import { breadcrumbSchema, JsonLd, serviceSchema } from '@/lib/json-ld';
 
 export const metadata: Metadata = {
   title: 'Technical Expert & Due Diligence',
@@ -37,7 +33,10 @@ export const metadata: Metadata = {
     url: 'https://mickel.tech/expert',
     type: 'website',
   },
-  alternates: { canonical: 'https://mickel.tech/expert', languages: { en: '/expert', de: '/de/expert' } },
+  alternates: {
+    canonical: 'https://mickel.tech/expert',
+    languages: { en: 'https://mickel.tech/expert', de: 'https://mickel.tech/de/expert' },
+  },
 };
 
 export default function ExpertPage() {
@@ -52,9 +51,7 @@ export default function ExpertPage() {
         })}
       />
       <JsonLd
-        data={breadcrumbSchema([
-          { name: 'Technical Expert', url: '/expert' },
-        ])}
+        data={breadcrumbSchema([{ name: 'Technical Expert', url: '/expert' }])}
       />
       <TechnicalExpert />
       <Contact />

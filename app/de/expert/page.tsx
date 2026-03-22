@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 import Shell from '@/components/layout/shell';
 import Contact from '@/components/sections/contact/index';
 import DeTechnicalExpert from '@/components/sections/de/technical-expert';
-import { JsonLd, breadcrumbSchema, serviceSchema } from '@/lib/json-ld';
+import { breadcrumbSchema, JsonLd, serviceSchema } from '@/lib/json-ld';
 
 export const metadata: Metadata = {
   title: 'Technischer Sachverständiger & Due Diligence',
@@ -21,9 +21,14 @@ export const metadata: Metadata = {
     'forensische Code-Analyse',
     'unabhängige Projektbewertung',
   ],
+  openGraph: {
+    title: 'Technischer Sachverständiger & Due Diligence | Gordon Mickel',
+    description: 'ITDR-gelisteter Sachverständiger. Gutachten, forensische Code-Analyse, Due Diligence. 20+ Jahre.',
+    locale: 'de_CH',
+  },
   alternates: {
     canonical: 'https://mickel.tech/de/expert',
-    languages: { en: '/expert', de: '/de/expert' },
+    languages: { en: 'https://mickel.tech/expert', de: 'https://mickel.tech/de/expert' },
   },
 };
 
