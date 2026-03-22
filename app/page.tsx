@@ -40,9 +40,7 @@ export default function Home() {
         <Pillars />
       </Suspense>
       <Suspense
-        fallback={
-          <div aria-hidden="true" className="min-h-[300px] bg-black" />
-        }
+        fallback={<div aria-hidden="true" className="min-h-[300px] bg-black" />}
       >
         <HowIWork />
       </Suspense>

@@ -5,25 +5,29 @@ const steps = [
     num: '01',
     label: 'ASSESS',
     desc: 'Map the current state: processes, architecture, team maturity, pain points. No assumptions. Data first.',
-    detail: 'Baseline metrics, L0-L4 maturity scoring, process mapping, risk heatmap',
+    detail:
+      'Baseline metrics, L0-L4 maturity scoring, process mapping, risk heatmap',
   },
   {
     num: '02',
     label: 'DESIGN',
     desc: 'Architecture and methodology tailored to your constraints. Brownfield-first. Regulated-industry aware.',
-    detail: 'Blueprint, tool selection, team structure, rollback strategy, success criteria',
+    detail:
+      'Blueprint, tool selection, team structure, rollback strategy, success criteria',
   },
   {
     num: '03',
     label: 'IMPLEMENT',
     desc: 'Hands-on delivery alongside your team. Not a slide deck handoff. I co-ship the first lane, then hand it back clean.',
-    detail: 'Lighthouse lane, eval-driven gating, everything-as-code, pair delivery',
+    detail:
+      'Lighthouse lane, eval-driven gating, everything-as-code, pair delivery',
   },
   {
     num: '04',
     label: 'MEASURE',
     desc: 'Quantified outcomes tied to the baseline. Cycle time, quality, cost. Monthly steering until the team owns it.',
-    detail: 'DORA metrics, before/after comparison, steering cadence, knowledge transfer',
+    detail:
+      'DORA metrics, before/after comparison, steering cadence, knowledge transfer',
   },
 ] as const;
 
@@ -76,7 +80,7 @@ export default function HowIWork() {
                 {step.desc}
               </p>
 
-              <p className="font-mono text-primary/50 text-[11px] leading-relaxed">
+              <p className="font-mono text-[11px] text-primary/50 leading-relaxed">
                 {step.detail}
               </p>
 
@@ -84,7 +88,7 @@ export default function HowIWork() {
               {i < steps.length - 1 && (
                 <div
                   aria-hidden="true"
-                  className="absolute top-1/2 -right-2 z-10 hidden -translate-y-1/2 font-mono text-primary/30 text-lg md:block"
+                  className="-right-2 -translate-y-1/2 absolute top-1/2 z-10 hidden font-mono text-lg text-primary/30 md:block"
                 >
                   →
                 </div>

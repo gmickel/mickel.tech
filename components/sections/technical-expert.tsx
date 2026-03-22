@@ -1,8 +1,16 @@
 import SectionTitle from '@/components/ui/section-title';
 
 const proofPoints = [
-  { value: 'ITDR', label: 'Listed Expert', detail: 'Swiss IT Dispute Resolution' },
-  { value: '20+', label: 'Years engineering', detail: 'hands-on, not just advisory' },
+  {
+    value: 'ITDR',
+    label: 'Listed Expert',
+    detail: 'Swiss IT Dispute Resolution',
+  },
+  {
+    value: '20+',
+    label: 'Years engineering',
+    detail: 'hands-on, not just advisory',
+  },
   {
     value: '7+',
     label: 'Regulated industries',
@@ -64,20 +72,24 @@ const credentials: Array<{
 }> = [
   {
     label: 'ITDR-Listed Technical Expert',
-    detail: 'Swiss IT Dispute Resolution Center. Independent expert for ICT and AI system disputes.',
+    detail:
+      'Swiss IT Dispute Resolution Center. Independent expert for ICT and AI system disputes.',
     href: 'https://itdr.ch/en/experts/expert-details/36/gordon-mickel.html',
   },
   {
     label: 'Production AI in Regulated Domains',
-    detail: 'Clinical AI for Swiss hospitals (KISIM CIS), AI-native contract management (DocIQ) used by enterprises and law firms.',
+    detail:
+      'Clinical AI for Swiss hospitals (KISIM CIS), AI-native contract management (DocIQ) used by enterprises and law firms.',
   },
   {
     label: 'OpenAI Red-Teaming Alumnus',
-    detail: 'Model safety and abuse resilience evaluation for frontier AI systems.',
+    detail:
+      'Model safety and abuse resilience evaluation for frontier AI systems.',
   },
   {
     label: 'Hands-On Engineering Background',
-    detail: '20+ years building systems across healthcare, legal, banking, insurance, IoT, defence and public sector. I read the code, not just the summary.',
+    detail:
+      '20+ years building systems across healthcare, legal, banking, insurance, IoT, defence and public sector. I read the code, not just the summary.',
   },
 ];
 
@@ -132,8 +144,8 @@ export default function TechnicalExpert() {
           <p className="max-w-2xl text-lg text-white/70 leading-relaxed">
             Independent technical analysis for disputes, arbitration, due
             diligence and high-stakes project decisions. 20+ years of hands-on
-            engineering means I can trace claims through code, infrastructure and
-            contracts — not just read a summary deck.
+            engineering means I can trace claims through code, infrastructure
+            and contracts — not just read a summary deck.
           </p>
         </div>
 
@@ -178,9 +190,7 @@ export default function TechnicalExpert() {
                     c.label
                   )}
                 </h4>
-                <p className="mt-1 text-muted-foreground text-sm">
-                  {c.detail}
-                </p>
+                <p className="mt-1 text-muted-foreground text-sm">{c.detail}</p>
               </div>
             ))}
           </div>
@@ -213,7 +223,7 @@ export default function TechnicalExpert() {
                 {i < approach.length - 1 && (
                   <div
                     aria-hidden="true"
-                    className="absolute top-1/2 -right-2 z-10 hidden -translate-y-1/2 font-mono text-primary/30 text-lg md:block"
+                    className="-right-2 -translate-y-1/2 absolute top-1/2 z-10 hidden font-mono text-lg text-primary/30 md:block"
                   >
                     →
                   </div>
@@ -238,9 +248,7 @@ export default function TechnicalExpert() {
                 <span className="font-mono text-[10px] text-primary">
                   {s.tag}
                 </span>
-                <h4 className="mt-1 font-bold text-lg text-white">
-                  {s.name}
-                </h4>
+                <h4 className="mt-1 font-bold text-lg text-white">{s.name}</h4>
                 <p className="mt-3 text-muted-foreground text-sm leading-relaxed">
                   {s.desc}
                 </p>
@@ -275,8 +283,8 @@ export default function TechnicalExpert() {
           </h3>
           <p className="mb-10 max-w-2xl text-muted-foreground leading-relaxed">
             Making complex technical material accessible to legal professionals,
-            judges and arbitrators. The expert report translates code, architecture
-            and systems into clear, evidence-based conclusions.
+            judges and arbitrators. The expert report translates code,
+            architecture and systems into clear, evidence-based conclusions.
           </p>
 
           <div className="grid gap-px overflow-hidden border border-white/10 bg-white/10 sm:grid-cols-2 lg:grid-cols-3">
@@ -329,19 +337,23 @@ export default function TechnicalExpert() {
             {[
               {
                 name: 'Healthcare',
-                detail: 'Clinical AI for Swiss hospitals, patient data pipelines, PII masking, medical device regulation',
+                detail:
+                  'Clinical AI for Swiss hospitals, patient data pipelines, PII masking, medical device regulation',
               },
               {
                 name: 'Legal & Compliance',
-                detail: 'AI-native contract management, clause analysis, document review, legal copilots',
+                detail:
+                  'AI-native contract management, clause analysis, document review, legal copilots',
               },
               {
                 name: 'Financial Services',
-                detail: 'Banking, insurance, DeFi. Transaction systems, regulatory compliance, audit trails',
+                detail:
+                  'Banking, insurance, DeFi. Transaction systems, regulatory compliance, audit trails',
               },
               {
                 name: 'Public Sector',
-                detail: 'Defence, government IT, procurement systems. Security clearance, data sovereignty',
+                detail:
+                  'Defence, government IT, procurement systems. Security clearance, data sovereignty',
               },
             ].map((ind) => (
               <div className="bg-black p-6" key={ind.name}>

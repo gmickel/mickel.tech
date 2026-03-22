@@ -1,5 +1,5 @@
-import type { ReactNode } from 'react';
 import Link from 'next/link';
+import type { ReactNode } from 'react';
 import SectionTitle from '@/components/ui/section-title';
 
 const pillars: Array<{
@@ -21,11 +21,7 @@ const pillars: Array<{
     headline: 'From legacy processes to autonomous code factories',
     body: 'I redesign how your teams build software with AI agents. Not a tooling rollout. A full methodology shift from ticket-driven ceremonies to spec-driven, agent-assisted delivery. Two-stage rollout: foundation first (tooling, training, quick wins), then methodology shift (automated reviews, connected requirements, observability flywheels). All the way to L4: autonomous agents ship features, review-gated, humans set priorities.',
     engagement: '15-30 day transformation lane',
-    proof: [
-      '10+ teams transformed',
-      '500+ engineers enabled',
-      '7+ industries',
-    ],
+    proof: ['10+ teams transformed', '500+ engineers enabled', '7+ industries'],
     bullets: [
       'L0 to L4 maturity: from no AI tools to autonomous code factories with review-gated agent delivery',
       'Two-stage rollout: Stage 1 foundation (20-30% gain in weeks), Stage 2 methodology shift (2-3x sustained)',
@@ -61,7 +57,23 @@ const pillars: Array<{
     id: 'expert',
     title: 'EXPERT & DUE DILIGENCE',
     headline: 'When software becomes a legal or financial question',
-    body: (<><a className="glow-link" href="https://itdr.ch/en/experts/expert-details/36/gordon-mickel.html" rel="noreferrer" target="_blank">ITDR-listed Technical Expert</a> (Swiss IT Dispute Resolution Center) providing independent analysis when AI and software systems become legal, contractual or investment questions. 20+ years of hands-on engineering means I can trace claims through code, infrastructure and contracts — not just read a summary deck.</>),
+    body: (
+      <>
+        <a
+          className="glow-link"
+          href="https://itdr.ch/en/experts/expert-details/36/gordon-mickel.html"
+          rel="noreferrer"
+          target="_blank"
+        >
+          ITDR-listed Technical Expert
+        </a>{' '}
+        (Swiss IT Dispute Resolution Center) providing independent analysis when
+        AI and software systems become legal, contractual or investment
+        questions. 20+ years of hands-on engineering means I can trace claims
+        through code, infrastructure and contracts — not just read a summary
+        deck.
+      </>
+    ),
     engagement: 'Expert opinion / Gutachten with live brief-back',
     proof: [
       'ITDR-listed expert',
@@ -112,7 +124,7 @@ export default function Pillars() {
               {/* Number watermark */}
               <div
                 aria-hidden="true"
-                className="absolute top-6 right-8 font-bold font-mono text-[120px] leading-none text-white/[0.03] transition-colors group-hover:text-primary/[0.06]"
+                className="absolute top-6 right-8 font-bold font-mono text-[120px] text-white/[0.03] leading-none transition-colors group-hover:text-primary/[0.06]"
               >
                 {pillar.tag}
               </div>

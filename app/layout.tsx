@@ -16,7 +16,8 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL('https://mickel.tech'),
   title: {
-    default: 'Gordon Mickel – AI Systems, SDLC Transformation & Technical Expertise',
+    default:
+      'Gordon Mickel – AI Systems, SDLC Transformation & Technical Expertise',
     template: '%s | Mickel Tech',
   },
   description:
@@ -41,7 +42,8 @@ export const metadata: Metadata = {
   authors: [{ name: 'Gordon Mickel', url: 'https://mickel.tech' }],
   creator: 'Gordon Mickel',
   openGraph: {
-    title: 'Gordon Mickel – AI Systems, SDLC Transformation & Technical Expertise',
+    title:
+      'Gordon Mickel – AI Systems, SDLC Transformation & Technical Expertise',
     description:
       'AI-native SDLC transformation, enterprise AI systems (RAG, agents, private LLM) and ITDR-listed technical expert. Production AI in regulated industries. 10+ teams, 500+ engineers, 20+ years.',
     type: 'website',

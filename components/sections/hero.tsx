@@ -38,11 +38,7 @@ const pillars = [
   },
 ] as const;
 
-const focusTags = [
-  'AI ENGINEERING',
-  'AI SYSTEMS',
-  'EXPERT & DD',
-] as const;
+const focusTags = ['AI ENGINEERING', 'AI SYSTEMS', 'EXPERT & DD'] as const;
 
 interface HeroProps {
   alertText?: string;
@@ -113,10 +109,10 @@ export default function Hero({
               />
               .
             </h1>
-            <p className="max-w-lg text-muted-foreground text-lg leading-relaxed">
-              Not slides. Not demos. Production AI systems, SDLC
-              transformations and expert technical opinions for companies that
-              need it to work the first time.
+            <p className="max-w-lg text-lg text-muted-foreground leading-relaxed">
+              Not slides. Not demos. Production AI systems, SDLC transformations
+              and expert technical opinions for companies that need it to work
+              the first time.
             </p>
           </div>
 
@@ -217,7 +213,7 @@ export default function Hero({
                     Base
                   </div>
                   <div className="text-white">BASEL, SWITZERLAND</div>
-                  <div className="text-muted-foreground text-[11px]">
+                  <div className="text-[11px] text-muted-foreground">
                     DE · EN · DACH + Europe
                   </div>
                 </div>

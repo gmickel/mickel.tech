@@ -7,7 +7,11 @@ const proofPoints = [
     label: 'AI platforms founded',
     detail: 'DocIQ CLM + KISIM Clinical AI',
   },
-  { value: '20+', label: 'Years in production', detail: 'regulated industries' },
+  {
+    value: '20+',
+    label: 'Years in production',
+    detail: 'regulated industries',
+  },
 ] as const;
 
 const phases = [
@@ -169,10 +173,22 @@ const painPoints = [
 ] as const;
 
 const opportunityTriggers = [
-  { area: 'Software Development', trigger: 'Engineering headcount >20 or significant tech debt' },
-  { area: 'Data & Knowledge', trigger: 'Employee count >50 or scattered knowledge bases' },
-  { area: 'Service & Support', trigger: '>1,000 tickets/month or L1 consuming expensive headcount' },
-  { area: 'Sales & Growth', trigger: 'Sales team >10 reps or manual RFP/quoting process' },
+  {
+    area: 'Software Development',
+    trigger: 'Engineering headcount >20 or significant tech debt',
+  },
+  {
+    area: 'Data & Knowledge',
+    trigger: 'Employee count >50 or scattered knowledge bases',
+  },
+  {
+    area: 'Service & Support',
+    trigger: '>1,000 tickets/month or L1 consuming expensive headcount',
+  },
+  {
+    area: 'Sales & Growth',
+    trigger: 'Sales team >10 reps or manual RFP/quoting process',
+  },
   { area: 'Back Office', trigger: '>100 vendors or >500 invoices/month' },
 ] as const;
 
@@ -236,9 +252,7 @@ export default function AiTransformation() {
                 <span className="border border-primary/40 bg-primary/10 px-3 py-1.5 text-primary">
                   {step}
                 </span>
-                {i < 3 && (
-                  <span className="text-primary/40">→</span>
-                )}
+                {i < 3 && <span className="text-primary/40">→</span>}
               </span>
             ))}
           </div>
@@ -301,9 +315,7 @@ export default function AiTransformation() {
                 <span className="font-mono text-[10px] text-primary">
                   {vt.tag}
                 </span>
-                <h4 className="mt-1 font-bold text-sm text-white">
-                  {vt.name}
-                </h4>
+                <h4 className="mt-1 font-bold text-sm text-white">{vt.name}</h4>
                 <p className="mt-2 text-muted-foreground text-xs leading-relaxed">
                   {vt.desc}
                 </p>
@@ -340,7 +352,7 @@ export default function AiTransformation() {
                 <span className="font-bold font-mono text-primary text-xs tracking-[0.2em]">
                   {phase.tag}
                 </span>
-                <h4 className="mt-1 font-bold text-xl text-white">
+                <h4 className="mt-1 font-bold text-white text-xl">
                   {phase.name}
                 </h4>
                 <span className="font-mono text-muted-foreground text-xs">
@@ -353,7 +365,10 @@ export default function AiTransformation() {
                       className="flex items-start gap-2 text-muted-foreground text-xs leading-relaxed"
                       key={item}
                     >
-                      <span aria-hidden="true" className="mt-0.5 text-primary/50">
+                      <span
+                        aria-hidden="true"
+                        className="mt-0.5 text-primary/50"
+                      >
                         ›
                       </span>
                       {item}
@@ -415,9 +430,7 @@ export default function AiTransformation() {
                 <span className="font-mono text-[10px] text-primary">
                   {d.tag}
                 </span>
-                <h4 className="mt-1 font-bold text-lg text-white">
-                  {d.name}
-                </h4>
+                <h4 className="mt-1 font-bold text-lg text-white">{d.name}</h4>
                 <p className="mt-3 text-muted-foreground text-sm leading-relaxed">
                   {d.desc}
                 </p>
@@ -440,7 +453,7 @@ export default function AiTransformation() {
                   <div className="mt-2 flex flex-wrap gap-2">
                     {d.outcomes.map((o) => (
                       <span
-                        className="border border-success/20 bg-success/5 px-2 py-1 font-mono text-success text-[11px]"
+                        className="border border-success/20 bg-success/5 px-2 py-1 font-mono text-[11px] text-success"
                         key={o}
                       >
                         {o}
