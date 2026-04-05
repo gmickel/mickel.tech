@@ -109,7 +109,7 @@ export default function Pillars() {
         </header>
 
         <div className="space-y-8">
-          {pillars.map((pillar, idx) => (
+          {pillars.map((pillar) => (
             <article
               className="group relative overflow-hidden border border-white/10 bg-background/50 transition-all duration-300 hover:border-primary/40"
               id={pillar.id}

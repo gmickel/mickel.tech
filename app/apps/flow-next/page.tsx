@@ -32,7 +32,7 @@ const FLOW_NEXT_FAQS = [
   {
     question: 'How do I install Flow-Next?',
     answer:
-      'Claude Code: /plugin marketplace add https://github.com/gmickel/gmickel-claude-marketplace then /plugin install flow-next. Factory Droid: same marketplace flow via droid plugin marketplace add. Codex CLI: clone the repo and run ./scripts/install-codex.sh flow-next. OpenCode: see the experimental port at github.com/gmickel/flow-next-opencode.',
+      'Claude Code: /plugin marketplace add https://github.com/gmickel/flow-next then /plugin install flow-next. Factory Droid: same marketplace flow via droid plugin marketplace add. Codex CLI: clone the repo and run ./scripts/install-codex.sh flow-next. OpenCode: see the experimental port at github.com/gmickel/flow-next-opencode.',
   },
   {
     question: 'How do I uninstall Flow-Next?',
@@ -555,12 +555,13 @@ export default function FlowNextPage() {
             <div className="mt-10 flex flex-wrap gap-4">
               <a
                 className="group relative inline-flex items-center gap-2 overflow-hidden rounded border border-emerald-500 bg-emerald-500/10 px-8 py-4 font-mono text-emerald-400 text-sm uppercase tracking-wider transition-all hover:bg-emerald-500/20"
-                href="https://github.com/gmickel/gmickel-claude-marketplace"
+                href="https://github.com/gmickel/flow-next"
                 rel="noopener noreferrer"
                 target="_blank"
               >
                 <span className="-translate-x-full absolute inset-0 bg-gradient-to-r from-transparent via-emerald-500/10 to-transparent transition-transform duration-500 group-hover:translate-x-full" />
                 <svg
+                  aria-hidden="true"
                   className="h-4 w-4"
                   fill="currentColor"
                   viewBox="0 0 24 24"
@@ -571,7 +572,7 @@ export default function FlowNextPage() {
               </a>
               <a
                 className="inline-flex items-center gap-2 rounded border border-white/20 bg-white/5 px-8 py-4 font-mono text-sm text-white uppercase tracking-wider transition-all hover:border-white/40 hover:bg-white/10"
-                href="https://github.com/gmickel/gmickel-claude-marketplace/tree/main/plugins/flow-next"
+                href="https://github.com/gmickel/flow-next/tree/main/plugins/flow-next"
                 rel="noopener noreferrer"
                 target="_blank"
               >
@@ -701,7 +702,7 @@ export default function FlowNextPage() {
                     <span className="break-all text-white/60">
                       github.com/gmickel/
                       <br />
-                      gmickel-claude-marketplace
+                      flow-next
                     </span>
                     <br />
                     <br />
@@ -756,7 +757,7 @@ export default function FlowNextPage() {
                     <span className="break-all text-white/60">
                       github.com/gmickel/
                       <br />
-                      gmickel-claude-marketplace
+                      flow-next
                     </span>
                     <br />
                     <br />
@@ -790,7 +791,7 @@ export default function FlowNextPage() {
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="mt-1 text-violet-400 text-xs">+</span>
-                    3-tier model mapping (GPT 5.3)
+                    3-tier model mapping (GPT 5.4)
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="mt-1 text-violet-400 text-xs">+</span>
@@ -808,15 +809,14 @@ export default function FlowNextPage() {
                     <br />
                     git clone{' '}
                     <span className="break-all text-white/60">
-                      gmickel/
-                      <br />
-                      gmickel-claude-marketplace
+                      gmickel/flow-next
                     </span>
                     <br />
                     <br />
-                    ./scripts/install-codex.sh
-                    <br />
-                    <span className="text-white/60">flow-next</span>
+                    codex{' '}
+                    <span className="text-white/40">
+                      # → /plugins → install
+                    </span>
                   </code>
                 </div>
               </div>
@@ -1046,7 +1046,7 @@ export default function FlowNextPage() {
                 </div>
 
                 <p className="mt-4 text-white/40 text-xs">
-                  → Never worry about 200K token limits again.
+                  → Never worry about context window limits again.
                 </p>
               </div>
             </div>
@@ -1818,7 +1818,7 @@ export default function FlowNextPage() {
                     {
                       icon: '🔄',
                       title: 'Fresh Context',
-                      desc: 'New session per iteration prevents 200K token drift',
+                      desc: 'New session per iteration prevents context window drift',
                     },
                     {
                       icon: '🛡️',
@@ -2903,7 +2903,7 @@ export default function FlowNextPage() {
                       /plugin marketplace add
                     </span>{' '}
                     <span className="break-all text-white/80">
-                      https://github.com/gmickel/gmickel-claude-marketplace
+                      https://github.com/gmickel/flow-next
                     </span>
                   </code>
                 </div>
@@ -2930,7 +2930,7 @@ export default function FlowNextPage() {
                       droid plugin marketplace add
                     </span>{' '}
                     <span className="break-all text-white/80">
-                      https://github.com/gmickel/gmickel-claude-marketplace
+                      https://github.com/gmickel/flow-next
                     </span>
                   </code>
                 </div>
@@ -2959,18 +2959,17 @@ export default function FlowNextPage() {
                 <div className="rounded-lg bg-black/40 p-3">
                   <code className="block whitespace-pre font-mono text-sm leading-relaxed">
                     <span className="text-violet-400">git clone</span>{' '}
-                    <span className="text-white/80">
-                      gmickel/gmickel-claude-marketplace
-                    </span>
+                    <span className="text-white/80">gmickel/flow-next</span>
                     {'\n'}
-                    <span className="text-violet-400">
-                      ./scripts/install-codex.sh
-                    </span>{' '}
-                    <span className="text-white">flow-next</span>
+                    <span className="text-violet-400">codex</span>{' '}
+                    <span className="text-white/50">
+                      # → /plugins → install
+                    </span>
                   </code>
                 </div>
                 <p className="text-white/40 text-xs">
-                  Installs 20 multi-agent roles to ~/.codex/
+                  Native plugin or ./scripts/install-codex.sh for 20 multi-agent
+                  roles
                 </p>
               </div>
             </div>

@@ -2,11 +2,13 @@
 
 import { usePathname } from 'next/navigation';
 
+const dePrefix = /^\/de/;
+
 export default function LocaleSwitcher() {
   const pathname = usePathname();
   const isDE = pathname.startsWith('/de');
   const targetPath = isDE
-    ? pathname.replace(/^\/de/, '') || '/'
+    ? pathname.replace(dePrefix, '') || '/'
     : `/de${pathname}`;
 
   return (

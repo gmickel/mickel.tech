@@ -4,7 +4,7 @@ function getMandateStatus() {
   return { periodLabel: 'Q2 2026', slotLabel: '3 SLOTS' };
 }
 
-export default async function DeHeroLoader() {
+export default function DeHeroLoader() {
   const ms = getMandateStatus();
   return (
     <Hero

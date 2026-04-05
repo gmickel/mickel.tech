@@ -65,7 +65,9 @@ export default function DecryptedText({
             return nextIndex;
           }
           for (let i = 0; i < textLength; i++) {
-            if (!revealedSet.has(i)) return i;
+            if (!revealedSet.has(i)) {
+              return i;
+            }
           }
           return 0;
         }
@@ -105,8 +107,12 @@ export default function DecryptedText({
         let charIndex = 0;
         return positions
           .map((p) => {
-            if (p.isSpace) return ' ';
-            if (p.isRevealed) return originalText[p.index];
+            if (p.isSpace) {
+              return ' ';
+            }
+            if (p.isRevealed) {
+              return originalText[p.index];
+            }
             const c = nonSpaceChars[charIndex];
             charIndex += 1;
             return c;
@@ -116,8 +122,12 @@ export default function DecryptedText({
       return originalText
         .split('')
         .map((char, i) => {
-          if (char === ' ') return ' ';
-          if (currentRevealed.has(i)) return originalText[i];
+          if (char === ' ') {
+            return ' ';
+          }
+          if (currentRevealed.has(i)) {
+            return originalText[i];
+          }
           return availableChars[
             Math.floor(Math.random() * availableChars.length)
           ];
@@ -158,7 +168,9 @@ export default function DecryptedText({
     }
 
     return () => {
-      if (interval) clearInterval(interval);
+      if (interval) {
+        clearInterval(interval);
+      }
     };
   }, [
     isHovering,
@@ -172,7 +184,9 @@ export default function DecryptedText({
   ]);
 
   useEffect(() => {
-    if (animateOn !== 'view' && animateOn !== 'both') return;
+    if (animateOn !== 'view' && animateOn !== 'both') {
+      return;
+    }
 
     const observerCallback = (entries: IntersectionObserverEntry[]) => {
       for (const entry of entries) {
@@ -199,7 +213,9 @@ export default function DecryptedText({
     }
 
     return () => {
-      if (currentRef) observer.unobserve(currentRef);
+      if (currentRef) {
+        observer.unobserve(currentRef);
+      }
     };
   }, [animateOn, hasAnimated]);
 

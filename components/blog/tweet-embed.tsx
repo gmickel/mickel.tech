@@ -71,6 +71,7 @@ export function TweetEmbed({
 
           {/* X logo */}
           <svg
+            aria-hidden="true"
             className="h-5 w-5 shrink-0 text-white/30 transition-colors group-hover:text-white/50"
             fill="currentColor"
             viewBox="0 0 24 24"
@@ -93,6 +94,7 @@ export function TweetEmbed({
           {impressions && (
             <div className="ml-auto flex items-center gap-1.5">
               <svg
+                aria-hidden="true"
                 className="h-4 w-4 text-white/40"
                 fill="none"
                 stroke="currentColor"
