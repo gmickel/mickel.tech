@@ -17,7 +17,7 @@ const FLOW_NEXT_FAQS = [
   {
     question: 'What is Flow-Next?',
     answer:
-      'Flow-Next is a multi-platform AI agent orchestration tool with zero external dependencies. It works on Claude Code, Factory Droid, Codex CLI, and OpenCode. Provides bundled task tracking, dependency graphs, and automated code reviews.',
+      'Flow-Next is a multi-platform AI agent orchestration tool with zero external dependencies. It works on Claude Code, Factory Droid, OpenAI Codex, and OpenCode. Provides bundled task tracking, dependency graphs, and automated code reviews.',
   },
   {
     question: 'What is /flow-next:epic-review?',
@@ -32,7 +32,7 @@ const FLOW_NEXT_FAQS = [
   {
     question: 'How do I install Flow-Next?',
     answer:
-      'Claude Code: /plugin marketplace add https://github.com/gmickel/flow-next then /plugin install flow-next. Factory Droid: same marketplace flow via droid plugin marketplace add. Codex CLI: clone the repo and run ./scripts/install-codex.sh flow-next. OpenCode: see the experimental port at github.com/gmickel/flow-next-opencode.',
+      'Claude Code: /plugin marketplace add https://github.com/gmickel/flow-next then /plugin install flow-next. Factory Droid: same marketplace flow via droid plugin marketplace add. OpenAI Codex: clone the repo, open Codex, install via /plugins. Or run ./scripts/install-codex.sh flow-next for global install. OpenCode: see the experimental port at github.com/gmickel/flow-next-opencode.',
   },
   {
     question: 'How do I uninstall Flow-Next?',
@@ -42,7 +42,7 @@ const FLOW_NEXT_FAQS = [
   {
     question: 'What are the requirements for Flow-Next?',
     answer:
-      'Python 3.8+ and git. Works on Claude Code, Factory Droid, Codex CLI, and OpenCode. For cross-model reviews, use either OpenAI Codex CLI (cross-platform, GPT 5.2 High) or RepoPrompt rp-cli (macOS).',
+      'Python 3.8+ and git. Works on Claude Code, Factory Droid, OpenAI Codex, and OpenCode. For cross-model reviews, use either OpenAI Codex CLI (cross-platform, GPT 5.2 High) or RepoPrompt rp-cli (macOS).',
   },
   {
     question: 'What is the difference between Codex and RepoPrompt reviews?',
@@ -66,7 +66,7 @@ import { FlowNextSchematic } from './flow-next-schematic';
 const APP_DATA = {
   name: 'Flow-Next',
   description:
-    'Multi-platform AI agent orchestration with zero dependencies. Works on Claude Code, Factory Droid, Codex CLI, and OpenCode.',
+    'Multi-platform AI agent orchestration with zero dependencies. Works on Claude Code, Factory Droid, OpenAI Codex, and OpenCode.',
   slug: 'flow-next',
   category: 'DeveloperApplication',
   version: '0.1.0',
@@ -76,9 +76,9 @@ const APP_DATA = {
 
 export const metadata: Metadata = {
   title:
-    'Flow-Next: Multi-Platform AI Agent Orchestration | Claude Code, Factory Droid, Codex CLI',
+    'Flow-Next: Multi-Platform AI Agent Orchestration | Claude Code, Factory Droid, OpenAI Codex',
   description:
-    'Multi-platform AI agent orchestration with zero dependencies. Works on Claude Code, Factory Droid, Codex CLI, and OpenCode. Task tracking, dependency graphs, re-anchoring, and cross-model reviews.',
+    'Multi-platform AI agent orchestration with zero dependencies. Works on Claude Code, Factory Droid, OpenAI Codex, and OpenCode. Task tracking, dependency graphs, re-anchoring, and cross-model reviews.',
   keywords: [
     'Claude Code plugin',
     'Factory Droid',
@@ -100,7 +100,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Flow-Next: Multi-Platform AI Agent Orchestration',
     description:
-      'AI agent orchestration for Claude Code, Factory Droid, Codex CLI, and OpenCode. Zero deps. Multi-user safe. Delete a folder to uninstall.',
+      'AI agent orchestration for Claude Code, Factory Droid, OpenAI Codex, and OpenCode. Zero deps. Multi-user safe. Delete a folder to uninstall.',
     type: 'website',
     url: 'https://mickel.tech/apps/flow-next',
     siteName: 'Mickel Tech',
@@ -109,7 +109,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Flow-Next: Multi-Platform AI Agent Orchestration',
     description:
-      'AI agents that finish what they start. Works on Claude Code, Factory Droid, Codex CLI. Task tracking, re-anchoring, cross-model reviews.',
+      'AI agents that finish what they start. Works on Claude Code, Factory Droid, OpenAI Codex. Task tracking, re-anchoring, cross-model reviews.',
     creator: '@gmickel',
   },
   alternates: {
@@ -535,9 +535,14 @@ export default function FlowNextPage() {
               >
                 Factory Droid
               </a>
-              <span className="inline-flex items-center gap-1.5 rounded border border-violet-500/30 bg-violet-500/5 px-3 py-1.5 font-mono text-violet-400 text-xs">
-                Codex CLI
-              </span>
+              <a
+                className="inline-flex items-center gap-1.5 rounded border border-violet-500/30 bg-violet-500/5 px-3 py-1.5 font-mono text-violet-400 text-xs transition-all hover:border-violet-500/50 hover:bg-violet-500/10"
+                href="https://github.com/gmickel/flow-next"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                OpenAI Codex
+              </a>
               <a
                 className="group inline-flex items-center gap-1.5 rounded border border-white/15 bg-white/5 px-3 py-1.5 font-mono text-white/50 text-xs transition-all hover:border-white/30 hover:text-white/70"
                 href="https://github.com/gmickel/flow-next-opencode"
@@ -769,7 +774,7 @@ export default function FlowNextPage() {
               </div>
             </div>
 
-            {/* Codex CLI */}
+            {/* OpenAI Codex */}
             <div className="group relative overflow-hidden rounded-xl border border-violet-500/30 bg-gradient-to-br from-violet-950/40 via-violet-950/10 to-transparent p-5 transition-all hover:border-violet-500/50">
               <div
                 aria-hidden
@@ -778,7 +783,7 @@ export default function FlowNextPage() {
               <div className="relative">
                 <div className="mb-3 flex items-center justify-between">
                   <span className="font-mono font-semibold text-sm text-violet-400 tracking-wide">
-                    Codex CLI
+                    OpenAI Codex
                   </span>
                   <span className="rounded bg-violet-500/15 px-1.5 py-0.5 text-[9px] text-violet-400 uppercase tracking-wider">
                     Full
@@ -2946,11 +2951,11 @@ export default function FlowNextPage() {
             </div>
           </div>
 
-          {/* Secondary: Codex CLI + OpenCode */}
+          {/* Secondary: OpenAI Codex + OpenCode */}
           <div className="mt-4 grid gap-4 md:grid-cols-2">
             <div className="overflow-hidden rounded-xl border border-violet-500/20 bg-gradient-to-br from-violet-950/30 to-transparent">
               <div className="flex items-center justify-between border-violet-500/10 border-b bg-violet-500/5 px-5 py-3">
-                <span className="font-semibold text-white">Codex CLI</span>
+                <span className="font-semibold text-white">OpenAI Codex</span>
                 <span className="rounded bg-violet-500/15 px-2 py-0.5 font-mono text-[10px] text-violet-400 uppercase">
                   Cross-Platform
                 </span>
