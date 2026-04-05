@@ -529,7 +529,7 @@ export default function FlowNextPage() {
               </span>
               <a
                 className="inline-flex items-center gap-1.5 rounded border border-cyan-500/30 bg-cyan-500/5 px-3 py-1.5 font-mono text-cyan-400 text-xs transition-all hover:border-cyan-500/50 hover:bg-cyan-500/10"
-                href="https://github.com/nicepkg/droid"
+                href="https://github.com/gmickel/flow-next"
                 rel="noopener noreferrer"
                 target="_blank"
               >
