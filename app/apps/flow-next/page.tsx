@@ -218,6 +218,27 @@ const features = [
     icon: '🧠',
     accent: 'cyan',
   },
+  {
+    name: 'Investigation Targets',
+    description:
+      'Plan writes exact file paths workers must read before coding. Required vs optional tiers. Reduces hallucination, ensures pattern conformance.',
+    icon: '🔍',
+    accent: 'emerald',
+  },
+  {
+    name: 'Requirement Traceability',
+    description:
+      'Spec-to-task coverage table in every epic. Plan-sync maintains it on drift. Epic-review uses it for bidirectional coverage checking.',
+    icon: '📊',
+    accent: 'cyan',
+  },
+  {
+    name: 'Pre-implementation Search',
+    description:
+      'Worker searches for similar functionality before writing new code. Reuse existing > extend > create new. Reports findings before proceeding.',
+    icon: '🔎',
+    accent: 'emerald',
+  },
 ];
 
 const testimonials = [
@@ -2646,6 +2667,91 @@ export default function FlowNextPage() {
                     <span className="text-cyan-400">flowctl memory init</span>
                   </code>
                 </div>
+              </div>
+            </div>
+
+            {/* DESIGN.md Awareness */}
+            <div className="overflow-hidden rounded-xl border border-emerald-500/30 bg-gradient-to-br from-emerald-950/40 to-transparent lg:col-span-2">
+              <div className="flex items-center justify-between border-emerald-500/20 border-b bg-emerald-500/5 px-5 py-3">
+                <div className="flex items-center gap-2">
+                  <span className="text-xl">🎨</span>
+                  <span className="font-semibold text-emerald-400">
+                    DESIGN.md Awareness
+                  </span>
+                </div>
+                <Badge
+                  className="border-amber-400/40 bg-amber-500/10 text-amber-300"
+                  variant="outline"
+                >
+                  NEW
+                </Badge>
+              </div>
+              <div className="space-y-4 p-5">
+                <p className="text-sm text-white/70">
+                  When a project has a{' '}
+                  <a
+                    className="text-emerald-400 underline decoration-emerald-400/40 underline-offset-4 transition-colors hover:text-emerald-300"
+                    href="https://stitch.withgoogle.com/docs/design-md/overview/"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
+                    Google Stitch DESIGN.md
+                  </a>{' '}
+                  file, flow-next detects it and injects design context at each
+                  pipeline stage. No DESIGN.md? Zero change in behavior.
+                </p>
+                <div className="grid gap-2 md:grid-cols-2">
+                  <div className="flex items-start gap-3 rounded-lg border border-emerald-500/10 bg-emerald-500/5 p-3">
+                    <span className="mt-0.5 text-emerald-400">✓</span>
+                    <div>
+                      <p className="font-mono text-emerald-400 text-xs">
+                        Planning
+                      </p>
+                      <p className="text-sm text-white/50">
+                        Scout reads DESIGN.md, plan writes design context in
+                        frontend task specs
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3 rounded-lg border border-cyan-500/10 bg-cyan-500/5 p-3">
+                    <span className="mt-0.5 text-cyan-400">✓</span>
+                    <div>
+                      <p className="font-mono text-cyan-400 text-xs">
+                        Implementation
+                      </p>
+                      <p className="text-sm text-white/50">
+                        Worker reads design tokens before coding UI changes
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3 rounded-lg border border-emerald-500/10 bg-emerald-500/5 p-3">
+                    <span className="mt-0.5 text-emerald-400">✓</span>
+                    <div>
+                      <p className="font-mono text-emerald-400 text-xs">
+                        Quality audit
+                      </p>
+                      <p className="text-sm text-white/50">
+                        Flags hard-coded colors/spacing when tokens exist
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3 rounded-lg border border-cyan-500/10 bg-cyan-500/5 p-3">
+                    <span className="mt-0.5 text-cyan-400">✓</span>
+                    <div>
+                      <p className="font-mono text-cyan-400 text-xs">
+                        Readiness
+                      </p>
+                      <p className="text-sm text-white/50">
+                        Prime checks for DESIGN.md in documentation pillar
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <p className="text-white/40 text-xs">
+                  Backend tasks are never affected. Design injection only
+                  applies to tasks touching frontend files (.tsx, .vue, .svelte,
+                  .css).
+                </p>
               </div>
             </div>
           </div>
