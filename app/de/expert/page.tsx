@@ -23,12 +23,16 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: 'Technischer Sachverständiger & Due Diligence | Gordon Mickel',
-    description: 'ITDR-gelisteter Sachverständiger. Gutachten, forensische Code-Analyse, Due Diligence. 20+ Jahre.',
+    description:
+      'ITDR-gelisteter Sachverständiger. Gutachten, forensische Code-Analyse, Due Diligence. 20+ Jahre.',
     locale: 'de_CH',
   },
   alternates: {
     canonical: 'https://mickel.tech/de/expert',
-    languages: { en: 'https://mickel.tech/expert', de: 'https://mickel.tech/de/expert' },
+    languages: {
+      en: 'https://mickel.tech/expert',
+      de: 'https://mickel.tech/de/expert',
+    },
   },
 };
 
