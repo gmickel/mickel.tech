@@ -9,27 +9,27 @@ import { breadcrumbSchema, JsonLd, softwareAppSchema } from '@/lib/json-ld';
 const APP_DATA = {
   name: 'GNO',
   description:
-    'Local hybrid search engine for personal knowledge bases. Index Markdown, PDFs, Office docs, code. BM25 + vector + reranking. Web UI, REST API, MCP server. 100% private.',
+    'Local hybrid search engine + hosted publishing layer for personal knowledge bases. Index Markdown, PDFs, Office docs, code. BM25 + vector + reranking. Web UI, REST API, MCP server. Publish notes and collections as polished reading surfaces at gno.sh. 100% private locally.',
   slug: 'gno',
   category: 'DeveloperApplication',
 };
 
 export const metadata: Metadata = {
-  title: 'GNO — Local Search for Your Second Brain',
+  title: 'GNO — Local Search + Hosted Publishing for Your Second Brain',
   description:
-    'Local hybrid search engine with Web UI & REST API. Index Markdown, PDFs, Office docs, code. BM25 + vector + reranking. MCP server for 10+ AI tools. 100% private.',
+    'Two-layer knowledge stack. Local: hybrid search engine, BM25 + vector + reranking, Web UI, REST API, MCP server. Hosted: gno.sh publishing layer for sharing notes and collections as polished reading surfaces. 100% private locally; granular public/secret-link sharing online.',
   openGraph: {
-    title: 'GNO — Local Search for Your Second Brain',
+    title: 'GNO — Local Search + Hosted Publishing',
     description:
-      'Local hybrid search engine. Web UI, REST API, MCP server. Index everything, search semantically, stay private.',
+      'Local hybrid search engine + hosted publish/share layer at gno.sh. Index everything, search semantically, stay private — and publish what you choose to share.',
     type: 'website',
     url: 'https://mickel.tech/apps/gno',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'GNO — Local Search for Your Second Brain',
+    title: 'GNO — Local Search + Hosted Publishing',
     description:
-      'Local hybrid search engine. Web UI, REST API, MCP server. 100% private.',
+      'Local hybrid search engine + hosted publishing at gno.sh. Web UI, REST API, MCP server.',
   },
   alternates: {
     canonical: 'https://mickel.tech/apps/gno',
@@ -275,7 +275,7 @@ export default function GnoPage() {
               </h1>
             </div>
             <p className="mt-2 font-mono text-cyan-400 text-xl">
-              Local search for your second brain
+              Local search + hosted publishing for your second brain
             </p>
 
             <div className="mt-2 flex flex-wrap gap-3">
@@ -295,16 +295,28 @@ export default function GnoPage() {
             </div>
 
             <p className="mt-6 max-w-2xl text-lg text-muted-foreground leading-relaxed">
-              Your <span className="text-white">15,000 documents</span> of
-              notes, journals, and reference material—finally searchable.{' '}
-              <span className="text-white">Hybrid search</span> combines
-              keywords and semantics.{' '}
+              Two layers, one stack.{' '}
+              <span className="text-white">Local GNO</span>: your{' '}
+              <span className="text-white">15,000 documents</span> of notes,
+              journals and reference material—finally searchable. Hybrid search
+              across keywords and semantics.{' '}
               <span className="text-white">Everything runs locally</span>.
             </p>
 
             <p className="mt-4 max-w-2xl text-muted-foreground leading-relaxed">
-              BM25. Vectors. HyDE. Reranking. One CLI that unlocks your second
-              brain.
+              <span className="text-white">gno.sh</span>: the hosted publishing
+              layer. Compile a collection, publish it as a polished reading
+              surface — public link or secret link, your call. Reader hotkeys,
+              lightweight lexical search, image asset manifest, no
+              authentication required to read.
+            </p>
+
+            <p className="mt-4 max-w-2xl text-muted-foreground leading-relaxed">
+              BM25. Vectors. HyDE. Reranking. MCP server.{' '}
+              <span className="text-white">One CLI</span> that unlocks your
+              second brain locally — and{' '}
+              <span className="text-white">one publishing surface</span> for
+              what you choose to share.
             </p>
 
             {/* CTA buttons */}
