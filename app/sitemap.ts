@@ -7,7 +7,13 @@ import { getAllPosts, getTagIndex } from '@/lib/posts';
 const siteUrl = 'https://mickel.tech';
 
 // Pages with both EN + DE versions
-const translatedPaths = ['', '/sdlc', '/ai-transformation', '/expert'];
+const translatedPaths = [
+  '',
+  '/sdlc',
+  '/ai-transformation',
+  '/expert',
+  '/case-studies',
+];
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const now = new Date();
