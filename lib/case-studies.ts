@@ -1,12 +1,13 @@
 /**
- * Single source of truth for anonymised case studies surfaced across mickel.tech.
+ * Single source of truth for case studies surfaced across mickel.tech.
  *
- * Anonymisation rules (locked Phase 0 / Q4):
- *   - Named: only DocIQ, FlowNext, MergeFoundry, KISIM, ITDR, OpenAI Red Team,
- *     SECA, Growth Factors at role level only.
- *   - Anonymised: all BU portcos (SHD, Systabuild, eGroup/Audelia, Nexus,
- *     GENII, MAGELLAN, etc.) and all Gutachten counterparties.
- *   - Sector + size + outcome only for anonymised entries.
+ * Roster rules (locked Phase 0 + Apr 2026 review):
+ *   - Named: only fully-mine sources — DocIQ (own company), KISIM (CISTEC AG
+ *     pre-GF role), FlowNext (open source, own), MergeFoundry (own), ITDR,
+ *     OpenAI Red Team, SECA. Growth Factors named at role level only — no
+ *     GF/BU/Sagemount portfolio engagements appear here.
+ *   - Independent advisory engagements: anonymised by sector + size + outcome.
+ *   - Gutachten: counterparties anonymised, sector + outcome only.
  */
 
 export type CaseStudyArea = 'pdlc' | 'expert' | 'systems';
@@ -66,111 +67,90 @@ export interface CaseStudy {
 }
 
 export const CASE_STUDIES: readonly CaseStudy[] = [
+  /* ---------- PDLC ---------- */
   {
-    id: 'pdlc-legacy-stack-modernisation',
+    id: 'pdlc-swiss-multi-org-acceleration',
     area: 'pdlc',
     number: '01',
     featured: true,
     clientEN:
-      'European PE-backed software portco · ~25 engineers · regulated sector',
+      'Swiss software company · 250+ engineers across multiple dev organisations',
     clientDE:
-      'Europäisches PE-Portfoliounternehmen, Software · ~25 Entwickler · regulierter Sektor',
+      'Schweizer Softwarehaus · 250+ Entwickler über mehrere Engineering-Organisationen',
     problemEN:
-      'Decades-old proprietary core platform on a stack the open market has effectively abandoned. Traditional rewrite estimated at €3-5M and 18 months. Skilled engineers in the legacy stack vanishing year on year. Hiring pipeline broken.',
+      'An established Swiss engineering org had rolled out generative AI coding tools but seen no measurable speedup after weeks. Two underlying problems: tooling adopted without methodology change, and no review or quality discipline to convert raw AI output into shippable code. The risk was a familiar one — the tools get blamed, the rollout stalls, and the org concludes "AI does not work for us."',
     problemDE:
-      'Jahrzehntealte proprietäre Kernplattform auf einem Stack, den der offene Markt faktisch verlassen hat. Klassisches Rewrite auf €3-5M und 18 Monate geschätzt. Fachkräfte im Legacy-Stack verschwinden Jahr für Jahr. Recruiting-Pipeline gebrochen.',
+      'Eine etablierte Schweizer Engineering-Organisation hatte generative KI-Coding-Tools ausgerollt, aber nach Wochen keine messbare Geschwindigkeitssteigerung gesehen. Zwei Ursachen: Tooling adoptiert ohne Methodenwechsel, keine Review- und Qualitäts-Disziplin, um rohen KI-Output in lieferfähigen Code zu wandeln. Das Risiko war das vertraute -- die Tools werden beschuldigt, der Rollout stockt, die Organisation schliesst „KI funktioniert für uns nicht".',
     approachEN:
-      'Spec-first agentic migration with parallel agents under a Phase 0 foundation (BAUP framework, global registry, naming conventions). Two pilots before stop/go gate.',
+      'Three working sessions across the engineering organisation covering the full PDLC transformation: change in ways-of-working, agentic spec writing, cross-model review pipeline, eval-driven implementation flywheels and visual QA. Tools became one ingredient in a methodology, not the methodology itself. Senior engineers reframed as agent supervisors and decision owners rather than line-by-line authors.',
     approachDE:
-      'Spec-getriebene agentische Migration mit parallelen Agenten auf einem Phase-0-Fundament (BAUP-Framework, globales Register, Namenskonventionen). Zwei Piloten vor dem Stop/Go-Gate.',
+      'Drei Working Sessions über die Engineering-Organisation hinweg, die die gesamte PDLC-Transformation abdeckten: Veränderung der Arbeitsweise, agentisches Spec Writing, Cross-Model-Review-Pipeline, eval-getriebene Implementierungs-Schwungräder und visuelle QA. Tools wurden zu einer Zutat in einer Methodik, nicht zur Methodik selbst. Senior-Engineers neu gerahmt als Agent-Supervisoren und Entscheidungsträger statt Zeile-für-Zeile-Autoren.',
     outcomeEN:
-      'Migration feasibility validated in 12 days. Recruitment pivot from external dev hire to internal coaching. Two product teams onboarded to agentic PDLC.',
+      "Reported 200%+ improvement in cycle time across the engineering organisation, with a measurable lift in average code quality on DORA-style metrics. Methodology now operating as the dev-org standard rather than a single team's experiment. Same playbook scheduled for adjacent dev orgs inside the company.",
     outcomeDE:
-      'Machbarkeit der Migration in 12 Tagen validiert. Recruiting-Pivot weg von externer Entwicklereinstellung hin zu interner Coaching-Strategie. Zwei Produktteams in agentische PDLC überführt.',
-    metricValueEN: '€2.9-4.9M',
-    metricValueDE: '€2.9-4.9M',
-    metricLabelEN: 'Cost avoidance vs traditional rewrite',
-    metricLabelDE: 'Kostenvermeidung vs. klassisches Rewrite',
-  },
-  {
-    id: 'pdlc-buildinglink-context-strategy',
-    area: 'pdlc',
-    number: 'P3',
-    clientEN:
-      'US PE-backed property-management software · 25-year product, 12-15 devs scaling to 30',
-    clientDE:
-      'US PE-gehaltene Property-Management-Software · 25-jähriges Produkt, 12-15 Entwickler, Skalierung auf 30',
-    problemEN:
-      'CEO-led replatforming under tight delivery pressure, with the team running their first AI-assisted sprint. Mixed early KPIs (productivity gains real but masked by downstream QA and upstream requirements bottlenecks). Tool sprawl across multiple AI coding assistants with no unified governance. Engineer mindset friction on handing work to agents.',
-    problemDE:
-      'CEO-geführtes Re-Platforming unter Lieferdruck, das Team im ersten KI-unterstützten Sprint. Gemischte Early-KPIs (Produktivitätsgewinne real, aber durch nachgelagerten QA-Engpass und vorgelagerten Anforderungs-Engpass maskiert). Tool-Sprawl über mehrere KI-Coding-Assistenten ohne einheitliche Governance. Mindset-Reibung beim Übergeben an Agenten.',
-    approachEN:
-      'Strategy review session with CEO, VP Engineering, EM and Director PMO. Mapped where their AI Context Strategy was already strong (~85% aligned with my pipeline) and the three lanes still missing: requirements engineering as the upstream bottleneck, implementation verification loops with cross-model review, and downstream QA acceleration.',
-    approachDE:
-      'Strategie-Review mit CEO, VP Engineering, EM und Director PMO. Kartierung, wo die KI-Kontextstrategie bereits stark ist (~85% deckungsgleich mit meinem Vorgehen), und der drei noch fehlenden Spuren: Anforderungsengineering als vorgelagerter Engpass, Implementierungs-Verifikationsschleifen mit Cross-Model-Review, nachgelagerte QA-Beschleunigung.',
-    outcomeEN:
-      'Concrete next-step lanes the engineering org could pick up the following week. Spec-driven development plus self-verifying implementation loop adopted as the methodology direction. Cross-model review pattern handed over.',
-    outcomeDE:
-      'Konkrete nächste Spuren, die das Engineering in der Folgewoche aufnehmen konnte. Spec-driven Development plus selbstverifizierende Implementierungsschleife als methodische Richtung übernommen. Cross-Model-Review-Pattern übergeben.',
-    metricValueEN: '85% aligned',
-    metricValueDE: '85% deckungsgleich',
-    metricLabelEN: 'CEO-led PDLC strategy review',
-    metricLabelDE: 'CEO-geführte PDLC-Strategie-Review',
+      'Berichtete 200%+ Verbesserung der Cycle Time über die Engineering-Organisation, mit messbarer Steigerung der durchschnittlichen Codequalität auf DORA-ähnlichen Metriken. Methodik läuft jetzt als Standard der Engineering-Organisation, nicht als Experiment eines einzelnen Teams. Selbes Playbook für benachbarte Engineering-Organisationen im Unternehmen geplant.',
+    metricValueEN: '200%+',
+    metricValueDE: '200%+',
+    metricLabelEN: 'Cycle-time uplift · 250+ engineers · 3 workshops',
+    metricLabelDE: 'Cycle-Time-Steigerung · 250+ Entwickler · 3 Workshops',
   },
   {
     id: 'pdlc-cistec-50-engineer-rollout',
     area: 'pdlc',
-    number: 'P4',
+    number: '02',
     clientEN:
-      'Swiss healthcare software vendor · 50+ engineering org · regulated production',
+      'CISTEC AG · 50+ engineering org · regulated clinical software production',
     clientDE:
-      'Schweizer Healthcare-Softwarehaus · 50+ Engineering · regulierte Produktion',
+      'CISTEC AG · 50+ Engineering · regulierte klinische Software-Produktion',
     problemEN:
       'Established engineering organisation needed to adopt AI tooling without disrupting regulated clinical delivery. Concerns: vendor sprawl, prompt drift, security and IP exposure with cloud APIs, measurement of actual productivity gain vs anecdote.',
     problemDE:
       'Etablierte Engineering-Organisation musste KI-Tooling adoptieren, ohne die regulierte klinische Auslieferung zu stören. Sorgen: Anbieter-Sprawl, Prompt-Drift, Sicherheits- und IP-Exposition mit Cloud-APIs, Messung des tatsächlichen Produktivitätsgewinns jenseits anekdotischer Aussagen.',
     approachEN:
-      'Guardrailed Copilot + Cursor rollout to 50+ engineers. Internal playbooks, prompt patterns, and a code-review pattern. Reusable AI platform underneath (LLM gateway, prompt registry, observability) so that the rollout was a single onboarding rather than per-team chaos.',
+      'Guardrailed agentic-tooling rollout across the entire 50+ engineering organisation: standard editor stack, internal playbooks, prompt patterns, code-review pattern. Reusable AI platform underneath (LLM gateway, prompt registry, observability) so the rollout was a single onboarding rather than per-team chaos. The same platform underwrote the production clinical AI features that shipped on top.',
     approachDE:
-      'Guardrailed-Rollout von Copilot + Cursor auf 50+ Entwickler. Interne Playbooks, Prompt-Patterns und ein Code-Review-Pattern. Wiederverwendbare KI-Plattform darunter (LLM-Gateway, Prompt-Registry, Observability), damit der Rollout ein einziges Onboarding war, kein Per-Team-Chaos.',
+      'Guardrailed-Rollout agentischer Tools über die gesamte 50+ Engineering-Organisation: Standard-Editor-Stack, interne Playbooks, Prompt-Patterns, Code-Review-Pattern. Wiederverwendbare KI-Plattform darunter (LLM-Gateway, Prompt-Registry, Observability), damit der Rollout ein einziges Onboarding war, kein Per-Team-Chaos. Dieselbe Plattform trug die produktiven klinischen KI-Features, die darauf ausgeliefert wurden.',
     outcomeEN:
-      'Measurable productivity gains across the engineering org, captured rather than anecdotal. Single-pattern onboarding for new use cases. Same platform powered the production AI features (clinical LLM, see KISIM case) — the PDLC investment underwrote the product investment.',
+      'Measurable productivity gains across the engineering organisation, captured rather than anecdotal. Single-pattern onboarding for new use cases. The same platform powered production clinical AI in <90 days (see KISIM case) — the PDLC investment directly underwrote the product investment.',
     outcomeDE:
-      'Messbare Produktivitätsgewinne über die Engineering-Organisation, erfasst statt anekdotisch. Single-Pattern-Onboarding für neue Use Cases. Dieselbe Plattform trug die produktiven KI-Features (klinische LLM, siehe KISIM-Fall) -- die PDLC-Investition trug die Produktinvestition mit.',
+      'Messbare Produktivitätsgewinne über die Engineering-Organisation, erfasst statt anekdotisch. Single-Pattern-Onboarding für neue Use Cases. Dieselbe Plattform trug die produktive klinische KI in <90 Tagen (siehe KISIM-Fall) -- die PDLC-Investition trug die Produktinvestition direkt mit.',
     metricValueEN: '50+ engineers',
     metricValueDE: '50+ Entwickler',
-    metricLabelEN: 'Guardrailed AI tooling rollout',
-    metricLabelDE: 'Guardrailed-KI-Tooling-Rollout',
+    metricLabelEN: 'Single-pattern agentic rollout',
+    metricLabelDE: 'Single-Pattern-Agenten-Rollout',
   },
   {
-    id: 'pdlc-multi-entity-standardisation',
+    id: 'pdlc-uk-custom-agents-acceleration',
     area: 'pdlc',
-    number: '02',
+    number: '03',
+    featured: true,
     clientEN:
-      'European multi-entity software group · agentic PDLC standardisation across portfolio',
+      'UK software company · custom agentic coding pipeline · highly competitive market',
     clientDE:
-      'Europäische Software-Gruppe · agentische PDLC-Standardisierung über das Portfolio',
+      'Britisches Softwarehaus · individuelle agentische Coding-Pipeline · hart umkämpfter Markt',
     problemEN:
-      'Group strategy required AI-first delivery across heterogeneous portfolio companies with different stacks, languages, and team maturity. No standard methodology, no shared KPIs, no reusable engagement template.',
+      'Engineering team needed to compress shipping cadence in a market where competitors were releasing features weekly. Generic AI tooling had not moved the needle. Standard PR review was the most consistent bottleneck — senior engineers spending too much time on the lowest-leverage parts of the loop.',
     problemDE:
-      'Die Gruppenstrategie verlangte KI-zuerst-Auslieferung über heterogene Portfoliounternehmen mit unterschiedlichen Stacks, Sprachen und Team-Reife. Keine Standardmethodik, keine geteilten KPIs, keine wiederverwendbare Mandatsvorlage.',
+      'Engineering-Team musste die Liefertaktung in einem Markt komprimieren, in dem Wettbewerber wöchentlich Features ausrollten. Generisches KI-Tooling hatte den Hebel nicht bewegt. Standard-PR-Review war der konsistenteste Engpass -- Senior-Engineers verbrachten zu viel Zeit mit den niedrig-hebeligen Teilen der Schleife.',
     approachEN:
-      'Built a standardised agentic PDLC engagement template, KPI framework, and assessment process reusable across the group. Onboarded multiple entities in a single onsite week.',
+      "Multiple coaching engagements paired with custom agents built into the team's existing pipeline. Agents wired into Jira for ticket triage and refinement, and into the review pipeline to surface critical code paths needing human attention. Methodology rather than tool swap: agents replaced the lowest-leverage parts of the human review loop and freed senior engineers for the high-leverage decisions.",
     approachDE:
-      'Standardisierte Mandatsvorlage für agentische PDLC, KPI-Framework und Assessment-Prozess gebaut, gruppenweit wiederverwendbar. Mehrere Einheiten in einer einzigen Onsite-Woche aufgesetzt.',
+      'Mehrere Coaching-Mandate, kombiniert mit massgefertigten Agenten in der bestehenden Pipeline des Teams. Agenten in Jira eingebunden für Ticket-Triage und -Verfeinerung sowie in die Review-Pipeline, um kritische Code-Pfade an menschliche Aufmerksamkeit zu übergeben. Methodik statt Tool-Tausch: Agenten haben die niedrig-hebeligen Teile der menschlichen Review-Schleife übernommen und Senior-Engineers für hochhebelige Entscheidungen freigespielt.',
     outcomeEN:
-      'Adopted as group standard. Each subsequent entity onboards in days, not weeks. Continuing rollout across the portfolio.',
+      'Three new products shipped since the engagement started, in a market where features ship weekly. Reported delivery speedups of up to 500%. Custom agent stack now part of the standard internal toolchain.',
     outcomeDE:
-      'Als Gruppenstandard übernommen. Jede weitere Einheit in Tagen statt Wochen aufgesetzt. Rollout über das Portfolio läuft weiter.',
-    metricValueEN: 'Group standard',
-    metricValueDE: 'Gruppenstandard',
-    metricLabelEN: 'Reusable PDLC engagement template',
-    metricLabelDE: 'Wiederverwendbare PDLC-Mandatsvorlage',
+      'Seit Mandatsbeginn drei neue Produkte ausgeliefert, in einem Markt mit wöchentlicher Feature-Frequenz. Berichtete Liefer-Beschleunigungen von bis zu 500%. Massgefertigter Agenten-Stack jetzt Teil der internen Standard-Toolchain.',
+    metricValueEN: 'Up to 500%',
+    metricValueDE: 'Bis zu 500%',
+    metricLabelEN: 'Delivery speedup · 3 new products shipped',
+    metricLabelDE: 'Liefer-Beschleunigung · 3 neue Produkte ausgeliefert',
   },
+
+  /* ---------- Independent expert ---------- */
   {
     id: 'expert-software-acceptance-dispute',
     area: 'expert',
-    number: '03',
+    number: '04',
     featured: true,
     clientEN: 'Swiss commercial counsel · 7-figure software acceptance dispute',
     clientDE: 'Schweizer Wirtschaftskanzlei · siebenstelliger Software-Streit',
@@ -194,7 +174,7 @@ export const CASE_STUDIES: readonly CaseStudy[] = [
   {
     id: 'expert-werkvertrag-power-platform',
     area: 'expert',
-    number: '04',
+    number: '05',
     clientEN:
       'Swiss public-sector procurement · platform delivery · joint expert mandate',
     clientDE:
@@ -219,7 +199,7 @@ export const CASE_STUDIES: readonly CaseStudy[] = [
   {
     id: 'expert-cross-language-copyright',
     area: 'expert',
-    number: 'E3',
+    number: '06',
     clientEN:
       'Swiss legal counsel · software copyright dispute · cross-language code derivation question',
     clientDE:
@@ -241,33 +221,12 @@ export const CASE_STUDIES: readonly CaseStudy[] = [
     metricLabelEN: 'Code-derivation analysis · multi-layer filter',
     metricLabelDE: 'Code-Ableitungs-Analyse · mehrschichtige Filterung',
   },
-  {
-    id: 'expert-tech-dd-platform-business',
-    area: 'expert',
-    number: '05',
-    clientEN: 'European platform business · PE buy-side AI / tech DD',
-    clientDE: 'Europäisches Plattform-Unternehmen · PE-Buy-Side-KI-/Tech-DD',
-    problemEN:
-      'Investment committee required an AI / tech due diligence on a fast-growing platform business with significant claimed AI capability. Standard DD vendors lacked the depth to verify the claims; deal team needed an opinion in under a week.',
-    problemDE:
-      'Das Investmentkomitee verlangte eine KI- und Tech-DD bei einem schnell wachsenden Plattform-Unternehmen mit umfangreich behaupteter KI-Fähigkeit. Standard-DD-Anbieter hatten nicht die Tiefe, die Behauptungen zu verifizieren; das Deal-Team brauchte eine Stellungnahme in unter einer Woche.',
-    approachEN:
-      'Maturity scoring across 5 pillars. 37-claim verification matrix against vendor representations. IC slide deck plus a working annex with evidence cross-references.',
-    approachDE:
-      'Reifegradbewertung über 5 Säulen. Verifikationsmatrix mit 37 Aussagen, geprüft gegen die Darstellung des Anbieters. IC-Folien plus Arbeits-Annex mit Querverweisen auf die Belege.',
-    outcomeEN:
-      'IC-ready value creation thesis identifying EUR 3-6M EBITDA uplift, paired with a risk register. Delivered in <1 week. Used directly in deal committee.',
-    outcomeDE:
-      'IC-fähige Value-Creation-These mit identifiziertem EUR 3-6M EBITDA-Uplift, gepaart mit Risikoregister. Lieferung in unter einer Woche. Direkt im Deal-Komitee verwendet.',
-    metricValueEN: '€3-6M',
-    metricValueDE: '€3-6M',
-    metricLabelEN: 'EBITDA uplift identified',
-    metricLabelDE: 'EBITDA-Uplift identifiziert',
-  },
+
+  /* ---------- AI systems ---------- */
   {
     id: 'systems-kisim-clinical-llm',
     area: 'systems',
-    number: '06',
+    number: '07',
     named: true,
     featured: true,
     clientEN:
@@ -279,9 +238,9 @@ export const CASE_STUDIES: readonly CaseStudy[] = [
     problemDE:
       'Ein marktführendes Schweizer klinisches Informationssystem in eine produktive KI-Plattform unter DSG / DSGVO überführen, mit On-Prem-Privacy und spitalgrader Zuverlässigkeit. KI-Kompetenz über eine etablierte Engineering-Organisation mit 50+ Personen skalieren, ohne die laufende klinische Auslieferung zu stören.',
     approachEN:
-      'Head of AI & Engineering Lead at CISTEC AG. Secured C-suite mandate, authored the strategy, secured budget. Shipped KISIM AI in <90 days (generative discharge drafts, semantic retrieval, structured medical extraction, summarisation). Built the reusable platform: LLM gateway, pgvector hybrid search, two-stage context pipeline, on-prem PII masking (custom GLiNER/BERT, 97%+ accuracy). Scaled AI adoption to 50+ engineers via guardrailed Copilot/Cursor rollout with playbooks and prompt patterns.',
+      'Head of AI & Engineering Lead at CISTEC AG. Secured C-suite mandate, authored the strategy, secured budget. Shipped KISIM AI in <90 days (generative discharge drafts, semantic retrieval, structured medical extraction, summarisation). Built the reusable platform: LLM gateway, pgvector hybrid search, two-stage context pipeline, on-prem PII masking (custom GLiNER/BERT, 97%+ accuracy). Scaled AI adoption to 50+ engineers via guardrailed agentic-tooling rollout with playbooks and prompt patterns.',
     approachDE:
-      'Head of AI & Engineering Lead bei CISTEC AG. C-Level-Mandat gesichert, Strategie verfasst, Budget gesichert. KISIM AI in <90 Tagen ausgeliefert (generative Austrittsberichte, semantisches Retrieval, strukturierte medizinische Extraktion, Summarisierung). Wiederverwendbare Plattform aufgebaut: LLM-Gateway, pgvector-Hybridsuche, zweistufige Kontext-Pipeline, On-Prem-PII-Masking (eigenes GLiNER/BERT, 97%+ Genauigkeit). KI-Adoption auf 50+ Entwickler skaliert über einen Guardrail-gesicherten Copilot-/Cursor-Rollout mit Playbooks und Prompt-Patterns.',
+      'Head of AI & Engineering Lead bei CISTEC AG. C-Level-Mandat gesichert, Strategie verfasst, Budget gesichert. KISIM AI in <90 Tagen ausgeliefert (generative Austrittsberichte, semantisches Retrieval, strukturierte medizinische Extraktion, Summarisierung). Wiederverwendbare Plattform aufgebaut: LLM-Gateway, pgvector-Hybridsuche, zweistufige Kontext-Pipeline, On-Prem-PII-Masking (eigenes GLiNER/BERT, 97%+ Genauigkeit). KI-Adoption auf 50+ Entwickler skaliert über einen Guardrail-gesicherten Rollout agentischer Tools mit Playbooks und Prompt-Patterns.',
     outcomeEN:
       "Switzerland's first production clinical LLM platform. Live in Swiss hospitals with expanding pilot pipeline. New ARR streams. Repositioned the company as an AI-enabled market leader. Presented at the openEHR.ch Symposium.",
     outcomeDE:
@@ -294,7 +253,7 @@ export const CASE_STUDIES: readonly CaseStudy[] = [
   {
     id: 'systems-dociq-swiss-legaltech-clm',
     area: 'systems',
-    number: '07',
+    number: '08',
     named: true,
     featured: true,
     clientEN: 'DocIQ · Building Swiss legal AI since 2017',
@@ -317,57 +276,9 @@ export const CASE_STUDIES: readonly CaseStudy[] = [
     metricLabelDE: 'Gründer · Schweizer Legal-AI',
   },
   {
-    id: 'systems-voice-spinout',
-    area: 'systems',
-    number: '08',
-    clientEN:
-      'European software services portco · AI voice agent product launch',
-    clientDE:
-      'Europäisches Software-Services-Portco · Launch eines KI-Voice-Agent-Produkts',
-    problemEN:
-      "Portco wanted a new AI-first revenue line built on the firm's existing services capability. Required a hybrid voice product that could replace first-line support across multiple customer accounts.",
-    problemDE:
-      'Das Portco wollte eine neue KI-zuerst-Umsatzlinie aufbauen, basierend auf der bestehenden Service-Capability. Gebraucht wurde ein hybrides Voice-Produkt, das First-Line-Support über mehrere Kundenkonten ersetzen kann.',
-    approachEN:
-      'Architected the voice agent stack, coached the internal team through the build, cross-sold the resulting product to a sister portco as the first test customer.',
-    approachDE:
-      'Voice-Agent-Stack architektiert, das interne Team durch den Build gecoacht, das resultierende Produkt an ein Schwester-Portco als ersten Testkunden cross-verkauft.',
-    outcomeEN:
-      'Hybrid voice product live in production. Established as a standalone product line, not a feature buried in services revenue.',
-    outcomeDE:
-      'Hybrides Voice-Produkt produktiv im Einsatz. Als eigenständige Produktlinie etabliert, nicht als Feature, das im Services-Umsatz untergeht.',
-    metricValueEN: 'Live',
-    metricValueDE: 'Live',
-    metricLabelEN: 'New revenue line · production',
-    metricLabelDE: 'Neue Umsatzlinie · produktiv',
-  },
-  {
-    id: 'systems-ai-deal-screening',
+    id: 'systems-generative-ai-architecture-advisory',
     area: 'systems',
     number: '09',
-    clientEN: 'PE deal screening · AI upside framework',
-    clientDE: 'PE-Deal-Screening · KI-Upside-Framework',
-    problemEN:
-      'Deal team needed a systematic AI exposure and disruption analysis on a target before IC. Standard tech DD does not surface AI-specific upside, downside, or competitive vulnerability.',
-    problemDE:
-      'Das Deal-Team brauchte vor dem IC eine systematische Analyse der KI-Exposition und der Disruptionsrisiken am Target. Eine Standard-Tech-DD erfasst KI-spezifischen Upside, Downside oder Wettbewerbsverwundbarkeit nicht.',
-    approachEN:
-      'Built a reusable AI deal-screening framework: AI exposure surface, automation upside per workflow, model-as-competitor risk, defensibility scoring. Applied it to the target.',
-    approachDE:
-      'Wiederverwendbares KI-Deal-Screening-Framework aufgebaut: Oberfläche der KI-Exposition, Automatisierungs-Upside pro Workflow, Risiko Modell-als-Wettbewerber, Verteidigbarkeits-Scoring. Auf das Target angewendet.',
-    outcomeEN:
-      'Quantified AI upside and disruption risk surfaced for IC. Framework now applied to subsequent deals as a new GF / deal-team capability.',
-    outcomeDE:
-      'Quantifizierter KI-Upside und Disruptionsrisiko für das IC sichtbar gemacht. Das Framework wird jetzt bei weiteren Deals angewendet, als neue Fähigkeit von GF und Deal-Team.',
-    metricValueEN: 'New capability',
-    metricValueDE: 'Neue Fähigkeit',
-    metricLabelEN: 'AI deal-screening framework',
-    metricLabelDE: 'KI-Deal-Screening-Framework',
-  },
-  {
-    id: 'systems-obligate-generative-ai-advisory',
-    area: 'systems',
-    number: 'S5',
     clientEN:
       'Swiss B2B platform company · technical advisor · generative AI product strategy',
     clientDE:
