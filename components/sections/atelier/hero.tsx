@@ -12,7 +12,7 @@ const copyEN = {
     'Operating Principal, AI & Technology at Growth Factors (Bregal portfolio). Independent practice for a small number of select mandates each year — agentic PDLC, production AI systems, and party-engaged technical opinion.',
   primaryCta: 'Discuss a mandate',
   secondaryCta: 'Independent expert work',
-  caption: 'Gordon Mickel · Basel, Switzerland',
+  caption: 'Gordon Mickel · Binningen, Switzerland',
   captionMeta: '20+ years · DE / EN',
 };
 
@@ -28,7 +28,7 @@ const copyDE = {
     'Operating Principal, KI & Technologie bei Growth Factors (Bregal-Portfolio). Unabhängige Praxis für eine kleine Anzahl ausgewählter Mandate jedes Jahr — agentische PDLC, produktive KI-Systeme und parteiisch beauftragte technische Begutachtung.',
   primaryCta: 'Mandat besprechen',
   secondaryCta: 'Unabhängige Begutachtung',
-  caption: 'Gordon Mickel · Basel, Schweiz',
+  caption: 'Gordon Mickel · Binningen, Schweiz',
   captionMeta: '20+ Jahre · DE / EN',
 };
 

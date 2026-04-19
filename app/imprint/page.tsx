@@ -6,7 +6,7 @@ import { breadcrumbSchema, JsonLd } from '@/lib/json-ld';
 export const metadata: Metadata = {
   title: 'Imprint — Mickel Tech',
   description:
-    'Imprint and contact details for Mickel Tech, the independent practice of Gordon Mickel based in Basel, Switzerland.',
+    'Imprint and contact details for Mickel Tech, the sole proprietorship of Gordon Mickel based in Binningen, Switzerland.',
   alternates: {
     canonical: 'https://mickel.tech/imprint',
     languages: {
@@ -32,19 +32,19 @@ export default function ImprintPage() {
       >
         <h2>Operator</h2>
         <p>
-          Mickel Tech is the independent practice of Gordon Mickel.
-          {/* TODO Gordon: confirm legal structure (sole proprietorship vs registered entity) */}
+          Mickel Tech is a sole proprietorship (Einzelfirma) of Gordon Mickel.
         </p>
 
-        <h2>Address</h2>
+        <h2>Location</h2>
         <p>
           Gordon Mickel
           <br />
-          Basel, Switzerland
-          {/* TODO Gordon: replace with c/o virtual office or coworking address
-            (e.g. SwissPost Business, Impact Hub Basel, lawyer correspondence
-            address) so home address is not exposed. CH Impressum requires a
-            postal address for commercial sites; "Basel" alone is borderline. */}
+          Binningen, Switzerland
+        </p>
+        <p>
+          A street address is not published. For postal correspondence please
+          contact Gordon by email; an address will be provided directly on
+          request.
         </p>
 
         <h2>Contact</h2>
@@ -76,8 +76,8 @@ export default function ImprintPage() {
 
         <h2>Jurisdiction</h2>
         <p>
-          Place of jurisdiction is Basel, Switzerland. Swiss substantive law
-          applies, excluding its conflict-of-laws rules.
+          Place of jurisdiction is the canton of Basel-Landschaft, Switzerland.
+          Swiss substantive law applies, excluding its conflict-of-laws rules.
         </p>
       </AtelierPolicyPage>
     </AtelierShell>

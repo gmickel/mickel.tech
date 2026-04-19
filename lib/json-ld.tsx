@@ -39,7 +39,7 @@ export function personSchema() {
     },
     address: {
       '@type': 'PostalAddress',
-      addressLocality: 'Basel',
+      addressLocality: 'Binningen',
       addressCountry: 'CH',
     },
     knowsLanguage: ['en', 'de'],
@@ -91,7 +91,7 @@ export function professionalServiceSchema() {
     ],
     address: {
       '@type': 'PostalAddress',
-      addressLocality: 'Basel',
+      addressLocality: 'Binningen',
       addressCountry: 'CH',
     },
     availableLanguage: ['en', 'de'],

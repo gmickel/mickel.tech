@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     template: '%s | Mickel Tech',
   },
   description:
-    'I design AI systems that actually work. Operating Principal (AI & Technology) at Growth Factors. Independent practice for select mandates: agentic PDLC transformation, production AI systems, party-engaged technical opinion (Parteigutachten) and acceptance expert work (Werkvertrags-Gutachten). Basel, Switzerland — DE & EN.',
+    'I design AI systems that actually work. Operating Principal (AI & Technology) at Growth Factors. Independent practice for select mandates: agentic PDLC transformation, production AI systems, party-engaged technical opinion (Parteigutachten) and acceptance expert work (Werkvertrags-Gutachten). Binningen, Switzerland — DE & EN.',
   keywords: [
     'Agentic PDLC',
     'AI-native PDLC',
@@ -42,6 +42,7 @@ export const metadata: Metadata = {
     'IT Sachverständiger Schweiz',
     'technical expert ITDR',
     'AI due diligence',
+    'AI Berater Binningen',
     'AI Berater Basel',
     'Gordon Mickel',
   ],
@@ -61,7 +62,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Gordon Mickel — Agentic PDLC, AI Systems & Independent Expert',
     description:
-      'Independent practice for select mandates: agentic PDLC transformation, production AI systems, party-engaged technical opinion. Basel, DE & EN.',
+      'Independent practice for select mandates: agentic PDLC transformation, production AI systems, party-engaged technical opinion. Binningen, DE & EN.',
     creator: '@gmickel',
   },
   robots: {

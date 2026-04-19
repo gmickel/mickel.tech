@@ -77,7 +77,7 @@ export default function AtelierContact({ locale = 'en' }: AtelierContactProps) {
           heading: 'Reden wir über Ihr Mandat.',
           intro:
             'Eine kleine Anzahl ausgewählter Mandate jedes Jahr. Erstgespräch in der Regel innerhalb von 48 Stunden. Schriftliche Anfragen schneller.',
-          location: 'Basel, Schweiz · DE / EN',
+          location: 'Binningen, Schweiz · DE / EN',
           status: 'Status',
           statusValue: 'Q2 2026 — wenige Plätze offen',
         }
@@ -86,7 +86,7 @@ export default function AtelierContact({ locale = 'en' }: AtelierContactProps) {
           heading: "Let's talk about the mandate.",
           intro:
             'A small number of select mandates each year. First call usually within 48 hours. Written enquiries faster.',
-          location: 'Basel, Switzerland · DE / EN',
+          location: 'Binningen, Switzerland · DE / EN',
           status: 'Status',
           statusValue: 'Q2 2026 — a few slots open',
         };

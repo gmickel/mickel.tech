@@ -31,7 +31,7 @@ export default function PrivacyPage() {
         updatedLabel="Last updated"
       >
         <p>
-          This statement describes how Mickel Tech (Gordon Mickel, Basel,
+          This statement describes how Mickel Tech (Gordon Mickel, Binningen,
           Switzerland) collects, uses and protects personal data when you visit
           mickel.tech, contact me, or submit a confidential intake.
         </p>
@@ -40,7 +40,7 @@ export default function PrivacyPage() {
         <p>
           Gordon Mickel
           <br />
-          Basel, Switzerland
+          Binningen, Switzerland
           <br />
           <a href="mailto:gordon@mickel.tech">gordon@mickel.tech</a>
         </p>

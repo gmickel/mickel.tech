@@ -33,7 +33,7 @@ export default function DePrivacyPage() {
         updatedLabel="Zuletzt aktualisiert"
       >
         <p>
-          Diese Erklärung beschreibt, wie Mickel Tech (Gordon Mickel, Basel,
+          Diese Erklärung beschreibt, wie Mickel Tech (Gordon Mickel, Binningen,
           Schweiz) personenbezogene Daten erhebt, verwendet und schützt, wenn
           Sie mickel.tech besuchen, mich kontaktieren oder eine vertrauliche
           Anfrage einreichen.
@@ -43,7 +43,7 @@ export default function DePrivacyPage() {
         <p>
           Gordon Mickel
           <br />
-          Basel, Schweiz
+          Binningen, Schweiz
           <br />
           <a href="mailto:gordon@mickel.tech">gordon@mickel.tech</a>
         </p>

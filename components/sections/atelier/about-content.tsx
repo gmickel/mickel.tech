@@ -217,7 +217,7 @@ export default function AtelierAbout({ locale = 'en' }: AboutContentProps) {
                   />
                 </div>
                 <figcaption className="atelier-eyebrow mt-3 text-[hsl(var(--paper))]/55">
-                  Gordon Mickel · Basel, CH
+                  Gordon Mickel · Binningen, CH
                 </figcaption>
               </figure>
             </div>

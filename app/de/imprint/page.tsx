@@ -6,7 +6,7 @@ import { breadcrumbSchema, JsonLd } from '@/lib/json-ld';
 export const metadata: Metadata = {
   title: 'Impressum — Mickel Tech',
   description:
-    'Impressum und Kontaktangaben für Mickel Tech, die unabhängige Praxis von Gordon Mickel mit Sitz in Basel, Schweiz.',
+    'Impressum und Kontaktangaben für Mickel Tech, Einzelfirma von Gordon Mickel mit Sitz in Binningen, Schweiz.',
   alternates: {
     canonical: 'https://mickel.tech/de/imprint',
     languages: {
@@ -33,21 +33,18 @@ export default function DeImprintPage() {
         updatedLabel="Zuletzt aktualisiert"
       >
         <h2>Betreiber</h2>
-        <p>
-          Mickel Tech ist die unabhängige Praxis von Gordon Mickel.
-          {/* TODO Gordon: Rechtsform bestätigen (Einzelfirma vs. registrierte Gesellschaft) */}
-        </p>
+        <p>Mickel Tech ist eine Einzelfirma von Gordon Mickel.</p>
 
-        <h2>Adresse</h2>
+        <h2>Standort</h2>
         <p>
           Gordon Mickel
           <br />
-          Basel, Schweiz
-          {/* TODO Gordon: durch c/o Virtual Office oder Coworking-Adresse ersetzen
-            (z.B. SwissPost Business, Impact Hub Basel, Korrespondenzadresse
-            der Anwaltskanzlei), damit die Privatadresse nicht offengelegt
-            wird. CH-Impressum verlangt eine Postadresse für kommerzielle
-            Websites; nur "Basel" ist grenzwertig. */}
+          Binningen, Schweiz
+        </p>
+        <p>
+          Eine Strassenadresse wird nicht veröffentlicht. Für postalische
+          Korrespondenz wenden Sie sich bitte per E-Mail an Gordon; eine Adresse
+          wird direkt auf Anfrage mitgeteilt.
         </p>
 
         <h2>Kontakt</h2>
@@ -80,8 +77,9 @@ export default function DeImprintPage() {
 
         <h2>Gerichtsstand</h2>
         <p>
-          Gerichtsstand ist Basel, Schweiz. Es gilt schweizerisches materielles
-          Recht unter Ausschluss seiner kollisionsrechtlichen Bestimmungen.
+          Gerichtsstand ist der Kanton Basel-Landschaft, Schweiz. Es gilt
+          schweizerisches materielles Recht unter Ausschluss seiner
+          kollisionsrechtlichen Bestimmungen.
         </p>
       </AtelierPolicyPage>
     </AtelierShell>
