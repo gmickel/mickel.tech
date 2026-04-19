@@ -217,29 +217,29 @@ export const CASE_STUDIES: readonly CaseStudy[] = [
     metricLabelDE: 'Mehrjähriges klinisches KI-Programm',
   },
   {
-    id: 'systems-dociq-ai-native-clm',
+    id: 'systems-dociq-swiss-legaltech-clm',
     area: 'systems',
     number: '07',
     named: true,
     featured: true,
-    clientEN: 'DocIQ · AI-native contract lifecycle management platform',
-    clientDE: 'DocIQ · KI-native Contract-Lifecycle-Management-Plattform',
+    clientEN: 'DocIQ · Swiss legal-tech contract lifecycle management platform',
+    clientDE: 'DocIQ · Schweizer Legal-Tech-CLM-Plattform',
     problemEN:
-      'Build an AI-native CLM platform from scratch. Compete in a market crowded with legacy players and AI bolt-on features. Needed defensible technical position and a credible path to enterprise revenue.',
+      'Build a Swiss-grounded contract lifecycle platform that competes with global legacy incumbents on AI-native architecture, while meeting Swiss legal-market expectations on data residency, language and procurement.',
     problemDE:
-      'KI-native CLM-Plattform von Grund auf aufbauen. Wettbewerb in einem Markt voller Legacy-Anbieter und nachgerüsteter KI-Features. Brauchte verteidigbare technische Position und glaubwürdigen Weg zu Enterprise-Umsatz.',
+      'Eine schweizerisch verankerte Contract-Lifecycle-Plattform aufbauen, die mit globalen Legacy-Anbietern auf KI-nativer Architektur konkurriert und gleichzeitig die Erwartungen des Schweizer Rechtsmarkts an Datenhoheit, Sprache und Beschaffung erfüllt.',
     approachEN:
-      'Founded and ran the company. Designed the platform architecture, built the team, raised funding, ran sales into legal and compliance functions, navigated procurement.',
+      'Founded the company in 2017. Designed the platform architecture, built the team, raised funding, sold into legal and compliance teams across Switzerland and DACH, navigated procurement and regulatory requirements.',
     approachDE:
-      'Unternehmen gegründet und geführt. Plattform-Architektur entworfen, Team aufgebaut, Finanzierung eingeworben, Vertrieb in Legal- und Compliance-Funktionen, Procurement-Prozesse navigiert.',
+      'Unternehmen 2017 gegründet. Plattform-Architektur entworfen, Team aufgebaut, Finanzierung eingeworben, Vertrieb in Legal- und Compliance-Teams in der Schweiz und im DACH-Raum, Procurement und regulatorische Anforderungen navigiert.',
     outcomeEN:
-      'Funded, took to acquisition stage. Live in production at enterprise customers. Validated the AI-native architecture thesis ahead of the broader market shift.',
+      'Stalwart of the Swiss legal-tech scene since 2017. Live in production with enterprise customers, repeatedly upgraded with new AI-native capability as the market matured.',
     outcomeDE:
-      'Finanziert, bis zur Übernahmephase geführt. Produktiv bei Enterprise-Kunden im Einsatz. Validierte die KI-native Architektur-These vor dem breiteren Marktwechsel.',
-    metricValueEN: 'Acquired',
-    metricValueDE: 'Übernommen',
-    metricLabelEN: 'Founder · funded · acquisition stage',
-    metricLabelDE: 'Gründer · finanziert · Übernahmephase',
+      'Stalwart der Schweizer Legal-Tech-Szene seit 2017. Produktiv bei Enterprise-Kunden im Einsatz, mit fortlaufender KI-nativer Weiterentwicklung im Takt des Marktes.',
+    metricValueEN: 'Since 2017',
+    metricValueDE: 'Seit 2017',
+    metricLabelEN: 'Founder · Swiss legal-tech stalwart',
+    metricLabelDE: 'Gründer · Schweizer Legal-Tech-Stalwart',
   },
   {
     id: 'systems-voice-spinout',

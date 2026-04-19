@@ -13,7 +13,7 @@ const copyEN = {
   primaryCta: 'Discuss a mandate',
   secondaryCta: 'Independent expert work',
   caption: 'Gordon Mickel · Basel, Switzerland',
-  captionMeta: 'Practice est. 2003 · DE / EN',
+  captionMeta: '20+ years · DE / EN',
 };
 
 const copyDE = {
@@ -29,7 +29,7 @@ const copyDE = {
   primaryCta: 'Mandat besprechen',
   secondaryCta: 'Unabhängige Begutachtung',
   caption: 'Gordon Mickel · Basel, Schweiz',
-  captionMeta: 'Praxis seit 2003 · DE / EN',
+  captionMeta: '20+ Jahre · DE / EN',
 };
 
 export default function AtelierHero({ locale = 'en' }: AtelierHeroProps) {

@@ -58,7 +58,7 @@ export function personSchema() {
     memberOf: [
       {
         '@type': 'Organization',
-        name: 'ITDR — Swiss IT Dispute Resolution Center',
+        name: 'ITDR — Institution for IT and Data Dispute Resolution',
         url: 'https://itdr.ch',
       },
       {

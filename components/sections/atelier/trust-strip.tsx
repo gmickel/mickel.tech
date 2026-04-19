@@ -3,7 +3,10 @@ interface TrustStripProps {
 }
 
 const itemsEN = [
-  { label: 'ITDR-listed', meta: 'Swiss IT Dispute Resolution Center' },
+  {
+    label: 'ITDR-listed',
+    meta: 'Institution for IT and Data Dispute Resolution',
+  },
   { label: 'Handelsgericht', meta: 'Parteigutachter, software dispute' },
   { label: 'OpenAI Red Team', meta: 'Frontier model safety alumnus' },
   { label: 'SECA 2026', meta: 'Invited speaker, AI in SME growth' },
@@ -14,7 +17,10 @@ const itemsEN = [
 ] as const;
 
 const itemsDE = [
-  { label: 'ITDR-gelistet', meta: 'Schweizer IT-Streitschlichtung' },
+  {
+    label: 'ITDR-gelistet',
+    meta: 'Institution for IT and Data Dispute Resolution',
+  },
   { label: 'Handelsgericht', meta: 'Parteigutachter, Software-Streit' },
   { label: 'OpenAI Red Team', meta: 'Alumnus, Frontier-Modell-Safety' },
   { label: 'SECA 2026', meta: 'Eingeladener Sprecher, KI im KMU' },

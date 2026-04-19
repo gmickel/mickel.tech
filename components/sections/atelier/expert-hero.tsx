@@ -18,7 +18,7 @@ const copyEN = {
     { label: 'Listing', value: 'ITDR (CH)' },
     { label: 'Languages', value: 'DE / EN' },
     { label: 'Jurisdictions', value: 'CH · DE · AT · EU' },
-    { label: 'Practice est.', value: '2003' },
+    { label: 'Engineering', value: '20+ years' },
   ],
 };
 
@@ -38,7 +38,7 @@ const copyDE = {
     { label: 'Listung', value: 'ITDR (CH)' },
     { label: 'Sprachen', value: 'DE / EN' },
     { label: 'Jurisdiktionen', value: 'CH · DE · AT · EU' },
-    { label: 'Praxis seit', value: '2003' },
+    { label: 'Engineering', value: '20+ Jahre' },
   ],
 };
 
