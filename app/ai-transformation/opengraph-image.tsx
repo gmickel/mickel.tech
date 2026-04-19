@@ -8,14 +8,14 @@ export const runtime = 'edge';
 export const size = ATELIER_OG_SIZE;
 export const contentType = ATELIER_OG_CONTENT_TYPE;
 export const alt =
-  'Gordon Mickel — Agentic PDLC, AI Systems & Independent Technical Expert';
+  'AI Systems & Transformation — Process-first, Production-grade';
 
 export default async function OGImage() {
   return await renderAtelierOG({
-    eyebrow: 'Gordon Mickel · Independent Practice',
-    title: 'I design AI systems that actually work.',
+    eyebrow: 'AI Systems & Transformation · Practice Area',
+    title: 'AI systems that run your business, not just demo well.',
     tagline:
-      'Agentic PDLC, production AI systems, and party-engaged technical opinion. Select mandates each year alongside Growth Factors.',
+      'Process-first audit, production system build, fractional AI lead. Sovereign + private AI specialism for regulated workflows.',
     locale: 'EN',
   });
 }
