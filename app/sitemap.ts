@@ -13,6 +13,9 @@ const translatedPaths = [
   '/ai-transformation',
   '/expert',
   '/case-studies',
+  '/about',
+  '/imprint',
+  '/privacy',
 ];
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {

@@ -1,0 +1,85 @@
+import type { Metadata } from 'next';
+import AtelierShell from '@/components/layout/atelier-shell';
+import AtelierPolicyPage from '@/components/sections/atelier/policy-page';
+import { breadcrumbSchema, JsonLd } from '@/lib/json-ld';
+
+export const metadata: Metadata = {
+  title: 'Impressum — Mickel Tech',
+  description:
+    'Impressum und Kontaktangaben für Mickel Tech, die unabhängige Praxis von Gordon Mickel mit Sitz in Basel, Schweiz.',
+  alternates: {
+    canonical: 'https://mickel.tech/de/imprint',
+    languages: {
+      en: 'https://mickel.tech/imprint',
+      de: 'https://mickel.tech/de/imprint',
+    },
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+};
+
+export default function DeImprintPage() {
+  return (
+    <AtelierShell>
+      <JsonLd
+        data={breadcrumbSchema([{ name: 'Impressum', url: '/de/imprint' }])}
+      />
+      <AtelierPolicyPage
+        eyebrow="Rechtlich"
+        title="Impressum"
+        updatedDate="April 2026"
+        updatedLabel="Zuletzt aktualisiert"
+      >
+        <h2>Betreiber</h2>
+        <p>
+          Mickel Tech ist die unabhängige Praxis von Gordon Mickel.
+          {/* TODO Gordon: Rechtsform bestätigen (Einzelfirma vs. registrierte Gesellschaft) */}
+        </p>
+
+        <h2>Adresse</h2>
+        <p>
+          Gordon Mickel
+          <br />
+          Basel, Schweiz
+          {/* TODO Gordon: Vollständige Strassenadresse für CH-Impressum bereitstellen */}
+        </p>
+
+        <h2>Kontakt</h2>
+        <p>
+          E-Mail: <a href="mailto:gordon@mickel.tech">gordon@mickel.tech</a>
+          <br />
+          Web: <a href="https://mickel.tech">mickel.tech</a>
+        </p>
+
+        <h2>Verantwortlich für den Inhalt</h2>
+        <p>Gordon Mickel</p>
+
+        <h2>Haftungsausschluss</h2>
+        <p>
+          Die Inhalte dieser Website werden zu allgemeinen Informationszwecken
+          bereitgestellt. Trotz sorgfältiger Aufbereitung wird für die
+          Richtigkeit oder Vollständigkeit keine Gewähr übernommen. Die Website
+          kann auf Webseiten Dritter verlinken; für deren Inhalte und
+          Verfügbarkeit übernimmt Mickel Tech keine Verantwortung.
+        </p>
+
+        <h2>Urheberrecht</h2>
+        <p>
+          Soweit nicht ausdrücklich anders vermerkt, sind sämtliche Inhalte
+          dieser Website geistiges Eigentum von Gordon Mickel. Eine
+          Vervielfältigung von Text- oder Bildmaterial in jeglicher Form,
+          elektronisch oder anderweitig, bedarf der vorherigen schriftlichen
+          Zustimmung.
+        </p>
+
+        <h2>Gerichtsstand</h2>
+        <p>
+          Gerichtsstand ist Basel, Schweiz. Es gilt schweizerisches materielles
+          Recht unter Ausschluss seiner kollisionsrechtlichen Bestimmungen.
+        </p>
+      </AtelierPolicyPage>
+    </AtelierShell>
+  );
+}
