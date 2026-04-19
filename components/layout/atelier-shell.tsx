@@ -187,15 +187,27 @@ export default function AtelierShell({ children }: AtelierShellProps) {
 }
 
 function AtelierFooter({ isDE }: { isDE: boolean }) {
-  const credentials = [
-    'ITDR-listed Technical Expert (Switzerland)',
-    'OpenAI Red Team Network alumnus',
-    'SECA 2026 invited speaker',
-    'openEHR.ch Symposium speaker',
-    'Founder, DocIQ (Swiss legal AI since 2017)',
-    'Founder, MergeFoundry, Inc.',
-    'Author, FlowNext (open source)',
-  ];
+  const credentials = isDE
+    ? [
+        'ITDR-gelisteter technischer Experte (Schweiz)',
+        'OpenAI-Red-Team-Network-Alumnus',
+        'SECA 2026, eingeladener Sprecher',
+        'openEHR.ch Symposiums-Sprecher',
+        'Aktiv über 10+ Unternehmen im DACH-BU-Portfolio',
+        'Gründer, DocIQ (Schweizer Legal-AI seit 2017)',
+        'Gründer, MergeFoundry, Inc.',
+        'Autor, FlowNext (Open Source)',
+      ]
+    : [
+        'ITDR-listed Technical Expert (Switzerland)',
+        'OpenAI Red Team Network alumnus',
+        'SECA 2026 invited speaker',
+        'openEHR.ch Symposium speaker',
+        'Active across 10+ DACH BU portfolio companies',
+        'Founder, DocIQ (Swiss legal AI since 2017)',
+        'Founder, MergeFoundry, Inc.',
+        'Author, FlowNext (open source)',
+      ];
 
   const labels = isDE
     ? {

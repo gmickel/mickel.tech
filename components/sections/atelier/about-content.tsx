@@ -30,7 +30,7 @@ const copyEN = {
     {
       period: '2025 – present',
       title: 'Operating Principal, AI & Technology · Growth Factors',
-      body: 'Operating principal for AI and technology across the Growth Factors / Bregal portfolio. Run agentic PDLC programmes, AI maturity assessments, and AI / tech due diligence for the deal teams. Independent practice for non-portfolio mandates runs in parallel.',
+      body: 'Operating Principal for AI and technology across the Growth Factors / Bregal portfolio. Active across 10+ DACH portfolio companies on agentic PDLC programmes, AI maturity assessments, and AI / tech due diligence for the deal teams. The patterns and methodology sharpened against that portfolio inform the work I bring to independent mandates here. Independent practice runs in parallel.',
     },
     {
       period: 'ongoing',
@@ -107,7 +107,7 @@ const copyDE = {
     {
       period: '2025 – heute',
       title: 'Operating Principal, KI & Technologie · Growth Factors',
-      body: 'Operating Principal für KI und Technologie über das Growth-Factors-/Bregal-Portfolio. Verantworte agentische PDLC-Programme, KI-Reifegradanalysen und KI- und Tech-Due-Diligence für die Deal-Teams. Die unabhängige Praxis für Mandate ausserhalb des Portfolios läuft parallel.',
+      body: 'Operating Principal für KI und Technologie über das Growth-Factors-/Bregal-Portfolio. Aktiv über 10+ DACH-Portfoliounternehmen mit agentischen PDLC-Programmen, KI-Reifegradanalysen und KI- und Tech-Due-Diligence für die Deal-Teams. Die Muster und die Methodik, die in diesem Portfolio geschärft wurden, fliessen in die unabhängigen Mandate hier ein. Die unabhängige Praxis läuft parallel.',
     },
     {
       period: 'laufend',
