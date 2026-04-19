@@ -3,6 +3,7 @@
 import { Menu } from 'lucide-react';
 import { usePathname } from 'next/navigation';
 import type React from 'react';
+import WorkshopBanner from '@/components/layout/workshop-banner';
 import LocaleSwitcher from '@/components/locale-switcher';
 import CustomCursor from '@/components/ui/custom-cursor';
 import Noise from '@/components/ui/noise';
@@ -65,8 +66,11 @@ export default function Shell({ children }: ShellProps) {
 
       <CustomCursor />
 
-      {/* Header / HUD */}
-      <header className="fixed top-0 right-0 left-0 z-40 flex h-14 items-center justify-between border-white/10 border-b bg-background/80 px-6 backdrop-blur-md">
+      {/* Subway-map handoff: signals crossing into the legacy/workshop side */}
+      <WorkshopBanner />
+
+      {/* Header / HUD — pushed down by 28px (h-7) to clear the workshop banner */}
+      <header className="fixed top-7 right-0 left-0 z-40 flex h-14 items-center justify-between border-white/10 border-b bg-background/80 px-6 backdrop-blur-md">
         <div className="flex items-center gap-4">
           <a className="flex cursor-none items-center gap-4" href="/">
             <span className="animate-pulse font-mono text-primary text-xs tracking-widest">
@@ -188,7 +192,7 @@ export default function Shell({ children }: ShellProps) {
       </header>
 
       {/* Main Content */}
-      <main className="relative z-10 pt-14">{children}</main>
+      <main className="relative z-10 pt-[5.25rem]">{children}</main>
 
       {/* Wireframe Overlay Label */}
       {wireframe ? (
