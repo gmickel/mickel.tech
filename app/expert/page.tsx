@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import AtelierShell from '@/components/layout/atelier-shell';
-import AtelierCaseStudiesPreview from '@/components/sections/atelier/case-studies-preview';
+import AtelierCaseStudiesAreaPreview from '@/components/sections/atelier/case-studies-area-preview';
 import AtelierExpertDomains from '@/components/sections/atelier/expert-domains';
 import AtelierExpertFaq from '@/components/sections/atelier/expert-faq';
 import AtelierExpertHero from '@/components/sections/atelier/expert-hero';
@@ -94,7 +94,11 @@ export default function ExpertPage() {
       <AtelierExpertRoles locale="en" />
       <AtelierExpertMethod locale="en" />
       <AtelierExpertDomains locale="en" />
-      <AtelierCaseStudiesPreview locale="en" />
+      <AtelierCaseStudiesAreaPreview
+        area="expert"
+        locale="en"
+        sectionNumber="06"
+      />
       <AtelierExpertFaq locale="en" />
       <AtelierExpertIntake locale="en" />
     </AtelierShell>

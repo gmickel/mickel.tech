@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import AtelierShell from '@/components/layout/atelier-shell';
 import AtelierCalCta from '@/components/sections/atelier/cal-cta';
-import AtelierCaseStudiesPreview from '@/components/sections/atelier/case-studies-preview';
+import AtelierCaseStudiesAreaPreview from '@/components/sections/atelier/case-studies-area-preview';
 import AtelierSdlcFaq from '@/components/sections/atelier/sdlc-faq';
 import AtelierSdlcHero from '@/components/sections/atelier/sdlc-hero';
 import AtelierSdlcMaturity from '@/components/sections/atelier/sdlc-maturity';
@@ -92,7 +92,11 @@ export default function DeSdlcPage() {
       <AtelierSdlcMaturity locale="de" />
       <AtelierSdlcOffers locale="de" />
       <AtelierSdlcTools locale="de" />
-      <AtelierCaseStudiesPreview locale="de" />
+      <AtelierCaseStudiesAreaPreview
+        area="pdlc"
+        locale="de"
+        sectionNumber="06"
+      />
       <AtelierSdlcFaq locale="de" />
       <AtelierCalCta locale="de" variant="pdlc" />
     </AtelierShell>

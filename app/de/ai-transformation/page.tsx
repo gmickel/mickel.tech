@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import AtelierShell from '@/components/layout/atelier-shell';
 import AtelierCalCta from '@/components/sections/atelier/cal-cta';
-import AtelierCaseStudiesPreview from '@/components/sections/atelier/case-studies-preview';
+import AtelierCaseStudiesAreaPreview from '@/components/sections/atelier/case-studies-area-preview';
 import AtelierTransformFaq from '@/components/sections/atelier/transform-faq';
 import AtelierTransformGovernance from '@/components/sections/atelier/transform-governance';
 import AtelierTransformHero from '@/components/sections/atelier/transform-hero';
@@ -111,7 +111,11 @@ export default function DeAiTransformationPage() {
       <AtelierTransformSovereign locale="de" />
       <AtelierTransformOffers locale="de" />
       <AtelierTransformGovernance locale="de" />
-      <AtelierCaseStudiesPreview locale="de" />
+      <AtelierCaseStudiesAreaPreview
+        area="systems"
+        locale="de"
+        sectionNumber="07"
+      />
       <AtelierTransformFaq locale="de" />
       <AtelierCalCta locale="de" variant="transformation" />
     </AtelierShell>

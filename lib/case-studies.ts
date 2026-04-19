@@ -67,7 +67,7 @@ export interface CaseStudy {
 
 export const CASE_STUDIES: readonly CaseStudy[] = [
   {
-    id: 'pdlc-mumps-modernisation',
+    id: 'pdlc-legacy-stack-modernisation',
     area: 'pdlc',
     number: '01',
     featured: true,
@@ -76,9 +76,9 @@ export const CASE_STUDIES: readonly CaseStudy[] = [
     clientDE:
       'Europäisches PE-Portfoliounternehmen, Software · ~25 Entwickler · regulierter Sektor',
     problemEN:
-      'Legacy core platform written in MUMPS / Caché. Traditional rewrite estimated at €3-5M and 18 months. Skilled MUMPS engineers extinct. Hiring pipeline broken.',
+      'Decades-old proprietary core platform on a stack the open market has effectively abandoned. Traditional rewrite estimated at €3-5M and 18 months. Skilled engineers in the legacy stack vanishing year on year. Hiring pipeline broken.',
     problemDE:
-      'Legacy-Kernplattform in MUMPS / Caché. Klassisches Rewrite auf €3-5M und 18 Monate geschätzt. MUMPS-Expertise am Markt nicht mehr verfügbar. Recruiting-Pipeline gebrochen.',
+      'Jahrzehntealte proprietäre Kernplattform auf einem Stack, den der offene Markt faktisch verlassen hat. Klassisches Rewrite auf €3-5M und 18 Monate geschätzt. Fachkräfte im Legacy-Stack verschwinden Jahr für Jahr. Recruiting-Pipeline gebrochen.',
     approachEN:
       'Spec-first agentic migration with parallel agents under a Phase 0 foundation (BAUP framework, global registry, naming conventions). Two pilots before stop/go gate.',
     approachDE:
@@ -91,6 +91,56 @@ export const CASE_STUDIES: readonly CaseStudy[] = [
     metricValueDE: '€2.9-4.9M',
     metricLabelEN: 'Cost avoidance vs traditional rewrite',
     metricLabelDE: 'Kostenvermeidung vs. klassisches Rewrite',
+  },
+  {
+    id: 'pdlc-buildinglink-context-strategy',
+    area: 'pdlc',
+    number: 'P3',
+    clientEN:
+      'US PE-backed property-management software · 25-year product, 12-15 devs scaling to 30',
+    clientDE:
+      'US PE-gehaltene Property-Management-Software · 25-jähriges Produkt, 12-15 Entwickler, Skalierung auf 30',
+    problemEN:
+      'CEO-led replatforming under tight delivery pressure, with the team running their first AI-assisted sprint. Mixed early KPIs (productivity gains real but masked by downstream QA + upstream requirements bottlenecks). Tool sprawl across Claude Code, Cursor, VS Code with no unified governance. Engineer mindset friction on handing work to agents.',
+    problemDE:
+      'CEO-geführtes Re-Platforming unter Lieferdruck, das Team im ersten KI-unterstützten Sprint. Gemischte Early-KPIs (Produktivitätsgewinne real, aber durch nachgelagerten QA-Engpass und vorgelagerten Anforderungs-Engpass maskiert). Tool-Sprawl über Claude Code, Cursor, VS Code ohne einheitliche Governance. Mindset-Reibung beim Übergeben an Agenten.',
+    approachEN:
+      'Cross-arm advisory engagement (BU-side capacity supporting Sagemount portfolio). Strategy review session with CEO + VP Engineering + EM + Director PMO. Mapped where their AI Context Strategy was already strong (~85% aligned with my pipeline) and the three lanes still missing: requirements engineering as the upstream bottleneck, implementation verification loops with cross-model review, and downstream QA acceleration.',
+    approachDE:
+      'Cross-Arm-Advisory-Mandat (BU-seitige Kapazität für Sagemount-Portfolio). Strategie-Review mit CEO, VP Engineering, EM und Director PMO. Kartierung, wo die AI-Context-Strategie bereits stark ist (~85% deckungsgleich mit meinem Vorgehen), und der drei noch fehlenden Spuren: Anforderungsengineering als vorgelagerter Engpass, Implementierungs-Verifikationsschleifen mit Cross-Model-Review, nachgelagerte QA-Beschleunigung.',
+    outcomeEN:
+      'Concrete next-step lanes the engineering org could pick up the following week. Spec-driven development plus self-verifying implementation loop adopted as the methodology direction. Cross-model review pattern handed over.',
+    outcomeDE:
+      'Konkrete nächste Spuren, die das Engineering in der Folgewoche aufnehmen konnte. Spec-driven Development plus selbstverifizierende Implementierungsschleife als methodische Richtung übernommen. Cross-Model-Review-Pattern übergeben.',
+    metricValueEN: '85% aligned',
+    metricValueDE: '85% deckungsgleich',
+    metricLabelEN: 'CEO-led PDLC strategy review',
+    metricLabelDE: 'CEO-geführte PDLC-Strategie-Review',
+  },
+  {
+    id: 'pdlc-cistec-50-engineer-rollout',
+    area: 'pdlc',
+    number: 'P4',
+    clientEN:
+      'Swiss healthcare software vendor · 50+ engineering org · regulated production',
+    clientDE:
+      'Schweizer Healthcare-Softwarehaus · 50+ Engineering · regulierte Produktion',
+    problemEN:
+      'Established engineering organisation needed to adopt AI tooling without disrupting regulated clinical delivery. Concerns: vendor sprawl, prompt drift, security and IP exposure with cloud APIs, measurement of actual productivity gain vs anecdote.',
+    problemDE:
+      'Etablierte Engineering-Organisation musste KI-Tooling adoptieren, ohne die regulierte klinische Auslieferung zu stören. Sorgen: Anbieter-Sprawl, Prompt-Drift, Sicherheits- und IP-Exposition mit Cloud-APIs, Messung des tatsächlichen Produktivitätsgewinns jenseits anekdotischer Aussagen.',
+    approachEN:
+      'Guardrailed Copilot + Cursor rollout to 50+ engineers. Internal playbooks, prompt patterns, and a code-review pattern. Reusable AI platform underneath (LLM gateway, prompt registry, observability) so that the rollout was a single onboarding rather than per-team chaos.',
+    approachDE:
+      'Guardrailed-Rollout von Copilot + Cursor auf 50+ Entwickler. Interne Playbooks, Prompt-Patterns und ein Code-Review-Pattern. Wiederverwendbare KI-Plattform darunter (LLM-Gateway, Prompt-Registry, Observability), damit der Rollout ein einziges Onboarding war, kein Per-Team-Chaos.',
+    outcomeEN:
+      'Measurable productivity gains across the engineering org, captured rather than anecdotal. Single-pattern onboarding for new use cases. Same platform powered the production AI features (clinical LLM, see KISIM case) — the PDLC investment underwrote the product investment.',
+    outcomeDE:
+      'Messbare Produktivitätsgewinne über die Engineering-Organisation, erfasst statt anekdotisch. Single-Pattern-Onboarding für neue Use Cases. Dieselbe Plattform trug die produktiven KI-Features (klinische LLM, siehe KISIM-Fall) -- die PDLC-Investition trug die Produktinvestition mit.',
+    metricValueEN: '50+ engineers',
+    metricValueDE: '50+ Entwickler',
+    metricLabelEN: 'Guardrailed AI tooling rollout',
+    metricLabelDE: 'Guardrailed-KI-Tooling-Rollout',
   },
   {
     id: 'pdlc-multi-entity-standardisation',
@@ -165,6 +215,31 @@ export const CASE_STUDIES: readonly CaseStudy[] = [
     metricValueDE: 'CHF 24k',
     metricLabelEN: 'Pauschal · split between parties',
     metricLabelDE: 'Pauschal · hälftig zwischen Parteien',
+  },
+  {
+    id: 'expert-cross-language-copyright',
+    area: 'expert',
+    number: 'E3',
+    clientEN:
+      'Swiss legal counsel · software copyright dispute · cross-language code derivation question',
+    clientDE:
+      'Schweizer Anwaltschaft · Software-Urheberrechtsstreit · Frage der sprachübergreifenden Code-Ableitung',
+    problemEN:
+      "Counsel needed to determine whether one party's commercial productivity tooling had derived from the other party's earlier implementation, written in a different programming language. Question turned on technical comparison across program structure, modules, algorithms and data structures, and source code — not just one-to-one literal comparison.",
+    problemDE:
+      'Die Anwaltschaft musste klären, ob das kommerzielle Produktivitäts-Tooling einer Partei vom früheren, in einer anderen Programmiersprache geschriebenen Werk der anderen Partei abgeleitet ist. Die Frage richtete sich auf den technischen Vergleich über Programmstruktur, Module, Algorithmen und Datenstrukturen sowie Quellcode -- nicht nur auf wörtlichen Eins-zu-eins-Vergleich.',
+    approachEN:
+      'Technical consulting expert for counsel. Multi-layer analysis along the established Swiss copyright-infringement filtering layers: program structure and architecture, modules, algorithms and data structures, source code, object code. Cleanly separated framework / generated / platform-mandated code from custom code authored by the parties so the comparison sat on the right material.',
+    approachDE:
+      'Technischer Konsultativ-Experte der Anwaltschaft. Mehrschichtige Analyse entlang der etablierten Schweizer Filterungs-Ebenen für Urheberrechtsverletzungen: Programmstruktur und Architektur, Module, Algorithmen und Datenstrukturen, Quellcode, Objektcode. Framework-, generierter und plattformseitig vorgegebener Code sauber von eigens geschriebenem Code der Parteien getrennt, damit der Vergleich auf dem richtigen Material lag.',
+    outcomeEN:
+      "Defensible technical findings supporting counsel's position. Architectural separation between the two implementations established at the structural and algorithmic layers, leaving any literal-copy claim to a much narrower factual question.",
+    outcomeDE:
+      'Vertretbare technische Befunde zur Stützung der Position der Anwaltschaft. Architektonische Trennung zwischen den beiden Implementierungen auf struktureller und algorithmischer Ebene festgestellt, sodass eine wörtliche-Kopie-These auf eine viel engere Tatsachenfrage reduziert war.',
+    metricValueEN: 'Cross-language',
+    metricValueDE: 'Sprachübergreifend',
+    metricLabelEN: 'Code-derivation analysis · multi-layer filter',
+    metricLabelDE: 'Code-Ableitungs-Analyse · mehrschichtige Filterung',
   },
   {
     id: 'expert-tech-dd-platform-business',
@@ -291,6 +366,31 @@ export const CASE_STUDIES: readonly CaseStudy[] = [
     metricLabelEN: 'AI deal-screening framework',
     metricLabelDE: 'KI-Deal-Screening-Framework',
   },
+  {
+    id: 'systems-obligate-generative-ai-advisory',
+    area: 'systems',
+    number: 'S5',
+    clientEN:
+      'Swiss B2B platform company · technical advisor · generative AI product strategy',
+    clientDE:
+      'Schweizer B2B-Plattform-Unternehmen · technischer Beirat · Strategie für generatives KI-Produkt',
+    problemEN:
+      'Platform team weighing whether to build a generative AI capability in-house or license from a vendor pitching a hybrid retrieval / chat product. Concerns: defensibility, data and IP exposure, evaluation pipeline gaps, retrieval architecture quality (chunking, embedding, hybrid fusion, reranking, query rewriting / routing / decomposition), local-LLM viability, sovereignty.',
+    problemDE:
+      'Plattform-Team wägt ab, ob eine generative KI-Fähigkeit in-house gebaut oder von einem Anbieter lizenziert wird, der ein hybrides Retrieval-/Chat-Produkt anbietet. Sorgen: Verteidigbarkeit, Daten- und IP-Exposition, Lücken in Evaluierungspipelines, Qualität der Retrieval-Architektur (Chunking, Embedding, Hybrid-Fusion, Reranking, Query-Rewriting / -Routing / -Decomposition), Tauglichkeit lokaler LLM, Souveränität.',
+    approachEN:
+      "Technical advisor mandate. Independent assessment of the vendor's pitch against modern retrieval-augmented architecture practice. Build-vs-buy analysis grounded in long-term cost, future-proofing, evaluation discipline and data-pipeline ownership. Concrete written critique covering each architectural concern with the trade-offs spelled out.",
+    approachDE:
+      'Mandat als technischer Beirat. Unabhängige Bewertung des Anbieter-Pitches gegen moderne Retrieval-Augmented-Architektur-Praxis. Build-vs-Buy-Analyse, gestützt auf langfristige Kosten, Zukunftssicherheit, Evaluierungsdisziplin und Eigentum an der Datenpipeline. Konkrete schriftliche Kritik, die jede architektonische Sorge mit klar benannten Trade-offs adressiert.',
+    outcomeEN:
+      'Strategic clarity for the platform team on which path actually compounded. Internal capability path articulated end-to-end (data pipeline → embedding → hybrid retrieval → eval pipelines → on-prem viability), with the licensing path properly sized rather than dismissed.',
+    outcomeDE:
+      'Strategische Klarheit für das Plattform-Team, welcher Pfad tatsächlich kumuliert. Interner Capability-Pfad end-to-end formuliert (Datenpipeline → Embedding → Hybrid-Retrieval → Eval-Pipelines → On-Prem-Tauglichkeit), mit dem Lizenzierungspfad sauber gewichtet statt verworfen.',
+    metricValueEN: 'Build vs buy',
+    metricValueDE: 'Build vs Buy',
+    metricLabelEN: 'Generative AI architecture advisory',
+    metricLabelDE: 'Generative-KI-Architektur-Beirat',
+  },
 ];
 
 export function getFeaturedCaseStudies(): readonly CaseStudy[] {
@@ -301,4 +401,18 @@ export function getCaseStudiesByArea(
   area: CaseStudyArea
 ): readonly CaseStudy[] {
   return CASE_STUDIES.filter((s) => s.area === area);
+}
+
+/**
+ * Pick the strongest 2-3 cases per area for the route preview surfaces.
+ * Featured studies first, then fill from the rest of the area.
+ */
+export function getAreaPreviewCaseStudies(
+  area: CaseStudyArea,
+  limit = 3
+): readonly CaseStudy[] {
+  const inArea = CASE_STUDIES.filter((s) => s.area === area);
+  const featured = inArea.filter((s) => s.featured);
+  const rest = inArea.filter((s) => !s.featured);
+  return [...featured, ...rest].slice(0, limit);
 }

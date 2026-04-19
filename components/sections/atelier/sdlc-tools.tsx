@@ -3,9 +3,9 @@ interface SdlcToolsProps {
 }
 
 const copyEN = {
-  eyebrow: '05 / Tools I built',
-  heading: "I don't recommend tools I haven't shipped.",
-  body: 'Two open-source / private products underpin the methodology. Both are mine — built to scratch a real itch, then polished into something other teams could use.',
+  eyebrow: '05 / Tools',
+  heading: 'Fluent in the standard stack. I also build my own.',
+  body: 'Most engagements run on whatever your team already uses — IDEs, model providers, CI, observability — and I am fluent across the standard PDLC tooling. Where I have hit a real ceiling in that stack, I have built two products of my own to push past it. They inform the methodology I bring; they are not a precondition for working together.',
   tools: [
     {
       name: 'FlowNext',
@@ -28,9 +28,9 @@ const copyEN = {
 };
 
 const copyDE = {
-  eyebrow: '05 / Selbst gebaute Tools',
-  heading: 'Ich empfehle keine Tools, die ich nicht selbst ausgeliefert habe.',
-  body: 'Zwei Produkte (Open Source bzw. privat) tragen die Methodik. Beide stammen von mir -- gebaut, um eine echte Reibung zu lösen, und dann poliert, damit andere Teams sie nutzen können.',
+  eyebrow: '05 / Tools',
+  heading: 'Sattelfest im Standard-Stack. Und zwei eigene gebaut.',
+  body: 'Die meisten Mandate laufen auf dem, was Ihr Team ohnehin nutzt -- IDEs, Modellanbieter, CI, Observability -- und in diesem Standard-PDLC-Stack bin ich sattelfest. Dort, wo ich an reale Grenzen gestossen bin, habe ich zwei eigene Produkte gebaut, um sie zu durchbrechen. Sie speisen die Methodik, die ich mitbringe; sie sind keine Voraussetzung für die Zusammenarbeit.',
   tools: [
     {
       name: 'FlowNext',

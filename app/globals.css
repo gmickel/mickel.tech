@@ -120,6 +120,29 @@
     cursor: auto;
   }
 
+  /* Restore browser-default pointer on actionable elements (the ".atelier-surface *"
+     wildcard above forces auto everywhere — needed to override the legacy
+     `cursor: none` on body — but it accidentally hides the link/button affordance) */
+  .atelier-surface a,
+  .atelier-surface button,
+  .atelier-surface [role="button"],
+  .atelier-surface label,
+  .atelier-surface summary,
+  .atelier-surface select {
+    cursor: pointer;
+  }
+  .atelier-surface input[type="text"],
+  .atelier-surface input[type="email"],
+  .atelier-surface input[type="tel"],
+  .atelier-surface textarea {
+    cursor: text;
+  }
+  .atelier-surface a[href=""],
+  .atelier-surface button:disabled,
+  .atelier-surface a[aria-disabled="true"] {
+    cursor: not-allowed;
+  }
+
   /* Selection color */
   ::selection {
     @apply bg-primary/30 text-primary;
