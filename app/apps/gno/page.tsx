@@ -341,6 +341,162 @@ export default function GnoPage() {
           </div>
         </section>
 
+        {/* gno.sh — Hosted Publishing Layer */}
+        <section className="relative mx-auto max-w-6xl px-6 pb-16 md:px-10">
+          <Card className="border-cyan-500/30 bg-gradient-to-br from-cyan-500/[0.04] to-card/60">
+            <CardHeader className="pb-6">
+              <div className="flex flex-wrap items-center gap-3">
+                <Badge
+                  className="border-cyan-500/60 bg-cyan-500/10 text-cyan-400"
+                  variant="outline"
+                >
+                  NEW LAYER
+                </Badge>
+                <p className="font-mono text-[11px] text-cyan-400 tracking-[0.2em]">
+                  GNO.SH // HOSTED PUBLISHING
+                </p>
+              </div>
+              <CardTitle className="mt-3 text-2xl text-white md:text-3xl">
+                Publish what you choose to share. Keep everything else local.
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-6 text-muted-foreground">
+              <p>
+                Local GNO is a private second brain. But sometimes you want a
+                slice of it on the open web — a public reading collection, a
+                secret link for one client, a polished article from a draft
+                folder.{' '}
+                <a
+                  className="glow-link font-mono text-cyan-400"
+                  href="https://gno.sh"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  gno.sh
+                </a>{' '}
+                is the hosted layer that does exactly that. Compile a collection
+                or a single note locally, publish it as a polished reading
+                surface online. Reader-grade typography, keyboard shortcuts,
+                secret links, image asset manifests.
+              </p>
+
+              <div className="grid gap-px overflow-hidden border border-white/10 bg-white/10 sm:grid-cols-2">
+                <div className="space-y-2 bg-card/80 p-5">
+                  <p className="font-mono text-[11px] text-cyan-400 tracking-widest">
+                    01 / STUDIO
+                  </p>
+                  <p className="font-bold text-white">
+                    One-click publish from local
+                  </p>
+                  <p className="text-muted-foreground text-sm leading-relaxed">
+                    <code className="rounded border border-white/10 bg-black/40 px-1.5 py-0.5 font-mono text-[12px] text-cyan-300">
+                      gno publish export atlas --out atlas.json
+                    </code>{' '}
+                    or use the in-app "Export for gno.sh" button. Upload to{' '}
+                    <code className="rounded border border-white/10 bg-black/40 px-1.5 py-0.5 font-mono text-[12px] text-cyan-300">
+                      /studio
+                    </code>
+                    , done.
+                  </p>
+                </div>
+                <div className="space-y-2 bg-card/80 p-5">
+                  <p className="font-mono text-[11px] text-cyan-400 tracking-widest">
+                    02 / SHARE / SECRET
+                  </p>
+                  <p className="font-bold text-white">
+                    Public links + secret links
+                  </p>
+                  <p className="text-muted-foreground text-sm leading-relaxed">
+                    Public collections live at{' '}
+                    <code className="rounded border border-white/10 bg-black/40 px-1.5 py-0.5 font-mono text-[12px] text-cyan-300">
+                      /share/[slug]
+                    </code>
+                    . Secret-link collections at{' '}
+                    <code className="rounded border border-white/10 bg-black/40 px-1.5 py-0.5 font-mono text-[12px] text-cyan-300">
+                      /secret/[token]
+                    </code>{' '}
+                    — unguessable, no auth required, revoke any time.
+                  </p>
+                </div>
+                <div className="space-y-2 bg-card/80 p-5">
+                  <p className="font-mono text-[11px] text-cyan-400 tracking-widest">
+                    03 / READER
+                  </p>
+                  <p className="font-bold text-white">
+                    Built for actually reading
+                  </p>
+                  <p className="text-muted-foreground text-sm leading-relaxed">
+                    Editorial typography (Fraunces + Geist + JetBrains Mono).
+                    Reader hotkeys —{' '}
+                    <kbd className="rounded border border-white/15 bg-black/50 px-1.5 py-0.5 font-mono text-[11px] text-white">
+                      j
+                    </kbd>
+                    /
+                    <kbd className="rounded border border-white/15 bg-black/50 px-1.5 py-0.5 font-mono text-[11px] text-white">
+                      k
+                    </kbd>{' '}
+                    to navigate,{' '}
+                    <kbd className="rounded border border-white/15 bg-black/50 px-1.5 py-0.5 font-mono text-[11px] text-white">
+                      /
+                    </kbd>{' '}
+                    to search,{' '}
+                    <kbd className="rounded border border-white/15 bg-black/50 px-1.5 py-0.5 font-mono text-[11px] text-white">
+                      o
+                    </kbd>{' '}
+                    for outline,{' '}
+                    <kbd className="rounded border border-white/15 bg-black/50 px-1.5 py-0.5 font-mono text-[11px] text-white">
+                      y
+                    </kbd>{' '}
+                    to copy link. Lightweight lexical search across the
+                    published subset.
+                  </p>
+                </div>
+                <div className="space-y-2 bg-card/80 p-5">
+                  <p className="font-mono text-[11px] text-cyan-400 tracking-widest">
+                    04 / FILTERED PROJECTION
+                  </p>
+                  <p className="font-bold text-white">
+                    Subset-only graph + assets
+                  </p>
+                  <p className="text-muted-foreground text-sm leading-relaxed">
+                    Backlinks and related notes only resolve within the
+                    published subset — nothing leaks from your private vault.
+                    Image asset snapshot manifest. Republish flow keeps URLs
+                    stable across edits.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex flex-wrap items-center gap-4 pt-2">
+                <a
+                  className="inline-flex items-center gap-2 border border-cyan-500 bg-cyan-500/10 px-6 py-3 font-mono text-cyan-400 text-sm uppercase tracking-wide transition-all hover:bg-cyan-500/20"
+                  href="https://gno.sh"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  Visit gno.sh →
+                </a>
+                <a
+                  className="inline-flex items-center gap-2 border border-white/20 bg-white/5 px-6 py-3 font-mono text-sm text-white uppercase tracking-wide transition-all hover:border-white/40 hover:bg-white/10"
+                  href="https://gno.sh/share/atlas"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  Public demo: atlas
+                </a>
+                <a
+                  className="inline-flex items-center gap-2 border border-white/20 bg-white/5 px-6 py-3 font-mono text-sm text-white uppercase tracking-wide transition-all hover:border-white/40 hover:bg-white/10"
+                  href="https://gno.sh/share/merkle-paths"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  Public demo: single note
+                </a>
+              </div>
+            </CardContent>
+          </Card>
+        </section>
+
         {/* The Problem */}
         <section className="relative mx-auto max-w-6xl px-6 pb-16 md:px-10">
           <Card className="border-destructive/20 bg-card/60">
