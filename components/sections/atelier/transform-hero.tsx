@@ -13,7 +13,7 @@ const copyEN = {
   primaryHref: 'https://cal.com/gmickel',
   secondaryHref: '#offers',
   metaList: [
-    { label: 'Approach', value: 'Process-first' },
+    { label: 'Strategy session', value: 'CHF 3–5k' },
     { label: 'Audit', value: 'CHF 15–25k' },
     { label: 'System build', value: 'CHF 40–150k' },
     { label: 'Fractional lead', value: 'Retainer' },
@@ -32,7 +32,7 @@ const copyDE = {
   primaryHref: 'https://cal.com/gmickel',
   secondaryHref: '#offers',
   metaList: [
-    { label: 'Ansatz', value: 'Prozess zuerst' },
+    { label: 'Strategie-Session', value: 'CHF 3–5k' },
     { label: 'Audit', value: 'CHF 15–25k' },
     { label: 'System-Build', value: 'CHF 40–150k' },
     { label: 'Fractional Lead', value: 'Retainer' },

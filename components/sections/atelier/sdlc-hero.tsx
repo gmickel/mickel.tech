@@ -13,7 +13,7 @@ const copyEN = {
   primaryHref: 'https://cal.com/gmickel',
   secondaryHref: '#maturity',
   metaList: [
-    { label: 'Maturity', value: 'L0 → L4' },
+    { label: 'Strategy session', value: 'CHF 3–5k' },
     { label: 'Diagnostic', value: 'CHF 15–25k' },
     { label: 'Foundation', value: 'CHF 40–60k' },
     { label: 'Full shift', value: 'CHF 80–150k+' },
@@ -31,7 +31,7 @@ const copyDE = {
   primaryHref: 'https://cal.com/gmickel',
   secondaryHref: '#maturity',
   metaList: [
-    { label: 'Reife', value: 'L0 → L4' },
+    { label: 'Strategie-Session', value: 'CHF 3–5k' },
     { label: 'Diagnose', value: 'CHF 15–25k' },
     { label: 'Fundament', value: 'CHF 40–60k' },
     { label: 'Methodenwechsel', value: 'CHF 80–150k+' },
