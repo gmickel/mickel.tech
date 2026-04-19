@@ -7,7 +7,7 @@ const copyEN = {
   headline: 'From requirements to autonomous delivery.',
   underline: 'autonomous',
   intro:
-    'Agentic PDLC is a re-architecture of how product gets built — starting at requirements engineering, not at the IDE. I move teams from ticket-driven ceremonies to spec-driven, agent-assisted delivery, gated by evals and reviewed by other agents. End state: agents ship features, humans set priorities.',
+    "Most engineering orgs are still running yesterday's methodology against agents that already outpace them. Agentic PDLC closes that gap. Start at product and requirements engineering, not at the IDE. Spec-driven, agent-assisted delivery, gated by evals and reviewed by other agents. End state: agents ship features, humans set priorities.",
   primaryCta: 'Book a 30-min PDLC fit call',
   secondaryCta: 'Read the maturity model',
   primaryHref: 'https://cal.com/gmickel',
@@ -25,7 +25,7 @@ const copyDE = {
   headline: 'Von Anforderungen bis zur autonomen Auslieferung.',
   underline: 'autonomen',
   intro:
-    'Agentische PDLC heisst, das Bauen von Produkt neu auszulegen -- beginnend beim Anforderungsengineering, nicht bei der IDE. Ich überführe Teams von ticketgetriebenen Ritualen zu spec-getriebener, agentengestützter Auslieferung, abgesichert durch Evals und Review weiterer Agenten. Endzustand: Agenten liefern Features, Menschen setzen Prioritäten.',
+    'Die meisten Engineering-Organisationen fahren noch die Methodik von gestern, während die Agenten sie längst überholt haben. Agentische PDLC schliesst diese Lücke. Start beim Produkt- und Anforderungsengineering, nicht bei der IDE. Spec-getriebene, agentengestützte Auslieferung, abgesichert durch Evals und Review weiterer Agenten. Endzustand: Agenten liefern Features, Menschen setzen Prioritäten.',
   primaryCta: '30-Minuten-Erstgespräch buchen',
   secondaryCta: 'Reifegradmodell lesen',
   primaryHref: 'https://cal.com/gmickel',

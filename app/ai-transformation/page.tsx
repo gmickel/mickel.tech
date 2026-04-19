@@ -20,7 +20,7 @@ import {
 export const metadata: Metadata = {
   title: 'AI Systems & Transformation — Process-first, Production-grade',
   description:
-    'AI systems that run your business, not just demo well. Process-first audit, production system build, fractional AI lead. Enterprise RAG, autonomous agents, voice, private LLM. CHF 15k audit, CHF 40–150k system build. Binningen, DE / EN.',
+    'AI systems that run your business, not just demo well. Process-first audit, production system build, fractional AI lead. Agents that hold up in real operations, knowledge platforms, voice, sovereign and private LLM infrastructure. CHF 15k audit, CHF 40–150k system build. Binningen, DE / EN.',
   keywords: [
     'AI transformation Switzerland',
     'AI Beratung Schweiz',
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'AI Systems & Transformation — Process-first, Production-grade',
     description:
-      'Process-first AI: map workflows, build the context layer, ship production systems. Enterprise RAG, agents, voice, private LLM. Audit from CHF 15k.',
+      'Process-first AI: map workflows, build the context layer, ship production systems. Agents that hold up in real operations, knowledge platforms, voice, sovereign and private LLM. Audit from CHF 15k.',
     url: 'https://mickel.tech/ai-transformation',
     type: 'website',
   },
@@ -82,7 +82,7 @@ export default function AiTransformationPage() {
         data={serviceSchema({
           name: 'AI System Build',
           description:
-            'Production deployment of an AI system class (RAG, agents, voice, knowledge platform, private LLM). Requirements through go-live with operations handover. CHF 40–150k.',
+            'Production deployment of an AI system class (operations agents, knowledge platforms, voice, sovereign LLM). Requirements through go-live with operations handover. CHF 40–150k.',
           url: '/ai-transformation#offers',
         })}
       />

@@ -4,12 +4,12 @@ interface TransformSystemsProps {
 
 const systemsEN = [
   {
-    title: 'Enterprise RAG & knowledge platforms',
-    body: 'Document, contract and policy retrieval with citation grounding. Embeddings, hybrid search, governance and audit. Production systems that lawyers, auditors and analysts actually use day-to-day.',
+    title: 'Agents that hold up in real operations',
+    body: 'Multi-step agents that reach into systems of record, take actions, log everything, and hand back to humans on uncertainty. Operations co-pilots, service-desk automation, document review. Built for the day after the demo, not the demo.',
   },
   {
-    title: 'Autonomous agents & operations co-pilots',
-    body: 'Multi-step agents that reach into systems of record, take actions, log everything, and hand back to humans on uncertainty. Operations co-pilots, service-desk automation, document review.',
+    title: 'Knowledge platforms with verifiable retrieval',
+    body: 'Document, contract and policy retrieval with citation grounding. Embeddings, hybrid search, governance and audit. Production systems that lawyers, auditors and analysts actually use day-to-day.',
   },
   {
     title: 'Voice agents & customer interaction',
@@ -31,12 +31,12 @@ const systemsEN = [
 
 const systemsDE = [
   {
-    title: 'Enterprise-RAG & Wissensplattformen',
-    body: 'Retrieval für Dokumente, Verträge und Policies, mit Zitations-Grounding. Embeddings, Hybridsuche, Governance und Audit. Produktivsysteme, die Anwälte, Auditoren und Analysten täglich tatsächlich nutzen.',
+    title: 'Agenten, die im operativen Alltag bestehen',
+    body: 'Mehrschritt-Agenten, die in Systems of Record greifen, Aktionen ausführen, alles loggen und bei Unsicherheit an Menschen zurückgeben. Operations-Copilots, Service-Desk-Automatisierung, Dokumentenprüfung. Gebaut für den Tag nach der Demo, nicht für die Demo.',
   },
   {
-    title: 'Autonome Agenten & Operations-Copilots',
-    body: 'Mehrschritt-Agenten, die in Systems of Record greifen, Aktionen ausführen, alles loggen und bei Unsicherheit an Menschen zurückgeben. Operations-Copilots, Service-Desk-Automatisierung, Dokumentenprüfung.',
+    title: 'Wissensplattformen mit verifizierbarer Retrieval',
+    body: 'Retrieval für Dokumente, Verträge und Policies, mit Zitations-Grounding. Embeddings, Hybridsuche, Governance und Audit. Produktivsysteme, die Anwälte, Auditoren und Analysten täglich tatsächlich nutzen.',
   },
   {
     title: 'Voice-Agenten & Kundeninteraktion',
