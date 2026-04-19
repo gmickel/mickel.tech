@@ -7,6 +7,7 @@ import AtelierTransformGovernance from '@/components/sections/atelier/transform-
 import AtelierTransformHero from '@/components/sections/atelier/transform-hero';
 import AtelierTransformOffers from '@/components/sections/atelier/transform-offers';
 import AtelierTransformProcess from '@/components/sections/atelier/transform-process';
+import AtelierTransformSovereign from '@/components/sections/atelier/transform-sovereign';
 import AtelierTransformSystems from '@/components/sections/atelier/transform-systems';
 import {
   breadcrumbSchema,
@@ -22,6 +23,15 @@ export const metadata: Metadata = {
   keywords: [
     'AI transformation Switzerland',
     'AI Beratung Schweiz',
+    'sovereign AI Switzerland',
+    'private LLM Switzerland',
+    'on-prem AI',
+    'fine-tuned local models',
+    'custom NER',
+    'PII masking on-prem',
+    'FADP AI compliance',
+    'GDPR AI compliance',
+    'EU AI Act',
     'enterprise RAG',
     'enterprise AI',
     'AI agents',
@@ -92,6 +102,7 @@ export default function AiTransformationPage() {
       <AtelierTransformHero locale="en" />
       <AtelierTransformProcess locale="en" />
       <AtelierTransformSystems locale="en" />
+      <AtelierTransformSovereign locale="en" />
       <AtelierTransformOffers locale="en" />
       <AtelierTransformGovernance locale="en" />
       <AtelierCaseStudiesPreview locale="en" />

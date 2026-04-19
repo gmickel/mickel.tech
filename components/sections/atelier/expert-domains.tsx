@@ -24,6 +24,10 @@ const domainsEN = [
     body: 'OpenAI Red Team Network alumnus. AI policy and abuse-resilience review, model card analysis, safety governance for portfolios deploying frontier models.',
   },
   {
+    title: 'Sovereign + private AI',
+    body: 'Production experience deploying on-prem and VPC inference for regulated workflows: custom-trained local NER, fine-tuned small language models, audit and provenance by default. I review private-AI strategy because I have shipped it (DocIQ Shield, KISIM AI), not because I read about it.',
+  },
+  {
     title: 'Mid-market software, PE-backed',
     body: 'AI maturity assessments, agentic PDLC introduction, post-acquisition value creation diagnosis. Daily exposure to portfolio software companies across DACH.',
   },
@@ -49,6 +53,10 @@ const domainsDE = [
   {
     title: 'KI-Safety & Frontier-Model-Risiko',
     body: 'OpenAI Red Team Network Alumnus. KI-Policy- und Abuse-Resilience-Review, Model-Card-Analyse, Safety-Governance für Portfolios mit Frontier-Modellen.',
+  },
+  {
+    title: 'Souveräne + private KI',
+    body: 'Produktive Erfahrung mit On-Prem- und VPC-Inferenz für regulierte Workflows: custom-trainiertes lokales NER, fine-tuned kleine Sprachmodelle, Audit und Provenienz per Default. Ich begutachte Private-KI-Strategien, weil ich sie ausgeliefert habe (DocIQ Shield, KISIM AI), nicht weil ich darüber gelesen habe.',
   },
   {
     title: 'Mid-Market-Software, PE-gehalten',

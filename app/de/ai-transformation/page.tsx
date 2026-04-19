@@ -7,6 +7,7 @@ import AtelierTransformGovernance from '@/components/sections/atelier/transform-
 import AtelierTransformHero from '@/components/sections/atelier/transform-hero';
 import AtelierTransformOffers from '@/components/sections/atelier/transform-offers';
 import AtelierTransformProcess from '@/components/sections/atelier/transform-process';
+import AtelierTransformSovereign from '@/components/sections/atelier/transform-sovereign';
 import AtelierTransformSystems from '@/components/sections/atelier/transform-systems';
 import {
   breadcrumbSchema,
@@ -22,6 +23,15 @@ export const metadata: Metadata = {
   keywords: [
     'KI Transformation Schweiz',
     'KI Beratung Basel',
+    'Souveräne KI Schweiz',
+    'Private LLM Schweiz',
+    'On-Prem KI',
+    'Fine-tuned lokale Modelle',
+    'Custom NER',
+    'PII-Masking on-prem',
+    'DSG KI-Compliance',
+    'DSGVO KI-Compliance',
+    'EU AI Act',
     'Enterprise RAG',
     'Enterprise KI',
     'KI Agenten',
@@ -97,6 +107,7 @@ export default function DeAiTransformationPage() {
       <AtelierTransformHero locale="de" />
       <AtelierTransformProcess locale="de" />
       <AtelierTransformSystems locale="de" />
+      <AtelierTransformSovereign locale="de" />
       <AtelierTransformOffers locale="de" />
       <AtelierTransformGovernance locale="de" />
       <AtelierCaseStudiesPreview locale="de" />

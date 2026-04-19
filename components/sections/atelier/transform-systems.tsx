@@ -16,8 +16,8 @@ const systemsEN = [
     body: 'Inbound and outbound voice with hand-off to humans, conversation evaluation, compliance recording. Built for portfolios that have call-centre cost as a real line item.',
   },
   {
-    title: 'Private LLM infrastructure',
-    body: 'On-prem or VPC model deployments where data residency or vendor lock-in matters. Model routing, quota and observability layer. Audit-grade prompt and output retention.',
+    title: 'Sovereign + private LLM infrastructure',
+    body: 'On-prem or VPC inference for open-weight models. Custom fine-tuning of local NER and small language models on your data. GPU sizing, model routing, quota and audit-grade observability. The architecture for workflows where data cannot leave the building.',
   },
   {
     title: 'AI in regulated workflows',
@@ -43,8 +43,8 @@ const systemsDE = [
     body: 'Inbound und Outbound mit Übergabe an Menschen, Gesprächsbewertung, Compliance-Aufzeichnung. Gebaut für Portfolios, deren Call-Center-Kosten eine reale Position sind.',
   },
   {
-    title: 'Private LLM-Infrastruktur',
-    body: 'On-prem oder VPC-Modell-Deployments, wo Datenhoheit oder Anbieter-Lock-in zählen. Modell-Routing, Quota- und Observability-Schicht. Audit-fähige Prompt- und Output-Retention.',
+    title: 'Souveräne + private LLM-Infrastruktur',
+    body: 'On-Prem- oder VPC-Inferenz für Open-Weight-Modelle. Custom-Finetuning lokaler NER- und kleiner Sprachmodelle auf Ihren Daten. GPU-Sizing, Modell-Routing, Quota- und Audit-Observability. Die Architektur für Workflows, in denen Daten das Haus nicht verlassen dürfen.',
   },
   {
     title: 'KI in regulierten Workflows',
