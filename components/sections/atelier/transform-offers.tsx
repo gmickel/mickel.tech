@@ -15,6 +15,23 @@ interface Offer {
 
 const offersEN: readonly Offer[] = [
   {
+    num: '00',
+    name: 'Strategy Session',
+    scope:
+      'A focused half- to full-day working session, on-site or remote. One specific question — vendor selection, build-vs-buy, architecture review, "is this the right AI use case." Written notes and a clear next-step recommendation by end of day.',
+    price: 'CHF 3–5k',
+    duration: '1 day',
+    outcome:
+      'A defensible answer to your specific question — not a generic deck. The cheapest way to test whether we work well together. Fee fully creditable against any follow-on engagement within 90 days.',
+    deliverables: [
+      'Working session (4–8 hours) with the right people in the room',
+      'Written notes plus a clear next-step recommendation',
+      'Optional 30-min follow-up call within two weeks',
+    ],
+    bestFor:
+      'CEOs, COOs, GMs, deal teams wanting an outside read before committing to a longer engagement.',
+  },
+  {
     num: '01',
     name: 'Process Map + AI Opportunity Audit',
     scope:
@@ -22,7 +39,7 @@ const offersEN: readonly Offer[] = [
     price: 'CHF 15–25k fixed',
     duration: '2–3 weeks',
     outcome:
-      'A defensible map of where AI pays back. Not theoretical. Tied to specific workflows with named owners and named numbers.',
+      'A defensible map of where AI pays back. Not theoretical. Tied to specific workflows with named owners and named numbers. Sized so the first prioritised initiative typically pays the audit back inside one quarter.',
     deliverables: [
       'Process map (real path, not org chart)',
       'Top 3–5 opportunities with effort + impact scoring',
@@ -40,7 +57,7 @@ const offersEN: readonly Offer[] = [
     price: 'CHF 40–150k',
     duration: '6–16 weeks',
     outcome:
-      'A system in production used by real users. Telemetry, evals, governance from day one. Internal team owns operations at handover.',
+      'A system in production used by real users. Telemetry, evals, governance from day one. Internal team owns operations at handover. Range covers light RAG deployments through full sovereign / on-prem builds — quoted firmly after the audit, not before.',
     deliverables: [
       'Architecture decision record',
       'Production system + observability + evals',
@@ -58,7 +75,7 @@ const offersEN: readonly Offer[] = [
     price: 'Monthly retainer',
     duration: 'Quarterly minimum',
     outcome:
-      'Independent technical leadership without the full-time hire. Faster vendor decisions, fewer false starts, internal capability built deliberately.',
+      'Independent technical leadership without the full-time hire. Faster vendor decisions, fewer false starts, internal capability built deliberately. Costs a fraction of a senior AI hire and delivers right away — no recruiting cycle, no onboarding ramp.',
     deliverables: [
       'Weekly program steering',
       'Vendor + architecture decisions',
@@ -72,6 +89,23 @@ const offersEN: readonly Offer[] = [
 
 const offersDE: readonly Offer[] = [
   {
+    num: '00',
+    name: 'Strategie-Session',
+    scope:
+      'Eine fokussierte halb- bis ganztägige Arbeitssitzung, vor Ort oder remote. Eine konkrete Frage -- Anbieterauswahl, Build-vs-Buy, Architektur-Review, "ist das der richtige KI-Use-Case". Schriftliche Notizen und eine klare Empfehlung für den nächsten Schritt am Ende des Tages.',
+    price: 'CHF 3–5k',
+    duration: '1 Tag',
+    outcome:
+      'Eine vertretbare Antwort auf Ihre konkrete Frage -- kein generisches Deck. Der günstigste Weg, um zu prüfen, ob die Zusammenarbeit passt. Honorar ist innerhalb von 90 Tagen vollständig auf einen Folgeauftrag anrechenbar.',
+    deliverables: [
+      'Arbeitssitzung (4–8 Stunden) mit den richtigen Leuten im Raum',
+      'Schriftliche Notizen plus klare Empfehlung für den nächsten Schritt',
+      'Optionales 30-min Folge-Telefonat innerhalb von zwei Wochen',
+    ],
+    bestFor:
+      'CEOs, COOs, GMs, Deal-Teams, die eine externe Einschätzung wollen, bevor sie sich auf ein längeres Mandat festlegen.',
+  },
+  {
     num: '01',
     name: 'Prozesslandkarte + KI-Opportunity-Audit',
     scope:
@@ -79,7 +113,7 @@ const offersDE: readonly Offer[] = [
     price: 'CHF 15–25k fix',
     duration: '2–3 Wochen',
     outcome:
-      'Eine vertretbare Landkarte, wo KI sich auszahlt. Nicht theoretisch. An konkrete Workflows mit benannten Owners und konkreten Zahlen geknüpft.',
+      'Eine vertretbare Landkarte, wo KI sich auszahlt. Nicht theoretisch. An konkrete Workflows mit benannten Owners und konkreten Zahlen geknüpft. So gross dimensioniert, dass die erste priorisierte Initiative das Audit typischerweise innerhalb eines Quartals einspielt.',
     deliverables: [
       'Prozesslandkarte (realer Pfad, nicht Organigramm)',
       'Top 3–5 Opportunitäten mit Aufwand- und Impact-Scoring',
@@ -97,7 +131,7 @@ const offersDE: readonly Offer[] = [
     price: 'CHF 40–150k',
     duration: '6–16 Wochen',
     outcome:
-      'Ein System in Produktion, von echten Nutzern verwendet. Telemetrie, Evals, Governance ab Tag eins. Internes Team trägt den Betrieb bei Übergabe.',
+      'Ein System in Produktion, von echten Nutzern verwendet. Telemetrie, Evals, Governance ab Tag eins. Internes Team trägt den Betrieb bei Übergabe. Spanne deckt schlanke RAG-Deployments bis zu vollwertigen souveränen / On-Prem-Builds ab -- konkret quotiert nach dem Audit, nicht davor.',
     deliverables: [
       'Architektur-Entscheidungs-Record',
       'Produktivsystem + Observability + Evals',
@@ -115,7 +149,7 @@ const offersDE: readonly Offer[] = [
     price: 'Monatlicher Retainer',
     duration: 'Mindestens ein Quartal',
     outcome:
-      'Unabhängige technische Führung ohne Vollzeitstelle. Schnellere Anbieterentscheidungen, weniger Fehlstarts, interne Capability bewusst aufgebaut.',
+      'Unabhängige technische Führung ohne Vollzeitstelle. Schnellere Anbieterentscheidungen, weniger Fehlstarts, interne Capability bewusst aufgebaut. Kostet einen Bruchteil einer senioren KI-Einstellung und liefert sofort -- kein Recruiting-Zyklus, keine Onboarding-Rampe.',
     deliverables: [
       'Wöchentliches Programm-Steering',
       'Anbieter- und Architekturentscheidungen',
@@ -180,7 +214,7 @@ export default function AtelierTransformOffers({
           </div>
         </header>
 
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-3 md:gap-8">
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-8 xl:grid-cols-4">
           {offers.map((offer) => (
             <article
               className="atelier-card-hover flex h-full flex-col border border-[hsl(var(--ink))]/15 bg-[hsl(var(--paper))] p-7 md:p-9"

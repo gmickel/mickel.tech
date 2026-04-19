@@ -108,6 +108,20 @@ export function professionalServiceSchema() {
               '@type': 'Offer',
               itemOffered: {
                 '@type': 'Service',
+                name: 'Strategy Session',
+                description:
+                  '1-day focused working session on a specific question: agentic PDLC introduction, vendor selection, architecture review. Written notes and recommendation. Fee creditable to follow-on engagement.',
+              },
+              priceSpecification: {
+                '@type': 'PriceSpecification',
+                price: '3000',
+                priceCurrency: 'CHF',
+              },
+            },
+            {
+              '@type': 'Offer',
+              itemOffered: {
+                '@type': 'Service',
                 name: 'Agentic PDLC Diagnostic',
                 description:
                   '2-week assessment: L0–L4 maturity scoring, 5-pillar audit, opportunity map, 90-day roadmap.',
@@ -162,6 +176,20 @@ export function professionalServiceSchema() {
           '@type': 'OfferCatalog',
           name: 'AI systems & transformation',
           itemListElement: [
+            {
+              '@type': 'Offer',
+              itemOffered: {
+                '@type': 'Service',
+                name: 'Strategy Session',
+                description:
+                  '1-day focused working session on a specific AI question: vendor selection, build-vs-buy, architecture review. Written notes and recommendation. Fee creditable to follow-on engagement.',
+              },
+              priceSpecification: {
+                '@type': 'PriceSpecification',
+                price: '3000',
+                priceCurrency: 'CHF',
+              },
+            },
             {
               '@type': 'Offer',
               itemOffered: {
