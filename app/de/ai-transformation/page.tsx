@@ -22,12 +22,16 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: 'KI-Transformation | Gordon Mickel',
-    description: 'Prozess-Mapping zu Produktions-KI-Systemen. Enterprise RAG, autonome Agenten, Private LLM.',
+    description:
+      'Prozess-Mapping zu Produktions-KI-Systemen. Enterprise RAG, autonome Agenten, Private LLM.',
     locale: 'de_CH',
   },
   alternates: {
     canonical: 'https://mickel.tech/de/ai-transformation',
-    languages: { en: 'https://mickel.tech/ai-transformation', de: 'https://mickel.tech/de/ai-transformation' },
+    languages: {
+      en: 'https://mickel.tech/ai-transformation',
+      de: 'https://mickel.tech/de/ai-transformation',
+    },
   },
 };
 

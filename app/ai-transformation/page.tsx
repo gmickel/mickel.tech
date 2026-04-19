@@ -29,7 +29,10 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: 'https://mickel.tech/ai-transformation',
-    languages: { en: 'https://mickel.tech/ai-transformation', de: 'https://mickel.tech/de/ai-transformation' },
+    languages: {
+      en: 'https://mickel.tech/ai-transformation',
+      de: 'https://mickel.tech/de/ai-transformation',
+    },
   },
 };
 
