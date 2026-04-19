@@ -188,11 +188,11 @@ export default function AtelierShell({ children }: AtelierShellProps) {
 
 function AtelierFooter({ isDE }: { isDE: boolean }) {
   const credentials = [
-    'ITDR-listed Technical Expert',
-    'Handelsgericht Parteigutachter',
+    'ITDR-listed Technical Expert (Switzerland)',
     'OpenAI Red Team Network alumnus',
     'SECA 2026 invited speaker',
-    'Founder, DocIQ (AI-native CLM)',
+    'openEHR.ch Symposium speaker',
+    'Founder, DocIQ (Swiss legal AI since 2017)',
     'Founder, MergeFoundry, Inc.',
     'Author, FlowNext (open source)',
   ];

@@ -53,9 +53,9 @@ const offersEN: readonly Offer[] = [
     num: '02',
     name: 'AI System Build',
     scope:
-      'Production deployment of one of the system classes (RAG, agents, voice, knowledge platform, private LLM). Requirements through go-live with operations and governance handover.',
+      'Production deployment of one of the system classes (agentic systems, context layers, voice, knowledge platforms, private + on-prem AI). Requirements through go-live with operations and governance handover.',
     price: 'CHF 40–150k',
-    duration: '6–16 weeks',
+    duration: '4–10 weeks',
     outcome:
       'A system in production used by real users. Telemetry, evals, governance from day one. Internal team owns operations at handover. Range covers light RAG deployments through full sovereign / on-prem builds — quoted firmly after the audit, not before.',
     deliverables: [
@@ -127,9 +127,9 @@ const offersDE: readonly Offer[] = [
     num: '02',
     name: 'KI-System-Build',
     scope:
-      'Produktive Auslieferung einer der Systemklassen (RAG, Agenten, Voice, Wissensplattform, private LLM). Von den Anforderungen bis zum Go-Live, mit Übergabe an Betrieb und Governance.',
+      'Produktive Auslieferung einer der Systemklassen (agentische Systeme, Kontextschichten, Voice, Wissensplattformen, private + On-Prem-KI). Von den Anforderungen bis zum Go-Live, mit Übergabe an Betrieb und Governance.',
     price: 'CHF 40–150k',
-    duration: '6–16 Wochen',
+    duration: '4–10 Wochen',
     outcome:
       'Ein System in Produktion, von echten Nutzern verwendet. Telemetrie, Evals, Governance ab Tag eins. Internes Team trägt den Betrieb bei Übergabe. Spanne deckt schlanke RAG-Deployments bis zu vollwertigen souveränen / On-Prem-Builds ab -- konkret quotiert nach dem Audit, nicht davor.',
     deliverables: [

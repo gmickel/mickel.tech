@@ -19,6 +19,7 @@ const copyEN = {
         'Two-stage rollout: foundation, then methodology shift',
         'Everything-as-code: prompts, evals, guardrails, agent skills',
       ],
+      metric: 'Target 3–5× cycle time, dev-org-wide',
       anchorPrice: 'Diagnostic from CHF 15–25k',
       cta: 'See agentic PDLC',
       href: '/sdlc',
@@ -44,7 +45,7 @@ const copyEN = {
         },
       ],
       anchorPrice: 'Confidential intake · DE / EN',
-      cta: 'Independent expert work',
+      cta: 'See expert practice',
       href: '/expert',
     },
     transform: {
@@ -54,9 +55,9 @@ const copyEN = {
       lede: 'Production AI systems that run your business, not just demo well.',
       body: 'Every engagement starts with a process map, not a tool. Where the data lives. Where the bottlenecks are. What breaks at scale. Then we build the context layer and ship production systems on top.',
       bullets: [
-        'Enterprise RAG and knowledge platforms',
-        'Autonomous agents and operations co-pilots',
-        'Private LLM infrastructure with governance',
+        'Agentic systems and operations co-pilots',
+        'Context layers and knowledge platforms',
+        'Sovereign + private LLM infrastructure',
       ],
       anchorPrice: 'Process audit from CHF 15–25k',
       cta: 'AI transformation',
@@ -82,6 +83,7 @@ const copyDE = {
         'Zweistufiges Vorgehen: Fundament, dann Methodenwechsel',
         'Everything-as-code: Prompts, Evals, Guardrails, Agent-Skills',
       ],
+      metric: 'Ziel 3–5× Cycle Time, gesamte Dev-Org',
       anchorPrice: 'Diagnose ab CHF 15–25k',
       cta: 'Agentische PDLC',
       href: '/de/sdlc',
@@ -107,7 +109,7 @@ const copyDE = {
         },
       ],
       anchorPrice: 'Vertrauliche Anfrage · DE / EN',
-      cta: 'Unabhängige Begutachtung',
+      cta: 'Zur Begutachtung',
       href: '/de/expert',
     },
     transform: {
@@ -117,9 +119,9 @@ const copyDE = {
       lede: 'Produktionsreife KI-Systeme, die Ihr Geschäft tragen, nicht nur in der Demo.',
       body: 'Jedes Mandat beginnt mit einer Prozesslandkarte, nicht mit einem Tool. Wo liegen die Daten. Wo sind die Engpässe. Was bricht unter Last. Danach bauen wir die Kontextschicht und liefern produktive Systeme darauf.',
       bullets: [
-        'Enterprise-RAG und Wissensplattformen',
-        'Autonome Agenten und Operations-Copilots',
-        'Private LLM-Infrastruktur mit Governance',
+        'Agentensysteme und Operations-Copilots',
+        'Kontextschichten und Wissensplattformen',
+        'Souveräne + private LLM-Infrastruktur',
       ],
       anchorPrice: 'Prozess-Audit ab CHF 15–25k',
       cta: 'KI-Transformation',
@@ -221,6 +223,9 @@ function PdlcCard({ card }: { card: PdlcCardData }) {
 
       <div className="mt-auto pt-8">
         <div className="atelier-paper-rule mb-4" />
+        <p className="atelier-numerals mb-3 text-[0.92rem] text-[hsl(var(--rust))] leading-tight">
+          {card.metric}
+        </p>
         <div className="flex items-baseline justify-between gap-4">
           <span className="atelier-numerals text-[0.86rem] text-[hsl(var(--ink))]">
             {card.anchorPrice}

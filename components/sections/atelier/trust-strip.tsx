@@ -7,13 +7,13 @@ const itemsEN = [
     label: 'ITDR-listed',
     meta: 'Swiss expert body for ICT/AI disputes',
   },
-  { label: 'Handelsgericht', meta: 'Parteigutachter, software dispute' },
+  { label: 'openEHR.ch', meta: 'Symposium speaker, clinical AI' },
   { label: 'OpenAI Red Team', meta: 'Frontier model safety alumnus' },
   { label: 'SECA 2026', meta: 'Invited speaker, AI in SME growth' },
   { label: 'DocIQ', meta: 'Founder, AI-native CLM platform' },
   { label: 'FlowNext', meta: 'Author · thousands of users' },
   { label: '20+ years', meta: 'Engineering production systems' },
-  { label: 'DE / EN', meta: 'Mandates in both languages' },
+  { label: 'DE / EN', meta: 'Bilingual mandates' },
 ] as const;
 
 const itemsDE = [
@@ -21,13 +21,13 @@ const itemsDE = [
     label: 'ITDR-gelistet',
     meta: 'Schweizer Fachstelle für IKT-/KI-Streitigkeiten',
   },
-  { label: 'Handelsgericht', meta: 'Parteigutachter, Software-Streit' },
+  { label: 'openEHR.ch', meta: 'Symposiums-Sprecher, klinische KI' },
   { label: 'OpenAI Red Team', meta: 'Alumnus, Frontier-Modell-Safety' },
   { label: 'SECA 2026', meta: 'Eingeladener Sprecher, KI im KMU' },
   { label: 'DocIQ', meta: 'Gründer, KI-natives CLM' },
   { label: 'FlowNext', meta: 'Autor · tausende Nutzer' },
   { label: '20+ Jahre', meta: 'Produktionssysteme entwickelt' },
-  { label: 'DE / EN', meta: 'Mandate in beiden Sprachen' },
+  { label: 'DE / EN', meta: 'Zweisprachige Mandate' },
 ] as const;
 
 export default function AtelierTrustStrip({ locale = 'en' }: TrustStripProps) {

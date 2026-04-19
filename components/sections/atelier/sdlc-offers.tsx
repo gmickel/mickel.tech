@@ -53,9 +53,9 @@ const offersEN: readonly Offer[] = [
     num: '02',
     name: 'Foundation Sprint',
     scope:
-      'Six to eight weeks. Tooling rollout, methodology training, 1–2 quick-win lanes shipped, KPI baseline locked. Bring your team from L1 → L2 with hands-on co-shipping.',
+      'Two to four weeks. Tooling rollout, methodology training, 1–2 quick-win lanes shipped, KPI baseline locked. Bring your team from L1 → L2 with hands-on co-shipping.',
     price: 'CHF 40–60k fixed',
-    duration: '6–8 weeks',
+    duration: '2–4 weeks',
     outcome:
       '20–30% measurable cycle-time reduction in the first 90 days. A team that owns the methodology, not a vendor that owns it for them. At Davos AI-engineer-EBITDA assumptions, the throughput uplift on a 20-engineer org alone covers the engagement inside a quarter.',
     deliverables: [
@@ -71,9 +71,9 @@ const offersEN: readonly Offer[] = [
     num: '03',
     name: 'Full Methodology Shift',
     scope:
-      'Three to six months. L2 → L3/L4 transformation. Eval gates, cross-model review, everything-as-code, observability flywheels. Multiple lanes, multiple teams, sustained throughput uplift.',
+      '1.5 to 3 months. L2 → L3/L4 transformation. Eval gates, cross-model review, everything-as-code, observability flywheels. Multiple lanes, multiple teams, sustained throughput uplift.',
     price: 'CHF 80–150k+',
-    duration: '3–6 months',
+    duration: '1.5–3 months',
     outcome:
       '2–3x sustained throughput. Most production code reviewed (or written) by agents. Engineering organisation reshaped around product/spec leadership. The investment is in the same range as one senior hire — and it compounds across every engineer in the org rather than adding one more.',
     deliverables: [
@@ -127,9 +127,9 @@ const offersDE: readonly Offer[] = [
     num: '02',
     name: 'Foundation Sprint',
     scope:
-      'Sechs bis acht Wochen. Tooling-Rollout, Methodikschulung, 1–2 Quick-Win-Spuren ausgeliefert, KPI-Baseline fixiert. Ihr Team von L1 → L2, mit Co-Shipping aus erster Hand.',
+      'Zwei bis vier Wochen. Tooling-Rollout, Methodikschulung, 1–2 Quick-Win-Spuren ausgeliefert, KPI-Baseline fixiert. Ihr Team von L1 → L2, mit Co-Shipping aus erster Hand.',
     price: 'CHF 40–60k fix',
-    duration: '6–8 Wochen',
+    duration: '2–4 Wochen',
     outcome:
       '20–30% messbare Cycle-Time-Reduktion in den ersten 90 Tagen. Ein Team, das die Methodik selbst trägt -- kein Anbieter, der sie für das Team trägt. Bei den Davos-Annahmen für KI-Engineer-EBITDA deckt der Durchsatzgewinn allein bei einer 20-köpfigen Engineering-Organisation das Mandat innerhalb eines Quartals.',
     deliverables: [
@@ -145,9 +145,9 @@ const offersDE: readonly Offer[] = [
     num: '03',
     name: 'Voller Methodenwechsel',
     scope:
-      'Drei bis sechs Monate. Transformation von L2 → L3/L4. Eval-Gates, Cross-Model-Review, Everything-as-code, Observability-Schwungräder. Mehrere Spuren, mehrere Teams, anhaltender Durchsatzgewinn.',
+      '1,5 bis 3 Monate. Transformation von L2 → L3/L4. Eval-Gates, Cross-Model-Review, Everything-as-code, Observability-Schwungräder. Mehrere Spuren, mehrere Teams, anhaltender Durchsatzgewinn.',
     price: 'CHF 80–150k+',
-    duration: '3–6 Monate',
+    duration: '1,5–3 Monate',
     outcome:
       '2–3× anhaltender Durchsatz. Der Grossteil des produktiven Codes wird von Agenten reviewt (oder geschrieben). Engineering-Organisation neu zugeschnitten auf Produkt- und Spec-Führung. Die Investition liegt im Bereich einer einzelnen senioren Einstellung -- und sie kumuliert über jeden Entwickler in der Organisation, statt einen weiteren hinzuzufügen.',
     deliverables: [
