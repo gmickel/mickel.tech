@@ -279,7 +279,7 @@ function RelatedSection({
             const ml = locale === 'de' ? s.metricLabelDE : s.metricLabelEN;
             return (
               <a
-                className="atelier-card-hover group flex flex-col bg-[hsl(var(--paper))] p-7 transition-colors hover:bg-[hsl(var(--paper))]/85 md:p-8"
+                className="atelier-card-hover atelier-wash-rust group flex flex-col bg-[hsl(var(--paper))] p-7 transition-colors hover:bg-[hsl(var(--paper))]/85 md:p-8"
                 href={`${linkPrefix}/${s.id}`}
                 key={s.id}
               >

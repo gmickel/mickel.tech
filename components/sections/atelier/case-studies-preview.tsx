@@ -106,7 +106,7 @@ function CaseStudyEntry({
   const namedTag = locale === 'de' ? ' · genannt' : ' · named';
 
   return (
-    <article className="relative flex flex-col bg-[hsl(var(--paper))] p-8 transition-colors hover:bg-[hsl(var(--paper))]/80 md:p-12">
+    <article className="atelier-card-hover atelier-wash-rust group flex flex-col bg-[hsl(var(--paper))] p-8 transition-colors hover:bg-[hsl(var(--paper))]/80 md:p-12">
       <header className="mb-6 flex items-baseline justify-between gap-4 border-[hsl(var(--ink))]/15 border-b pb-5">
         <div className="flex items-baseline gap-4">
           <span className="atelier-numerals text-2xl text-[hsl(var(--rust))]">

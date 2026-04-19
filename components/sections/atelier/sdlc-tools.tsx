@@ -84,7 +84,7 @@ export default function AtelierSdlcTools({ locale = 'en' }: SdlcToolsProps) {
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-8">
           {c.tools.map((t) => (
             <article
-              className="atelier-card-hover flex h-full flex-col border border-[hsl(var(--paper))]/15 bg-[hsl(var(--graphite))] p-7 md:p-10"
+              className="atelier-card-hover atelier-wash-rust flex h-full flex-col border border-[hsl(var(--paper))]/15 bg-[hsl(var(--graphite))] p-7 md:p-10"
               key={t.name}
             >
               <h3 className="atelier-display font-medium text-[1.85rem] text-[hsl(var(--paper))]">

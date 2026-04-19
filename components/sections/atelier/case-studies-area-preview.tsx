@@ -135,7 +135,7 @@ function CaseEntry({
       : `/case-studies/${study.id}`;
 
   return (
-    <article className="atelier-card-hover group flex flex-col bg-[hsl(var(--paper))] p-7 md:p-9">
+    <article className="atelier-card-hover atelier-wash-rust group flex flex-col bg-[hsl(var(--paper))] p-7 md:p-9">
       <header className="mb-5 flex items-baseline justify-between gap-4 border-[hsl(var(--ink))]/15 border-b pb-4">
         <div className="flex items-baseline gap-3">
           <span className="atelier-numerals text-[hsl(var(--rust))] text-xl">

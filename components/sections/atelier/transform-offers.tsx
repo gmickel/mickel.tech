@@ -219,7 +219,7 @@ export default function AtelierTransformOffers({
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-8 xl:grid-cols-4">
           {offers.map((offer) => (
             <article
-              className="atelier-card-hover flex h-full flex-col border border-[hsl(var(--ink))]/15 bg-[hsl(var(--paper))] p-7 md:p-9"
+              className="atelier-card-hover atelier-wash-rust flex h-full flex-col border border-[hsl(var(--ink))]/15 bg-[hsl(var(--paper))] p-7 md:p-9"
               key={offer.num}
             >
               <div className="mb-6 flex items-baseline justify-between">
