@@ -83,7 +83,8 @@ const copyEN = {
 
 const copyDE = {
   eyebrow: '01 / Über mich',
-  headline: 'Ich baue KI-Systeme und lese den Code anderer Leute beruflich.',
+  headline:
+    'Ich baue KI-Systeme, helfe Engineering-Teams, ihren F&E-Output zu vervielfachen, und lese fremden Code unter Kreuzverhör. Beruflich.',
   intro:
     'Zwanzig Jahre Auslieferung von Software in regulierten Branchen. 2017 habe ich DocIQ gegründet, um KI auf Rechtsdokumente in der Schweiz anzuwenden; bei CISTEC AG habe ich das KI-Programm von KISIM geleitet und die erste produktive klinische LLM des Landes ausgeliefert; und heute leite ich KI & Technologie bei Growth Factors (Bregal-Portfolio) und nehme parallel eine kleine Anzahl ausgewählter Mandate jedes Jahr an.',
   arcLabel: '02 / Werdegang',
