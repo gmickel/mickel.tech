@@ -6,7 +6,8 @@ interface AboutContentProps {
 
 const copyEN = {
   eyebrow: '01 / About',
-  headline: "I build AI systems and read other people's code for a living.",
+  headline:
+    "I build AI systems, help engineering teams multiply their R&D output, and read other people's code under cross-examination for a living.",
   intro:
     "Twenty years of shipping software in regulated industries. I founded DocIQ in 2017 to apply AI to legal documents in Switzerland; led KISIM's AI program at CISTEC AG to ship the country's first production clinical LLM; and now run AI & Technology at Growth Factors (Bregal portfolio) while taking a small number of select mandates each year alongside it.",
   arcLabel: '02 / Career arc',

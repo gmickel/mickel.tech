@@ -233,9 +233,9 @@ export const CASE_STUDIES: readonly CaseStudy[] = [
     approachDE:
       'Unternehmen 2017 in Zug gegründet (Contract Vault GmbH). DocIQ 1.0 (2018) entworfen und ausgeliefert als Enterprise-Document-Lifecycle-Management mit Vertragsanalyse, Metadaten-Extraktion und intelligenter Suche. Auf produktive Einsätze beim Schweizerischen Versicherungsverband (SVV), Laux Lawyers und Kaiser Odermatt & Partner skaliert. Plattform für die LLM-Ära von Grund auf neu gebaut — Sphere (KI-Dokumentenintelligenz der nächsten Generation) und Shield (Anonymisierung von Gerichtsdokumenten für die Schweizer Justiz, fine-tuned lokales NER + LLM, keine Datenpersistenz).',
     outcomeEN:
-      'Live in Swiss enterprise production since 2018, deepening with each LLM-era upgrade. Sphere + Shield v2 launched 2026, including word-native tracked changes, six legal databases, AI Playbooks, and court anonymisation rebuilt from the ground up.',
+      'Production at the Swiss Insurance Association, Laux Lawyers, and Kaiser Odermatt & Partner since 2021. Shield v1 (court anonymisation for the Swiss judiciary, fine-tuned local NER + LLM, zero data persistence) shipped 2025. Sphere + Shield v2 launched 2026 — Word-native tracked changes, six integrated legal databases, AI Playbooks, court anonymisation rebuilt from the ground up. Continuously evolved as Swiss legal AI matured around it.',
     outcomeDE:
-      'Live in Schweizer Enterprise-Produktion seit 2018, mit jeder LLM-Ära-Iteration vertieft. Sphere + Shield v2 2026 lanciert, inklusive Word-nativer Änderungsverfolgung, sechs Rechtsdatenbanken, KI-Playbooks und neu aufgebaute Gerichtsanonymisierung.',
+      'Produktiv beim Schweizerischen Versicherungsverband, bei Laux Lawyers und bei Kaiser Odermatt & Partner seit 2021. Shield v1 (Anonymisierung von Gerichtsdokumenten für die Schweizer Justiz, fine-tuned lokales NER + LLM, keine Datenpersistenz) 2025 lanciert. Sphere + Shield v2 2026 lanciert — Word-native Änderungsverfolgung, sechs integrierte Rechtsdatenbanken, KI-Playbooks, Gerichtsanonymisierung neu aufgebaut. Kontinuierlich weiterentwickelt, während die Schweizer Legal-AI-Landschaft um sie herum reifte.',
     metricValueEN: 'Since 2017',
     metricValueDE: 'Seit 2017',
     metricLabelEN: 'Founder · Swiss legal AI',

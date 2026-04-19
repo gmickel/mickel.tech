@@ -13,6 +13,17 @@ export interface AppMeta {
 
 export const APPS: AppMeta[] = [
   {
+    slug: 'gno',
+    name: 'GNO',
+    tagline: 'Local search + hosted publishing for your second brain',
+    description:
+      'Two-layer knowledge stack. Local: hybrid search CLI over Markdown, PDFs and code (BM25 + vectors + reranking, MCP server, Web UI). Hosted at gno.sh: publish notes and collections as polished reading surfaces with reader hotkeys, public links and secret shares.',
+    category: 'DeveloperApplication',
+    tags: ['CLI', 'Search', 'Publishing', 'Open Source'],
+    image: '/gno/logo.svg',
+    status: 'Released',
+  },
+  {
     slug: 'flow-next',
     name: 'Flow-Next',
     tagline: 'Zero-dep agent orchestration',
@@ -43,17 +54,6 @@ export const APPS: AppMeta[] = [
     category: 'BusinessApplication',
     tags: ['AI', 'Privacy', 'Swiss Courts'],
     image: '/shield/shield.png',
-    status: 'Released',
-  },
-  {
-    slug: 'gno',
-    name: 'GNO',
-    tagline: 'Local search for your second brain',
-    description:
-      'Local hybrid search CLI. Index Markdown, PDFs, code. BM25 + vector search with HyDE expansion. Give AI agents memory over your files.',
-    category: 'DeveloperApplication',
-    tags: ['CLI', 'Search', 'Open Source'],
-    image: '/gno/logo.svg',
     status: 'Released',
   },
   {

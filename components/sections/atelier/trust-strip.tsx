@@ -5,7 +5,7 @@ interface TrustStripProps {
 const itemsEN = [
   {
     label: 'ITDR-listed',
-    meta: 'Institution for IT and Data Dispute Resolution',
+    meta: 'Swiss expert body for ICT/AI disputes',
   },
   { label: 'Handelsgericht', meta: 'Parteigutachter, software dispute' },
   { label: 'OpenAI Red Team', meta: 'Frontier model safety alumnus' },
@@ -19,7 +19,7 @@ const itemsEN = [
 const itemsDE = [
   {
     label: 'ITDR-gelistet',
-    meta: 'Institution for IT and Data Dispute Resolution',
+    meta: 'Schweizer Fachstelle für IKT-/KI-Streitigkeiten',
   },
   { label: 'Handelsgericht', meta: 'Parteigutachter, Software-Streit' },
   { label: 'OpenAI Red Team', meta: 'Alumnus, Frontier-Modell-Safety' },
