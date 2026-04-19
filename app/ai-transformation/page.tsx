@@ -1,29 +1,48 @@
 import type { Metadata } from 'next';
-import Shell from '@/components/layout/shell';
-import AiTransformation from '@/components/sections/ai-transformation';
-import Contact from '@/components/sections/contact/index';
-import { breadcrumbSchema, JsonLd, serviceSchema } from '@/lib/json-ld';
+import AtelierShell from '@/components/layout/atelier-shell';
+import AtelierCalCta from '@/components/sections/atelier/cal-cta';
+import AtelierCaseStudiesPreview from '@/components/sections/atelier/case-studies-preview';
+import AtelierTransformFaq from '@/components/sections/atelier/transform-faq';
+import AtelierTransformGovernance from '@/components/sections/atelier/transform-governance';
+import AtelierTransformHero from '@/components/sections/atelier/transform-hero';
+import AtelierTransformOffers from '@/components/sections/atelier/transform-offers';
+import AtelierTransformProcess from '@/components/sections/atelier/transform-process';
+import AtelierTransformSystems from '@/components/sections/atelier/transform-systems';
+import {
+  breadcrumbSchema,
+  JsonLd,
+  personSchema,
+  serviceSchema,
+} from '@/lib/json-ld';
 
 export const metadata: Metadata = {
-  title: 'Total AI Transformation',
+  title: 'AI Systems & Transformation — Process-first, Production-grade',
   description:
-    'Process mapping to production AI systems. Enterprise RAG, autonomous agents, private LLM infrastructure and workflow automation. 10+ companies transformed across regulated industries.',
+    'AI systems that run your business, not just demo well. Process-first audit, production system build, fractional AI lead. Enterprise RAG, autonomous agents, voice, private LLM. CHF 15k audit, CHF 40–150k system build. Basel, DE / EN.',
   keywords: [
-    'AI transformation',
-    'enterprise AI',
+    'AI transformation Switzerland',
+    'AI Beratung Schweiz',
     'enterprise RAG',
+    'enterprise AI',
     'AI agents',
-    'private LLM',
-    'AI infrastructure',
+    'voice agents',
+    'autonomous agents',
+    'private LLM infrastructure',
     'process automation AI',
-    'knowledge management AI',
-    'AI consulting',
-    'AI implementation',
+    'fractional AI lead',
+    'AI strategy CEO',
+    'AI strategy CTO',
+    'PE portco AI',
+    'AI in regulated industries',
+    'production AI systems',
+    'AI architecture',
+    'context layer',
+    'AI governance',
   ],
   openGraph: {
-    title: 'Total AI Transformation | Gordon Mickel',
+    title: 'AI Systems & Transformation — Process-first, Production-grade',
     description:
-      'Process mapping to production AI systems. Enterprise RAG, agents, private LLM infrastructure. 10+ companies transformed.',
+      'Process-first AI: map workflows, build the context layer, ship production systems. Enterprise RAG, agents, voice, private LLM. Audit from CHF 15k.',
     url: 'https://mickel.tech/ai-transformation',
     type: 'website',
   },
@@ -38,22 +57,46 @@ export const metadata: Metadata = {
 
 export default function AiTransformationPage() {
   return (
-    <Shell>
+    <AtelierShell>
+      <JsonLd data={personSchema()} />
       <JsonLd
         data={serviceSchema({
-          name: 'Total AI Transformation',
+          name: 'Process Map + AI Opportunity Audit',
           description:
-            'End-to-end AI transformation: process mapping, enterprise RAG, autonomous agents, private LLM infrastructure. Context layer first, automation on top.',
-          url: '/ai-transformation',
+            '2–3 weeks. Map workflows end-to-end, score automation candidates, propose 3–5 prioritised initiatives with ROI and 90-day plan. CHF 15–25k fixed.',
+          url: '/ai-transformation#offers',
+        })}
+      />
+      <JsonLd
+        data={serviceSchema({
+          name: 'AI System Build',
+          description:
+            'Production deployment of an AI system class (RAG, agents, voice, knowledge platform, private LLM). Requirements through go-live with operations handover. CHF 40–150k.',
+          url: '/ai-transformation#offers',
+        })}
+      />
+      <JsonLd
+        data={serviceSchema({
+          name: 'Fractional AI Lead',
+          description:
+            '1–2 days/week. Program governance, vendor selection, hands-on architecture, internal capability building. Monthly retainer, quarterly minimum.',
+          url: '/ai-transformation#offers',
         })}
       />
       <JsonLd
         data={breadcrumbSchema([
-          { name: 'AI Transformation', url: '/ai-transformation' },
+          { name: 'AI systems & transformation', url: '/ai-transformation' },
         ])}
       />
-      <AiTransformation />
-      <Contact />
-    </Shell>
+
+      <AtelierTransformHero locale="en" />
+      <AtelierTransformProcess locale="en" />
+      <AtelierTransformSystems locale="en" />
+      <AtelierTransformOffers locale="en" />
+      <AtelierTransformGovernance locale="en" />
+      <AtelierCaseStudiesPreview locale="en" />
+      <AtelierTransformFaq locale="en" />
+      <AtelierCalCta locale="en" variant="transformation" />
+    </AtelierShell>
   );
 }

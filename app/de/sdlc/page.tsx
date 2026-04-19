@@ -1,28 +1,49 @@
 import type { Metadata } from 'next';
-
-import Shell from '@/components/layout/shell';
-import Contact from '@/components/sections/contact/index';
-import DeAgenticSdlc from '@/components/sections/de/agentic-sdlc';
-import { breadcrumbSchema, JsonLd, serviceSchema } from '@/lib/json-ld';
+import AtelierShell from '@/components/layout/atelier-shell';
+import AtelierCalCta from '@/components/sections/atelier/cal-cta';
+import AtelierCaseStudiesPreview from '@/components/sections/atelier/case-studies-preview';
+import AtelierSdlcFaq from '@/components/sections/atelier/sdlc-faq';
+import AtelierSdlcHero from '@/components/sections/atelier/sdlc-hero';
+import AtelierSdlcMaturity from '@/components/sections/atelier/sdlc-maturity';
+import AtelierSdlcOffers from '@/components/sections/atelier/sdlc-offers';
+import AtelierSdlcThesis from '@/components/sections/atelier/sdlc-thesis';
+import AtelierSdlcTools from '@/components/sections/atelier/sdlc-tools';
+import {
+  breadcrumbSchema,
+  JsonLd,
+  personSchema,
+  serviceSchema,
+} from '@/lib/json-ld';
 
 export const metadata: Metadata = {
-  title: 'KI-Native SDLC-Transformation',
+  title: 'Agentische PDLC — Von Anforderungen bis zur autonomen Auslieferung',
   description:
-    'Von Legacy-Prozessen zu autonomen Code-Fabriken. Zwei-Phasen-Rollout, L0-L4 Reifegradmodell, eval-gesteuertes Gating. 10+ Teams, 500+ Ingenieure.',
+    'Agentische PDLC ist eine Neuauslegung davon, wie Produkt gebaut wird. Von Anforderungsengineering bis spec-getriebener, agentengestützter Auslieferung, eval-gegate und cross-model-reviewed. L0–L4 Reifegradmodell. Diagnose ab CHF 15k. Autor von FlowNext, Gründer von MergeFoundry.',
   keywords: [
-    'KI SDLC',
-    'agentisches SDLC',
-    'KI-native Softwareentwicklung',
-    'SDLC Transformation',
-    'autonome Code-Fabrik',
-    'KI Coding Agenten',
-    'Entwicklerproduktivität KI',
+    'Agentische PDLC',
+    'KI-native PDLC',
+    'agentische SDLC',
+    'spec-getriebene Entwicklung',
+    'agentisches Coding',
+    'KI-Software-Lebenszyklus',
+    'KI Engineering Transformation',
+    'eval-getriebene Entwicklung',
+    'Cross-Model-Review',
+    'Multi-Agent-Code-Fabrik',
+    'FlowNext',
+    'MergeFoundry',
+    'KI-Reifegradmodell',
+    'CTO KI-Strategie',
+    'PE Software-Portfolio KI',
+    'KI Beratung Schweiz',
   ],
   openGraph: {
-    title: 'KI-Native SDLC-Transformation | Gordon Mickel',
+    title: 'Agentische PDLC — Von Anforderungen bis zur autonomen Auslieferung',
     description:
-      'Von Legacy-Prozessen zu autonomen Code-Fabriken. L0-L4 Reifegradmodell, 500+ Ingenieure.',
+      'Produkt-Auslieferung neu gedacht: spec-getrieben, agentengestützt, eval-gegate. L0 → L4 Reifegrad. Diagnose ab CHF 15k. Autor von FlowNext und MergeFoundry.',
+    url: 'https://mickel.tech/de/sdlc',
     locale: 'de_CH',
+    type: 'website',
   },
   alternates: {
     canonical: 'https://mickel.tech/de/sdlc',
@@ -35,20 +56,44 @@ export const metadata: Metadata = {
 
 export default function DeSdlcPage() {
   return (
-    <Shell>
+    <AtelierShell>
+      <JsonLd data={personSchema()} />
       <JsonLd
         data={serviceSchema({
-          name: 'KI-Native SDLC-Transformation',
+          name: 'Agentische PDLC Diagnose',
           description:
-            'Komplette Methodik zur Transformation der Softwareentwicklung mit KI-Agenten.',
-          url: '/de/sdlc',
+            '2-wöchige Bewertung: L0–L4 Reifegrad-Scoring über 5 Säulen, Opportunity-Scoring, 90-Tage-Roadmap, Verwaltungsrats-fähiger Bericht. CHF 15–25k fix.',
+          url: '/de/sdlc#offers',
         })}
       />
       <JsonLd
-        data={breadcrumbSchema([{ name: 'KI-Native SDLC', url: '/de/sdlc' }])}
+        data={serviceSchema({
+          name: 'PDLC Foundation Sprint',
+          description:
+            '6–8 Wochen. Tooling-Rollout, Methodik-Schulung, 1–2 Quick-Win-Spuren mit-ausgeliefert, KPI-Baseline. CHF 40–60k fix.',
+          url: '/de/sdlc#offers',
+        })}
       />
-      <DeAgenticSdlc />
-      <Contact />
-    </Shell>
+      <JsonLd
+        data={serviceSchema({
+          name: 'PDLC Voller Methodenwechsel',
+          description:
+            '3–6 Monate. L2 → L3/L4 Transformation: Eval-Gates, Cross-Model-Review, Everything-as-code, Observability-Schwungräder. CHF 80–150k+.',
+          url: '/de/sdlc#offers',
+        })}
+      />
+      <JsonLd
+        data={breadcrumbSchema([{ name: 'Agentische PDLC', url: '/de/sdlc' }])}
+      />
+
+      <AtelierSdlcHero locale="de" />
+      <AtelierSdlcThesis locale="de" />
+      <AtelierSdlcMaturity locale="de" />
+      <AtelierSdlcOffers locale="de" />
+      <AtelierSdlcTools locale="de" />
+      <AtelierCaseStudiesPreview locale="de" />
+      <AtelierSdlcFaq locale="de" />
+      <AtelierCalCta locale="de" variant="pdlc" />
+    </AtelierShell>
   );
 }
