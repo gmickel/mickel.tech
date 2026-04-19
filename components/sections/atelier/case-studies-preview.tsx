@@ -1,142 +1,13 @@
+import { type CaseStudy, getFeaturedCaseStudies } from '@/lib/case-studies';
+
 interface CaseStudiesPreviewProps {
   locale?: 'en' | 'de';
 }
 
-interface CaseStudy {
-  number: string;
-  area: string;
-  client: string;
-  named?: boolean;
-  problem: string;
-  approach: string;
-  outcome: string;
-  metricValue: string;
-  metricLabel: string;
-  href?: string;
-}
-
-const studiesEN: readonly CaseStudy[] = [
-  {
-    number: '01',
-    area: 'Agentic PDLC',
-    client:
-      'European PE-backed software portco · ~25 engineers · regulated sector',
-    problem:
-      'Legacy core platform written in MUMPS / Caché. Traditional rewrite estimated at €3-5M and 18 months. Skilled MUMPS engineers extinct. Hiring pipeline broken.',
-    approach:
-      'Spec-first agentic migration with parallel agents under a Phase 0 foundation (BAUP framework, global registry, naming conventions). Two pilots before stop/go gate.',
-    outcome:
-      'Migration feasibility validated in 12 days. Recruitment pivot from external dev hire to internal coaching. Two product teams onboarded to agentic PDLC.',
-    metricValue: '€2.9-4.9M',
-    metricLabel: 'Cost avoidance vs traditional rewrite',
-  },
-  {
-    number: '02',
-    area: 'Independent expert',
-    client:
-      'Top-tier Swiss law firm · Handelsgericht · 7-figure software dispute',
-    problem:
-      'Plaintiff alleges defendant delivered a non-functional MVP and demands invoice clawback plus damages. Question turns on technical definition of MVP, acceptance criteria, fee structure, and feature delivery.',
-    approach:
-      'Parteigutachter instructed by counsel. Forensic analysis of source repositories, live Azure infrastructure (5 subscriptions, 6 AKS clusters), 1530+ ACR builds, contract artefacts, audit logs. 3 iterations of question catalogue with counsel.',
-    outcome:
-      'Final 70-page Gutachten covering 36 questions, with 5 Kernbefunde led by the MVP-not-delivered finding. Filed at Handelsgericht. Sole technical authority for the case.',
-    metricValue: '7-figure',
-    metricLabel: 'Claim value · party-engaged opinion',
-  },
-  {
-    number: '03',
-    area: 'AI systems',
-    client: "KISIM · Switzerland's leading clinical information system",
-    named: true,
-    problem:
-      'Multi-year clinical AI program for the largest CIS in Switzerland. Production constraints: regulated healthcare, hospital deployment, multi-disciplinary teams, data residency.',
-    approach:
-      'Led the AI program end-to-end: architecture, model selection, integration with the underlying CIS, governance and clinical safety review, rollout coordination across hospital sites.',
-    outcome:
-      "AI capability deployed inside the CIS used by Switzerland's largest university hospital. Production-grade, regulator-aware, integrated with existing clinical workflows.",
-    metricValue: 'Production',
-    metricLabel: 'Multi-year clinical AI program',
-  },
-  {
-    number: '04',
-    area: 'AI systems',
-    client: 'DocIQ · Swiss legal-tech contract lifecycle management platform',
-    named: true,
-    problem:
-      'Build a Swiss-grounded contract lifecycle platform that competes with global legacy incumbents on AI-native architecture, while meeting Swiss legal-market expectations on data residency, language and procurement.',
-    approach:
-      'Founded the company in 2017. Designed the platform architecture, built the team, raised funding, sold into legal and compliance teams across Switzerland and DACH, navigated procurement and regulatory requirements.',
-    outcome:
-      'Stalwart of the Swiss legal-tech scene since 2017. Live in production with enterprise customers, repeatedly upgraded with new AI-native capability as the market matured.',
-    metricValue: 'Since 2017',
-    metricLabel: 'Founder · Swiss legal-tech stalwart',
-  },
-];
-
-const studiesDE: readonly CaseStudy[] = [
-  {
-    number: '01',
-    area: 'Agentische PDLC',
-    client:
-      'Europäisches PE-Portfoliounternehmen Software · ~25 Entwickler · regulierter Sektor',
-    problem:
-      'Legacy-Kernplattform in MUMPS / Caché. Klassisches Rewrite auf €3-5M und 18 Monate geschätzt. MUMPS-Expertise am Markt nicht mehr verfügbar. Recruiting-Pipeline gebrochen.',
-    approach:
-      'Spec-getriebene agentische Migration mit parallelen Agenten unter Phase-0-Fundament (BAUP-Framework, globales Register, Namenskonventionen). Zwei Piloten vor dem Stop/Go-Gate.',
-    outcome:
-      'Migrationstauglichkeit in 12 Tagen validiert. Recruiting-Pivot von externer Entwickler-Einstellung zu interner Coaching-Strategie. Zwei Produktteams in agentische PDLC überführt.',
-    metricValue: '€2.9-4.9M',
-    metricLabel: 'Kostenvermeidung vs. klassisches Rewrite',
-  },
-  {
-    number: '02',
-    area: 'Unabhängige Begutachtung',
-    client:
-      'Schweizer Top-Anwaltskanzlei · Handelsgericht · siebenstelliger Softwarestreit',
-    problem:
-      'Klägerin behauptet, die Beklagte habe eine nicht funktionsfähige MVP geliefert, und fordert Rechnungskorrektur plus Schadensersatz. Streitfrage: technische Definition von MVP, Abnahmekriterien, Honorarstruktur, Feature-Lieferung.',
-    approach:
-      'Parteigutachter im Auftrag der Anwaltschaft. Forensische Analyse der Quell-Repositories, Live-Azure-Infrastruktur (5 Subscriptions, 6 AKS-Cluster), 1530+ ACR-Builds, Vertragsunterlagen, Audit-Logs. Drei Iterationen des Fragenkatalogs mit der Anwaltschaft.',
-    outcome:
-      'Finales 70-seitiges Gutachten zu 36 Fragen, mit 5 Kernbefunden, geführt von der MVP-nicht-geliefert-Feststellung. Eingereicht beim Handelsgericht. Alleinige technische Instanz im Fall.',
-    metricValue: 'Siebenstellig',
-    metricLabel: 'Streitwert · Parteigutachten',
-  },
-  {
-    number: '03',
-    area: 'KI-Systeme',
-    client: 'KISIM · führendes klinisches Informationssystem der Schweiz',
-    named: true,
-    problem:
-      'Mehrjähriges klinisches KI-Programm für das grösste CIS der Schweiz. Produktionsbedingungen: reguliertes Gesundheitswesen, Spitaleinsatz, multidisziplinäre Teams, Datenhoheit.',
-    approach:
-      'Leitung des KI-Programms end-to-end: Architektur, Modellauswahl, Integration mit dem zugrunde liegenden CIS, Governance und klinische Sicherheitsprüfung, Rollout-Koordination über Spitalstandorte.',
-    outcome:
-      'KI-Fähigkeit produktiv im CIS des grössten Universitätsspitals der Schweiz im Einsatz. Produktionsreif, regulatorisch bewusst, in bestehende klinische Workflows integriert.',
-    metricValue: 'Produktiv',
-    metricLabel: 'Mehrjähriges klinisches KI-Programm',
-  },
-  {
-    number: '04',
-    area: 'KI-Systeme',
-    client: 'DocIQ · Schweizer Legal-Tech-CLM-Plattform',
-    named: true,
-    problem:
-      'Eine schweizerisch verankerte Contract-Lifecycle-Plattform aufbauen, die mit globalen Legacy-Anbietern auf KI-nativer Architektur konkurriert und gleichzeitig die Erwartungen des Schweizer Rechtsmarkts an Datenhoheit, Sprache und Beschaffung erfüllt.',
-    approach:
-      'Unternehmen 2017 gegründet. Plattform-Architektur entworfen, Team aufgebaut, Finanzierung eingeworben, Vertrieb in Legal- und Compliance-Teams in der Schweiz und im DACH-Raum, Procurement und regulatorische Anforderungen navigiert.',
-    outcome:
-      'Feste Grösse in der Schweizer Legal-Tech-Szene seit 2017. Produktiv bei Enterprise-Kunden im Einsatz, mit fortlaufender KI-nativer Weiterentwicklung im Takt des Marktes.',
-    metricValue: 'Seit 2017',
-    metricLabel: 'Gründer · feste Grösse im Schweizer Legal-Tech',
-  },
-];
-
 export default function AtelierCaseStudiesPreview({
   locale = 'en',
 }: CaseStudiesPreviewProps) {
-  const studies = locale === 'de' ? studiesDE : studiesEN;
+  const studies = getFeaturedCaseStudies();
 
   const labels =
     locale === 'de'
@@ -198,10 +69,14 @@ export default function AtelierCaseStudiesPreview({
           </div>
         </header>
 
-        {/* 2x2 grid of case studies — full editorial treatment */}
         <div className="grid grid-cols-1 gap-px bg-[hsl(var(--ink))]/12 md:grid-cols-2">
           {studies.map((study) => (
-            <CaseStudyEntry key={study.number} labels={labels} study={study} />
+            <CaseStudyEntry
+              key={study.id}
+              labels={labels}
+              locale={locale}
+              study={study}
+            />
           ))}
         </div>
       </div>
@@ -211,15 +86,27 @@ export default function AtelierCaseStudiesPreview({
 
 function CaseStudyEntry({
   study,
+  locale,
   labels,
 }: {
   study: CaseStudy;
+  locale: 'en' | 'de';
   labels: {
     problemLabel: string;
     approachLabel: string;
     outcomeLabel: string;
   };
 }) {
+  const client = locale === 'de' ? study.clientDE : study.clientEN;
+  const problem = locale === 'de' ? study.problemDE : study.problemEN;
+  const approach = locale === 'de' ? study.approachDE : study.approachEN;
+  const outcome = locale === 'de' ? study.outcomeDE : study.outcomeEN;
+  const metricValue =
+    locale === 'de' ? study.metricValueDE : study.metricValueEN;
+  const metricLabel =
+    locale === 'de' ? study.metricLabelDE : study.metricLabelEN;
+  const namedTag = locale === 'de' ? ' · genannt' : ' · named';
+
   return (
     <article className="relative flex flex-col bg-[hsl(var(--paper))] p-8 transition-colors hover:bg-[hsl(var(--paper))]/80 md:p-12">
       <header className="mb-6 flex items-baseline justify-between gap-4 border-[hsl(var(--ink))]/15 border-b pb-5">
@@ -228,22 +115,22 @@ function CaseStudyEntry({
             {study.number}
           </span>
           <span className="atelier-eyebrow text-[hsl(var(--paper-muted))]">
-            {study.area}
-            {study.named ? ' · named' : ''}
+            {areaLabel(study.area, locale)}
+            {study.named ? namedTag : ''}
           </span>
         </div>
         <div className="text-right">
           <div className="atelier-numerals text-[1.65rem] text-[hsl(var(--ink))] leading-none">
-            {study.metricValue}
+            {metricValue}
           </div>
           <div className="mt-1 text-[11px] text-[hsl(var(--paper-muted))] uppercase tracking-wider">
-            {study.metricLabel}
+            {metricLabel}
           </div>
         </div>
       </header>
 
       <h3 className="atelier-display font-medium text-[1.45rem] text-[hsl(var(--ink))] leading-snug">
-        {study.client}
+        {client}
       </h3>
 
       <dl className="atelier-body mt-6 space-y-5 text-[hsl(var(--ink))]/85">
@@ -251,21 +138,32 @@ function CaseStudyEntry({
           <dt className="atelier-eyebrow mb-1 text-[hsl(var(--paper-muted))]">
             {labels.problemLabel}
           </dt>
-          <dd>{study.problem}</dd>
+          <dd>{problem}</dd>
         </div>
         <div>
           <dt className="atelier-eyebrow mb-1 text-[hsl(var(--paper-muted))]">
             {labels.approachLabel}
           </dt>
-          <dd>{study.approach}</dd>
+          <dd>{approach}</dd>
         </div>
         <div>
           <dt className="atelier-eyebrow mb-1 text-[hsl(var(--paper-muted))]">
             {labels.outcomeLabel}
           </dt>
-          <dd>{study.outcome}</dd>
+          <dd>{outcome}</dd>
         </div>
       </dl>
     </article>
   );
+}
+
+function areaLabel(area: CaseStudy['area'], locale: 'en' | 'de'): string {
+  if (locale === 'de') {
+    if (area === 'pdlc') return 'Agentische PDLC';
+    if (area === 'expert') return 'Unabhängige Begutachtung';
+    return 'KI-Systeme';
+  }
+  if (area === 'pdlc') return 'Agentic PDLC';
+  if (area === 'expert') return 'Independent expert';
+  return 'AI systems';
 }

@@ -97,47 +97,45 @@ export const CASE_STUDIES: readonly CaseStudy[] = [
     area: 'pdlc',
     number: '02',
     clientEN:
-      'European multi-entity software group · 3 entities scoped, more in pipeline',
+      'European multi-entity software group · agentic PDLC standardisation across portfolio',
     clientDE:
-      'Europäische Software-Gruppe mit mehreren Einheiten · 3 Einheiten gescoped, weitere in Pipeline',
+      'Europäische Software-Gruppe · agentische PDLC-Standardisierung über das Portfolio',
     problemEN:
-      'Group strategy required AI-first delivery across heterogeneous portfolio companies with very different stacks, languages and team maturity. No standard methodology, no shared KPIs, no reusable engagement template.',
+      'Group strategy required AI-first delivery across heterogeneous portfolio companies with different stacks, languages, and team maturity. No standard methodology, no shared KPIs, no reusable engagement template.',
     problemDE:
-      'Gruppenstrategie verlangte KI-zuerst-Auslieferung über heterogene Portfoliounternehmen mit sehr unterschiedlichen Stacks, Sprachen und Team-Reife. Keine Standardmethodik, keine geteilten KPIs, keine wiederverwendbare Engagement-Vorlage.',
+      'Gruppenstrategie verlangte KI-zuerst-Auslieferung über heterogene Portfoliounternehmen mit unterschiedlichen Stacks, Sprachen und Team-Reife. Keine Standardmethodik, keine geteilten KPIs, keine wiederverwendbare Engagement-Vorlage.',
     approachEN:
-      'Built standardised agentic PDLC engagement letter, KPI framework (Cycle Time + 4 supporting metrics), and assessment deck reusable across all entities. Onboarded 3 entities in one onsite week.',
+      'Built a standardised agentic PDLC engagement template, KPI framework, and assessment process reusable across the group. Onboarded multiple entities in a single onsite week.',
     approachDE:
-      'Standardisierte Agentische-PDLC-Auftragsvorlage, KPI-Framework (Cycle Time + 4 unterstützende Metriken) und Assessment-Deck, wiederverwendbar über alle Einheiten. 3 Einheiten in einer Onsite-Woche aufgesetzt.',
+      'Standardisierte agentische PDLC-Engagement-Vorlage, KPI-Framework und Assessment-Prozess, wiederverwendbar über die Gruppe hinweg. Mehrere Einheiten in einer Onsite-Woche aufgesetzt.',
     outcomeEN:
-      'Reusable template adopted as group standard. Each subsequent entity onboards in days, not weeks. CEO-level commitment to portfolio-wide rollout.',
+      'Adopted as group standard. Each subsequent entity onboards in days, not weeks. Continuing rollout across the portfolio.',
     outcomeDE:
-      'Wiederverwendbare Vorlage als Gruppenstandard übernommen. Jede weitere Einheit in Tagen statt Wochen aufgesetzt. CEO-Commitment zum portfolio-weiten Rollout.',
-    metricValueEN: '50%',
-    metricValueDE: '50%',
-    metricLabelEN: 'Productivity uplift target (CEO-set)',
-    metricLabelDE: 'Produktivitätsziel (CEO-gesetzt)',
+      'Als Gruppenstandard übernommen. Jede weitere Einheit in Tagen statt Wochen aufgesetzt. Laufende Ausrollung über das Portfolio.',
+    metricValueEN: 'Group standard',
+    metricValueDE: 'Gruppenstandard',
+    metricLabelEN: 'Reusable PDLC engagement template',
+    metricLabelDE: 'Wiederverwendbare PDLC-Engagement-Vorlage',
   },
   {
-    id: 'expert-handelsgericht-mvp-dispute',
+    id: 'expert-software-acceptance-dispute',
     area: 'expert',
     number: '03',
     featured: true,
-    clientEN:
-      'Top-tier Swiss law firm · Handelsgericht · 7-figure software dispute',
-    clientDE:
-      'Schweizer Top-Anwaltskanzlei · Handelsgericht · siebenstelliger Softwarestreit',
+    clientEN: 'Swiss commercial counsel · 7-figure software acceptance dispute',
+    clientDE: 'Schweizer Wirtschaftskanzlei · siebenstelliger Software-Streit',
     problemEN:
-      'Plaintiff alleges defendant delivered a non-functional MVP and demands invoice clawback plus damages. Question turns on technical definition of MVP, acceptance criteria, fee structure, and feature delivery.',
+      'Significant commercial dispute centred on what was actually delivered against contract, the technical definition of acceptance, and the fee structure. Counsel needed an independent technical opinion that would hold up against careful adversarial scrutiny.',
     problemDE:
-      'Klägerin behauptet, die Beklagte habe eine nicht funktionsfähige MVP geliefert, und fordert Rechnungskorrektur plus Schadensersatz. Streitfrage: technische Definition von MVP, Abnahmekriterien, Honorarstruktur, Feature-Lieferung.',
+      'Bedeutender Wirtschaftsstreit zur Frage, was vertraglich tatsächlich geliefert wurde, zur technischen Definition der Abnahme und zur Honorarstruktur. Die Anwaltschaft brauchte eine unabhängige technische Stellungnahme, die einer sorgfältigen gegnerischen Prüfung standhält.',
     approachEN:
-      'Parteigutachter instructed by counsel. Forensic analysis of source repositories, live Azure infrastructure (5 subscriptions, 6 AKS clusters), 1530+ ACR builds, contract artefacts, audit logs. 3 iterations of question catalogue with counsel.',
+      'Parteigutachter instructed by counsel. Forensic analysis of source repositories, live infrastructure and contract artefacts. Question catalogue refined iteratively with counsel until the technical narrative was airtight.',
     approachDE:
-      'Parteigutachter im Auftrag der Anwaltschaft. Forensische Analyse der Quell-Repositories, Live-Azure-Infrastruktur (5 Subscriptions, 6 AKS-Cluster), 1530+ ACR-Builds, Vertragsunterlagen, Audit-Logs. Drei Iterationen des Fragenkatalogs mit der Anwaltschaft.',
+      'Parteigutachter im Auftrag der Anwaltschaft. Forensische Analyse der Quell-Repositories, der produktiven Infrastruktur und der Vertragsunterlagen. Fragenkatalog gemeinsam mit der Anwaltschaft iterativ verfeinert, bis das technische Narrativ trug.',
     outcomeEN:
-      'Final 70-page Gutachten covering 36 questions, with 5 Kernbefunde led by the MVP-not-delivered finding. Filed at Handelsgericht. Sole technical authority for the case.',
+      "Filed expert opinion supporting counsel's case. Sole technical authority retained by the instructing firm; available for hearings as needed.",
     outcomeDE:
-      'Finales 70-seitiges Gutachten zu 36 Fragen, mit 5 Kernbefunden, geführt von der MVP-nicht-geliefert-Feststellung. Eingereicht beim Handelsgericht. Alleinige technische Instanz im Fall.',
+      'Eingereichtes Parteigutachten zur Stützung des Mandats der Kanzlei. Alleinige technische Instanz der mandatierenden Kanzlei; bereit für Verhandlungen bei Bedarf.',
     metricValueEN: '7-figure',
     metricValueDE: 'Siebenstellig',
     metricLabelEN: 'Claim value · party-engaged opinion',
@@ -192,29 +190,31 @@ export const CASE_STUDIES: readonly CaseStudy[] = [
     metricLabelDE: 'EBITDA-Uplift identifiziert',
   },
   {
-    id: 'systems-clinical-ai-program',
+    id: 'systems-kisim-clinical-llm',
     area: 'systems',
     number: '06',
     named: true,
     featured: true,
-    clientEN: "KISIM · Switzerland's leading clinical information system",
-    clientDE: 'KISIM · führendes klinisches Informationssystem der Schweiz',
+    clientEN:
+      "KISIM (CISTEC AG) · Switzerland's leading clinical information system",
+    clientDE:
+      'KISIM (CISTEC AG) · führendes klinisches Informationssystem der Schweiz',
     problemEN:
-      'Multi-year clinical AI program for the largest CIS in Switzerland. Production constraints: regulated healthcare, hospital deployment, multi-disciplinary teams, data residency.',
+      'Transform a market-leading Swiss clinical information system into a production AI platform under FADP / GDPR, with on-prem privacy and hospital-grade reliability. Scale AI fluency across an established 50+ engineering organisation without disrupting existing clinical delivery.',
     problemDE:
-      'Mehrjähriges klinisches KI-Programm für das grösste CIS der Schweiz. Produktionsbedingungen: reguliertes Gesundheitswesen, Spitaleinsatz, multidisziplinäre Teams, Datenhoheit.',
+      'Ein marktführendes Schweizer klinisches Informationssystem in eine produktive KI-Plattform unter FADP / GDPR überführen, mit On-Prem-Privacy und spitalgrad-Zuverlässigkeit. KI-Kompetenz über eine etablierte 50+ Engineering-Organisation skalieren, ohne die laufende klinische Auslieferung zu stören.',
     approachEN:
-      'Led the AI program end-to-end: architecture, model selection, integration with the underlying CIS, governance and clinical safety review, rollout coordination across hospital sites.',
+      'Head of AI & Engineering Lead at CISTEC AG. Secured C-suite mandate, authored the strategy, secured budget. Shipped KISIM AI in <90 days (generative discharge drafts, semantic retrieval, structured medical extraction, summarisation). Built the reusable platform: LLM gateway, pgvector hybrid search, two-stage context pipeline, on-prem PII masking (custom GLiNER/BERT, 97%+ accuracy). Scaled AI adoption to 50+ engineers via guardrailed Copilot/Cursor rollout with playbooks and prompt patterns.',
     approachDE:
-      'Leitung des KI-Programms end-to-end: Architektur, Modellauswahl, Integration mit dem zugrunde liegenden CIS, Governance und klinische Sicherheitsprüfung, Rollout-Koordination über Spitalstandorte.',
+      'Head of AI & Engineering Lead bei CISTEC AG. C-Level-Mandat gesichert, Strategie verfasst, Budget gesichert. KISIM AI in <90 Tagen ausgeliefert (generative Austrittsberichte, semantisches Retrieval, strukturierte medizinische Extraktion, Summarisation). Wiederverwendbare Plattform aufgebaut: LLM-Gateway, pgvector-Hybridsuche, zweistufige Kontext-Pipeline, On-Prem-PII-Masking (eigenes GLiNER/BERT, 97%+ Genauigkeit). KI-Adoption auf 50+ Entwickler skaliert via guardrailed Copilot/Cursor-Rollout mit Playbooks und Prompt-Patterns.',
     outcomeEN:
-      "AI capability deployed inside the CIS used by Switzerland's largest university hospital. Production-grade, regulator-aware, integrated with existing clinical workflows.",
+      "Switzerland's first production clinical LLM platform. Live in Swiss hospitals with expanding pilot pipeline. New ARR streams. Repositioned the company as an AI-enabled market leader. Presented at the openEHR.ch Symposium.",
     outcomeDE:
-      'KI-Fähigkeit produktiv im CIS des grössten Universitätsspitals der Schweiz im Einsatz. Produktionsreif, regulatorisch bewusst, in bestehende klinische Workflows integriert.',
-    metricValueEN: 'Production',
-    metricValueDE: 'Produktiv',
-    metricLabelEN: 'Multi-year clinical AI program',
-    metricLabelDE: 'Mehrjähriges klinisches KI-Programm',
+      'Erste produktive klinische LLM-Plattform der Schweiz. Live in Schweizer Spitälern mit wachsender Pilot-Pipeline. Neue ARR-Ströme. Das Unternehmen als KI-gestützter Marktführer neu positioniert. Vortrag am openEHR.ch-Symposium.',
+    metricValueEN: '<90 days',
+    metricValueDE: '<90 Tage',
+    metricLabelEN: 'First production clinical LLM in CH',
+    metricLabelDE: 'Erste produktive klinische LLM in CH',
   },
   {
     id: 'systems-dociq-swiss-legaltech-clm',
@@ -222,24 +222,24 @@ export const CASE_STUDIES: readonly CaseStudy[] = [
     number: '07',
     named: true,
     featured: true,
-    clientEN: 'DocIQ · Swiss legal-tech contract lifecycle management platform',
-    clientDE: 'DocIQ · Schweizer Legal-Tech-CLM-Plattform',
+    clientEN: 'DocIQ · Building Swiss legal AI since 2017',
+    clientDE: 'DocIQ · Schweizer Legal-AI seit 2017',
     problemEN:
-      'Build a Swiss-grounded contract lifecycle platform that competes with global legacy incumbents on AI-native architecture, while meeting Swiss legal-market expectations on data residency, language and procurement.',
+      'Build one of the first Swiss platforms applying AI and NLP to legal documents — and keep extending it as the market shifts from NLP to LLMs to court-grade anonymisation, while meeting CH/DACH expectations on data residency, multi-language, and Swiss legal-market procurement.',
     problemDE:
-      'Eine schweizerisch verankerte Contract-Lifecycle-Plattform aufbauen, die mit globalen Legacy-Anbietern auf KI-nativer Architektur konkurriert und gleichzeitig die Erwartungen des Schweizer Rechtsmarkts an Datenhoheit, Sprache und Beschaffung erfüllt.',
+      'Eine der ersten Schweizer Plattformen aufbauen, die KI und NLP auf Rechtsdokumente anwendet — und sie weiterentwickeln, während sich der Markt von NLP zu LLMs zur gerichtsfähigen Anonymisierung verschiebt, bei gleichzeitiger Erfüllung der CH/DACH-Anforderungen an Datenhoheit, Mehrsprachigkeit und Schweizer Beschaffung.',
     approachEN:
-      'Founded the company in 2017. Designed the platform architecture, built the team, raised funding, sold into legal and compliance teams across Switzerland and DACH, navigated procurement and regulatory requirements.',
+      'Founded the company in Zug in 2017 (Contract Vault GmbH). Designed and shipped DocIQ 1.0 (2018) as enterprise document lifecycle management with contract analysis, metadata extraction and intelligent search. Scaled to production deployments at the Swiss Insurance Association (SVV), Laux Lawyers and Kaiser Odermatt & Partner. Rebuilt the platform from the ground up for the LLM era — Sphere (next-generation AI document intelligence) and Shield (court anonymisation for the Swiss judiciary, fine-tuned local NER + LLM, zero data persistence).',
     approachDE:
-      'Unternehmen 2017 gegründet. Plattform-Architektur entworfen, Team aufgebaut, Finanzierung eingeworben, Vertrieb in Legal- und Compliance-Teams in der Schweiz und im DACH-Raum, Procurement und regulatorische Anforderungen navigiert.',
+      'Unternehmen 2017 in Zug gegründet (Contract Vault GmbH). DocIQ 1.0 (2018) entworfen und ausgeliefert als Enterprise-Document-Lifecycle-Management mit Vertragsanalyse, Metadaten-Extraktion und intelligenter Suche. Auf produktive Einsätze beim Schweizerischen Versicherungsverband (SVV), Laux Lawyers und Kaiser Odermatt & Partner skaliert. Plattform für die LLM-Ära von Grund auf neu gebaut — Sphere (KI-Dokumentenintelligenz der nächsten Generation) und Shield (Anonymisierung von Gerichtsdokumenten für die Schweizer Justiz, fine-tuned lokales NER + LLM, keine Datenpersistenz).',
     outcomeEN:
-      'Stalwart of the Swiss legal-tech scene since 2017. Live in production with enterprise customers, repeatedly upgraded with new AI-native capability as the market matured.',
+      'Live in Swiss enterprise production since 2018, deepening with each LLM-era upgrade. Sphere + Shield v2 launched 2026, including word-native tracked changes, six legal databases, AI Playbooks, and court anonymisation rebuilt from the ground up.',
     outcomeDE:
-      'Feste Grösse in der Schweizer Legal-Tech-Szene seit 2017. Produktiv bei Enterprise-Kunden im Einsatz, mit fortlaufender KI-nativer Weiterentwicklung im Takt des Marktes.',
+      'Live in Schweizer Enterprise-Produktion seit 2018, mit jeder LLM-Ära-Iteration vertieft. Sphere + Shield v2 2026 lanciert, inklusive Word-nativer Änderungsverfolgung, sechs Rechtsdatenbanken, KI-Playbooks und neu aufgebaute Gerichtsanonymisierung.',
     metricValueEN: 'Since 2017',
     metricValueDE: 'Seit 2017',
-    metricLabelEN: 'Founder · Swiss legal-tech stalwart',
-    metricLabelDE: 'Gründer · feste Grösse im Schweizer Legal-Tech',
+    metricLabelEN: 'Founder · Swiss legal AI',
+    metricLabelDE: 'Gründer · Schweizer Legal-AI',
   },
   {
     id: 'systems-voice-spinout',
