@@ -41,7 +41,10 @@ export default function ImprintPage() {
           Gordon Mickel
           <br />
           Basel, Switzerland
-          {/* TODO Gordon: provide full street address required for CH Impressum */}
+          {/* TODO Gordon: replace with c/o virtual office or coworking address
+            (e.g. SwissPost Business, Impact Hub Basel, lawyer correspondence
+            address) so home address is not exposed. CH Impressum requires a
+            postal address for commercial sites; "Basel" alone is borderline. */}
         </p>
 
         <h2>Contact</h2>

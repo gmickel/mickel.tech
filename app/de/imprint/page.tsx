@@ -43,7 +43,11 @@ export default function DeImprintPage() {
           Gordon Mickel
           <br />
           Basel, Schweiz
-          {/* TODO Gordon: Vollständige Strassenadresse für CH-Impressum bereitstellen */}
+          {/* TODO Gordon: durch c/o Virtual Office oder Coworking-Adresse ersetzen
+            (z.B. SwissPost Business, Impact Hub Basel, Korrespondenzadresse
+            der Anwaltskanzlei), damit die Privatadresse nicht offengelegt
+            wird. CH-Impressum verlangt eine Postadresse für kommerzielle
+            Websites; nur "Basel" ist grenzwertig. */}
         </p>
 
         <h2>Kontakt</h2>
