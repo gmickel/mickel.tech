@@ -1,3 +1,5 @@
+import { CAL_DISCOVERY_30, CAL_STRATEGY_120 } from '@/lib/cal';
+
 interface SdlcOffersProps {
   locale?: 'en' | 'de';
 }
@@ -267,7 +269,9 @@ export default function AtelierSdlcOffers({ locale = 'en' }: SdlcOffersProps) {
               <div className="mt-auto pt-7">
                 <a
                   className="inline-flex items-center gap-2 font-medium text-[hsl(var(--ink))] text-sm transition-colors hover:text-[hsl(var(--rust))]"
-                  href="https://cal.com/gmickel"
+                  href={
+                    offer.num === '00' ? CAL_STRATEGY_120 : CAL_DISCOVERY_30
+                  }
                   rel="noopener noreferrer"
                   target="_blank"
                 >

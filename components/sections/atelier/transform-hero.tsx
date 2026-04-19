@@ -1,3 +1,5 @@
+import { CAL_DISCOVERY_30 } from '@/lib/cal';
+
 interface TransformHeroProps {
   locale?: 'en' | 'de';
 }
@@ -10,7 +12,7 @@ const copyEN = {
     'Every engagement starts with a process map, not a tool. Where the data lives. Where the bottlenecks are. What breaks at scale. Then I build the context layer and ship production systems on top — agents that hold up in real operations, knowledge platforms your team actually uses, voice, sovereign and private LLM infrastructure.',
   primaryCta: 'Book a discovery call',
   secondaryCta: 'See three productised offers',
-  primaryHref: 'https://cal.com/gmickel',
+  primaryHref: CAL_DISCOVERY_30,
   secondaryHref: '#offers',
   metaList: [
     { label: 'Strategy session', value: 'CHF 3–5k' },
@@ -29,7 +31,7 @@ const copyDE = {
     'Jedes Mandat beginnt mit einer Prozesslandkarte, nicht mit einem Tool. Wo liegen die Daten. Wo sind die Engpässe. Was bricht unter Last. Danach baue ich die Kontextschicht und liefere produktive Systeme darauf -- Agenten, die im operativen Alltag bestehen, Wissensplattformen, die Ihr Team tatsächlich nutzt, Voice, souveräne und private LLM-Infrastruktur.',
   primaryCta: 'Discovery-Gespräch buchen',
   secondaryCta: 'Drei produktisierte Pakete',
-  primaryHref: 'https://cal.com/gmickel',
+  primaryHref: CAL_DISCOVERY_30,
   secondaryHref: '#offers',
   metaList: [
     { label: 'Strategie-Session', value: 'CHF 3–5k' },

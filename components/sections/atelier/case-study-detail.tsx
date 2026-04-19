@@ -1,3 +1,4 @@
+import { CAL_DISCOVERY_30 } from '@/lib/cal';
 import {
   CASE_STUDIES,
   CASE_STUDY_AREAS,
@@ -216,7 +217,7 @@ export default function AtelierCaseStudyDetail({
               <div className="mt-8 flex flex-wrap items-center gap-4">
                 <a
                   className="atelier-cta-primary"
-                  href="https://cal.com/gmickel"
+                  href={CAL_DISCOVERY_30}
                   rel="noopener noreferrer"
                   target="_blank"
                 >

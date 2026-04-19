@@ -1,3 +1,5 @@
+import { CAL_DISCOVERY_30 } from '@/lib/cal';
+
 interface SdlcHeroProps {
   locale?: 'en' | 'de';
 }
@@ -8,9 +10,9 @@ const copyEN = {
   underline: 'autonomous',
   intro:
     "Most engineering orgs are still running yesterday's methodology against agents that already outpace them. Agentic PDLC closes that gap. Start at product and requirements engineering, not at the IDE. Spec-driven, agent-assisted delivery, gated by evals and reviewed by other agents. End state: agents ship features, humans set priorities.",
-  primaryCta: 'Book a 30-min PDLC fit call',
+  primaryCta: 'Book a 30-min discovery call',
   secondaryCta: 'Read the maturity model',
-  primaryHref: 'https://cal.com/gmickel',
+  primaryHref: CAL_DISCOVERY_30,
   secondaryHref: '#maturity',
   metaList: [
     { label: 'Strategy session', value: 'CHF 3–5k' },
@@ -26,9 +28,9 @@ const copyDE = {
   underline: 'autonomen',
   intro:
     'Die meisten Engineering-Organisationen fahren noch die Methodik von gestern, während die Agenten sie längst überholt haben. Agentische PDLC schliesst diese Lücke. Start beim Produkt- und Anforderungsengineering, nicht bei der IDE. Spec-getriebene, agentengestützte Auslieferung, abgesichert durch Evals und Review weiterer Agenten. Endzustand: Agenten liefern Features, Menschen setzen Prioritäten.',
-  primaryCta: '30-Minuten-Erstgespräch buchen',
+  primaryCta: '30-Minuten-Discovery-Call buchen',
   secondaryCta: 'Reifegradmodell lesen',
-  primaryHref: 'https://cal.com/gmickel',
+  primaryHref: CAL_DISCOVERY_30,
   secondaryHref: '#maturity',
   metaList: [
     { label: 'Strategie-Session', value: 'CHF 3–5k' },

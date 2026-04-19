@@ -1,3 +1,5 @@
+import { CAL_DISCOVERY_30 } from '@/lib/cal';
+
 interface CalCtaProps {
   locale?: 'en' | 'de';
   variant: 'pdlc' | 'transformation';
@@ -66,7 +68,7 @@ export default function AtelierCalCta({ locale = 'en', variant }: CalCtaProps) {
             <div className="mt-9 flex flex-wrap items-center gap-4">
               <a
                 className="atelier-cta-primary"
-                href="https://cal.com/gmickel"
+                href={CAL_DISCOVERY_30}
                 rel="noopener noreferrer"
                 target="_blank"
               >
