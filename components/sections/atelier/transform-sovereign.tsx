@@ -3,9 +3,9 @@ interface TransformSovereignProps {
 }
 
 const copyEN = {
-  eyebrow: '04 / Sovereign + private AI',
+  eyebrow: 'Specialism · Sovereign + private AI',
   heading: "When the data can't leave the building.",
-  body: 'A specialism inside the practice. FADP, GDPR, EU AI Act, Swiss Berufsgeheimnis and public-sector procurement all push the same direction: production AI in regulated workflows needs sovereign or private deployment, custom fine-tuning where off-the-shelf models cannot see the data, and audit-grade provenance from day one. Few practices in CH/EU do both the strategy and the implementation. I do both, in production.',
+  body: 'In addition to everything above. The full transformation work, RAG, agents, voice and the rest applies as usual — and where regulation requires it (FADP, GDPR, EU AI Act, Swiss Berufsgeheimnis, public-sector procurement), I deploy the sovereign and private-AI variant: custom fine-tuning where off-the-shelf models cannot see the data, on-prem or VPC inference, audit-grade provenance from day one. Few practices in CH/EU do both the strategy and the implementation; I do both, in production.',
   pillars: [
     {
       tag: 'Custom-trained local models',
@@ -33,9 +33,9 @@ const copyEN = {
 };
 
 const copyDE = {
-  eyebrow: '04 / Souveräne + private KI',
+  eyebrow: 'Spezialdisziplin · Souveräne + private KI',
   heading: 'Wenn die Daten das Haus nicht verlassen dürfen.',
-  body: 'Eine Spezialdisziplin innerhalb der Praxis. DSG, DSGVO, EU AI Act, Schweizer Berufsgeheimnis und öffentliche Beschaffung weisen alle in dieselbe Richtung: produktive KI in regulierten Workflows braucht souveräne oder private Auslieferung, Custom-Finetuning dort, wo Off-the-shelf-Modelle die Daten nicht sehen dürfen, und Audit-fähige Provenienz ab Tag eins. Wenige Praxen in der Schweiz / EU machen sowohl die Strategie als auch die Umsetzung. Ich mache beides, produktiv.',
+  body: 'Zusätzlich zu allem oben. Die volle Transformations-Arbeit, RAG, Agenten, Voice und der Rest gilt wie üblich — und wo die Regulierung es verlangt (DSG, DSGVO, EU AI Act, Schweizer Berufsgeheimnis, öffentliche Beschaffung), liefere ich die souveräne und private KI-Variante: Custom-Finetuning dort, wo Off-the-shelf-Modelle die Daten nicht sehen dürfen, On-Prem- oder VPC-Inferenz, Audit-fähige Provenienz ab Tag eins. Wenige Praxen in der Schweiz / EU machen sowohl die Strategie als auch die Umsetzung; ich mache beides, produktiv.',
   pillars: [
     {
       tag: 'Custom-trainierte lokale Modelle',
