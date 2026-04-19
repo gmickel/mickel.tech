@@ -127,9 +127,9 @@ const studiesDE: readonly CaseStudy[] = [
     approach:
       'Unternehmen 2017 gegründet. Plattform-Architektur entworfen, Team aufgebaut, Finanzierung eingeworben, Vertrieb in Legal- und Compliance-Teams in der Schweiz und im DACH-Raum, Procurement und regulatorische Anforderungen navigiert.',
     outcome:
-      'Stalwart der Schweizer Legal-Tech-Szene seit 2017. Produktiv bei Enterprise-Kunden im Einsatz, mit fortlaufender KI-nativer Weiterentwicklung im Takt des Marktes.',
+      'Feste Grösse in der Schweizer Legal-Tech-Szene seit 2017. Produktiv bei Enterprise-Kunden im Einsatz, mit fortlaufender KI-nativer Weiterentwicklung im Takt des Marktes.',
     metricValue: 'Seit 2017',
-    metricLabel: 'Gründer · Schweizer Legal-Tech-Stalwart',
+    metricLabel: 'Gründer · feste Grösse im Schweizer Legal-Tech',
   },
 ];
 

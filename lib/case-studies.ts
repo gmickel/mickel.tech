@@ -235,11 +235,11 @@ export const CASE_STUDIES: readonly CaseStudy[] = [
     outcomeEN:
       'Stalwart of the Swiss legal-tech scene since 2017. Live in production with enterprise customers, repeatedly upgraded with new AI-native capability as the market matured.',
     outcomeDE:
-      'Stalwart der Schweizer Legal-Tech-Szene seit 2017. Produktiv bei Enterprise-Kunden im Einsatz, mit fortlaufender KI-nativer Weiterentwicklung im Takt des Marktes.',
+      'Feste Grösse in der Schweizer Legal-Tech-Szene seit 2017. Produktiv bei Enterprise-Kunden im Einsatz, mit fortlaufender KI-nativer Weiterentwicklung im Takt des Marktes.',
     metricValueEN: 'Since 2017',
     metricValueDE: 'Seit 2017',
     metricLabelEN: 'Founder · Swiss legal-tech stalwart',
-    metricLabelDE: 'Gründer · Schweizer Legal-Tech-Stalwart',
+    metricLabelDE: 'Gründer · feste Grösse im Schweizer Legal-Tech',
   },
   {
     id: 'systems-voice-spinout',
