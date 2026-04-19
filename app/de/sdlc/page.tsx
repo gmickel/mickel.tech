@@ -20,12 +20,16 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: 'KI-Native SDLC-Transformation | Gordon Mickel',
-    description: 'Von Legacy-Prozessen zu autonomen Code-Fabriken. L0-L4 Reifegradmodell, 500+ Ingenieure.',
+    description:
+      'Von Legacy-Prozessen zu autonomen Code-Fabriken. L0-L4 Reifegradmodell, 500+ Ingenieure.',
     locale: 'de_CH',
   },
   alternates: {
     canonical: 'https://mickel.tech/de/sdlc',
-    languages: { en: 'https://mickel.tech/sdlc', de: 'https://mickel.tech/de/sdlc' },
+    languages: {
+      en: 'https://mickel.tech/sdlc',
+      de: 'https://mickel.tech/de/sdlc',
+    },
   },
 };
 

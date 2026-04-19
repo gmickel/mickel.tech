@@ -28,7 +28,10 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: 'https://mickel.tech/sdlc',
-    languages: { en: 'https://mickel.tech/sdlc', de: 'https://mickel.tech/de/sdlc' },
+    languages: {
+      en: 'https://mickel.tech/sdlc',
+      de: 'https://mickel.tech/de/sdlc',
+    },
   },
 };
 
