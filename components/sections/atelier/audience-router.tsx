@@ -182,7 +182,7 @@ type TransformCardData = (typeof copyEN)['cards']['transform'];
 /** Technical-editorial register — for CTOs, eng leaders. */
 function PdlcCard({ card }: { card: PdlcCardData }) {
   return (
-    <article className="atelier-card-hover group relative flex h-full flex-col border border-[hsl(var(--ink))]/15 bg-[hsl(var(--paper))]/60 p-7 hover:border-[hsl(var(--ink))]/40 md:p-8">
+    <article className="atelier-card-hover atelier-wash-rust group flex h-full flex-col border border-[hsl(var(--ink))]/15 bg-[hsl(var(--paper))]/60 p-7 hover:border-[hsl(var(--ink))]/40 md:p-8">
       {/* Top register strip */}
       <div className="mb-6 flex items-baseline justify-between">
         <span className="atelier-numerals text-[hsl(var(--rust))] text-xl">
@@ -251,7 +251,7 @@ function PdlcCard({ card }: { card: PdlcCardData }) {
 /** Editorial restrained register — for lawyers, courts, boards. */
 function ExpertCard({ card }: { card: ExpertCardData }) {
   return (
-    <article className="atelier-card-hover group relative flex h-full flex-col border border-[hsl(var(--ink))]/20 bg-[hsl(var(--paper))]/95 p-7 hover:border-[hsl(var(--navy))]/60 md:p-8">
+    <article className="atelier-card-hover atelier-wash-navy group flex h-full flex-col border border-[hsl(var(--ink))]/20 bg-[hsl(var(--paper))]/95 p-7 hover:border-[hsl(var(--navy))]/60 md:p-8">
       {/* Restrained top — just numerals, no mono labels */}
       <div className="mb-6 flex items-baseline justify-between">
         <span className="atelier-numerals text-[hsl(var(--rust))] text-xl">
@@ -316,7 +316,7 @@ function ExpertCard({ card }: { card: ExpertCardData }) {
 /** Business-editorial register — for CEOs, COOs, GMs, deal teams. */
 function TransformCard({ card }: { card: TransformCardData }) {
   return (
-    <article className="atelier-card-hover group relative flex h-full flex-col border border-[hsl(var(--ink))]/15 bg-[hsl(var(--paper))]/60 p-7 hover:border-[hsl(var(--ink))]/40 md:p-8">
+    <article className="atelier-card-hover atelier-wash-rust group flex h-full flex-col border border-[hsl(var(--ink))]/15 bg-[hsl(var(--paper))]/60 p-7 hover:border-[hsl(var(--ink))]/40 md:p-8">
       <div className="mb-6 flex items-baseline justify-between">
         <span className="atelier-numerals text-[hsl(var(--rust))] text-xl">
           {card.number}

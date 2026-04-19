@@ -7,10 +7,8 @@
 
 export const CAL_PROFILE = 'https://cal.com/gmickel';
 
-export const CAL_DISCOVERY_30 =
-  'https://cal.com/gmickel/discovery-call-30-minutes-free';
+export const CAL_DISCOVERY_30 = 'https://cal.com/gmickel/discovery30';
 
 export const CAL_WORKING_60 = 'https://cal.com/gmickel/60minworking';
 
-export const CAL_STRATEGY_120 =
-  'https://cal.com/gmickel/paid-strategy-session-120-min-chf-1-500-video-or-in-person';
+export const CAL_STRATEGY_120 = 'https://cal.com/gmickel/strategy120';
