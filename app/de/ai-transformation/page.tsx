@@ -18,7 +18,7 @@ import {
 export const metadata: Metadata = {
   title: 'KI-Systeme & Transformation — Prozess zuerst, produktiv ausgeliefert',
   description:
-    'KI-Systeme, die Ihr Geschäft tragen — nicht nur in der Demo glänzen. Prozess-zuerst-Audit, produktiver System-Build, Fractional KI-Lead. Enterprise-RAG, autonome Agenten, Voice, private LLM. CHF 15k Audit, CHF 40–150k System-Build. Basel, DE / EN.',
+    'KI-Systeme, die Ihr Geschäft tragen — nicht nur in der Demo glänzen. Prozess-zuerst-Audit, produktiver System-Build, Fractional KI-Lead. Enterprise-RAG, autonome Agenten, Voice, private LLM. CHF 15k Audit, CHF 40–150k System-Build. Binningen, DE / EN.',
   keywords: [
     'KI Transformation Schweiz',
     'KI Beratung Basel',

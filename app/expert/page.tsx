@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   title:
     'Independent Technical Expert — Parteigutachten, Acceptance, AI/Tech DD',
   description:
-    'ITDR-listed independent technical expert. Parteigutachten for counsel and arbitration, Werkvertrags-Gutachten as contractually-named acceptance expert, AI and technology due diligence for investors and boards. 20+ years engineering. DE / EN. Basel, Switzerland.',
+    'ITDR-listed independent technical expert. Parteigutachten for counsel and arbitration, Werkvertrags-Gutachten as contractually-named acceptance expert, AI and technology due diligence for investors and boards. 20+ years engineering. DE / EN. Binningen, Switzerland.',
   keywords: [
     'Parteigutachter',
     'Parteigutachten',

@@ -18,7 +18,7 @@ import {
 export const metadata: Metadata = {
   title: 'AI Systems & Transformation — Process-first, Production-grade',
   description:
-    'AI systems that run your business, not just demo well. Process-first audit, production system build, fractional AI lead. Enterprise RAG, autonomous agents, voice, private LLM. CHF 15k audit, CHF 40–150k system build. Basel, DE / EN.',
+    'AI systems that run your business, not just demo well. Process-first audit, production system build, fractional AI lead. Enterprise RAG, autonomous agents, voice, private LLM. CHF 15k audit, CHF 40–150k system build. Binningen, DE / EN.',
   keywords: [
     'AI transformation Switzerland',
     'AI Beratung Schweiz',
