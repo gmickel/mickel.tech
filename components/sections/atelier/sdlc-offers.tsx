@@ -185,7 +185,7 @@ export default function AtelierSdlcOffers({ locale = 'en' }: SdlcOffersProps) {
           best: 'Best for',
           deliv: 'Deliverables',
           duration: 'Duration',
-          cta: 'Book a fit call',
+          cta: 'Book a discovery call',
         };
 
   return (

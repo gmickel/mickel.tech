@@ -21,7 +21,7 @@ const channelsEN: readonly ContactChannel[] = [
     label: 'Calendar',
     value: 'cal.com/gmickel',
     href: 'https://cal.com/gmickel',
-    note: '30-min fit call · agentic PDLC and AI systems.',
+    note: '30-min discovery call · agentic PDLC and AI systems.',
     external: true,
   },
   {

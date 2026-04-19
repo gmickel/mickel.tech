@@ -2,9 +2,6 @@ import { NextResponse } from 'next/server';
 import { Resend } from 'resend';
 import { z } from 'zod';
 
-export const runtime = 'nodejs';
-export const dynamic = 'force-dynamic';
-
 const intakeSchema = z.object({
   name: z.string().min(1).max(200),
   firm: z.string().min(1).max(200),

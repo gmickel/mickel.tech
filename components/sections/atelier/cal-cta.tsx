@@ -8,9 +8,9 @@ interface CalCtaProps {
 const copyEN = {
   pdlc: {
     eyebrow: '07 / Book a session',
-    heading: 'A 30-minute fit call is the cheapest way in.',
+    heading: 'A 30-minute discovery call is the cheapest way in.',
     body: "On the call we agree whether agentic PDLC is the right shape for your team, what an engagement looks like, and what the next step would be. No deck. No pre-work. If it isn't a fit, I say so on the call.",
-    primary: 'Book a 30-min fit call',
+    primary: 'Book a 30-min discovery call',
     secondary: 'Email gordon@mickel.tech',
   },
   transformation: {

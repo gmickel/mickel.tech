@@ -52,8 +52,8 @@ export default function AtelierCaseStudyDetail({
           relatedLabel: 'Related practice',
           ctaHeading: 'Sound familiar?',
           ctaBody:
-            'If your engagement fits a similar shape, a 30-minute fit call is the cheapest way to find out.',
-          primary: 'Book a 30-min fit call',
+            'If your engagement fits a similar shape, a 30-minute discovery call is the cheapest way to find out.',
+          primary: 'Book a 30-min discovery call',
           secondary: 'Confidential expert intake',
           secondaryHref: '/expert#intake',
           named: 'Named',
