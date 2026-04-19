@@ -14,7 +14,7 @@ export default async function OGImage() {
     eyebrow: 'Selected Work',
     title: 'Engagements grouped by practice area.',
     tagline:
-      'Anonymised where confidentiality applies. Named only where the work is fully mine. Real outcomes, real numbers.',
+      'Selected engagements across agentic PDLC, independent expert work, and AI systems. Real outcomes, real numbers.',
     locale: 'EN',
   });
 }

@@ -11,9 +11,10 @@ const faqsEN = [
       'SDLC frames the problem as software development. Once agents can write production code in minutes, the constraint moves up the value chain — to product framing, requirements engineering and review capacity. PDLC (Product Development Life Cycle) names the actual unit of work and lets us optimise the right bottleneck.',
   },
   {
-    question: 'Is this just selling Cursor / GitHub Copilot rollouts?',
+    question:
+      'Is this just selling Cursor / Claude Code / OpenAI Codex rollouts?',
     answer:
-      'No. Tooling rollouts are a small part of L1 → L2. The methodology shift, eval gates, cross-model review, everything-as-code, observability flywheels, organisational redesign — that is where the work is and where the value is.',
+      'No. Tool choice, adoption and engineer coaching are part of the work — but a small part. The methodology shift, eval gates, cross-model review, everything-as-code, observability flywheels and organisational redesign are where the work sits and where the value is. The tools change every quarter; the methodology does not.',
   },
   {
     question: 'Where do FlowNext and MergeFoundry fit?',
@@ -54,9 +55,10 @@ const faqsDE = [
       'SDLC framt das Problem als Softwareentwicklung. Sobald Agenten produktiven Code in Minuten schreiben, wandert die Beschränkung die Wertkette hoch -- zu Produkt-Framing, Anforderungsengineering und Review-Kapazität. PDLC (Product Development Life Cycle) benennt die tatsächliche Arbeitseinheit und erlaubt es, den richtigen Engpass zu optimieren.',
   },
   {
-    question: 'Verkaufen Sie damit nicht einfach Cursor- / Copilot-Rollouts?',
+    question:
+      'Verkaufen Sie damit nicht einfach Cursor- / Claude-Code- / OpenAI-Codex-Rollouts?',
     answer:
-      'Nein. Tool-Rollouts sind ein kleiner Teil von L1 → L2. Der Methodenwechsel, Eval-Gates, Cross-Model-Review, Everything-as-code, Observability-Schwungräder, organisatorische Neuauslegung -- dort liegt die Arbeit und dort liegt der Wert.',
+      'Nein. Tool-Auswahl, Adoption und Coaching der Entwickler gehören dazu -- aber als kleiner Teil. Methodenwechsel, Eval-Gates, Cross-Model-Review, Everything-as-code, Observability-Schwungräder und organisatorische Neuauslegung sind dort, wo die Arbeit sitzt und wo der Wert liegt. Die Tools wechseln pro Quartal; die Methodik nicht.',
   },
   {
     question: 'Wo passen FlowNext und MergeFoundry hinein?',

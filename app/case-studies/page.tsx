@@ -7,7 +7,7 @@ import { breadcrumbSchema, JsonLd, personSchema } from '@/lib/json-ld';
 export const metadata: Metadata = {
   title: 'Case Studies — Selected Work',
   description:
-    'Selected engagements across agentic PDLC, independent expert work, and AI systems. Anonymised where confidentiality applies; named only where the work is fully mine. Real outcomes, real numbers.',
+    'Selected engagements across agentic PDLC, independent expert work, and AI systems. Real outcomes, real numbers.',
   keywords: [
     'case studies',
     'AI case studies',

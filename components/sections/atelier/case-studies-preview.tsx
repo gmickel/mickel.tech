@@ -14,8 +14,7 @@ export default function AtelierCaseStudiesPreview({
       ? {
           eyebrow: '03 / Auswahl an Mandaten',
           heading: 'Vier Beispiele aus der Praxis.',
-          intro:
-            'Anonymisiert, wo Vertraulichkeit gilt. Namentlich genannt nur dort, wo es meine eigene Arbeit ist. An den Zahlen ändert die Nennung nichts.',
+          intro: 'Vier Beispiele aus realen Mandaten. Reale Zahlen.',
           allLink: 'Alle Fallstudien',
           allHref: '/de/case-studies',
           problemLabel: 'Problem',
@@ -25,8 +24,7 @@ export default function AtelierCaseStudiesPreview({
       : {
           eyebrow: '03 / Selected work',
           heading: 'Four examples from real engagements.',
-          intro:
-            'Anonymised where confidentiality applies. Named only where the work is fully mine. Naming does not change the numbers.',
+          intro: 'Four examples from real engagements. Real numbers.',
           allLink: 'All case studies',
           allHref: '/case-studies',
           problemLabel: 'Problem',

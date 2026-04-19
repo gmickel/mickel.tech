@@ -28,7 +28,7 @@ const levelsEN: readonly Level[] = [
     shortLabel: 'Copilots, manual usage',
     body: 'Engineers use copilots and chat tools opportunistically. Productivity gains real but uneven. No methodology, no metrics, no portfolio strategy.',
     signals: [
-      'GitHub Copilot / Cursor / similar in active use',
+      'Cursor, Claude Code, OpenAI Codex or similar in active use',
       'Self-service adoption, no central guidance',
       'Hard to attribute uplift; some skeptics, some converts',
     ],
@@ -89,7 +89,7 @@ const levelsDE: readonly Level[] = [
     shortLabel: 'Copilots, opportunistisch',
     body: 'Entwickler nutzen Copilots und Chat-Tools opportunistisch. Produktivitätsgewinne sind real, aber ungleichmässig. Keine Methodik, keine Metriken, keine Portfoliostrategie.',
     signals: [
-      'GitHub Copilot / Cursor o.ä. aktiv im Einsatz',
+      'Cursor, Claude Code, OpenAI Codex o.ä. aktiv im Einsatz',
       'Adoption per Selbstbedienung, keine zentrale Steuerung',
       'Uplift schwer zurechenbar; Skeptiker und Überzeugte gemischt',
     ],

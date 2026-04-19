@@ -18,7 +18,7 @@ export default function AtelierCaseStudiesIndex({
           eyebrowHero: '01 / Auswahl an Mandaten',
           headingHero: 'Mandate, gruppiert nach Praxisfeld.',
           introHero:
-            'Anonymisiert, wo Vertraulichkeit gilt. Namentlich genannt nur dort, wo es meine eigene Arbeit ist (DocIQ, KISIM, FlowNext, MergeFoundry). An den Zahlen ändert die Nennung nichts.',
+            'Ausgewählte Mandate aus den drei Praxisfeldern -- agentische PDLC, unabhängige Begutachtung, KI-Systeme und Transformation. Reale Ergebnisse, reale Zahlen.',
           legend:
             'Insgesamt {count} Mandate · {pdlc} agentische PDLC · {expert} Begutachtung · {systems} KI-Systeme',
           problem: 'Problem',
@@ -31,7 +31,7 @@ export default function AtelierCaseStudiesIndex({
           eyebrowHero: '01 / Selected work',
           headingHero: 'Engagements grouped by practice area.',
           introHero:
-            'Anonymised where confidentiality applies. Named only where the work is fully mine (DocIQ, KISIM, FlowNext, MergeFoundry). Naming does not change the numbers.',
+            'Selected engagements across the three areas — agentic PDLC, independent expert work, AI systems and transformation. Real outcomes, real numbers.',
           legend:
             '{count} engagements total · {pdlc} agentic PDLC · {expert} expert · {systems} AI systems',
           problem: 'Problem',

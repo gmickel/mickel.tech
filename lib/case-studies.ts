@@ -101,13 +101,13 @@ export const CASE_STUDIES: readonly CaseStudy[] = [
     clientDE:
       'US PE-gehaltene Property-Management-Software · 25-jähriges Produkt, 12-15 Entwickler, Skalierung auf 30',
     problemEN:
-      'CEO-led replatforming under tight delivery pressure, with the team running their first AI-assisted sprint. Mixed early KPIs (productivity gains real but masked by downstream QA + upstream requirements bottlenecks). Tool sprawl across Claude Code, Cursor, VS Code with no unified governance. Engineer mindset friction on handing work to agents.',
+      'CEO-led replatforming under tight delivery pressure, with the team running their first AI-assisted sprint. Mixed early KPIs (productivity gains real but masked by downstream QA and upstream requirements bottlenecks). Tool sprawl across multiple AI coding assistants with no unified governance. Engineer mindset friction on handing work to agents.',
     problemDE:
-      'CEO-geführtes Re-Platforming unter Lieferdruck, das Team im ersten KI-unterstützten Sprint. Gemischte Early-KPIs (Produktivitätsgewinne real, aber durch nachgelagerten QA-Engpass und vorgelagerten Anforderungs-Engpass maskiert). Tool-Sprawl über Claude Code, Cursor, VS Code ohne einheitliche Governance. Mindset-Reibung beim Übergeben an Agenten.',
+      'CEO-geführtes Re-Platforming unter Lieferdruck, das Team im ersten KI-unterstützten Sprint. Gemischte Early-KPIs (Produktivitätsgewinne real, aber durch nachgelagerten QA-Engpass und vorgelagerten Anforderungs-Engpass maskiert). Tool-Sprawl über mehrere KI-Coding-Assistenten ohne einheitliche Governance. Mindset-Reibung beim Übergeben an Agenten.',
     approachEN:
-      'Cross-arm advisory engagement (BU-side capacity supporting Sagemount portfolio). Strategy review session with CEO + VP Engineering + EM + Director PMO. Mapped where their AI Context Strategy was already strong (~85% aligned with my pipeline) and the three lanes still missing: requirements engineering as the upstream bottleneck, implementation verification loops with cross-model review, and downstream QA acceleration.',
+      'Strategy review session with CEO, VP Engineering, EM and Director PMO. Mapped where their AI Context Strategy was already strong (~85% aligned with my pipeline) and the three lanes still missing: requirements engineering as the upstream bottleneck, implementation verification loops with cross-model review, and downstream QA acceleration.',
     approachDE:
-      'Cross-Arm-Advisory-Mandat (BU-seitige Kapazität für Sagemount-Portfolio). Strategie-Review mit CEO, VP Engineering, EM und Director PMO. Kartierung, wo die AI-Context-Strategie bereits stark ist (~85% deckungsgleich mit meinem Vorgehen), und der drei noch fehlenden Spuren: Anforderungsengineering als vorgelagerter Engpass, Implementierungs-Verifikationsschleifen mit Cross-Model-Review, nachgelagerte QA-Beschleunigung.',
+      'Strategie-Review mit CEO, VP Engineering, EM und Director PMO. Kartierung, wo die KI-Kontextstrategie bereits stark ist (~85% deckungsgleich mit meinem Vorgehen), und der drei noch fehlenden Spuren: Anforderungsengineering als vorgelagerter Engpass, Implementierungs-Verifikationsschleifen mit Cross-Model-Review, nachgelagerte QA-Beschleunigung.',
     outcomeEN:
       'Concrete next-step lanes the engineering org could pick up the following week. Spec-driven development plus self-verifying implementation loop adopted as the methodology direction. Cross-model review pattern handed over.',
     outcomeDE:
@@ -196,23 +196,23 @@ export const CASE_STUDIES: readonly CaseStudy[] = [
     area: 'expert',
     number: '04',
     clientEN:
-      'Swiss public-sector procurement · Power Platform delivery · joint expert mandate',
+      'Swiss public-sector procurement · platform delivery · joint expert mandate',
     clientDE:
-      'Schweizer öffentliche Beschaffung · Power-Platform-Lieferung · gemeinsames Gutachter-Mandat',
+      'Schweizer öffentliche Beschaffung · Plattformauslieferung · gemeinsames Gutachter-Mandat',
     problemEN:
-      'Procurer and supplier required an independent acceptance expert (Werkvertrags-Gutachter) named in the contract. Subject: Power Platform delivery (Power Apps, Power Automate, Dataverse, PowerPages) replacing a legacy system, integrations into ZSR/SASIS and Abacus.',
+      'Procurer and supplier required an independent acceptance expert (Werkvertrags-Gutachter) named in the contract. Subject: low-code platform delivery replacing a legacy system, with multiple back-office integrations.',
     problemDE:
-      'Auftraggeber und Lieferant brauchten einen vertraglich benannten unabhängigen Abnahmegutachter (Werkvertrags-Gutachter). Gegenstand: Power-Platform-Lieferung (Power Apps, Power Automate, Dataverse, PowerPages) als Ablösung eines Altsystems, Integrationen in ZSR/SASIS und Abacus.',
+      'Auftraggeber und Lieferant brauchten einen vertraglich benannten unabhängigen Abnahmegutachter (Werkvertrags-Gutachter). Gegenstand: Low-Code-Plattformauslieferung als Ablösung eines Altsystems, mit mehreren Back-Office-Integrationen.',
     approachEN:
-      'Pre-engagement Prüfschema developed transparently from contract annexes. 12-domain assessment framework (completeness, business reqs, governance & ALM, security, data architecture, integrations, flows, UX, tests, ops, docs, handover). Pauschal fee, split between parties.',
+      'Pre-engagement Prüfschema developed transparently from contract annexes. 12-domain assessment framework (completeness, business reqs, governance and ALM, security, data architecture, integrations, flows, UX, tests, ops, docs, handover). Pauschal fee, split between parties.',
     approachDE:
       'Vorab-Prüfschema, transparent aus den Vertragsanhängen entwickelt. Bewertungsrahmen über 12 Domänen (Vollständigkeit, Business-Anforderungen, Governance & ALM, Security, Datenarchitektur, Integrationen, Flows, UX, Tests, Betrieb, Doku, Übergabe). Pauschalhonorar, hälftig zwischen den Parteien.',
     outcomeEN:
       'Engagement signed; both parties accepted the methodology and scoring framework. Acceptance assessment scheduled at delivery point with optional Nachprüfung after Nachbesserungen.',
     outcomeDE:
       'Mandat unterzeichnet; beide Parteien haben die Methodik und das Scoring-Framework akzeptiert. Abnahmeprüfung am Liefertermin geplant, mit optionaler Nachprüfung nach Nachbesserungen.',
-    metricValueEN: 'CHF 24k',
-    metricValueDE: 'CHF 24k',
+    metricValueEN: 'Mandate signed',
+    metricValueDE: 'Mandat unterzeichnet',
     metricLabelEN: 'Pauschal · split between parties',
     metricLabelDE: 'Pauschal · hälftig zwischen Parteien',
   },
@@ -345,10 +345,8 @@ export const CASE_STUDIES: readonly CaseStudy[] = [
     id: 'systems-ai-deal-screening',
     area: 'systems',
     number: '09',
-    clientEN:
-      'European travel platform · PE deal screening · AI upside analysis',
-    clientDE:
-      'Europäische Reiseplattform · PE-Deal-Screening · KI-Upside-Analyse',
+    clientEN: 'PE deal screening · AI upside framework',
+    clientDE: 'PE-Deal-Screening · KI-Upside-Framework',
     problemEN:
       'Deal team needed a systematic AI exposure and disruption analysis on a target before IC. Standard tech DD does not surface AI-specific upside, downside, or competitive vulnerability.',
     problemDE:

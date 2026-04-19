@@ -44,8 +44,8 @@ const copyEN = {
           meta: 'For investors, boards, M&A',
         },
       ],
-      anchorPrice: 'Confidential intake · DE / EN',
-      cta: 'See expert practice',
+      anchorPrice: 'Confidential intake',
+      cta: 'Open intake',
       href: '/expert',
     },
     transform: {
@@ -108,8 +108,8 @@ const copyDE = {
           meta: 'Für Investoren, Verwaltungsräte, M&A',
         },
       ],
-      anchorPrice: 'Vertrauliche Anfrage · DE / EN',
-      cta: 'Zur Begutachtung',
+      anchorPrice: 'Vertrauliche Anfrage',
+      cta: 'Zur Anfrage',
       href: '/de/expert',
     },
     transform: {

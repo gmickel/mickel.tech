@@ -35,8 +35,7 @@ export default function AtelierCaseStudiesAreaPreview({
       ? {
           eyebrow: `${sectionNumber} / Aus dieser Praxis`,
           heading: `Beispiele aus der Praxis · ${areaLabel}.`,
-          intro:
-            'Anonymisiert, wo Vertraulichkeit gilt. Genannt nur, wo es meine eigene Arbeit ist. Benennung verändert nichts an den Zahlen.',
+          intro: 'Beispiele aus realen Mandaten. Reale Zahlen.',
           allLink: 'Alle Fallstudien',
           allHref: '/de/case-studies',
           problemLabel: 'Problem',
@@ -48,8 +47,7 @@ export default function AtelierCaseStudiesAreaPreview({
       : {
           eyebrow: `${sectionNumber} / From this practice`,
           heading: `Engagements from this practice · ${areaLabel}.`,
-          intro:
-            'Anonymised where confidentiality applies. Named only where the work is fully mine. Naming does not change the numbers.',
+          intro: 'Examples from real engagements. Real numbers.',
           allLink: 'All case studies',
           allHref: '/case-studies',
           problemLabel: 'Problem',

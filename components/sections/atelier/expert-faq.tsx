@@ -23,7 +23,7 @@ const faqsEN = [
   {
     question: 'What does an engagement cost?',
     answer:
-      'Parteigutachten and DD work bill on a time-and-materials basis at CHF day rates with caps agreed up front. Werkvertrags-Gutachten are typically pauschal fixed-fee, split between procurer and supplier. Specific numbers shared on the intake call.',
+      'Parteigutachten and DD work bill on a time-and-materials basis at CHF day or hourly rates, with caps agreed up front. Werkvertrags-Gutachten are typically pauschal fixed-fee, split between procurer and supplier. Specific numbers shared on the intake call.',
   },
   {
     question: 'Confidentiality and data handling?',
@@ -66,7 +66,7 @@ const faqsDE = [
   {
     question: 'Was kostet ein Mandat?',
     answer:
-      'Parteigutachten und DD-Arbeit nach Aufwand zu CHF-Tagessätzen mit vorab vereinbarten Obergrenzen. Werkvertrags-Gutachten in der Regel als Pauschalhonorar, hälftig zwischen Auftraggeber und Lieferant. Konkrete Zahlen im Erstgespräch.',
+      'Parteigutachten und DD-Arbeit nach Aufwand zu CHF-Tages- oder Stundensätzen, mit vorab vereinbarten Obergrenzen. Werkvertrags-Gutachten in der Regel als Pauschalhonorar, hälftig zwischen Auftraggeber und Lieferant. Konkrete Zahlen im Erstgespräch.',
   },
   {
     question: 'Wie steht es um Vertraulichkeit und Datenumgang?',

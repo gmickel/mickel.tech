@@ -12,8 +12,8 @@ const domainsEN = [
     body: 'Payment platforms, regtech, AML / fraud automation, fintech AI features. Production AI in regulated environments. Risk-aware vendor and architecture review for boards.',
   },
   {
-    title: 'Legal technology & contract automation',
-    body: 'Contract lifecycle management, document review automation, legal-grade RAG. Founded an AI-native CLM platform — fluent in both the platform side and the regulator-facing side.',
+    title: 'Legal technology, IP & code forensics',
+    body: 'Contract lifecycle management, document review automation. Founded an AI-native CLM platform — fluent on both the platform side and the regulator-facing side. Open-source license compliance, code-derivation analysis and copyright assessment for software disputes.',
   },
   {
     title: 'Public sector & procurement',
@@ -43,8 +43,8 @@ const domainsDE = [
     body: 'Zahlungsplattformen, RegTech, AML- und Betrugsautomatisierung, Fintech-KI-Features. Produktive KI in regulierten Umgebungen. Risikobewusste Anbieter- und Architektur-Reviews für Verwaltungsräte.',
   },
   {
-    title: 'Legal Tech & Vertragsautomatisierung',
-    body: 'Contract Lifecycle Management, automatisierte Dokumentenprüfung, Legal-Grade-RAG. Ich habe eine KI-native CLM-Plattform gegründet -- sattelfest auf der Plattformseite wie auf der regulatorischen Seite.',
+    title: 'Legal Tech, IP & Code-Forensik',
+    body: 'Contract Lifecycle Management, automatisierte Dokumentenprüfung. Ich habe eine KI-native CLM-Plattform gegründet -- sattelfest auf der Plattformseite wie auf der regulatorischen Seite. Open-Source-Lizenz-Compliance, Code-Herleitungsanalyse und urheberrechtliche Würdigung bei Softwaredisputen.',
   },
   {
     title: 'Öffentliche Hand & Beschaffung',
