@@ -86,18 +86,18 @@ const copyDE = {
   headline:
     'Ich baue KI-Systeme, helfe Engineering-Teams, ihren F&E-Output zu vervielfachen, und lese fremden Code unter Kreuzverhör. Beruflich.',
   intro:
-    'Zwanzig Jahre Auslieferung von Software in regulierten Branchen. 2017 habe ich DocIQ gegründet, um KI auf Rechtsdokumente in der Schweiz anzuwenden; bei CISTEC AG habe ich das KI-Programm von KISIM geleitet und die erste produktive klinische LLM des Landes ausgeliefert; und heute leite ich KI & Technologie bei Growth Factors (Bregal-Portfolio) und nehme parallel eine kleine Anzahl ausgewählter Mandate jedes Jahr an.',
+    'Zwanzig Jahre Software-Auslieferung in regulierten Branchen. 2017 habe ich DocIQ gegründet, um KI auf Rechtsdokumente in der Schweiz anzuwenden; bei CISTEC AG habe ich das KI-Programm von KISIM geleitet und das erste produktive klinische LLM des Landes ausgeliefert; heute leite ich KI & Technologie bei Growth Factors (Bregal-Portfolio) und nehme parallel eine kleine Zahl ausgewählter Mandate pro Jahr an.',
   arcLabel: '02 / Werdegang',
   arc: [
     {
       period: '2003 – heute',
       title: 'Engineering-Praxis',
-      body: 'Zwanzig Jahre Aufbau produktiver Software über Gesundheitswesen, Recht, Finanzen und öffentliche Hand hinweg. Durch jedes Kapitel das gleiche Muster: regulierte Umgebungen, in denen KI entweder ordentlich gemacht wird oder gar nicht.',
+      body: 'Zwanzig Jahre Aufbau produktiver Software über Gesundheitswesen, Recht, Finanzen und öffentliche Hand hinweg. Durch jedes Kapitel dasselbe Muster: regulierte Umgebungen, in denen KI entweder ordentlich gemacht wird oder gar nicht.',
     },
     {
       period: '2017 – heute',
       title: 'Gründer, DocIQ',
-      body: 'Contract Vault GmbH 2017 in Zug gegründet. DocIQ 1.0 (2018) gebaut und ausgeliefert — eine der ersten Schweizer Plattformen, die NLP und ML auf Vertrags- und Dokumenten-Lifecycle anwendet. Produktiv beim Schweizerischen Versicherungsverband, Laux Lawyers, Kaiser Odermatt & Partner. Sphere + Shield v2 2026 lanciert.',
+      body: 'Contract Vault GmbH 2017 in Zug gegründet. DocIQ 1.0 (2018) gebaut und ausgeliefert -- eine der ersten Schweizer Plattformen, die NLP und ML auf den Vertrags- und Dokumentenlebenszyklus anwendet. Produktiv beim Schweizerischen Versicherungsverband, bei Laux Lawyers und bei Kaiser Odermatt & Partner. Sphere + Shield v2 2026 lanciert.',
     },
     {
       period: '2023 – 2025',
@@ -107,7 +107,7 @@ const copyDE = {
     {
       period: '2025 – heute',
       title: 'Operating Principal, KI & Technologie · Growth Factors',
-      body: 'Operating Principal für KI und Technologie über das Growth-Factors-/Bregal-Portfolio. Führe agentische PDLC-Programme, KI-Reifegradanalysen und KI-/Tech-Due-Diligence für die Deal-Teams. Unabhängige Praxis für Mandate ausserhalb des Portfolios läuft parallel.',
+      body: 'Operating Principal für KI und Technologie über das Growth-Factors-/Bregal-Portfolio. Verantworte agentische PDLC-Programme, KI-Reifegradanalysen und KI- und Tech-Due-Diligence für die Deal-Teams. Die unabhängige Praxis für Mandate ausserhalb des Portfolios läuft parallel.',
     },
     {
       period: 'laufend',
@@ -117,31 +117,31 @@ const copyDE = {
     {
       period: 'laufend',
       title: 'Open Source: FlowNext, MergeFoundry',
-      body: 'Autor von FlowNext (Open-Source-Orchestrator für agentische SDLC, tausende Nutzer). Gründer von MergeFoundry, Inc — Plattform der nächsten Generation für agentische PDLC, aktuell in Private Beta. Beide Produkte speisen die Methodik, die ich in Mandaten einsetze.',
+      body: 'Autor von FlowNext (Open-Source-Orchestrator für agentische SDLC, tausende Nutzer). Gründer von MergeFoundry, Inc. -- Plattform der nächsten Generation für agentische PDLC, aktuell in Private Beta. Beide Produkte speisen die Methodik, die ich in Mandaten einsetze.',
     },
   ],
   recogLabel: '03 / Anerkennungen',
   recogIntro:
-    'Öffentliche Stellen, die Experten prüfen, Communities, die Sprecher auswählen, Netzwerke, die Frontier-Model-Mitwirkende einladen.',
+    'Öffentliche Stellen, die Experten prüfen. Communities, die Sprecher auswählen. Netzwerke, die Frontier-Model-Mitwirkende einladen.',
   recog: [
-    'OpenAI Red Team Network Alumnus — Frontier-Model-Safety + Abuse-Resilience',
-    'ITDR-gelisteter technischer Experte (Schweiz) — IKT- und KI-Streitigkeiten',
-    'Eingeladener Sprecher, SECA 2026 (Swiss Private Equity & Corporate Finance Association) — KI in KMU-Wachstumsstrategien',
-    'Sprecher, openEHR.ch-Symposium — klinische KI und Pipelines unstrukturiert-zu-openEHR',
+    'OpenAI Red Team Network Alumnus -- Frontier-Model-Safety und Missbrauchsresilienz',
+    'ITDR-gelisteter technischer Experte (Schweiz) -- IKT- und KI-Streitigkeiten',
+    'Eingeladener Sprecher, SECA 2026 (Swiss Private Equity & Corporate Finance Association) -- KI in KMU-Wachstumsstrategien',
+    'Sprecher, openEHR.ch-Symposium -- klinische KI und Pipelines von unstrukturiert zu openEHR',
   ],
   principlesLabel: '04 / Wie ich arbeite',
   principles: [
     {
       tag: 'Prozess vor Tools',
-      body: 'Jedes Mandat beginnt beim Workflow, der wehtut. Nicht beim Technologie-Katalog.',
+      body: 'Jedes Mandat beginnt beim Workflow, der wehtut. Nicht beim Technologiekatalog.',
     },
     {
       tag: 'Eval-Gates ab Tag eins',
       body: 'Kein produktives Deployment ohne messbare Erfolgskriterien, die das System nachweislich erfüllt hat.',
     },
     {
-      tag: 'Internes Team besitzt es',
-      body: 'Mandate enden, wenn Ihr Team den Betrieb besitzt. Ich hinterlasse Dokumentation, Runbooks und Capability — keine Abhängigkeit.',
+      tag: 'Internes Team trägt es',
+      body: 'Mandate enden, wenn Ihr Team den Betrieb trägt. Ich hinterlasse Dokumentation, Runbooks und Capability -- keine Abhängigkeit.',
     },
     {
       tag: 'Ehrlich beim Fit',

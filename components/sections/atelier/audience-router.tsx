@@ -69,14 +69,14 @@ const copyDE = {
   eyebrow: '02 / Praxisfelder',
   heading: 'Drei Arbeitsbereiche, drei Register.',
   intro:
-    'Jedes Mandat hat eine andere Form, ein anderes Publikum und ein anderes Ergebnis. Wählen Sie den Bereich, der Ihrem Problem am nächsten kommt.',
+    'Jedes Mandat hat eine andere Form, ein anderes Publikum, ein anderes Ergebnis. Wählen Sie den Bereich, der Ihrem Problem am nächsten kommt.',
   cards: {
     pdlc: {
       number: '01',
       tag: 'Für CTOs, VP Engineering, PE-Operating-Partner',
       title: 'Agentische PDLC',
       lede: 'Von Anforderungsengineering bis zur autonomen Auslieferung.',
-      body: 'Ein zweistufiger Methodenwechsel, kein Tool-Rollout. Beginn bei Produkt- und Anforderungsengineering. Dann spec-getriebene, agentengestützte Auslieferung mit eval-basierten Reviews. Ziel L4: Agenten liefern Features, Menschen setzen Prioritäten.',
+      body: 'Ein zweistufiger Methodenwechsel, kein Tool-Rollout. Start beim Produkt- und Anforderungsengineering. Danach spec-getriebene, agentengestützte Auslieferung mit eval-basierten Reviews. Ziel L4: Agenten liefern Features, Menschen setzen Prioritäten.',
       bullets: [
         'L0 → L4 Reifegradmodell',
         'Zweistufiges Vorgehen: Fundament, dann Methodenwechsel',
@@ -91,7 +91,7 @@ const copyDE = {
       tag: 'Für Anwaltskanzleien, Gerichte, Schiedsrichter, Verwaltungsräte',
       title: 'Unabhängige Begutachtung',
       lede: 'Parteigutachten, Werkvertrags-Gutachten, KI- und Tech-Due-Diligence.',
-      body: 'Zwanzig Jahre praktische Engineering-Erfahrung. Ich verfolge Ansprüche durch Code, Infrastruktur und Verträge, nicht nur durch Management-Summarys. Unabhängig, sorgfältig, geschrieben für die mündliche Verhandlung.',
+      body: 'Zwanzig Jahre praktische Engineering-Erfahrung. Ich verfolge Behauptungen durch Code, Infrastruktur und Verträge, nicht nur durch das Management-Summary. Unabhängig, sorgfältig, geschrieben, um in der mündlichen Verhandlung zu bestehen.',
       roles: [
         {
           label: 'Parteigutachten',
@@ -114,8 +114,8 @@ const copyDE = {
       number: '03',
       tag: 'Für CEOs, COOs, GMs, Deal-Teams',
       title: 'KI-Systeme & Transformation',
-      lede: 'Produktionsreife KI-Systeme, die Ihr Geschäft tragen — nicht nur in der Demo.',
-      body: 'Jedes Mandat beginnt mit einer Prozesslandkarte, nicht mit einem Tool. Wo liegen die Daten. Wo sind die Engpässe. Was bricht im Skalierungsfall. Dann bauen wir die Kontextschicht und liefern produktive Systeme darauf.',
+      lede: 'Produktionsreife KI-Systeme, die Ihr Geschäft tragen, nicht nur in der Demo.',
+      body: 'Jedes Mandat beginnt mit einer Prozesslandkarte, nicht mit einem Tool. Wo liegen die Daten. Wo sind die Engpässe. Was bricht unter Last. Danach bauen wir die Kontextschicht und liefern produktive Systeme darauf.',
       bullets: [
         'Enterprise-RAG und Wissensplattformen',
         'Autonome Agenten und Operations-Copilots',

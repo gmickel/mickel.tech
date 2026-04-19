@@ -66,19 +66,19 @@ const copyDE = {
   eyebrow: '06 / Vertrauliche Anfrage',
   heading: 'Vertrauliche Anfrage öffnen.',
   intro:
-    'Für Anwaltskanzleien, Gerichte, Schiedsrichter, Verwaltungsräte und Investoren. Das Formular ersetzt strukturiert ein Erstgespräch — es zeigt, ob ich tätig werden kann, woran und wie schnell. NDA vor jeder Fallmaterial-Übergabe.',
+    'Für Anwaltskanzleien, Gerichte, Schiedsrichter, Verwaltungsräte und Investoren. Das Formular ist ein strukturierter Ersatz für ein Erstgespräch -- es zeigt, ob ich tätig werden kann, woran und wie schnell. NDA vor jeder Übergabe von Verfahrensmaterial.',
   legal:
-    'Die Einreichung dieser Anfrage begründet kein Mandat und kein vertrauliches Verhältnis. Ich behandle den Inhalt vertraulich und antworte innerhalb von 48 Stunden, auch wenn ich ablehne.',
+    'Die Einreichung dieser Anfrage begründet weder ein Mandat noch ein privilegiertes Verhältnis. Ich behandle den Inhalt vertraulich und antworte innerhalb von 48 Stunden, auch wenn ich ablehne.',
   fields: {
     name: 'Ihr Name',
     firm: 'Kanzlei oder Organisation',
     role: 'Ihre Rolle',
     roleOptions: [
-      'Prozessanwalt / Streitanwalt',
-      'Beschaffungs- / Vertragsanwalt',
+      'Prozess- oder Streitanwalt',
+      'Beschaffungs- oder Vertragsanwalt',
       'Inhouse-Counsel',
       'Gericht / Schiedsgericht',
-      'Verwaltungsrat / Investment-Komitee',
+      'Verwaltungsrat / Investmentkomitee',
       'Investor / Erwerber',
       'Andere',
     ],
@@ -98,19 +98,19 @@ const copyDE = {
     deadline: 'Harte Frist',
     deadlinePlaceholder: 'z.B. Verhandlung am 15. Mai, weiche Frist H2 2026',
     parties:
-      'Beteiligte Parteien (für Konfliktprüfung — Initialen genügen, keine vertraulichen Inhalte)',
+      'Beteiligte Parteien (für die Konfliktprüfung -- Initialen genügen, keine privilegierten Inhalte)',
     description:
-      'Kurzbeschreibung des Sachverhalts und der technischen Frage (keine vertraulichen Inhalte)',
+      'Kurzbeschreibung des Sachverhalts und der technischen Frage (keine privilegierten Inhalte)',
     descriptionPlaceholder:
       'Wenige Sätze. Genug, dass ich Fit und Konflikt beurteilen kann, nicht mehr.',
     consent:
-      'Ich bestätige, dass diese Übermittlung keine vertraulichen Inhalte enthält und dass ich zur Anfrage befugt bin.',
+      'Ich bestätige, dass diese Übermittlung keine privilegierten Inhalte enthält und dass ich zur Anfrage befugt bin.',
     submit: 'Vertrauliche Anfrage senden',
     submitting: 'Wird gesendet...',
     success:
       'Eingegangen. Ich antworte innerhalb von 48 Stunden, häufig früher. Sollten Sie in diesem Zeitraum keine Antwort sehen, schreiben Sie direkt an gordon@mickel.tech mit Ihrer Referenz.',
     error:
-      'Die Anfrage konnte nicht übermittelt werden. Bitte senden Sie den gleichen Inhalt direkt an gordon@mickel.tech — ich behandle ihn identisch.',
+      'Die Anfrage konnte nicht übermittelt werden. Bitte senden Sie den gleichen Inhalt direkt an gordon@mickel.tech -- ich behandle ihn identisch.',
   },
 };
 

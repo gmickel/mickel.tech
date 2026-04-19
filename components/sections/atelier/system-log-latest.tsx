@@ -20,7 +20,7 @@ export default async function AtelierSystemLogLatest({
           eyebrow: '05 / Schriften',
           heading: 'Aktuelle Notizen aus der Praxis.',
           intro:
-            'Kurze, technische Beiträge über agentische PDLC, Plattformen und KI-Systeme. Aus echter Arbeit, nicht aus der Theorie.',
+            'Kurze, technische Beiträge zu agentischer PDLC, Plattformen und KI-Systemen. Aus echter Arbeit, nicht aus der Theorie.',
           allLink: 'Alle Beiträge',
           allHref: '/de/log',
           entryLabel: 'Beitrag lesen',

@@ -17,9 +17,10 @@ import {
 } from '@/lib/json-ld';
 
 export const metadata: Metadata = {
-  title: 'KI-Systeme & Transformation — Prozess zuerst, produktiv ausgeliefert',
+  title:
+    'KI-Systeme & Transformation -- Prozess zuerst, produktiv ausgeliefert',
   description:
-    'KI-Systeme, die Ihr Geschäft tragen — nicht nur in der Demo glänzen. Prozess-zuerst-Audit, produktiver System-Build, Fractional KI-Lead. Enterprise-RAG, autonome Agenten, Voice, private LLM. CHF 15k Audit, CHF 40–150k System-Build. Binningen, DE / EN.',
+    'KI-Systeme, die Ihr Geschäft tragen -- nicht nur in der Demo glänzen. Prozess-zuerst-Audit, produktiver System-Build, Fractional KI-Lead. Enterprise-RAG, autonome Agenten, Voice, private LLM. Audit ab CHF 15k, System-Build CHF 40–150k. Binningen, DE / EN.',
   keywords: [
     'KI Transformation Schweiz',
     'KI Beratung Basel',
@@ -51,7 +52,7 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title:
-      'KI-Systeme & Transformation — Prozess zuerst, produktiv ausgeliefert',
+      'KI-Systeme & Transformation -- Prozess zuerst, produktiv ausgeliefert',
     description:
       'Prozess-zuerst-KI: Workflows kartieren, Kontextschicht bauen, produktive Systeme ausliefern. Enterprise-RAG, Agenten, Voice, private LLM. Audit ab CHF 15k.',
     url: 'https://mickel.tech/de/ai-transformation',
@@ -75,7 +76,7 @@ export default function DeAiTransformationPage() {
         data={serviceSchema({
           name: 'Prozesslandkarte + KI-Opportunity-Audit',
           description:
-            '2–3 Wochen. Workflows end-to-end kartieren, Automatisierungskandidaten scoren, 3–5 priorisierte Initiativen mit ROI und 90-Tage-Plan. CHF 15–25k fix.',
+            '2–3 Wochen. Workflows end-to-end kartieren, Automatisierungskandidaten bewerten, 3–5 priorisierte Initiativen mit ROI und 90-Tage-Plan. CHF 15–25k fix.',
           url: '/de/ai-transformation#offers',
         })}
       />
@@ -83,7 +84,7 @@ export default function DeAiTransformationPage() {
         data={serviceSchema({
           name: 'KI-System-Build',
           description:
-            'Produktive Auslieferung einer KI-Systemklasse (RAG, Agenten, Voice, Wissensplattform, private LLM). Von Anforderungen bis Go-Live mit Betriebs-Übergabe. CHF 40–150k.',
+            'Produktive Auslieferung einer KI-Systemklasse (RAG, Agenten, Voice, Wissensplattform, private LLM). Von den Anforderungen bis zum Go-Live, mit Betriebsübergabe. CHF 40–150k.',
           url: '/de/ai-transformation#offers',
         })}
       />
@@ -91,7 +92,7 @@ export default function DeAiTransformationPage() {
         data={serviceSchema({
           name: 'Fractional KI-Lead',
           description:
-            '1–2 Tage/Woche. Programm-Governance, Anbieter-Auswahl, praktische Architektur, internes Capability-Building. Monatliches Retainer, quartalsweise Minimum.',
+            '1–2 Tage/Woche. Programm-Governance, Anbieterauswahl, praktische Architektur, interner Capability-Aufbau. Monatlicher Retainer, mindestens ein Quartal.',
           url: '/de/ai-transformation#offers',
         })}
       />

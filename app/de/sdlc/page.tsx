@@ -16,9 +16,9 @@ import {
 } from '@/lib/json-ld';
 
 export const metadata: Metadata = {
-  title: 'Agentische PDLC — Von Anforderungen bis zur autonomen Auslieferung',
+  title: 'Agentische PDLC -- Von Anforderungen bis zur autonomen Auslieferung',
   description:
-    'Agentische PDLC ist eine Neuauslegung davon, wie Produkt gebaut wird. Von Anforderungsengineering bis spec-getriebener, agentengestützter Auslieferung, eval-gegate und cross-model-reviewed. L0–L4 Reifegradmodell. Diagnose ab CHF 15k. Autor von FlowNext, Gründer von MergeFoundry.',
+    'Agentische PDLC heisst, das Bauen von Produkt neu auszulegen. Von Anforderungsengineering bis zu spec-getriebener, agentengestützter Auslieferung, abgesichert durch Evals und Cross-Model-Review. L0–L4 Reifegradmodell. Diagnose ab CHF 15k. Autor von FlowNext, Gründer von MergeFoundry.',
   keywords: [
     'Agentische PDLC',
     'KI-native PDLC',
@@ -38,9 +38,10 @@ export const metadata: Metadata = {
     'KI Beratung Schweiz',
   ],
   openGraph: {
-    title: 'Agentische PDLC — Von Anforderungen bis zur autonomen Auslieferung',
+    title:
+      'Agentische PDLC -- Von Anforderungen bis zur autonomen Auslieferung',
     description:
-      'Produkt-Auslieferung neu gedacht: spec-getrieben, agentengestützt, eval-gegate. L0 → L4 Reifegrad. Diagnose ab CHF 15k. Autor von FlowNext und MergeFoundry.',
+      'Produktauslieferung neu gedacht: spec-getrieben, agentengestützt, eval-gesichert. L0 → L4 Reifegrad. Diagnose ab CHF 15k. Autor von FlowNext und MergeFoundry.',
     url: 'https://mickel.tech/de/sdlc',
     locale: 'de_CH',
     type: 'website',
@@ -62,7 +63,7 @@ export default function DeSdlcPage() {
         data={serviceSchema({
           name: 'Agentische PDLC Diagnose',
           description:
-            '2-wöchige Bewertung: L0–L4 Reifegrad-Scoring über 5 Säulen, Opportunity-Scoring, 90-Tage-Roadmap, Verwaltungsrats-fähiger Bericht. CHF 15–25k fix.',
+            '2-wöchige Bewertung: L0–L4-Reifegrad-Scoring über 5 Säulen, Opportunity-Scoring, 90-Tage-Roadmap, Bericht für den Verwaltungsrat. CHF 15–25k fix.',
           url: '/de/sdlc#offers',
         })}
       />
@@ -70,7 +71,7 @@ export default function DeSdlcPage() {
         data={serviceSchema({
           name: 'PDLC Foundation Sprint',
           description:
-            '6–8 Wochen. Tooling-Rollout, Methodik-Schulung, 1–2 Quick-Win-Spuren mit-ausgeliefert, KPI-Baseline. CHF 40–60k fix.',
+            '6–8 Wochen. Tooling-Rollout, Methodikschulung, 1–2 Quick-Win-Spuren mit-ausgeliefert, KPI-Baseline. CHF 40–60k fix.',
           url: '/de/sdlc#offers',
         })}
       />
@@ -78,7 +79,7 @@ export default function DeSdlcPage() {
         data={serviceSchema({
           name: 'PDLC Voller Methodenwechsel',
           description:
-            '3–6 Monate. L2 → L3/L4 Transformation: Eval-Gates, Cross-Model-Review, Everything-as-code, Observability-Schwungräder. CHF 80–150k+.',
+            '3–6 Monate. Transformation L2 → L3/L4: Eval-Gates, Cross-Model-Review, Everything-as-code, Observability-Schwungräder. CHF 80–150k+.',
           url: '/de/sdlc#offers',
         })}
       />

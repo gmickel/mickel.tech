@@ -58,19 +58,19 @@ const rolesDE: readonly RoleEntry[] = [
     title: 'Parteigutachten',
     subtitle: 'Parteigutachter, im Auftrag der Anwaltschaft.',
     whenUsed:
-      'Zivilverfahren, handelsgerichtliche Verfahren, internationale Schiedsgerichtsbarkeit. Wenn Sie eine vertretbare technische Stellungnahme brauchen, die eine konkrete Rechtsposition stützt und gleichzeitig der mündlichen Verhandlung standhält.',
+      'Zivilverfahren, handelsgerichtliche Verfahren, internationale Schiedsgerichtsbarkeit. Wenn Sie eine vertretbare technische Stellungnahme brauchen, die eine konkrete Rechtsposition stützt und zugleich der mündlichen Verhandlung standhält.',
     whatYouGet:
-      'Schriftliches Gutachten, mündliche Verhandlungsbereitschaft, unterstützende Analysen (forensische Code-Review, Infrastruktur-Forensik, Vertrag-vs-Implementierung-Vergleich), iterative Verfeinerung des Fragenkatalogs gemeinsam mit Ihnen.',
+      'Schriftliches Gutachten, mündliche Verhandlungsbereitschaft, unterstützende Analysen (forensische Code-Review, Infrastruktur-Forensik, Soll-Ist-Vergleich Vertrag gegen Implementierung), iterative Verfeinerung des Fragenkatalogs gemeinsam mit Ihnen.',
     format:
-      'Typischerweise 30–80 Seiten, strukturiert nach CH/DE Gutachten-Konvention: Auftrag, Methodik, Sachverhalt, Befunde, Würdigung, Kernbefunde. Eingereicht unter Ihrem Kanzlei-Briefkopf.',
-    audience: 'Prozessanwälte, Inhouse-Counsel, Schiedsteams.',
+      'Typischerweise 30–80 Seiten, strukturiert nach CH/DE-Gutachtenkonvention: Auftrag, Methodik, Sachverhalt, Befunde, Würdigung, Kernbefunde. Eingereicht unter Ihrem Kanzleibriefkopf.',
+    audience: 'Prozessanwälte, Inhouse-Counsel, Schiedsverfahrens-Teams.',
   },
   {
     number: '02',
     title: 'Werkvertrags-Gutachten',
     subtitle: 'Unabhängiger Abnahmegutachter, vertraglich benannt.',
     whenUsed:
-      'Software-Werkverträge und Beschaffungsverträge, in denen die Parteien einen unabhängigen Gutachter zur Bewertung der Leistung gegenüber der Spezifikation benennen. Quasi-schiedsrichterliche Funktion — beide Seiten stützen sich auf die Stellungnahme.',
+      'Software-Werkverträge und Beschaffungsverträge, in denen die Parteien einen unabhängigen Gutachter zur Bewertung der Leistung gegen die Spezifikation benennen. Quasi-schiedsrichterliche Funktion; beide Seiten stützen sich auf die Stellungnahme.',
     whatYouGet:
       'Vorab-Prüfschema, transparent aus den Vertragsanhängen entwickelt. Strukturierte Abnahmeprüfung gegen die vertraglich definierten Kriterien. Schriftliches Gutachten mit Bewertungsmatrix. Optional: Nachprüfung nach Nachbesserungen.',
     format:
@@ -83,13 +83,13 @@ const rolesDE: readonly RoleEntry[] = [
     title: 'KI- und Tech-Due-Diligence',
     subtitle: 'Unabhängige technische Beurteilung für Kapitalentscheidungen.',
     whenUsed:
-      'M&A Buy-Side oder Sell-Side, Primärinvestitionen, Risikoprüfungen auf Verwaltungsratsebene, Post-Acquisition-Value-Creation-Diagnose. Wenn die technische Aussage Bewertung, Integrationskosten oder Post-Deal-Plan wesentlich verschiebt.',
+      'M&A Buy-Side oder Sell-Side, Primärinvestitionen, Risikoprüfungen auf Verwaltungsratsebene, Value-Creation-Diagnose nach Closing. Wenn die technische Aussage Bewertung, Integrationskosten oder Post-Deal-Plan wesentlich verschiebt.',
     whatYouGet:
-      'Reifegradbewertung über 5 Säulen (Architektur, Team, Betrieb, Security, KI-Exposition). Verifikationsmatrix gegen Anbieterangaben. IC-fähige Value-Creation-These oder Risikoregister. Live-Walkthrough mit dem Deal-Team.',
+      'Reifegradbewertung über 5 Säulen (Architektur, Team, Betrieb, Security, KI-Exposition). Verifikationsmatrix gegen die Aussagen des Anbieters. IC-fähige Value-Creation-These oder Risikoregister. Live-Walkthrough mit dem Deal-Team.',
     format:
-      '3–10 Arbeitstage je nach Scope. Festpreis, häufig <1 Woche Durchlaufzeit bei Folge-DDs sobald die Beziehung etabliert ist.',
+      '3–10 Arbeitstage je nach Umfang. Festpreis. Bei Folge-DDs nach etablierter Beziehung häufig unter einer Woche Durchlaufzeit.',
     audience:
-      'PE- / VC-Investmentteams, Verwaltungsräte, Family Offices, M&A-Berater.',
+      'PE- und VC-Investmentteams, Verwaltungsräte, Family Offices, M&A-Berater.',
   },
 ];
 
@@ -103,7 +103,7 @@ export default function AtelierExpertRoles({
           eyebrow: '02 / Drei Rollen',
           heading: 'Drei klar abgegrenzte Rollen.',
           intro:
-            'Im CH/DE-Rechtsmarkt unterscheiden sich diese Rollen formell in Mandat, Pflichten und Output. Wählen Sie diejenige, die zu Ihrem Anlass passt — oder fragen Sie nach, wenn der Anlass selbst noch unklar ist.',
+            'Im CH/DE-Rechtsmarkt unterscheiden sich diese Rollen formell in Mandat, Pflichten und Output. Wählen Sie die Rolle, die zu Ihrem Anlass passt -- oder fragen Sie nach, wenn der Anlass selbst noch unklar ist.',
           when: 'Wann gebraucht',
           what: 'Was Sie erhalten',
           how: 'Format',

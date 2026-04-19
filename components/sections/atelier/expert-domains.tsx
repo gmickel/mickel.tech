@@ -44,23 +44,23 @@ const domainsDE = [
   },
   {
     title: 'Legal Tech & Vertragsautomatisierung',
-    body: 'Contract Lifecycle Management, Dokumentenprüfungs-Automatisierung, Legal-Grade-RAG. Habe eine KI-native CLM-Plattform gegründet — sicher auf der Plattform- wie auf der regulatorischen Seite.',
+    body: 'Contract Lifecycle Management, automatisierte Dokumentenprüfung, Legal-Grade-RAG. Ich habe eine KI-native CLM-Plattform gegründet -- sattelfest auf der Plattformseite wie auf der regulatorischen Seite.',
   },
   {
     title: 'Öffentliche Hand & Beschaffung',
-    body: 'Software-Abnahme für kantonale und Bundesverträge, Power Platform, ERP-Modernisierungen. Werkvertrags-Gutachten-Erfahrung für gemeinsame Auftraggeber-/Lieferanten-Mandate.',
+    body: 'Software-Abnahme für kantonale und Bundesverträge, Power Platform, ERP-Modernisierungen. Werkvertrags-Gutachten-Erfahrung für gemeinsame Mandate von Auftraggeber und Lieferant.',
   },
   {
     title: 'KI-Safety & Frontier-Model-Risiko',
-    body: 'OpenAI Red Team Network Alumnus. KI-Policy- und Abuse-Resilience-Review, Model-Card-Analyse, Safety-Governance für Portfolios mit Frontier-Modellen.',
+    body: 'OpenAI Red Team Network Alumnus. Reviews zu KI-Policy und Missbrauchsresilienz, Model-Card-Analyse, Safety-Governance für Portfolios, die Frontier-Modelle einsetzen.',
   },
   {
     title: 'Souveräne + private KI',
-    body: 'Produktive Erfahrung mit On-Prem- und VPC-Inferenz für regulierte Workflows: custom-trainiertes lokales NER, fine-tuned kleine Sprachmodelle, Audit und Provenienz per Default. Ich begutachte Private-KI-Strategien, weil ich sie ausgeliefert habe (DocIQ Shield, KISIM AI), nicht weil ich darüber gelesen habe.',
+    body: 'Produktive Erfahrung mit On-Prem- und VPC-Inferenz für regulierte Workflows: eigens trainiertes lokales NER, fine-tuned kleine Sprachmodelle, Audit und Provenienz per Default. Ich begutachte Private-KI-Strategien, weil ich sie ausgeliefert habe (DocIQ Shield, KISIM AI), nicht weil ich darüber gelesen habe.',
   },
   {
     title: 'Mid-Market-Software, PE-gehalten',
-    body: 'KI-Reifegradanalysen, Einführung agentischer PDLC, Post-Acquisition-Value-Creation-Diagnose. Tägliche Exposition gegenüber Portfolio-Software-Unternehmen im DACH-Raum.',
+    body: 'KI-Reifegradanalysen, Einführung agentischer PDLC, Value-Creation-Diagnose nach Closing. Täglicher Kontakt mit Portfolio-Software-Unternehmen im DACH-Raum.',
   },
 ] as const;
 
@@ -72,7 +72,7 @@ export default function AtelierExpertDomains({
     locale === 'de'
       ? {
           eyebrow: '04 / Domänen',
-          heading: 'Wo ich tief Bescheid weiss.',
+          heading: 'Wo ich in der Sache drinstecke.',
           intro:
             'Sechs Bereiche, in denen meine technische Tiefe einer Würdigung im Verfahren standhält. Bei Sachverhalten ausserhalb dieser Bereiche sage ich es vorab.',
         }

@@ -13,9 +13,9 @@ import { JsonLd, personSchema, professionalServiceSchema } from '@/lib/json-ld';
 
 export const metadata: Metadata = {
   title:
-    'Gordon Mickel — Agentische PDLC, KI-Systeme & Unabhängige Begutachtung',
+    'Gordon Mickel -- Agentische PDLC, KI-Systeme & Unabhängige Begutachtung',
   description:
-    'Ich entwerfe KI-Systeme, die wirklich funktionieren. Operating Principal (KI & Technologie) bei Growth Factors. Unabhängige Praxis für ausgewählte Mandate: agentische PDLC, produktive KI-Systeme, Parteigutachten und Werkvertrags-Gutachten. Binningen, Schweiz — DE & EN.',
+    'Ich entwerfe KI-Systeme, die wirklich funktionieren. Operating Principal (KI & Technologie) bei Growth Factors. Unabhängige Praxis für ausgewählte Mandate: agentische PDLC, produktive KI-Systeme, Parteigutachten und Werkvertrags-Gutachten. Binningen, Schweiz -- DE & EN.',
   keywords: [
     'Agentische PDLC',
     'KI-native PDLC',
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title:
-      'Gordon Mickel — Agentische PDLC, KI-Systeme & Unabhängige Begutachtung',
+      'Gordon Mickel -- Agentische PDLC, KI-Systeme & Unabhängige Begutachtung',
     description:
       'Operating Principal (KI & Technologie) bei Growth Factors. Unabhängige Praxis für ausgewählte Mandate: agentische PDLC, produktive KI-Systeme, Parteigutachten und Werkvertrags-Gutachten.',
     locale: 'de_CH',

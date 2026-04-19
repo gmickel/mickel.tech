@@ -281,7 +281,7 @@ function AtelierFooter({ isDE }: { isDE: boolean }) {
             </a>
             <p className="atelier-body mt-6 max-w-md text-[hsl(var(--paper))]/65">
               {isDE
-                ? 'Unabhängige Praxis von Gordon Mickel. Operating Principal, KI & Technologie, bei Growth Factors. Ausgewählte Mandate jedes Jahr.'
+                ? 'Unabhängige Praxis von Gordon Mickel. Operating Principal, KI & Technologie, bei Growth Factors. Eine kleine Zahl ausgewählter Mandate pro Jahr.'
                 : 'Independent practice of Gordon Mickel. Operating Principal, AI & Technology, at Growth Factors. A small number of select mandates each year.'}
             </p>
             <p className="atelier-eyebrow mt-3 text-[hsl(var(--paper))]/40">

@@ -74,7 +74,7 @@ export const CASE_STUDIES: readonly CaseStudy[] = [
     clientEN:
       'European PE-backed software portco · ~25 engineers · regulated sector',
     clientDE:
-      'Europäisches PE-Portfoliounternehmen Software · ~25 Entwickler · regulierter Sektor',
+      'Europäisches PE-Portfoliounternehmen, Software · ~25 Entwickler · regulierter Sektor',
     problemEN:
       'Legacy core platform written in MUMPS / Caché. Traditional rewrite estimated at €3-5M and 18 months. Skilled MUMPS engineers extinct. Hiring pipeline broken.',
     problemDE:
@@ -82,11 +82,11 @@ export const CASE_STUDIES: readonly CaseStudy[] = [
     approachEN:
       'Spec-first agentic migration with parallel agents under a Phase 0 foundation (BAUP framework, global registry, naming conventions). Two pilots before stop/go gate.',
     approachDE:
-      'Spec-getriebene agentische Migration mit parallelen Agenten unter Phase-0-Fundament (BAUP-Framework, globales Register, Namenskonventionen). Zwei Piloten vor dem Stop/Go-Gate.',
+      'Spec-getriebene agentische Migration mit parallelen Agenten auf einem Phase-0-Fundament (BAUP-Framework, globales Register, Namenskonventionen). Zwei Piloten vor dem Stop/Go-Gate.',
     outcomeEN:
       'Migration feasibility validated in 12 days. Recruitment pivot from external dev hire to internal coaching. Two product teams onboarded to agentic PDLC.',
     outcomeDE:
-      'Migrationstauglichkeit in 12 Tagen validiert. Recruiting-Pivot von externer Entwickler-Einstellung zu interner Coaching-Strategie. Zwei Produktteams in agentische PDLC überführt.',
+      'Machbarkeit der Migration in 12 Tagen validiert. Recruiting-Pivot weg von externer Entwicklereinstellung hin zu interner Coaching-Strategie. Zwei Produktteams in agentische PDLC überführt.',
     metricValueEN: '€2.9-4.9M',
     metricValueDE: '€2.9-4.9M',
     metricLabelEN: 'Cost avoidance vs traditional rewrite',
@@ -103,19 +103,19 @@ export const CASE_STUDIES: readonly CaseStudy[] = [
     problemEN:
       'Group strategy required AI-first delivery across heterogeneous portfolio companies with different stacks, languages, and team maturity. No standard methodology, no shared KPIs, no reusable engagement template.',
     problemDE:
-      'Gruppenstrategie verlangte KI-zuerst-Auslieferung über heterogene Portfoliounternehmen mit unterschiedlichen Stacks, Sprachen und Team-Reife. Keine Standardmethodik, keine geteilten KPIs, keine wiederverwendbare Engagement-Vorlage.',
+      'Die Gruppenstrategie verlangte KI-zuerst-Auslieferung über heterogene Portfoliounternehmen mit unterschiedlichen Stacks, Sprachen und Team-Reife. Keine Standardmethodik, keine geteilten KPIs, keine wiederverwendbare Mandatsvorlage.',
     approachEN:
       'Built a standardised agentic PDLC engagement template, KPI framework, and assessment process reusable across the group. Onboarded multiple entities in a single onsite week.',
     approachDE:
-      'Standardisierte agentische PDLC-Engagement-Vorlage, KPI-Framework und Assessment-Prozess, wiederverwendbar über die Gruppe hinweg. Mehrere Einheiten in einer Onsite-Woche aufgesetzt.',
+      'Standardisierte Mandatsvorlage für agentische PDLC, KPI-Framework und Assessment-Prozess gebaut, gruppenweit wiederverwendbar. Mehrere Einheiten in einer einzigen Onsite-Woche aufgesetzt.',
     outcomeEN:
       'Adopted as group standard. Each subsequent entity onboards in days, not weeks. Continuing rollout across the portfolio.',
     outcomeDE:
-      'Als Gruppenstandard übernommen. Jede weitere Einheit in Tagen statt Wochen aufgesetzt. Laufende Ausrollung über das Portfolio.',
+      'Als Gruppenstandard übernommen. Jede weitere Einheit in Tagen statt Wochen aufgesetzt. Rollout über das Portfolio läuft weiter.',
     metricValueEN: 'Group standard',
     metricValueDE: 'Gruppenstandard',
     metricLabelEN: 'Reusable PDLC engagement template',
-    metricLabelDE: 'Wiederverwendbare PDLC-Engagement-Vorlage',
+    metricLabelDE: 'Wiederverwendbare PDLC-Mandatsvorlage',
   },
   {
     id: 'expert-software-acceptance-dispute',
@@ -127,7 +127,7 @@ export const CASE_STUDIES: readonly CaseStudy[] = [
     problemEN:
       'Significant commercial dispute centred on what was actually delivered against contract, the technical definition of acceptance, and the fee structure. Counsel needed an independent technical opinion that would hold up against careful adversarial scrutiny.',
     problemDE:
-      'Bedeutender Wirtschaftsstreit zur Frage, was vertraglich tatsächlich geliefert wurde, zur technischen Definition der Abnahme und zur Honorarstruktur. Die Anwaltschaft brauchte eine unabhängige technische Stellungnahme, die einer sorgfältigen gegnerischen Prüfung standhält.',
+      'Bedeutender Wirtschaftsstreit über die Frage, was vertraglich tatsächlich geliefert wurde, über die technische Definition der Abnahme und über die Honorarstruktur. Die Anwaltschaft brauchte eine unabhängige technische Stellungnahme, die einer sorgfältigen Gegenprüfung standhält.',
     approachEN:
       'Parteigutachter instructed by counsel. Forensic analysis of source repositories, live infrastructure and contract artefacts. Question catalogue refined iteratively with counsel until the technical narrative was airtight.',
     approachDE:
@@ -135,7 +135,7 @@ export const CASE_STUDIES: readonly CaseStudy[] = [
     outcomeEN:
       "Filed expert opinion supporting counsel's case. Sole technical authority retained by the instructing firm; available for hearings as needed.",
     outcomeDE:
-      'Eingereichtes Parteigutachten zur Stützung des Mandats der Kanzlei. Alleinige technische Instanz der mandatierenden Kanzlei; bereit für Verhandlungen bei Bedarf.',
+      'Eingereichtes Parteigutachten zur Stützung des Mandats der Kanzlei. Alleinige technische Instanz der mandatierenden Kanzlei; bei Bedarf bereit für Verhandlungen.',
     metricValueEN: '7-figure',
     metricValueDE: 'Siebenstellig',
     metricLabelEN: 'Claim value · party-engaged opinion',
@@ -156,7 +156,7 @@ export const CASE_STUDIES: readonly CaseStudy[] = [
     approachEN:
       'Pre-engagement Prüfschema developed transparently from contract annexes. 12-domain assessment framework (completeness, business reqs, governance & ALM, security, data architecture, integrations, flows, UX, tests, ops, docs, handover). Pauschal fee, split between parties.',
     approachDE:
-      'Vorab-Prüfschema, transparent aus den Vertragsanhängen entwickelt. 12-Domänen-Bewertungsrahmen (Vollständigkeit, Business-Anforderungen, Governance & ALM, Security, Datenarchitektur, Integrationen, Flows, UX, Tests, Betrieb, Doku, Übergabe). Pauschalhonorar, hälftig zwischen den Parteien.',
+      'Vorab-Prüfschema, transparent aus den Vertragsanhängen entwickelt. Bewertungsrahmen über 12 Domänen (Vollständigkeit, Business-Anforderungen, Governance & ALM, Security, Datenarchitektur, Integrationen, Flows, UX, Tests, Betrieb, Doku, Übergabe). Pauschalhonorar, hälftig zwischen den Parteien.',
     outcomeEN:
       'Engagement signed; both parties accepted the methodology and scoring framework. Acceptance assessment scheduled at delivery point with optional Nachprüfung after Nachbesserungen.',
     outcomeDE:
@@ -175,15 +175,15 @@ export const CASE_STUDIES: readonly CaseStudy[] = [
     problemEN:
       'Investment committee required an AI / tech due diligence on a fast-growing platform business with significant claimed AI capability. Standard DD vendors lacked the depth to verify the claims; deal team needed an opinion in under a week.',
     problemDE:
-      'Investment-Komitee verlangte KI- / Tech-DD bei einem schnell wachsenden Plattform-Unternehmen mit erheblich behaupteter KI-Fähigkeit. Standard-DD-Anbieter hatten nicht die Tiefe, die Behauptungen zu verifizieren; Deal-Team brauchte eine Stellungnahme in unter einer Woche.',
+      'Das Investmentkomitee verlangte eine KI- und Tech-DD bei einem schnell wachsenden Plattform-Unternehmen mit umfangreich behaupteter KI-Fähigkeit. Standard-DD-Anbieter hatten nicht die Tiefe, die Behauptungen zu verifizieren; das Deal-Team brauchte eine Stellungnahme in unter einer Woche.',
     approachEN:
       'Maturity scoring across 5 pillars. 37-claim verification matrix against vendor representations. IC slide deck plus a working annex with evidence cross-references.',
     approachDE:
-      'Reifegradbewertung über 5 Säulen. 37-Punkte-Verifikationsmatrix gegen Anbieter-Aussagen. IC-Folien plus Arbeits-Annex mit Beweis-Cross-References.',
+      'Reifegradbewertung über 5 Säulen. Verifikationsmatrix mit 37 Aussagen, geprüft gegen die Darstellung des Anbieters. IC-Folien plus Arbeits-Annex mit Querverweisen auf die Belege.',
     outcomeEN:
       'IC-ready value creation thesis identifying EUR 3-6M EBITDA uplift, paired with a risk register. Delivered in <1 week. Used directly in deal committee.',
     outcomeDE:
-      'IC-fähige Value-Creation-These mit identifiziertem EUR 3-6M EBITDA-Uplift, gepaart mit Risikoregister. Lieferung in <1 Woche. Direkt im Deal-Komitee verwendet.',
+      'IC-fähige Value-Creation-These mit identifiziertem EUR 3-6M EBITDA-Uplift, gepaart mit Risikoregister. Lieferung in unter einer Woche. Direkt im Deal-Komitee verwendet.',
     metricValueEN: '€3-6M',
     metricValueDE: '€3-6M',
     metricLabelEN: 'EBITDA uplift identified',
@@ -202,15 +202,15 @@ export const CASE_STUDIES: readonly CaseStudy[] = [
     problemEN:
       'Transform a market-leading Swiss clinical information system into a production AI platform under FADP / GDPR, with on-prem privacy and hospital-grade reliability. Scale AI fluency across an established 50+ engineering organisation without disrupting existing clinical delivery.',
     problemDE:
-      'Ein marktführendes Schweizer klinisches Informationssystem in eine produktive KI-Plattform unter FADP / GDPR überführen, mit On-Prem-Privacy und spitalgrad-Zuverlässigkeit. KI-Kompetenz über eine etablierte 50+ Engineering-Organisation skalieren, ohne die laufende klinische Auslieferung zu stören.',
+      'Ein marktführendes Schweizer klinisches Informationssystem in eine produktive KI-Plattform unter DSG / DSGVO überführen, mit On-Prem-Privacy und spitalgrader Zuverlässigkeit. KI-Kompetenz über eine etablierte Engineering-Organisation mit 50+ Personen skalieren, ohne die laufende klinische Auslieferung zu stören.',
     approachEN:
       'Head of AI & Engineering Lead at CISTEC AG. Secured C-suite mandate, authored the strategy, secured budget. Shipped KISIM AI in <90 days (generative discharge drafts, semantic retrieval, structured medical extraction, summarisation). Built the reusable platform: LLM gateway, pgvector hybrid search, two-stage context pipeline, on-prem PII masking (custom GLiNER/BERT, 97%+ accuracy). Scaled AI adoption to 50+ engineers via guardrailed Copilot/Cursor rollout with playbooks and prompt patterns.',
     approachDE:
-      'Head of AI & Engineering Lead bei CISTEC AG. C-Level-Mandat gesichert, Strategie verfasst, Budget gesichert. KISIM AI in <90 Tagen ausgeliefert (generative Austrittsberichte, semantisches Retrieval, strukturierte medizinische Extraktion, Summarisation). Wiederverwendbare Plattform aufgebaut: LLM-Gateway, pgvector-Hybridsuche, zweistufige Kontext-Pipeline, On-Prem-PII-Masking (eigenes GLiNER/BERT, 97%+ Genauigkeit). KI-Adoption auf 50+ Entwickler skaliert via guardrailed Copilot/Cursor-Rollout mit Playbooks und Prompt-Patterns.',
+      'Head of AI & Engineering Lead bei CISTEC AG. C-Level-Mandat gesichert, Strategie verfasst, Budget gesichert. KISIM AI in <90 Tagen ausgeliefert (generative Austrittsberichte, semantisches Retrieval, strukturierte medizinische Extraktion, Summarisierung). Wiederverwendbare Plattform aufgebaut: LLM-Gateway, pgvector-Hybridsuche, zweistufige Kontext-Pipeline, On-Prem-PII-Masking (eigenes GLiNER/BERT, 97%+ Genauigkeit). KI-Adoption auf 50+ Entwickler skaliert über einen Guardrail-gesicherten Copilot-/Cursor-Rollout mit Playbooks und Prompt-Patterns.',
     outcomeEN:
       "Switzerland's first production clinical LLM platform. Live in Swiss hospitals with expanding pilot pipeline. New ARR streams. Repositioned the company as an AI-enabled market leader. Presented at the openEHR.ch Symposium.",
     outcomeDE:
-      'Erste produktive klinische LLM-Plattform der Schweiz. Live in Schweizer Spitälern mit wachsender Pilot-Pipeline. Neue ARR-Ströme. Das Unternehmen als KI-gestützter Marktführer neu positioniert. Vortrag am openEHR.ch-Symposium.',
+      'Erste produktive klinische LLM-Plattform der Schweiz. Live in Schweizer Spitälern, mit wachsender Pilot-Pipeline. Neue ARR-Ströme. Das Unternehmen als KI-gestützter Marktführer neu positioniert. Vortrag am openEHR.ch-Symposium.',
     metricValueEN: '<90 days',
     metricValueDE: '<90 Tage',
     metricLabelEN: 'First production clinical LLM in CH',
@@ -227,15 +227,15 @@ export const CASE_STUDIES: readonly CaseStudy[] = [
     problemEN:
       'Build one of the first Swiss platforms applying AI and NLP to legal documents — and keep extending it as the market shifts from NLP to LLMs to court-grade anonymisation, while meeting CH/DACH expectations on data residency, multi-language, and Swiss legal-market procurement.',
     problemDE:
-      'Eine der ersten Schweizer Plattformen aufbauen, die KI und NLP auf Rechtsdokumente anwendet — und sie weiterentwickeln, während sich der Markt von NLP zu LLMs zur gerichtsfähigen Anonymisierung verschiebt, bei gleichzeitiger Erfüllung der CH/DACH-Anforderungen an Datenhoheit, Mehrsprachigkeit und Schweizer Beschaffung.',
+      'Eine der ersten Schweizer Plattformen aufbauen, die KI und NLP auf Rechtsdokumente anwendet -- und sie weiterentwickeln, während sich der Markt von NLP zu LLMs zur gerichtsfähigen Anonymisierung verschiebt. Bei gleichzeitiger Erfüllung der CH/DACH-Anforderungen an Datenhoheit, Mehrsprachigkeit und Schweizer Beschaffung.',
     approachEN:
       'Founded the company in Zug in 2017 (Contract Vault GmbH). Designed and shipped DocIQ 1.0 (2018) as enterprise document lifecycle management with contract analysis, metadata extraction and intelligent search. Scaled to production deployments at the Swiss Insurance Association (SVV), Laux Lawyers and Kaiser Odermatt & Partner. Rebuilt the platform from the ground up for the LLM era — Sphere (next-generation AI document intelligence) and Shield (court anonymisation for the Swiss judiciary, fine-tuned local NER + LLM, zero data persistence).',
     approachDE:
-      'Unternehmen 2017 in Zug gegründet (Contract Vault GmbH). DocIQ 1.0 (2018) entworfen und ausgeliefert als Enterprise-Document-Lifecycle-Management mit Vertragsanalyse, Metadaten-Extraktion und intelligenter Suche. Auf produktive Einsätze beim Schweizerischen Versicherungsverband (SVV), Laux Lawyers und Kaiser Odermatt & Partner skaliert. Plattform für die LLM-Ära von Grund auf neu gebaut — Sphere (KI-Dokumentenintelligenz der nächsten Generation) und Shield (Anonymisierung von Gerichtsdokumenten für die Schweizer Justiz, fine-tuned lokales NER + LLM, keine Datenpersistenz).',
+      'Unternehmen 2017 in Zug gegründet (Contract Vault GmbH). DocIQ 1.0 (2018) als Enterprise-Document-Lifecycle-Management mit Vertragsanalyse, Metadaten-Extraktion und intelligenter Suche entworfen und ausgeliefert. Auf produktive Einsätze beim Schweizerischen Versicherungsverband (SVV), bei Laux Lawyers und bei Kaiser Odermatt & Partner skaliert. Plattform für die LLM-Ära von Grund auf neu gebaut -- Sphere (KI-Dokumentenintelligenz der nächsten Generation) und Shield (Anonymisierung von Gerichtsdokumenten für die Schweizer Justiz, fine-tuned lokales NER + LLM, keine Datenpersistenz).',
     outcomeEN:
       'Production at the Swiss Insurance Association, Laux Lawyers, and Kaiser Odermatt & Partner since 2021. Shield v1 (court anonymisation for the Swiss judiciary, fine-tuned local NER + LLM, zero data persistence) shipped 2025. Sphere + Shield v2 launched 2026 — Word-native tracked changes, six integrated legal databases, AI Playbooks, court anonymisation rebuilt from the ground up. Continuously evolved as Swiss legal AI matured around it.',
     outcomeDE:
-      'Produktiv beim Schweizerischen Versicherungsverband, bei Laux Lawyers und bei Kaiser Odermatt & Partner seit 2021. Shield v1 (Anonymisierung von Gerichtsdokumenten für die Schweizer Justiz, fine-tuned lokales NER + LLM, keine Datenpersistenz) 2025 lanciert. Sphere + Shield v2 2026 lanciert — Word-native Änderungsverfolgung, sechs integrierte Rechtsdatenbanken, KI-Playbooks, Gerichtsanonymisierung neu aufgebaut. Kontinuierlich weiterentwickelt, während die Schweizer Legal-AI-Landschaft um sie herum reifte.',
+      'Produktiv beim Schweizerischen Versicherungsverband, bei Laux Lawyers und bei Kaiser Odermatt & Partner seit 2021. Shield v1 (Anonymisierung von Gerichtsdokumenten für die Schweizer Justiz, fine-tuned lokales NER + LLM, keine Datenpersistenz) 2025 lanciert. Sphere + Shield v2 2026 lanciert -- Word-native Änderungsverfolgung, sechs integrierte Rechtsdatenbanken, KI-Playbooks, Gerichtsanonymisierung von Grund auf neu gebaut. Kontinuierlich weiterentwickelt, während die Schweizer Legal-AI-Landschaft um sie herum reifte.',
     metricValueEN: 'Since 2017',
     metricValueDE: 'Seit 2017',
     metricLabelEN: 'Founder · Swiss legal AI',
@@ -248,19 +248,19 @@ export const CASE_STUDIES: readonly CaseStudy[] = [
     clientEN:
       'European software services portco · AI voice agent product launch',
     clientDE:
-      'Europäisches Software-Services-Portco · KI-Voice-Agent-Produkt-Launch',
+      'Europäisches Software-Services-Portco · Launch eines KI-Voice-Agent-Produkts',
     problemEN:
       "Portco wanted a new AI-first revenue line built on the firm's existing services capability. Required a hybrid voice product that could replace first-line support across multiple customer accounts.",
     problemDE:
-      'Portco wollte eine neue KI-zuerst-Umsatzlinie aufbauend auf der bestehenden Service-Capability. Brauchte ein hybrides Voice-Produkt, das First-Line-Support über mehrere Kundenkonten ersetzen kann.',
+      'Das Portco wollte eine neue KI-zuerst-Umsatzlinie aufbauen, basierend auf der bestehenden Service-Capability. Gebraucht wurde ein hybrides Voice-Produkt, das First-Line-Support über mehrere Kundenkonten ersetzen kann.',
     approachEN:
       'Architected the voice agent stack, coached the internal team through the build, cross-sold the resulting product to a sister portco as the first test customer.',
     approachDE:
-      'Voice-Agent-Stack architektiert, internes Team durch den Build gecoacht, das resultierende Produkt an eine Schwester-Portco als ersten Test-Kunden cross-verkauft.',
+      'Voice-Agent-Stack architektiert, das interne Team durch den Build gecoacht, das resultierende Produkt an ein Schwester-Portco als ersten Testkunden cross-verkauft.',
     outcomeEN:
       'Hybrid voice product live in production. Established as a standalone product line, not a feature buried in services revenue.',
     outcomeDE:
-      'Hybrides Voice-Produkt produktiv im Einsatz. Als eigenständige Produktlinie etabliert, nicht als Feature im Services-Umsatz vergraben.',
+      'Hybrides Voice-Produkt produktiv im Einsatz. Als eigenständige Produktlinie etabliert, nicht als Feature, das im Services-Umsatz untergeht.',
     metricValueEN: 'Live',
     metricValueDE: 'Live',
     metricLabelEN: 'New revenue line · production',
@@ -273,19 +273,19 @@ export const CASE_STUDIES: readonly CaseStudy[] = [
     clientEN:
       'European travel platform · PE deal screening · AI upside analysis',
     clientDE:
-      'Europäische Reise-Plattform · PE-Deal-Screening · KI-Upside-Analyse',
+      'Europäische Reiseplattform · PE-Deal-Screening · KI-Upside-Analyse',
     problemEN:
       'Deal team needed a systematic AI exposure and disruption analysis on a target before IC. Standard tech DD does not surface AI-specific upside, downside, or competitive vulnerability.',
     problemDE:
-      'Deal-Team brauchte eine systematische KI-Exposition- und Disruption-Analyse zum Target vor dem IC. Standard-Tech-DD erfasst KI-spezifischen Upside, Downside oder Wettbewerbsverwundbarkeit nicht.',
+      'Das Deal-Team brauchte vor dem IC eine systematische Analyse der KI-Exposition und der Disruptionsrisiken am Target. Eine Standard-Tech-DD erfasst KI-spezifischen Upside, Downside oder Wettbewerbsverwundbarkeit nicht.',
     approachEN:
       'Built a reusable AI deal-screening framework: AI exposure surface, automation upside per workflow, model-as-competitor risk, defensibility scoring. Applied it to the target.',
     approachDE:
-      'Wiederverwendbares KI-Deal-Screening-Framework aufgebaut: KI-Expositions-Oberfläche, Automatisierungs-Upside pro Workflow, Modell-als-Wettbewerber-Risiko, Verteidigbarkeit-Scoring. Auf das Target angewendet.',
+      'Wiederverwendbares KI-Deal-Screening-Framework aufgebaut: Oberfläche der KI-Exposition, Automatisierungs-Upside pro Workflow, Risiko Modell-als-Wettbewerber, Verteidigbarkeits-Scoring. Auf das Target angewendet.',
     outcomeEN:
       'Quantified AI upside and disruption risk surfaced for IC. Framework now applied to subsequent deals as a new GF / deal-team capability.',
     outcomeDE:
-      'Quantifizierter KI-Upside und Disruption-Risiko für IC sichtbar gemacht. Framework jetzt bei weiteren Deals angewendet als neue GF-/Deal-Team-Fähigkeit.',
+      'Quantifizierter KI-Upside und Disruptionsrisiko für das IC sichtbar gemacht. Das Framework wird jetzt bei weiteren Deals angewendet, als neue Fähigkeit von GF und Deal-Team.',
     metricValueEN: 'New capability',
     metricValueDE: 'Neue Fähigkeit',
     metricLabelEN: 'AI deal-screening framework',

@@ -4,7 +4,7 @@ import AtelierPolicyPage from '@/components/sections/atelier/policy-page';
 import { breadcrumbSchema, JsonLd } from '@/lib/json-ld';
 
 export const metadata: Metadata = {
-  title: 'Datenschutz — Mickel Tech',
+  title: 'Datenschutz -- Mickel Tech',
   description:
     'Datenschutzerklärung für mickel.tech. Datenerhebung, Verarbeitung, Aufbewahrung und Ihre Rechte unter DSG und DSGVO.',
   alternates: {
@@ -77,7 +77,7 @@ export default function DePrivacyPage() {
           ausschliesslich zur Beurteilung von Fit und Konflikt sowie zur
           Beantwortung Ihrer Anfrage verwendet. Übermittlungen werden so lange
           aufbewahrt, wie sie für die Beurteilung erforderlich sind, und danach
-          gelöscht — ausser wo berufliche Aufbewahrungspflichten greifen.
+          gelöscht -- ausser dort, wo berufliche Aufbewahrungspflichten greifen.
         </p>
 
         <h3>3. Kalenderbuchung (Cal.com)</h3>
@@ -134,8 +134,8 @@ export default function DePrivacyPage() {
           Die Daten werden von Mickel Tech und den technischen Dienstleistern
           verarbeitet, die für den Betrieb der Website und die Beantwortung von
           Anfragen erforderlich sind: Vercel (Hosting), Resend (transaktionale
-          E-Mail), Cal.com (Kalenderbuchung). Die Daten werden nicht verkauft
-          oder zu Marketing-Zwecken weitergegeben.
+          E-Mail), Cal.com (Kalenderbuchung). Die Daten werden weder verkauft
+          noch zu Marketingzwecken weitergegeben.
         </p>
 
         <h2>Internationale Übermittlungen</h2>

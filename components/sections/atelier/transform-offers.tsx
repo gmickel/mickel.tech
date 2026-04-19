@@ -75,34 +75,34 @@ const offersDE: readonly Offer[] = [
     num: '01',
     name: 'Prozesslandkarte + KI-Opportunity-Audit',
     scope:
-      '2–3 Wochen. Workflows end-to-end kartieren, Automatisierungskandidaten nach Impact und Machbarkeit scoren, 3–5 priorisierte Initiativen mit ROI-Schätzungen und 90-Tage-Plan vorschlagen.',
+      '2–3 Wochen. Workflows end-to-end kartieren, Automatisierungskandidaten nach Impact und Machbarkeit bewerten, 3–5 priorisierte Initiativen mit ROI-Schätzungen und 90-Tage-Plan vorschlagen.',
     price: 'CHF 15–25k fix',
     duration: '2–3 Wochen',
     outcome:
-      'Eine vertretbare Landkarte, wo KI sich auszahlt. Nicht theoretisch. An konkrete Workflows mit benannten Owner und benannten Zahlen geknüpft.',
+      'Eine vertretbare Landkarte, wo KI sich auszahlt. Nicht theoretisch. An konkrete Workflows mit benannten Owners und konkreten Zahlen geknüpft.',
     deliverables: [
-      'Prozesslandkarte (echter Pfad, nicht Organigramm)',
-      'Top 3–5 Opportunitäten mit Aufwand- + Impact-Scoring',
+      'Prozesslandkarte (realer Pfad, nicht Organigramm)',
+      'Top 3–5 Opportunitäten mit Aufwand- und Impact-Scoring',
       '90-Tage-Implementierungsplan',
       'Executive-Readout',
     ],
     bestFor:
-      'CEOs, COOs, GMs, Deal-Teams, die vor dem Build scope-en, wo investiert werden soll.',
+      'CEOs, COOs, GMs und Deal-Teams, die vor dem Build den Investitionsumfang abstecken.',
   },
   {
     num: '02',
     name: 'KI-System-Build',
     scope:
-      'Produktive Auslieferung einer der Systemklassen (RAG, Agenten, Voice, Wissensplattform, private LLM). Von Anforderungen bis Go-Live mit Übergabe an Betrieb und Governance.',
+      'Produktive Auslieferung einer der Systemklassen (RAG, Agenten, Voice, Wissensplattform, private LLM). Von den Anforderungen bis zum Go-Live, mit Übergabe an Betrieb und Governance.',
     price: 'CHF 40–150k',
     duration: '6–16 Wochen',
     outcome:
-      'Ein System in Produktion, von echten Nutzern verwendet. Telemetrie, Evals, Governance ab Tag eins. Internes Team besitzt den Betrieb bei Übergabe.',
+      'Ein System in Produktion, von echten Nutzern verwendet. Telemetrie, Evals, Governance ab Tag eins. Internes Team trägt den Betrieb bei Übergabe.',
     deliverables: [
       'Architektur-Entscheidungs-Record',
       'Produktivsystem + Observability + Evals',
       'Interne Dokumentation + Runbooks',
-      'Betriebs-Übergabe mit KPIs',
+      'Betriebsübergabe mit KPIs',
     ],
     bestFor:
       'Unternehmen jenseits der Audit-Phase, bereit zum Ausliefern. Läuft oft parallel zu einem separaten Anbieter-Build.',
@@ -111,19 +111,19 @@ const offersDE: readonly Offer[] = [
     num: '03',
     name: 'Fractional KI-Lead',
     scope:
-      '1–2 Tage/Woche. Programm-Governance, Anbieter-Auswahl, praktische Architektur-Reviews, internes Capability-Building. Für Organisationen, die noch keinen Vollzeit-KI-Lead anstellen wollen, die Strategie aber nicht auslagern.',
-    price: 'Monatliches Retainer',
-    duration: 'Quartalsweise minimum',
+      '1–2 Tage/Woche. Programm-Governance, Anbieterauswahl, praktische Architektur-Reviews, interner Capability-Aufbau. Für Organisationen, die noch keinen Vollzeit-KI-Lead anstellen wollen, die Strategie aber nicht auslagern.',
+    price: 'Monatlicher Retainer',
+    duration: 'Mindestens ein Quartal',
     outcome:
-      'Unabhängige technische Führung ohne Vollzeit-Stelle. Schnellere Anbieter-Entscheidungen, weniger Fehlstarts, internes Capability bewusst aufgebaut.',
+      'Unabhängige technische Führung ohne Vollzeitstelle. Schnellere Anbieterentscheidungen, weniger Fehlstarts, interne Capability bewusst aufgebaut.',
     deliverables: [
       'Wöchentliches Programm-Steering',
-      'Anbieter- + Architektur-Entscheidungen',
+      'Anbieter- und Architekturentscheidungen',
       'Internes Team-Coaching + Recruiting-Unterstützung',
-      'Verwaltungsrats-Reporting-Kadenz',
+      'Reporting-Kadenz für den Verwaltungsrat',
     ],
     bestFor:
-      'Mid-Market-Unternehmen, PE-Portcos, Family Offices beim Portfolio-Capability-Aufbau.',
+      'Mid-Market-Unternehmen, PE-Portcos, Family Offices beim Aufbau von Portfolio-Capability.',
   },
 ];
 
@@ -137,7 +137,7 @@ export default function AtelierTransformOffers({
           eyebrow: '04 / Drei Pakete',
           heading: 'Drei produktisierte Pakete.',
           intro:
-            'Festpreis bei Audit und System-Build. Retainer bei Fractional Lead. Buchung über Cal.com oder direkte E-Mail.',
+            'Festpreis bei Audit und System-Build. Retainer beim Fractional Lead. Buchung über Cal.com oder direkt per E-Mail.',
           best: 'Geeignet für',
           deliv: 'Deliverables',
           duration: 'Laufzeit',

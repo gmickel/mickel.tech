@@ -4,9 +4,9 @@ import AtelierPolicyPage from '@/components/sections/atelier/policy-page';
 import { breadcrumbSchema, JsonLd } from '@/lib/json-ld';
 
 export const metadata: Metadata = {
-  title: 'Impressum — Mickel Tech',
+  title: 'Impressum -- Mickel Tech',
   description:
-    'Impressum und Kontaktangaben für Mickel Tech, Einzelfirma von Gordon Mickel mit Sitz in Binningen, Schweiz.',
+    'Impressum und Kontaktangaben von Mickel Tech, Einzelfirma von Gordon Mickel mit Sitz in Binningen, Schweiz.',
   alternates: {
     canonical: 'https://mickel.tech/de/imprint',
     languages: {
@@ -44,7 +44,7 @@ export default function DeImprintPage() {
         <p>
           Eine Strassenadresse wird nicht veröffentlicht. Für postalische
           Korrespondenz wenden Sie sich bitte per E-Mail an Gordon; eine Adresse
-          wird direkt auf Anfrage mitgeteilt.
+          wird auf Anfrage direkt mitgeteilt.
         </p>
 
         <h2>Kontakt</h2>
@@ -60,19 +60,18 @@ export default function DeImprintPage() {
         <h2>Haftungsausschluss</h2>
         <p>
           Die Inhalte dieser Website werden zu allgemeinen Informationszwecken
-          bereitgestellt. Trotz sorgfältiger Aufbereitung wird für die
-          Richtigkeit oder Vollständigkeit keine Gewähr übernommen. Die Website
-          kann auf Webseiten Dritter verlinken; für deren Inhalte und
-          Verfügbarkeit übernimmt Mickel Tech keine Verantwortung.
+          bereitgestellt. Trotz sorgfältiger Aufbereitung wird für Richtigkeit
+          und Vollständigkeit keine Gewähr übernommen. Die Website kann auf
+          Webseiten Dritter verlinken; für deren Inhalte und Verfügbarkeit
+          übernimmt Mickel Tech keine Verantwortung.
         </p>
 
         <h2>Urheberrecht</h2>
         <p>
           Soweit nicht ausdrücklich anders vermerkt, sind sämtliche Inhalte
-          dieser Website geistiges Eigentum von Gordon Mickel. Eine
-          Vervielfältigung von Text- oder Bildmaterial in jeglicher Form,
-          elektronisch oder anderweitig, bedarf der vorherigen schriftlichen
-          Zustimmung.
+          dieser Website geistiges Eigentum von Gordon Mickel. Vervielfältigung
+          von Text- oder Bildmaterial in jeglicher Form, elektronisch oder
+          anderweitig, bedarf der vorherigen schriftlichen Zustimmung.
         </p>
 
         <h2>Gerichtsstand</h2>

@@ -25,11 +25,11 @@ const copyEN = {
 const copyDE = {
   eyebrow: '01 / Unabhängige Begutachtung',
   headlineParts: [
-    'Zwanzig Jahre Code, der ausgeliefert wird.',
-    'Jetzt sorgfältig gelesen, und protokolliert.',
+    'Zwanzig Jahre Code, der ausgeliefert wurde.',
+    'Jetzt sorgfältig gelesen, und zu Protokoll gegeben.',
   ] as const,
   intro:
-    'Unabhängiger technischer Experte (ITDR-gelistet) für Software- und KI-Sachverhalte. Im Auftrag von Anwaltskanzleien, Gerichten, Schiedsrichtern und Verwaltungsräten in der Schweiz und Deutschland. Ich verfolge Ansprüche durch Code, Infrastruktur und Verträge, nicht nur durch das Management-Summary.',
+    'Unabhängiger technischer Experte (ITDR-gelistet) für Software- und KI-Sachverhalte. Im Auftrag von Anwaltskanzleien, Gerichten, Schiedsrichtern und Verwaltungsräten in der Schweiz und in Deutschland. Ich verfolge Behauptungen durch Code, Infrastruktur und Verträge, nicht nur durch das Management-Summary.',
   primaryCta: 'Vertrauliche Anfrage öffnen',
   secondaryCta: 'Wie ein Gutachten entsteht',
   primaryHref: '#intake',

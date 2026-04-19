@@ -29,13 +29,13 @@ const copyEN = {
 
 const copyDE = {
   eyebrow: '05 / Selbst gebaute Tools',
-  heading: 'Ich empfehle keine Tools, die ich nicht ausgeliefert habe.',
-  body: 'Zwei Open-Source- bzw. private Produkte tragen die Methodik. Beide sind meine — gebaut, um eine echte Reibung zu lösen, dann poliert, damit andere Teams sie nutzen können.',
+  heading: 'Ich empfehle keine Tools, die ich nicht selbst ausgeliefert habe.',
+  body: 'Zwei Produkte (Open Source bzw. privat) tragen die Methodik. Beide stammen von mir -- gebaut, um eine echte Reibung zu lösen, und dann poliert, damit andere Teams sie nutzen können.',
   tools: [
     {
       name: 'FlowNext',
       tagline: 'Open-Source-Orchestrator für agentische SDLC.',
-      body: 'Spec-getriebener Workflow, Multi-Agent-Execution, eval-gegate Reviews, integriert mit IDEs und CI-Systemen, die Engineering-Teams bereits nutzen. Tausende Nutzer weltweit.',
+      body: 'Spec-getriebener Workflow, Multi-Agent-Execution, eval-gesicherte Reviews, integriert mit den IDEs und CI-Systemen, die Engineering-Teams ohnehin nutzen. Tausende Nutzer weltweit.',
       tags: ['Open Source', 'TypeScript / Bun', 'IDE- + CI-Integrationen'],
       cta: 'FlowNext auf GitHub',
       href: 'https://github.com/gmickel/flow-next',
@@ -44,7 +44,7 @@ const copyDE = {
       name: 'MergeFoundry',
       tagline:
         'Plattform der nächsten Generation für agentische PDLC. Private Beta.',
-      body: 'Aufgebaut als eigenständige Firma (MergeFoundry, Inc). Das Produkt, das ich einsetzen würde, wenn ich PDLC für ein Software-Portfolio im grossen Massstab führen würde. Standardisiert die L3/L4-Patterns in eine einzige Plattform.',
+      body: 'Aufgebaut als eigenständige Firma (MergeFoundry, Inc.). Das Produkt, das ich einsetzen würde, wenn ich PDLC für ein Software-Portfolio im grossen Massstab führen würde. Standardisiert die L3/L4-Patterns in einer einzigen Plattform.',
       tags: ['Private Beta', 'Plattform', 'Für Portfolios gebaut'],
       cta: 'mergefoundry.io',
       href: 'https://mergefoundry.io',

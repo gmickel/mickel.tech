@@ -4,9 +4,9 @@ import AtelierAbout from '@/components/sections/atelier/about-content';
 import { breadcrumbSchema, JsonLd, personSchema } from '@/lib/json-ld';
 
 export const metadata: Metadata = {
-  title: 'Über mich — Gordon Mickel',
+  title: 'Über mich -- Gordon Mickel',
   description:
-    'Zwanzig Jahre Software-Auslieferung in regulierten Branchen. Gründer von DocIQ (2017). Ehemaliger Head of AI & Engineering Lead bei CISTEC AG (KISIM). Operating Principal bei Growth Factors (Bregal-Portfolio). ITDR-gelisteter unabhängiger Experte. OpenAI Red Team Network Alumnus.',
+    'Zwanzig Jahre Software-Auslieferung in regulierten Branchen. Gründer von DocIQ (2017). Ehem. Head of AI & Engineering Lead bei CISTEC AG (KISIM). Operating Principal bei Growth Factors (Bregal-Portfolio). ITDR-gelisteter unabhängiger Experte. OpenAI Red Team Network Alumnus.',
   alternates: {
     canonical: 'https://mickel.tech/de/about',
     languages: {

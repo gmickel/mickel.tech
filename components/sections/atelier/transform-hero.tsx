@@ -23,10 +23,10 @@ const copyEN = {
 const copyDE = {
   eyebrow: '01 / KI-Systeme & Transformation',
   headline:
-    'KI-Systeme, die Ihr Geschäft tragen — nicht nur in der Demo glänzen.',
+    'KI-Systeme, die Ihr Geschäft tragen, nicht nur in der Demo glänzen.',
   underline: 'tragen',
   intro:
-    'Jedes Mandat beginnt mit einer Prozesslandkarte, nicht mit einem Tool. Wo liegen die Daten. Wo sind die Engpässe. Was bricht im Skalierungsfall. Dann baue ich die Kontextschicht und liefere produktive Systeme darauf — Enterprise-RAG, autonome Agenten, Voice, private LLM-Infrastruktur.',
+    'Jedes Mandat beginnt mit einer Prozesslandkarte, nicht mit einem Tool. Wo liegen die Daten. Wo sind die Engpässe. Was bricht unter Last. Danach baue ich die Kontextschicht und liefere produktive Systeme darauf -- Enterprise-RAG, autonome Agenten, Voice, private LLM-Infrastruktur.',
   primaryCta: 'Discovery-Gespräch buchen',
   secondaryCta: 'Drei produktisierte Pakete',
   primaryHref: 'https://cal.com/gmickel',

@@ -32,15 +32,15 @@ const systemsEN = [
 const systemsDE = [
   {
     title: 'Enterprise-RAG & Wissensplattformen',
-    body: 'Dokumenten-, Vertrags- und Policy-Retrieval mit Zitations-Grounding. Embeddings, Hybrid-Suche, Governance und Audit. Produktivsysteme, die Anwälte, Auditoren und Analysten tatsächlich täglich nutzen.',
+    body: 'Retrieval für Dokumente, Verträge und Policies, mit Zitations-Grounding. Embeddings, Hybridsuche, Governance und Audit. Produktivsysteme, die Anwälte, Auditoren und Analysten täglich tatsächlich nutzen.',
   },
   {
     title: 'Autonome Agenten & Operations-Copilots',
-    body: 'Mehrschritt-Agenten, die in Systems of Record greifen, Aktionen ausführen, alles loggen und bei Unsicherheit an Menschen übergeben. Operations-Copilots, Service-Desk-Automatisierung, Dokumentenprüfung.',
+    body: 'Mehrschritt-Agenten, die in Systems of Record greifen, Aktionen ausführen, alles loggen und bei Unsicherheit an Menschen zurückgeben. Operations-Copilots, Service-Desk-Automatisierung, Dokumentenprüfung.',
   },
   {
     title: 'Voice-Agenten & Kundeninteraktion',
-    body: 'Inbound und Outbound mit Übergabe an Menschen, Gesprächsbewertung, Compliance-Aufzeichnung. Gebaut für Portfolios, deren Call-Center-Kosten eine reale Position sind.',
+    body: 'Inbound und Outbound mit Übergabe an Menschen, Gesprächsbewertung, Compliance-Aufzeichnung. Gebaut für Portfolios, in denen Call-Center-Kosten eine reale Position sind.',
   },
   {
     title: 'Souveräne + private LLM-Infrastruktur',
@@ -48,11 +48,11 @@ const systemsDE = [
   },
   {
     title: 'KI in regulierten Workflows',
-    body: 'Gesundheitswesen, Recht, Finanzen, öffentliche Hand — wo Eval-Gates, deterministische Pipelines, Audit-Trails und Provenienz keine Nice-to-haves sind. In die Architektur eingebaut, nicht aufgesetzt.',
+    body: 'Gesundheitswesen, Recht, Finanzen, öffentliche Hand -- dort, wo Eval-Gates, deterministische Pipelines, Audit-Trails und Provenienz keine Nice-to-haves sind. In die Architektur eingebaut, nicht aufgesetzt.',
   },
   {
     title: 'KI-Features in bestehenden Produkten',
-    body: 'Wenn die KI in einem SaaS-Produkt lebt, das Ihre Nutzer bereits verwenden. Feature-Design, Eval-Suiten, Telemetrie, Modellauswahl, gradueller Rollout. Kein separater KI-Tab, den niemand öffnet.',
+    body: 'Wenn die KI in einem SaaS-Produkt lebt, das Ihre Nutzer bereits verwenden. Feature-Design, Eval-Suiten, Telemetrie, Modellauswahl, schrittweiser Rollout. Kein separater KI-Tab, den niemand öffnet.',
   },
 ] as const;
 
@@ -66,7 +66,7 @@ export default function AtelierTransformSystems({
           eyebrow: '03 / Was ich baue',
           heading: 'Sechs Klassen produktiver KI-Systeme.',
           intro:
-            'Was ich produktiv ausgeliefert habe. Andere Klassen sind möglich, aber dort, wo ich Fit und Risiko schnell beurteilen kann.',
+            'Was ich produktiv ausgeliefert habe. Andere Klassen sind möglich; hier kann ich Fit und Risiko aber schnell beurteilen.',
         }
       : {
           eyebrow: '03 / What I build',

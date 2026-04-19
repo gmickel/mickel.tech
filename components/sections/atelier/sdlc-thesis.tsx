@@ -31,12 +31,12 @@ const copyDE = {
   eyebrow: '02 / Warum PDLC, nicht SDLC',
   heading:
     'Der Engpass hat sich verschoben. Die meisten KI-Tool-Rollouts tun, als wäre nichts geschehen.',
-  body: 'Wenn Agenten produktiven Code in Minuten schreiben, ist die Beschränkung nicht mehr Tippgeschwindigkeit. Sie wandert die Wertkette nach oben — zu Produkt-Framing, Anforderungsengineering, Spezifikationsqualität und Review-Kapazität. SDLC-Tools, die nur die Coding-Schicht adressieren, optimieren den Teil der Pipeline, der nicht mehr der Engpass ist.',
+  body: 'Wenn Agenten produktiven Code in Minuten schreiben, ist die Beschränkung nicht mehr die Tippgeschwindigkeit. Sie wandert die Wertkette hoch -- zu Produkt-Framing, Anforderungsengineering, Spezifikationsqualität und Review-Kapazität. SDLC-Tools, die nur die Coding-Schicht adressieren, optimieren den Teil der Pipeline, der nicht mehr der Engpass ist.',
   pillarsLabel: 'Was sich ändert, wenn man den ganzen Produktzyklus angeht',
   pillars: [
     {
       tag: 'Produkt → Spec',
-      body: 'Anforderungsengineering wird zur höchst-hebelnden Aktivität. Specs sind die Prompts. Schlechte Specs erzeugen schlechte Agenten. Gute Specs verstärken jeden nachgelagerten Loop.',
+      body: 'Anforderungsengineering wird zur Aktivität mit der grössten Hebelwirkung. Specs sind die Prompts. Schlechte Specs erzeugen schlechte Agenten. Gute Specs verstärken jede nachgelagerte Schleife.',
     },
     {
       tag: 'Coding → Review',
@@ -44,11 +44,11 @@ const copyDE = {
     },
     {
       tag: 'Tickets → Kontext',
-      body: 'Die Arbeitseinheit ist ein verbundener Kontext — Produktdokumentation, Repo, Design-System, Observability — kein Jira-Ticket. Everything-as-code: Prompts, Evals, Guardrails, Agent-Skills, versioniert und nachvollziehbar.',
+      body: 'Die Arbeitseinheit ist ein verbundener Kontext -- Produktdokumentation, Repo, Designsystem, Observability -- kein Jira-Ticket. Everything-as-code: Prompts, Evals, Guardrails, Agent-Skills, versioniert und nachvollziehbar.',
     },
     {
       tag: 'Pilot → Schwungrad',
-      body: 'Keine isolierten Demos mehr, die das Slide-Deck nicht verlassen. Produktive Observability speist Produkt-Feedback-Loops, die Spec-Verfeinerung speisen. Das System wird besser, während es läuft.',
+      body: 'Keine isolierten Demos mehr, die das Slide-Deck nicht verlassen. Observability aus dem Produktivbetrieb speist Produkt-Feedback-Schleifen, die wiederum die Spec verfeinern. Das System wird besser, während es läuft.',
     },
   ],
 };

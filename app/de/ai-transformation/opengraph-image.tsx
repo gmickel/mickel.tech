@@ -8,7 +8,7 @@ export const runtime = 'edge';
 export const size = ATELIER_OG_SIZE;
 export const contentType = ATELIER_OG_CONTENT_TYPE;
 export const alt =
-  'KI-Systeme & Transformation — Prozess zuerst, produktiv ausgeliefert';
+  'KI-Systeme & Transformation -- Prozess zuerst, produktiv ausgeliefert';
 
 export default async function OGImage() {
   return await renderAtelierOG({

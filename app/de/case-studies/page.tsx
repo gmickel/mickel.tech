@@ -5,9 +5,9 @@ import AtelierCaseStudiesIndex from '@/components/sections/atelier/case-studies-
 import { breadcrumbSchema, JsonLd, personSchema } from '@/lib/json-ld';
 
 export const metadata: Metadata = {
-  title: 'Fallstudien — Auswahl an Mandaten',
+  title: 'Fallstudien -- Auswahl an Mandaten',
   description:
-    'Ausgewählte Mandate über agentische PDLC, unabhängige Begutachtung und KI-Systeme. Anonymisiert, wo Vertraulichkeit gilt; genannt nur, wo es meine eigene Arbeit ist. Echte Ergebnisse, echte Zahlen.',
+    'Ausgewählte Mandate aus agentischer PDLC, unabhängiger Begutachtung und KI-Systemen. Anonymisiert, wo Vertraulichkeit gilt; namentlich genannt nur dort, wo es meine eigene Arbeit ist. Echte Ergebnisse, echte Zahlen.',
   keywords: [
     'Fallstudien',
     'KI-Fallstudien',
@@ -20,9 +20,9 @@ export const metadata: Metadata = {
     'Gordon Mickel Mandate',
   ],
   openGraph: {
-    title: 'Fallstudien — Auswahl an Mandaten | Mickel Tech',
+    title: 'Fallstudien -- Auswahl an Mandaten | Mickel Tech',
     description:
-      'Ausgewählte Mandate über agentische PDLC, unabhängige Begutachtung und KI-Systeme. Echte Ergebnisse, echte Zahlen.',
+      'Ausgewählte Mandate aus agentischer PDLC, unabhängiger Begutachtung und KI-Systemen. Echte Ergebnisse, echte Zahlen.',
     url: 'https://mickel.tech/de/case-studies',
     locale: 'de_CH',
     type: 'website',

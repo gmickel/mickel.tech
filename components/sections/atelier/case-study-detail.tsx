@@ -33,8 +33,8 @@ export default function AtelierCaseStudyDetail({
           relatedLabel: 'Verwandte Praxis',
           ctaHeading: 'Klingt vertraut?',
           ctaBody:
-            'Wenn Ihr Mandat in dieselbe Form passt, ist ein 30-min Erstgespräch der schnellste Weg, das festzustellen.',
-          primary: '30-min Erstgespräch buchen',
+            'Wenn Ihr Mandat in eine ähnliche Form passt, ist ein 30-Minuten-Erstgespräch der schnellste Weg, das festzustellen.',
+          primary: '30-Minuten-Erstgespräch buchen',
           secondary: 'Vertrauliche Anfrage (Begutachtung)',
           secondaryHref: '/de/expert#intake',
           named: 'Genannt',

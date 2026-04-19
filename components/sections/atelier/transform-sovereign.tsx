@@ -35,30 +35,30 @@ const copyEN = {
 const copyDE = {
   eyebrow: 'Spezialdisziplin · Souveräne + private KI',
   heading: 'Wenn die Daten das Haus nicht verlassen dürfen.',
-  body: 'Zusätzlich zu allem oben. Die volle Transformations-Arbeit, RAG, Agenten, Voice und der Rest gilt wie üblich — und wo die Regulierung es verlangt (DSG, DSGVO, EU AI Act, Schweizer Berufsgeheimnis, öffentliche Beschaffung), liefere ich die souveräne und private KI-Variante: Custom-Finetuning dort, wo Off-the-shelf-Modelle die Daten nicht sehen dürfen, On-Prem- oder VPC-Inferenz, Audit-fähige Provenienz ab Tag eins. Wenige Praxen in der Schweiz / EU machen sowohl die Strategie als auch die Umsetzung; ich mache beides, produktiv.',
+  body: 'Zusätzlich zu allem oben. Die volle Transformationsarbeit -- RAG, Agenten, Voice und der Rest -- gilt wie üblich. Und dort, wo die Regulierung es verlangt (DSG, DSGVO, EU AI Act, Schweizer Berufsgeheimnis, öffentliche Beschaffung), liefere ich die souveräne und private KI-Variante: Custom-Finetuning dort, wo Off-the-shelf-Modelle die Daten nicht sehen dürfen, On-Prem- oder VPC-Inferenz, Audit-fähige Provenienz ab Tag eins. Wenige Praxen in der Schweiz und in der EU decken sowohl Strategie als auch Umsetzung ab; ich mache beides, produktiv.',
   pillars: [
     {
-      tag: 'Custom-trainierte lokale Modelle',
-      body: 'Finetuning kleiner NER- und Sprachmodelle auf Ihren sensiblen Entitäten, Ihrer Terminologie, Ihren Randfällen. Produktive Genauigkeit dort, wo generische APIs die Domäne nicht treffen — und die Daten nie sehen. Referenz: 97%+ Genauigkeit bei PII-Erkennung in Schweizer klinischem Text, keine Datenpersistenz (DocIQ Shield + KISIM AI).',
+      tag: 'Eigens trainierte lokale Modelle',
+      body: 'Finetuning kleiner NER- und Sprachmodelle auf Ihre sensiblen Entitäten, Ihre Terminologie, Ihre Randfälle. Produktive Genauigkeit dort, wo generische APIs die Domäne nicht treffen -- und die Daten nie sehen. Referenz: 97%+ Genauigkeit bei der PII-Erkennung in Schweizer klinischem Text, keine Datenpersistenz (DocIQ Shield + KISIM AI).',
     },
     {
       tag: 'On-Prem- und VPC-Inferenz',
-      body: 'Open-Weight-Modelle in Ihrem Rechenzentrum, Ihrer Private Cloud oder air-gapped Infrastruktur. GPU-Sizing für die reale Last. Modell-Routing über Kosten-/Latenz-/Qualitätsstufen. Keine Outbound-Calls zu Anbieter-APIs, ausser Sie wählen es explizit.',
+      body: 'Open-Weight-Modelle in Ihrem Rechenzentrum, in Ihrer Private Cloud oder in einer air-gapped Infrastruktur. GPU-Sizing für die reale Last. Modell-Routing über Kosten-, Latenz- und Qualitätsstufen. Keine Outbound-Calls an Anbieter-APIs, ausser Sie wählen es explizit.',
     },
     {
       tag: 'Audit und Provenienz per Default',
-      body: 'Jeder Modell-Output rückverfolgbar auf Inputs, Modell-Identifier, Prompt-Version, Retrieval-Quellen und Zeitstempel. Aufsichtsfähige Spuren für Gesundheitswesen, Recht, Finanzen und öffentliche Hand. Ab Tag eins eingebaut, nicht aufgesetzt.',
+      body: 'Jeder Modell-Output ist rückverfolgbar auf Inputs, Modell-Identifier, Prompt-Version, Retrieval-Quellen und Zeitstempel. Aufsichtsfähige Spuren für Gesundheitswesen, Recht, Finanzen und öffentliche Hand. Ab Tag eins eingebaut, nicht aufgesetzt.',
     },
     {
       tag: 'Eval-Pipelines für fine-tuned Modelle',
-      body: 'Kontinuierliche Regressionssuiten, Quality-/Safety-/Latency-/Cost-Gates, Drift-Detection, Observability über proprietäre wie auch fine-tuned Modellpfade. Vertrauen zum Ausliefern und Vertrauen zum Weiterausliefern.',
+      body: 'Kontinuierliche Regressionssuiten, Gates für Qualität, Safety, Latenz und Kosten, Drift-Detection, Observability über proprietäre wie über fine-tuned Modellpfade. Vertrauen, um auszuliefern -- und Vertrauen, um weiter auszuliefern.',
     },
   ],
   proofLabel: 'Produktiv im Einsatz',
   proofItems: [
-    'DocIQ Shield — Anonymisierung von Gerichtsdokumenten für die Schweizer Justiz, fine-tuned lokales NER + LLM, keine Datenpersistenz (live seit 2025, v2 2026)',
-    'KISIM AI — On-Prem-PII-Masking mit 97%+ Genauigkeit, ermöglicht DSG-/DSGVO-konforme klinische KI in Schweizer Spitälern (50+ Engineering, <90 Tage)',
-    'Mehrere KI- / Tech-Due-Diligence-Mandate zur Bewertung von Private-LLM-Strategie und Vendor-Lock-in-Risiko für PE-Deal-Teams',
+    'DocIQ Shield -- Anonymisierung von Gerichtsdokumenten für die Schweizer Justiz, fine-tuned lokales NER + LLM, keine Datenpersistenz (live seit 2025, v2 2026)',
+    'KISIM AI -- On-Prem-PII-Masking mit 97%+ Genauigkeit, ermöglicht DSG-/DSGVO-konforme klinische KI in Schweizer Spitälern (50+ Engineering, <90 Tage)',
+    'Mehrere KI- und Tech-Due-Diligence-Mandate zur Bewertung von Private-LLM-Strategie und Vendor-Lock-in-Risiko für PE-Deal-Teams',
   ],
 };
 

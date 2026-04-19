@@ -18,7 +18,7 @@ export default function AtelierCaseStudiesIndex({
           eyebrowHero: '01 / Auswahl an Mandaten',
           headingHero: 'Mandate, gruppiert nach Praxisfeld.',
           introHero:
-            'Anonymisiert, wo Vertraulichkeit gilt. Genannt nur, wo es meine eigene Arbeit ist (DocIQ, KISIM, FlowNext, MergeFoundry). Benennung verändert nichts an den Zahlen.',
+            'Anonymisiert, wo Vertraulichkeit gilt. Namentlich genannt nur dort, wo es meine eigene Arbeit ist (DocIQ, KISIM, FlowNext, MergeFoundry). An den Zahlen ändert die Nennung nichts.',
           legend:
             'Insgesamt {count} Mandate · {pdlc} agentische PDLC · {expert} Begutachtung · {systems} KI-Systeme',
           problem: 'Problem',

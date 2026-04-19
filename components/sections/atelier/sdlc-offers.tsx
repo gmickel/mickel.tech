@@ -75,34 +75,34 @@ const offersDE: readonly Offer[] = [
     num: '01',
     name: 'PDLC-Diagnose',
     scope:
-      'Zwei Wochen. L0–L4-Reifegradbewertung über 5 Säulen (Produkt, Spec, Code, Review, Betrieb). Prozesslandkarte, Opportunity-Scoring, 90-Tage-Roadmap, Verwaltungsrats-fähiger Bericht.',
+      'Zwei Wochen. L0–L4-Reifegradbewertung über 5 Säulen (Produkt, Spec, Code, Review, Betrieb). Prozesslandkarte, Opportunity-Scoring, 90-Tage-Roadmap, Bericht für den Verwaltungsrat.',
     price: 'CHF 15–25k fix',
     duration: '2 Wochen',
     outcome:
-      'Eine vertretbare Diagnose. Sie gehen mit einer quantifizierten Baseline und einem sequenzierten Plan, der einer Verwaltungsratsprüfung standhält.',
+      'Eine vertretbare Diagnose. Sie gehen mit einer quantifizierten Baseline und einem sequenzierten Plan, der einer Prüfung im Verwaltungsrat standhält.',
     deliverables: [
       'Reifegrad-Scorecard (L0–L4 über 5 Säulen)',
-      'Top 5 priorisierte Opportunitäten mit Aufwand + Impact',
+      'Top 5 priorisierte Opportunitäten mit Aufwand und Impact',
       '90-Tage-Rollout-Plan mit KPIs',
       'Executive-Readout',
     ],
     bestFor:
-      'CTOs, VP Engineering, PE-Operating-Partner, die portfolioweite KI-Fähigkeit bewerten.',
+      'CTOs, VP Engineering, PE-Operating-Partner, die KI-Fähigkeit über das gesamte Portfolio bewerten.',
   },
   {
     num: '02',
     name: 'Foundation Sprint',
     scope:
-      'Sechs bis acht Wochen. Tooling-Rollout, Methodik-Schulung, 1–2 Quick-Win-Spuren ausgeliefert, KPI-Baseline fixiert. Ihr Team von L1 → L2 mit praktischem Co-Shipping.',
+      'Sechs bis acht Wochen. Tooling-Rollout, Methodikschulung, 1–2 Quick-Win-Spuren ausgeliefert, KPI-Baseline fixiert. Ihr Team von L1 → L2, mit Co-Shipping aus erster Hand.',
     price: 'CHF 40–60k fix',
     duration: '6–8 Wochen',
     outcome:
-      '20–30% messbare Cycle-Time-Reduktion in den ersten 90 Tagen. Ein Team, das die Methodik besitzt — kein Anbieter, der sie für das Team besitzt.',
+      '20–30% messbare Cycle-Time-Reduktion in den ersten 90 Tagen. Ein Team, das die Methodik selbst trägt -- kein Anbieter, der sie für das Team trägt.',
     deliverables: [
       'Standard-Tooling deployed (Modellauswahl, Lizenzmanagement, Prompt-Registry)',
       '1–2 Leuchtturm-Spuren end-to-end mit-ausgeliefert',
       'Cycle-Time- und Review-Zeit-Baseline fixiert',
-      'Interne Methodik-Playbook',
+      'Internes Methodik-Playbook',
     ],
     bestFor:
       'Teams mit Copilots im aktiven Einsatz, aber ohne messbaren Uplift und ohne zentrale Steuerung.',
@@ -111,16 +111,16 @@ const offersDE: readonly Offer[] = [
     num: '03',
     name: 'Voller Methodenwechsel',
     scope:
-      'Drei bis sechs Monate. L2 → L3/L4 Transformation. Eval-Gates, Cross-Model-Review, Everything-as-code, Observability-Schwungräder. Mehrere Spuren, mehrere Teams, anhaltender Durchsatzgewinn.',
+      'Drei bis sechs Monate. Transformation von L2 → L3/L4. Eval-Gates, Cross-Model-Review, Everything-as-code, Observability-Schwungräder. Mehrere Spuren, mehrere Teams, anhaltender Durchsatzgewinn.',
     price: 'CHF 80–150k+',
     duration: '3–6 Monate',
     outcome:
-      '2–3× anhaltender Durchsatz. Der Grossteil produktiven Codes wird von Agenten reviewed (oder geschrieben). Engineering-Organisation umgebaut um Produkt-/Spec-Führung.',
+      '2–3× anhaltender Durchsatz. Der Grossteil des produktiven Codes wird von Agenten reviewt (oder geschrieben). Engineering-Organisation neu zugeschnitten auf Produkt- und Spec-Führung.',
     deliverables: [
-      'Eval-gegate agentische Auslieferung in Produktion',
-      'Cross-Model-Review-Pipeline (FlowNext / MergeFoundry Pattern)',
+      'Eval-gesicherte agentische Auslieferung in Produktion',
+      'Cross-Model-Review-Pipeline (FlowNext- / MergeFoundry-Pattern)',
       'Everything-as-code-Repository für Prompts, Evals, Guardrails',
-      'Monatliches Steering, bis das Team das System end-to-end besitzt',
+      'Monatliches Steering, bis das Team das System end-to-end selbst trägt',
     ],
     bestFor:
       'Software-getriebene Unternehmen, die PDLC als strategische Fähigkeit behandeln, nicht als Dev-Tools-Refresh.',
@@ -135,11 +135,11 @@ export default function AtelierSdlcOffers({ locale = 'en' }: SdlcOffersProps) {
           eyebrow: '04 / Drei Pakete',
           heading: 'Drei produktisierte Pakete.',
           intro:
-            'Festpreis bei Phasen 1 und 2. Anpassbar bei Phase 3. Buchung über Cal.com oder direkte E-Mail.',
+            'Festpreis bei Phase 1 und 2. Phase 3 individuell. Buchung über Cal.com oder direkt per E-Mail.',
           best: 'Geeignet für',
           deliv: 'Deliverables',
           duration: 'Laufzeit',
-          cta: 'Pass-Gespräch buchen',
+          cta: 'Erstgespräch buchen',
         }
       : {
           eyebrow: '04 / Three packages',

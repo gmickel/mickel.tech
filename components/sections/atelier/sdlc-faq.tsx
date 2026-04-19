@@ -51,42 +51,42 @@ const faqsDE = [
   {
     question: 'Warum „PDLC" statt „SDLC"?',
     answer:
-      'SDLC framet das Problem als Software-Entwicklung. Sobald Agenten produktiven Code in Minuten schreiben, wandert die Beschränkung die Wertkette nach oben — zu Produkt-Framing, Anforderungsengineering und Review-Kapazität. PDLC (Product Development Life Cycle) benennt die tatsächliche Arbeitseinheit und erlaubt, den richtigen Engpass zu optimieren.',
+      'SDLC framt das Problem als Softwareentwicklung. Sobald Agenten produktiven Code in Minuten schreiben, wandert die Beschränkung die Wertkette hoch -- zu Produkt-Framing, Anforderungsengineering und Review-Kapazität. PDLC (Product Development Life Cycle) benennt die tatsächliche Arbeitseinheit und erlaubt es, den richtigen Engpass zu optimieren.',
   },
   {
     question: 'Verkaufen Sie damit nicht einfach Cursor- / Copilot-Rollouts?',
     answer:
-      'Nein. Tool-Rollouts sind ein kleiner Teil von L1 → L2. Der Methodenwechsel, Eval-Gates, Cross-Model-Review, Everything-as-code, Observability-Schwungräder, organisatorische Neuauslegung — dort ist die Arbeit und dort ist der Wert.',
+      'Nein. Tool-Rollouts sind ein kleiner Teil von L1 → L2. Der Methodenwechsel, Eval-Gates, Cross-Model-Review, Everything-as-code, Observability-Schwungräder, organisatorische Neuauslegung -- dort liegt die Arbeit und dort liegt der Wert.',
   },
   {
     question: 'Wo passen FlowNext und MergeFoundry hinein?',
     answer:
-      'FlowNext ist das Open-Source-Pattern, das jedes Team unabhängig adoptieren kann. MergeFoundry ist die kommerzielle Plattform, die ich separat unter MergeFoundry, Inc baue — relevant, wenn ein Portfolio die L3/L4-Patterns einmal aufsetzen und überall wiederverwenden will. Keines ist Voraussetzung für ein Mandat; beides ist verfügbar, falls nützlich.',
+      'FlowNext ist das Open-Source-Pattern, das jedes Team unabhängig adoptieren kann. MergeFoundry ist die kommerzielle Plattform, die ich separat unter MergeFoundry, Inc. baue -- relevant, wenn ein Portfolio die L3/L4-Patterns einmal aufsetzen und überall wiederverwenden will. Keines ist Voraussetzung für ein Mandat; beides ist verfügbar, falls nützlich.',
   },
   {
     question: 'Wie messen Sie Erfolg?',
     answer:
-      'Cycle Time, Review-Zeit, Deploy-Frequenz, Change-Failure-Rate (DORA-Kern) plus PDLC-spezifische Metriken: Spec-Qualitäts-Scores, Eval-Gate-Pass-Rate, Agent-vs-Mensch-Authorship-Ratio, Observability-zu-Spec-Feedback-Latenz. Baseline in Woche eins jedes Mandats.',
+      'Cycle Time, Review-Zeit, Deploy-Frequenz, Change-Failure-Rate (DORA-Kern), dazu PDLC-spezifische Metriken: Spec-Qualitäts-Scores, Pass-Rate der Eval-Gates, Verhältnis von Agent- zu Mensch-Autorenschaft, Latenz von Observability zur Spec. Baseline in Woche eins jedes Mandats.',
   },
   {
     question: 'Was ist mit regulierten Branchen?',
     answer:
-      'Der Grossteil meiner Arbeit ist in regulierten Umgebungen — Gesundheitswesen, Finanzen, öffentliche Hand. Eval-Gates, Audit-Trails, deterministische Pipelines und Provenienz sind keine Nachträge; sie sind die Architektur. Ich habe produktive KI in einem klinischen CIS und in legal-tauglichen Vertragsplattformen ausgeliefert.',
+      'Der Grossteil meiner Arbeit findet in regulierten Umgebungen statt -- Gesundheitswesen, Finanzen, öffentliche Hand. Eval-Gates, Audit-Trails, deterministische Pipelines und Provenienz sind keine Nachträge; sie sind die Architektur. Ich habe produktive KI in einem klinischen CIS und in gerichtstauglichen Vertragsplattformen ausgeliefert.',
   },
   {
     question: 'Verlieren meine Entwickler ihre Jobs?',
     answer:
-      'Nein, aber ihre Arbeit ändert sich. Specs, Reviews, Urteil über Edge-Cases, Produkt-Framing, Agent-Supervision — das wird die hebelstarke Arbeit. Entwickler, die sich darauf einlassen, gewinnen. Entwickler, die nur Code tippen, verlieren Boden — unabhängig davon, ob Sie mich engagieren. Besser, es zu Ihren Bedingungen zu tun.',
+      'Nein, aber ihre Arbeit verändert sich. Specs, Reviews, das Urteil über Edge Cases, Produkt-Framing, Agent-Supervision -- das wird die Arbeit mit Hebelwirkung. Entwickler, die sich darauf einlassen, gewinnen. Entwickler, die nur Code tippen, verlieren Boden -- unabhängig davon, ob Sie mich engagieren. Besser, es zu Ihren Bedingungen zu tun.',
   },
   {
     question: 'Remote oder vor Ort?',
     answer:
-      'Beides. Die meisten Mandate sind hybrid: 1–2 Onsite-Tage zu Beginn und an wichtigen Meilensteinen, dazwischen remote. Reines Remote funktioniert bei starker technischer Führung auf Ihrer Seite. Reines Onsite ist selten den Preis wert.',
+      'Beides. Die meisten Mandate sind hybrid: 1–2 Onsite-Tage zu Beginn und an wichtigen Meilensteinen, dazwischen remote. Rein remote funktioniert bei starker technischer Führung auf Ihrer Seite. Rein onsite ist selten den Preis wert.',
   },
   {
     question: 'Wie passt das neben mein bestehendes Plattform-Team?',
     answer:
-      'Sauber. Das Plattform-Team besitzt die Runtime; ich besitze die Methodik und die Agent-Schicht. Wir bauen das Fundament gemeinsam, dann besitzt es Ihr Plattform-Team. Ich bleibe nicht ewig — das ist der Test, ob das Mandat funktioniert hat.',
+      'Sauber. Das Plattform-Team verantwortet die Runtime; ich verantworte die Methodik und die Agent-Schicht. Wir bauen das Fundament gemeinsam, dann übernimmt Ihr Plattform-Team. Ich bleibe nicht ewig -- das ist der Test, ob das Mandat funktioniert hat.',
   },
 ] as const;
 

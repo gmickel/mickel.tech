@@ -44,13 +44,13 @@ const channelsDE: readonly ContactChannel[] = [
     label: 'E-Mail',
     value: 'gordon@mickel.tech',
     href: 'mailto:gordon@mickel.tech',
-    note: 'Für neue Mandate, Begutachtungen, Vorstellungen.',
+    note: 'Für neue Mandate, Begutachtungen, Vorstellung über Dritte.',
   },
   {
     label: 'Kalender',
     value: 'cal.com/gmickel',
     href: 'https://cal.com/gmickel',
-    note: '30-min Erstgespräch · agentische PDLC und KI-Systeme.',
+    note: '30 Min. Erstgespräch · agentische PDLC und KI-Systeme.',
     external: true,
   },
   {
@@ -76,10 +76,10 @@ export default function AtelierContact({ locale = 'en' }: AtelierContactProps) {
           eyebrow: '06 / Kontakt',
           heading: 'Reden wir über Ihr Mandat.',
           intro:
-            'Eine kleine Anzahl ausgewählter Mandate jedes Jahr. Erstgespräch in der Regel innerhalb von 48 Stunden. Schriftliche Anfragen schneller.',
+            'Eine kleine Zahl ausgewählter Mandate pro Jahr. Erstgespräch in der Regel innerhalb von 48 Stunden. Schriftliche Anfragen schneller.',
           location: 'Binningen, Schweiz · DE / EN',
           status: 'Status',
-          statusValue: 'Q2 2026 — wenige Plätze offen',
+          statusValue: 'Q2 2026 -- wenige Plätze offen',
         }
       : {
           eyebrow: '06 / Contact',

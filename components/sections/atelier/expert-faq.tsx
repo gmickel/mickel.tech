@@ -51,32 +51,32 @@ const faqsDE = [
   {
     question: 'Wie schnell können Sie auf einen neuen Sachverhalt reagieren?',
     answer:
-      'Vertrauliches Erstgespräch innerhalb 48 Stunden. Auftragsbestätigung in der Regel innerhalb von 5 Arbeitstagen. Beschleunigte Sachverhalte können noch in derselben Woche starten, sofern die Konfliktdeklaration durchläuft.',
+      'Vertrauliches Erstgespräch innerhalb 48 Stunden. Auftragsbestätigung in der Regel innerhalb von 5 Arbeitstagen ab Erstkontakt. Beschleunigte Sachverhalte können noch in derselben Woche starten, sofern die Konfliktprüfung durchläuft.',
   },
   {
     question: 'Wie handhaben Sie Interessenkonflikte?',
     answer:
-      'Jedes Erstgespräch enthält eine strukturierte Konfliktdeklaration mit Parteien, Anwaltskanzleien und Gegenparteien. Ich prüfe gegen aktive Mandate und eine dokumentierte Mandatshistorie, bevor ich annehme. Bei Konflikt lehne ich ab und erkläre.',
+      'Jedes Erstgespräch enthält eine strukturierte Konfliktdeklaration mit Parteien, Anwaltskanzleien und Gegenparteien. Vor Annahme prüfe ich gegen meine laufenden Mandate und gegen eine dokumentierte Mandatshistorie. Liegt ein Konflikt vor, lehne ich ab und begründe.',
   },
   {
-    question: 'Sind Sie gerichtlich bestellt oder parteiisch beauftragt?',
+    question: 'Sind Sie gerichtlich bestellt oder im Parteiauftrag?',
     answer:
-      'Parteiisch beauftragt bei den bisherigen Mandaten. Ich bin ITDR-gelistet und für gerichtliche oder schiedsrichterliche Bestellungen verfügbar; bei aktuellen Mandaten bin ich aber von der Anwaltschaft als Parteigutachter oder gemeinsam von beiden Parteien als Werkvertrags-Gutachter beauftragt. Ich bezeichne frühere Arbeit nie als gerichtlich bestellt, wenn sie es nicht war.',
+      'Bei den bisherigen Mandaten im Parteiauftrag. Ich bin ITDR-gelistet und für gerichtliche oder schiedsrichterliche Bestellungen verfügbar; in aktuellen Mandaten bin ich aber von der Anwaltschaft als Parteigutachter beauftragt oder gemeinsam von beiden Parteien als Werkvertrags-Gutachter benannt. Frühere Arbeit bezeichne ich nie als gerichtlich bestellt, wenn sie es nicht war.',
   },
   {
     question: 'Was kostet ein Mandat?',
     answer:
-      'Parteigutachten und DD-Arbeit nach Aufwand zu CHF-Tagessätzen mit vorab vereinbarten Obergrenzen. Werkvertrags-Gutachten typischerweise als Pauschalhonorar, hälftig zwischen Auftraggeber und Lieferant. Konkrete Zahlen im Erstgespräch.',
+      'Parteigutachten und DD-Arbeit nach Aufwand zu CHF-Tagessätzen mit vorab vereinbarten Obergrenzen. Werkvertrags-Gutachten in der Regel als Pauschalhonorar, hälftig zwischen Auftraggeber und Lieferant. Konkrete Zahlen im Erstgespräch.',
   },
   {
-    question: 'Vertraulichkeit und Datenhandhabung?',
+    question: 'Wie steht es um Vertraulichkeit und Datenumgang?',
     answer:
-      'Standardmässig NDA vor jeder Fallmaterial-Übergabe. Quellcode wird nur in Umgebungen unter Ihrer oder Mandantenkontrolle gesichtet. Keine Mandantendaten auf Drittanbieter-KI-Diensten ohne schriftliche Zustimmung. Arbeitsnotizen werden bei Mandatsende vernichtet, ausser wo Aufbewahrungspflichten gelten.',
+      'Standardmässig NDA vor jeder Übergabe von Verfahrensmaterial. Quellcode wird nur in Umgebungen unter Ihrer oder der Mandantenkontrolle gesichtet. Keine Mandantendaten auf KI-Diensten Dritter ohne schriftliche Zustimmung. Arbeitsnotizen werden bei Mandatsende vernichtet, ausser dort, wo berufliche Aufbewahrungspflichten gelten.',
   },
   {
-    question: 'Erscheinen Sie an Verhandlungen?',
+    question: 'Treten Sie in Verhandlungen auf?',
     answer:
-      'Ja. Mündliche Verhandlungsbereitschaft ist Teil des Auftrags. Ich nehme an Verhandlungen, Steering Committees und Schiedsverfahren in DE oder EN teil, üblicherweise in CH und DE, gelegentlich auch weiter entfernt nach Absprache.',
+      'Ja. Mündliche Verhandlungsbereitschaft ist Teil des Auftrags. Ich nehme an Verhandlungen, Steering Committees und Schiedsverfahren in DE oder EN teil, üblicherweise in der Schweiz und in Deutschland, gelegentlich auch weiter entfernt nach Absprache.',
   },
   {
     question: 'Was, wenn mein Sachverhalt ausserhalb Ihrer Fachgebiete liegt?',
@@ -87,7 +87,7 @@ const faqsDE = [
     question:
       'Nehmen Sie Mandate der Gegenseite nach einem früheren Mandat an?',
     answer:
-      'Grundsätzlich nicht, wenn auch nur ein vernünftiger Konflikt besteht. Ich dokumentiere frühere Parteien für mindestens sieben Jahre und wende eine strenge Isolationsregel an.',
+      'Grundsätzlich nicht, sobald auch nur ein vernünftiger Anschein eines Konflikts besteht. Ich dokumentiere frühere Parteien für mindestens sieben Jahre und wende eine strenge Isolationsregel an.',
   },
 ] as const;
 

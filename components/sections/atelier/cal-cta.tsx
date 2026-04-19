@@ -23,16 +23,16 @@ const copyEN = {
 const copyDE = {
   pdlc: {
     eyebrow: '07 / Termin buchen',
-    heading: 'Ein 30-min Erstgespräch ist der einfachste Einstieg.',
+    heading: 'Ein 30-Minuten-Erstgespräch ist der einfachste Einstieg.',
     body: 'Im Gespräch klären wir, ob agentische PDLC die richtige Form für Ihr Team ist, wie ein Mandat aussieht und welcher nächste Schritt sinnvoll wäre. Kein Deck. Keine Vorbereitung. Wenn es nicht passt, sage ich es im Gespräch.',
-    primary: '30-min Erstgespräch buchen',
+    primary: '30-Minuten-Erstgespräch buchen',
     secondary: 'E-Mail an gordon@mickel.tech',
   },
   transformation: {
     eyebrow: '07 / Termin buchen',
-    heading: 'Ein 30-min Discovery-Gespräch ist der einfachste Einstieg.',
-    body: 'Im Gespräch kartieren wir Ihren reibungsstärksten Workflow, sprechen darüber, was ein KI-System für Sie tatsächlich tun würde, und klären, ob ein Prozess-Audit lohnt. Keine Anbieter-Präsentation.',
-    primary: '30-min Discovery-Gespräch buchen',
+    heading: 'Ein 30-Minuten-Discovery-Gespräch ist der einfachste Einstieg.',
+    body: 'Im Gespräch kartieren wir Ihren reibungsstärksten Workflow, sprechen darüber, was ein KI-System für Sie tatsächlich leisten würde, und klären, ob ein Prozess-Audit lohnt. Keine Anbieterpräsentation.',
+    primary: '30-Minuten-Discovery-Gespräch buchen',
     secondary: 'E-Mail an gordon@mickel.tech',
   },
 };

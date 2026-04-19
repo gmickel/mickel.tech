@@ -32,27 +32,27 @@ const principlesEN = [
 const principlesDE = [
   {
     tag: 'Sponsor vor Scope',
-    body: 'Kein Mandat startet ohne benannten Sponsor mit Budget und Entscheidungsbefugnis. KI-Projekte ohne Sponsoring werden zum Demo-Theater.',
+    body: 'Kein Mandat startet ohne benannten Sponsor mit Budget und Entscheidungsbefugnis. KI-Projekte ohne Sponsorship werden zum Demo-Theater.',
   },
   {
     tag: 'Eval vor Features',
-    body: 'Jedes System trägt eine Eval-Suite ab Tag eins. Kein produktives Deployment ohne messbare Erfolgskriterien, die das System nachweislich erfüllt hat.',
+    body: 'Jedes System trägt ab Tag eins eine Eval-Suite. Kein produktives Deployment ohne messbare Erfolgskriterien, die das System nachweislich erfüllt hat.',
   },
   {
     tag: 'Provenienz immer',
-    body: 'Jeder KI-Output rückführbar zu Inputs, Modell, Prompt und Version. Audit-fähig per Default, auch in nicht-regulierten Umgebungen.',
+    body: 'Jeder KI-Output ist rückführbar auf Inputs, Modell, Prompt und Version. Audit-fähig per Default, auch in nicht regulierten Umgebungen.',
   },
   {
     tag: 'Mensch im Loop, wo es zählt',
-    body: 'Automatisierungstiefe an Konsequenz angepasst. Umkehrbare Entscheidungen vollautomatisch. Hochkonsequente Entscheidungen erhalten Review-Gates by design.',
+    body: 'Automatisierungstiefe an die Konsequenz angepasst. Umkehrbare Entscheidungen vollautomatisch. Folgenschwere Entscheidungen mit Review-Gates by design.',
   },
   {
-    tag: 'Internes Team besitzt es',
-    body: 'Mandat endet, wenn das interne Team den Betrieb besitzt. Ich hinterlasse Dokumentation, Runbooks und Capability — keine Abhängigkeit.',
+    tag: 'Internes Team trägt es',
+    body: 'Das Mandat endet, wenn das interne Team den Betrieb trägt. Ich hinterlasse Dokumentation, Runbooks und Capability -- keine Abhängigkeit.',
   },
   {
     tag: 'Kein Vendor-Lock-in per Default',
-    body: 'Architektur erhält die Fähigkeit, Modelle, Retrieval-Engines oder Tooling zu tauschen. Lock-in ist manchmal der richtige Trade — aber immer eine bewusste Entscheidung.',
+    body: 'Die Architektur erhält die Möglichkeit, Modelle, Retrieval-Engines oder Tooling zu tauschen. Lock-in ist manchmal der richtige Trade-off -- aber immer eine bewusste Entscheidung.',
   },
 ] as const;
 
@@ -64,9 +64,9 @@ export default function AtelierTransformGovernance({
     locale === 'de'
       ? {
           eyebrow: '05 / Prinzipien',
-          heading: 'Sechs Prinzipien, die jedes Mandat tragen.',
+          heading: 'Sechs Prinzipien, auf denen jedes Mandat aufsetzt.',
           intro:
-            'Das, woran ich Mandate scheitern sehe, lässt sich auf das Fehlen einer dieser sechs Sachen zurückführen. Sie sind keine Politur — sie sind die Architektur.',
+            'Wo Mandate scheitern, lässt es sich auf das Fehlen eines dieser sechs Punkte zurückführen. Sie sind keine Politur -- sie sind die Architektur.',
         }
       : {
           eyebrow: '05 / Principles',

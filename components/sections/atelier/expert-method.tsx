@@ -38,28 +38,28 @@ const stepsDE = [
     num: '01',
     label: 'Erstgespräch',
     detail:
-      'Vertrauliches 30-Minuten-Gespräch. Sachverhaltstyp, Jurisdiktion, Frist. Konfliktdeklaration. Auftragsbestätigung und Scope.',
+      'Vertrauliches 30-Minuten-Gespräch. Sachverhaltstyp, Jurisdiktion, Frist. Konfliktdeklaration. Auftragsbestätigung und Umfang.',
     timeframe: 'Innerhalb 48 Stunden',
   },
   {
     num: '02',
     label: 'Aktendurchsicht',
     detail:
-      'Unterlagen, Verträge, Quellcode-Repositories, Infrastruktur-Zugang. Erste-Eindrücke-Gespräch innerhalb 5–7 Arbeitstagen. Fragenkatalog gemeinsam iteriert.',
+      'Unterlagen, Verträge, Quellcode-Repositories, Infrastruktur-Zugang. Gespräch zu ersten Eindrücken innerhalb 5–7 Arbeitstagen. Fragenkatalog gemeinsam iteriert.',
     timeframe: 'Tage 1–10',
   },
   {
     num: '03',
     label: 'Ausarbeitung',
     detail:
-      'Strukturiertes Gutachten: Auftrag, Methodik, Sachverhalt, Befunde, Würdigung, Kernbefunde. Zwei Review-Zyklen Standard. Änderungsverfolgung willkommen.',
+      'Strukturiertes Gutachten: Auftrag, Methodik, Sachverhalt, Befunde, Würdigung, Kernbefunde. Standardmässig zwei Review-Zyklen. Änderungsverfolgung willkommen.',
     timeframe: 'Wochen 2–6',
   },
   {
     num: '04',
     label: 'Lieferung & Verhandlung',
     detail:
-      'Schlussbericht unter Ihrem Briefkopf. Mündliche Bereitschaft für Verhandlungen oder Steering-Committees. DE / EN. Nachsorge bei Folgefragen.',
+      'Schlussbericht unter Ihrem Briefkopf. Mündliche Bereitschaft für Verhandlungen oder Steering-Committees. DE / EN. Nachbetreuung bei Folgefragen.',
     timeframe: 'Am Verhandlungstag',
   },
 ] as const;
@@ -74,7 +74,7 @@ export default function AtelierExpertMethod({
           eyebrow: '03 / Vorgehen',
           heading: 'Wie ein Gutachten entsteht.',
           intro:
-            'Vier Phasen, klare Übergaben, dokumentierte Methodik. Auch in beschleunigten Verfahren ohne Abkürzungen.',
+            'Vier Phasen, klare Übergaben, dokumentierte Methodik. Auch in beschleunigten Verfahren keine Abkürzungen.',
         }
       : {
           eyebrow: '03 / Method',

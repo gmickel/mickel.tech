@@ -15,7 +15,7 @@ export default function AtelierCaseStudiesPreview({
           eyebrow: '03 / Auswahl an Mandaten',
           heading: 'Vier Beispiele aus der Praxis.',
           intro:
-            'Anonymisiert, wo Vertraulichkeit gilt. Genannt nur, wo es meine eigene Arbeit ist. Benennung verändert nichts an den Zahlen.',
+            'Anonymisiert, wo Vertraulichkeit gilt. Namentlich genannt nur dort, wo es meine eigene Arbeit ist. An den Zahlen ändert die Nennung nichts.',
           allLink: 'Alle Fallstudien',
           allHref: '/de/case-studies',
           problemLabel: 'Problem',

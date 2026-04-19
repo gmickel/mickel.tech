@@ -51,7 +51,7 @@ const faqsDE = [
   {
     question: 'Wie unterscheidet sich das von einer generischen „KI-Beratung"?',
     answer:
-      'Generische KI-Beratungen bringen ein Deck und eine Anbieter-Liste. Ich bringe zwanzig Jahre produktiver Systeme und eine prozess-zuerst-Methode, die in Ihrem Workflow beginnt, nicht im OpenAI-Katalog. Ich baue mit, nicht nur berate mit.',
+      'Generische KI-Beratungen bringen ein Deck und eine Anbieterliste. Ich bringe zwanzig Jahre produktiver Systeme und eine Prozess-zuerst-Methode, die in Ihrem Workflow beginnt, nicht im OpenAI-Katalog. Ich baue mit, ich berate nicht nur.',
   },
   {
     question: 'Arbeiten Sie nur mit PE-gehaltenen Unternehmen?',
@@ -61,32 +61,32 @@ const faqsDE = [
   {
     question: 'Was, wenn wir bereits einen Anbieter / SI engagiert haben?',
     answer:
-      'Oft die richtige Konstellation. Ich übernehme die technische Eigentümerrolle, beaufsichtige die Anbieter-Arbeit, setze Eval-Kriterien und vertrete Ihr Interesse. Der Anbieter baut; ich stelle sicher, dass das Gebaute zu dem passt, was Sie brauchen.',
+      'Oft die richtige Konstellation. Ich übernehme die technische Eigentümerrolle, beaufsichtige die Anbieterarbeit, setze Eval-Kriterien und vertrete Ihr Interesse. Der Anbieter baut; ich stelle sicher, dass das Gebaute zu dem passt, was Sie brauchen.',
   },
   {
     question: 'Wie handhaben Sie Datenhoheit und Datensouveränität?',
     answer:
-      'Bei Schweizer und EU-Daten standardmässig In-Region- oder On-Prem-Deployments. Private LLM-Infrastruktur, wo die Regulierung es verlangt. Keine Mandantendaten auf externen Diensten ohne schriftliche Freigabespur.',
+      'Bei Schweizer und EU-Daten standardmässig In-Region- oder On-Prem-Deployments. Private LLM-Infrastruktur, wo die Regulierung es verlangt. Keine Mandantendaten auf externen Diensten ohne schriftlich dokumentierte Freigabe.',
   },
   {
     question: 'Wie lange bis zum ROI?',
     answer:
-      'Der 2–3-wöchige Audit identifiziert den ersten zahlungsfähigen Use Case. Der System-Build läuft 6–16 Wochen. Die meisten Mandate erreichen Break-even beim ersten Deployment, wenn der Audit ehrlich gemacht wurde.',
+      'Der 2–3-wöchige Audit identifiziert den ersten zahlbaren Use Case. Der System-Build läuft 6–16 Wochen. Die meisten Mandate erreichen den Break-even beim ersten Deployment, sofern der Audit ehrlich gemacht wurde.',
   },
   {
     question: 'Was ist mit Change Management?',
     answer:
-      'In das Mandat integriert, wo relevant — aber ich bin keine Change-Management-Beratung. Ich verweise oder kooperiere mit spezialisierter Change-Unterstützung, wenn die technische Lösung sauber landet, die menschliche Seite aber mehr als meine Beteiligung braucht.',
+      'Wo relevant, in das Mandat integriert -- aber ich bin keine Change-Management-Beratung. Ich verweise oder kooperiere mit spezialisierter Change-Unterstützung, wenn die technische Lösung sauber landet, die menschliche Seite aber mehr braucht als meine Beteiligung.',
   },
   {
-    question: 'Unterzeichnen Sie ein NDA vor dem Discovery-Gespräch?',
+    question: 'Unterzeichnen Sie eine NDA vor dem Discovery-Gespräch?',
     answer:
-      'Ja. Standardmässig NDA vor jeder Übergabe nicht-öffentlicher Informationen. Bilateral, wo sinnvoll, sonst einseitig. Standard-CH/DE-Vorlagen akzeptiert; eigene Vorlagen werden schnell geprüft.',
+      'Ja. Standardmässig NDA vor jeder Übergabe nicht öffentlicher Informationen. Beidseitig, wo sinnvoll, sonst einseitig. Standardvorlagen für CH/DE werden akzeptiert; eigene Vorlagen werden schnell geprüft.',
   },
   {
-    question: 'Können Sie innerhalb unserer bestehenden Tech-Stack bauen?',
+    question: 'Können Sie in unserem bestehenden Tech-Stack bauen?',
     answer:
-      'Fast immer ja. Ich arbeite über die grossen Cloud-Anbieter, Vektor-Datenbanken, Modell-Anbieter, Programmiersprachen und Frameworks. Der Sinn des Audits ist, Ihren Stack zu respektieren, nicht ihn aus Neugier zu ersetzen.',
+      'Fast immer ja. Ich arbeite über die grossen Cloud-Anbieter, Vektordatenbanken, Modellanbieter, Programmiersprachen und Frameworks hinweg. Sinn des Audits ist, Ihren Stack zu respektieren, nicht ihn aus Neugier zu ersetzen.',
   },
 ] as const;
 

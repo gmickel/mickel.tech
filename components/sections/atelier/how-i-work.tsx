@@ -37,28 +37,28 @@ const stepsDE = [
   {
     num: '01',
     label: 'Erfassen',
-    desc: 'Den Ist-Zustand kartieren — Prozesse, Architektur, Team-Reife, Schmerzpunkte. Keine Annahmen. Daten zuerst.',
+    desc: 'Den Ist-Zustand kartieren: Prozesse, Architektur, Team-Reife, Schmerzpunkte. Keine Annahmen. Daten zuerst.',
     detail:
       'Baseline-Metriken · L0–L4 Reifegrad · Prozesslandkarte · Risiko-Heatmap',
   },
   {
     num: '02',
     label: 'Entwerfen',
-    desc: 'Architektur und Methodik, zugeschnitten auf Ihre Randbedingungen. Brownfield zuerst. Regulatorisch bewusst.',
+    desc: 'Architektur und Methodik, zugeschnitten auf Ihre Randbedingungen. Brownfield zuerst. Auf regulierte Umgebungen eingestellt.',
     detail:
       'Blueprint · Tool-Auswahl · Teamstruktur · Rollback-Strategie · Erfolgskriterien',
   },
   {
     num: '03',
     label: 'Umsetzen',
-    desc: 'Praktische Auslieferung an der Seite Ihres Teams. Keine Slide-Übergabe. Ich liefere die erste Spur mit, dann übergebe ich sauber.',
+    desc: 'Praktische Auslieferung an der Seite Ihres Teams. Keine Übergabe per Slide-Deck. Ich liefere die erste Spur mit aus und übergebe sie dann sauber zurück.',
     detail:
-      'Leuchtturm-Spur · eval-getriebene Gates · everything-as-code · Pair-Delivery',
+      'Leuchtturm-Spur · eval-getriebene Gates · Everything-as-code · Pair-Delivery',
   },
   {
     num: '04',
     label: 'Messen',
-    desc: 'Quantifizierte Ergebnisse gegen die Baseline. Cycle Time, Qualität, Kosten. Monatliches Steering, bis das Team selbst trägt.',
+    desc: 'Quantifizierte Ergebnisse gegen die Baseline. Cycle Time, Qualität, Kosten. Monatliches Steering, bis das Team es selbst trägt.',
     detail:
       'DORA + eigene Metriken · vorher / nachher · Steering-Kadenz · Wissenstransfer',
   },
@@ -72,7 +72,7 @@ export default function AtelierHowIWork({ locale = 'en' }: HowIWorkProps) {
           eyebrow: '04 / Vorgehen',
           heading: 'Jedes Mandat folgt derselben Disziplin.',
           intro:
-            'Erfassen, entwerfen, umsetzen, messen. Vier Schritte, keine Demos, keine Pilotfriedhöfe.',
+            'Erfassen, entwerfen, umsetzen, messen. Vier Schritte. Keine Demos, keine Pilotfriedhöfe.',
         }
       : {
           eyebrow: '04 / Method',

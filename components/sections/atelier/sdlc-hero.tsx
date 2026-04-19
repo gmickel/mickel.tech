@@ -25,8 +25,8 @@ const copyDE = {
   headline: 'Von Anforderungen bis zur autonomen Auslieferung.',
   underline: 'autonomen',
   intro:
-    'Agentische PDLC ist eine Neuauslegung davon, wie Produkt gebaut wird — beginnend beim Anforderungsengineering, nicht bei der IDE. Ich überführe Teams von Ticket-getriebenen Ritualen zu spec-getriebener, agentengestützter Auslieferung, gegated durch Evals und reviewed durch weitere Agenten. Endzustand: Agenten liefern Features, Menschen setzen Prioritäten.',
-  primaryCta: '30-min Erstgespräch buchen',
+    'Agentische PDLC heisst, das Bauen von Produkt neu auszulegen -- beginnend beim Anforderungsengineering, nicht bei der IDE. Ich überführe Teams von ticketgetriebenen Ritualen zu spec-getriebener, agentengestützter Auslieferung, abgesichert durch Evals und Review weiterer Agenten. Endzustand: Agenten liefern Features, Menschen setzen Prioritäten.',
+  primaryCta: '30-Minuten-Erstgespräch buchen',
   secondaryCta: 'Reifegradmodell lesen',
   primaryHref: 'https://cal.com/gmickel',
   secondaryHref: '#maturity',
@@ -34,7 +34,7 @@ const copyDE = {
     { label: 'Reife', value: 'L0 → L4' },
     { label: 'Diagnose', value: 'CHF 15–25k' },
     { label: 'Fundament', value: 'CHF 40–60k' },
-    { label: 'Voll-Shift', value: 'CHF 80–150k+' },
+    { label: 'Methodenwechsel', value: 'CHF 80–150k+' },
   ],
 };
 

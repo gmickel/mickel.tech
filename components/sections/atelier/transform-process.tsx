@@ -29,16 +29,16 @@ const copyEN = {
 const copyDE = {
   eyebrow: '02 / Prozess zuerst',
   heading:
-    'KI ist massgeschneidert. Die meiste „KI-Strategie" tut, als wäre sie es nicht.',
-  body: 'Slide-Deck-KI beginnt mit der Technologie und sucht einen Platz für sie. Echte KI beginnt mit dem Workflow, der wehtut. Wo die Daten bereits liegen. Wer entscheidet. Was unter Last bricht. Die Technologie-Antworten kommen zuletzt und sie beantworten unterschiedliche Fragen für unterschiedliche Unternehmen.',
+    'KI ist massgeschneidert. Die meisten „KI-Strategien" tun, als wäre sie es nicht.',
+  body: 'Slide-Deck-KI beginnt mit der Technologie und sucht einen Platz für sie. Echte KI beginnt mit dem Workflow, der wehtut. Wo die Daten bereits liegen. Wer entscheidet. Was unter Last bricht. Die Antworten zur Technologie kommen zuletzt -- und sie fallen für unterschiedliche Unternehmen unterschiedlich aus.',
   steps: [
     {
       tag: 'Prozesslandkarte',
-      body: 'Den Workflow end-to-end mit den Menschen kartieren, die ihn tatsächlich machen. Nicht das Organigramm. Nicht das BPMN-Diagramm. Den echten Pfad. Wo Entscheidungen fallen, wo Daten fliessen, wo Zeit verloren geht.',
+      body: 'Den Workflow end-to-end mit den Menschen kartieren, die ihn tatsächlich machen. Nicht das Organigramm. Nicht das BPMN-Diagramm. Den realen Pfad. Wo Entscheidungen fallen, wo Daten fliessen, wo Zeit verloren geht.',
     },
     {
       tag: 'Opportunity-Scoring',
-      body: 'Automatisierungskandidaten nach Impact und Machbarkeit scoren, nicht nach Neuartigkeit. Das erste Deployment sollte das Programm bezahlen — und es ist meist nicht der spannendste Workflow.',
+      body: 'Automatisierungskandidaten nach Impact und Machbarkeit bewerten, nicht nach Neuartigkeit. Das erste Deployment soll das Programm bezahlen -- und es ist meist nicht der spannendste Workflow.',
     },
     {
       tag: 'Kontextschicht',
@@ -46,7 +46,7 @@ const copyDE = {
     },
     {
       tag: 'Produktivsystem',
-      body: 'In den kartierten Workflow ausliefern. Observability, Evals, Fallbacks, Governance. Keine alleinstehenden Copilot-Apps, die niemand zweimal öffnet.',
+      body: 'In den kartierten Workflow ausliefern. Observability, Evals, Fallbacks, Governance. Keine freistehenden Copilot-Apps, die niemand zweimal öffnet.',
     },
   ],
 };
