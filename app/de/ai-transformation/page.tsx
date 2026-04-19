@@ -6,6 +6,7 @@ import AtelierTransformFaq from '@/components/sections/atelier/transform-faq';
 import AtelierTransformGovernance from '@/components/sections/atelier/transform-governance';
 import AtelierTransformHero from '@/components/sections/atelier/transform-hero';
 import AtelierTransformOffers from '@/components/sections/atelier/transform-offers';
+import AtelierTransformPainGain from '@/components/sections/atelier/transform-pain-gain';
 import AtelierTransformProcess from '@/components/sections/atelier/transform-process';
 import AtelierTransformSovereign from '@/components/sections/atelier/transform-sovereign';
 import AtelierTransformSystems from '@/components/sections/atelier/transform-systems';
@@ -106,6 +107,7 @@ export default function DeAiTransformationPage() {
       />
 
       <AtelierTransformHero locale="de" />
+      <AtelierTransformPainGain locale="de" />
       <AtelierTransformProcess locale="de" />
       <AtelierTransformSystems locale="de" />
       <AtelierTransformSovereign locale="de" />

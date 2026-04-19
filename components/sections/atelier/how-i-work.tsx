@@ -73,12 +73,16 @@ export default function AtelierHowIWork({ locale = 'en' }: HowIWorkProps) {
           heading: 'Jedes Mandat folgt derselben Disziplin.',
           intro:
             'Erfassen, entwerfen, umsetzen, messen. Vier Schritte. Keine Demos, keine Pilotfriedhöfe.',
+          coda: 'Jedes Mandat ist so gebaut, dass Sie es beenden können. Das ist der Test, ob es funktioniert hat.',
+          codaLabel: 'Exit, kein Retainer',
         }
       : {
           eyebrow: '04 / Method',
           heading: 'Every engagement follows the same discipline.',
           intro:
             'Assess, design, implement, measure. Four steps, no demos, no pilot graveyards.',
+          coda: 'Every engagement is built so you can stop renewing. That is the test of whether it worked.',
+          codaLabel: 'Exit, not retainer',
         };
 
   return (
@@ -141,6 +145,19 @@ export default function AtelierHowIWork({ locale = 'en' }: HowIWorkProps) {
             </li>
           ))}
         </ol>
+
+        <div className="mt-12 grid gap-8 md:grid-cols-12 md:gap-10">
+          <div className="md:col-span-3">
+            <span className="atelier-eyebrow text-[hsl(var(--rust))]">
+              {labels.codaLabel}
+            </span>
+          </div>
+          <div className="md:col-span-9">
+            <p className="atelier-display max-w-[60ch] font-medium text-[1.4rem] text-[hsl(var(--paper))]/90 italic leading-snug md:text-[1.65rem]">
+              {labels.coda}
+            </p>
+          </div>
+        </div>
       </div>
     </section>
   );
