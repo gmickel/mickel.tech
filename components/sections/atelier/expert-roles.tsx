@@ -16,7 +16,7 @@ const rolesEN: readonly RoleEntry[] = [
   {
     number: '01',
     title: 'Parteigutachten',
-    subtitle: 'Party expert, instructed by counsel.',
+    subtitle: 'Independent technical opinion, instructed by counsel.',
     whenUsed:
       'Civil litigation, commercial court matters, international arbitration. When you need a defensible technical opinion that supports a specific legal theory while remaining honest enough to survive cross-examination.',
     whatYouGet:

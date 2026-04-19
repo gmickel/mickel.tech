@@ -33,11 +33,11 @@ const copyEN = {
       roles: [
         {
           label: 'Parteigutachten',
-          meta: 'Party expert, instructed by counsel',
+          meta: 'Independent technical opinion, instructed by counsel',
         },
         {
           label: 'Werkvertrags-Gutachten',
-          meta: 'Contractually named acceptance expert',
+          meta: 'Independent acceptance expert, named by both parties',
         },
         {
           label: 'AI / tech due diligence',
@@ -101,7 +101,7 @@ const copyDE = {
         },
         {
           label: 'Werkvertrags-Gutachten',
-          meta: 'Vertraglich benannter Abnahmegutachter',
+          meta: 'Unabhängiger Abnahmegutachter, vertraglich benannt',
         },
         {
           label: 'KI- / Tech-Due-Diligence',
