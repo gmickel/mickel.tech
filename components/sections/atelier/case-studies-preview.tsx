@@ -157,11 +157,19 @@ function CaseStudyEntry({
 
 function areaLabel(area: CaseStudy['area'], locale: 'en' | 'de'): string {
   if (locale === 'de') {
-    if (area === 'pdlc') return 'Agentische PDLC';
-    if (area === 'expert') return 'Unabhängige Begutachtung';
+    if (area === 'pdlc') {
+      return 'Agentische PDLC';
+    }
+    if (area === 'expert') {
+      return 'Unabhängige Begutachtung';
+    }
     return 'KI-Systeme';
   }
-  if (area === 'pdlc') return 'Agentic PDLC';
-  if (area === 'expert') return 'Independent expert';
+  if (area === 'pdlc') {
+    return 'Agentic PDLC';
+  }
+  if (area === 'expert') {
+    return 'Independent expert';
+  }
   return 'AI systems';
 }
