@@ -1,6 +1,11 @@
 import type { Metadata, Viewport } from 'next';
 
-import { jetbrainsMono, spaceGrotesk } from './fonts';
+import {
+  hankenGrotesk,
+  jetbrainsMono,
+  newsreader,
+  spaceGrotesk,
+} from './fonts';
 
 import './globals.css';
 
@@ -17,25 +22,26 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://mickel.tech'),
   title: {
     default:
-      'Gordon Mickel – AI Systems, SDLC Transformation & Technical Expertise',
+      'Gordon Mickel — Agentic PDLC, AI Systems & Independent Technical Expert',
     template: '%s | Mickel Tech',
   },
   description:
-    'Gordon Mickel designs AI systems that actually work. Based in Basel, Switzerland. AI-native SDLC transformation (10+ teams, 500+ engineers), enterprise AI and agentic systems (RAG, private LLM, process automation), and ITDR-listed technical expert for ICT and AI disputes. Working in German and English across Switzerland, Germany and Europe.',
+    'I design AI systems that actually work. Operating Principal (AI & Technology) at Growth Factors. Independent practice for select mandates: agentic PDLC transformation, production AI systems, party-engaged technical opinion (Parteigutachten) and acceptance expert work (Werkvertrags-Gutachten). Basel, Switzerland — DE & EN.',
   keywords: [
+    'Agentic PDLC',
+    'AI-native PDLC',
     'AI SDLC transformation',
-    'agentic SDLC',
     'enterprise AI',
     'enterprise RAG',
     'AI agents',
     'private LLM infrastructure',
     'AI consulting Switzerland',
     'AI consulting DACH',
+    'Parteigutachter',
+    'Werkvertrags-Gutachter',
+    'IT Sachverständiger Schweiz',
     'technical expert ITDR',
     'AI due diligence',
-    'Gutachten IT',
-    'IT Sachverständiger Schweiz',
-    'process automation AI',
     'AI Berater Basel',
     'Gordon Mickel',
   ],
@@ -43,9 +49,9 @@ export const metadata: Metadata = {
   creator: 'Gordon Mickel',
   openGraph: {
     title:
-      'Gordon Mickel – AI Systems, SDLC Transformation & Technical Expertise',
+      'Gordon Mickel — Agentic PDLC, AI Systems & Independent Technical Expert',
     description:
-      'AI-native SDLC transformation, enterprise AI systems (RAG, agents, private LLM) and ITDR-listed technical expert. Production AI in regulated industries. 10+ teams, 500+ engineers, 20+ years.',
+      'Operating Principal (AI & Technology) at Growth Factors. Independent practice for select mandates: agentic PDLC, production AI systems, Parteigutachten and acceptance expert work. 20+ years, regulated industries, DE & EN.',
     type: 'website',
     locale: 'en_US',
     url: 'https://mickel.tech',
@@ -53,9 +59,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Gordon Mickel – AI Systems & Technical Expertise',
+    title: 'Gordon Mickel — Agentic PDLC, AI Systems & Independent Expert',
     description:
-      'AI-native SDLC transformation, enterprise AI systems and ITDR-listed technical expert. Production AI in regulated industries.',
+      'Independent practice for select mandates: agentic PDLC transformation, production AI systems, party-engaged technical opinion. Basel, DE & EN.',
     creator: '@gmickel',
   },
   robots: {
@@ -93,7 +99,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${spaceGrotesk.variable} ${jetbrainsMono.variable} antialiased`}
+        className={`${spaceGrotesk.variable} ${jetbrainsMono.variable} ${newsreader.variable} ${hankenGrotesk.variable} antialiased`}
       >
         <Providers>{children}</Providers>
       </body>

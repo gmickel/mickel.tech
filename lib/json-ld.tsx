@@ -19,14 +19,24 @@ export function personSchema() {
   return {
     '@context': 'https://schema.org',
     '@type': 'Person',
+    '@id': `${BASE_URL}#person`,
     name: 'Gordon Mickel',
+    givenName: 'Gordon',
+    familyName: 'Mickel',
     url: BASE_URL,
+    image: `${BASE_URL}/portraits/gordon-mickel.jpg`,
     sameAs: [
       'https://github.com/gmickel',
       'https://twitter.com/gmickel',
       'https://linkedin.com/in/gmickel',
+      'https://itdr.ch/en/experts/expert-details/36/gordon-mickel.html',
     ],
-    jobTitle: 'AI Systems & Platform Architect',
+    jobTitle: 'Operating Principal, AI & Technology',
+    worksFor: {
+      '@type': 'Organization',
+      name: 'Growth Factors',
+      url: 'https://growthfactorsglobal.com',
+    },
     address: {
       '@type': 'PostalAddress',
       addressLocality: 'Basel',
@@ -34,13 +44,156 @@ export function personSchema() {
     },
     knowsLanguage: ['en', 'de'],
     knowsAbout: [
-      'Agentic SDLC',
-      'AI Platforms',
+      'Agentic PDLC',
+      'AI-native Software Development',
       'Enterprise RAG',
       'Private LLM Infrastructure',
-      'Technical Expert Witness',
+      'AI Agents',
+      'Parteigutachten',
+      'Werkvertrags-Gutachten',
       'AI Due Diligence',
+      'Software Acceptance Disputes',
+      'Court-Engaged Expert Opinion',
     ],
+    memberOf: [
+      {
+        '@type': 'Organization',
+        name: 'ITDR — Swiss IT Dispute Resolution Center',
+        url: 'https://itdr.ch',
+      },
+      {
+        '@type': 'Organization',
+        name: 'OpenAI Red Team Network (alumnus)',
+        url: 'https://openai.com',
+      },
+    ],
+  };
+}
+
+export function professionalServiceSchema() {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'ProfessionalService',
+    '@id': `${BASE_URL}#practice`,
+    name: 'Mickel Tech — Independent Practice',
+    url: BASE_URL,
+    image: `${BASE_URL}/portraits/gordon-mickel.jpg`,
+    description:
+      'Independent practice of Gordon Mickel for select mandates: agentic PDLC, production AI systems, and party-engaged technical opinion (Parteigutachten / Werkvertrags-Gutachten / AI tech due diligence).',
+    provider: {
+      '@id': `${BASE_URL}#person`,
+    },
+    areaServed: [
+      { '@type': 'Country', name: 'Switzerland' },
+      { '@type': 'Country', name: 'Germany' },
+      { '@type': 'Country', name: 'Austria' },
+      { '@type': 'Place', name: 'Europe' },
+    ],
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: 'Basel',
+      addressCountry: 'CH',
+    },
+    availableLanguage: ['en', 'de'],
+    priceRange: 'CHF 15,000 — CHF 150,000+',
+    hasOfferCatalog: {
+      '@type': 'OfferCatalog',
+      name: 'Practice areas',
+      itemListElement: [
+        {
+          '@type': 'OfferCatalog',
+          name: 'Agentic PDLC',
+          itemListElement: [
+            {
+              '@type': 'Offer',
+              itemOffered: {
+                '@type': 'Service',
+                name: 'Agentic PDLC Diagnostic',
+                description:
+                  '2-week assessment: L0–L4 maturity scoring, 5-pillar audit, opportunity map, 90-day roadmap.',
+              },
+              priceSpecification: {
+                '@type': 'PriceSpecification',
+                price: '15000',
+                priceCurrency: 'CHF',
+              },
+            },
+            {
+              '@type': 'Offer',
+              itemOffered: {
+                '@type': 'Service',
+                name: 'Foundation Sprint',
+                description:
+                  '6-8 weeks: tooling rollout, training, 1-2 quick wins, KPI baseline.',
+              },
+              priceSpecification: {
+                '@type': 'PriceSpecification',
+                price: '40000',
+                priceCurrency: 'CHF',
+              },
+            },
+          ],
+        },
+        {
+          '@type': 'OfferCatalog',
+          name: 'Independent expert work',
+          itemListElement: [
+            {
+              '@type': 'Service',
+              name: 'Parteigutachten',
+              description:
+                'Party expert opinion (Parteigutachter) for counsel in litigation and arbitration.',
+            },
+            {
+              '@type': 'Service',
+              name: 'Werkvertrags-Gutachten',
+              description:
+                'Contractually named acceptance expert (Werkvertrags-Gutachter / Abnahmegutachter) in software procurement contracts.',
+            },
+            {
+              '@type': 'Service',
+              name: 'AI / Technology Due Diligence',
+              description:
+                'Independent AI and technology due diligence for investors, boards and M&A.',
+            },
+          ],
+        },
+        {
+          '@type': 'OfferCatalog',
+          name: 'AI systems & transformation',
+          itemListElement: [
+            {
+              '@type': 'Offer',
+              itemOffered: {
+                '@type': 'Service',
+                name: 'Process Map + AI Opportunity Audit',
+                description:
+                  '2-3 weeks: map workflows, score automation candidates, prioritised initiatives with ROI estimates.',
+              },
+              priceSpecification: {
+                '@type': 'PriceSpecification',
+                price: '15000',
+                priceCurrency: 'CHF',
+              },
+            },
+            {
+              '@type': 'Offer',
+              itemOffered: {
+                '@type': 'Service',
+                name: 'AI System Build',
+                description:
+                  'Production deployment: enterprise RAG, agents, voice bots, knowledge platforms.',
+              },
+              priceSpecification: {
+                '@type': 'PriceSpecification',
+                price: '40000',
+                priceCurrency: 'CHF',
+              },
+            },
+          ],
+        },
+      ],
+    },
   };
 }
 

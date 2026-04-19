@@ -1,41 +1,43 @@
 import type { Metadata } from 'next';
 import { Suspense } from 'react';
 
-import Shell from '@/components/layout/shell';
-import Chronology from '@/components/sections/chronology';
-import Contact from '@/components/sections/contact/index';
-import DeHeroLoader from '@/components/sections/de/hero-loader';
-import DeHowIWork from '@/components/sections/de/how-i-work';
-import DePillars from '@/components/sections/de/pillars';
-import Quote from '@/components/sections/quote';
-import SystemLogLatest from '@/components/sections/system-log-latest';
-import { JsonLd, personSchema } from '@/lib/json-ld';
+import AtelierShell from '@/components/layout/atelier-shell';
+import AtelierAudienceRouter from '@/components/sections/atelier/audience-router';
+import AtelierCaseStudiesPreview from '@/components/sections/atelier/case-studies-preview';
+import AtelierContact from '@/components/sections/atelier/contact';
+import AtelierHero from '@/components/sections/atelier/hero';
+import AtelierHowIWork from '@/components/sections/atelier/how-i-work';
+import AtelierSystemLogLatest from '@/components/sections/atelier/system-log-latest';
+import AtelierTrustStrip from '@/components/sections/atelier/trust-strip';
+import { JsonLd, personSchema, professionalServiceSchema } from '@/lib/json-ld';
 
 export const metadata: Metadata = {
   title:
-    'Gordon Mickel – KI-Systeme, SDLC-Transformation & Technische Expertise',
+    'Gordon Mickel — Agentische PDLC, KI-Systeme & Unabhängige Begutachtung',
   description:
-    'Gordon Mickel entwickelt KI-Systeme, die wirklich funktionieren. Basel, Schweiz. KI-native SDLC-Transformation (10+ Teams, 500+ Ingenieure), Enterprise-KI und agentische Systeme (RAG, Private LLM, Prozessautomatisierung) sowie ITDR-gelisteter technischer Sachverständiger für ICT- und KI-Streitigkeiten.',
+    'Ich entwerfe KI-Systeme, die wirklich funktionieren. Operating Principal (KI & Technologie) bei Growth Factors. Unabhängige Praxis für ausgewählte Mandate: agentische PDLC, produktive KI-Systeme, Parteigutachten und Werkvertrags-Gutachten. Basel, Schweiz — DE & EN.',
   keywords: [
+    'Agentische PDLC',
+    'KI-native PDLC',
     'KI Beratung Schweiz',
     'KI Beratung Basel',
-    'KI SDLC Transformation',
     'Enterprise KI',
     'Enterprise RAG',
     'KI Agenten',
     'Private LLM Infrastruktur',
-    'IT Sachverständiger',
+    'Parteigutachter',
+    'Werkvertrags-Gutachter',
+    'IT Sachverständiger Schweiz',
     'ITDR Sachverständiger',
-    'Gutachten IT',
     'Gutachten Software',
-    'Prozessautomatisierung KI',
+    'KI Due Diligence',
     'Gordon Mickel',
   ],
   openGraph: {
     title:
-      'Gordon Mickel – KI-Systeme, SDLC-Transformation & Technische Expertise',
+      'Gordon Mickel — Agentische PDLC, KI-Systeme & Unabhängige Begutachtung',
     description:
-      'KI-native SDLC-Transformation, Enterprise-KI-Systeme und ITDR-gelisteter technischer Sachverständiger. Basel, Schweiz.',
+      'Operating Principal (KI & Technologie) bei Growth Factors. Unabhängige Praxis für ausgewählte Mandate: agentische PDLC, produktive KI-Systeme, Parteigutachten und Werkvertrags-Gutachten.',
     locale: 'de_CH',
   },
   alternates: {
@@ -46,29 +48,19 @@ export const metadata: Metadata = {
 
 export default function DeHomePage() {
   return (
-    <Shell>
+    <AtelierShell>
       <JsonLd data={personSchema()} />
+      <JsonLd data={professionalServiceSchema()} />
+
+      <AtelierHero locale="de" />
+      <AtelierTrustStrip locale="de" />
+      <AtelierAudienceRouter locale="de" />
+      <AtelierCaseStudiesPreview locale="de" />
+      <AtelierHowIWork locale="de" />
       <Suspense fallback={null}>
-        <DeHeroLoader />
+        <AtelierSystemLogLatest locale="de" />
       </Suspense>
-      <Suspense fallback={null}>
-        <DePillars />
-      </Suspense>
-      <Suspense fallback={null}>
-        <DeHowIWork />
-      </Suspense>
-      <Suspense fallback={null}>
-        <Quote />
-      </Suspense>
-      <Suspense fallback={null}>
-        <SystemLogLatest />
-      </Suspense>
-      <Suspense fallback={null}>
-        <Chronology />
-      </Suspense>
-      <Suspense fallback={null}>
-        <Contact />
-      </Suspense>
-    </Shell>
+      <AtelierContact locale="de" />
+    </AtelierShell>
   );
 }

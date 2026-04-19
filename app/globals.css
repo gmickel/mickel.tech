@@ -35,10 +35,21 @@
 
   --font-sans: var(--font-sans);
   --font-mono: var(--font-mono);
+  --font-display: var(--font-display);
+  --font-atelier-sans: var(--font-atelier-sans);
 
   --radius-sm: 4px;
   --radius-md: 6px;
   --radius-lg: 8px;
+
+  /* Engineering Atelier theme colors */
+  --color-graphite: hsl(var(--graphite));
+  --color-paper: hsl(var(--paper));
+  --color-ink: hsl(var(--ink));
+  --color-navy: hsl(var(--navy));
+  --color-rust: hsl(var(--rust));
+  --color-cream-border: hsl(var(--cream-border));
+  --color-graphite-border: hsl(var(--graphite-border));
 }
 
 :root {
@@ -77,6 +88,17 @@
   --alert: 25 100% 55%; /* #FF7A1A Orange */
   --success: 142 76% 55%; /* #32E673 Green */
   --panel: 216 9% 21%; /* #30343A */
+
+  /* Engineering Atelier palette (commercial surface only) */
+  --graphite: 40 7% 10%; /* #1B1A17 warm dark base */
+  --paper: 42 32% 89%; /* #ECE6D8 warm cream */
+  --ink: 40 12% 8%; /* #15130E text on paper */
+  --navy: 213 51% 24%; /* #1F3A5C trust / legal accent */
+  --rust: 17 56% 43%; /* #B25028 small builder accent */
+  --cream-border: 42 16% 78%; /* warm cream border on paper */
+  --graphite-border: 40 8% 15%; /* warm border on graphite */
+  --graphite-muted: 40 6% 65%; /* muted text on graphite */
+  --paper-muted: 40 8% 38%; /* muted text on paper */
 }
 
 @layer base {
@@ -85,16 +107,271 @@
   }
   body {
     @apply font-sans antialiased bg-background text-foreground;
-    cursor: none; /* Hide default cursor for custom one */
+    cursor: none; /* Legacy cyberpunk shell custom cursor */
+  }
+
+  /* Atelier surface re-enables system cursor + own typography */
+  body:has(.atelier-surface) {
+    cursor: auto;
+  }
+
+  .atelier-surface,
+  .atelier-surface * {
+    cursor: auto;
   }
 
   /* Selection color */
   ::selection {
     @apply bg-primary/30 text-primary;
   }
+
+  .atelier-paper ::selection {
+    background: hsl(var(--rust) / 0.18);
+    color: hsl(var(--ink));
+  }
+
+  .atelier-dark ::selection {
+    background: hsl(var(--rust) / 0.25);
+    color: hsl(var(--paper));
+  }
 }
 
 @layer utilities {
+  /* Engineering Atelier surface utilities ----------------------------- */
+
+  /* Default atelier wrapper: type, base background, no overlays */
+  .atelier-surface {
+    font-family: var(--font-atelier-sans), ui-sans-serif, system-ui, sans-serif;
+    font-feature-settings: "ss01", "ss02", "cv11";
+    -webkit-font-smoothing: antialiased;
+    color: hsl(var(--paper));
+    background: hsl(var(--graphite));
+  }
+
+  /* Section modes — apply per <section> */
+  .atelier-dark {
+    background: hsl(var(--graphite));
+    color: hsl(var(--paper));
+  }
+
+  .atelier-paper {
+    background: hsl(var(--paper));
+    color: hsl(var(--ink));
+  }
+
+  /* Display headlines — Newsreader serif with optical sizing */
+  .atelier-display {
+    font-family: var(--font-display), ui-serif, Georgia, serif;
+    font-optical-sizing: auto;
+    font-variation-settings: "opsz" 96;
+    letter-spacing: -0.02em;
+    line-height: 0.96;
+  }
+
+  /* Tabular small caps numerals for stats / years / sums */
+  .atelier-numerals {
+    font-family: var(--font-display), ui-serif, Georgia, serif;
+    font-feature-settings: "tnum", "lnum", "ss01";
+    font-variant-numeric: tabular-nums lining-nums;
+  }
+
+  /* Eyebrow label — used sparingly, one per section max */
+  .atelier-eyebrow {
+    font-family: var(--font-mono), ui-monospace, monospace;
+    font-size: 0.6875rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  /* Body lead — for hero subheads */
+  .atelier-lead {
+    font-family: var(--font-atelier-sans), ui-sans-serif, system-ui, sans-serif;
+    font-size: clamp(1.075rem, 0.96rem + 0.55vw, 1.32rem);
+    line-height: 1.45;
+    font-weight: 400;
+  }
+
+  /* Editorial body */
+  .atelier-body {
+    font-family: var(--font-atelier-sans), ui-sans-serif, system-ui, sans-serif;
+    font-size: 1rem;
+    line-height: 1.55;
+  }
+
+  /* Subtle warm paper grain — for paper sections */
+  .atelier-paper-grain {
+    background-image: radial-gradient(
+      hsl(var(--ink) / 0.04) 1px,
+      transparent 1px
+    );
+    background-size: 3px 3px;
+  }
+
+  /* Atelier diagonal rule — used as section accent */
+  .atelier-diagonal-rule {
+    height: 1px;
+    background-image: linear-gradient(
+      to right,
+      hsl(var(--paper) / 0.18) 0%,
+      hsl(var(--paper) / 0.18) 50%,
+      transparent 50%,
+      transparent 100%
+    );
+    background-size: 8px 1px;
+  }
+
+  /* Atelier rule on paper */
+  .atelier-paper-rule {
+    height: 1px;
+    background: hsl(var(--ink) / 0.18);
+  }
+
+  /* Atelier link styling on dark */
+  .atelier-link {
+    color: hsl(var(--paper));
+    text-decoration: underline;
+    text-decoration-color: hsl(var(--rust));
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.25em;
+    transition: all 240ms cubic-bezier(0.2, 0.6, 0.3, 1);
+  }
+  .atelier-link:hover {
+    color: hsl(var(--rust));
+    text-decoration-color: hsl(var(--rust));
+  }
+
+  .atelier-paper .atelier-link {
+    color: hsl(var(--ink));
+    text-decoration-color: hsl(var(--rust));
+  }
+  .atelier-paper .atelier-link:hover {
+    color: hsl(var(--navy));
+  }
+
+  /* Atelier CTA — "Discuss a mandate" / primary */
+  .atelier-cta-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.65rem;
+    padding: 0.95rem 1.5rem;
+    font-family: var(--font-atelier-sans), ui-sans-serif, sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: -0.005em;
+    background: hsl(var(--paper));
+    color: hsl(var(--ink));
+    border: 1px solid hsl(var(--paper));
+    transition:
+      transform 220ms cubic-bezier(0.2, 0.6, 0.3, 1),
+      background 220ms cubic-bezier(0.2, 0.6, 0.3, 1);
+  }
+  .atelier-cta-primary:hover {
+    transform: translateY(-1px);
+    background: hsl(var(--rust));
+    color: hsl(var(--paper));
+    border-color: hsl(var(--rust));
+  }
+
+  /* Secondary CTA — "Independent expert work" */
+  .atelier-cta-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.65rem;
+    padding: 0.95rem 1.5rem;
+    font-family: var(--font-atelier-sans), ui-sans-serif, sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: -0.005em;
+    background: transparent;
+    color: hsl(var(--paper));
+    border: 1px solid hsl(var(--paper) / 0.35);
+    transition:
+      transform 220ms cubic-bezier(0.2, 0.6, 0.3, 1),
+      border-color 220ms cubic-bezier(0.2, 0.6, 0.3, 1),
+      color 220ms cubic-bezier(0.2, 0.6, 0.3, 1);
+  }
+  .atelier-cta-secondary:hover {
+    transform: translateY(-1px);
+    color: hsl(var(--paper));
+    border-color: hsl(var(--paper));
+  }
+
+  .atelier-paper .atelier-cta-primary {
+    background: hsl(var(--ink));
+    color: hsl(var(--paper));
+    border-color: hsl(var(--ink));
+  }
+  .atelier-paper .atelier-cta-primary:hover {
+    background: hsl(var(--rust));
+    color: hsl(var(--paper));
+    border-color: hsl(var(--rust));
+  }
+  .atelier-paper .atelier-cta-secondary {
+    color: hsl(var(--ink));
+    border-color: hsl(var(--ink) / 0.4);
+  }
+  .atelier-paper .atelier-cta-secondary:hover {
+    color: hsl(var(--ink));
+    border-color: hsl(var(--ink));
+  }
+
+  /* Section large numeral anchor (01 / 02 / 03 etc.) */
+  .atelier-section-numeral {
+    font-family: var(--font-display), ui-serif, Georgia, serif;
+    font-variation-settings: "opsz" 96;
+    font-weight: 300;
+    font-size: clamp(2.25rem, 1.5rem + 3vw, 4rem);
+    letter-spacing: -0.04em;
+    line-height: 1;
+    color: hsl(var(--rust));
+  }
+
+  /* Atelier diagonal sweep used at hero — drawn in once on load */
+  @keyframes atelier-sweep {
+    0% {
+      transform: scaleX(0);
+      opacity: 0;
+    }
+    35% {
+      opacity: 0.8;
+    }
+    100% {
+      transform: scaleX(1);
+      opacity: 0.5;
+    }
+  }
+  .atelier-sweep {
+    transform-origin: left center;
+    animation: atelier-sweep 1.4s cubic-bezier(0.2, 0.7, 0.2, 1) 0.2s both;
+  }
+
+  /* Hero title staggered reveal */
+  @keyframes atelier-rise {
+    from {
+      opacity: 0;
+      transform: translateY(0.85rem);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .atelier-rise {
+    animation: atelier-rise 0.85s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  }
+
+  /* Atelier card hover lift (1mm = ~3.78px, subtle) */
+  .atelier-card-hover {
+    transition:
+      transform 280ms cubic-bezier(0.2, 0.6, 0.3, 1),
+      border-color 280ms cubic-bezier(0.2, 0.6, 0.3, 1),
+      background 280ms cubic-bezier(0.2, 0.6, 0.3, 1);
+  }
+  .atelier-card-hover:hover {
+    transform: translateY(-3px);
+  }
+
   .font-mono-tight {
     font-family: var(--font-mono);
     letter-spacing: -0.05em;
