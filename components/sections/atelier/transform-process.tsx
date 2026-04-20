@@ -13,7 +13,7 @@ const copyEN = {
     },
     {
       tag: 'Opportunity scoring',
-      body: "Score automation candidates by impact and feasibility, not novelty. The first deployment should pay for the program — and it usually isn't the most exciting workflow.",
+      body: "Score automation candidates by impact and feasibility, not novelty. The first deployment should pay for the program, and it usually isn't the most exciting workflow.",
     },
     {
       tag: 'Context layer',

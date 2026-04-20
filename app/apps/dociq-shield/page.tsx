@@ -8,11 +8,11 @@ import { Separator } from '@/components/ui/separator';
 import { breadcrumbSchema, JsonLd, softwareAppSchema } from '@/lib/json-ld';
 
 export const metadata: Metadata = {
-  title: 'DocIQ Shield — AI Document Anonymisation for Swiss Courts',
+  title: 'DocIQ Shield: AI Document Anonymisation for Swiss Courts',
   description:
     'Zero-persistence anonymisation powered by fine-tuned local NER and LLM models. Full Swiss court standard compliance. 10 seconds instead of 2 hours. No data stored, ever.',
   openGraph: {
-    title: 'DocIQ Shield — AI Document Anonymisation for Swiss Courts',
+    title: 'DocIQ Shield: AI Document Anonymisation for Swiss Courts',
     description:
       'Zero-persistence anonymisation with fine-tuned local NER and LLM models. Swiss court standard compliance. 10 seconds instead of 2 hours.',
     type: 'website',
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'DocIQ Shield — AI Document Anonymisation',
+    title: 'DocIQ Shield: AI Document Anonymisation',
     description:
       'Zero-persistence anonymisation with fine-tuned local models. No data stored, ever.',
   },
@@ -39,19 +39,19 @@ const features = [
   {
     title: 'Smart Preservation',
     description:
-      'Role-based rules preserve judges, lawyers, and authorities. Anonymises parties, witnesses, minors, addresses, and personal dates. Identifies every variation — abbreviations, misspellings, cross-references.',
+      'Role-based rules preserve judges, lawyers, and authorities. Anonymises parties, witnesses, minors, addresses, and personal dates. Identifies every variation: abbreviations, misspellings, cross-references.',
     icon: '⚖️',
   },
   {
     title: 'Zero Data Persistence',
     description:
-      'In-memory only processing. No database — not an empty one, literally none. No disk storage, no logs. Memory cleared immediately after processing. Nothing to breach, subpoena, or audit.',
+      'In-memory only processing. No database, not an empty one, literally none. No disk storage, no logs. Memory cleared immediately after processing. Nothing to breach, subpoena, or audit.',
     icon: '🔒',
   },
   {
     title: 'Entity Transparency',
     description:
-      'Color-coded entity cards with classification rationale. Confidence scores, side-by-side comparison. Review each entity with reasons — see exactly what was anonymised and why.',
+      'Color-coded entity cards with classification rationale. Confidence scores, side-by-side comparison. Review each entity with reasons; see exactly what was anonymised and why.',
     icon: '👁️',
   },
 ];
@@ -87,12 +87,12 @@ const preserveList = [
 ];
 
 const anonymiseList = [
-  'Parties (Kläger, Beklagte) — all name variations',
-  'Witnesses (Zeugen) — including abbreviated forms',
+  'Parties (Kläger, Beklagte): all name variations',
+  'Witnesses (Zeugen): including abbreviated forms',
   'All doctors (treating + experts)',
   'Addresses (street names, postal codes)',
   'Dates (birth, marriage, divorce)',
-  'Minors — always anonymised',
+  'Minors: always anonymised',
 ];
 
 const audiences = [
@@ -195,7 +195,7 @@ export default function DocIQShieldPage() {
               <p className="mt-6 max-w-2xl text-lg text-muted-foreground leading-relaxed">
                 Swiss-engineered anonymisation for judicial, government, and
                 regulated sectors. Powered by fine-tuned local NER and LLM
-                models — no data leaves your network. Full Swiss court standard
+                models; no data leaves your network. Full Swiss court standard
                 compliance.
               </p>
 
@@ -482,7 +482,7 @@ export default function DocIQShieldPage() {
                     <div>
                       <p className="text-white">Air-Gapped</p>
                       <p className="text-xs">
-                        Zero external network dependencies — fully offline
+                        Zero external network dependencies, fully offline
                       </p>
                     </div>
                   </li>

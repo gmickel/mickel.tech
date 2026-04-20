@@ -9,7 +9,7 @@ const copyEN = {
     'Now read carefully, and on the record.',
   ] as const,
   intro:
-    'Independent technical expert (ITDR-listed) for software and AI matters. Engaged by counsel, courts, arbitrators and boards across Switzerland and Germany. I trace claims through code, infrastructure and contracts — not just through the management summary.',
+    'Independent technical expert (ITDR-listed) for software and AI matters. Engaged by counsel, courts, arbitrators and boards across Switzerland and Germany. I trace claims through code, infrastructure and contracts, not just through the management summary.',
   primaryCta: 'Open a confidential intake',
   secondaryCta: 'How an opinion is produced',
   primaryHref: '#intake',

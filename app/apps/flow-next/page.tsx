@@ -520,7 +520,7 @@ export default function FlowNextPage() {
                   <span className="font-mono text-emerald-400">
                     fits the context window
                   </span>
-                  . Re-anchoring after each task—and after compaction—means{' '}
+                  . Re-anchoring after each task (and after compaction) means{' '}
                   <span className="font-mono text-cyan-400">zero drift</span>.
                 </p>
                 <div className="mt-6 grid grid-cols-2 gap-3 border-white/10 border-t pt-6">
@@ -679,7 +679,7 @@ export default function FlowNextPage() {
             <p className="mx-auto mt-4 max-w-2xl text-white/60">
               Same <code className="text-emerald-400">.flow/</code> directory,
               same <code className="text-emerald-400">flowctl</code>, same
-              workflow — regardless of which AI coding tool you use.
+              workflow, regardless of which AI coding tool you use.
             </p>
           </div>
 
@@ -903,7 +903,7 @@ export default function FlowNextPage() {
                 <p className="font-semibold text-white">Zero vendor lock-in</p>
                 <p className="mt-1 text-sm text-white/50">
                   File-based state in{' '}
-                  <code className="text-emerald-400">.flow/</code> — works
+                  <code className="text-emerald-400">.flow/</code>: works
                   everywhere, move between platforms freely
                 </p>
               </div>
@@ -1829,9 +1829,9 @@ export default function FlowNextPage() {
 
                 <p className="mt-6 text-lg text-white/80 leading-relaxed">
                   Opt-in autonomous operation built on top of the flow-next
-                  plan/work loop. Orchestrates complete cycles while you
-                  sleep—fresh context windows every iteration prevent drift.
-                  Attempt backstops block stuck tasks automatically.
+                  plan/work loop. Orchestrates complete cycles while you sleep.
+                  Fresh context windows every iteration prevent drift. Attempt
+                  backstops block stuck tasks automatically.
                 </p>
 
                 <div className="mt-8 space-y-3">
@@ -1899,7 +1899,7 @@ export default function FlowNextPage() {
                         },
                         {
                           label: 'Review Until SHIP',
-                          desc: "Reviews don't just flag issues—they block until the reviewer returns SHIP.",
+                          desc: "Reviews don't just flag issues; they block until the reviewer returns SHIP.",
                         },
                         {
                           label: 'Workflow Enforcement',
@@ -2020,7 +2020,7 @@ export default function FlowNextPage() {
                           </p>
                           <p>
                             <span className="text-white/40">none:</span>{' '}
-                            <code className="text-amber-400">COMPLETE</code> —
+                            <code className="text-amber-400">COMPLETE</code>:
                             all epics done
                           </p>
                         </div>
@@ -2192,7 +2192,7 @@ export default function FlowNextPage() {
 
                 <p className="mt-6 text-lg text-white/80 leading-relaxed">
                   Watch your autonomous runs in real-time. Task progress,
-                  streaming logs, and run state—all in a beautiful terminal
+                  streaming logs, and run state, all in a beautiful terminal
                   interface.
                 </p>
 
@@ -2252,7 +2252,7 @@ export default function FlowNextPage() {
 
                 <p className="mt-4 text-sm text-white/50">
                   Auto-selects latest run. Detach with{' '}
-                  <code className="text-cyan-400/70">q</code>—Ralph keeps
+                  <code className="text-cyan-400/70">q</code>. Ralph keeps
                   running.
                 </p>
               </div>
@@ -2819,7 +2819,7 @@ export default function FlowNextPage() {
                   {
                     icon: '🚫',
                     title: 'Blocks Until SHIP',
-                    desc: 'No "LGTM with nits" that get ignored—reviews enforce resolution',
+                    desc: 'No "LGTM with nits" that get ignored; reviews enforce resolution',
                   },
                   {
                     icon: '🌐',
@@ -3104,7 +3104,7 @@ export default function FlowNextPage() {
                   </a>
                 </div>
                 <p className="text-white/40 text-xs">
-                  Community port — see repo README for setup
+                  Community port · see repo README for setup
                 </p>
               </div>
             </div>

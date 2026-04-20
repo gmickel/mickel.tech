@@ -7,11 +7,11 @@ import { Separator } from '@/components/ui/separator';
 import { breadcrumbSchema, JsonLd, softwareAppSchema } from '@/lib/json-ld';
 
 export const metadata: Metadata = {
-  title: 'outlookctl — Control Outlook from the Command Line',
+  title: 'outlookctl: Control Outlook from the Command Line',
   description:
     'Local CLI bridge for Outlook Classic automation on Windows via COM. AI-assisted email and calendar management with Claude Code. No API keys, no OAuth.',
   openGraph: {
-    title: 'outlookctl — Control Outlook from the Command Line',
+    title: 'outlookctl: Control Outlook from the Command Line',
     description:
       'Local CLI bridge for Outlook Classic automation on Windows via COM. AI-assisted email and calendar management with Claude Code.',
     type: 'website',
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'outlookctl — Control Outlook from the Command Line',
+    title: 'outlookctl: Control Outlook from the Command Line',
     description:
       'Local CLI bridge for Outlook Classic automation. AI-assisted email and calendar management.',
   },
@@ -176,7 +176,7 @@ export default function OutlookctlPage() {
               <p className="mt-6 max-w-2xl text-lg text-muted-foreground leading-relaxed">
                 Can't access Exchange via Microsoft Graph API? No problem.
                 Control Outlook directly through COM automation on your Windows
-                workstation. Let Claude help manage your email and calendar—no
+                workstation. Let Claude help manage your email and calendar. No
                 API keys, no OAuth, just your existing Outlook session.
               </p>
 
@@ -323,11 +323,11 @@ export default function OutlookctlPage() {
                   <li className="flex gap-2">
                     <span className="text-[#00d9ff]">›</span>
                     <strong className="text-white">No API keys or OAuth</strong>{' '}
-                    — uses your existing logged-in Outlook session
+                    · uses your existing logged-in Outlook session
                   </li>
                   <li className="flex gap-2">
                     <span className="text-[#00d9ff]">›</span>
-                    <strong className="text-white">Entirely local</strong> — no
+                    <strong className="text-white">Entirely local</strong> · no
                     network calls to external services
                   </li>
                   <li className="flex gap-2">
@@ -335,11 +335,11 @@ export default function OutlookctlPage() {
                     <strong className="text-white">
                       Same tech as VBA macros
                     </strong>{' '}
-                    — standard Windows COM interface
+                    · standard Windows COM interface
                   </li>
                   <li className="flex gap-2">
                     <span className="text-[#00d9ff]">›</span>
-                    <strong className="text-white">JSON output</strong> —
+                    <strong className="text-white">JSON output</strong> ·
                     deterministic, parseable responses for AI integration
                   </li>
                 </ul>
@@ -546,7 +546,7 @@ export default function OutlookctlPage() {
                 </p>
                 <p>
                   Perfect for corporate environments with strict security
-                  policies—uses your existing authenticated session, no app
+                  policies. Uses your existing authenticated session, no app
                   registration needed.
                 </p>
                 <div className="flex flex-wrap gap-3 pt-2">

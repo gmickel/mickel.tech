@@ -8,7 +8,7 @@ export const runtime = 'edge';
 export const size = ATELIER_OG_SIZE;
 export const contentType = ATELIER_OG_CONTENT_TYPE;
 export const alt =
-  'Independent Technical Expert — Parteigutachten, Werkvertrags-Gutachten, AI/Tech DD';
+  'Independent Technical Expert · Parteigutachten, Werkvertrags-Gutachten, AI/Tech DD';
 
 export default async function OGImage() {
   return await renderAtelierOG({

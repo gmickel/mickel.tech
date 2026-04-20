@@ -9,7 +9,7 @@ const copyEN = {
   headlineParts: ['I design AI', 'systems that', 'actually work.'] as const,
   underline: 'actually',
   intro:
-    'Operating Principal, AI & Technology at Growth Factors (Bregal portfolio). Independent practice for a small number of select mandates each year — agentic PDLC, production AI systems, and party-engaged technical opinion.',
+    'Operating Principal, AI & Technology at Growth Factors (Bregal portfolio). Independent practice for a small number of select mandates each year: agentic PDLC, production AI systems, and party-engaged technical opinion.',
   primaryCta: 'Discuss a mandate',
   secondaryCta: 'Independent expert work',
   caption: 'Gordon Mickel · Binningen, Switzerland',

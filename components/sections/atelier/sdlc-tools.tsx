@@ -5,7 +5,7 @@ interface SdlcToolsProps {
 const copyEN = {
   eyebrow: '05 / Tools',
   heading: 'Fluent in the standard stack. I also build my own.',
-  body: 'Most engagements run on whatever your team already uses — IDEs, model providers, CI, observability — and I am fluent across the standard PDLC tooling. Where I have hit a real ceiling in that stack, I have built two products of my own to push past it. They inform the methodology I bring; they are not a precondition for working together.',
+  body: 'Most engagements run on whatever your team already uses (IDEs, model providers, CI, observability), and I am fluent across the standard PDLC tooling. Where I have hit a real ceiling in that stack, I have built two products of my own to push past it. They inform the methodology I bring; they are not a precondition for working together.',
   tools: [
     {
       name: 'FlowNext',

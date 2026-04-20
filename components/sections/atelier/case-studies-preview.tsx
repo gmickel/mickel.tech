@@ -14,7 +14,8 @@ export default function AtelierCaseStudiesPreview({
       ? {
           eyebrow: '03 / Auswahl an Mandaten',
           heading: 'Vier Beispiele aus der Praxis.',
-          intro: 'Vier Beispiele aus realen Mandaten. Reale Zahlen.',
+          intro:
+            'Problem, Vorgehen, Ergebnis, messbare Zahlen. Das nächstgelegene Beispiel für Ihre Situation.',
           allLink: 'Alle Fallstudien',
           allHref: '/de/case-studies',
           problemLabel: 'Problem',
@@ -24,7 +25,8 @@ export default function AtelierCaseStudiesPreview({
       : {
           eyebrow: '03 / Selected work',
           heading: 'Four examples from real engagements.',
-          intro: 'Four examples from real engagements. Real numbers.',
+          intro:
+            'Problem, approach, outcome, measurable result. Pick the one closest to your situation.',
           allLink: 'All case studies',
           allHref: '/case-studies',
           problemLabel: 'Problem',

@@ -2,7 +2,7 @@ import { ImageResponse } from 'next/og';
 
 export const runtime = 'edge';
 
-export const alt = 'DocIQ Sphere — AI Document Intelligence for Legal Teams';
+export const alt = 'DocIQ Sphere · AI Document Intelligence for Legal Teams';
 export const size = {
   width: 1200,
   height: 630,

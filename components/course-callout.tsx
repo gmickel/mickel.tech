@@ -14,7 +14,7 @@ export default function CourseCallout() {
 
       <span className="font-mono text-white/70 text-xs uppercase tracking-wider sm:text-sm">
         <span className="font-bold text-primary">New</span>
-        {' — Agentic SDLC Video Course coming soon'}
+        {' · Agentic SDLC Video Course coming soon'}
       </span>
 
       <span className="shrink-0 border border-primary/40 bg-primary/10 px-3 py-1 font-bold font-mono text-primary text-xs uppercase tracking-wider transition-all group-hover:bg-primary group-hover:text-black sm:text-sm">

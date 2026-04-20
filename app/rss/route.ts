@@ -33,7 +33,7 @@ export async function GET() {
   const feed = `<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0">
 <channel>
-  <title>Mickel Tech — System Log</title>
+  <title>Mickel Tech · System Log</title>
   <link>${siteUrl}/log</link>
   <description>System log entries on agentic SDLC, platforms and AI agents.</description>
   <language>en</language>

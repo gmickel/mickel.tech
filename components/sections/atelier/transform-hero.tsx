@@ -9,15 +9,15 @@ const copyEN = {
   headline: 'AI systems that run your business, not just demo well.',
   underline: 'run',
   intro:
-    'Every engagement starts with a process map, not a tool. Where the data lives. Where the bottlenecks are. What breaks at scale. Then I build the context layer and ship production systems on top — agents that hold up in real operations, knowledge platforms your team actually uses, voice, sovereign and private LLM infrastructure.',
+    'Every engagement starts with a process map, not a tool. Where the data lives. Where the bottlenecks are. What breaks at scale. Then I build the context layer and ship production systems on top: agents that hold up in real operations, knowledge platforms your team actually uses, voice, sovereign and private LLM infrastructure.',
   primaryCta: 'Book a discovery call',
   secondaryCta: 'See three productised offers',
   primaryHref: CAL_DISCOVERY_30,
   secondaryHref: '#offers',
   metaList: [
-    { label: 'Strategy session', value: 'CHF 3–5k' },
-    { label: 'Audit', value: 'CHF 15–25k' },
-    { label: 'System build', value: 'CHF 40–150k' },
+    { label: 'Strategy session', value: 'CHF 3-5k' },
+    { label: 'Audit', value: 'CHF 15-25k' },
+    { label: 'System build', value: 'CHF 40-150k' },
     { label: 'Fractional lead', value: 'Retainer' },
   ],
 };
@@ -34,9 +34,9 @@ const copyDE = {
   primaryHref: CAL_DISCOVERY_30,
   secondaryHref: '#offers',
   metaList: [
-    { label: 'Strategie-Session', value: 'CHF 3–5k' },
-    { label: 'Audit', value: 'CHF 15–25k' },
-    { label: 'System-Build', value: 'CHF 40–150k' },
+    { label: 'Strategie-Session', value: 'CHF 3-5k' },
+    { label: 'Audit', value: 'CHF 15-25k' },
+    { label: 'System-Build', value: 'CHF 40-150k' },
     { label: 'Fractional Lead', value: 'Retainer' },
   ],
 };

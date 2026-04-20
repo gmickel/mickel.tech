@@ -16,11 +16,11 @@ const APP_DATA = {
 };
 
 export const metadata: Metadata = {
-  title: 'SmartTrim — Fix AI Clipboard Chaos',
+  title: 'SmartTrim: Fix AI Clipboard Chaos',
   description:
     'Lightweight macOS menu bar utility that automatically fixes formatting issues in clipboard text. No more ghost indentation and broken lines from AI coding assistants.',
   openGraph: {
-    title: 'SmartTrim — Fix AI Clipboard Chaos',
+    title: 'SmartTrim: Fix AI Clipboard Chaos',
     description:
       'Lightweight macOS menu bar utility that automatically fixes formatting issues in clipboard text. No more ghost indentation and broken lines from AI coding assistants.',
     type: 'website',
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'SmartTrim — Fix AI Clipboard Chaos',
+    title: 'SmartTrim: Fix AI Clipboard Chaos',
     description:
       'Lightweight macOS menu bar utility that automatically fixes formatting issues in clipboard text from AI coding assistants.',
   },
@@ -53,13 +53,13 @@ const features = [
   {
     title: 'Smart Detection',
     description:
-      "Only processes text that appears broken. Leaves normal text alone—it won't mangle your code.",
+      "Only processes text that appears broken. Leaves normal text alone; it won't mangle your code.",
     icon: '🧠',
   },
   {
     title: 'Structure Aware',
     description:
-      "Preserves intentional structure: paragraphs, bullet points, numbered lists, code blocks—they're safe.",
+      "Preserves intentional structure: paragraphs, bullet points, numbered lists, code blocks. They're safe.",
     icon: '📋',
   },
 ];
@@ -167,7 +167,7 @@ export default function SmartTrimPage() {
                 <Link className="glow-link" href="/gmickel-bench">
                   gmickel bench
                 </Link>{' '}
-                project—where I needed to copy explanations from AI assistants
+                project, where I needed to copy explanations from AI assistants
                 into docs without the formatting nightmares.
               </p>
 
@@ -222,7 +222,7 @@ export default function SmartTrimPage() {
               <p className="mt-2 text-muted-foreground">
                 When you copy text from AI coding assistants (Claude Code,
                 Cursor, GitHub Copilot, ChatGPT) and paste it into Slack,
-                Notion, email, or documents—the text often comes out broken.
+                Notion, email, or documents, the text often comes out broken.
               </p>
             </CardHeader>
             <CardContent>
@@ -326,7 +326,7 @@ export default function SmartTrimPage() {
 
           <ImageLightbox
             alt="SmartTrim settings interface"
-            caption="SmartTrim settings — customize hotkeys and behavior"
+            caption="SmartTrim settings · customize hotkeys and behavior"
             className="overflow-hidden rounded-xl border border-white/10 bg-black/50 shadow-2xl shadow-primary/5"
             height={400}
             src="/smarttrim-settings-dark.png"
@@ -375,7 +375,7 @@ export default function SmartTrimPage() {
                 </p>
                 <p>
                   If you've ever pasted a Claude or ChatGPT response into Slack
-                  and wondered why it looks like garbage—this is for you.
+                  and wondered why it looks like garbage, this is for you.
                 </p>
                 <div className="pt-2">
                   <a

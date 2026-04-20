@@ -7,7 +7,7 @@ import {
 export const runtime = 'edge';
 export const size = ATELIER_OG_SIZE;
 export const contentType = ATELIER_OG_CONTENT_TYPE;
-export const alt = 'Case Studies — Selected Engagements';
+export const alt = 'Case Studies · Selected Engagements';
 
 export default async function OGImage() {
   return await renderAtelierOG({

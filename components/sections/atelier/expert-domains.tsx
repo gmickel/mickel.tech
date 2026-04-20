@@ -13,7 +13,7 @@ const domainsEN = [
   },
   {
     title: 'Legal technology, IP & code forensics',
-    body: 'Contract lifecycle management, document review automation. Founded an AI-native CLM platform — fluent on both the platform side and the regulator-facing side. Open-source license compliance, code-derivation analysis and copyright assessment for software disputes.',
+    body: 'Contract lifecycle management, document review automation. Founded an AI-native CLM platform, fluent on both the platform side and the regulator-facing side. Open-source license compliance, code-derivation analysis and copyright assessment for software disputes.',
   },
   {
     title: 'Public sector & procurement',

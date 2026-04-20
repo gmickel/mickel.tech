@@ -1,13 +1,5 @@
 /**
  * Single source of truth for case studies surfaced across mickel.tech.
- *
- * Roster rules (locked Phase 0 + Apr 2026 review):
- *   - Named: only fully-mine sources — DocIQ (own company), KISIM (CISTEC AG
- *     pre-GF role), FlowNext (open source, own), MergeFoundry (own), ITDR,
- *     OpenAI Red Team, SECA. Growth Factors named at role level only — no
- *     GF/BU/Sagemount portfolio engagements appear here.
- *   - Independent advisory engagements: anonymised by sector + size + outcome.
- *   - Gutachten: counterparties anonymised, sector + outcome only.
  */
 
 export type CaseStudyArea = 'pdlc' | 'expert' | 'systems';
@@ -78,7 +70,7 @@ export const CASE_STUDIES: readonly CaseStudy[] = [
     clientDE:
       'Schweizer Softwarehaus · 250+ Entwickler über mehrere Engineering-Organisationen',
     problemEN:
-      'An established Swiss engineering org had rolled out generative AI coding tools but seen no measurable speedup after weeks. Two underlying problems: tooling adopted without methodology change, and no review or quality discipline to convert raw AI output into shippable code. The risk was a familiar one — the tools get blamed, the rollout stalls, and the org concludes "AI does not work for us."',
+      'An established Swiss engineering org had rolled out generative AI coding tools but seen no measurable speedup after weeks. Two underlying problems: tooling adopted without methodology change, and no review or quality discipline to convert raw AI output into shippable code. The risk was a familiar one: the tools get blamed, the rollout stalls, and the org concludes "AI does not work for us."',
     problemDE:
       'Eine etablierte Schweizer Engineering-Organisation hatte generative KI-Coding-Tools ausgerollt, aber nach Wochen keine messbare Geschwindigkeitssteigerung gesehen. Zwei Ursachen: Tooling adoptiert ohne Methodenwechsel, keine Review- und Qualitäts-Disziplin, um rohen KI-Output in lieferfähigen Code zu wandeln. Das Risiko war das vertraute -- die Tools werden beschuldigt, der Rollout stockt, die Organisation schliesst „KI funktioniert für uns nicht".',
     approachEN:
@@ -111,7 +103,7 @@ export const CASE_STUDIES: readonly CaseStudy[] = [
     approachDE:
       'Guardrailed-Rollout agentischer Tools über die gesamte 50+ Engineering-Organisation: Standard-Editor-Stack, interne Playbooks, Prompt-Patterns, Code-Review-Pattern. Wiederverwendbare KI-Plattform darunter (LLM-Gateway, Prompt-Registry, Observability), damit der Rollout ein einziges Onboarding war, kein Per-Team-Chaos. Dieselbe Plattform trug die produktiven klinischen KI-Features, die darauf ausgeliefert wurden.',
     outcomeEN:
-      'Measurable productivity gains across the engineering organisation, captured rather than anecdotal. Single-pattern onboarding for new use cases. The same platform powered production clinical AI in <90 days (see KISIM case) — the PDLC investment directly underwrote the product investment.',
+      'Measurable productivity gains across the engineering organisation, captured rather than anecdotal. Single-pattern onboarding for new use cases. The same platform powered production clinical AI in <90 days (see KISIM case); the PDLC investment directly underwrote the product investment.',
     outcomeDE:
       'Messbare Produktivitätsgewinne über die Engineering-Organisation, erfasst statt anekdotisch. Single-Pattern-Onboarding für neue Use Cases. Dieselbe Plattform trug die produktive klinische KI in <90 Tagen (siehe KISIM-Fall) -- die PDLC-Investition trug die Produktinvestition direkt mit.',
     metricValueEN: '50+ engineers',
@@ -129,7 +121,7 @@ export const CASE_STUDIES: readonly CaseStudy[] = [
     clientDE:
       'Britisches Softwarehaus · individuelle agentische Coding-Pipeline · hart umkämpfter Markt',
     problemEN:
-      'Engineering team needed to compress shipping cadence in a market where competitors were releasing features weekly. Generic AI tooling had not moved the needle. Standard PR review was the most consistent bottleneck — senior engineers spending too much time on the lowest-leverage parts of the loop.',
+      'Engineering team needed to compress shipping cadence in a market where competitors were releasing features weekly. Generic AI tooling had not moved the needle. Standard PR review was the most consistent bottleneck: senior engineers spending too much time on the lowest-leverage parts of the loop.',
     problemDE:
       'Engineering-Team musste die Liefertaktung in einem Markt komprimieren, in dem Wettbewerber wöchentlich Features ausrollten. Generisches KI-Tooling hatte den Hebel nicht bewegt. Standard-PR-Review war der konsistenteste Engpass -- Senior-Engineers verbrachten zu viel Zeit mit den niedrig-hebeligen Teilen der Schleife.',
     approachEN:
@@ -163,9 +155,9 @@ export const CASE_STUDIES: readonly CaseStudy[] = [
     approachDE:
       'Parteigutachter im Auftrag der Anwaltschaft. Forensische Analyse der Quell-Repositories, der produktiven Infrastruktur und der Vertragsunterlagen. Fragenkatalog gemeinsam mit der Anwaltschaft iterativ verfeinert, bis das technische Narrativ trug.',
     outcomeEN:
-      "Filed expert opinion supporting counsel's case. Sole technical authority retained by the instructing firm; available for hearings as needed.",
+      "Filed expert opinion supporting counsel's case. Retained by the instructing firm for hearings as needed.",
     outcomeDE:
-      'Eingereichtes Parteigutachten zur Stützung des Mandats der Kanzlei. Alleinige technische Instanz der mandatierenden Kanzlei; bei Bedarf bereit für Verhandlungen.',
+      'Eingereichtes Parteigutachten zur Stützung des Mandats der Kanzlei. Bei Bedarf für Verhandlungen mandatiert.',
     metricValueEN: '7-figure',
     metricValueDE: 'Siebenstellig',
     metricLabelEN: 'Claim value · party-engaged opinion',
@@ -191,10 +183,10 @@ export const CASE_STUDIES: readonly CaseStudy[] = [
       'Engagement signed; both parties accepted the methodology and scoring framework. Acceptance assessment scheduled at delivery point with optional Nachprüfung after Nachbesserungen.',
     outcomeDE:
       'Mandat unterzeichnet; beide Parteien haben die Methodik und das Scoring-Framework akzeptiert. Abnahmeprüfung am Liefertermin geplant, mit optionaler Nachprüfung nach Nachbesserungen.',
-    metricValueEN: 'Mandate signed',
-    metricValueDE: 'Mandat unterzeichnet',
-    metricLabelEN: 'Pauschal · split between parties',
-    metricLabelDE: 'Pauschal · hälftig zwischen Parteien',
+    metricValueEN: '7-figure',
+    metricValueDE: 'Siebenstellig',
+    metricLabelEN: 'Contract value · jointly-engaged acceptance',
+    metricLabelDE: 'Vertragswert · gemeinsames Abnahme-Mandat',
   },
   {
     id: 'expert-cross-language-copyright',
@@ -205,7 +197,7 @@ export const CASE_STUDIES: readonly CaseStudy[] = [
     clientDE:
       'Schweizer Anwaltschaft · Software-Urheberrechtsstreit · Frage der sprachübergreifenden Code-Ableitung',
     problemEN:
-      "Counsel needed to determine whether one party's commercial productivity tooling had derived from the other party's earlier implementation, written in a different programming language. Question turned on technical comparison across program structure, modules, algorithms and data structures, and source code — not just one-to-one literal comparison.",
+      "Counsel needed to determine whether one party's commercial productivity tooling had derived from the other party's earlier implementation, written in a different programming language. Question turned on technical comparison across program structure, modules, algorithms and data structures, and source code, not just one-to-one literal comparison.",
     problemDE:
       'Die Anwaltschaft musste klären, ob das kommerzielle Produktivitäts-Tooling einer Partei vom früheren, in einer anderen Programmiersprache geschriebenen Werk der anderen Partei abgeleitet ist. Die Frage richtete sich auf den technischen Vergleich über Programmstruktur, Module, Algorithmen und Datenstrukturen sowie Quellcode -- nicht nur auf wörtlichen Eins-zu-eins-Vergleich.',
     approachEN:
@@ -213,9 +205,9 @@ export const CASE_STUDIES: readonly CaseStudy[] = [
     approachDE:
       'Technischer Konsultativ-Experte der Anwaltschaft. Mehrschichtige Analyse entlang der etablierten Schweizer Filterungs-Ebenen für Urheberrechtsverletzungen: Programmstruktur und Architektur, Module, Algorithmen und Datenstrukturen, Quellcode, Objektcode. Framework-, generierter und plattformseitig vorgegebener Code sauber von eigens geschriebenem Code der Parteien getrennt, damit der Vergleich auf dem richtigen Material lag.',
     outcomeEN:
-      "Defensible technical findings supporting counsel's position. Architectural separation between the two implementations established at the structural and algorithmic layers, leaving any literal-copy claim to a much narrower factual question.",
+      "Architectural separation between the two implementations established at the structural and algorithmic layers, leaving any literal-copy claim to a much narrower factual question. Findings supported counsel's position on the record.",
     outcomeDE:
-      'Vertretbare technische Befunde zur Stützung der Position der Anwaltschaft. Architektonische Trennung zwischen den beiden Implementierungen auf struktureller und algorithmischer Ebene festgestellt, sodass eine wörtliche-Kopie-These auf eine viel engere Tatsachenfrage reduziert war.',
+      'Architektonische Trennung zwischen den beiden Implementierungen auf struktureller und algorithmischer Ebene festgestellt, sodass eine wörtliche-Kopie-These auf eine viel engere Tatsachenfrage reduziert war. Befunde stützten die Position der Anwaltschaft im Verfahren.',
     metricValueEN: 'Cross-language',
     metricValueDE: 'Sprachübergreifend',
     metricLabelEN: 'Code-derivation analysis · multi-layer filter',
@@ -259,15 +251,15 @@ export const CASE_STUDIES: readonly CaseStudy[] = [
     clientEN: 'DocIQ · Building Swiss legal AI since 2017',
     clientDE: 'DocIQ · Schweizer Legal-AI seit 2017',
     problemEN:
-      'Build one of the first Swiss platforms applying AI and NLP to legal documents — and keep extending it as the market shifts from NLP to LLMs to court-grade anonymisation, while meeting CH/DACH expectations on data residency, multi-language, and Swiss legal-market procurement.',
+      'Build one of the first Swiss platforms applying AI and NLP to legal documents, and keep extending it as the market shifts from NLP to LLMs to court-grade anonymisation, while meeting CH/DACH expectations on data residency, multi-language, and Swiss legal-market procurement.',
     problemDE:
       'Eine der ersten Schweizer Plattformen aufbauen, die KI und NLP auf Rechtsdokumente anwendet -- und sie weiterentwickeln, während sich der Markt von NLP zu LLMs zur gerichtsfähigen Anonymisierung verschiebt. Bei gleichzeitiger Erfüllung der CH/DACH-Anforderungen an Datenhoheit, Mehrsprachigkeit und Schweizer Beschaffung.',
     approachEN:
-      'Founded the company in Zug in 2017 (Contract Vault GmbH). Designed and shipped DocIQ 1.0 (2018) as enterprise document lifecycle management with contract analysis, metadata extraction and intelligent search. Scaled to production deployments at the Swiss Insurance Association (SVV), Laux Lawyers and Kaiser Odermatt & Partner. Rebuilt the platform from the ground up for the LLM era — Sphere (next-generation AI document intelligence) and Shield (court anonymisation for the Swiss judiciary, fine-tuned local NER + LLM, zero data persistence).',
+      'Founded the company in Zug in 2017 (Contract Vault GmbH). Designed and shipped DocIQ 1.0 (2018) as enterprise document lifecycle management with contract analysis, metadata extraction and intelligent search. Scaled to production deployments at the Swiss Insurance Association (SVV), Laux Lawyers and Kaiser Odermatt & Partner. Rebuilt the platform from the ground up for the LLM era: Sphere (next-generation AI document intelligence) and Shield (court anonymisation for the Swiss judiciary, fine-tuned local NER + LLM, zero data persistence).',
     approachDE:
       'Unternehmen 2017 in Zug gegründet (Contract Vault GmbH). DocIQ 1.0 (2018) als Enterprise-Document-Lifecycle-Management mit Vertragsanalyse, Metadaten-Extraktion und intelligenter Suche entworfen und ausgeliefert. Auf produktive Einsätze beim Schweizerischen Versicherungsverband (SVV), bei Laux Lawyers und bei Kaiser Odermatt & Partner skaliert. Plattform für die LLM-Ära von Grund auf neu gebaut -- Sphere (KI-Dokumentenintelligenz der nächsten Generation) und Shield (Anonymisierung von Gerichtsdokumenten für die Schweizer Justiz, fine-tuned lokales NER + LLM, keine Datenpersistenz).',
     outcomeEN:
-      'Production at the Swiss Insurance Association, Laux Lawyers, and Kaiser Odermatt & Partner since 2021. Shield v1 (court anonymisation for the Swiss judiciary, fine-tuned local NER + LLM, zero data persistence) shipped 2025. Sphere + Shield v2 launched 2026 — Word-native tracked changes, six integrated legal databases, AI Playbooks, court anonymisation rebuilt from the ground up. Continuously evolved as Swiss legal AI matured around it.',
+      'Production at the Swiss Insurance Association, Laux Lawyers, and Kaiser Odermatt & Partner since 2021. Shield v1 (court anonymisation for the Swiss judiciary, fine-tuned local NER + LLM, zero data persistence) shipped 2025. Sphere + Shield v2 launched 2026: Word-native tracked changes, six integrated legal databases, AI Playbooks, court anonymisation rebuilt from the ground up. Continuously evolved as Swiss legal AI matured around it.',
     outcomeDE:
       'Produktiv beim Schweizerischen Versicherungsverband, bei Laux Lawyers und bei Kaiser Odermatt & Partner seit 2021. Shield v1 (Anonymisierung von Gerichtsdokumenten für die Schweizer Justiz, fine-tuned lokales NER + LLM, keine Datenpersistenz) 2025 lanciert. Sphere + Shield v2 2026 lanciert -- Word-native Änderungsverfolgung, sechs integrierte Rechtsdatenbanken, KI-Playbooks, Gerichtsanonymisierung von Grund auf neu gebaut. Kontinuierlich weiterentwickelt, während die Schweizer Legal-AI-Landschaft um sie herum reifte.',
     metricValueEN: 'Since 2017',

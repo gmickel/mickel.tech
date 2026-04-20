@@ -25,7 +25,7 @@ export async function POST(request: Request) {
     await resend.emails.send({
       from: 'Gordon Mickel <course@course.mickel.tech>',
       to: email,
-      subject: "You're on the list — Agentic SDLC Course",
+      subject: "You're on the list · Agentic SDLC Course",
       text: [
         'Thanks for signing up for early access to the Agentic SDLC course.',
         '',
@@ -34,7 +34,7 @@ export async function POST(request: Request) {
         'In the meantime, you can read more about the methodology:',
         'https://mickel.tech/log/merchants-of-complexity-why-ai-finally-delivers-what-agile-promised',
         '',
-        '— Gordon',
+        '-- Gordon',
         'https://mickel.tech',
       ].join('\n'),
     });

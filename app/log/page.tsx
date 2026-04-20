@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   description:
     'System log of agentic SDLC, platform and AI agent work: short, precise write-ups from real mandates rather than theory.',
   openGraph: {
-    title: 'System Log – Mickel Tech',
+    title: 'System Log · Mickel Tech',
     description:
       'Latest writing on agentic SDLC, platforms and AI agents from Gordon Mickel.',
     type: 'website',
@@ -50,7 +50,7 @@ export default async function LogIndexPage() {
             <PageTitle text="System log: agentic SDLC, platforms and agents in the field" />
           </h1>
           <p className="max-w-2xl text-base text-muted-foreground">
-            Short, precise notes from actual mandates—what worked, what broke
+            Short, precise notes from actual mandates: what worked, what broke
             and patterns that repeat across agentic SDLC, platforms and AI
             agents.
           </p>

@@ -88,7 +88,7 @@ export default function AtelierContact({ locale = 'en' }: AtelierContactProps) {
             'A small number of select mandates each year. First call usually within 48 hours. Written enquiries faster.',
           location: 'Binningen, Switzerland · DE / EN',
           status: 'Status',
-          statusValue: 'Q2 2026 — a few slots open',
+          statusValue: 'Q2 2026, a few slots open',
         };
 
   return (

@@ -2,7 +2,7 @@ import { ImageResponse } from 'next/og';
 
 export const runtime = 'edge';
 
-export const alt = 'Flow — Plan First, Work Second';
+export const alt = 'Flow · Plan First, Work Second';
 export const size = {
   width: 1200,
   height: 630,
@@ -93,7 +93,7 @@ export default function OGImage() {
           }}
         >
           Two-step workflow with research agents, gap analysis, and disciplined
-          execution. Most failures come from weak planning—Flow fixes that.
+          execution. Most failures come from weak planning. Flow fixes that.
         </div>
 
         {/* Status */}

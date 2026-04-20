@@ -6,9 +6,9 @@ const stepsEN = [
   {
     num: '01',
     label: 'Assess',
-    desc: 'Map the current state — processes, architecture, team maturity, pain points. No assumptions. Data first.',
+    desc: 'Map the current state: processes, architecture, team maturity, pain points. No assumptions. Data first.',
     detail:
-      'Baseline metrics · L0–L4 maturity scoring · process map · risk heatmap',
+      'Baseline metrics · L0-L4 maturity scoring · process map · risk heatmap',
   },
   {
     num: '02',
@@ -39,7 +39,7 @@ const stepsDE = [
     label: 'Erfassen',
     desc: 'Den Ist-Zustand kartieren: Prozesse, Architektur, Team-Reife, Schmerzpunkte. Keine Annahmen. Daten zuerst.',
     detail:
-      'Baseline-Metriken · L0–L4 Reifegrad · Prozesslandkarte · Risiko-Heatmap',
+      'Baseline-Metriken · L0-L4 Reifegrad · Prozesslandkarte · Risiko-Heatmap',
   },
   {
     num: '02',

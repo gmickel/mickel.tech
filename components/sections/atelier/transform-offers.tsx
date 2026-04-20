@@ -20,13 +20,13 @@ const offersEN: readonly Offer[] = [
     num: '00',
     name: 'Strategy Session',
     scope:
-      'A focused half- to full-day working session, on-site or remote. One specific question — vendor selection, build-vs-buy, architecture review, "is this the right AI use case." Written notes and a clear next-step recommendation by end of day.',
-    price: 'CHF 3–5k',
+      'A focused half- to full-day working session, on-site or remote. One specific question: vendor selection, build-vs-buy, architecture review, "is this the right AI use case." Written notes and a clear next-step recommendation by end of day.',
+    price: 'CHF 3-5k',
     duration: '1 day',
     outcome:
-      'A defensible answer to your specific question — not a generic deck. The cheapest way to test whether we work well together. Fee fully creditable against any follow-on engagement within 90 days.',
+      'A defensible answer to your specific question, not a generic deck. The cheapest way to test whether we work well together. Fee fully creditable against any follow-on engagement within 90 days.',
     deliverables: [
-      'Working session (4–8 hours) with the right people in the room',
+      'Working session (4-8 hours) with the right people in the room',
       'Written notes plus a clear next-step recommendation',
       'Optional 30-min follow-up call within two weeks',
     ],
@@ -37,14 +37,14 @@ const offersEN: readonly Offer[] = [
     num: '01',
     name: 'Process Map + AI Opportunity Audit',
     scope:
-      '2–3 weeks. Map workflows end-to-end, score automation candidates by impact and feasibility, propose 3–5 prioritised initiatives with ROI estimates and a 90-day plan.',
-    price: 'CHF 15–25k fixed',
-    duration: '2–3 weeks',
+      '2-3 weeks. Map workflows end-to-end, score automation candidates by impact and feasibility, propose 3-5 prioritised initiatives with ROI estimates and a 90-day plan.',
+    price: 'CHF 15-25k fixed',
+    duration: '2-3 weeks',
     outcome:
       'A defensible map of where AI pays back. Not theoretical. Tied to specific workflows with named owners and named numbers. Sized so the first prioritised initiative typically pays the audit back inside one quarter.',
     deliverables: [
       'Process map (real path, not org chart)',
-      'Top 3–5 opportunities with effort + impact scoring',
+      'Top 3-5 opportunities with effort + impact scoring',
       '90-day implementation plan',
       'Executive readout',
     ],
@@ -56,10 +56,10 @@ const offersEN: readonly Offer[] = [
     name: 'AI System Build',
     scope:
       'Production deployment of one of the system classes (agentic systems, context layers, voice, knowledge platforms, private + on-prem AI). Requirements through go-live with operations and governance handover.',
-    price: 'CHF 40–150k',
-    duration: '4–10 weeks',
+    price: 'CHF 40-150k',
+    duration: '4-10 weeks',
     outcome:
-      'A system in production used by real users. Telemetry, evals, governance from day one. Internal team owns operations at handover. Range covers light RAG deployments through full sovereign / on-prem builds — quoted firmly after the audit, not before.',
+      'A system in production used by real users. Telemetry, evals, governance from day one. Internal team owns operations at handover. Range covers light RAG deployments through full sovereign / on-prem builds, quoted firmly after the audit, not before.',
     deliverables: [
       'Architecture decision record',
       'Production system + observability + evals',
@@ -73,11 +73,11 @@ const offersEN: readonly Offer[] = [
     num: '03',
     name: 'Fractional AI Lead',
     scope:
-      '1–2 days/week. Program governance, vendor selection, hands-on architecture review, internal capability building. For organisations not ready to hire a full-time AI lead but unwilling to outsource the strategy.',
+      '1-2 days/week. Program governance, vendor selection, hands-on architecture review, internal capability building. For organisations not ready to hire a full-time AI lead but unwilling to outsource the strategy.',
     price: 'Monthly retainer',
     duration: 'Quarterly minimum',
     outcome:
-      'Independent technical leadership without the full-time hire. Faster vendor decisions, fewer false starts, internal capability built deliberately. Costs a fraction of a senior AI hire and delivers right away — no recruiting cycle, no onboarding ramp.',
+      'Independent technical leadership without the full-time hire. Faster vendor decisions, fewer false starts, internal capability built deliberately. Costs a fraction of a senior AI hire and delivers right away: no recruiting cycle, no onboarding ramp.',
     deliverables: [
       'Weekly program steering',
       'Vendor + architecture decisions',
@@ -95,12 +95,12 @@ const offersDE: readonly Offer[] = [
     name: 'Strategie-Session',
     scope:
       'Eine fokussierte halb- bis ganztägige Arbeitssitzung, vor Ort oder remote. Eine konkrete Frage -- Anbieterauswahl, Build-vs-Buy, Architektur-Review, "ist das der richtige KI-Use-Case". Schriftliche Notizen und eine klare Empfehlung für den nächsten Schritt am Ende des Tages.',
-    price: 'CHF 3–5k',
+    price: 'CHF 3-5k',
     duration: '1 Tag',
     outcome:
       'Eine vertretbare Antwort auf Ihre konkrete Frage -- kein generisches Deck. Der günstigste Weg, um zu prüfen, ob die Zusammenarbeit passt. Honorar ist innerhalb von 90 Tagen vollständig auf einen Folgeauftrag anrechenbar.',
     deliverables: [
-      'Arbeitssitzung (4–8 Stunden) mit den richtigen Leuten im Raum',
+      'Arbeitssitzung (4-8 Stunden) mit den richtigen Leuten im Raum',
       'Schriftliche Notizen plus klare Empfehlung für den nächsten Schritt',
       'Optionales 30-min Folge-Telefonat innerhalb von zwei Wochen',
     ],
@@ -111,14 +111,14 @@ const offersDE: readonly Offer[] = [
     num: '01',
     name: 'Prozesslandkarte + KI-Opportunity-Audit',
     scope:
-      '2–3 Wochen. Workflows end-to-end kartieren, Automatisierungskandidaten nach Impact und Machbarkeit bewerten, 3–5 priorisierte Initiativen mit ROI-Schätzungen und 90-Tage-Plan vorschlagen.',
-    price: 'CHF 15–25k fix',
-    duration: '2–3 Wochen',
+      '2-3 Wochen. Workflows end-to-end kartieren, Automatisierungskandidaten nach Impact und Machbarkeit bewerten, 3-5 priorisierte Initiativen mit ROI-Schätzungen und 90-Tage-Plan vorschlagen.',
+    price: 'CHF 15-25k fix',
+    duration: '2-3 Wochen',
     outcome:
       'Eine vertretbare Landkarte, wo KI sich auszahlt. Nicht theoretisch. An konkrete Workflows mit benannten Owners und konkreten Zahlen geknüpft. So gross dimensioniert, dass die erste priorisierte Initiative das Audit typischerweise innerhalb eines Quartals einspielt.',
     deliverables: [
       'Prozesslandkarte (realer Pfad, nicht Organigramm)',
-      'Top 3–5 Opportunitäten mit Aufwand- und Impact-Scoring',
+      'Top 3-5 Opportunitäten mit Aufwand- und Impact-Scoring',
       '90-Tage-Implementierungsplan',
       'Executive-Readout',
     ],
@@ -130,8 +130,8 @@ const offersDE: readonly Offer[] = [
     name: 'KI-System-Build',
     scope:
       'Produktive Auslieferung einer der Systemklassen (agentische Systeme, Kontextschichten, Voice, Wissensplattformen, private + On-Prem-KI). Von den Anforderungen bis zum Go-Live, mit Übergabe an Betrieb und Governance.',
-    price: 'CHF 40–150k',
-    duration: '4–10 Wochen',
+    price: 'CHF 40-150k',
+    duration: '4-10 Wochen',
     outcome:
       'Ein System in Produktion, von echten Nutzern verwendet. Telemetrie, Evals, Governance ab Tag eins. Internes Team trägt den Betrieb bei Übergabe. Spanne deckt schlanke RAG-Deployments bis zu vollwertigen souveränen / On-Prem-Builds ab -- konkret quotiert nach dem Audit, nicht davor.',
     deliverables: [
@@ -147,7 +147,7 @@ const offersDE: readonly Offer[] = [
     num: '03',
     name: 'Fractional KI-Lead',
     scope:
-      '1–2 Tage/Woche. Programm-Governance, Anbieterauswahl, praktische Architektur-Reviews, interner Capability-Aufbau. Für Organisationen, die noch keinen Vollzeit-KI-Lead anstellen wollen, die Strategie aber nicht auslagern.',
+      '1-2 Tage/Woche. Programm-Governance, Anbieterauswahl, praktische Architektur-Reviews, interner Capability-Aufbau. Für Organisationen, die noch keinen Vollzeit-KI-Lead anstellen wollen, die Strategie aber nicht auslagern.',
     price: 'Monatlicher Retainer',
     duration: 'Mindestens ein Quartal',
     outcome:

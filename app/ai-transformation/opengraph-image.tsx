@@ -8,7 +8,7 @@ export const runtime = 'edge';
 export const size = ATELIER_OG_SIZE;
 export const contentType = ATELIER_OG_CONTENT_TYPE;
 export const alt =
-  'AI Systems & Transformation — Process-first, Production-grade';
+  'AI Systems & Transformation · Process-first, Production-grade';
 
 export default async function OGImage() {
   return await renderAtelierOG({

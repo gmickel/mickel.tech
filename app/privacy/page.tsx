@@ -4,7 +4,7 @@ import AtelierPolicyPage from '@/components/sections/atelier/policy-page';
 import { breadcrumbSchema, JsonLd } from '@/lib/json-ld';
 
 export const metadata: Metadata = {
-  title: 'Privacy — Mickel Tech',
+  title: 'Privacy · Mickel Tech',
   description:
     'Privacy statement for mickel.tech. Data collection, processing, retention and your rights under FADP and GDPR.',
   alternates: {

@@ -15,19 +15,19 @@ const APP_DATA = {
 };
 
 export const metadata: Metadata = {
-  title: 'GNO — Local Search + Hosted Publishing for Your Second Brain',
+  title: 'GNO: Local Search + Hosted Publishing for Your Second Brain',
   description:
     'Two-layer knowledge stack. Local: hybrid search engine, BM25 + vector + reranking, Web UI, REST API, MCP server. Hosted: gno.sh publishing layer for sharing notes and collections as polished reading surfaces. 100% private locally; granular public/secret-link sharing online.',
   openGraph: {
-    title: 'GNO — Local Search + Hosted Publishing',
+    title: 'GNO: Local Search + Hosted Publishing',
     description:
-      'Local hybrid search engine + hosted publish/share layer at gno.sh. Index everything, search semantically, stay private — and publish what you choose to share.',
+      'Local hybrid search engine + hosted publish/share layer at gno.sh. Index everything, search semantically, stay private, and publish what you choose to share.',
     type: 'website',
     url: 'https://mickel.tech/apps/gno',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'GNO — Local Search + Hosted Publishing',
+    title: 'GNO: Local Search + Hosted Publishing',
     description:
       'Local hybrid search engine + hosted publishing at gno.sh. Web UI, REST API, MCP server.',
   },
@@ -298,7 +298,7 @@ export default function GnoPage() {
               Two layers, one stack.{' '}
               <span className="text-white">Local GNO</span>: your{' '}
               <span className="text-white">15,000 documents</span> of notes,
-              journals and reference material—finally searchable. Hybrid search
+              journals and reference material, finally searchable. Hybrid search
               across keywords and semantics.{' '}
               <span className="text-white">Everything runs locally</span>.
             </p>
@@ -306,7 +306,7 @@ export default function GnoPage() {
             <p className="mt-4 max-w-2xl text-muted-foreground leading-relaxed">
               <span className="text-white">gno.sh</span>: the hosted publishing
               layer. Compile a collection, publish it as a polished reading
-              surface — public link or secret link, your call. Reader hotkeys,
+              surface: public link or secret link, your call. Reader hotkeys,
               lightweight lexical search, image asset manifest, no
               authentication required to read.
             </p>
@@ -314,7 +314,7 @@ export default function GnoPage() {
             <p className="mt-4 max-w-2xl text-muted-foreground leading-relaxed">
               BM25. Vectors. HyDE. Reranking. MCP server.{' '}
               <span className="text-white">One CLI</span> that unlocks your
-              second brain locally — and{' '}
+              second brain locally, and{' '}
               <span className="text-white">one publishing surface</span> for
               what you choose to share.
             </p>
@@ -363,7 +363,7 @@ export default function GnoPage() {
             <CardContent className="space-y-6 text-muted-foreground">
               <p>
                 Local GNO is a private second brain. But sometimes you want a
-                slice of it on the open web — a public reading collection, a
+                slice of it on the open web: a public reading collection, a
                 secret link for one client, a polished article from a draft
                 folder.{' '}
                 <a
@@ -415,7 +415,7 @@ export default function GnoPage() {
                     <code className="rounded border border-white/10 bg-black/40 px-1.5 py-0.5 font-mono text-[12px] text-cyan-300">
                       /secret/[token]
                     </code>{' '}
-                    — unguessable, no auth required, revoke any time.
+                    , unguessable, no auth required, revoke any time.
                   </p>
                 </div>
                 <div className="space-y-2 bg-card/80 p-5">
@@ -427,7 +427,7 @@ export default function GnoPage() {
                   </p>
                   <p className="text-muted-foreground text-sm leading-relaxed">
                     Editorial typography (Fraunces + Geist + JetBrains Mono).
-                    Reader hotkeys —{' '}
+                    Reader hotkeys:{' '}
                     <kbd className="rounded border border-white/15 bg-black/50 px-1.5 py-0.5 font-mono text-[11px] text-white">
                       j
                     </kbd>
@@ -460,7 +460,7 @@ export default function GnoPage() {
                   </p>
                   <p className="text-muted-foreground text-sm leading-relaxed">
                     Backlinks and related notes only resolve within the
-                    published subset — nothing leaks from your private vault.
+                    published subset; nothing leaks from your private vault.
                     Image asset snapshot manifest. Republish flow keeps URLs
                     stable across edits.
                   </p>
@@ -518,8 +518,8 @@ export default function GnoPage() {
               <ul className="space-y-2">
                 <li className="flex gap-2">
                   <span className="text-destructive">×</span>
-                  <span className="text-white">grep</span> is fast but
-                  dumb—misses conceptual matches
+                  <span className="text-white">grep</span> is fast but dumb,
+                  misses conceptual matches
                 </li>
                 <li className="flex gap-2">
                   <span className="text-destructive">×</span>
@@ -1058,7 +1058,7 @@ export default function GnoPage() {
                       </span>
                       <span className="text-muted-foreground">
                         {' '}
-                        — Markdown + live preview, auto-save
+                        · Markdown + live preview, auto-save
                       </span>
                     </div>
                   </div>
@@ -1072,7 +1072,7 @@ export default function GnoPage() {
                       </span>
                       <span className="text-muted-foreground">
                         {' '}
-                        — BM25, vector, AI Q&A in one interface
+                        · BM25, vector, AI Q&A in one interface
                       </span>
                     </div>
                   </div>
@@ -1147,7 +1147,7 @@ export default function GnoPage() {
                       /api/docs
                     </code>
                     <span className="text-muted-foreground text-sm">
-                      — Documents
+                      · Documents
                     </span>
                   </div>
                   <div className="flex items-center gap-3">
@@ -1158,7 +1158,7 @@ export default function GnoPage() {
                       /api/query
                     </code>
                     <span className="text-muted-foreground text-sm">
-                      — Hybrid search
+                      · Hybrid search
                     </span>
                   </div>
                   <div className="flex items-center gap-3">
@@ -1169,7 +1169,7 @@ export default function GnoPage() {
                       /api/ask
                     </code>
                     <span className="text-muted-foreground text-sm">
-                      — AI answers
+                      · AI answers
                     </span>
                   </div>
                   <div className="flex items-center gap-3">
@@ -1180,7 +1180,7 @@ export default function GnoPage() {
                       /api/collections
                     </code>
                     <span className="text-muted-foreground text-sm">
-                      — Manage
+                      · Manage
                     </span>
                   </div>
                 </div>
@@ -1209,7 +1209,7 @@ export default function GnoPage() {
             </span>
             <p className="text-muted-foreground text-sm leading-relaxed">
               <span className="font-medium text-cyan-400">Localhost only</span>{' '}
-              — Binds to 127.0.0.1 with CSP headers and CORS protection. Use{' '}
+              · Binds to 127.0.0.1 with CSP headers and CORS protection. Use{' '}
               <span className="text-white">Tailscale Serve</span> or{' '}
               <span className="text-white">Cloudflare Tunnel</span> for secure
               remote access.
@@ -1418,7 +1418,7 @@ export default function GnoPage() {
           {/* Model presets */}
           <div className="mt-6 rounded-lg border border-cyan-500/20 bg-cyan-500/5 p-4">
             <p className="text-muted-foreground text-sm">
-              <span className="font-mono text-cyan-400 text-xs">MODELS</span> —
+              <span className="font-mono text-cyan-400 text-xs">MODELS</span> ·
               Choose preset: <code className="text-white">slim</code> (~1GB),{' '}
               <code className="text-white">balanced</code> (~2GB), or{' '}
               <code className="text-white">quality</code> (~2.5GB). Run{' '}
@@ -1441,27 +1441,27 @@ export default function GnoPage() {
                 <ul className="space-y-2 text-muted-foreground text-sm">
                   <li className="flex gap-2">
                     <span className="text-cyan-400">›</span>
-                    <span className="text-white">Bun</span> — Runtime + package
+                    <span className="text-white">Bun</span> · Runtime + package
                     manager + fullstack dev server
                   </li>
                   <li className="flex gap-2">
                     <span className="text-cyan-400">›</span>
-                    <span className="text-white">SQLite + FTS5</span> — BM25
+                    <span className="text-white">SQLite + FTS5</span> · BM25
                     full-text search
                   </li>
                   <li className="flex gap-2">
                     <span className="text-cyan-400">›</span>
-                    <span className="text-white">sqlite-vec</span> — Vector KNN
+                    <span className="text-white">sqlite-vec</span> · Vector KNN
                     search
                   </li>
                   <li className="flex gap-2">
                     <span className="text-cyan-400">›</span>
-                    <span className="text-white">node-llama-cpp</span> — Local
+                    <span className="text-white">node-llama-cpp</span> · Local
                     GGUF models
                   </li>
                   <li className="flex gap-2">
                     <span className="text-cyan-400">›</span>
-                    <span className="text-white">React</span> — Web UI SPA
+                    <span className="text-white">React</span> · Web UI SPA
                   </li>
                 </ul>
               </CardContent>
@@ -1476,35 +1476,35 @@ export default function GnoPage() {
                   <li className="flex gap-2">
                     <span className="text-cyan-400">›</span>
                     <span>
-                      <span className="text-white">Personal notes</span> —
+                      <span className="text-white">Personal notes</span> ·
                       Obsidian, Notion exports, journals
                     </span>
                   </li>
                   <li className="flex gap-2">
                     <span className="text-cyan-400">›</span>
                     <span>
-                      <span className="text-white">Code documentation</span> —
+                      <span className="text-white">Code documentation</span> ·
                       ADRs, RFCs, specs
                     </span>
                   </li>
                   <li className="flex gap-2">
                     <span className="text-cyan-400">›</span>
                     <span>
-                      <span className="text-white">Research</span> — PDFs,
+                      <span className="text-white">Research</span> · PDFs,
                       papers, literature reviews
                     </span>
                   </li>
                   <li className="flex gap-2">
                     <span className="text-cyan-400">›</span>
                     <span>
-                      <span className="text-white">Legal docs</span> —
+                      <span className="text-white">Legal docs</span> ·
                       Contracts, policies, compliance
                     </span>
                   </li>
                   <li className="flex gap-2">
                     <span className="text-cyan-400">›</span>
                     <span>
-                      <span className="text-white">Team knowledge</span> —
+                      <span className="text-white">Team knowledge</span> ·
                       Wikis, runbooks, shared docs
                     </span>
                   </li>

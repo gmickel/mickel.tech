@@ -8,11 +8,11 @@ import { Separator } from '@/components/ui/separator';
 import { breadcrumbSchema, JsonLd, softwareAppSchema } from '@/lib/json-ld';
 
 export const metadata: Metadata = {
-  title: 'DocIQ Sphere — AI Document Intelligence for Legal Teams',
+  title: 'DocIQ Sphere: AI Document Intelligence for Legal Teams',
   description:
     'AI that actually edits your Word documents. Tracked changes, legal research across six databases, clause negotiation, playbooks, data rooms, and complete audit trails. Swiss-engineered.',
   openGraph: {
-    title: 'DocIQ Sphere — AI Document Intelligence for Legal Teams',
+    title: 'DocIQ Sphere: AI Document Intelligence for Legal Teams',
     description:
       'AI that actually edits your Word documents. Tracked changes, legal research, clause negotiation, playbooks, data rooms. Swiss-engineered.',
     type: 'website',
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'DocIQ Sphere — AI Document Intelligence for Legal Teams',
+    title: 'DocIQ Sphere: AI Document Intelligence for Legal Teams',
     description:
       'AI that edits your actual DOCX. Tracked changes, six legal databases, playbooks, data rooms. Swiss-engineered.',
   },
@@ -33,7 +33,7 @@ const valueProps = [
   {
     title: 'Word-Native Tracked Changes',
     description:
-      "ChatGPT and Claude destroy your formatting. Sphere doesn't. Atomic OOXML operations preserve every detail — numbering, styles, tables, cross-references — even in 200-page contracts. AI edits appear as tracked changes you accept or reject in Word.",
+      "ChatGPT and Claude destroy your formatting. Sphere doesn't. Atomic OOXML operations preserve every detail (numbering, styles, tables, cross-references), even in 200-page contracts. AI edits appear as tracked changes you accept or reject in Word.",
     icon: '📄',
   },
   {
@@ -45,37 +45,37 @@ const valueProps = [
   {
     title: 'AI Playbooks',
     description:
-      'Reusable AI workflows that encode institutional expertise. GDPR DPA Review, NDA Risk Assessment, IP Ownership Review, SLA Analysis, Key Terms Extraction, Risk Red Flags, and more. Auto-trigger on upload. Prompts protected — your team runs them without seeing analysis logic.',
+      'Reusable AI workflows that encode institutional expertise. GDPR DPA Review, NDA Risk Assessment, IP Ownership Review, SLA Analysis, Key Terms Extraction, Risk Red Flags, and more. Auto-trigger on upload. Prompts protected; your team runs them without seeing analysis logic.',
     icon: '📚',
   },
   {
     title: 'Clause Bank & Negotiation',
     description:
-      'Save reusable clauses tagged by type and jurisdiction. Hybrid semantic + keyword search. Generate 2-4 clause variants at different favor levels for negotiation — protective, balanced, concessive — each with explanations. Usage tracking surfaces popular clauses.',
+      'Save reusable clauses tagged by type and jurisdiction. Hybrid semantic + keyword search. Generate 2-4 clause variants at different favor levels for negotiation (protective, balanced, concessive), each with explanations. Usage tracking surfaces popular clauses.',
     icon: '⚖️',
   },
   {
     title: 'Secure Data Rooms',
     description:
-      'M&A due diligence, regulatory submissions, client collaboration. Granular role-based access (Viewer, Collaborator, Editor, Admin). Auto-extraction playbooks on upload. Immutable audit trail for every action — access, download, view, with IP and user agent.',
+      'M&A due diligence, regulatory submissions, client collaboration. Granular role-based access (Viewer, Collaborator, Editor, Admin). Auto-extraction playbooks on upload. Immutable audit trail for every action: access, download, view, with IP and user agent.',
     icon: '🏢',
   },
   {
     title: 'Complete Audit Trail',
     description:
-      'Every AI interaction logged — agent runs, tool calls, reasoning chains, token usage. Every data room action tracked. Document and playbook version history with full rollback. Admin audit exports as structured JSON for compliance evidence.',
+      'Every AI interaction logged: agent runs, tool calls, reasoning chains, token usage. Every data room action tracked. Document and playbook version history with full rollback. Admin audit exports as structured JSON for compliance evidence.',
     icon: '📋',
   },
   {
     title: 'Web Intelligence',
     description:
-      'Search the web for real-time information — companies, legal developments, market conditions. Deep Research mode runs a multi-step research agent synthesizing comprehensive reports from multiple sources.',
+      'Search the web for real-time information: companies, legal developments, market conditions. Deep Research mode runs a multi-step research agent synthesizing comprehensive reports from multiple sources.',
     icon: '🌐',
   },
   {
     title: 'Privacy-First Architecture',
     description:
-      'Swiss-hosted infrastructure. Multi-tenant isolation. Encryption at rest and in transit. GDPR and Swiss FADP compliant. On-premises deployment available for complete data sovereignty — no external network dependencies.',
+      'Swiss-hosted infrastructure. Multi-tenant isolation. Encryption at rest and in transit. GDPR and Swiss FADP compliant. On-premises deployment available for complete data sovereignty; no external network dependencies.',
     icon: '🔒',
   },
 ];
@@ -118,7 +118,7 @@ const audiences = [
   {
     title: 'Law Firms & Notaries',
     description:
-      'Cross-border M&A, commercial contracts, regulatory filings. Playbooks encode firm expertise — run consistent reviews without exposing prompt logic. Data rooms enable secure counterparty collaboration.',
+      'Cross-border M&A, commercial contracts, regulatory filings. Playbooks encode firm expertise; run consistent reviews without exposing prompt logic. Data rooms enable secure counterparty collaboration.',
   },
   {
     title: 'Private Equity & Investors',
@@ -221,7 +221,7 @@ export default function DocIQSpherePage() {
               </div>
 
               <p className="mt-6 max-w-2xl text-lg text-muted-foreground leading-relaxed">
-                Sphere edits your actual DOCX — tracked changes, legal research
+                Sphere edits your actual DOCX, tracked changes, legal research
                 across six databases, clause negotiation, playbooks, and data
                 rooms. All inside the document. Swiss-engineered for teams who
                 can't compromise on precision.
@@ -229,7 +229,7 @@ export default function DocIQSpherePage() {
 
               <p className="mt-4 text-muted-foreground leading-relaxed">
                 Every AI interaction auditable. Every edit traceable to the
-                exact prompt that created it. Model-agnostic — uses Claude,
+                exact prompt that created it. Model-agnostic, uses Claude,
                 GPT-4, and Gemini, automatically selecting the optimal model per
                 task.
               </p>
@@ -364,7 +364,7 @@ export default function DocIQSpherePage() {
             <div className="space-y-0">
               <ImageLightbox
                 alt="DocIQ Sphere data room interface"
-                caption="Data Rooms — Cross-org collaboration with AI-powered analysis"
+                caption="Data Rooms · Cross-org collaboration with AI-powered analysis"
                 className="overflow-hidden rounded-t-xl border border-white/10 bg-black/50"
                 height={400}
                 src="/sphere/sphere-dataroom.png"
@@ -380,7 +380,7 @@ export default function DocIQSpherePage() {
             <div className="space-y-0">
               <ImageLightbox
                 alt="DocIQ Sphere matter workspace"
-                caption="Matter Workspace — AI conversation with live document preview"
+                caption="Matter Workspace · AI conversation with live document preview"
                 className="overflow-hidden rounded-t-xl border border-white/10 bg-black/50"
                 height={400}
                 src="/sphere/sphere-matter.png"
@@ -428,7 +428,7 @@ export default function DocIQSpherePage() {
               <p className="mt-6 text-muted-foreground text-sm">
                 Create custom playbooks via natural language. Auto-trigger on
                 document upload or data room addition. Playbook version history
-                with full rollback. Protected prompts — your team runs them
+                with full rollback. Protected prompts; your team runs them
                 without seeing analysis logic.
               </p>
             </CardContent>
@@ -502,12 +502,12 @@ export default function DocIQSpherePage() {
                 <ul className="space-y-2">
                   <li className="flex gap-2">
                     <span className="text-teal-400">›</span>
-                    Every AI agent run logged — prompts, reasoning, tool calls,
+                    Every AI agent run logged: prompts, reasoning, tool calls,
                     tokens
                   </li>
                   <li className="flex gap-2">
                     <span className="text-teal-400">›</span>
-                    Data room immutable audit log — access, downloads, views, IP
+                    Data room immutable audit log: access, downloads, views, IP
                     + user agent
                   </li>
                   <li className="flex gap-2">

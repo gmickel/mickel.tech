@@ -17,11 +17,11 @@ const APP_DATA = {
 };
 
 export const metadata: Metadata = {
-  title: 'Flow — Plan First, Work Second',
+  title: 'Flow: Plan First, Work Second',
   description:
-    'Claude Code marketplace plugin for structured development workflow. Research agents, gap analysis, and disciplined execution. Most failures come from weak planning—Flow fixes that.',
+    'Claude Code marketplace plugin for structured development workflow. Research agents, gap analysis, and disciplined execution. Most failures come from weak planning. Flow fixes that.',
   openGraph: {
-    title: 'Flow — Plan First, Work Second',
+    title: 'Flow: Plan First, Work Second',
     description:
       'Claude Code marketplace plugin for structured development workflow. Research agents, gap analysis, and disciplined execution.',
     type: 'website',
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Flow — Plan First, Work Second',
+    title: 'Flow: Plan First, Work Second',
     description:
       'Claude Code plugin: research agents, gap analysis, disciplined execution.',
   },
@@ -267,7 +267,7 @@ export default function FlowPage() {
             <div className="mt-6 rounded-lg border border-violet-500/20 bg-violet-500/5 p-4">
               <p className="text-muted-foreground text-sm">
                 <span className="font-mono text-violet-400 text-xs">NOTE</span>{' '}
-                — This isn't strictly an app, but it belongs here given my focus
+                · This isn't strictly an app, but it belongs here given my focus
                 on{' '}
                 <span className="text-white">
                   AI-native software development
@@ -571,7 +571,7 @@ export default function FlowPage() {
 
               <p className="text-muted-foreground text-sm">
                 <span className="text-white">Without RepoPrompt:</span>{' '}
-                repo-scout is used automatically—no prompt needed.
+                repo-scout is used automatically. No prompt needed.
               </p>
             </CardContent>
           </Card>
@@ -664,7 +664,7 @@ export default function FlowPage() {
                   <span className="font-mono text-primary text-xs">
                     CROSS-MODEL
                   </span>{' '}
-                  — Different models catch different blind spots. Same-model
+                  · Different models catch different blind spots. Same-model
                   self-review misses things a fresh perspective finds.
                 </p>
               </div>
@@ -675,7 +675,7 @@ export default function FlowPage() {
                   <span className="font-mono text-violet-400 text-xs">
                     EXPORT MODE
                   </span>{' '}
-                  — Creates a markdown file with full context: file tree, code
+                  · Creates a markdown file with full context: file tree, code
                   maps, selected files, and the Carmack-level review prompt.
                   Opens automatically so you can paste into your preferred LLM.
                 </p>
@@ -690,7 +690,7 @@ export default function FlowPage() {
                   {'\n'}
                   <span className="text-primary">?</span>{' '}
                   <span className="text-white">
-                    Review — Run Carmack-level review after?
+                    Review · Run Carmack-level review after?
                   </span>
                   {'\n'}
                   <span className="text-muted-foreground">{'  '}</span>
@@ -845,23 +845,23 @@ export default function FlowPage() {
                 <li className="flex gap-2">
                   <span className="text-violet-400">›</span>
                   <span>
-                    <span className="text-white">No configuration</span>—detects{' '}
-                    <code className="text-violet-400">.beads/</code>{' '}
+                    <span className="text-white">No configuration</span>,
+                    detects <code className="text-violet-400">.beads/</code>{' '}
                     automatically
                   </span>
                 </li>
                 <li className="flex gap-2">
                   <span className="text-violet-400">›</span>
                   <span>
-                    <span className="text-white">Graceful fallback</span>—works
+                    <span className="text-white">Graceful fallback</span>, works
                     without Beads installed
                   </span>
                 </li>
                 <li className="flex gap-2">
                   <span className="text-violet-400">›</span>
                   <span>
-                    <span className="text-white">Dependency tracking</span>
-                    —knows which tasks block others
+                    <span className="text-white">Dependency tracking</span>,
+                    knows which tasks block others
                   </span>
                 </li>
               </ul>
@@ -1173,7 +1173,7 @@ export default function FlowPage() {
           {/* Optional RepoPrompt */}
           <div className="mt-6 rounded-lg border border-primary/20 bg-primary/5 p-4">
             <p className="text-muted-foreground text-sm">
-              <span className="font-mono text-primary text-xs">OPTIONAL</span> —
+              <span className="font-mono text-primary text-xs">OPTIONAL</span> ·
               Install{' '}
               <a
                 className="text-primary underline decoration-primary/40 underline-offset-2 transition-colors hover:text-primary/80"
@@ -1231,7 +1231,7 @@ export default function FlowPage() {
                 <p>
                   Developers who want Claude Code to ship reliably, not just
                   generate code. If you've ever had an agent "finish" a task
-                  only to realize it forgot half the requirements—this is for
+                  only to realize it forgot half the requirements, this is for
                   you.
                 </p>
                 <p>

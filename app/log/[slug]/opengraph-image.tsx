@@ -27,7 +27,7 @@ export default async function LogPostOGImage({
 
     const title =
       post?.title ??
-      'System Log — Agentic SDLC, platforms and AI agents that actually work.';
+      'System Log · Agentic SDLC, platforms and AI agents that actually work.';
     const tags = post?.tags?.slice(0, 4) ?? [];
     const date = post
       ? new Date(post.publishedAt).toLocaleDateString('en-CH', {

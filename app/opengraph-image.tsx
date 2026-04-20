@@ -8,7 +8,7 @@ export const runtime = 'edge';
 export const size = ATELIER_OG_SIZE;
 export const contentType = ATELIER_OG_CONTENT_TYPE;
 export const alt =
-  'Gordon Mickel — Agentic PDLC, AI Systems & Independent Technical Expert';
+  'Gordon Mickel · Agentic PDLC, AI Systems & Independent Technical Expert';
 
 export default async function OGImage() {
   return await renderAtelierOG({

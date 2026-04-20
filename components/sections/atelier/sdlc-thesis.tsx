@@ -5,7 +5,7 @@ interface SdlcThesisProps {
 const copyEN = {
   eyebrow: '02 / Why PDLC, not SDLC',
   heading: "The bottleneck moved. Most AI tooling rollouts pretend it didn't.",
-  body: "When agents can write production code in minutes, the constraint is no longer typing speed. It moves up the value chain — to product framing, requirements engineering, specification quality, and review capacity. SDLC tools targeting just the coding layer optimise the part of the pipeline that's no longer the bottleneck.",
+  body: "When agents can write production code in minutes, the constraint is no longer typing speed. It moves up the value chain: to product framing, requirements engineering, specification quality, and review capacity. SDLC tools targeting just the coding layer optimise the part of the pipeline that's no longer the bottleneck.",
   pillarsLabel: 'What changes when you treat the whole product cycle',
   pillars: [
     {
@@ -18,7 +18,7 @@ const copyEN = {
     },
     {
       tag: 'Tickets → context',
-      body: 'The unit of work is a connected context — product docs, repo, design system, observability — not a Jira card. Everything-as-code: prompts, evals, guardrails, agent skills, all versioned and traced.',
+      body: 'The unit of work is a connected context (product docs, repo, design system, observability), not a Jira card. Everything-as-code: prompts, evals, guardrails, agent skills, all versioned and traced.',
     },
     {
       tag: 'Pilots → flywheels',

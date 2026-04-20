@@ -5,7 +5,7 @@ import AtelierCaseStudiesIndex from '@/components/sections/atelier/case-studies-
 import { breadcrumbSchema, JsonLd, personSchema } from '@/lib/json-ld';
 
 export const metadata: Metadata = {
-  title: 'Case Studies — Selected Work',
+  title: 'Case Studies: Selected Work',
   description:
     'Selected engagements across agentic PDLC, independent expert work, and AI systems. Real outcomes, real numbers.',
   keywords: [
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     'Gordon Mickel work',
   ],
   openGraph: {
-    title: 'Case Studies — Selected Work | Mickel Tech',
+    title: 'Case Studies: Selected Work | Mickel Tech',
     description:
       'Selected engagements across agentic PDLC, independent expert work, and AI systems. Real outcomes, real numbers.',
     url: 'https://mickel.tech/case-studies',

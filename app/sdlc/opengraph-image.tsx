@@ -7,7 +7,7 @@ import {
 export const runtime = 'edge';
 export const size = ATELIER_OG_SIZE;
 export const contentType = ATELIER_OG_CONTENT_TYPE;
-export const alt = 'Agentic PDLC — From Requirements to Autonomous Delivery';
+export const alt = 'Agentic PDLC · From Requirements to Autonomous Delivery';
 
 export default async function OGImage() {
   return await renderAtelierOG({

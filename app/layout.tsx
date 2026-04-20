@@ -22,11 +22,11 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://mickel.tech'),
   title: {
     default:
-      'Gordon Mickel — Agentic PDLC, AI Systems & Independent Technical Expert',
+      'Gordon Mickel · Agentic PDLC, AI Systems & Independent Technical Expert',
     template: '%s | Mickel Tech',
   },
   description:
-    'I design AI systems that actually work. Operating Principal (AI & Technology) at Growth Factors. Independent practice for select mandates: agentic PDLC transformation, production AI systems, party-engaged technical opinion (Parteigutachten) and acceptance expert work (Werkvertrags-Gutachten). Binningen, Switzerland — DE & EN.',
+    'I design AI systems that actually work. Operating Principal (AI & Technology) at Growth Factors. Independent practice for select mandates: agentic PDLC transformation, production AI systems, party-engaged technical opinion (Parteigutachten) and acceptance expert work (Werkvertrags-Gutachten). Binningen, Switzerland · DE & EN.',
   keywords: [
     'Agentic PDLC',
     'AI-native PDLC',
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
   creator: 'Gordon Mickel',
   openGraph: {
     title:
-      'Gordon Mickel — Agentic PDLC, AI Systems & Independent Technical Expert',
+      'Gordon Mickel · Agentic PDLC, AI Systems & Independent Technical Expert',
     description:
       'Operating Principal (AI & Technology) at Growth Factors. Independent practice for select mandates: agentic PDLC, production AI systems, Parteigutachten and acceptance expert work. 20+ years, regulated industries, DE & EN.',
     type: 'website',
@@ -60,7 +60,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Gordon Mickel — Agentic PDLC, AI Systems & Independent Expert',
+    title: 'Gordon Mickel · Agentic PDLC, AI Systems & Independent Expert',
     description:
       'Independent practice for select mandates: agentic PDLC transformation, production AI systems, party-engaged technical opinion. Binningen, DE & EN.',
     creator: '@gmickel',
@@ -88,7 +88,7 @@ export const metadata: Metadata = {
   },
   other: {
     'link:alternate:rss':
-      '<link rel="alternate" type="application/rss+xml" title="Mickel Tech — System Log" href="https://mickel.tech/rss" />',
+      '<link rel="alternate" type="application/rss+xml" title="Mickel Tech · System Log" href="https://mickel.tech/rss" />',
   },
 };
 

@@ -56,7 +56,7 @@ export default function AtelierShell({ children }: AtelierShellProps) {
         <div className="mx-auto flex h-16 max-w-[1480px] items-center justify-between px-6 md:px-10">
           {/* Brand */}
           <a
-            aria-label="Mickel Tech — home"
+            aria-label="Mickel Tech, home"
             className="group flex items-baseline gap-3"
             href={homeHref}
           >
@@ -285,7 +285,7 @@ function AtelierFooter({ isDE }: { isDE: boolean }) {
         <div className="grid gap-12 md:grid-cols-12 md:gap-10">
           <div className="md:col-span-5">
             <a
-              aria-label="Mickel Tech — home"
+              aria-label="Mickel Tech, home"
               className="atelier-display block font-medium text-[clamp(2.5rem,1.6rem+3vw,3.5rem)] text-[hsl(var(--paper))] leading-none"
               href={isDE ? '/de' : '/'}
             >

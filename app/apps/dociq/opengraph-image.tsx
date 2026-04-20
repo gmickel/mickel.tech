@@ -2,7 +2,7 @@ import { ImageResponse } from 'next/og';
 
 export const runtime = 'edge';
 
-export const alt = 'DocIQ 1.0 — Pioneering Document Intelligence (2017-2020)';
+export const alt = 'DocIQ 1.0 · Pioneering Document Intelligence (2017-2020)';
 export const size = {
   width: 1200,
   height: 630,

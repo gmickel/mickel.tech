@@ -10,11 +10,11 @@ import { APPS } from '@/lib/apps';
 import { breadcrumbSchema, JsonLd } from '@/lib/json-ld';
 
 export const metadata: Metadata = {
-  title: 'Apps — Things I Built',
+  title: 'Apps: Things I Built',
   description:
     'Software I designed and built. From pioneering legal tech platforms to developer productivity tools.',
   openGraph: {
-    title: 'Apps — Things I Built | Mickel Tech',
+    title: 'Apps: Things I Built | Mickel Tech',
     description:
       'Software I designed and built. From pioneering legal tech platforms to developer productivity tools.',
     type: 'website',
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Apps — Things I Built | Mickel Tech',
+    title: 'Apps: Things I Built | Mickel Tech',
     description:
       'Software I designed and built. From pioneering legal tech platforms to developer productivity tools.',
   },
@@ -78,7 +78,7 @@ export default function AppsPage() {
             ← Back to main site
           </Link>
           <p className="mt-4 max-w-3xl text-lg text-muted-foreground leading-relaxed">
-            Software I designed and built—from pioneering legal tech platforms
+            Software I designed and built, from pioneering legal tech platforms
             to developer productivity tools. This is just a selection; see{' '}
             <a
               className="glow-link"

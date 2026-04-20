@@ -28,12 +28,12 @@ const faqsEN = [
   {
     question: 'How long until we see ROI?',
     answer:
-      'The 2–3 week audit identifies the first pay-back use case. The system build runs 6–16 weeks. Most engagements break even on the first deployment if the audit was done honestly.',
+      'The 2-3 week audit identifies the first pay-back use case. The system build runs 6-16 weeks. Most engagements break even on the first deployment if the audit was done honestly.',
   },
   {
     question: 'What about change management?',
     answer:
-      'Built into the engagement when relevant — but I am not a change-management consultancy. I refer or partner with specialist change support when the technical solution lands cleanly but the human side needs more than my involvement.',
+      'Built into the engagement when relevant, but I am not a change-management consultancy. I refer or partner with specialist change support when the technical solution lands cleanly but the human side needs more than my involvement.',
   },
   {
     question: 'Will you sign an NDA before the discovery call?',
@@ -71,7 +71,7 @@ const faqsDE = [
   {
     question: 'Wie lange bis zum ROI?',
     answer:
-      'Der 2–3-wöchige Audit identifiziert den ersten zahlbaren Use Case. Der System-Build läuft 6–16 Wochen. Die meisten Mandate erreichen den Break-even beim ersten Deployment, sofern der Audit ehrlich gemacht wurde.',
+      'Der 2-3-wöchige Audit identifiziert den ersten zahlbaren Use Case. Der System-Build läuft 6-16 Wochen. Die meisten Mandate erreichen den Break-even beim ersten Deployment, sofern der Audit ehrlich gemacht wurde.',
   },
   {
     question: 'Was ist mit Change Management?',

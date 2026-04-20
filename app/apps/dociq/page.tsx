@@ -8,11 +8,11 @@ import { Separator } from '@/components/ui/separator';
 import { breadcrumbSchema, JsonLd, softwareAppSchema } from '@/lib/json-ld';
 
 export const metadata: Metadata = {
-  title: 'DocIQ 1.0 — Pioneering Document Intelligence (2018-2020)',
+  title: 'DocIQ 1.0: Pioneering Document Intelligence (2018-2020)',
   description:
     'One of the first legal tech platforms to use extensive NLP and machine learning for document lifecycle management. Still powering enterprise companies across Switzerland.',
   openGraph: {
-    title: 'DocIQ 1.0 — Pioneering Document Intelligence',
+    title: 'DocIQ 1.0: Pioneering Document Intelligence',
     description:
       'One of the first legal tech platforms to use extensive NLP and machine learning for document lifecycle management.',
     type: 'website',
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'DocIQ 1.0 — Pioneering Document Intelligence',
+    title: 'DocIQ 1.0: Pioneering Document Intelligence',
     description:
       'Pioneering document intelligence platform from 2018. Still in production.',
   },
@@ -33,7 +33,7 @@ const coreFeatures = [
   {
     title: 'Visual Template Builder',
     description:
-      'No-code programming language with nested conditionals, variables, snippets—all visually buildable. Users created complex document templates without writing code.',
+      'No-code programming language with nested conditionals, variables, snippets, all visually buildable. Users created complex document templates without writing code.',
     icon: '🔧',
   },
   {
@@ -57,7 +57,7 @@ const coreFeatures = [
   {
     title: 'Document Lifecycle',
     description:
-      'Full lifecycle management: templating, data entry, form-based filling, collaboration, signing, archiving—all in one platform.',
+      'Full lifecycle management: templating, data entry, form-based filling, collaboration, signing, archiving, all in one platform.',
     icon: '📄',
   },
   {
@@ -111,7 +111,7 @@ const signatureFeatures = [
       'ZertES (Swiss) and eIDAS (EU) compliant',
       'Swisscom Trust Services partnership',
       'Mobile ID verification',
-      'Document hash only—content never leaves servers',
+      'Document hash only, content never leaves servers',
       'Legal equivalence to handwritten signatures',
     ],
   },
@@ -224,7 +224,7 @@ export default function DocIQPage() {
                   templatize their documents with one mouse click
                 </span>{' '}
                 using NLP, then use these templates to create new documents
-                through form-based filling—shareable with clients who could
+                through form-based filling, shareable with clients who could
                 complete them without any technical knowledge.
               </p>
             </div>
@@ -306,7 +306,7 @@ export default function DocIQPage() {
               <ul className="space-y-2">
                 <li className="flex gap-2">
                   <span className="text-amber-400">›</span>A visual programming
-                  language for document logic—nested conditionals, variables,
+                  language for document logic: nested conditionals, variables,
                   calculations
                 </li>
                 <li className="flex gap-2">
@@ -323,7 +323,7 @@ export default function DocIQPage() {
                 </li>
               </ul>
               <p className="font-mono text-sm">
-                "Everything was visually buildable—users created complex
+                "Everything was visually buildable. Users created complex
                 document templates without writing a single line of code."
               </p>
             </CardContent>

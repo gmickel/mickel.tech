@@ -2,7 +2,7 @@ import { ImageResponse } from 'next/og';
 
 export const runtime = 'edge';
 
-export const alt = 'GNO — Local Search for Your Second Brain';
+export const alt = 'GNO · Local Search for Your Second Brain';
 export const size = {
   width: 1200,
   height: 630,

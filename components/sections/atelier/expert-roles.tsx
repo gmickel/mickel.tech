@@ -22,7 +22,7 @@ const rolesEN: readonly RoleEntry[] = [
     whatYouGet:
       'Written expert opinion (Gutachten), oral readiness for hearings, supporting analyses (forensic code review, infrastructure forensics, contract-vs-implementation comparison), iterative refinement of the question catalogue with you.',
     format:
-      'Typically 30–80 pages, structured per Swiss / German Gutachten convention: Auftrag, Methodik, Sachverhalt, Befunde, Würdigung, Kernbefunde. Filed under your firm cover.',
+      'Typically 30-80 pages, structured per Swiss / German Gutachten convention: Auftrag, Methodik, Sachverhalt, Befunde, Würdigung, Kernbefunde. Filed under your firm cover.',
     audience: 'Litigation counsel, in-house counsel, arbitration teams.',
   },
   {
@@ -30,7 +30,7 @@ const rolesEN: readonly RoleEntry[] = [
     title: 'Werkvertrags-Gutachten',
     subtitle: 'Independent acceptance expert, named by both parties.',
     whenUsed:
-      'Software procurement and works contracts where parties contractually designate an independent expert to assess delivery against specification. Quasi-arbitral function — both sides rely on the opinion.',
+      'Software procurement and works contracts where parties contractually designate an independent expert to assess delivery against specification. Quasi-arbitral function; both sides rely on the opinion.',
     whatYouGet:
       'Pre-engagement Prüfschema (test schema) developed transparently from the contract annexes. Structured Abnahmeprüfung against the contractually defined criteria. Written Gutachten with Bewertungsmatrix. Optional Nachprüfung after Nachbesserungen.',
     format:
@@ -47,7 +47,7 @@ const rolesEN: readonly RoleEntry[] = [
     whatYouGet:
       'Maturity scoring across 5 pillars (architecture, team, ops, security, AI exposure). Verification matrix against vendor claims. IC-ready value creation thesis or risk register. Live walkthrough with deal team.',
     format:
-      '3–10 working days depending on scope. Fixed-fee, often <1 week turnaround on follow-up DDs once a relationship is established.',
+      '3-10 working days depending on scope. Fixed-fee, often <1 week turnaround on follow-up DDs once a relationship is established.',
     audience: 'PE / VC investment teams, boards, family offices, M&A advisors.',
   },
 ];
@@ -62,7 +62,7 @@ const rolesDE: readonly RoleEntry[] = [
     whatYouGet:
       'Schriftliches Gutachten, mündliche Verhandlungsbereitschaft, unterstützende Analysen (forensische Code-Review, Infrastruktur-Forensik, Soll-Ist-Vergleich Vertrag gegen Implementierung), iterative Verfeinerung des Fragenkatalogs gemeinsam mit Ihnen.',
     format:
-      'Typischerweise 30–80 Seiten, strukturiert nach CH/DE-Gutachtenkonvention: Auftrag, Methodik, Sachverhalt, Befunde, Würdigung, Kernbefunde. Eingereicht unter Ihrem Kanzleibriefkopf.',
+      'Typischerweise 30-80 Seiten, strukturiert nach CH/DE-Gutachtenkonvention: Auftrag, Methodik, Sachverhalt, Befunde, Würdigung, Kernbefunde. Eingereicht unter Ihrem Kanzleibriefkopf.',
     audience: 'Prozessanwälte, Inhouse-Counsel, Schiedsverfahrens-Teams.',
   },
   {
@@ -87,7 +87,7 @@ const rolesDE: readonly RoleEntry[] = [
     whatYouGet:
       'Reifegradbewertung über 5 Säulen (Architektur, Team, Betrieb, Security, KI-Exposition). Verifikationsmatrix gegen die Aussagen des Anbieters. IC-fähige Value-Creation-These oder Risikoregister. Live-Walkthrough mit dem Deal-Team.',
     format:
-      '3–10 Arbeitstage je nach Umfang. Festpreis. Bei Folge-DDs nach etablierter Beziehung häufig unter einer Woche Durchlaufzeit.',
+      '3-10 Arbeitstage je nach Umfang. Festpreis. Bei Folge-DDs nach etablierter Beziehung häufig unter einer Woche Durchlaufzeit.',
     audience:
       'PE- und VC-Investmentteams, Verwaltungsräte, Family Offices, M&A-Berater.',
   },
@@ -113,7 +113,7 @@ export default function AtelierExpertRoles({
           eyebrow: '02 / Three roles',
           heading: 'Three clearly separated roles.',
           intro:
-            'In the CH / DE legal market these roles differ formally in mandate, duties and output. Pick the one that matches your situation — or ask if the situation itself is still unclear.',
+            'In the CH / DE legal market these roles differ formally in mandate, duties and output. Pick the one that matches your situation, or ask if the situation itself is still unclear.',
           when: 'When used',
           what: 'What you get',
           how: 'Format',

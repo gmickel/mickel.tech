@@ -3,7 +3,7 @@ import { ImageResponse } from 'next/og';
 export const runtime = 'edge';
 
 export const alt =
-  'DocIQ Shield — Zero-Persistence Court Document Anonymisation';
+  'DocIQ Shield · Zero-Persistence Court Document Anonymisation';
 export const size = {
   width: 1200,
   height: 630,

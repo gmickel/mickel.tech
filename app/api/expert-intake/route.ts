@@ -37,7 +37,7 @@ export async function POST(request: Request) {
   }
 
   const data = parsed.data;
-  const subject = `[Expert intake] ${data.matter} — ${data.firm}`;
+  const subject = `[Expert intake] ${data.matter} · ${data.firm}`;
   const body = renderIntakeBody(data);
 
   const apiKey = process.env.RESEND_API_KEY;
@@ -53,7 +53,7 @@ export async function POST(request: Request) {
         text: body,
       });
     } catch (err) {
-      // Email failed — record the intake on the server so it isn't lost.
+      // Email failed · record the intake on the server so it isn't lost.
       console.error('expert-intake.email_failed', {
         error: err instanceof Error ? err.message : 'unknown',
         subject,
@@ -63,7 +63,7 @@ export async function POST(request: Request) {
       return NextResponse.json({ ok: true, fallback: 'logged' });
     }
   } else {
-    // No Resend key configured — log the intake so it is recoverable from server logs.
+    // No Resend key configured · log the intake so it is recoverable from server logs.
     console.warn('expert-intake.no_api_key', { subject });
     console.warn('expert-intake.payload', body);
   }
@@ -73,17 +73,17 @@ export async function POST(request: Request) {
 
 function renderIntakeBody(d: z.infer<typeof intakeSchema>): string {
   return [
-    `New confidential intake — ${new Date().toISOString()}`,
+    `New confidential intake · ${new Date().toISOString()}`,
     `Locale: ${d.locale ?? 'en'}`,
     '',
     `Name:         ${d.name}`,
     `Firm:         ${d.firm}`,
     `Email:        ${d.email}`,
-    `Phone:        ${d.phone ?? '—'}`,
+    `Phone:        ${d.phone ?? '--'}`,
     `Role:         ${d.role}`,
     `Matter:       ${d.matter}`,
     `Jurisdiction: ${d.jurisdiction}`,
-    `Deadline:     ${d.deadline ?? '—'}`,
+    `Deadline:     ${d.deadline ?? '--'}`,
     '',
     'Parties (conflict check):',
     d.parties,

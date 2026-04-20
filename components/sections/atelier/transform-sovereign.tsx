@@ -5,11 +5,11 @@ interface TransformSovereignProps {
 const copyEN = {
   eyebrow: 'Specialism · Sovereign + private AI',
   heading: "When the data can't leave the building.",
-  body: 'In addition to everything above. The full transformation work, RAG, agents, voice and the rest applies as usual — and where regulation requires it (FADP, GDPR, EU AI Act, Swiss Berufsgeheimnis, public-sector procurement), I deploy the sovereign and private-AI variant: custom fine-tuning where off-the-shelf models cannot see the data, on-prem or VPC inference, audit-grade provenance from day one. Few practices in CH/EU do both the strategy and the implementation; I do both, in production.',
+  body: 'In addition to everything above. The full transformation work, RAG, agents, voice and the rest applies as usual; and where regulation requires it (FADP, GDPR, EU AI Act, Swiss Berufsgeheimnis, public-sector procurement), I deploy the sovereign and private-AI variant: custom fine-tuning where off-the-shelf models cannot see the data, on-prem or VPC inference, audit-grade provenance from day one. Few practices in CH/EU do both the strategy and the implementation; I do both, in production.',
   pillars: [
     {
       tag: 'Custom-trained local models',
-      body: 'Fine-tuning small NER and language models on your sensitive entities, your terminology, your edge cases. Production accuracy where general-purpose APIs cannot match the domain — and never see the data. Reference: 97%+ accuracy on PII detection in Swiss clinical text, zero data persistence (DocIQ Shield + KISIM AI).',
+      body: 'Fine-tuning small NER and language models on your sensitive entities, your terminology, your edge cases. Production accuracy where general-purpose APIs cannot match the domain, and never see the data. Reference: 97%+ accuracy on PII detection in Swiss clinical text, zero data persistence (DocIQ Shield + KISIM AI).',
     },
     {
       tag: 'On-prem and VPC inference',
@@ -26,8 +26,8 @@ const copyEN = {
   ],
   proofLabel: 'Shipped in production',
   proofItems: [
-    'DocIQ Shield — court anonymisation for the Swiss judiciary, fine-tuned local NER + LLM, zero data persistence (live since 2025, v2 2026)',
-    'KISIM AI — on-prem PII masking at 97%+ accuracy enabling FADP / GDPR-compliant clinical AI in Swiss hospitals (50+ engineering org, <90 days)',
+    'DocIQ Shield: court anonymisation for the Swiss judiciary, fine-tuned local NER + LLM, zero data persistence (live since 2025, v2 2026)',
+    'KISIM AI: on-prem PII masking at 97%+ accuracy enabling FADP / GDPR-compliant clinical AI in Swiss hospitals (50+ engineering org, <90 days)',
     'Multiple AI / tech due-diligence engagements assessing private-LLM strategy and vendor lock-in risk for PE deal teams',
   ],
 };

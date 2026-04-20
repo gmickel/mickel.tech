@@ -58,7 +58,7 @@ export function personSchema() {
     memberOf: [
       {
         '@type': 'Organization',
-        name: 'ITDR — Institution for IT and Data Dispute Resolution',
+        name: 'ITDR: Institution for IT and Data Dispute Resolution',
         url: 'https://itdr.ch',
       },
       {
@@ -75,7 +75,7 @@ export function professionalServiceSchema() {
     '@context': 'https://schema.org',
     '@type': 'ProfessionalService',
     '@id': `${BASE_URL}#practice`,
-    name: 'Mickel Tech — Independent Practice',
+    name: 'Mickel Tech: Independent Practice',
     url: BASE_URL,
     image: `${BASE_URL}/portraits/gordon-mickel.jpg`,
     description:
@@ -95,7 +95,7 @@ export function professionalServiceSchema() {
       addressCountry: 'CH',
     },
     availableLanguage: ['en', 'de'],
-    priceRange: 'CHF 15,000 — CHF 150,000+',
+    priceRange: 'CHF 15,000 - CHF 150,000+',
     hasOfferCatalog: {
       '@type': 'OfferCatalog',
       name: 'Practice areas',
@@ -124,7 +124,7 @@ export function professionalServiceSchema() {
                 '@type': 'Service',
                 name: 'Agentic PDLC Diagnostic',
                 description:
-                  '2-week assessment: L0–L4 maturity scoring, 5-pillar audit, opportunity map, 90-day roadmap.',
+                  '2-week assessment: L0-L4 maturity scoring, 5-pillar audit, opportunity map, 90-day roadmap.',
               },
               priceSpecification: {
                 '@type': 'PriceSpecification',

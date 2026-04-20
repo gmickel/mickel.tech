@@ -2,7 +2,7 @@ import { ImageResponse } from 'next/og';
 
 export const runtime = 'edge';
 
-export const alt = 'gmickel-bench — Real-World AI Coding Evaluations';
+export const alt = 'gmickel-bench · Real-World AI Coding Evaluations';
 export const size = {
   width: 1200,
   height: 630,

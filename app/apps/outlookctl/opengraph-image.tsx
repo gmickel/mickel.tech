@@ -2,7 +2,7 @@ import { ImageResponse } from 'next/og';
 
 export const runtime = 'edge';
 
-export const alt = 'outlookctl — Control Outlook from the Command Line';
+export const alt = 'outlookctl · Control Outlook from the Command Line';
 export const size = {
   width: 1200,
   height: 630,

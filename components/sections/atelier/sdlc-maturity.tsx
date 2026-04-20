@@ -30,7 +30,7 @@ const levelsEN: readonly Level[] = [
     signals: [
       'Cursor, Claude Code, OpenAI Codex or similar in active use',
       'Self-service adoption, no central guidance',
-      'Hard to attribute uplift; some skeptics, some converts',
+      '10-15% individual lift, uneven across teams',
     ],
   },
   {
@@ -42,7 +42,7 @@ const levelsEN: readonly Level[] = [
       'License management + standard model selection',
       'Documented methodology (spec, agent, review)',
       'Cycle time and review-time baselined',
-      '20–30% throughput uplift in first 90 days',
+      '20-30% throughput uplift in first 90 days',
     ],
   },
   {
@@ -54,7 +54,7 @@ const levelsEN: readonly Level[] = [
       'Specs are the unit of work',
       'Eval suites gate every meaningful change',
       'Cross-model review catches single-model blind spots',
-      'Throughput 2–3x baseline, sustained',
+      'Throughput 2-3x baseline, sustained',
     ],
   },
   {
@@ -67,6 +67,7 @@ const levelsEN: readonly Level[] = [
       'Production observability → spec refinement loops',
       'Most PRs reviewed (or written) by other agents',
       'Engineering org reshaped around product/spec leadership',
+      '5-10× cycle time, review-gated agentic delivery',
     ],
   },
 ];
@@ -91,7 +92,7 @@ const levelsDE: readonly Level[] = [
     signals: [
       'Cursor, Claude Code, OpenAI Codex o.ä. aktiv im Einsatz',
       'Adoption per Selbstbedienung, keine zentrale Steuerung',
-      'Uplift schwer zurechenbar; Skeptiker und Überzeugte gemischt',
+      '10-15% individueller Uplift, ungleichmässig über Teams',
     ],
   },
   {
@@ -103,7 +104,7 @@ const levelsDE: readonly Level[] = [
       'Lizenzmanagement + Standard-Modellauswahl',
       'Dokumentierte Methodik (Spec, Agent, Review)',
       'Cycle Time und Review-Zeit als Baseline erfasst',
-      '20–30% Durchsatzgewinn in den ersten 90 Tagen',
+      '20-30% Durchsatzgewinn in den ersten 90 Tagen',
     ],
   },
   {
@@ -115,7 +116,7 @@ const levelsDE: readonly Level[] = [
       'Specs sind die Arbeitseinheit',
       'Eval-Suiten sichern jede bedeutsame Änderung ab',
       'Cross-Model-Review fängt blinde Flecken einzelner Modelle ab',
-      'Durchsatz 2–3× der Baseline, anhaltend',
+      'Durchsatz 2-3× der Baseline, anhaltend',
     ],
   },
   {
@@ -128,6 +129,7 @@ const levelsDE: readonly Level[] = [
       'Observability aus dem Produktivbetrieb → Spec-Refinement-Schleifen',
       'Die meisten PRs werden von anderen Agenten reviewt (oder geschrieben)',
       'Engineering-Organisation neu zugeschnitten auf Produkt- und Spec-Führung',
+      '5-10× Cycle Time, review-gesichert agentisch',
     ],
   },
 ];
@@ -142,14 +144,14 @@ export default function AtelierSdlcMaturity({
           eyebrow: '03 / Reifegradmodell',
           heading: 'L0 → L4: das Reifegradmodell.',
           intro:
-            'Fünf Stufen, klare Signale, klarer Rollout pro Stufe. Einstieg auf jeder beliebigen Stufe möglich -- was zählt, ist die nächste.',
+            'Fünf Stufen, klare Signale, klarer Rollout pro Stufe. Einstieg auf jeder beliebigen Stufe möglich, was zählt ist die nächste. Alle Durchsatzzahlen bei gleichbleibender oder besserer DORA-Change-Failure-Rate; Durchsatz ohne Qualität ist ein Rückschritt.',
           signalsLabel: 'Beobachtbare Signale',
         }
       : {
           eyebrow: '03 / Maturity model',
           heading: 'L0 → L4: the maturity model.',
           intro:
-            'Five levels, clear signals, clear rollout per level. You can enter at any level — what matters is the next one.',
+            'Five levels, clear signals, clear rollout per level. You can enter at any level; what matters is the next one. All throughput numbers assume constant or better DORA change-failure rate; throughput without quality is a downgrade.',
           signalsLabel: 'Observable signals',
         };
 

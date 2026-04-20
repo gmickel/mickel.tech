@@ -21,11 +21,11 @@ const principlesEN = [
   },
   {
     tag: 'Internal team owns it',
-    body: 'Engagement ends when the internal team owns operations. I leave behind documentation, runbooks, and capability — not dependency.',
+    body: 'Engagement ends when the internal team owns operations. I leave behind documentation, runbooks, and capability, not dependency.',
   },
   {
     tag: 'No vendor lock-in by default',
-    body: 'Architecture preserves the ability to swap models, retrieval engines, or tooling. Lock-in is sometimes the right trade — but it is always a deliberate choice.',
+    body: 'Architecture preserves the ability to swap models, retrieval engines, or tooling. Lock-in is sometimes the right trade, but it is always a deliberate choice.',
   },
 ] as const;
 
@@ -72,7 +72,7 @@ export default function AtelierTransformGovernance({
           eyebrow: '05 / Principles',
           heading: 'Six principles every engagement runs on.',
           intro:
-            'When engagements fail, it traces to one of these six missing. They are not polish — they are the architecture.',
+            'When engagements fail, it traces to one of these six missing. They are not polish; they are the architecture.',
         };
 
   return (

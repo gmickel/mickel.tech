@@ -21,15 +21,15 @@ interface ShellProps {
 }
 
 const serviceLinksEN = [
-  { label: 'AI ENGINEERING', href: '/sdlc' },
-  { label: 'AI SYSTEMS', href: '/ai-transformation' },
-  { label: 'EXPERT & DD', href: '/expert' },
+  { label: 'AGENTIC PDLC', href: '/sdlc' },
+  { label: 'INDEPENDENT EXPERT', href: '/expert' },
+  { label: 'AI TRANSFORMATION', href: '/ai-transformation' },
 ] as const;
 
 const serviceLinksDE = [
-  { label: 'AI ENGINEERING', href: '/de/sdlc' },
-  { label: 'AI SYSTEME', href: '/de/ai-transformation' },
-  { label: 'EXPERTE & DD', href: '/de/expert' },
+  { label: 'AGENTISCHE PDLC', href: '/de/sdlc' },
+  { label: 'UNABHÄNGIGES GUTACHTEN', href: '/de/expert' },
+  { label: 'AI TRANSFORMATION', href: '/de/ai-transformation' },
 ] as const;
 
 const utilLinks = [

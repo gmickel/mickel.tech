@@ -15,11 +15,11 @@ const APP_DATA = {
 };
 
 export const metadata: Metadata = {
-  title: 'sheets-cli — Google Sheets for Humans & Agents',
+  title: 'sheets-cli: Google Sheets for Humans & Agents',
   description:
     'Fast, deterministic CLI for Google Sheets. Key-based updates, batch operations, JSON I/O. Installs as a skill for Claude Code and OpenAI Codex.',
   openGraph: {
-    title: 'sheets-cli — Google Sheets for Humans & Agents',
+    title: 'sheets-cli: Google Sheets for Humans & Agents',
     description:
       'Command-line interface for Google Sheets with JSON I/O. Key-based updates, batch operations, AI agent integration.',
     type: 'website',
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'sheets-cli — Google Sheets for Humans & Agents',
+    title: 'sheets-cli: Google Sheets for Humans & Agents',
     description:
       'CLI for Google Sheets. Key-based updates, batch ops, AI agent skills.',
   },
@@ -487,28 +487,28 @@ export default function SheetsCLIPage() {
                   <li className="flex gap-2">
                     <span className="text-green-400">›</span>
                     <span>
-                      <span className="text-white">CI/CD pipelines</span> —
+                      <span className="text-white">CI/CD pipelines</span> ·
                       Update deployment trackers
                     </span>
                   </li>
                   <li className="flex gap-2">
                     <span className="text-green-400">›</span>
                     <span>
-                      <span className="text-white">Data ingestion</span> — Batch
+                      <span className="text-white">Data ingestion</span> · Batch
                       append from scripts
                     </span>
                   </li>
                   <li className="flex gap-2">
                     <span className="text-green-400">›</span>
                     <span>
-                      <span className="text-white">AI workflows</span> — Let
+                      <span className="text-white">AI workflows</span> · Let
                       agents manage your sheets
                     </span>
                   </li>
                   <li className="flex gap-2">
                     <span className="text-green-400">›</span>
                     <span>
-                      <span className="text-white">Manual ops</span> — Quick
+                      <span className="text-white">Manual ops</span> · Quick
                       terminal-based updates
                     </span>
                   </li>

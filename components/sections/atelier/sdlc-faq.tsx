@@ -8,18 +8,18 @@ const faqsEN = [
   {
     question: 'Why "PDLC" instead of "SDLC"?',
     answer:
-      'SDLC frames the problem as software development. Once agents can write production code in minutes, the constraint moves up the value chain — to product framing, requirements engineering and review capacity. PDLC (Product Development Life Cycle) names the actual unit of work and lets us optimise the right bottleneck.',
+      'SDLC frames the problem as software development. Once agents can write production code in minutes, the constraint moves up the value chain: to product framing, requirements engineering and review capacity. PDLC (Product Development Life Cycle) names the actual unit of work and lets us optimise the right bottleneck.',
   },
   {
     question:
       'Is this just selling Cursor / Claude Code / OpenAI Codex rollouts?',
     answer:
-      'No. Tool choice, adoption and engineer coaching are part of the work — but a small part. The methodology shift, eval gates, cross-model review, everything-as-code, observability flywheels and organisational redesign are where the work sits and where the value is. The tools change every quarter; the methodology does not.',
+      'No. Tool choice, adoption and engineer coaching are part of the work, but a small part. The methodology shift, eval gates, cross-model review, everything-as-code, observability flywheels and organisational redesign are where the work sits and where the value is. The tools change every quarter; the methodology does not.',
   },
   {
     question: 'Where do FlowNext and MergeFoundry fit?',
     answer:
-      'FlowNext is the open-source pattern that any team can adopt independently. MergeFoundry is the commercial platform I am building separately under MergeFoundry, Inc — relevant when a portfolio wants the L3/L4 patterns deployed once and reused everywhere. Neither is required to engage me; both are available if useful.',
+      'FlowNext is the open-source pattern that any team can adopt independently. MergeFoundry is the commercial platform I am building separately under MergeFoundry, Inc, relevant when a portfolio wants the L3/L4 patterns deployed once and reused everywhere. Neither is required to engage me; both are available if useful.',
   },
   {
     question: 'How do you measure success?',
@@ -29,22 +29,22 @@ const faqsEN = [
   {
     question: 'What about regulated industries?',
     answer:
-      'Most of my work is in regulated environments — healthcare, finance, public sector. Eval gates, audit trails, deterministic pipelines and provenance are not afterthoughts; they are the architecture. I have shipped production AI inside a clinical CIS and inside legal-grade contract platforms.',
+      'Most of my work is in regulated environments: healthcare, finance, public sector. Eval gates, audit trails, deterministic pipelines and provenance are not afterthoughts; they are the architecture. I have shipped production AI inside a clinical CIS and inside legal-grade contract platforms.',
   },
   {
     question: 'Will my engineers lose their jobs?',
     answer:
-      'No, but their work changes. Specs, reviews, judgement on edge cases, product framing, agent supervision — these become the high-leverage work. Engineers who lean into that gain. Engineers who only type code lose ground regardless of whether you engage me. Better to do this on your terms.',
+      'No, but their work changes. Specs, reviews, judgement on edge cases, product framing, agent supervision: these become the high-leverage work. Engineers who lean into that gain. Engineers who only type code lose ground regardless of whether you engage me. Better to do this on your terms.',
   },
   {
     question: 'Do you do remote-only or onsite?',
     answer:
-      'Both. Most engagements are hybrid: 1–2 onsite days at start and at major milestones, remote in between. Pure remote works when there is a strong technical lead on your side. Pure onsite is rarely worth the price.',
+      'Both. Most engagements are hybrid: 1-2 onsite days at start and at major milestones, remote in between. Pure remote works when there is a strong technical lead on your side. Pure onsite is rarely worth the price.',
   },
   {
     question: 'Where does this fit alongside my existing platform team?',
     answer:
-      'Cleanly. The platform team owns the runtime; I own the methodology and the agent layer. We co-build the foundation and then your platform team owns it. I do not stay forever — that is the test of whether the engagement worked.',
+      'Cleanly. The platform team owns the runtime; I own the methodology and the agent layer. We co-build the foundation and then your platform team owns it. I do not stay forever; that is the test of whether the engagement worked.',
   },
 ] as const;
 
@@ -83,7 +83,7 @@ const faqsDE = [
   {
     question: 'Remote oder vor Ort?',
     answer:
-      'Beides. Die meisten Mandate sind hybrid: 1–2 Onsite-Tage zu Beginn und an wichtigen Meilensteinen, dazwischen remote. Rein remote funktioniert bei starker technischer Führung auf Ihrer Seite. Rein onsite ist selten den Preis wert.',
+      'Beides. Die meisten Mandate sind hybrid: 1-2 Onsite-Tage zu Beginn und an wichtigen Meilensteinen, dazwischen remote. Rein remote funktioniert bei starker technischer Führung auf Ihrer Seite. Rein onsite ist selten den Preis wert.',
   },
   {
     question: 'Wie passt das neben mein bestehendes Plattform-Team?',

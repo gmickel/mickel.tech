@@ -19,8 +19,8 @@ const copyEN = {
         'Two-stage rollout: foundation, then methodology shift',
         'Everything-as-code: prompts, evals, guardrails, agent skills',
       ],
-      metric: 'Target 3–5× cycle time, dev-org-wide',
-      anchorPrice: 'Diagnostic from CHF 15–25k',
+      metric: 'Target 3-5× cycle time, dev-org-wide',
+      anchorPrice: 'Diagnostic from CHF 15-25k',
       cta: 'See agentic PDLC',
       href: '/sdlc',
     },
@@ -29,7 +29,7 @@ const copyEN = {
       tag: 'For counsel, courts, arbitrators, boards',
       title: 'Independent expert work',
       lede: 'Parteigutachten, acceptance expert, AI/tech due diligence.',
-      body: 'Twenty years of hands-on engineering means I can trace claims through code, infrastructure and contracts — not just read the summary deck. Independent, careful, written to withstand cross-examination.',
+      body: 'Twenty years of hands-on engineering means I can trace claims through code, infrastructure and contracts, not just read the summary deck. Independent, careful, written to withstand cross-examination.',
       roles: [
         {
           label: 'Parteigutachten',
@@ -59,7 +59,7 @@ const copyEN = {
         'Make internal knowledge actually findable',
         'Run frontier models inside your perimeter',
       ],
-      anchorPrice: 'Process audit from CHF 15–25k',
+      anchorPrice: 'Process audit from CHF 15-25k',
       cta: 'AI transformation',
       href: '/ai-transformation',
     },
@@ -83,8 +83,8 @@ const copyDE = {
         'Zweistufiges Vorgehen: Fundament, dann Methodenwechsel',
         'Everything-as-code: Prompts, Evals, Guardrails, Agent-Skills',
       ],
-      metric: 'Ziel 3–5× Cycle Time, gesamte Dev-Org',
-      anchorPrice: 'Diagnose ab CHF 15–25k',
+      metric: 'Ziel 3-5× Cycle Time, gesamte Dev-Org',
+      anchorPrice: 'Diagnose ab CHF 15-25k',
       cta: 'Agentische PDLC',
       href: '/de/sdlc',
     },
@@ -123,7 +123,7 @@ const copyDE = {
         'Internes Wissen, das wirklich auffindbar ist',
         'Frontier-Modelle innerhalb Ihres Perimeters',
       ],
-      anchorPrice: 'Prozess-Audit ab CHF 15–25k',
+      anchorPrice: 'Prozess-Audit ab CHF 15-25k',
       cta: 'KI-Transformation',
       href: '/de/ai-transformation',
     },
@@ -163,7 +163,7 @@ export default function AtelierAudienceRouter({
         </header>
 
         {/* Three register cards */}
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-3 md:gap-8">
+        <div className="grid grid-cols-1 gap-6 lg:grid-cols-3 lg:gap-8">
           <PdlcCard card={c.cards.pdlc} />
           <ExpertCard card={c.cards.expert} />
           <TransformCard card={c.cards.transform} />

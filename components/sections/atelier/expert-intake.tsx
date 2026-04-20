@@ -15,7 +15,7 @@ const copyEN = {
   eyebrow: '06 / Confidential intake',
   heading: 'Open a confidential intake.',
   intro:
-    'For counsel, courts, arbitrators, boards and investors. The form is a structured replacement for a first call — it tells me whether I can act, on what, and how fast. NDA before any case material is shared.',
+    'For counsel, courts, arbitrators, boards and investors. The form is a structured replacement for a first call; it tells me whether I can act, on what, and how fast. NDA before any case material is shared.',
   legal:
     'Submitting this intake creates no engagement and no privileged relationship. I treat the contents as confidential and will respond within 48 hours, including if I have to decline.',
   fields: {
@@ -46,7 +46,7 @@ const copyEN = {
     deadline: 'Hard deadline',
     deadlinePlaceholder: 'e.g. hearing on 15 May, soft deadline H2 2026',
     parties:
-      'Parties involved (for conflict check — initials acceptable, no privileged content)',
+      'Parties involved (for conflict check; initials acceptable, no privileged content)',
     description:
       'Brief description of the matter and the technical question (no privileged content)',
     descriptionPlaceholder:
@@ -58,7 +58,7 @@ const copyEN = {
     success:
       'Received. I will respond within 48 hours, often sooner. If you do not see a reply within that window, write directly to gordon@mickel.tech with your reference.',
     error:
-      'The intake could not be submitted. Please email gordon@mickel.tech directly with the same content — I will treat it identically.',
+      'The intake could not be submitted. Please email gordon@mickel.tech directly with the same content; I will treat it identically.',
   },
 };
 
@@ -139,6 +139,34 @@ export default function AtelierExpertIntake({
       });
 
       if (!response.ok) {
+        const data = (await response.json().catch(() => null)) as {
+          error?: string;
+          issues?: { path: (string | number)[]; message: string }[];
+        } | null;
+        if (data?.issues?.length) {
+          const fieldLabels: Record<string, string> = {
+            name: c.fields.name,
+            firm: c.fields.firm,
+            email: c.fields.email,
+            phone: c.fields.phone,
+            role: c.fields.role,
+            matter: c.fields.matter,
+            jurisdiction: c.fields.jurisdiction,
+            deadline: c.fields.deadline,
+            parties: c.fields.parties,
+            description: c.fields.description,
+            consent: c.fields.consent,
+          };
+          const issues = data.issues
+            .map((i) => {
+              const field = String(i.path[0] ?? '');
+              const label = fieldLabels[field] ?? field;
+              return `${label}: ${i.message}`;
+            })
+            .join(' · ');
+          setState({ status: 'error', message: issues });
+          return;
+        }
         throw new Error('Submission failed');
       }
 
@@ -248,7 +276,13 @@ export default function AtelierExpertIntake({
                 />
 
                 <TextAreaField
+                  helper={
+                    locale === 'de'
+                      ? 'Mindestens 20 Zeichen.'
+                      : 'At least 20 characters.'
+                  }
                   label={c.fields.description}
+                  minLength={20}
                   name="description"
                   placeholder={c.fields.descriptionPlaceholder}
                   required
@@ -355,7 +389,7 @@ function SelectField({
         required={required}
       >
         <option disabled value="">
-          —
+          --
         </option>
         {options.map((opt) => (
           <option key={opt} value={opt}>
@@ -373,12 +407,16 @@ function TextAreaField({
   rows,
   placeholder,
   required,
+  minLength,
+  helper,
 }: {
   label: string;
   name: string;
   rows: number;
   placeholder?: string;
   required?: boolean;
+  minLength?: number;
+  helper?: string;
 }) {
   return (
     <label className="block">
@@ -392,11 +430,17 @@ function TextAreaField({
       </span>
       <textarea
         className="mt-2 w-full resize-y border border-[hsl(var(--ink))]/25 bg-transparent px-3 py-2 text-[hsl(var(--ink))] outline-none transition-colors focus:border-[hsl(var(--rust))]"
+        minLength={minLength}
         name={name}
         placeholder={placeholder}
         required={required}
         rows={rows}
       />
+      {helper ? (
+        <span className="atelier-mono mt-2 block text-[0.7rem] text-[hsl(var(--paper-muted))] tracking-[0.1em]">
+          {helper}
+        </span>
+      ) : null}
     </label>
   );
 }

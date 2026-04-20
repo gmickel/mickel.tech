@@ -2,7 +2,7 @@ import { ImageResponse } from 'next/og';
 
 export const runtime = 'edge';
 
-export const alt = 'Things I Built — Gordon Mickel';
+export const alt = 'Things I Built · Gordon Mickel';
 export const size = {
   width: 1200,
   height: 630,
@@ -87,7 +87,7 @@ export default function OGImage() {
             lineHeight: 1.4,
           }}
         >
-          Software I designed and built—from pioneering legal tech platforms to
+          Software I designed and built, from pioneering legal tech platforms to
           developer productivity tools.
         </div>
 

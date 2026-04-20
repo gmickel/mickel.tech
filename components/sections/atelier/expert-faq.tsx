@@ -18,7 +18,7 @@ const faqsEN = [
   {
     question: 'Are you court-appointed or party-engaged?',
     answer:
-      'Party-engaged on the matters I have run. I am ITDR-listed and available for court or arbitral appointment, but on current matters I am engaged by counsel as a Parteigutachter or named jointly by parties as a Werkvertrags-Gutachter. I never describe past work as court-appointed when it was not.',
+      'Party-engaged on the matters I have run: instructed by counsel as a Parteigutachter, or named jointly by both parties as a Werkvertrags-Gutachter. ITDR-listed and available for court or arbitral appointment via that route.',
   },
   {
     question: 'What does an engagement cost?',
@@ -43,7 +43,7 @@ const faqsEN = [
   {
     question: 'Do you accept opposing-party engagements after a prior mandate?',
     answer:
-      'Generally no, where there is any reasonable conflict. I document prior parties for at least seven years and apply a strict isolation rule.',
+      'Generally no, where there is any reasonable conflict. Prior parties are kept on a documented seven-year list; opposing-party work is declined where any reasonable conflict exists.',
   },
 ] as const;
 
@@ -61,7 +61,7 @@ const faqsDE = [
   {
     question: 'Sind Sie gerichtlich bestellt oder im Parteiauftrag?',
     answer:
-      'Bei den bisherigen Mandaten im Parteiauftrag. Ich bin ITDR-gelistet und für gerichtliche oder schiedsrichterliche Bestellungen verfügbar; in aktuellen Mandaten bin ich aber von der Anwaltschaft als Parteigutachter beauftragt oder gemeinsam von beiden Parteien als Werkvertrags-Gutachter benannt. Frühere Arbeit bezeichne ich nie als gerichtlich bestellt, wenn sie es nicht war.',
+      'Bei den bisherigen Mandaten im Parteiauftrag: von der Anwaltschaft als Parteigutachter beauftragt oder gemeinsam von beiden Parteien als Werkvertrags-Gutachter benannt. ITDR-gelistet und für gerichtliche oder schiedsrichterliche Bestellungen über diesen Weg verfügbar.',
   },
   {
     question: 'Was kostet ein Mandat?',
@@ -87,7 +87,7 @@ const faqsDE = [
     question:
       'Nehmen Sie Mandate der Gegenseite nach einem früheren Mandat an?',
     answer:
-      'Grundsätzlich nicht, sobald auch nur ein vernünftiger Anschein eines Konflikts besteht. Ich dokumentiere frühere Parteien für mindestens sieben Jahre und wende eine strenge Isolationsregel an.',
+      'Grundsätzlich nicht, sobald auch nur ein vernünftiger Anschein eines Konflikts besteht. Frühere Parteien werden mindestens sieben Jahre dokumentiert; Mandate für Gegenparteien werden bei jedem vernünftigen Konflikt abgelehnt.',
   },
 ] as const;
 

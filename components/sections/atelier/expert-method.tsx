@@ -14,15 +14,15 @@ const stepsEN = [
     num: '02',
     label: 'Review',
     detail:
-      'Documents, contracts, source repositories, infrastructure access. First impressions call within 5–7 working days. Question catalogue iterated with you.',
-    timeframe: 'Days 1–10',
+      'Documents, contracts, source repositories, infrastructure access. First impressions call within 5-7 working days. Question catalogue iterated with you.',
+    timeframe: 'Days 1-10',
   },
   {
     num: '03',
     label: 'Drafting',
     detail:
       'Structured opinion: Auftrag, Methodik, Sachverhalt, Befunde, Würdigung, Kernbefunde. Two review cycles standard. Track changes welcome.',
-    timeframe: 'Weeks 2–6',
+    timeframe: 'Weeks 2-6',
   },
   {
     num: '04',
@@ -45,15 +45,15 @@ const stepsDE = [
     num: '02',
     label: 'Aktendurchsicht',
     detail:
-      'Unterlagen, Verträge, Quellcode-Repositories, Infrastruktur-Zugang. Gespräch zu ersten Eindrücken innerhalb 5–7 Arbeitstagen. Fragenkatalog gemeinsam iteriert.',
-    timeframe: 'Tage 1–10',
+      'Unterlagen, Verträge, Quellcode-Repositories, Infrastruktur-Zugang. Gespräch zu ersten Eindrücken innerhalb 5-7 Arbeitstagen. Fragenkatalog gemeinsam iteriert.',
+    timeframe: 'Tage 1-10',
   },
   {
     num: '03',
     label: 'Ausarbeitung',
     detail:
       'Strukturiertes Gutachten: Auftrag, Methodik, Sachverhalt, Befunde, Würdigung, Kernbefunde. Standardmässig zwei Review-Zyklen. Änderungsverfolgung willkommen.',
-    timeframe: 'Wochen 2–6',
+    timeframe: 'Wochen 2-6',
   },
   {
     num: '04',

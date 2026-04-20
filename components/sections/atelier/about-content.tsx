@@ -13,22 +13,22 @@ const copyEN = {
   arcLabel: '02 / Career arc',
   arc: [
     {
-      period: '2003 – present',
+      period: '2003-present',
       title: 'Engineering practice',
       body: 'Twenty-plus years of building production software across healthcare, legal, financial and public-sector contexts. Across every chapter, the same pattern: regulated environments where AI either has to be done properly or not at all.',
     },
     {
-      period: '2017 – present',
+      period: '2017-present',
       title: 'Founder, DocIQ',
-      body: 'Founded Contract Vault GmbH in Zug. Built and shipped DocIQ 1.0 (2018) — one of the first Swiss platforms applying NLP and ML to legal document lifecycle management. Live in production at the Swiss Insurance Association, Laux Lawyers, Kaiser Odermatt & Partner. Sphere + Shield v2 launched 2026.',
+      body: 'Founded Contract Vault GmbH in Zug. Built and shipped DocIQ 1.0 (2018), one of the first Swiss platforms applying NLP and ML to legal document lifecycle management. Live in production at the Swiss Insurance Association, Laux Lawyers, Kaiser Odermatt & Partner. Sphere + Shield v2 launched 2026.',
     },
     {
-      period: '2023 – 2025',
+      period: '2023-2025',
       title: 'Head of AI & Engineering Lead, CISTEC AG',
       body: "Secured C-suite mandate to transform KISIM (Switzerland's leading clinical information system). Shipped KISIM AI in <90 days. Built the reusable AI platform (LLM gateway, pgvector, two-stage context, on-prem PII masking at 97%+). Scaled AI adoption to 50+ engineers. First production clinical LLM platform in Switzerland.",
     },
     {
-      period: '2025 – present',
+      period: '2025-present',
       title: 'Operating Principal, AI & Technology · Growth Factors',
       body: 'Operating Principal for AI and technology across the Growth Factors / Bregal portfolio. Active across 10+ DACH portfolio companies on agentic PDLC programmes, AI maturity assessments, and AI / tech due diligence for the deal teams. The patterns and methodology sharpened against that portfolio inform the work I bring to independent mandates here. Independent practice runs in parallel.',
     },
@@ -40,17 +40,17 @@ const copyEN = {
     {
       period: 'ongoing',
       title: 'Open source: FlowNext, MergeFoundry',
-      body: 'Author of FlowNext (open-source agentic SDLC orchestrator, thousands of users). Founder of MergeFoundry, Inc — next-generation orchestration platform for agentic PDLC, currently in private beta. Both products inform the methodology I deploy in client engagements.',
+      body: 'Author of FlowNext (open-source agentic SDLC orchestrator, thousands of users). Founder of MergeFoundry, Inc, next-generation orchestration platform for agentic PDLC, currently in private beta. Both products inform the methodology I deploy in client engagements.',
     },
   ],
   recogLabel: '03 / Recognitions',
   recogIntro:
     'Public bodies that vet experts, communities that select speakers, networks that pick frontier-model collaborators.',
   recog: [
-    'OpenAI Red Team Network alumnus — frontier model safety + abuse resilience',
-    'ITDR-listed Technical Expert (Switzerland) — ICT and AI disputes',
-    'Invited speaker, SECA 2026 (Swiss Private Equity & Corporate Finance Association) — AI in SME growth strategies',
-    'Speaker, openEHR.ch Symposium — clinical AI and unstructured-to-openEHR pipelines',
+    'OpenAI Red Team Network alumnus: frontier model safety + abuse resilience',
+    'ITDR-listed Technical Expert (Switzerland): ICT and AI disputes',
+    'Invited speaker, SECA 2026 (Swiss Private Equity & Corporate Finance Association): AI in SME growth strategies',
+    'Speaker, openEHR.ch Symposium: clinical AI and unstructured-to-openEHR pipelines',
   ],
   principlesLabel: '04 / How I work',
   principles: [
@@ -64,7 +64,7 @@ const copyEN = {
     },
     {
       tag: 'Internal team owns it',
-      body: 'Engagements end when your team owns operations. I leave behind documentation, runbooks, and capability — not dependency.',
+      body: 'Engagements end when your team owns operations. I leave behind documentation, runbooks, and capability, not dependency.',
     },
     {
       tag: 'Honest about fit',
@@ -90,22 +90,22 @@ const copyDE = {
   arcLabel: '02 / Werdegang',
   arc: [
     {
-      period: '2003 – heute',
+      period: '2003-heute',
       title: 'Engineering-Praxis',
       body: 'Zwanzig Jahre Aufbau produktiver Software über Gesundheitswesen, Recht, Finanzen und öffentliche Hand hinweg. Durch jedes Kapitel dasselbe Muster: regulierte Umgebungen, in denen KI entweder ordentlich gemacht wird oder gar nicht.',
     },
     {
-      period: '2017 – heute',
+      period: '2017-heute',
       title: 'Gründer, DocIQ',
       body: 'Contract Vault GmbH 2017 in Zug gegründet. DocIQ 1.0 (2018) gebaut und ausgeliefert -- eine der ersten Schweizer Plattformen, die NLP und ML auf den Vertrags- und Dokumentenlebenszyklus anwendet. Produktiv beim Schweizerischen Versicherungsverband, bei Laux Lawyers und bei Kaiser Odermatt & Partner. Sphere + Shield v2 2026 lanciert.',
     },
     {
-      period: '2023 – 2025',
+      period: '2023-2025',
       title: 'Head of AI & Engineering Lead, CISTEC AG',
       body: 'C-Level-Mandat zur Transformation von KISIM gesichert (führendes klinisches Informationssystem der Schweiz). KISIM AI in <90 Tagen ausgeliefert. Wiederverwendbare KI-Plattform aufgebaut (LLM-Gateway, pgvector, zweistufiger Kontext, On-Prem-PII-Masking 97%+). KI-Adoption auf 50+ Entwickler skaliert. Erste produktive klinische LLM-Plattform der Schweiz.',
     },
     {
-      period: '2025 – heute',
+      period: '2025-heute',
       title: 'Operating Principal, KI & Technologie · Growth Factors',
       body: 'Operating Principal für KI und Technologie über das Growth-Factors-/Bregal-Portfolio. Aktiv über 10+ DACH-Portfoliounternehmen mit agentischen PDLC-Programmen, KI-Reifegradanalysen und KI- und Tech-Due-Diligence für die Deal-Teams. Die Muster und die Methodik, die in diesem Portfolio geschärft wurden, fliessen in die unabhängigen Mandate hier ein. Die unabhängige Praxis läuft parallel.',
     },

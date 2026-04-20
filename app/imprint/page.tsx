@@ -4,7 +4,7 @@ import AtelierPolicyPage from '@/components/sections/atelier/policy-page';
 import { breadcrumbSchema, JsonLd } from '@/lib/json-ld';
 
 export const metadata: Metadata = {
-  title: 'Imprint — Mickel Tech',
+  title: 'Imprint · Mickel Tech',
   description:
     'Imprint and contact details for Mickel Tech, the sole proprietorship of Gordon Mickel based in Binningen, Switzerland.',
   alternates: {

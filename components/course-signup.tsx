@@ -67,7 +67,7 @@ export default function CourseSignup() {
             Agentic SDLC Video Course
           </h3>
           <p className="mb-5 text-muted-foreground text-sm">
-            The full methodology — process, tooling, team rollout — as a
+            The full methodology (process, tooling, team rollout) as a
             structured video course. Sign up to be notified.
           </p>
 

@@ -21,9 +21,9 @@ export async function generateMetadata({
   }
   const description =
     `${study.problemEN.split('. ').slice(0, 2).join('. ')}. ` +
-    `${study.metricValueEN} — ${study.metricLabelEN}.`;
+    `${study.metricValueEN}: ${study.metricLabelEN}.`;
   return {
-    title: `${study.clientEN} — Case Study`,
+    title: `${study.clientEN} · Case Study`,
     description,
     alternates: {
       canonical: `https://mickel.tech/case-studies/${study.id}`,
@@ -33,7 +33,7 @@ export async function generateMetadata({
       },
     },
     openGraph: {
-      title: `${study.clientEN} — Case Study | Mickel Tech`,
+      title: `${study.clientEN} · Case Study | Mickel Tech`,
       description,
       url: `https://mickel.tech/case-studies/${study.id}`,
       type: 'article',

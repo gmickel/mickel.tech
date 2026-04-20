@@ -11,11 +11,11 @@ import { BENCH_EVALS } from '@/lib/bench-evals';
 import { breadcrumbSchema, JsonLd } from '@/lib/json-ld';
 
 export const metadata: Metadata = {
-  title: 'gmickel bench — Real Client-Grade AI Evals',
+  title: 'gmickel bench: Real Client-Grade AI Evals',
   description:
     'Living scoreboard for agentic coding tasks pulled from real work surfaces. Best-of-3 runs across Flow-Next, GPT-5.2, Claude Opus 4.5, Gemini 3 Pro on Convex, Next.js, Zig, Swift and more.',
   openGraph: {
-    title: 'gmickel bench — Real Client-Grade AI Evals',
+    title: 'gmickel bench: Real Client-Grade AI Evals',
     description:
       'Living scoreboard for agentic coding tasks pulled from real work surfaces. Flow-Next leads at 88.3 avg across 6 evals.',
     type: 'website',
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'gmickel bench — Real Client-Grade AI Evals',
+    title: 'gmickel bench: Real Client-Grade AI Evals',
     description:
       'Living scoreboard for agentic coding tasks pulled from real work surfaces. Flow-Next leads at 88.3 avg across 6 evals.',
   },
@@ -78,7 +78,7 @@ export default function GmickelBenchPage() {
             </Badge>
           </div>
           <h1 className="mt-6 font-bold text-4xl text-white leading-tight md:text-5xl">
-            <PageTitle text="gmickel bench — real client-grade evals" />
+            <PageTitle text="gmickel bench: real client-grade evals" />
           </h1>
           <Link
             className="glow-link mt-2 inline-flex items-center gap-2 font-mono text-[11px] uppercase"
@@ -384,9 +384,9 @@ export default function GmickelBenchPage() {
               </CardHeader>
               <CardContent className="space-y-3 text-muted-foreground text-sm">
                 <p>
-                  • Flow-Next leads (88.3 avg), +7% over GPT-5.2 xhigh
-                  (82.5)—orchestration and cross-model review delivers
-                  consistent gains across all 6 evals.
+                  • Flow-Next leads (88.3 avg), +7% over GPT-5.2 xhigh (82.5);
+                  orchestration and cross-model review delivers consistent gains
+                  across all 6 evals.
                 </p>
                 <p>
                   • Biggest Flow-Next gains on open-ended tasks: Zig (+9 vs
@@ -398,7 +398,7 @@ export default function GmickelBenchPage() {
                   +5, XLSX +2 vs xhigh).
                 </p>
                 <p>
-                  • Tradeoff: Flow-Next uses more tokens and takes longer—but
+                  • Tradeoff: Flow-Next uses more tokens and takes longer, but
                   extra compute buys quality. Review loops catch blind spots
                   single-model runs miss.
                 </p>
@@ -412,7 +412,7 @@ export default function GmickelBenchPage() {
               </CardHeader>
               <CardContent className="space-y-3 text-muted-foreground text-sm">
                 <p>
-                  • Single runs are noisy—models can fluke or get unlucky with
+                  • Single runs are noisy. Models can fluke or get unlucky with
                   context.
                 </p>
                 <p>
@@ -476,7 +476,7 @@ export default function GmickelBenchPage() {
               </Link>{' '}
               combines Opus 4.5 for implementation with GPT-5.2 High for review
               loops. The dual-model approach catches blind spots that
-              single-model runs miss—different models have different failure
+              single-model runs miss; different models have different failure
               modes.
             </p>
             <div className="mt-4 grid gap-3 sm:grid-cols-2">
@@ -490,8 +490,8 @@ export default function GmickelBenchPage() {
               <div className="rounded-lg border border-white/5 bg-black/20 p-3">
                 <p className="font-mono text-pink-400 text-xs">TRADEOFFS</p>
                 <p className="mt-1 text-muted-foreground text-sm">
-                  Slower execution. Higher token usage. More expensive—but extra
-                  compute buys quality.
+                  Slower execution. Higher token usage. More expensive, but
+                  extra compute buys quality.
                 </p>
               </div>
             </div>
@@ -528,7 +528,7 @@ export default function GmickelBenchPage() {
             </div>
             <p className="mt-4 text-muted-foreground text-xs">
               <span className="text-pink-400">Note:</span> This isn&apos;t
-              apples-to-apples—Flow-Next includes skills, review loops, gating,
+              apples-to-apples. Flow-Next includes skills, review loops, gating,
               and acceptance criteria that baseline harnesses lack. The point:
               &quot;you don&apos;t need a complicated setup&quot; isn&apos;t
               universally true. Orchestration can yield meaningful improvements.
@@ -601,8 +601,8 @@ export default function GmickelBenchPage() {
                 </div>
               </div>
               <p className="mt-2 text-muted-foreground text-xs">
-                Functional correctness hit hardest—builds complex stuff that
-                doesn&apos;t work. Instruction following second—deviates from
+                Functional correctness hit hardest: builds complex stuff that
+                doesn&apos;t work. Instruction following second: deviates from
                 explicit specs.
               </p>
             </div>

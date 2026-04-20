@@ -31,7 +31,7 @@ export default function AtelierCaseStudiesIndex({
           eyebrowHero: '01 / Selected work',
           headingHero: 'Engagements grouped by practice area.',
           introHero:
-            'Selected engagements across the three areas — agentic PDLC, independent expert work, AI systems and transformation. Real outcomes, real numbers.',
+            'Selected engagements across the three areas: agentic PDLC, independent expert work, AI systems and transformation. Real outcomes, real numbers.',
           legend:
             '{count} engagements total · {pdlc} agentic PDLC · {expert} expert · {systems} AI systems',
           problem: 'Problem',

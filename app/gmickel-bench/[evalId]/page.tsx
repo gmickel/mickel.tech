@@ -30,11 +30,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 
   return {
-    title: `${evalData.title} — gmickel bench`,
+    title: `${evalData.title} · gmickel bench`,
     description: evalData.hook,
     alternates: { canonical: `/gmickel-bench/${evalId}` },
     openGraph: {
-      title: `${evalData.title} — gmickel bench`,
+      title: `${evalData.title} · gmickel bench`,
       description: evalData.hook,
       type: 'website',
     },

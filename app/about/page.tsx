@@ -4,7 +4,7 @@ import AtelierAbout from '@/components/sections/atelier/about-content';
 import { breadcrumbSchema, JsonLd, personSchema } from '@/lib/json-ld';
 
 export const metadata: Metadata = {
-  title: 'About — Gordon Mickel',
+  title: 'About · Gordon Mickel',
   description:
     'Twenty years of shipping software in regulated industries. Founder of DocIQ (2017). Former Head of AI & Engineering Lead at CISTEC AG (KISIM). Operating Principal at Growth Factors (Bregal portfolio). ITDR-listed independent expert. OpenAI Red Team Network alumnus.',
   alternates: {

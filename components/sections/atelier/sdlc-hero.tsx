@@ -15,10 +15,10 @@ const copyEN = {
   primaryHref: CAL_DISCOVERY_30,
   secondaryHref: '#maturity',
   metaList: [
-    { label: 'Strategy session', value: 'CHF 3–5k' },
-    { label: 'Diagnostic', value: 'CHF 15–25k' },
-    { label: 'Foundation', value: 'CHF 40–60k' },
-    { label: 'Full shift', value: 'CHF 80–150k+' },
+    { label: 'Strategy session', value: 'CHF 3-5k' },
+    { label: 'Diagnostic', value: 'CHF 15-25k' },
+    { label: 'Foundation', value: 'CHF 40-60k' },
+    { label: 'Full shift', value: 'CHF 80-150k+' },
   ],
 };
 
@@ -33,10 +33,10 @@ const copyDE = {
   primaryHref: CAL_DISCOVERY_30,
   secondaryHref: '#maturity',
   metaList: [
-    { label: 'Strategie-Session', value: 'CHF 3–5k' },
-    { label: 'Diagnose', value: 'CHF 15–25k' },
-    { label: 'Fundament', value: 'CHF 40–60k' },
-    { label: 'Methodenwechsel', value: 'CHF 80–150k+' },
+    { label: 'Strategie-Session', value: 'CHF 3-5k' },
+    { label: 'Diagnose', value: 'CHF 15-25k' },
+    { label: 'Fundament', value: 'CHF 40-60k' },
+    { label: 'Methodenwechsel', value: 'CHF 80-150k+' },
   ],
 };
 
