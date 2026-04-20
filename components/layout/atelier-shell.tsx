@@ -53,7 +53,10 @@ export default function AtelierShell({ children }: AtelierShellProps) {
   return (
     <div className="atelier-surface relative min-h-screen overflow-x-hidden selection:bg-[hsl(var(--rust))]/25">
       {/* Header — editorial masthead */}
-      <header className="fixed top-0 right-0 left-0 z-40 border-[hsl(var(--paper))]/10 border-b bg-[hsl(var(--graphite))]/85 backdrop-blur-md">
+      <header
+        className="atelier-header fixed top-0 right-0 left-0 z-40 border-[hsl(var(--paper))]/10 border-b bg-[hsl(var(--graphite))]/85 backdrop-blur-md"
+        style={{ viewTransitionName: 'atelier-header' }}
+      >
         <div className="mx-auto flex h-16 max-w-[1480px] items-center justify-between px-6 md:px-10">
           {/* Brand */}
           <Link
@@ -280,7 +283,10 @@ function AtelierFooter({ isDE }: { isDE: boolean }) {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="atelier-dark relative border-[hsl(var(--paper))]/10 border-t">
+    <footer
+      className="atelier-footer atelier-dark relative border-[hsl(var(--paper))]/10 border-t"
+      style={{ viewTransitionName: 'atelier-footer' }}
+    >
       <div className="mx-auto max-w-[1480px] px-6 py-16 md:px-10 md:py-24">
         {/* Big wordmark + description */}
         <div className="grid gap-12 md:grid-cols-12 md:gap-10">

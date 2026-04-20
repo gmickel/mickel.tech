@@ -688,10 +688,14 @@
 /* ---------- View transitions ---------- */
 /*
  * Client-side navigation transitions (via next-view-transitions wrapper).
- * Outgoing page settles down with a brief paper-like blur; incoming
- * page rises and inks in. Total perceived duration ~360ms — decisive,
- * not laggy. Hard-nav fallback also wired for cross-document loads
- * in supporting browsers (Chromium 111+, Safari 18+).
+ * Header and footer carry a stable `view-transition-name` so the browser
+ * treats them as persistent elements — they sit still across navigation
+ * while only the content region rises + inks in. Outgoing content dims
+ * and settles up with a brief paper-like blur.
+ *
+ * Total perceived duration ~360ms. Hard-nav fallback also wired via
+ * @view-transition { navigation: auto; } for cross-document loads in
+ * supporting browsers (Chromium 111+, Safari 18+).
  */
 
 @view-transition {
@@ -717,6 +721,32 @@
   animation:
     380ms cubic-bezier(0.2, 0.8, 0.2, 1) both atelier-page-rise,
     300ms cubic-bezier(0.2, 0.8, 0.2, 1) both atelier-page-ink;
+}
+
+/*
+ * Persistent shell chrome: header + footer are named so the browser
+ * identifies them across pages. We suppress animation entirely so they
+ * sit in place while the content region animates around them.
+ *
+ * Result: the page feels like a static frame with a shifting canvas
+ * inside, not a whole-document flash.
+ */
+
+::view-transition-old(atelier-header),
+::view-transition-new(atelier-header),
+::view-transition-old(atelier-footer),
+::view-transition-new(atelier-footer) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+/*
+ * Hide the old header/footer snapshots so the new ones simply sit on top
+ * (they're identical DOM, same position, so the swap is invisible).
+ */
+::view-transition-old(atelier-header),
+::view-transition-old(atelier-footer) {
+  opacity: 0;
 }
 
 @keyframes atelier-page-out {
