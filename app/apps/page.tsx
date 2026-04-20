@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
-import Link from 'next/link';
+import { Link } from 'next-view-transitions';
 import AtelierShell from '@/components/layout/atelier-shell';
 import { APPS } from '@/lib/apps';
 import { breadcrumbSchema, JsonLd } from '@/lib/json-ld';

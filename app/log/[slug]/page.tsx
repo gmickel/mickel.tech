@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { MDXRemote } from 'next-mdx-remote/rsc';
+import { Link } from 'next-view-transitions';
 import Datestamp from '@/components/atelier/datestamp';
 import TagRow from '@/components/atelier/tag-row';
 import AtelierShell from '@/components/layout/atelier-shell';

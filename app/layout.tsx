@@ -9,6 +9,7 @@ import {
 
 import './globals.css';
 
+import { ViewTransitions } from 'next-view-transitions';
 import { Providers } from '@/components/providers';
 
 export const viewport: Viewport = {
@@ -98,12 +99,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body
-        className={`${spaceGrotesk.variable} ${jetbrainsMono.variable} ${newsreader.variable} ${hankenGrotesk.variable} antialiased`}
-      >
-        <Providers>{children}</Providers>
-      </body>
-    </html>
+    <ViewTransitions>
+      <html lang="en" suppressHydrationWarning>
+        <body
+          className={`${spaceGrotesk.variable} ${jetbrainsMono.variable} ${newsreader.variable} ${hankenGrotesk.variable} antialiased`}
+        >
+          <Providers>{children}</Providers>
+        </body>
+      </html>
+    </ViewTransitions>
   );
 }

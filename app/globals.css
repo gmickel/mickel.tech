@@ -685,8 +685,15 @@
   }
 }
 
-/* ---------- Cross-document view transitions ---------- */
-/* Native browser API (Chromium 111+, Safari 18+). Graceful fallback elsewhere. */
+/* ---------- View transitions ---------- */
+/*
+ * Client-side navigation transitions (via next-view-transitions wrapper).
+ * Outgoing page settles down with a brief paper-like blur; incoming
+ * page rises and inks in. Total perceived duration ~360ms — decisive,
+ * not laggy. Hard-nav fallback also wired for cross-document loads
+ * in supporting browsers (Chromium 111+, Safari 18+).
+ */
+
 @view-transition {
   navigation: auto;
 }
@@ -695,39 +702,53 @@
 ::view-transition-old(root),
 /* biome-ignore lint/correctness/noUnknownTypeSelector: CSS view transitions pseudo-elements */
   ::view-transition-new(root) {
-  animation-duration: 320ms;
-  animation-timing-function: cubic-bezier(0.2, 0.7, 0.2, 1);
+  /* Disable Chrome's default cross-fade so our keyframes drive the tween. */
+  animation: none;
+  mix-blend-mode: normal;
 }
 
 /* biome-ignore lint/correctness/noUnknownTypeSelector: CSS view transitions pseudo-elements */
 ::view-transition-old(root) {
-  animation-name: atelier-fade-out;
+  animation: 240ms cubic-bezier(0.4, 0, 0.3, 1) both atelier-page-out;
 }
 
 /* biome-ignore lint/correctness/noUnknownTypeSelector: CSS view transitions pseudo-elements */
 ::view-transition-new(root) {
-  animation-name: atelier-fade-in;
+  animation:
+    380ms cubic-bezier(0.2, 0.8, 0.2, 1) both atelier-page-rise,
+    300ms cubic-bezier(0.2, 0.8, 0.2, 1) both atelier-page-ink;
 }
 
-@keyframes atelier-fade-out {
-  0% {
+@keyframes atelier-page-out {
+  from {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0) scale(1);
+    filter: blur(0);
   }
-  100% {
+  to {
     opacity: 0;
-    transform: translateY(-4px);
+    transform: translateY(-6px) scale(0.997);
+    filter: blur(1.5px);
   }
 }
 
-@keyframes atelier-fade-in {
-  0% {
-    opacity: 0;
-    transform: translateY(6px);
+@keyframes atelier-page-rise {
+  from {
+    transform: translateY(10px) scale(1.005);
   }
-  100% {
+  to {
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes atelier-page-ink {
+  from {
+    opacity: 0;
+    filter: blur(2px);
+  }
+  to {
     opacity: 1;
-    transform: translateY(0);
+    filter: blur(0);
   }
 }
 

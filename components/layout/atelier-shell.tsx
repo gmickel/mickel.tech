@@ -2,6 +2,7 @@
 
 import { Menu } from 'lucide-react';
 import { usePathname } from 'next/navigation';
+import { Link } from 'next-view-transitions';
 import type React from 'react';
 import {
   Sheet,
@@ -55,7 +56,7 @@ export default function AtelierShell({ children }: AtelierShellProps) {
       <header className="fixed top-0 right-0 left-0 z-40 border-[hsl(var(--paper))]/10 border-b bg-[hsl(var(--graphite))]/85 backdrop-blur-md">
         <div className="mx-auto flex h-16 max-w-[1480px] items-center justify-between px-6 md:px-10">
           {/* Brand */}
-          <a
+          <Link
             aria-label="Mickel Tech, home"
             className="group flex items-baseline gap-3"
             href={homeHref}
@@ -66,7 +67,7 @@ export default function AtelierShell({ children }: AtelierShellProps) {
             <span className="atelier-eyebrow hidden text-[hsl(var(--paper))]/45 sm:inline">
               Independent practice
             </span>
-          </a>
+          </Link>
 
           {/* Desktop nav */}
           <nav
@@ -76,12 +77,12 @@ export default function AtelierShell({ children }: AtelierShellProps) {
             <ul className="flex items-center gap-7">
               {serviceLinks.map((item) => (
                 <li key={item.label}>
-                  <a
+                  <Link
                     className="font-medium text-[0.84rem] text-[hsl(var(--paper))]/85 transition-colors hover:text-[hsl(var(--rust))]"
                     href={item.href}
                   >
                     {item.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -94,12 +95,12 @@ export default function AtelierShell({ children }: AtelierShellProps) {
             <ul className="flex items-center gap-5">
               {utilLinks.map((item) => (
                 <li key={item.label}>
-                  <a
+                  <Link
                     className="text-[0.78rem] text-[hsl(var(--paper))]/55 transition-colors hover:text-[hsl(var(--paper))]"
                     href={item.href}
                   >
                     {item.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -144,12 +145,12 @@ export default function AtelierShell({ children }: AtelierShellProps) {
                       {serviceLinks.map((item) => (
                         <li key={item.label}>
                           <SheetClose asChild>
-                            <a
+                            <Link
                               className="atelier-display block text-2xl text-[hsl(var(--paper))] transition-colors hover:text-[hsl(var(--rust))]"
                               href={item.href}
                             >
                               {item.label}
-                            </a>
+                            </Link>
                           </SheetClose>
                         </li>
                       ))}
@@ -161,12 +162,12 @@ export default function AtelierShell({ children }: AtelierShellProps) {
                       {utilLinks.map((item) => (
                         <li key={item.label}>
                           <SheetClose asChild>
-                            <a
+                            <Link
                               className="block text-[hsl(var(--paper))]/65 text-base transition-colors hover:text-[hsl(var(--paper))]"
                               href={item.href}
                             >
                               {item.label}
-                            </a>
+                            </Link>
                           </SheetClose>
                         </li>
                       ))}
@@ -284,13 +285,13 @@ function AtelierFooter({ isDE }: { isDE: boolean }) {
         {/* Big wordmark + description */}
         <div className="grid gap-12 md:grid-cols-12 md:gap-10">
           <div className="md:col-span-5">
-            <a
+            <Link
               aria-label="Mickel Tech, home"
               className="atelier-display block font-medium text-[clamp(2.5rem,1.6rem+3vw,3.5rem)] text-[hsl(var(--paper))] leading-none"
               href={isDE ? '/de' : '/'}
             >
               Mickel<span className="text-[hsl(var(--rust))]">.</span>tech
-            </a>
+            </Link>
             <p className="atelier-body mt-6 max-w-md text-[hsl(var(--paper))]/65">
               {isDE
                 ? 'Unabhängige Praxis von Gordon Mickel. Operating Principal, KI & Technologie, bei Growth Factors. Eine kleine Zahl ausgewählter Mandate pro Jahr.'
@@ -327,20 +328,20 @@ function AtelierFooter({ isDE }: { isDE: boolean }) {
           </span>
           <ul className="flex items-center gap-6">
             <li>
-              <a
+              <Link
                 className="hover:text-[hsl(var(--paper))]/80"
                 href={isDE ? '/de/imprint' : '/imprint'}
               >
                 {labels.terms}
-              </a>
+              </Link>
             </li>
             <li>
-              <a
+              <Link
                 className="hover:text-[hsl(var(--paper))]/80"
                 href={isDE ? '/de/privacy' : '/privacy'}
               >
                 {labels.privacy}
-              </a>
+              </Link>
             </li>
             <li>
               <a className="hover:text-[hsl(var(--paper))]/80" href="#contact">
@@ -365,19 +366,28 @@ function FooterColumn({
     <div className="md:col-span-2">
       <h3 className="atelier-eyebrow text-[hsl(var(--paper))]/40">{heading}</h3>
       <ul className="mt-5 space-y-3">
-        {items.map((item) => (
-          <li key={item.label}>
-            <a
-              className="text-[hsl(var(--paper))]/80 text-sm transition-colors hover:text-[hsl(var(--rust))]"
-              href={item.href}
-              {...(item.external
-                ? { rel: 'noopener noreferrer', target: '_blank' }
-                : {})}
-            >
-              {item.label}
-            </a>
-          </li>
-        ))}
+        {items.map((item) => {
+          const linkClass =
+            'text-[hsl(var(--paper))]/80 text-sm transition-colors hover:text-[hsl(var(--rust))]';
+          return (
+            <li key={item.label}>
+              {item.external ? (
+                <a
+                  className={linkClass}
+                  href={item.href}
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  {item.label}
+                </a>
+              ) : (
+                <Link className={linkClass} href={item.href}>
+                  {item.label}
+                </Link>
+              )}
+            </li>
+          );
+        })}
       </ul>
     </div>
   );
