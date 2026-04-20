@@ -1,3 +1,4 @@
+import SmartLink from '@/components/atelier/smart-link';
 import { type CaseStudy, getFeaturedCaseStudies } from '@/lib/case-studies';
 
 interface CaseStudiesPreviewProps {
@@ -59,13 +60,13 @@ export default function AtelierCaseStudiesPreview({
             </p>
           </div>
           <div className="md:col-span-2 md:flex md:items-end md:justify-end">
-            <a
+            <SmartLink
               className="inline-flex items-center gap-2 font-medium text-[hsl(var(--ink))] text-sm transition-colors hover:text-[hsl(var(--rust))]"
               href={labels.allHref}
             >
               {labels.allLink}
               <span aria-hidden="true">→</span>
-            </a>
+            </SmartLink>
           </div>
         </header>
 

@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import SmartLink from '@/components/atelier/smart-link';
 
 interface AboutContentProps {
   locale?: 'en' | 'de';
@@ -380,7 +381,7 @@ export default function AtelierAbout({ locale = 'en' }: AboutContentProps) {
                 {c.ctaBody}
               </p>
               <div className="mt-9 flex flex-wrap items-center gap-4">
-                <a
+                <SmartLink
                   className="atelier-cta-primary"
                   href={c.ctaPrimaryHref}
                   rel="noopener noreferrer"
@@ -388,11 +389,14 @@ export default function AtelierAbout({ locale = 'en' }: AboutContentProps) {
                 >
                   {c.ctaPrimary}
                   <span aria-hidden="true">→</span>
-                </a>
-                <a className="atelier-cta-secondary" href={c.ctaSecondaryHref}>
+                </SmartLink>
+                <SmartLink
+                  className="atelier-cta-secondary"
+                  href={c.ctaSecondaryHref}
+                >
                   {c.ctaSecondary}
                   <span aria-hidden="true">→</span>
-                </a>
+                </SmartLink>
               </div>
             </div>
           </div>

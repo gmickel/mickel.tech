@@ -1,3 +1,4 @@
+import SmartLink from '@/components/atelier/smart-link';
 import { getLeadMagnet } from '@/lib/lead-magnets';
 
 interface LeadMagnetCardProps {
@@ -70,15 +71,15 @@ export default function AtelierLeadMagnetCard({
               </div>
             </dl>
             <div className="mt-8 flex flex-wrap items-center gap-4">
-              <a
+              <SmartLink
                 className="atelier-cta-primary"
                 download={magnet.pdfFilename}
                 href={magnet.pdfHref}
               >
                 {labels.download}
                 <span aria-hidden="true">↓</span>
-              </a>
-              <a
+              </SmartLink>
+              <SmartLink
                 className="atelier-cta-secondary"
                 href={magnet.previewHref}
                 rel="noopener noreferrer"
@@ -86,7 +87,7 @@ export default function AtelierLeadMagnetCard({
               >
                 {labels.preview}
                 <span aria-hidden="true">→</span>
-              </a>
+              </SmartLink>
             </div>
           </div>
         </div>

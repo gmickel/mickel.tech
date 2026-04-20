@@ -1,3 +1,4 @@
+import SmartLink from '@/components/atelier/smart-link';
 import { CAL_DISCOVERY_30 } from '@/lib/cal';
 import {
   CASE_STUDIES,
@@ -94,13 +95,13 @@ export default function AtelierCaseStudyDetail({
 
         <div className="relative mx-auto max-w-[1480px] px-6 pt-16 pb-24 md:px-10 md:pt-24 md:pb-28">
           <div className="mb-10 flex items-center justify-between gap-6">
-            <a
+            <SmartLink
               className="atelier-eyebrow inline-flex items-center gap-2 text-[hsl(var(--paper))]/55 transition-colors hover:text-[hsl(var(--paper))]"
               href={labels.backHref}
             >
               <span aria-hidden="true">←</span>
               {labels.back}
-            </a>
+            </SmartLink>
             <span className="atelier-eyebrow text-[hsl(var(--rust))]">
               {study.number} / {labels.eyebrow}
             </span>
@@ -110,12 +111,12 @@ export default function AtelierCaseStudyDetail({
             <span className="atelier-eyebrow text-[hsl(var(--paper))]/55">
               {labels.areaLabel}
             </span>
-            <a
+            <SmartLink
               className="atelier-link text-[hsl(var(--paper))] text-sm"
               href={areaHref}
             >
               {areaLabel}
-            </a>
+            </SmartLink>
             {study.named ? (
               <span className="atelier-eyebrow text-[hsl(var(--rust))]">
                 · {labels.named}
@@ -215,7 +216,7 @@ export default function AtelierCaseStudyDetail({
                 {labels.ctaBody}
               </p>
               <div className="mt-8 flex flex-wrap items-center gap-4">
-                <a
+                <SmartLink
                   className="atelier-cta-primary"
                   href={CAL_DISCOVERY_30}
                   rel="noopener noreferrer"
@@ -223,14 +224,14 @@ export default function AtelierCaseStudyDetail({
                 >
                   {labels.primary}
                   <span aria-hidden="true">→</span>
-                </a>
-                <a
+                </SmartLink>
+                <SmartLink
                   className="atelier-cta-secondary"
                   href={labels.secondaryHref}
                 >
                   {labels.secondary}
                   <span aria-hidden="true">→</span>
-                </a>
+                </SmartLink>
               </div>
             </div>
           </div>
@@ -278,7 +279,7 @@ function RelatedSection({
             const mv = locale === 'de' ? s.metricValueDE : s.metricValueEN;
             const ml = locale === 'de' ? s.metricLabelDE : s.metricLabelEN;
             return (
-              <a
+              <SmartLink
                 className="atelier-card-hover atelier-wash-rust group flex flex-col bg-[hsl(var(--paper))] p-7 transition-colors hover:bg-[hsl(var(--paper))]/85 md:p-8"
                 href={`${linkPrefix}/${s.id}`}
                 key={s.id}
@@ -297,7 +298,7 @@ function RelatedSection({
                 <p className="atelier-eyebrow mt-2 text-[hsl(var(--paper-muted))]">
                   {ml}
                 </p>
-              </a>
+              </SmartLink>
             );
           })}
         </div>

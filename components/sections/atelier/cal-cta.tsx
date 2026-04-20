@@ -1,3 +1,4 @@
+import SmartLink from '@/components/atelier/smart-link';
 import { CAL_DISCOVERY_30 } from '@/lib/cal';
 
 interface CalCtaProps {
@@ -66,7 +67,7 @@ export default function AtelierCalCta({ locale = 'en', variant }: CalCtaProps) {
               {c.body}
             </p>
             <div className="mt-9 flex flex-wrap items-center gap-4">
-              <a
+              <SmartLink
                 className="atelier-cta-primary"
                 href={CAL_DISCOVERY_30}
                 rel="noopener noreferrer"
@@ -74,14 +75,14 @@ export default function AtelierCalCta({ locale = 'en', variant }: CalCtaProps) {
               >
                 {c.primary}
                 <span aria-hidden="true">→</span>
-              </a>
-              <a
+              </SmartLink>
+              <SmartLink
                 className="atelier-cta-secondary"
                 href="mailto:gordon@mickel.tech"
               >
                 {c.secondary}
                 <span aria-hidden="true">→</span>
-              </a>
+              </SmartLink>
             </div>
           </div>
         </div>

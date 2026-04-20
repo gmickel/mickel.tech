@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import SmartLink from '@/components/atelier/smart-link';
 
 interface AtelierHeroProps {
   locale?: 'en' | 'de';
@@ -115,14 +116,14 @@ export default function AtelierHero({ locale = 'en' }: AtelierHeroProps) {
               className="atelier-rise mt-10 flex flex-wrap items-center gap-4"
               style={{ animationDelay: '0.7s' }}
             >
-              <a className="atelier-cta-primary" href="#contact">
+              <SmartLink className="atelier-cta-primary" href="#contact">
                 {c.primaryCta}
                 <span aria-hidden="true">→</span>
-              </a>
-              <a className="atelier-cta-secondary" href={expertHref}>
+              </SmartLink>
+              <SmartLink className="atelier-cta-secondary" href={expertHref}>
                 {c.secondaryCta}
                 <span aria-hidden="true">→</span>
-              </a>
+              </SmartLink>
             </div>
           </div>
 

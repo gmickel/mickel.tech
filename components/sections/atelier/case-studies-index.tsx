@@ -1,3 +1,4 @@
+import SmartLink from '@/components/atelier/smart-link';
 import {
   CASE_STUDIES,
   CASE_STUDY_AREAS,
@@ -193,13 +194,13 @@ function AreaSection({
               {areaLabel}
             </h2>
           </div>
-          <a
+          <SmartLink
             className={`inline-flex items-center gap-2 ${headingColor} font-medium text-sm transition-colors hover:text-[hsl(var(--rust))]`}
             href={areaHref}
           >
             {labels.related}
             <span aria-hidden="true">→</span>
-          </a>
+          </SmartLink>
         </header>
 
         <div

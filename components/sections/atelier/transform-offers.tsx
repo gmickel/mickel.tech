@@ -1,3 +1,4 @@
+import SmartLink from '@/components/atelier/smart-link';
 import { CAL_DISCOVERY_30, CAL_STRATEGY_120 } from '@/lib/cal';
 
 interface TransformOffersProps {
@@ -269,7 +270,7 @@ export default function AtelierTransformOffers({
               </div>
 
               <div className="mt-auto pt-7">
-                <a
+                <SmartLink
                   className="inline-flex items-center gap-2 font-medium text-[hsl(var(--ink))] text-sm transition-colors hover:text-[hsl(var(--rust))]"
                   href={
                     offer.num === '00' ? CAL_STRATEGY_120 : CAL_DISCOVERY_30
@@ -279,7 +280,7 @@ export default function AtelierTransformOffers({
                 >
                   {labels.cta}
                   <span aria-hidden="true">→</span>
-                </a>
+                </SmartLink>
               </div>
             </article>
           ))}

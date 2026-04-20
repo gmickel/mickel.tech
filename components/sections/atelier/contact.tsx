@@ -2,6 +2,8 @@ interface AtelierContactProps {
   locale?: 'en' | 'de';
 }
 
+import SmartLink from '@/components/atelier/smart-link';
+
 interface ContactChannel {
   readonly label: string;
   readonly value: string;
@@ -140,7 +142,7 @@ export default function AtelierContact({ locale = 'en' }: AtelierContactProps) {
             <ul className="divide-y divide-[hsl(var(--paper))]/10 border-[hsl(var(--paper))]/10 border-y">
               {channels.map((ch) => (
                 <li key={ch.label}>
-                  <a
+                  <SmartLink
                     className="group block py-6 transition-colors hover:bg-[hsl(var(--paper))]/[0.04]"
                     href={ch.href}
                     {...(ch.external
@@ -164,7 +166,7 @@ export default function AtelierContact({ locale = 'en' }: AtelierContactProps) {
                     <p className="mt-2 text-[hsl(var(--paper))]/55 text-sm">
                       {ch.note}
                     </p>
-                  </a>
+                  </SmartLink>
                 </li>
               ))}
             </ul>

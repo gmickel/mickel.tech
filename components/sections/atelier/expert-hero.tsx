@@ -2,6 +2,8 @@ interface ExpertHeroProps {
   locale?: 'en' | 'de';
 }
 
+import SmartLink from '@/components/atelier/smart-link';
+
 const copyEN = {
   eyebrow: '01 / Independent expert',
   headlineParts: [
@@ -104,14 +106,17 @@ export default function AtelierExpertHero({ locale = 'en' }: ExpertHeroProps) {
               className="atelier-rise mt-10 flex flex-wrap items-center gap-4"
               style={{ animationDelay: '0.6s' }}
             >
-              <a className="atelier-cta-primary" href={c.primaryHref}>
+              <SmartLink className="atelier-cta-primary" href={c.primaryHref}>
                 {c.primaryCta}
                 <span aria-hidden="true">→</span>
-              </a>
-              <a className="atelier-cta-secondary" href={c.secondaryHref}>
+              </SmartLink>
+              <SmartLink
+                className="atelier-cta-secondary"
+                href={c.secondaryHref}
+              >
                 {c.secondaryCta}
                 <span aria-hidden="true">→</span>
-              </a>
+              </SmartLink>
             </div>
           </div>
 
@@ -130,7 +135,7 @@ export default function AtelierExpertHero({ locale = 'en' }: ExpertHeroProps) {
                 </div>
               ))}
               <div className="border-[hsl(var(--paper))]/10 border-t pt-5">
-                <a
+                <SmartLink
                   className="atelier-link inline-flex items-center gap-2 text-sm"
                   href="https://itdr.ch/en/experts/expert-details/36/gordon-mickel.html"
                   rel="noopener noreferrer"
@@ -140,7 +145,7 @@ export default function AtelierExpertHero({ locale = 'en' }: ExpertHeroProps) {
                     ? 'ITDR-Profil ansehen'
                     : 'View ITDR profile'}
                   <span aria-hidden="true">↗</span>
-                </a>
+                </SmartLink>
               </div>
             </dl>
           </div>

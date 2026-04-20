@@ -2,6 +2,8 @@ interface AudienceRouterProps {
   locale?: 'en' | 'de';
 }
 
+import SmartLink from '@/components/atelier/smart-link';
+
 const copyEN = {
   eyebrow: '02 / Practice areas',
   heading: 'Three areas of work, three registers.',
@@ -230,7 +232,7 @@ function PdlcCard({ card }: { card: PdlcCardData }) {
           <span className="atelier-numerals text-[0.86rem] text-[hsl(var(--ink))]">
             {card.anchorPrice}
           </span>
-          <a
+          <SmartLink
             className="inline-flex items-center gap-2 font-medium text-[hsl(var(--ink))] text-sm transition-colors hover:text-[hsl(var(--rust))]"
             href={card.href}
           >
@@ -241,7 +243,7 @@ function PdlcCard({ card }: { card: PdlcCardData }) {
             >
               →
             </span>
-          </a>
+          </SmartLink>
         </div>
       </div>
     </article>
@@ -295,7 +297,7 @@ function ExpertCard({ card }: { card: ExpertCardData }) {
           <span className="atelier-eyebrow text-[hsl(var(--paper-muted))]">
             {card.anchorPrice}
           </span>
-          <a
+          <SmartLink
             className="inline-flex items-center gap-2 font-medium text-[hsl(var(--ink))] text-sm transition-colors hover:text-[hsl(var(--navy))]"
             href={card.href}
           >
@@ -306,7 +308,7 @@ function ExpertCard({ card }: { card: ExpertCardData }) {
             >
               →
             </span>
-          </a>
+          </SmartLink>
         </div>
       </div>
     </article>
@@ -358,7 +360,7 @@ function TransformCard({ card }: { card: TransformCardData }) {
           <span className="atelier-numerals text-[0.86rem] text-[hsl(var(--ink))]">
             {card.anchorPrice}
           </span>
-          <a
+          <SmartLink
             className="inline-flex items-center gap-2 font-medium text-[hsl(var(--ink))] text-sm transition-colors hover:text-[hsl(var(--rust))]"
             href={card.href}
           >
@@ -369,7 +371,7 @@ function TransformCard({ card }: { card: TransformCardData }) {
             >
               →
             </span>
-          </a>
+          </SmartLink>
         </div>
       </div>
     </article>

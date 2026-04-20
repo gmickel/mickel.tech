@@ -2,6 +2,8 @@ interface SdlcToolsProps {
   locale?: 'en' | 'de';
 }
 
+import SmartLink from '@/components/atelier/smart-link';
+
 const copyEN = {
   eyebrow: '05 / Tools',
   heading: 'Fluent in the standard stack. I also build my own.',
@@ -110,7 +112,7 @@ export default function AtelierSdlcTools({ locale = 'en' }: SdlcToolsProps) {
               </ul>
 
               <div className="mt-auto pt-7">
-                <a
+                <SmartLink
                   className="atelier-link inline-flex items-center gap-2 text-sm"
                   href={t.href}
                   rel="noopener noreferrer"
@@ -118,7 +120,7 @@ export default function AtelierSdlcTools({ locale = 'en' }: SdlcToolsProps) {
                 >
                   {t.cta}
                   <span aria-hidden="true">↗</span>
-                </a>
+                </SmartLink>
               </div>
             </article>
           ))}

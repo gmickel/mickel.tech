@@ -1,3 +1,4 @@
+import SmartLink from '@/components/atelier/smart-link';
 import { CAL_DISCOVERY_30 } from '@/lib/cal';
 
 interface SdlcHeroProps {
@@ -101,7 +102,7 @@ export default function AtelierSdlcHero({ locale = 'en' }: SdlcHeroProps) {
               className="atelier-rise mt-10 flex flex-wrap items-center gap-4"
               style={{ animationDelay: '0.5s' }}
             >
-              <a
+              <SmartLink
                 className="atelier-cta-primary"
                 href={c.primaryHref}
                 rel="noopener noreferrer"
@@ -109,11 +110,14 @@ export default function AtelierSdlcHero({ locale = 'en' }: SdlcHeroProps) {
               >
                 {c.primaryCta}
                 <span aria-hidden="true">→</span>
-              </a>
-              <a className="atelier-cta-secondary" href={c.secondaryHref}>
+              </SmartLink>
+              <SmartLink
+                className="atelier-cta-secondary"
+                href={c.secondaryHref}
+              >
                 {c.secondaryCta}
                 <span aria-hidden="true">→</span>
-              </a>
+              </SmartLink>
             </div>
           </div>
 
