@@ -7,6 +7,7 @@ import AtelierExpertHero from '@/components/sections/atelier/expert-hero';
 import AtelierExpertIntake from '@/components/sections/atelier/expert-intake';
 import AtelierExpertMethod from '@/components/sections/atelier/expert-method';
 import AtelierExpertRoles from '@/components/sections/atelier/expert-roles';
+import LeadMagnetCard from '@/components/sections/atelier/lead-magnet';
 import {
   breadcrumbSchema,
   JsonLd,
@@ -94,6 +95,11 @@ export default function DeExpertPage() {
         area="expert"
         locale="de"
         sectionNumber="06"
+      />
+      <LeadMagnetCard
+        locale="de"
+        sectionNumber="07"
+        slug="expert-intake-counsel"
       />
       <AtelierExpertFaq locale="de" />
       <AtelierExpertIntake locale="de" />

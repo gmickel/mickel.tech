@@ -7,6 +7,7 @@ import AtelierExpertHero from '@/components/sections/atelier/expert-hero';
 import AtelierExpertIntake from '@/components/sections/atelier/expert-intake';
 import AtelierExpertMethod from '@/components/sections/atelier/expert-method';
 import AtelierExpertRoles from '@/components/sections/atelier/expert-roles';
+import LeadMagnetCard from '@/components/sections/atelier/lead-magnet';
 import {
   breadcrumbSchema,
   JsonLd,
@@ -16,7 +17,7 @@ import {
 
 export const metadata: Metadata = {
   title:
-    'Independent Technical Expert — Parteigutachten, Acceptance, AI/Tech DD',
+    'Independent Technical Expert: Parteigutachten, Acceptance, AI/Tech DD',
   description:
     'ITDR-listed independent technical expert. Parteigutachten for counsel and arbitration, Werkvertrags-Gutachten as contractually-named acceptance expert, AI and technology due diligence for investors and boards. 20+ years engineering. DE / EN. Binningen, Switzerland.',
   keywords: [
@@ -41,7 +42,7 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title:
-      'Independent Technical Expert — Parteigutachten, Acceptance, AI/Tech DD',
+      'Independent Technical Expert: Parteigutachten, Acceptance, AI/Tech DD',
     description:
       'ITDR-listed expert for counsel, courts, arbitrators and boards. Parteigutachten, Werkvertrags-Gutachten and AI/tech due diligence. 20+ years across regulated industries.',
     url: 'https://mickel.tech/expert',
@@ -62,7 +63,7 @@ export default function ExpertPage() {
       <JsonLd data={personSchema()} />
       <JsonLd
         data={serviceSchema({
-          name: 'Parteigutachten — party expert opinion',
+          name: 'Parteigutachten: party expert opinion',
           description:
             'Party expert opinion (Parteigutachter) instructed by counsel for civil litigation, commercial court matters and international arbitration. Forensic technical analysis, structured Gutachten, oral hearing readiness.',
           url: '/expert#parteigutachten',
@@ -70,7 +71,7 @@ export default function ExpertPage() {
       />
       <JsonLd
         data={serviceSchema({
-          name: 'Werkvertrags-Gutachten — independent acceptance expert',
+          name: 'Werkvertrags-Gutachten: independent acceptance expert',
           description:
             'Contractually-named independent acceptance expert (Werkvertrags-Gutachter) for software procurement and works contracts. Quasi-arbitral function with pre-engagement Prüfschema and structured Abnahmeprüfung.',
           url: '/expert#werkvertrags-gutachten',
@@ -98,6 +99,11 @@ export default function ExpertPage() {
         area="expert"
         locale="en"
         sectionNumber="06"
+      />
+      <LeadMagnetCard
+        locale="en"
+        sectionNumber="07"
+        slug="expert-intake-counsel"
       />
       <AtelierExpertFaq locale="en" />
       <AtelierExpertIntake locale="en" />

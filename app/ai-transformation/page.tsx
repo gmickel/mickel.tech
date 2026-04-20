@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import AtelierShell from '@/components/layout/atelier-shell';
 import AtelierCalCta from '@/components/sections/atelier/cal-cta';
 import AtelierCaseStudiesAreaPreview from '@/components/sections/atelier/case-studies-area-preview';
+import LeadMagnetCard from '@/components/sections/atelier/lead-magnet';
 import AtelierTransformFaq from '@/components/sections/atelier/transform-faq';
 import AtelierTransformGovernance from '@/components/sections/atelier/transform-governance';
 import AtelierTransformHero from '@/components/sections/atelier/transform-hero';
@@ -18,9 +19,9 @@ import {
 } from '@/lib/json-ld';
 
 export const metadata: Metadata = {
-  title: 'AI Systems & Transformation — Process-first, Production-grade',
+  title: 'AI Systems & Transformation: Process-first, Production-grade',
   description:
-    'AI systems that run your business, not just demo well. Process-first audit, production system build, fractional AI lead. Agents that hold up in real operations, knowledge platforms, voice, sovereign and private LLM infrastructure. CHF 15k audit, CHF 40–150k system build. Binningen, DE / EN.',
+    'AI systems that run your business, not just demo well. Process-first audit, production system build, fractional AI lead. Agents that hold up in real operations, knowledge platforms, voice, sovereign and private LLM infrastructure. CHF 15k audit, CHF 40-150k system build. Binningen, DE / EN.',
   keywords: [
     'AI transformation Switzerland',
     'AI Beratung Schweiz',
@@ -51,7 +52,7 @@ export const metadata: Metadata = {
     'AI governance',
   ],
   openGraph: {
-    title: 'AI Systems & Transformation — Process-first, Production-grade',
+    title: 'AI Systems & Transformation: Process-first, Production-grade',
     description:
       'Process-first AI: map workflows, build the context layer, ship production systems. Agents that hold up in real operations, knowledge platforms, voice, sovereign and private LLM. Audit from CHF 15k.',
     url: 'https://mickel.tech/ai-transformation',
@@ -74,7 +75,7 @@ export default function AiTransformationPage() {
         data={serviceSchema({
           name: 'Process Map + AI Opportunity Audit',
           description:
-            '2–3 weeks. Map workflows end-to-end, score automation candidates, propose 3–5 prioritised initiatives with ROI and 90-day plan. CHF 15–25k fixed.',
+            '2-3 weeks. Map workflows end-to-end, score automation candidates, propose 3-5 prioritised initiatives with ROI and 90-day plan. CHF 15-25k fixed.',
           url: '/ai-transformation#offers',
         })}
       />
@@ -82,7 +83,7 @@ export default function AiTransformationPage() {
         data={serviceSchema({
           name: 'AI System Build',
           description:
-            'Production deployment of an AI system class (operations agents, knowledge platforms, voice, sovereign LLM). Requirements through go-live with operations handover. CHF 40–150k.',
+            'Production deployment of an AI system class (operations agents, knowledge platforms, voice, sovereign LLM). Requirements through go-live with operations handover. CHF 40-150k.',
           url: '/ai-transformation#offers',
         })}
       />
@@ -90,7 +91,7 @@ export default function AiTransformationPage() {
         data={serviceSchema({
           name: 'Fractional AI Lead',
           description:
-            '1–2 days/week. Program governance, vendor selection, hands-on architecture, internal capability building. Monthly retainer, quarterly minimum.',
+            '1-2 days/week. Program governance, vendor selection, hands-on architecture, internal capability building. Monthly retainer, quarterly minimum.',
           url: '/ai-transformation#offers',
         })}
       />
@@ -111,6 +112,11 @@ export default function AiTransformationPage() {
         area="systems"
         locale="en"
         sectionNumber="07"
+      />
+      <LeadMagnetCard
+        locale="en"
+        sectionNumber="08"
+        slug="ai-engagement-scoping"
       />
       <AtelierTransformFaq locale="en" />
       <AtelierCalCta locale="en" variant="transformation" />

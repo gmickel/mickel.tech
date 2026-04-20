@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import AtelierShell from '@/components/layout/atelier-shell';
 import AtelierCalCta from '@/components/sections/atelier/cal-cta';
 import AtelierCaseStudiesAreaPreview from '@/components/sections/atelier/case-studies-area-preview';
+import LeadMagnetCard from '@/components/sections/atelier/lead-magnet';
 import AtelierSdlcFaq from '@/components/sections/atelier/sdlc-faq';
 import AtelierSdlcHero from '@/components/sections/atelier/sdlc-hero';
 import AtelierSdlcMaturity from '@/components/sections/atelier/sdlc-maturity';
@@ -16,9 +17,9 @@ import {
 } from '@/lib/json-ld';
 
 export const metadata: Metadata = {
-  title: 'Agentic PDLC — From Requirements to Autonomous Delivery',
+  title: 'Agentic PDLC: From Requirements to Autonomous Delivery',
   description:
-    'Agentic PDLC is a re-architecture of how product gets built. From requirements engineering to spec-driven, agent-assisted delivery, eval-gated and cross-model reviewed. L0–L4 maturity model. Diagnostic from CHF 15k. Author of FlowNext, founder of MergeFoundry.',
+    'Agentic PDLC is a re-architecture of how product gets built. From requirements engineering to spec-driven, agent-assisted delivery, eval-gated and cross-model reviewed. L0-L4 maturity model. Diagnostic from CHF 15k. Author of FlowNext, founder of MergeFoundry.',
   keywords: [
     'Agentic PDLC',
     'AI-native PDLC',
@@ -39,7 +40,7 @@ export const metadata: Metadata = {
     'PE software portfolio AI',
   ],
   openGraph: {
-    title: 'Agentic PDLC — From Requirements to Autonomous Delivery',
+    title: 'Agentic PDLC: From Requirements to Autonomous Delivery',
     description:
       'Re-architect product delivery: spec-driven, agent-assisted, eval-gated. L0 → L4 maturity. Diagnostic from CHF 15k. Author of FlowNext and MergeFoundry.',
     url: 'https://mickel.tech/sdlc',
@@ -62,7 +63,7 @@ export default function SdlcPage() {
         data={serviceSchema({
           name: 'Agentic PDLC Diagnostic',
           description:
-            '2-week assessment: L0–L4 maturity scoring across 5 pillars, opportunity scoring, 90-day roadmap, board-ready report. CHF 15–25k fixed.',
+            '2-week assessment: L0-L4 maturity scoring across 5 pillars, opportunity scoring, 90-day roadmap, board-ready report. CHF 15-25k fixed.',
           url: '/sdlc#offers',
         })}
       />
@@ -70,7 +71,7 @@ export default function SdlcPage() {
         data={serviceSchema({
           name: 'PDLC Foundation Sprint',
           description:
-            '6–8 weeks. Tooling rollout, methodology training, 1–2 quick-win lanes co-shipped, KPI baseline. CHF 40–60k fixed.',
+            '6-8 weeks. Tooling rollout, methodology training, 1-2 quick-win lanes co-shipped, KPI baseline. CHF 40-60k fixed.',
           url: '/sdlc#offers',
         })}
       />
@@ -78,7 +79,7 @@ export default function SdlcPage() {
         data={serviceSchema({
           name: 'PDLC Full Methodology Shift',
           description:
-            '3–6 months. L2 → L3/L4 transformation: eval gates, cross-model review, everything-as-code, observability flywheels. CHF 80–150k+.',
+            '3-6 months. L2 → L3/L4 transformation: eval gates, cross-model review, everything-as-code, observability flywheels. CHF 80-150k+.',
           url: '/sdlc#offers',
         })}
       />
@@ -95,6 +96,11 @@ export default function SdlcPage() {
         area="pdlc"
         locale="en"
         sectionNumber="06"
+      />
+      <LeadMagnetCard
+        locale="en"
+        sectionNumber="07"
+        slug="pdlc-maturity-l0-l4"
       />
       <AtelierSdlcFaq locale="en" />
       <AtelierCalCta locale="en" variant="pdlc" />

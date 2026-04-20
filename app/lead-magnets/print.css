@@ -1,0 +1,452 @@
+/*
+ * Print stylesheet for lead-magnet PDFs.
+ * Optimised for A4 output via headless browser → PDF.
+ *
+ * Brand: Engineering Atelier — paper cream base, ink for text,
+ * navy + rust as accents. Newsreader serif for display, Hanken
+ * Grotesk for body, JetBrains Mono for mono.
+ */
+
+@import url("https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap");
+
+@page {
+  size: A4;
+  margin: 0;
+  background: var(--paper);
+}
+
+/* No header/footer numbers in @page — we draw them in the document
+   so we can match brand typography. Browser will strip default
+   header/footer when explicitly suppressed via printer settings;
+   we rely on the renderer flag instead. */
+
+:root {
+  --paper: hsl(42 32% 89%);
+  --paper-cream: hsl(42 38% 93%);
+  --ink: hsl(40 12% 8%);
+  --ink-muted: hsl(40 8% 38%);
+  --navy: hsl(213 51% 24%);
+  --rust: hsl(17 56% 43%);
+  --rule: hsl(40 12% 8% / 0.15);
+
+  --font-display: "Newsreader", "Newsreader Fallback", Georgia, serif;
+  --font-body:
+    "Hanken Grotesk", "Hanken Grotesk Fallback", system-ui, sans-serif;
+  --font-mono:
+    "JetBrains Mono", "JetBrains Mono Fallback", ui-monospace, monospace;
+}
+
+html,
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 10.5pt;
+  line-height: 1.55;
+  margin: 0;
+  padding: 0;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+/* Container — page-sized blocks. The renderer slices these into
+   actual print pages via page-break rules. */
+.lm-page {
+  position: relative;
+  page-break-after: always;
+  break-after: page;
+  padding: 22mm 18mm 16mm 18mm;
+  background: var(--paper);
+  box-sizing: border-box;
+}
+.lm-page:last-child {
+  page-break-after: auto;
+}
+/* Page footer sits inline at end of content */
+.lm-page > .lm-foot {
+  font-family: var(--font-mono);
+  font-size: 8pt;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  margin-top: 10mm;
+}
+
+/* Cover page — different treatment */
+.lm-cover {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: var(--paper);
+}
+.lm-cover-top {
+  font-family: var(--font-mono);
+  font-size: 9pt;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--rust);
+}
+.lm-cover-title {
+  font-family: var(--font-display);
+  font-size: 42pt;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin: 0;
+  max-width: 90%;
+}
+.lm-cover-sub {
+  font-family: var(--font-display);
+  font-size: 16pt;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--ink);
+  margin-top: 14mm;
+  max-width: 80%;
+  line-height: 1.35;
+}
+.lm-cover-meta {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8mm 12mm;
+  border-top: 1px solid var(--rule);
+  padding-top: 6mm;
+}
+.lm-cover-meta dt {
+  font-family: var(--font-mono);
+  font-size: 8pt;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  margin-bottom: 2mm;
+}
+.lm-cover-meta dd {
+  font-family: var(--font-display);
+  font-size: 12pt;
+  font-weight: 500;
+  color: var(--ink);
+  margin: 0;
+}
+
+/* Section eyebrow */
+.lm-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 8pt;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--rust);
+  margin: 0 0 4mm 0;
+}
+
+/* Section heading */
+.lm-h1 {
+  font-family: var(--font-display);
+  font-size: 28pt;
+  font-weight: 500;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin: 0 0 8mm 0;
+}
+.lm-h2 {
+  font-family: var(--font-display);
+  font-size: 18pt;
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  margin: 8mm 0 3mm 0;
+}
+.lm-h3 {
+  font-family: var(--font-display);
+  font-size: 13pt;
+  font-weight: 500;
+  color: var(--ink);
+  margin: 5mm 0 2mm 0;
+}
+
+.lm-lead {
+  font-family: var(--font-display);
+  font-size: 14pt;
+  font-weight: 400;
+  line-height: 1.4;
+  color: var(--ink);
+  margin: 0 0 8mm 0;
+  max-width: 95%;
+}
+
+p {
+  margin: 0 0 3.5mm 0;
+}
+
+ul,
+ol {
+  margin: 0 0 4mm 0;
+  padding-left: 5mm;
+}
+li {
+  margin-bottom: 1.5mm;
+}
+
+a {
+  color: var(--ink);
+  text-decoration: underline;
+  text-decoration-color: var(--rust);
+  text-decoration-thickness: 0.5pt;
+  text-underline-offset: 1.5pt;
+}
+
+/* Numerals utility */
+.lm-num {
+  font-family: var(--font-display);
+  font-feature-settings: "tnum", "lnum";
+  font-variant-numeric: tabular-nums lining-nums;
+}
+
+/* Mono callouts */
+.lm-mono {
+  font-family: var(--font-mono);
+  font-size: 9pt;
+  letter-spacing: 0.04em;
+}
+
+/* Rule */
+.lm-rule {
+  height: 0.5pt;
+  background: var(--rule);
+  margin: 6mm 0;
+}
+
+/* Page footer (drawn in document for brand control) */
+.lm-page-footer {
+  position: absolute;
+  bottom: -16mm;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-family: var(--font-mono);
+  font-size: 8pt;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+}
+
+/* Maturity ladder — distinctive visual block */
+.lm-rung {
+  display: grid;
+  grid-template-columns: 28mm 1fr 32mm;
+  gap: 8mm;
+  align-items: baseline;
+  padding: 5mm 0;
+  border-bottom: 0.5pt solid var(--rule);
+}
+.lm-rung:last-of-type {
+  border-bottom: none;
+}
+.lm-rung-num {
+  font-family: var(--font-display);
+  font-feature-settings: "tnum", "lnum";
+  font-size: 22pt;
+  font-weight: 500;
+  color: var(--rust);
+  line-height: 1;
+}
+.lm-rung-name {
+  font-family: var(--font-display);
+  font-size: 13pt;
+  font-weight: 500;
+  color: var(--ink);
+  margin: 0 0 1.5mm 0;
+}
+.lm-rung-body {
+  font-size: 10pt;
+  color: var(--ink);
+  margin: 0;
+}
+.lm-rung-impact {
+  font-family: var(--font-display);
+  font-feature-settings: "tnum", "lnum";
+  font-size: 14pt;
+  font-weight: 500;
+  color: var(--ink);
+  text-align: right;
+}
+.lm-rung-impact small {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 7.5pt;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  font-weight: 400;
+  margin-top: 1mm;
+}
+
+/* Pillar self-assessment */
+.lm-pillar {
+  border-left: 2pt solid var(--rust);
+  padding-left: 6mm;
+  margin: 6mm 0;
+}
+.lm-pillar-num {
+  font-family: var(--font-mono);
+  font-size: 8pt;
+  letter-spacing: 0.18em;
+  color: var(--rust);
+  margin: 0;
+}
+.lm-pillar-name {
+  font-family: var(--font-display);
+  font-size: 16pt;
+  font-weight: 500;
+  margin: 1mm 0 3mm 0;
+  color: var(--ink);
+}
+.lm-pillar-questions {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.lm-pillar-questions li {
+  display: grid;
+  grid-template-columns: 22mm 1fr;
+  gap: 4mm;
+  align-items: baseline;
+  padding: 2mm 0;
+  border-bottom: 0.25pt solid var(--rule);
+}
+.lm-pillar-stars {
+  font-family: var(--font-mono);
+  font-size: 10pt;
+  letter-spacing: 0.15em;
+  color: var(--ink-muted);
+  white-space: nowrap;
+}
+.lm-pillar-q {
+  font-size: 10pt;
+}
+
+/* Two-col layout helper */
+.lm-cols-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10mm;
+}
+
+/* Pull-quote */
+.lm-pullquote {
+  font-family: var(--font-display);
+  font-size: 16pt;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.35;
+  color: var(--ink);
+  border-left: 2pt solid var(--rust);
+  padding: 2mm 0 2mm 6mm;
+  margin: 6mm 0;
+  max-width: 90%;
+}
+
+/* Section opener — large coloured block on cover-y pages */
+.lm-section-opener {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-height: 80mm;
+  border-bottom: 1pt solid var(--rule);
+  margin-bottom: 6mm;
+}
+
+/* Tables — restrained editorial */
+table.lm-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 4mm 0;
+  font-size: 9.5pt;
+}
+table.lm-table th,
+table.lm-table td {
+  text-align: left;
+  padding: 2.5mm 3mm 2.5mm 0;
+  border-bottom: 0.5pt solid var(--rule);
+  vertical-align: top;
+}
+table.lm-table th {
+  font-family: var(--font-mono);
+  font-size: 8pt;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  font-weight: 500;
+  padding-bottom: 3mm;
+}
+
+/* Closing CTA card */
+.lm-cta {
+  background: var(--ink);
+  color: var(--paper);
+  padding: 12mm;
+  margin: 8mm 0 0 0;
+  border-radius: 0;
+}
+.lm-cta .lm-h2 {
+  color: var(--paper);
+}
+.lm-cta a {
+  color: var(--paper);
+  text-decoration-color: var(--rust);
+}
+.lm-cta-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8mm;
+  margin-top: 6mm;
+}
+.lm-cta-row dt {
+  font-family: var(--font-mono);
+  font-size: 8pt;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: hsl(42 32% 89% / 0.7);
+  margin-bottom: 1mm;
+}
+.lm-cta-row dd {
+  font-family: var(--font-display);
+  font-size: 12pt;
+  margin: 0;
+}
+
+/* Screen view — only show within a faux-page frame for preview */
+@media screen {
+  body {
+    background: hsl(40 12% 8%);
+    padding: 24px 0;
+  }
+  .lead-magnet-root {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+  }
+  .lm-page {
+    width: 210mm;
+    box-shadow: 0 6px 28px rgb(0 0 0 / 0.45);
+  }
+}
+
+/* Print view — strip the screen chrome, keep cream background edge-to-edge */
+@media print {
+  body {
+    background: var(--paper);
+    padding: 0;
+  }
+  .lm-page {
+    width: 100%;
+    box-shadow: none;
+    /* padding kept from base .lm-page rule — matches @page margin zones */
+  }
+}
+/* bust */
