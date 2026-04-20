@@ -17,15 +17,22 @@ type BlockquoteProps = ComponentProps<'blockquote'>;
 type HrProps = ComponentProps<'hr'>;
 
 /**
- * Atelier-register MDX components. Paper cream surface, Newsreader for
- * headings (via atelier-display class), Hanken Grotesk body, JetBrains
- * Mono for code. Code blocks use a graphite-inverted "codex panel" look.
+ * Atelier MDX components — "field journal" register.
+ *
+ * Warm paper cream surface, Newsreader serif display (optically sized),
+ * Hanken Grotesk body, JetBrains Mono for micro-type. Rust as single
+ * accent. Tight vertical rhythm, hanging list markers, ornament
+ * dividers — engineer's notebook over magazine.
+ *
+ * Per-element rhythm tuned to a 24px baseline at the 17px body size.
+ * Heading top margins are generous; bottom margins tight so the
+ * heading-to-body gap feels deliberate, not loose.
  */
 
 function H1(props: HeadingProps): ReactElement {
   return (
     <h1
-      className="atelier-display mt-10 mb-6 font-medium text-[clamp(1.8rem,1.3rem+1.6vw,2.5rem)] text-[hsl(var(--ink))] leading-[1.1] tracking-[-0.015em]"
+      className="atelier-display mt-14 mb-5 font-medium text-[clamp(2rem,1.5rem+1.4vw,2.65rem)] text-[hsl(var(--ink))] leading-[1.08] tracking-[-0.015em] first:mt-0"
       {...props}
     />
   );
@@ -34,7 +41,7 @@ function H1(props: HeadingProps): ReactElement {
 function H2(props: HeadingProps): ReactElement {
   return (
     <h2
-      className="atelier-display mt-12 mb-4 font-medium text-[clamp(1.45rem,1.15rem+1vw,1.9rem)] text-[hsl(var(--ink))] leading-[1.15] tracking-[-0.01em]"
+      className="atelier-display mt-14 mb-4 font-medium text-[clamp(1.55rem,1.2rem+1vw,2.05rem)] text-[hsl(var(--ink))] leading-[1.12] tracking-[-0.012em]"
       {...props}
     />
   );
@@ -43,7 +50,7 @@ function H2(props: HeadingProps): ReactElement {
 function H3(props: HeadingProps): ReactElement {
   return (
     <h3
-      className="atelier-display mt-10 mb-3 font-medium text-[1.3rem] text-[hsl(var(--ink))] leading-snug"
+      className="atelier-display mt-10 mb-3 font-medium text-[1.3rem] text-[hsl(var(--ink))] leading-[1.25] tracking-[-0.005em]"
       {...props}
     />
   );
@@ -52,7 +59,7 @@ function H3(props: HeadingProps): ReactElement {
 function P(props: ParagraphProps): ReactElement {
   return (
     <p
-      className="atelier-body mb-5 text-[1.02rem] text-[hsl(var(--ink))]/88 leading-[1.7]"
+      className="atelier-body mb-[1.35em] text-[1.05rem] text-[hsl(var(--ink))]/90 leading-[1.65]"
       {...props}
     />
   );
@@ -61,61 +68,91 @@ function P(props: ParagraphProps): ReactElement {
 function A(props: AnchorProps): ReactElement {
   return (
     <a
-      className="font-medium text-[hsl(var(--ink))] underline decoration-[0.5px] decoration-[hsl(var(--rust))] decoration-from-font underline-offset-[3px] transition-colors hover:text-[hsl(var(--rust))]"
+      className="font-medium text-[hsl(var(--ink))] underline decoration-[0.5px] decoration-[hsl(var(--rust))] decoration-from-font underline-offset-[3px] transition-colors hover:text-[hsl(var(--rust))] hover:decoration-[hsl(var(--rust))]"
       {...props}
     />
   );
 }
 
+/**
+ * UL — hanging rust diamond marker. The previous "3px wide rule" read
+ * as a stray em-dash at body size; a tiny rotated square reads as a
+ * glyph, not punctuation. Square is absolute, pulled into the margin.
+ */
 function Ul(props: UnorderedListProps): ReactElement {
   return (
     <ul
-      className="atelier-body mb-5 list-none space-y-2 text-[1.02rem] text-[hsl(var(--ink))]/88 leading-[1.7] [&>li]:relative [&>li]:pl-5 [&>li]:before:absolute [&>li]:before:top-[0.85em] [&>li]:before:left-0 [&>li]:before:h-px [&>li]:before:w-3 [&>li]:before:bg-[hsl(var(--rust))]"
+      className="atelier-body mt-[1em] mb-[1.5em] list-none space-y-[0.55em] pl-[1.35rem] text-[1.05rem] text-[hsl(var(--ink))]/90 leading-[1.65] [&>li]:relative [&>li]:before:absolute [&>li]:before:top-[0.66em] [&>li]:before:left-[-0.95rem] [&>li]:before:h-[5px] [&>li]:before:w-[5px] [&>li]:before:rotate-45 [&>li]:before:bg-[hsl(var(--rust))]"
       {...props}
     />
   );
 }
 
+/**
+ * OL — tabular rust numerals hanging in the margin. No full-stop
+ * cluttering the list; the rust hue carries the counting.
+ */
 function Ol(props: OrderedListProps): ReactElement {
   return (
     <ol
-      className="atelier-body mb-5 list-decimal space-y-2 pl-6 text-[1.02rem] text-[hsl(var(--ink))]/88 leading-[1.7] marker:font-medium marker:text-[hsl(var(--rust))]"
+      className="atelier-body atelier-numerals mt-[1em] mb-[1.5em] list-decimal space-y-[0.55em] pl-[2rem] text-[1.05rem] text-[hsl(var(--ink))]/90 leading-[1.65] marker:font-medium marker:text-[hsl(var(--rust))]"
       {...props}
     />
   );
 }
 
 function Li(props: ListItemProps): ReactElement {
-  return <li {...props} />;
+  return <li className="pl-1 [&>code]:text-[0.93em]" {...props} />;
 }
 
+/**
+ * Blockquote — oversized rust open-quote glyph pulled into the margin,
+ * Newsreader italic body. No left border (too utilitarian); the glyph
+ * and italic do the work.
+ */
 function Blockquote(props: BlockquoteProps): ReactElement {
   return (
     <blockquote
-      className="[&>p]:atelier-display my-8 border-[hsl(var(--rust))] border-l-2 pl-6 font-[var(--font-display)] text-[1.2rem] text-[hsl(var(--ink))] italic leading-[1.45] [&>p]:mb-0 [&>p]:text-[1.2rem]"
+      className="[&>p]:atelier-display relative my-10 pl-10 before:absolute before:top-[-0.15em] before:left-[-0.05em] before:font-[var(--font-display)] before:text-[4.5rem] before:text-[hsl(var(--rust))] before:leading-none before:content-['“'] [&>p]:mb-3 [&>p]:text-[1.2rem] [&>p]:text-[hsl(var(--ink))] [&>p]:italic [&>p]:leading-[1.45] [&>p]:last:mb-0"
       {...props}
     />
   );
 }
 
-function Hr(props: HrProps): ReactElement {
+/**
+ * Hr — chapter break ornament. Small rust diamond centered between two
+ * hairline ink rules. Feels deliberate, not arbitrary.
+ */
+function Hr(_props: HrProps): ReactElement {
   return (
-    <hr className="my-12 h-px border-0 bg-[hsl(var(--ink))]/15" {...props} />
+    <div aria-hidden="true" className="my-14 flex items-center gap-5">
+      <span className="h-px flex-1 bg-[hsl(var(--ink))]/15" />
+      <span className="h-[6px] w-[6px] rotate-45 bg-[hsl(var(--rust))]" />
+      <span className="h-px flex-1 bg-[hsl(var(--ink))]/15" />
+    </div>
   );
 }
 
+/**
+ * Inline code — tight rust underline, small ink background tint. Reads
+ * as a distinct technical register without the "chunky chip" look.
+ */
 function Code(props: CodeProps): ReactElement {
   return (
     <code
-      className="atelier-mono rounded-sm bg-[hsl(var(--ink))]/6 px-[0.35em] py-[0.1em] text-[0.88em] text-[hsl(var(--ink))]"
+      className="atelier-mono rounded-[2px] bg-[hsl(var(--ink))]/[0.055] px-[0.35em] py-[0.12em] text-[0.86em] text-[hsl(var(--ink))]"
       {...props}
     />
   );
 }
 
+/**
+ * Pre (code block) — graphite codex panel with rust top bar and three
+ * indicator dots. Monospace ink-on-paper inverted to paper-on-graphite.
+ */
 function Pre(props: PreProps): ReactElement {
   return (
-    <div className="codex-panel my-7">
+    <div className="codex-panel my-8">
       <div
         aria-hidden="true"
         className="codex-panel__bar flex items-center gap-2"
@@ -125,7 +162,7 @@ function Pre(props: PreProps): ReactElement {
         <span className="codex-panel__dot" />
       </div>
       <pre
-        className="atelier-mono overflow-x-auto px-5 py-4 text-[0.82rem] text-[hsl(var(--paper))] leading-[1.65] [&>code]:bg-transparent [&>code]:p-0 [&>code]:text-[hsl(var(--paper))]"
+        className="atelier-mono overflow-x-auto px-5 py-4 text-[0.84rem] text-[hsl(var(--paper))] leading-[1.65] [&>code]:bg-transparent [&>code]:p-0 [&>code]:text-[hsl(var(--paper))]"
         {...props}
       />
     </div>

@@ -287,6 +287,67 @@
     background: hsl(var(--paper) / 0.24);
   }
 
+  /* ---------- Atelier prose (article reading column) ---------- */
+  /*
+   * Scoped rules for long-form posts. Paired with <article class="atelier-prose">.
+   * Tight baseline rhythm, deliberate first-paragraph treatment, and a small
+   * terminal mark so the piece closes visibly. Most per-element styling
+   * lives on the MDX components themselves; these rules handle what
+   * component-level classes can't (adjacency, ordinal position, scoped
+   * selection, descendant resets).
+   */
+
+  /* Lede: first paragraph after the post body starts reads slightly
+     larger and lighter — an editorial "opening breath". */
+  .atelier-prose > p:first-of-type,
+  .atelier-prose > :first-child + p {
+    font-size: 1.13rem;
+    line-height: 1.6;
+    color: hsl(var(--ink) / 0.92);
+  }
+
+  /* Tighten heading-adjacent spacing: heading that follows a figure/list
+     shouldn't double-stack its large top margin. */
+  .atelier-prose > figure + h2,
+  .atelier-prose > ul + h2,
+  .atelier-prose > ol + h2,
+  .atelier-prose > .codex-panel + h2 {
+    margin-top: 3.5rem;
+  }
+
+  /* A heading immediately after a subhead shouldn't get the full chapter
+     gap — keep them visually related. */
+  .atelier-prose h2 + h3,
+  .atelier-prose h3 + h3 {
+    margin-top: 1.5rem;
+  }
+
+  /* Consistent figure/blockquote spacing against prose: */
+  .atelier-prose figure,
+  .atelier-prose blockquote {
+    font-feature-settings: "ss01";
+  }
+
+  /* Selection on paper-register prose — warm rust tint, ink text. */
+  .atelier-prose ::selection {
+    background: hsl(var(--rust) / 0.22);
+    color: hsl(var(--ink));
+  }
+
+  /* Terminal mark: after the last paragraph of the article, render a small
+     rust square — a typographic "end" glyph, like a tombstone in journals.
+     Only shows on the TOP-LEVEL last child to avoid stray marks inside
+     nested structures. */
+  .atelier-prose::after {
+    content: "";
+    display: block;
+    width: 6px;
+    height: 6px;
+    margin: 3.5rem auto 0;
+    transform: rotate(45deg);
+    background: hsl(var(--rust));
+  }
+
   /* Atelier link styling on dark */
   .atelier-link {
     color: hsl(var(--paper));
