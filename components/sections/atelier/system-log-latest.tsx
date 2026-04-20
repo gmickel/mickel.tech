@@ -17,12 +17,12 @@ export default async function AtelierSystemLogLatest({
   const labels =
     locale === 'de'
       ? {
-          eyebrow: '05 / Schriften',
+          eyebrow: '05 / Notizen',
           heading: 'Aktuelle Notizen aus der Praxis.',
           intro:
             'Kurze, technische Beiträge zu agentischer PDLC, Plattformen und KI-Systemen. Aus echter Arbeit, nicht aus der Theorie.',
           allLink: 'Alle Beiträge',
-          allHref: '/log',
+          allHref: '/de/log',
           entryLabel: 'Beitrag lesen',
           dateLocale: 'de-CH',
         }

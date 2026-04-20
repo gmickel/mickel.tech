@@ -34,6 +34,9 @@ export default function AtelierLeadMagnetCard({
     return null;
   }
   const labels = locale === 'de' ? labelsDE : labelsEN;
+  const title = locale === 'de' ? magnet.titleDE : magnet.title;
+  const subtitle = locale === 'de' ? magnet.subtitleDE : magnet.subtitle;
+  const audience = locale === 'de' ? magnet.audienceDE : magnet.audience;
 
   return (
     <section
@@ -55,10 +58,10 @@ export default function AtelierLeadMagnetCard({
               className="atelier-display font-medium text-[clamp(1.75rem,1.2rem+1.8vw,2.75rem)] text-[hsl(var(--ink))] leading-[1.1] tracking-[-0.01em]"
               id={`lm-${slug}-heading`}
             >
-              {magnet.title}
+              {title}
             </h2>
             <p className="atelier-body mt-5 max-w-[60ch] text-[hsl(var(--ink))]/80">
-              {magnet.subtitle}
+              {subtitle}
             </p>
             <dl className="mt-7 flex flex-wrap items-baseline gap-x-10 gap-y-3">
               <div>
@@ -66,7 +69,7 @@ export default function AtelierLeadMagnetCard({
                   {labels.audience}
                 </dt>
                 <dd className="atelier-body mt-1 text-[hsl(var(--ink))]">
-                  {magnet.audience}
+                  {audience}
                 </dd>
               </div>
             </dl>

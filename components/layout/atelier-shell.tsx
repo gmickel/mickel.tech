@@ -36,11 +36,10 @@ const utilLinksEN = [
   { label: 'Contact', href: '/#contact' },
 ] as const;
 
-// /log and /apps are shared (English content, bilingual audience).
 const utilLinksDE = [
   { label: 'Fallstudien', href: '/de/case-studies' },
-  { label: 'Schriften', href: '/log' },
-  { label: 'Apps', href: '/apps' },
+  { label: 'Notizen', href: '/de/log' },
+  { label: 'Apps', href: '/de/apps' },
   { label: 'Kontakt', href: '/de/#contact' },
 ] as const;
 
@@ -252,8 +251,8 @@ function AtelierFooter({ isDE }: { isDE: boolean }) {
 
   const signalsLinks = isDE
     ? [
-        { label: 'Schriften', href: '/log' },
-        { label: 'Apps', href: '/apps' },
+        { label: 'Notizen', href: '/de/log' },
+        { label: 'Apps', href: '/de/apps' },
         { label: 'Bench', href: '/gmickel-bench' },
       ]
     : [

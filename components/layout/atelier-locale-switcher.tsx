@@ -4,9 +4,8 @@ import { usePathname } from 'next/navigation';
 import SmartLink from '@/components/atelier/smart-link';
 
 /**
- * Paths that have a mirrored `/de/...` route. When on an EN path NOT
- * in this set (e.g. /log, /apps), clicking DE falls back to `/de` home.
- * Case study detail pages are handled via the prefix check below.
+ * Paths that have a mirrored `/de/...` route. Anything outside this set
+ * (and the prefix checks below) falls back to `/de` home.
  */
 const DE_EQUIVALENT_PATHS = new Set([
   '/',
@@ -17,7 +16,11 @@ const DE_EQUIVALENT_PATHS = new Set([
   '/about',
   '/imprint',
   '/privacy',
+  '/log',
+  '/apps',
 ]);
+
+const DE_EQUIVALENT_PREFIXES = ['/case-studies/', '/log/', '/apps/'];
 
 const DE_PREFIX_RE = /^\/de/;
 
@@ -25,7 +28,7 @@ function hasDeEquivalent(path: string): boolean {
   if (DE_EQUIVALENT_PATHS.has(path)) {
     return true;
   }
-  return path.startsWith('/case-studies/');
+  return DE_EQUIVALENT_PREFIXES.some((prefix) => path.startsWith(prefix));
 }
 
 function toEnHref(path: string): string {

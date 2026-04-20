@@ -120,14 +120,20 @@
     cursor: auto;
   }
 
-  /* Restore browser-default pointer on actionable elements (the ".atelier-surface *"
-     wildcard above forces auto everywhere — needed to override the legacy
-     `cursor: none` on body — but it accidentally hides the link/button affordance) */
+  /* Restore browser-default pointer on actionable elements. The ".atelier-surface *"
+     wildcard above catches NESTED spans inside links/buttons too, so we also target
+     the descendants of each actionable — otherwise hovering over the text inside
+     a Link<span>text</span></Link> still shows the text cursor. */
   .atelier-surface a,
+  .atelier-surface a *,
   .atelier-surface button,
+  .atelier-surface button *,
   .atelier-surface [role="button"],
+  .atelier-surface [role="button"] *,
   .atelier-surface label,
+  .atelier-surface label *,
   .atelier-surface summary,
+  .atelier-surface summary *,
   .atelier-surface select {
     cursor: pointer;
   }
