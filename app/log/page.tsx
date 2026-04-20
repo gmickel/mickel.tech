@@ -83,23 +83,52 @@ export default async function LogIndexPage() {
       </section>
 
       {/* ---- Archive by year ---- */}
-      <section className="atelier-paper border-[hsl(var(--ink))]/10 border-t">
-        <div className="mx-auto max-w-[1200px] px-6 pb-24 md:px-10 md:pb-32">
+      <section
+        aria-label="Archive"
+        className="atelier-paper border-[hsl(var(--ink))]/10 border-t"
+      >
+        <div className="mx-auto max-w-[1200px] px-6 pt-14 pb-24 md:px-10 md:pt-20 md:pb-32">
+          <header className="mb-10 grid grid-cols-12 gap-6">
+            <div className="col-span-12 md:col-span-2">
+              <p className="atelier-eyebrow text-[hsl(var(--paper-muted))]">
+                Archive
+              </p>
+            </div>
+            <div className="col-span-12 md:col-span-10">
+              <p className="atelier-body max-w-[60ch] text-[hsl(var(--ink))]/72">
+                Every note, newest first. Years below act as section marks; the
+                rust numeral in the margin runs the sequence.
+              </p>
+            </div>
+          </header>
+
           {groups.map((group, gi) => (
             <div
-              className={gi === 0 ? 'pt-14 md:pt-20' : 'pt-20 md:pt-28'}
+              className={
+                gi === 0
+                  ? 'border-[hsl(var(--ink))]/10 border-t pt-10 md:pt-12'
+                  : 'mt-16 border-[hsl(var(--ink))]/10 border-t pt-10 md:mt-24 md:pt-12'
+              }
               key={group.year}
             >
-              <header className="mb-10 grid grid-cols-12 gap-6">
+              <header className="mb-8 grid grid-cols-12 items-baseline gap-6">
                 <div className="col-span-12 md:col-span-2">
                   <p className="atelier-eyebrow text-[hsl(var(--paper-muted))]">
                     Year
                   </p>
                 </div>
-                <div className="col-span-12 md:col-span-10">
-                  <h2 className="atelier-numerals font-medium text-[clamp(3rem,2rem+4vw,6rem)] text-[hsl(var(--ink))] leading-none">
+                <div className="col-span-12 flex items-baseline gap-4 md:col-span-10">
+                  <h2 className="atelier-numerals font-medium text-[clamp(1.75rem,1.3rem+1vw,2.4rem)] text-[hsl(var(--ink))] leading-none tracking-[-0.01em]">
                     {group.year}
                   </h2>
+                  <span
+                    aria-hidden="true"
+                    className="h-px flex-1 bg-[hsl(var(--ink))]/12"
+                  />
+                  <span className="atelier-mono text-[10.5px] text-[hsl(var(--paper-muted))] uppercase tracking-[0.16em]">
+                    {group.posts.length} entr
+                    {group.posts.length === 1 ? 'y' : 'ies'}
+                  </span>
                 </div>
               </header>
               <ol className="divide-y divide-[hsl(var(--ink))]/10 border-[hsl(var(--ink))]/10 border-y">
