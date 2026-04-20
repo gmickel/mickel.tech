@@ -29,14 +29,23 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     return {};
   }
 
+  const canonical = `https://mickel.tech/gmickel-bench/${evalId}`;
   return {
     title: `${evalData.title} · gmickel bench`,
     description: evalData.hook,
-    alternates: { canonical: `/gmickel-bench/${evalId}` },
+    alternates: { canonical },
     openGraph: {
       title: `${evalData.title} · gmickel bench`,
       description: evalData.hook,
       type: 'website',
+      url: canonical,
+      siteName: 'Mickel Tech',
+      locale: 'en_US',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${evalData.title} · gmickel bench`,
+      description: evalData.hook,
     },
   };
 }

@@ -66,6 +66,7 @@ export const metadata: Metadata = {
     languages: {
       en: 'https://mickel.tech/ai-transformation',
       de: 'https://mickel.tech/de/ai-transformation',
+      'x-default': 'https://mickel.tech/ai-transformation',
     },
   },
 };

@@ -21,15 +21,23 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     return {};
   }
 
+  const canonical = `https://mickel.tech/log/tag/${tag}`;
   return {
     title: `Tag: ${displayName}`,
     description: `Field notes tagged ${displayName} by Gordon Mickel.`,
-    alternates: { canonical: `/log/tag/${tag}` },
+    alternates: { canonical },
     openGraph: {
-      title: `${displayName} · Field notes · mickel.tech`,
+      title: `${displayName} · Field notes · Mickel Tech`,
       description: `Field notes tagged ${displayName}.`,
-      url: `/log/tag/${tag}`,
+      url: canonical,
+      siteName: 'Mickel Tech',
+      locale: 'en_US',
       type: 'website',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${displayName} · Field notes`,
+      description: `Field notes tagged ${displayName}.`,
     },
   };
 }

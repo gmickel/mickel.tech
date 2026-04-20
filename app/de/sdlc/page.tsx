@@ -52,6 +52,7 @@ export const metadata: Metadata = {
     languages: {
       en: 'https://mickel.tech/sdlc',
       de: 'https://mickel.tech/de/sdlc',
+      'x-default': 'https://mickel.tech/sdlc',
     },
   },
 };

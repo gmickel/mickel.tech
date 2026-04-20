@@ -42,7 +42,11 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: 'https://mickel.tech/de',
-    languages: { en: 'https://mickel.tech', de: 'https://mickel.tech/de' },
+    languages: {
+      en: 'https://mickel.tech',
+      de: 'https://mickel.tech/de',
+      'x-default': 'https://mickel.tech',
+    },
   },
 };
 

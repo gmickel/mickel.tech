@@ -3,7 +3,12 @@ import { notFound } from 'next/navigation';
 import AtelierShell from '@/components/layout/atelier-shell';
 import AtelierCaseStudyDetail from '@/components/sections/atelier/case-study-detail';
 import { CASE_STUDIES } from '@/lib/case-studies';
-import { breadcrumbSchema, JsonLd, personSchema } from '@/lib/json-ld';
+import {
+  breadcrumbSchema,
+  caseStudySchema,
+  JsonLd,
+  personSchema,
+} from '@/lib/json-ld';
 
 export function generateStaticParams() {
   return CASE_STUDIES.map((s) => ({ id: s.id }));
@@ -30,14 +35,21 @@ export async function generateMetadata({
       languages: {
         en: `https://mickel.tech/case-studies/${study.id}`,
         de: `https://mickel.tech/de/case-studies/${study.id}`,
+        'x-default': `https://mickel.tech/case-studies/${study.id}`,
       },
     },
     openGraph: {
-      title: `${study.clientDE} -- Fallstudie | Mickel Tech`,
+      title: `${study.clientDE} · Fallstudie`,
       description,
       url: `https://mickel.tech/de/case-studies/${study.id}`,
-      type: 'article',
+      siteName: 'Mickel Tech',
       locale: 'de_CH',
+      type: 'article',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${study.clientDE} · Fallstudie`,
+      description,
     },
   };
 }
@@ -64,6 +76,17 @@ export default async function DeCaseStudyPage({
             url: `/de/case-studies/${study.id}`,
           },
         ])}
+      />
+      <JsonLd
+        data={caseStudySchema({
+          id: study.id,
+          title: `${study.clientDE} · Fallstudie`,
+          client: study.clientDE,
+          problem: study.problemDE,
+          outcome: study.outcomeDE,
+          url: `/de/case-studies/${study.id}`,
+          locale: 'de',
+        })}
       />
       <AtelierCaseStudyDetail locale="de" study={study} />
     </AtelierShell>

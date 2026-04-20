@@ -211,7 +211,7 @@ export default function AtelierAbout({ locale = 'en' }: AboutContentProps) {
               >
                 <div className="relative aspect-[4/5] overflow-hidden border border-[hsl(var(--paper))]/20 bg-[hsl(var(--graphite-border))]">
                   <Image
-                    alt="Gordon Mickel"
+                    alt="Portrait of Gordon Mickel, Operating Principal (AI and Technology) at Growth Factors, ITDR-listed independent technical expert based in Binningen, Switzerland."
                     className="h-full w-full object-cover object-top"
                     fill
                     priority

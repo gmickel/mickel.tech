@@ -18,7 +18,7 @@ const APP_DATA = {
 };
 
 export const metadata: Metadata = {
-  title: 'DocIQ 1.0 — Pioneering document intelligence (2017-2020)',
+  title: 'DocIQ 1.0 -- Pioneering document intelligence (2017-2020)',
   description:
     'One of the first legal tech platforms to use extensive NLP and machine learning for document lifecycle management. Still in production across Switzerland today.',
   openGraph: {

@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     template: '%s | Mickel Tech',
   },
   description:
-    'I design AI systems that actually work. Operating Principal (AI & Technology) at Growth Factors. Independent practice for select mandates: agentic PDLC transformation, production AI systems, party-engaged technical opinion (Parteigutachten) and acceptance expert work (Werkvertrags-Gutachten). Binningen, Switzerland · DE & EN.',
+    'Independent practice for agentic PDLC, production AI systems, Parteigutachten and Werkvertrags-Gutachten. Operating Principal (AI & Tech) at Growth Factors. Binningen, Switzerland. DE / EN.',
   keywords: [
     'Agentic PDLC',
     'AI-native PDLC',
@@ -82,6 +82,7 @@ export const metadata: Metadata = {
     languages: {
       en: 'https://mickel.tech',
       de: 'https://mickel.tech/de',
+      'x-default': 'https://mickel.tech',
     },
     types: {
       'application/rss+xml': 'https://mickel.tech/rss',

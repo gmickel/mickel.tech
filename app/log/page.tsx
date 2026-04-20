@@ -3,7 +3,7 @@ import { Link } from 'next-view-transitions';
 import Datestamp from '@/components/atelier/datestamp';
 import TagRow from '@/components/atelier/tag-row';
 import AtelierShell from '@/components/layout/atelier-shell';
-import { breadcrumbSchema, JsonLd } from '@/lib/json-ld';
+import { blogSchema, breadcrumbSchema, JsonLd } from '@/lib/json-ld';
 import { getAllPosts, type PostMeta } from '@/lib/posts';
 
 export const metadata: Metadata = {
@@ -16,6 +16,14 @@ export const metadata: Metadata = {
       'Dispatches from the workshop on agentic PDLC, platforms and AI agents.',
     type: 'website',
     url: 'https://mickel.tech/log',
+    siteName: 'Mickel Tech',
+    locale: 'en_US',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Field notes · Mickel Tech',
+    description:
+      'Dispatches from the workshop on agentic PDLC, platforms and AI agents.',
   },
   alternates: {
     canonical: 'https://mickel.tech/log',
@@ -47,6 +55,19 @@ export default async function LogIndexPage() {
   return (
     <AtelierShell>
       <JsonLd data={breadcrumbSchema([{ name: 'Field notes', url: '/log' }])} />
+      <JsonLd
+        data={blogSchema({
+          url: '/log',
+          name: 'Field notes · Mickel Tech',
+          description:
+            'Dispatches from the workshop on agentic PDLC, platforms and AI agents.',
+          items: posts.slice(0, 20).map((p) => ({
+            slug: p.slug,
+            title: p.title,
+            publishedAt: p.publishedAt,
+          })),
+        })}
+      />
 
       {/* ---- Masthead ---- */}
       <section aria-labelledby="log-heading" className="atelier-paper relative">

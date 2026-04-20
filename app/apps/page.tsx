@@ -3,23 +3,26 @@ import Image from 'next/image';
 import { Link } from 'next-view-transitions';
 import AtelierShell from '@/components/layout/atelier-shell';
 import { APPS } from '@/lib/apps';
-import { breadcrumbSchema, JsonLd } from '@/lib/json-ld';
+import { breadcrumbSchema, itemListSchema, JsonLd } from '@/lib/json-ld';
 
 export const metadata: Metadata = {
-  title: 'Apps — Things I built',
+  title: 'Apps -- Things I built',
   description:
-    'Software I designed and built. Legal-tech platforms, agent orchestration, developer tools. A working catalogue.',
+    'Software I designed and built: legal-tech platforms, agent orchestration, local-first knowledge tools, developer utilities. A working catalogue.',
   openGraph: {
     title: 'Apps · Mickel Tech',
     description:
-      'Software I designed and built. Legal-tech platforms, agent orchestration, developer tools.',
+      'Software I designed and built: legal-tech, agent orchestration, local-first knowledge tools, Claude Code plugins.',
     type: 'website',
     url: 'https://mickel.tech/apps',
+    siteName: 'Mickel Tech',
+    locale: 'en_US',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Apps · Mickel Tech',
-    description: 'Software I designed and built.',
+    description:
+      'Software I designed and built: legal-tech, agent orchestration, Claude Code plugins.',
   },
   alternates: { canonical: 'https://mickel.tech/apps' },
 };
@@ -43,6 +46,17 @@ export default function AppsPage() {
   return (
     <AtelierShell>
       <JsonLd data={breadcrumbSchema([{ name: 'Apps', url: '/apps' }])} />
+      <JsonLd
+        data={itemListSchema({
+          name: 'Mickel Tech · Apps',
+          url: '/apps',
+          items: apps.map((app) => ({
+            name: app.name,
+            url: app.href,
+            description: app.tagline,
+          })),
+        })}
+      />
 
       {/* ---- Masthead ---- */}
       <section

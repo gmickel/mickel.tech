@@ -7,11 +7,25 @@ export const metadata: Metadata = {
   title: 'Datenschutz -- Mickel Tech',
   description:
     'Datenschutzerklärung für mickel.tech. Datenerhebung, Verarbeitung, Aufbewahrung und Ihre Rechte unter DSG und DSGVO.',
+  openGraph: {
+    title: 'Datenschutz · Mickel Tech',
+    description: 'Datenschutzerklärung und Datenbehandlung von Mickel Tech.',
+    url: 'https://mickel.tech/de/privacy',
+    siteName: 'Mickel Tech',
+    locale: 'de_CH',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Datenschutz · Mickel Tech',
+    description: 'Datenschutzerklärung und Datenbehandlung von Mickel Tech.',
+  },
   alternates: {
     canonical: 'https://mickel.tech/de/privacy',
     languages: {
       en: 'https://mickel.tech/privacy',
       de: 'https://mickel.tech/de/privacy',
+      'x-default': 'https://mickel.tech/privacy',
     },
   },
   robots: {

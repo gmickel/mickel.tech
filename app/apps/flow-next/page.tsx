@@ -25,7 +25,7 @@ const APP_DATA = {
 };
 
 export const metadata: Metadata = {
-  title: 'Flow-Next — Zero-dep agent orchestration',
+  title: 'Flow-Next -- Zero-dep agent orchestration',
   description:
     'Multi-platform AI agent orchestration with zero dependencies. Works on Claude Code, Factory Droid, OpenAI Codex, and OpenCode. Task graphs, re-anchoring, cross-model reviews.',
   keywords: [

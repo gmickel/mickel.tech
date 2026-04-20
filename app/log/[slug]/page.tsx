@@ -35,26 +35,36 @@ export async function generateMetadata({
 
   const url = `https://mickel.tech/log/${post.slug}`;
 
+  // Canonical: if the post was first published on Medium/Substack and
+  // mirrored here, the canonical stays on the original to consolidate
+  // ranking signals there. If canonicalSource is 'native' (or unset),
+  // self-canonical — mickel.tech is primary.
   let canonical: string;
   if (post.canonicalSource === 'medium' && post.mediumUrl) {
     canonical = post.mediumUrl;
   } else if (post.canonicalSource === 'substack' && post.substackUrl) {
     canonical = post.substackUrl;
   } else {
-    canonical = `/log/${slug}`;
+    canonical = url;
   }
 
   return {
     title: post.title,
     description,
-    alternates: { canonical },
+    alternates: {
+      canonical,
+      languages: { en: url, 'x-default': url },
+    },
     openGraph: {
       title: post.title,
       description,
       type: 'article',
       url,
+      siteName: 'Mickel Tech',
+      locale: 'en_US',
       publishedTime: post.publishedAt,
       authors: ['Gordon Mickel'],
+      ...(post.tags?.length ? { tags: [...post.tags] } : {}),
     },
     twitter: {
       card: 'summary_large_image',

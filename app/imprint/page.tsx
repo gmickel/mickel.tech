@@ -7,11 +7,25 @@ export const metadata: Metadata = {
   title: 'Imprint · Mickel Tech',
   description:
     'Imprint and contact details for Mickel Tech, the sole proprietorship of Gordon Mickel based in Binningen, Switzerland.',
+  openGraph: {
+    title: 'Imprint · Mickel Tech',
+    description: 'Legal notice and contact information for Mickel Tech.',
+    url: 'https://mickel.tech/imprint',
+    siteName: 'Mickel Tech',
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Imprint · Mickel Tech',
+    description: 'Legal notice and contact information for Mickel Tech.',
+  },
   alternates: {
     canonical: 'https://mickel.tech/imprint',
     languages: {
       en: 'https://mickel.tech/imprint',
       de: 'https://mickel.tech/de/imprint',
+      'x-default': 'https://mickel.tech/imprint',
     },
   },
   robots: {

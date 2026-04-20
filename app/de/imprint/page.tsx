@@ -7,11 +7,25 @@ export const metadata: Metadata = {
   title: 'Impressum -- Mickel Tech',
   description:
     'Impressum und Kontaktangaben von Mickel Tech, Einzelfirma von Gordon Mickel mit Sitz in Binningen, Schweiz.',
+  openGraph: {
+    title: 'Impressum · Mickel Tech',
+    description: 'Rechtlicher Hinweis und Kontaktinformationen zu Mickel Tech.',
+    url: 'https://mickel.tech/de/imprint',
+    siteName: 'Mickel Tech',
+    locale: 'de_CH',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Impressum · Mickel Tech',
+    description: 'Rechtlicher Hinweis und Kontaktinformationen zu Mickel Tech.',
+  },
   alternates: {
     canonical: 'https://mickel.tech/de/imprint',
     languages: {
       en: 'https://mickel.tech/imprint',
       de: 'https://mickel.tech/de/imprint',
+      'x-default': 'https://mickel.tech/imprint',
     },
   },
   robots: {

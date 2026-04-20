@@ -17,7 +17,7 @@ const APP_DATA = {
 };
 
 export const metadata: Metadata = {
-  title: 'SmartTrim — Fix AI clipboard chaos',
+  title: 'SmartTrim -- Fix AI clipboard chaos',
   description:
     'Lightweight macOS menu bar utility that automatically fixes formatting issues in clipboard text from AI coding assistants.',
   openGraph: {

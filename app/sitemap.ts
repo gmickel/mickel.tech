@@ -2,11 +2,12 @@ import type { MetadataRoute } from 'next';
 
 import { getAppSlugs } from '@/lib/apps';
 import { BENCH_EVALS } from '@/lib/bench-evals';
+import { CASE_STUDIES } from '@/lib/case-studies';
 import { getAllPosts, getTagIndex } from '@/lib/posts';
 
 const siteUrl = 'https://mickel.tech';
 
-// Pages with both EN + DE versions
+// Pages with both EN + DE versions. x-default points to EN by convention.
 const translatedPaths = [
   '',
   '/sdlc',
@@ -18,6 +19,18 @@ const translatedPaths = [
   '/privacy',
 ];
 
+function i18nAlternates(path: string) {
+  const enUrl = `${siteUrl}${path || ''}`;
+  const deUrl = `${siteUrl}/de${path}`;
+  return {
+    languages: {
+      en: enUrl,
+      de: deUrl,
+      'x-default': enUrl,
+    },
+  };
+}
+
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const now = new Date();
   const [posts, tagIndex] = await Promise.all([getAllPosts(), getTagIndex()]);
@@ -27,9 +40,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const i18nPages: MetadataRoute.Sitemap = translatedPaths.flatMap((path) => {
     const enUrl = `${siteUrl}${path || ''}`;
     const deUrl = `${siteUrl}/de${path}`;
-    const alternates = {
-      languages: { en: enUrl, de: deUrl },
-    };
+    const alternates = i18nAlternates(path);
 
     return [
       {
@@ -49,6 +60,31 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ];
   });
 
+  // Case study detail pages (both EN and DE)
+  const caseStudyPages: MetadataRoute.Sitemap = CASE_STUDIES.flatMap(
+    (study) => {
+      const path = `/case-studies/${study.id}`;
+      const alternates = i18nAlternates(path);
+      return [
+        {
+          url: `${siteUrl}${path}`,
+          priority: 0.75,
+          changeFrequency: 'monthly' as const,
+          lastModified: now,
+          alternates,
+        },
+        {
+          url: `${siteUrl}/de${path}`,
+          priority: 0.7,
+          changeFrequency: 'monthly' as const,
+          lastModified: now,
+          alternates,
+        },
+      ];
+    }
+  );
+
+  // Shared EN-only sections (bilingual audience, no DE mirror — /log, /apps).
   const staticPages: MetadataRoute.Sitemap = [
     {
       url: `${siteUrl}/log`,
@@ -100,6 +136,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   return [
     ...i18nPages,
+    ...caseStudyPages,
     ...staticPages,
     ...appPages,
     ...postPages,

@@ -17,7 +17,7 @@ const APP_DATA = {
 };
 
 export const metadata: Metadata = {
-  title: 'Flow — Plan first, work second',
+  title: 'Flow -- Plan first, work second',
   description:
     'Claude Code marketplace plugin for structured development workflow. Research agents, gap analysis, disciplined execution. Most failures come from weak planning. Flow fixes that.',
   openGraph: {

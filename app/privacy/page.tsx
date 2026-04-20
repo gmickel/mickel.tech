@@ -7,11 +7,25 @@ export const metadata: Metadata = {
   title: 'Privacy · Mickel Tech',
   description:
     'Privacy statement for mickel.tech. Data collection, processing, retention and your rights under FADP and GDPR.',
+  openGraph: {
+    title: 'Privacy · Mickel Tech',
+    description: 'Privacy policy and data handling practices for Mickel Tech.',
+    url: 'https://mickel.tech/privacy',
+    siteName: 'Mickel Tech',
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Privacy · Mickel Tech',
+    description: 'Privacy policy and data handling practices for Mickel Tech.',
+  },
   alternates: {
     canonical: 'https://mickel.tech/privacy',
     languages: {
       en: 'https://mickel.tech/privacy',
       de: 'https://mickel.tech/de/privacy',
+      'x-default': 'https://mickel.tech/privacy',
     },
   },
   robots: {

@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   title:
     'Independent Technical Expert: Parteigutachten, Acceptance, AI/Tech DD',
   description:
-    'ITDR-listed independent technical expert. Parteigutachten for counsel and arbitration, Werkvertrags-Gutachten as contractually-named acceptance expert, AI and technology due diligence for investors and boards. 20+ years engineering. DE / EN. Binningen, Switzerland.',
+    'ITDR-listed technical expert. Parteigutachten for counsel and arbitration, Werkvertrags-Gutachten as named acceptance expert, AI/tech due diligence for boards. DE / EN.',
   keywords: [
     'Parteigutachter',
     'Parteigutachten',
@@ -53,6 +53,7 @@ export const metadata: Metadata = {
     languages: {
       en: 'https://mickel.tech/expert',
       de: 'https://mickel.tech/de/expert',
+      'x-default': 'https://mickel.tech/expert',
     },
   },
 };

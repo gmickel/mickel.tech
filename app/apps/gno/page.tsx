@@ -17,7 +17,7 @@ const APP_DATA = {
 };
 
 export const metadata: Metadata = {
-  title: 'GNO — Local search + hosted publishing for your second brain',
+  title: 'GNO -- Local search + hosted publishing for your second brain',
   description:
     'Two-layer knowledge stack. Local hybrid search (BM25 + vectors + reranking, MCP server, Web UI). Hosted publishing at gno.sh for notes and collections as polished reading surfaces.',
   openGraph: {

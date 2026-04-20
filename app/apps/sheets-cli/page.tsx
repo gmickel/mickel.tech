@@ -17,7 +17,7 @@ const APP_DATA = {
 };
 
 export const metadata: Metadata = {
-  title: 'sheets-cli — Google Sheets for humans and agents',
+  title: 'sheets-cli -- Google Sheets for humans and agents',
   description:
     'Fast, deterministic CLI for Google Sheets. Key-based updates, batch operations, JSON I/O. Installs as a skill for Claude Code and OpenAI Codex.',
   openGraph: {

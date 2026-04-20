@@ -27,7 +27,7 @@ export function personSchema() {
     image: `${BASE_URL}/portraits/gordon-mickel.jpg`,
     sameAs: [
       'https://github.com/gmickel',
-      'https://twitter.com/gmickel',
+      'https://x.com/gmickel',
       'https://linkedin.com/in/gmickel',
       'https://itdr.ch/en/experts/expert-details/36/gordon-mickel.html',
     ],
@@ -114,7 +114,8 @@ export function professionalServiceSchema() {
               },
               priceSpecification: {
                 '@type': 'PriceSpecification',
-                price: '3000',
+                minPrice: '3000',
+                maxPrice: '5000',
                 priceCurrency: 'CHF',
               },
             },
@@ -186,7 +187,8 @@ export function professionalServiceSchema() {
               },
               priceSpecification: {
                 '@type': 'PriceSpecification',
-                price: '3000',
+                minPrice: '3000',
+                maxPrice: '5000',
                 priceCurrency: 'CHF',
               },
             },
@@ -251,17 +253,51 @@ export function articleSchema(post: {
   title: string;
   summary?: string;
   publishedAt: string;
+  updatedAt?: string;
   slug: string;
+  /** Optional cover image URL (absolute or /relative). */
+  image?: string;
+  /** Optional comma-separated tags. */
+  tags?: readonly string[];
 }) {
+  const canonical = `${BASE_URL}/log/${post.slug}`;
+  // Next.js opengraph-image.tsx generates the OG image at
+  // /log/{slug}/opengraph-image. Use that as a sensible default.
+  const ogImageUrl = `${BASE_URL}/log/${post.slug}/opengraph-image`;
+  const resolveImage = (img?: string) => {
+    if (!img) {
+      return ogImageUrl;
+    }
+    if (img.startsWith('http')) {
+      return img;
+    }
+    return `${BASE_URL}${img}`;
+  };
+  const imageUrl = resolveImage(post.image);
   return {
     '@context': 'https://schema.org',
     '@type': 'Article',
     headline: post.title,
     description: post.summary ?? '',
     datePublished: post.publishedAt,
-    author: { '@type': 'Person', name: 'Gordon Mickel' },
-    publisher: { '@type': 'Person', name: 'Gordon Mickel' },
-    url: `${BASE_URL}/log/${post.slug}`,
+    dateModified: post.updatedAt ?? post.publishedAt,
+    author: {
+      '@type': 'Person',
+      '@id': `${BASE_URL}#person`,
+      name: 'Gordon Mickel',
+      url: BASE_URL,
+    },
+    publisher: {
+      '@type': 'Person',
+      '@id': `${BASE_URL}#person`,
+      name: 'Gordon Mickel',
+      url: BASE_URL,
+    },
+    url: canonical,
+    mainEntityOfPage: { '@type': 'WebPage', '@id': canonical },
+    image: imageUrl,
+    ...(post.tags?.length ? { keywords: post.tags.join(', ') } : {}),
+    inLanguage: 'en',
   };
 }
 
@@ -273,7 +309,31 @@ export function softwareAppSchema(app: {
   version?: string;
   operatingSystem?: string;
   programmingLanguage?: string;
+  /**
+   * Pricing. Omit for commercial apps without a public price; set
+   * { price: '0', currency: 'USD' } for free / open-source. Setting
+   * `commercial: true` tags the app as "commercial" without an offer.
+   */
+  offer?: { price: string; currency: string } | 'commercial' | 'free';
 }) {
+  const offerBlock = (() => {
+    if (app.offer === 'commercial' || app.offer === undefined) {
+      return {};
+    }
+    if (app.offer === 'free') {
+      return {
+        offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+      };
+    }
+    return {
+      offers: {
+        '@type': 'Offer',
+        price: app.offer.price,
+        priceCurrency: app.offer.currency,
+      },
+    };
+  })();
+
   return {
     '@context': 'https://schema.org',
     '@type': 'SoftwareApplication',
@@ -286,8 +346,12 @@ export function softwareAppSchema(app: {
     ...(app.programmingLanguage && {
       programmingLanguage: app.programmingLanguage,
     }),
-    author: { '@type': 'Person', name: 'Gordon Mickel' },
-    offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+    author: {
+      '@type': 'Person',
+      '@id': `${BASE_URL}#person`,
+      name: 'Gordon Mickel',
+    },
+    ...offerBlock,
   };
 }
 
@@ -303,6 +367,119 @@ export function faqSchema(faqs: Array<{ question: string; answer: string }>) {
         text: faq.answer,
       },
     })),
+  };
+}
+
+/**
+ * Blog / CollectionPage schema for /log and /log/tag/[tag].
+ * Declares the page as a blog listing and links to recent posts.
+ */
+export function blogSchema(posts: {
+  url: string;
+  name: string;
+  description?: string;
+  items: Array<{ slug: string; title: string; publishedAt: string }>;
+}) {
+  const pageUrl = posts.url.startsWith('http')
+    ? posts.url
+    : `${BASE_URL}${posts.url}`;
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Blog',
+    '@id': pageUrl,
+    name: posts.name,
+    ...(posts.description && { description: posts.description }),
+    url: pageUrl,
+    author: {
+      '@type': 'Person',
+      '@id': `${BASE_URL}#person`,
+      name: 'Gordon Mickel',
+    },
+    publisher: {
+      '@type': 'Person',
+      '@id': `${BASE_URL}#person`,
+      name: 'Gordon Mickel',
+    },
+    inLanguage: 'en',
+    blogPost: posts.items.map((item) => ({
+      '@type': 'BlogPosting',
+      headline: item.title,
+      url: `${BASE_URL}/log/${item.slug}`,
+      datePublished: item.publishedAt,
+    })),
+  };
+}
+
+/**
+ * ItemList schema. Generic list container for archive/index pages
+ * (/apps, /case-studies). Each item has position + name + url.
+ */
+export function itemListSchema(list: {
+  name: string;
+  url: string;
+  items: Array<{ name: string; url: string; description?: string }>;
+}) {
+  const pageUrl = list.url.startsWith('http')
+    ? list.url
+    : `${BASE_URL}${list.url}`;
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: list.name,
+    url: pageUrl,
+    itemListElement: list.items.map((item, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      name: item.name,
+      url: item.url.startsWith('http') ? item.url : `${BASE_URL}${item.url}`,
+      ...(item.description && { description: item.description }),
+    })),
+  };
+}
+
+/**
+ * Case study schema. Uses Schema.org Article with `about` pointing to
+ * the client entity; includes result metric as `abstract`. Google
+ * indexes this as an Article rich result.
+ */
+export function caseStudySchema(study: {
+  id: string;
+  title: string;
+  client: string;
+  problem: string;
+  outcome: string;
+  url: string;
+  publishedAt?: string;
+  locale: 'en' | 'de';
+}) {
+  const canonical = study.url.startsWith('http')
+    ? study.url
+    : `${BASE_URL}${study.url}`;
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    '@id': canonical,
+    headline: study.title,
+    description: study.outcome,
+    abstract: study.problem,
+    url: canonical,
+    mainEntityOfPage: { '@type': 'WebPage', '@id': canonical },
+    about: {
+      '@type': 'Organization',
+      name: study.client,
+    },
+    author: {
+      '@type': 'Person',
+      '@id': `${BASE_URL}#person`,
+      name: 'Gordon Mickel',
+    },
+    publisher: {
+      '@type': 'Person',
+      '@id': `${BASE_URL}#person`,
+      name: 'Gordon Mickel',
+    },
+    inLanguage: study.locale,
+    ...(study.publishedAt && { datePublished: study.publishedAt }),
   };
 }
 

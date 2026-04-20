@@ -21,7 +21,7 @@ import {
 export const metadata: Metadata = {
   title: 'AI Systems & Transformation: Process-first, Production-grade',
   description:
-    'AI systems that run your business, not just demo well. Process-first audit, production system build, fractional AI lead. Agents that hold up in real operations, knowledge platforms, voice, sovereign and private LLM infrastructure. CHF 15k audit, CHF 40-150k system build. Binningen, DE / EN.',
+    'AI systems that run your business, not just demo well. Process-first audit (CHF 15k), production build (CHF 40-150k). Agents, RAG, voice, sovereign LLMs. DE / EN.',
   keywords: [
     'AI transformation Switzerland',
     'AI Beratung Schweiz',
@@ -63,6 +63,7 @@ export const metadata: Metadata = {
     languages: {
       en: 'https://mickel.tech/ai-transformation',
       de: 'https://mickel.tech/de/ai-transformation',
+      'x-default': 'https://mickel.tech/ai-transformation',
     },
   },
 };

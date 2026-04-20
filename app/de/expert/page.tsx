@@ -49,6 +49,7 @@ export const metadata: Metadata = {
     languages: {
       en: 'https://mickel.tech/expert',
       de: 'https://mickel.tech/de/expert',
+      'x-default': 'https://mickel.tech/expert',
     },
   },
 };

@@ -19,7 +19,7 @@ import {
 export const metadata: Metadata = {
   title: 'Agentic PDLC: From Requirements to Autonomous Delivery',
   description:
-    'Agentic PDLC is a re-architecture of how product gets built. From requirements engineering to spec-driven, agent-assisted delivery, eval-gated and cross-model reviewed. L0-L4 maturity model. Diagnostic from CHF 15k. Author of FlowNext, founder of MergeFoundry.',
+    'Agentic PDLC: spec-driven, agent-assisted delivery with eval gates and cross-model review. L0-L4 maturity model. 2-week diagnostic from CHF 15k. Author of FlowNext.',
   keywords: [
     'Agentic PDLC',
     'AI-native PDLC',
@@ -51,6 +51,7 @@ export const metadata: Metadata = {
     languages: {
       en: 'https://mickel.tech/sdlc',
       de: 'https://mickel.tech/de/sdlc',
+      'x-default': 'https://mickel.tech/sdlc',
     },
   },
 };

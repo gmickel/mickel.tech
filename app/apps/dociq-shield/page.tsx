@@ -17,7 +17,7 @@ const APP_DATA = {
 };
 
 export const metadata: Metadata = {
-  title: 'DocIQ Shield — Zero-persistence anonymisation',
+  title: 'DocIQ Shield -- Zero-persistence anonymisation',
   description:
     'Fine-tuned local NER + LLM models. Full Swiss court standard compliance. 10 seconds instead of 2 hours. No data stored, ever.',
   openGraph: {

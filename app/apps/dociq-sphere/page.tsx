@@ -18,7 +18,7 @@ const APP_DATA = {
 };
 
 export const metadata: Metadata = {
-  title: 'DocIQ Sphere — AI that actually edits your Word documents',
+  title: 'DocIQ Sphere -- AI that actually edits your Word documents',
   description:
     'Tracked changes, legal research across six databases, clause negotiation, playbooks, data rooms, and complete audit trails. Swiss-engineered.',
   openGraph: {

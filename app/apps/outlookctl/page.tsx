@@ -17,7 +17,7 @@ const APP_DATA = {
 };
 
 export const metadata: Metadata = {
-  title: 'outlookctl — Control Outlook from the command line',
+  title: 'outlookctl -- Control Outlook from the command line',
   description:
     'Local CLI bridge for Outlook Classic automation on Windows via COM. AI-assisted email and calendar management with Claude Code. No API keys, no OAuth.',
   openGraph: {
