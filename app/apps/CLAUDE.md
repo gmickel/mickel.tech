@@ -1,5 +1,12 @@
 # Apps Section SEO Rules
 
+> See root `CLAUDE.md` for site-wide rules (atelier design, copy, pSEO,
+> bilingual strategy, dev workflow). `/apps` is an **EN-only shared
+> route** — do not create `/de/apps/*` shadows. All app detail pages
+> use `AtelierAppHero` + `AtelierAppSection` from
+> `components/atelier/`. Page titles must not contain em-dashes (`—`);
+> use `--`.
+
 ## Adding a New App
 
 ### 1. Registry Entry
@@ -14,16 +21,27 @@ Add to `lib/apps.ts`:
   description: 'One-sentence description for cards and meta.',
   category: 'DeveloperApplication', // or BusinessApplication
   tags: ['Tag1', 'Tag2', 'Open Source'],
-  image: '/my-app/screenshot.png', // optional
-  status: 'Released', // or 'Coming Soon', date, etc.
+  image: '/my-app/screenshot.png',
+  imageKind: 'logo',  // 'logo' (square mark on graphite tile) or 'shot' (screenshot)
+  status: 'Released', // or 'Coming Soon', 'In Production', date, etc.
 }
 ```
 
+`imageKind: 'logo'` is drawn inside a dark graphite tile at contained
+size (white-stroke logos read well on the dark background). `'shot'`
+is object-cover in a graphite-backed frame for screenshots.
+
 ### 2. Page Structure
 
-Create `app/apps/[slug]/page.tsx` with:
+Copy `app/apps/smarttrim/page.tsx` as your template. The shape:
 
 ```tsx
+import AtelierAppHero from '@/components/atelier/app-hero';
+import AtelierAppSection, {
+  AtelierFeatureGrid,
+  AtelierSpecList,
+} from '@/components/atelier/app-section';
+import AtelierShell from '@/components/layout/atelier-shell';
 import { breadcrumbSchema, JsonLd, softwareAppSchema } from '@/lib/json-ld';
 
 const APP_DATA = {
@@ -34,20 +52,30 @@ const APP_DATA = {
 };
 
 export const metadata: Metadata = {
-  title: 'My App — Tagline',
-  description: 'Meta description',
-  openGraph: { /* ... */ },
-  twitter: { /* ... */ },
+  title: 'My App -- Tagline',            // -- not — (em-dash); Gordon's rule.
+  description: '150-160 chars, benefit-led.',
+  openGraph: { title, description, url, siteName: 'Mickel Tech', locale: 'en_US', type: 'website' },
+  twitter: { card: 'summary_large_image', title, description },
   alternates: { canonical: 'https://mickel.tech/apps/my-app' },
 };
 
 // In component:
-<JsonLd data={softwareAppSchema(APP_DATA)} />
-<JsonLd data={breadcrumbSchema([
-  { name: 'Apps', url: '/apps' },
-  { name: 'My App', url: '/apps/my-app' },
-])} />
+<AtelierShell>
+  <JsonLd data={softwareAppSchema({ ...APP_DATA, offer: 'commercial' })} />
+  <JsonLd data={breadcrumbSchema([
+    { name: 'Apps', url: '/apps' },
+    { name: 'My App', url: '/apps/my-app' },
+  ])} />
+  <AtelierAppHero idx="NN" category="NN / Category" {...} />
+  <AtelierAppSection eyebrow="01 / Problem" title="..." lede="...">
+    <AtelierFeatureGrid items={[...]} />
+  </AtelierAppSection>
+</AtelierShell>
 ```
+
+`softwareAppSchema.offer`: use `'commercial'` for DocIQ Sphere / Shield,
+`'free'` for open-source CLIs, `{ price, currency }` for a named price.
+**Never omit intentionally — the default treats it as commercial.**
 
 ### 3. OG Image
 
@@ -70,22 +98,20 @@ export default function OGImage() {
 
 Automatic via `getAppSlugs()` in `app/sitemap.ts`.
 
-## Color Themes
+## Colour themes (legacy)
 
-Each app should have a distinct accent color:
-
-| App | Accent | Hex |
-|-----|--------|-----|
-| SmartTrim | Amber | `#FFB432` |
-| DocIQ family | Amber/Gold | `#d97706` |
-| outlookctl | Blue | `#3b82f6` |
-| Flow | Violet | `#8b5cf6` |
+The atelier uses a single rust accent across ALL app pages. Per-app
+accent colours (amber, cyan, violet) belonged to the cyberpunk shell
+and are no longer used. Do not reintroduce them.
 
 ## Checklist
 
-- [ ] Entry in `lib/apps.ts`
-- [ ] Page with metadata + JSON-LD breadcrumbs + softwareAppSchema
-- [ ] OG image with edge runtime
-- [ ] Distinct color theme
-- [ ] Links back to `/apps` and `/`
+- [ ] Entry in `lib/apps.ts` with `imageKind` set
+- [ ] Page uses `AtelierShell` + `AtelierAppHero` + `AtelierAppSection`
+- [ ] Metadata: title (`--` not `—`), 150-160 char description, OG,
+      Twitter, absolute canonical
+- [ ] JSON-LD: breadcrumbs + softwareAppSchema (with correct `offer`)
+- [ ] OG image route (`opengraph-image.tsx`) with edge runtime
+- [ ] Internal links use `SmartLink` (not raw `<a>`)
+- [ ] Sitemap auto-picks up via `getAppSlugs()`
 - [ ] Practical tone, no hyperbole

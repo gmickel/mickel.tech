@@ -1,5 +1,11 @@
 # Blog (Log) SEO Rules
 
+> See root `CLAUDE.md` for site-wide rules (atelier design, copy, pSEO,
+> bilingual strategy, dev workflow). `/log` is an **EN-only shared
+> route** — do not create `/de/log/*` shadows; the nav under `/de/*`
+> links directly to `/log` because blog content is naturally English
+> for a bilingual Swiss audience.
+
 ## Adding New Blog Posts
 
 Posts live in `content/posts/` as `.mdx` files.
