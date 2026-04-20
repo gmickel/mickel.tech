@@ -1,6 +1,13 @@
-<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <circle cx="14" cy="14" r="10" stroke="#ffffff" stroke-width="2.5" fill="none"/>
-  <path d="M21.5 21.5L28 28" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round"/>
-  <circle cx="14" cy="14" r="5" stroke="#22d3ee" stroke-width="1.5" fill="none" opacity="0.6"/>
-  <path d="M11 14h6M14 11v6" stroke="#22d3ee" stroke-width="1.5" stroke-linecap="round"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" fill="none">
+  <defs>
+    <linearGradient id="gno-logo-gradient" x1="12" y1="8" x2="54" y2="58" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#d08a3c" />
+      <stop offset="1" stop-color="#8a4a1a" />
+    </linearGradient>
+  </defs>
+  <rect x="6" y="6" width="52" height="52" rx="14" fill="url(#gno-logo-gradient)" />
+  <path
+    fill="#fff8ef"
+    d="M35.619 18.694c3.546 0 6.03 1.43 7.688 3.536l-2.944 2.297c-1.11-1.396-2.63-2.459-4.934-2.459-3.93 0-6.705 3.158-6.705 7.361 0 4.316 2.719 7.418 6.919 7.418 1.71 0 3.305-.51 4.284-1.396V32.1h-5.377v-3.289h9.194v8.053c-2.126 2.354-5.126 3.354-8.51 3.354-6.198 0-10.407-4.422-10.407-10.789 0-6.39 4.483-10.735 10.792-10.735Z"
+  />
 </svg>

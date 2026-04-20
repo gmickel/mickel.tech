@@ -250,6 +250,43 @@
     background: hsl(var(--ink) / 0.18);
   }
 
+  /* Mono utility — JetBrains Mono with tight tracking */
+  .atelier-mono {
+    font-family: var(--font-mono), ui-monospace, monospace;
+    font-feature-settings: "ss01", "ss02", "cv01";
+  }
+
+  /* Codex code-block panel — graphite-inverted slide on cream */
+  .codex-panel {
+    background: hsl(var(--graphite));
+    border-radius: 2px;
+    overflow: hidden;
+    position: relative;
+    box-shadow:
+      0 1px 0 hsl(var(--ink) / 0.08),
+      0 8px 28px -12px hsl(var(--ink) / 0.2);
+  }
+  .codex-panel::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 2px;
+    width: 48px;
+    background: hsl(var(--rust));
+  }
+  .codex-panel__bar {
+    padding: 0.6rem 1.1rem 0.3rem;
+    border-bottom: 1px solid hsl(var(--paper) / 0.06);
+  }
+  .codex-panel__dot {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: hsl(var(--paper) / 0.24);
+  }
+
   /* Atelier link styling on dark */
   .atelier-link {
     color: hsl(var(--paper));
@@ -584,5 +621,60 @@
       linear-gradient(to bottom, rgba(0, 229, 255, 0.03) 1px, transparent 1px);
     background-size: 16px 16px;
     mix-blend-mode: screen;
+  }
+}
+
+/* ---------- Cross-document view transitions ---------- */
+/* Native browser API (Chromium 111+, Safari 18+). Graceful fallback elsewhere. */
+@view-transition {
+  navigation: auto;
+}
+
+/* biome-ignore lint/correctness/noUnknownTypeSelector: CSS view transitions pseudo-elements */
+::view-transition-old(root),
+/* biome-ignore lint/correctness/noUnknownTypeSelector: CSS view transitions pseudo-elements */
+  ::view-transition-new(root) {
+  animation-duration: 320ms;
+  animation-timing-function: cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+/* biome-ignore lint/correctness/noUnknownTypeSelector: CSS view transitions pseudo-elements */
+::view-transition-old(root) {
+  animation-name: atelier-fade-out;
+}
+
+/* biome-ignore lint/correctness/noUnknownTypeSelector: CSS view transitions pseudo-elements */
+::view-transition-new(root) {
+  animation-name: atelier-fade-in;
+}
+
+@keyframes atelier-fade-out {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+}
+
+@keyframes atelier-fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  /* biome-ignore lint/correctness/noUnknownTypeSelector: CSS view transitions pseudo-elements */
+  ::view-transition-old(root),
+  /* biome-ignore lint/correctness/noUnknownTypeSelector: CSS view transitions pseudo-elements */
+    ::view-transition-new(root) {
+    animation: none !important;
   }
 }

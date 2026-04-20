@@ -1,154 +1,13 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import Shell from '@/components/layout/shell';
-import { Badge } from '@/components/ui/badge';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import AtelierAppHero from '@/components/atelier/app-hero';
+import AtelierAppSection, {
+  AtelierFeatureGrid,
+  AtelierSpecList,
+} from '@/components/atelier/app-section';
+import AtelierShell from '@/components/layout/atelier-shell';
 import { ImageLightbox } from '@/components/ui/image-lightbox';
-import { Separator } from '@/components/ui/separator';
 import { breadcrumbSchema, JsonLd, softwareAppSchema } from '@/lib/json-ld';
-
-export const metadata: Metadata = {
-  title: 'DocIQ Sphere: AI Document Intelligence for Legal Teams',
-  description:
-    'AI that actually edits your Word documents. Tracked changes, legal research across six databases, clause negotiation, playbooks, data rooms, and complete audit trails. Swiss-engineered.',
-  openGraph: {
-    title: 'DocIQ Sphere: AI Document Intelligence for Legal Teams',
-    description:
-      'AI that actually edits your Word documents. Tracked changes, legal research, clause negotiation, playbooks, data rooms. Swiss-engineered.',
-    type: 'website',
-    url: 'https://mickel.tech/apps/dociq-sphere',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'DocIQ Sphere: AI Document Intelligence for Legal Teams',
-    description:
-      'AI that edits your actual DOCX. Tracked changes, six legal databases, playbooks, data rooms. Swiss-engineered.',
-  },
-  alternates: {
-    canonical: 'https://mickel.tech/apps/dociq-sphere',
-  },
-};
-
-const valueProps = [
-  {
-    title: 'Word-Native Tracked Changes',
-    description:
-      "ChatGPT and Claude destroy your formatting. Sphere doesn't. Atomic OOXML operations preserve every detail (numbering, styles, tables, cross-references), even in 200-page contracts. AI edits appear as tracked changes you accept or reject in Word.",
-    icon: '📄',
-  },
-  {
-    title: 'Legal Research (6 Databases)',
-    description:
-      'Fedlex (Swiss Federal Law), Entscheidsuche (BGE citations), EUR-Lex, CJEU, HUDOC, and Swiss legal commentary. Natural language or exact citation lookups via official government APIs. Deep Research synthesizes multi-source analysis.',
-    icon: '🔍',
-  },
-  {
-    title: 'AI Playbooks',
-    description:
-      'Reusable AI workflows that encode institutional expertise. GDPR DPA Review, NDA Risk Assessment, IP Ownership Review, SLA Analysis, Key Terms Extraction, Risk Red Flags, and more. Auto-trigger on upload. Prompts protected; your team runs them without seeing analysis logic.',
-    icon: '📚',
-  },
-  {
-    title: 'Clause Bank & Negotiation',
-    description:
-      'Save reusable clauses tagged by type and jurisdiction. Hybrid semantic + keyword search. Generate 2-4 clause variants at different favor levels for negotiation (protective, balanced, concessive), each with explanations. Usage tracking surfaces popular clauses.',
-    icon: '⚖️',
-  },
-  {
-    title: 'Secure Data Rooms',
-    description:
-      'M&A due diligence, regulatory submissions, client collaboration. Granular role-based access (Viewer, Collaborator, Editor, Admin). Auto-extraction playbooks on upload. Immutable audit trail for every action: access, download, view, with IP and user agent.',
-    icon: '🏢',
-  },
-  {
-    title: 'Complete Audit Trail',
-    description:
-      'Every AI interaction logged: agent runs, tool calls, reasoning chains, token usage. Every data room action tracked. Document and playbook version history with full rollback. Admin audit exports as structured JSON for compliance evidence.',
-    icon: '📋',
-  },
-  {
-    title: 'Web Intelligence',
-    description:
-      'Search the web for real-time information: companies, legal developments, market conditions. Deep Research mode runs a multi-step research agent synthesizing comprehensive reports from multiple sources.',
-    icon: '🌐',
-  },
-  {
-    title: 'Privacy-First Architecture',
-    description:
-      'Swiss-hosted infrastructure. Multi-tenant isolation. Encryption at rest and in transit. GDPR and Swiss FADP compliant. On-premises deployment available for complete data sovereignty; no external network dependencies.',
-    icon: '🔒',
-  },
-];
-
-const playbooks = [
-  {
-    name: 'GDPR Compliance Check',
-    desc: 'Sub-processor lists, audit rights, cross-border transfers',
-  },
-  { name: 'NDA Risk Assessment', desc: 'Non-standard and one-sided clauses' },
-  { name: 'IP Ownership Review', desc: 'Assignment, licensing, background IP' },
-  {
-    name: 'SLA Analysis',
-    desc: 'Uptime commitments, penalty mechanisms, exclusions',
-  },
-  {
-    name: 'Key Terms Extraction',
-    desc: 'Parties, dates, obligations, termination triggers',
-  },
-  {
-    name: 'Risk Red Flag Analysis',
-    desc: 'Liability, indemnity, limitation gaps',
-  },
-  {
-    name: 'Financial Data Extraction',
-    desc: 'Payment terms, caps, escalation clauses',
-  },
-  {
-    name: 'Document Classifier',
-    desc: 'Auto-categorize document type and jurisdiction',
-  },
-];
-
-const audiences = [
-  {
-    title: 'Corporate Legal & RegTech',
-    description:
-      'Review vendor agreements, extract terms at scale, manage compliance obligations. Auto-Playbooks run on every upload. REST API and MCP server integrate Sphere into existing workflows.',
-  },
-  {
-    title: 'Law Firms & Notaries',
-    description:
-      'Cross-border M&A, commercial contracts, regulatory filings. Playbooks encode firm expertise; run consistent reviews without exposing prompt logic. Data rooms enable secure counterparty collaboration.',
-  },
-  {
-    title: 'Private Equity & Investors',
-    description:
-      'Due diligence data rooms with granular access control and full audit trails. Bulk-extract key terms, obligations, and risk flags across deal libraries. Clause comparison across portfolio companies.',
-  },
-  {
-    title: 'Compliance & Risk Officers',
-    description:
-      'GDPR gap analysis, policy reviews, regulatory tracking. Bulk extraction flags issues across entire document libraries. Defensible processes with complete audit trails.',
-  },
-  {
-    title: 'Knowledge Management',
-    description:
-      'Build searchable document libraries with hybrid semantic + keyword search. Templates, clause banks, and institutional knowledge accessible across all matters.',
-  },
-];
-
-const techSpecs = [
-  { label: 'Frontend', value: 'Next.js 16 + React 19' },
-  { label: 'Backend', value: 'Convex (TypeScript)' },
-  { label: 'Document Engine', value: 'Python + OOXML' },
-  { label: 'AI Models', value: 'Model-agnostic (Claude, GPT-4, Gemini)' },
-  {
-    label: 'Legal Sources',
-    value: 'Fedlex, EUR-Lex, BGE, CJEU, ECHR, Commentary',
-  },
-  { label: 'Compliance', value: 'GDPR, FADP, ZertES' },
-  { label: 'Deployment', value: 'Cloud, On-Premise, Air-Gapped' },
-];
 
 const APP_DATA = {
   name: 'DocIQ Sphere',
@@ -158,9 +17,136 @@ const APP_DATA = {
   category: 'BusinessApplication',
 };
 
+export const metadata: Metadata = {
+  title: 'DocIQ Sphere — AI that actually edits your Word documents',
+  description:
+    'Tracked changes, legal research across six databases, clause negotiation, playbooks, data rooms, and complete audit trails. Swiss-engineered.',
+  openGraph: {
+    title: 'DocIQ Sphere · Mickel Tech',
+    description:
+      'AI that edits your actual DOCX. Six legal databases, playbooks, data rooms. Swiss-engineered.',
+    type: 'website',
+    url: 'https://mickel.tech/apps/dociq-sphere',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'DocIQ Sphere · Mickel Tech',
+    description: 'Tracked changes, six legal databases, playbooks, data rooms.',
+  },
+  alternates: { canonical: 'https://mickel.tech/apps/dociq-sphere' },
+};
+
+const capabilities = [
+  {
+    title: 'Word-native tracked changes',
+    description:
+      'Atomic OOXML operations preserve numbering, styles, tables, cross-references, even in 200-page contracts. AI edits land as tracked changes to accept or reject.',
+  },
+  {
+    title: 'Legal research (6 databases)',
+    description:
+      'Fedlex, Entscheidsuche (BGE), EUR-Lex, CJEU, HUDOC, and Swiss commentary. Natural language or exact citations via official government APIs.',
+  },
+  {
+    title: 'AI playbooks',
+    description:
+      'Reusable workflows encoding institutional expertise. Auto-trigger on upload. Prompts protected; team runs them without seeing analysis logic.',
+  },
+  {
+    title: 'Clause bank + negotiation',
+    description:
+      'Reusable clauses tagged by type + jurisdiction. Hybrid semantic + keyword search. Generate 2-4 variants at protective / balanced / concessive levels.',
+  },
+  {
+    title: 'Secure data rooms',
+    description:
+      'M&A, regulatory, client collaboration. Role-based access (Viewer, Collaborator, Editor, Admin). Immutable audit trail with IP and user agent.',
+  },
+  {
+    title: 'Complete audit trail',
+    description:
+      'Every AI run, tool call, reasoning chain, token count logged. Data room actions tracked. Version history with full rollback.',
+  },
+  {
+    title: 'Web intelligence',
+    description:
+      'Real-time company, legal, and market searches. Deep Research synthesises multi-source reports.',
+  },
+  {
+    title: 'Privacy-first',
+    description:
+      'Swiss-hosted infrastructure. Multi-tenant isolation. GDPR + FADP compliant. On-premises for full data sovereignty.',
+  },
+];
+
+const playbooks = [
+  {
+    title: 'GDPR Compliance Check',
+    description: 'Sub-processor lists, audit rights, cross-border transfers.',
+  },
+  {
+    title: 'NDA Risk Assessment',
+    description: 'Non-standard and one-sided clauses.',
+  },
+  {
+    title: 'IP Ownership Review',
+    description: 'Assignment, licensing, background IP.',
+  },
+  { title: 'SLA Analysis', description: 'Uptime, penalties, exclusions.' },
+  {
+    title: 'Key Terms Extraction',
+    description: 'Parties, dates, obligations, termination.',
+  },
+  {
+    title: 'Risk Red Flag Analysis',
+    description: 'Liability, indemnity, limitation gaps.',
+  },
+  {
+    title: 'Financial Data Extraction',
+    description: 'Payment terms, caps, escalation.',
+  },
+  {
+    title: 'Document Classifier',
+    description: 'Auto-categorise type and jurisdiction.',
+  },
+];
+
+const audiences = [
+  {
+    title: 'Corporate Legal + RegTech',
+    description:
+      'Review vendor agreements, extract at scale, manage compliance. Auto-playbooks on every upload; REST + MCP for workflow integration.',
+  },
+  {
+    title: 'Law Firms + Notaries',
+    description:
+      'Cross-border M&A, commercial contracts, regulatory filings. Playbooks encode firm expertise without exposing prompt logic.',
+  },
+  {
+    title: 'Private Equity',
+    description:
+      'Due diligence data rooms with granular access and audit trails. Bulk extraction across deal libraries.',
+  },
+  {
+    title: 'Compliance + Risk',
+    description:
+      'GDPR gap analysis, policy review, regulatory tracking. Defensible processes with full audit.',
+  },
+];
+
+const specs = [
+  { label: 'Frontend', value: 'Next.js 16 + React 19' },
+  { label: 'Backend', value: 'Convex (TypeScript)' },
+  { label: 'Doc engine', value: 'Python + OOXML' },
+  { label: 'AI models', value: 'Model-agnostic' },
+  { label: 'Legal sources', value: 'Fedlex, EUR-Lex, BGE, CJEU, ECHR' },
+  { label: 'Compliance', value: 'GDPR, FADP, ZertES' },
+  { label: 'Deployment', value: 'Cloud, On-Prem, Air-Gapped' },
+];
+
 export default function DocIQSpherePage() {
   return (
-    <Shell>
+    <AtelierShell>
       <JsonLd data={softwareAppSchema(APP_DATA)} />
       <JsonLd
         data={breadcrumbSchema([
@@ -168,381 +154,161 @@ export default function DocIQSpherePage() {
           { name: 'DocIQ Sphere', url: '/apps/dociq-sphere' },
         ])}
       />
-      <div className="relative cursor-auto overflow-hidden">
-        {/* Ambient glow - teal/indigo for Sphere brand */}
-        <div
-          aria-hidden
-          className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_10%,rgba(20,184,166,0.08),transparent_30%),radial-gradient(circle_at_80%_20%,rgba(99,102,241,0.06),transparent_25%),radial-gradient(circle_at_50%_80%,rgba(20,184,166,0.05),transparent_30%)]"
+
+      <AtelierAppHero
+        category="03 / Legal tech"
+        description="Sphere edits your actual DOCX. Tracked changes, six legal databases, clause negotiation, playbooks, and secure data rooms, all inside the document. Every AI interaction auditable. Every edit traceable to the prompt that produced it. Model-agnostic: uses Claude, GPT, or Gemini, selected optimally per task."
+        idx="03"
+        image="/sphere/sphere-research.png"
+        imageKind="shot"
+        meta={[
+          { label: 'Released', value: 'Feb 2026' },
+          { label: 'Hosted', value: 'Switzerland' },
+          { label: 'Compliance', value: 'GDPR + FADP' },
+        ]}
+        name="DocIQ Sphere"
+        primaryCta={{
+          label: 'dociq.io/sphere',
+          href: 'https://www.dociq.io/sphere',
+          external: true,
+        }}
+        secondaryCta={{ label: 'Book a demo', href: 'mailto:gordon@dociq.io' }}
+        status="Released"
+        tagline="AI that actually edits your Word documents."
+      />
+
+      <AtelierAppSection
+        accent
+        eyebrow="01 / Problem"
+        lede="Legal professionals spend enormous time on repetitive document tasks. Generic AI tools make it worse."
+        title="AI that destroys your documents."
+      >
+        <AtelierFeatureGrid
+          items={[
+            {
+              title: 'Broken formatting',
+              description:
+                'ChatGPT, Claude, Copilot destroy numbering, styles, tables, tracked changes.',
+            },
+            {
+              title: 'No data sovereignty',
+              description:
+                'US-hosted tools fail Swiss + EU requirements. Where is your data going?',
+            },
+            {
+              title: 'No audit trail',
+              description:
+                "No record of what the AI did and why. Regulators want evidence; you can't provide it.",
+            },
+            {
+              title: 'Generic AI',
+              description:
+                'No legal domain expertise, no firm knowledge, no database access.',
+            },
+          ]}
         />
+      </AtelierAppSection>
 
-        {/* Hero Section */}
-        <section className="relative mx-auto max-w-6xl px-6 pt-12 pb-12 md:px-10">
-          <div className="flex flex-wrap items-center gap-4">
-            <Badge
-              className="border-teal-500/60 bg-teal-500/10 text-teal-400"
-              variant="outline"
-            >
-              LEGAL TECH
-            </Badge>
-            <Badge className="border-white/10 bg-white/5" variant="outline">
-              Enterprise
-            </Badge>
-            <Badge
-              className="border-teal-500/40 bg-teal-500/10 text-teal-400"
-              variant="outline"
-            >
-              Released
-            </Badge>
-          </div>
+      <AtelierAppSection
+        eyebrow="02 / Capabilities"
+        lede="Eight systems, one workspace."
+        title="Core capabilities."
+      >
+        <AtelierFeatureGrid cols={2} items={capabilities} />
+      </AtelierAppSection>
 
-          <div className="mt-6 flex flex-col gap-8 lg:flex-row lg:items-start lg:gap-12">
-            <div className="flex-1">
-              <h1 className="font-bold text-4xl text-white leading-tight md:text-5xl">
-                DocIQ Sphere
-              </h1>
-              <p className="mt-2 font-mono text-teal-400 text-xl">
-                AI that actually edits your Word documents
-              </p>
+      <AtelierAppSection
+        eyebrow="03 / Interface"
+        lede="Matter workspace and data room. AI with live document preview; cross-org collaboration with immutable audit."
+        title="Inside Sphere."
+      >
+        <div className="grid gap-6 md:grid-cols-2">
+          <figure>
+            <ImageLightbox
+              alt="DocIQ Sphere data room interface"
+              caption="Data Rooms: cross-org collaboration with audit trail"
+              className="overflow-hidden border border-[hsl(var(--ink))]/10"
+              height={400}
+              src="/sphere/sphere-dataroom.png"
+              width={600}
+            />
+            <figcaption className="atelier-mono mt-3 text-[10.5px] text-[hsl(var(--paper-muted))] uppercase tracking-[0.14em]">
+              Data rooms · Audit trail
+            </figcaption>
+          </figure>
+          <figure>
+            <ImageLightbox
+              alt="DocIQ Sphere matter workspace"
+              caption="Matter Workspace: AI conversation with live document preview"
+              className="overflow-hidden border border-[hsl(var(--ink))]/10"
+              height={400}
+              src="/sphere/sphere-matter.png"
+              width={600}
+            />
+            <figcaption className="atelier-mono mt-3 text-[10.5px] text-[hsl(var(--paper-muted))] uppercase tracking-[0.14em]">
+              Matter workspace · Live preview
+            </figcaption>
+          </figure>
+        </div>
+      </AtelierAppSection>
 
-              <div className="mt-2 flex flex-wrap gap-3">
-                <Link
-                  className="glow-link font-mono text-[11px] uppercase"
-                  href="/apps"
-                >
-                  ← All Apps
-                </Link>
-                <Separator className="h-4 bg-white/10" orientation="vertical" />
-                <Link
-                  className="glow-link font-mono text-[11px] uppercase"
-                  href="/"
-                >
-                  Main Site
-                </Link>
-              </div>
+      <AtelierAppSection
+        eyebrow="04 / Playbooks"
+        lede="Institutional expertise at AI speed. Custom playbooks via natural language. Auto-trigger on upload. Version history with rollback."
+        title="Ready-made legal workflows."
+      >
+        <AtelierFeatureGrid cols={2} items={playbooks} />
+      </AtelierAppSection>
 
-              <p className="mt-6 max-w-2xl text-lg text-muted-foreground leading-relaxed">
-                Sphere edits your actual DOCX, tracked changes, legal research
-                across six databases, clause negotiation, playbooks, and data
-                rooms. All inside the document. Swiss-engineered for teams who
-                can't compromise on precision.
-              </p>
+      <AtelierAppSection eyebrow="05 / Audience" title="Who it's for.">
+        <AtelierFeatureGrid items={audiences} />
+      </AtelierAppSection>
 
-              <p className="mt-4 text-muted-foreground leading-relaxed">
-                Every AI interaction auditable. Every edit traceable to the
-                exact prompt that created it. Model-agnostic, uses Claude,
-                GPT-4, and Gemini, automatically selecting the optimal model per
-                task.
-              </p>
-
-              {/* Release info */}
-              <div className="mt-8 rounded-xl border border-teal-500/20 bg-teal-500/5 p-4">
-                <p className="font-mono text-sm text-teal-400">
-                  Released February 2026
-                </p>
-                <p className="mt-1 text-muted-foreground text-sm">
-                  Learn more at{' '}
-                  <a
-                    className="glow-link"
-                    href="https://www.dociq.io/sphere"
-                    rel="noopener noreferrer"
-                    target="_blank"
-                  >
-                    dociq.io/sphere
-                  </a>
-                </p>
-              </div>
-            </div>
-
-            {/* Screenshot */}
-            <div className="relative lg:w-[400px]">
-              <ImageLightbox
-                alt="DocIQ Sphere research interface"
-                caption="Research interface with AI-powered analysis"
-                className="overflow-hidden rounded-xl border border-white/10 bg-black/50 shadow-2xl shadow-teal-500/10"
-                height={480}
-                priority
-                src="/sphere/sphere-research.png"
-                width={400}
-              />
-            </div>
-          </div>
-        </section>
-
-        {/* The Problem */}
-        <section className="relative mx-auto max-w-6xl px-6 pb-16 md:px-10">
-          <Card className="border-destructive/20 bg-card/60">
-            <CardHeader className="pb-4">
-              <div className="flex items-center gap-3">
-                <p className="font-mono text-[11px] text-destructive tracking-[0.2em]">
-                  THE PROBLEM
-                </p>
-              </div>
-              <CardTitle className="text-2xl text-white">
-                AI tools that destroy your documents
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-4 text-muted-foreground">
-              <p>
-                Legal professionals spend enormous time on repetitive document
-                tasks. Generic AI tools make it worse:
-              </p>
-              <div className="grid gap-4 sm:grid-cols-2">
-                <div className="rounded-lg border border-white/5 bg-background/60 p-4">
-                  <p className="font-semibold text-white">Broken formatting</p>
-                  <p className="mt-1 text-sm">
-                    ChatGPT, Claude, and Copilot destroy numbering, styles,
-                    tables, and tracked changes. You spend more time fixing than
-                    editing.
-                  </p>
-                </div>
-                <div className="rounded-lg border border-white/5 bg-background/60 p-4">
-                  <p className="font-semibold text-white">
-                    No data sovereignty
-                  </p>
-                  <p className="mt-1 text-sm">
-                    US-hosted tools fail Swiss and EU client requirements. Where
-                    is your data going?
-                  </p>
-                </div>
-                <div className="rounded-lg border border-white/5 bg-background/60 p-4">
-                  <p className="font-semibold text-white">No audit trail</p>
-                  <p className="mt-1 text-sm">
-                    No record of what the AI did and why. Regulators want
-                    evidence. You can't provide it.
-                  </p>
-                </div>
-                <div className="rounded-lg border border-white/5 bg-background/60 p-4">
-                  <p className="font-semibold text-white">Generic AI</p>
-                  <p className="mt-1 text-sm">
-                    No legal domain expertise. No firm-specific knowledge. No
-                    access to legal databases.
-                  </p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-        </section>
-
-        {/* Value Props */}
-        <section className="relative mx-auto max-w-6xl px-6 pb-16 md:px-10">
-          <div className="mb-6 flex items-center gap-3">
-            <p className="font-mono text-[11px] text-primary tracking-[0.2em]">
-              CORE CAPABILITIES
+      <AtelierAppSection eyebrow="06 / Spec" title="Stack + security.">
+        <div className="grid gap-10 md:grid-cols-2">
+          <AtelierSpecList items={specs} />
+          <div className="atelier-body space-y-3 text-[0.98rem] text-[hsl(var(--ink))]/80 leading-[1.65]">
+            <p className="atelier-eyebrow text-[hsl(var(--paper-muted))]">
+              Security + auditability
             </p>
-          </div>
-
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {valueProps.map((prop) => (
-              <Card className="border-white/10 bg-card/60" key={prop.title}>
-                <CardHeader className="pb-2">
-                  <div className="flex items-center gap-3">
-                    <span className="text-2xl">{prop.icon}</span>
-                    <CardTitle className="text-base text-white">
-                      {prop.title}
-                    </CardTitle>
-                  </div>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground text-sm">
-                    {prop.description}
-                  </p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </section>
-
-        {/* Screenshots Grid */}
-        <section className="relative mx-auto max-w-6xl px-6 pb-16 md:px-10">
-          <div className="mb-6 flex items-center gap-3">
-            <p className="font-mono text-[11px] text-primary tracking-[0.2em]">
-              INTERFACE
-            </p>
-          </div>
-
-          <div className="grid gap-6 lg:grid-cols-2">
-            <div className="space-y-0">
-              <ImageLightbox
-                alt="DocIQ Sphere data room interface"
-                caption="Data Rooms · Cross-org collaboration with AI-powered analysis"
-                className="overflow-hidden rounded-t-xl border border-white/10 bg-black/50"
-                height={400}
-                src="/sphere/sphere-dataroom.png"
-                width={600}
-              />
-              <div className="rounded-b-xl border border-white/10 border-t-0 bg-card/50 p-4">
-                <p className="font-mono text-sm text-white">Data Rooms</p>
-                <p className="mt-1 text-muted-foreground text-xs">
-                  Cross-org collaboration with immutable audit trail
-                </p>
-              </div>
-            </div>
-            <div className="space-y-0">
-              <ImageLightbox
-                alt="DocIQ Sphere matter workspace"
-                caption="Matter Workspace · AI conversation with live document preview"
-                className="overflow-hidden rounded-t-xl border border-white/10 bg-black/50"
-                height={400}
-                src="/sphere/sphere-matter.png"
-                width={600}
-              />
-              <div className="rounded-b-xl border border-white/10 border-t-0 bg-card/50 p-4">
-                <p className="font-mono text-sm text-white">Matter Workspace</p>
-                <p className="mt-1 text-muted-foreground text-xs">
-                  AI conversation with live document preview and tracked changes
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Playbooks */}
-        <section className="relative mx-auto max-w-6xl px-6 pb-16 md:px-10">
-          <div className="mb-6 flex items-center gap-3">
-            <p className="font-mono text-[11px] text-primary tracking-[0.2em]">
-              AI PLAYBOOKS
-            </p>
-            <Separator className="h-4 bg-white/10" orientation="vertical" />
-            <span className="text-muted-foreground text-xs">
-              Institutional expertise, AI speed
-            </span>
-          </div>
-
-          <Card className="border-indigo-500/20 bg-card/70">
-            <CardContent className="pt-6">
-              <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-                {playbooks.map((playbook) => (
-                  <div
-                    className="rounded-lg border border-white/5 bg-background/60 p-4"
-                    key={playbook.name}
-                  >
-                    <p className="font-semibold text-sm text-white">
-                      {playbook.name}
-                    </p>
-                    <p className="mt-1 text-muted-foreground text-xs">
-                      {playbook.desc}
-                    </p>
-                  </div>
-                ))}
-              </div>
-              <p className="mt-6 text-muted-foreground text-sm">
-                Create custom playbooks via natural language. Auto-trigger on
-                document upload or data room addition. Playbook version history
-                with full rollback. Protected prompts; your team runs them
-                without seeing analysis logic.
-              </p>
-            </CardContent>
-          </Card>
-        </section>
-
-        {/* Target Audiences */}
-        <section className="relative mx-auto max-w-6xl px-6 pb-16 md:px-10">
-          <div className="mb-6 flex items-center gap-3">
-            <p className="font-mono text-[11px] text-primary tracking-[0.2em]">
-              WHO IT'S FOR
-            </p>
-          </div>
-
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {audiences.map((audience) => (
-              <Card
-                className="border-white/10 bg-secondary/50"
-                key={audience.title}
+            <ul className="space-y-2.5 border-[hsl(var(--ink))]/10 border-l pl-5">
+              <li className="relative">
+                <span className="-left-[7px] absolute top-[0.65em] h-px w-3 bg-[hsl(var(--rust))]" />
+                Every AI run logged: prompts, reasoning, tool calls, tokens.
+              </li>
+              <li className="relative">
+                <span className="-left-[7px] absolute top-[0.65em] h-px w-3 bg-[hsl(var(--rust))]" />
+                Data room immutable log: access, downloads, views, IP + user
+                agent.
+              </li>
+              <li className="relative">
+                <span className="-left-[7px] absolute top-[0.65em] h-px w-3 bg-[hsl(var(--rust))]" />
+                Document + playbook version history with full rollback.
+              </li>
+              <li className="relative">
+                <span className="-left-[7px] absolute top-[0.65em] h-px w-3 bg-[hsl(var(--rust))]" />
+                JSON audit exports for compliance evidence.
+              </li>
+              <li className="relative">
+                <span className="-left-[7px] absolute top-[0.65em] h-px w-3 bg-[hsl(var(--rust))]" />
+                Multi-tenant isolation, encryption at rest + in transit.
+              </li>
+              <li className="relative">
+                <span className="-left-[7px] absolute top-[0.65em] h-px w-3 bg-[hsl(var(--rust))]" />
+                On-premises for full data sovereignty.
+              </li>
+            </ul>
+            <p className="atelier-mono pt-3 text-[11px] uppercase tracking-[0.14em]">
+              <Link
+                className="text-[hsl(var(--ink))] underline decoration-[0.5px] decoration-[hsl(var(--rust))] underline-offset-[3px] transition-colors hover:text-[hsl(var(--rust))]"
+                href="/apps/dociq-shield"
               >
-                <CardHeader className="pb-2">
-                  <CardTitle className="text-lg text-white">
-                    {audience.title}
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground text-sm">
-                    {audience.description}
-                  </p>
-                </CardContent>
-              </Card>
-            ))}
+                Companion: DocIQ Shield →
+              </Link>
+            </p>
           </div>
-        </section>
-
-        {/* Technical & Compliance */}
-        <section className="relative mx-auto max-w-6xl px-6 pb-24 md:px-10">
-          <div className="grid gap-6 lg:grid-cols-2">
-            <Card className="border-white/10 bg-secondary/50">
-              <CardHeader className="pb-2">
-                <CardTitle className="text-lg text-white">
-                  Technical Stack
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <dl className="space-y-3">
-                  {techSpecs.map((spec) => (
-                    <div
-                      className="flex justify-between gap-4"
-                      key={spec.label}
-                    >
-                      <dt className="text-muted-foreground text-sm">
-                        {spec.label}
-                      </dt>
-                      <dd className="font-mono text-sm text-white">
-                        {spec.value}
-                      </dd>
-                    </div>
-                  ))}
-                </dl>
-              </CardContent>
-            </Card>
-
-            <Card className="border-white/10 bg-secondary/50">
-              <CardHeader className="pb-2">
-                <CardTitle className="text-lg text-white">
-                  Security & Auditability
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-4 text-muted-foreground text-sm">
-                <ul className="space-y-2">
-                  <li className="flex gap-2">
-                    <span className="text-teal-400">›</span>
-                    Every AI agent run logged: prompts, reasoning, tool calls,
-                    tokens
-                  </li>
-                  <li className="flex gap-2">
-                    <span className="text-teal-400">›</span>
-                    Data room immutable audit log: access, downloads, views, IP
-                    + user agent
-                  </li>
-                  <li className="flex gap-2">
-                    <span className="text-teal-400">›</span>
-                    Document + playbook version history with full rollback
-                  </li>
-                  <li className="flex gap-2">
-                    <span className="text-teal-400">›</span>
-                    Admin audit exports as structured JSON for compliance
-                    evidence
-                  </li>
-                  <li className="flex gap-2">
-                    <span className="text-teal-400">›</span>
-                    Multi-tenant isolation, encryption at rest and in transit
-                  </li>
-                  <li className="flex gap-2">
-                    <span className="text-teal-400">›</span>
-                    On-premises deployment for complete data sovereignty
-                  </li>
-                </ul>
-                <div className="pt-2">
-                  <a
-                    className="glow-link font-mono text-[11px] uppercase"
-                    href="https://www.dociq.io/sphere"
-                    rel="noopener noreferrer"
-                    target="_blank"
-                  >
-                    Learn more at dociq.io →
-                  </a>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-        </section>
-      </div>
-    </Shell>
+        </div>
+      </AtelierAppSection>
+    </AtelierShell>
   );
 }

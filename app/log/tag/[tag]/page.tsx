@@ -1,11 +1,11 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-
-import Shell from '@/components/layout/shell';
+import Datestamp from '@/components/atelier/datestamp';
+import TagRow from '@/components/atelier/tag-row';
+import AtelierShell from '@/components/layout/atelier-shell';
 import { breadcrumbSchema, JsonLd } from '@/lib/json-ld';
 import { getPostsByTag, getTagDisplayName, getTagIndex } from '@/lib/posts';
-import { slugifyTag } from '@/lib/tag-utils';
 
 type Props = { params: Promise<{ tag: string }> };
 
@@ -22,28 +22,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 
   return {
-    title: `${displayName} Posts`,
-    description: `Blog posts about ${displayName} by Gordon Mickel`,
+    title: `Tag: ${displayName}`,
+    description: `Field notes tagged ${displayName} by Gordon Mickel.`,
     alternates: { canonical: `/log/tag/${tag}` },
     openGraph: {
-      title: `${displayName} Posts | mickel.tech`,
-      description: `Blog posts about ${displayName} by Gordon Mickel`,
+      title: `${displayName} · Field notes · mickel.tech`,
+      description: `Field notes tagged ${displayName}.`,
       url: `/log/tag/${tag}`,
       type: 'website',
     },
   };
-}
-
-function formatDate(iso: string): string {
-  const date = new Date(iso);
-  if (Number.isNaN(date.getTime())) {
-    return iso;
-  }
-  return date.toLocaleDateString('en-CH', {
-    year: 'numeric',
-    month: 'short',
-    day: '2-digit',
-  });
 }
 
 export default async function TagPage({ params }: Props) {
@@ -58,88 +46,99 @@ export default async function TagPage({ params }: Props) {
   }
 
   return (
-    <Shell>
+    <AtelierShell>
       <JsonLd
         data={breadcrumbSchema([
-          { name: 'Log', url: '/log' },
+          { name: 'Field notes', url: '/log' },
           { name: displayName, url: `/log/tag/${tag}` },
         ])}
       />
-      <section className="mx-auto max-w-5xl px-6 pt-24 pb-32 md:px-0">
-        <header className="mb-12 space-y-4 border-white/10 border-b pb-8">
-          <nav
-            aria-label="Breadcrumb"
-            className="font-mono text-[11px] text-muted-foreground"
-          >
-            <Link className="hover:text-primary" href="/">
-              Home
-            </Link>
-            <span className="mx-2">/</span>
-            <Link className="hover:text-primary" href="/log">
-              Log
-            </Link>
-            <span className="mx-2">/</span>
-            <span className="text-primary">{displayName}</span>
-          </nav>
-          <p className="font-mono text-[11px] text-primary tracking-[0.25em]">
-            TAG // {displayName.toUpperCase()}
-          </p>
-          <h1 className="font-bold text-4xl text-white md:text-5xl">
-            Posts tagged "{displayName}"
-          </h1>
-          <p className="text-base text-muted-foreground">
-            {posts.length} {posts.length === 1 ? 'post' : 'posts'} on this topic
-          </p>
-        </header>
 
-        <div className="space-y-6">
-          {posts.map((post) => (
-            <article
-              className="group interactive border border-white/10 bg-background/70 p-6 transition-all duration-300 hover:border-primary/60 hover:bg-background/90"
-              key={post.slug}
+      <section className="atelier-paper relative">
+        <div className="mx-auto grid max-w-[1200px] grid-cols-12 gap-6 px-6 pt-24 pb-14 md:gap-8 md:px-10 md:pt-32 md:pb-20">
+          <div className="col-span-12 md:col-span-2">
+            <p className="atelier-eyebrow text-[hsl(var(--rust))]">Tag</p>
+          </div>
+          <header className="col-span-12 md:col-span-10">
+            <nav
+              aria-label="Breadcrumb"
+              className="atelier-mono mb-5 text-[11px] text-[hsl(var(--paper-muted))] uppercase tracking-[0.12em]"
             >
-              <div className="flex items-center justify-between gap-4 font-mono text-[11px] text-muted-foreground uppercase">
-                <span>{formatDate(post.publishedAt)}</span>
-                <span className="text-primary">LOG ENTRY</span>
-              </div>
-
-              <div className="mt-3 space-y-3">
-                <h2 className="font-bold text-white text-xl leading-snug md:text-2xl">
-                  <Link href={`/log/${post.slug}`}>{post.title}</Link>
-                </h2>
-                {post.summary ? (
-                  <p className="text-muted-foreground text-sm leading-relaxed">
-                    {post.summary}
-                  </p>
-                ) : null}
-                {post.tags?.length ? (
-                  <div className="flex flex-wrap gap-2">
-                    {post.tags.map((t) => (
-                      <Link
-                        className="inline-flex items-center gap-1 rounded border border-white/10 px-2 py-1 font-mono text-[10px] text-muted-foreground uppercase transition-colors hover:border-primary/40 hover:text-primary"
-                        href={`/log/tag/${slugifyTag(t)}`}
-                        key={`${post.slug}-${t}`}
-                      >
-                        # {t}
-                      </Link>
-                    ))}
-                  </div>
-                ) : null}
-              </div>
-
-              <div className="mt-4">
-                <Link
-                  className="inline-flex items-center gap-2 font-mono text-[11px] text-primary transition-colors group-hover:text-white"
-                  href={`/log/${post.slug}`}
-                >
-                  VIEW LOG ENTRY
-                  <span aria-hidden="true">↗</span>
-                </Link>
-              </div>
-            </article>
-          ))}
+              <Link
+                className="transition-colors hover:text-[hsl(var(--ink))]"
+                href="/log"
+              >
+                Field notes
+              </Link>
+              <span aria-hidden="true" className="mx-2">
+                /
+              </span>
+              <span className="text-[hsl(var(--ink))]">#{displayName}</span>
+            </nav>
+            <h1 className="atelier-display font-medium text-[clamp(2rem,1.5rem+2.5vw,3.25rem)] text-[hsl(var(--ink))] leading-[1.05] tracking-[-0.02em]">
+              <span className="text-[hsl(var(--rust))]">#</span>
+              {displayName}
+            </h1>
+            <p className="atelier-body mt-4 text-[hsl(var(--ink))]/70">
+              {posts.length} {posts.length === 1 ? 'entry' : 'entries'} on this
+              thread.
+            </p>
+          </header>
         </div>
       </section>
-    </Shell>
+
+      <section className="atelier-paper border-[hsl(var(--ink))]/10 border-t">
+        <div className="mx-auto max-w-[1200px] px-6 pt-12 pb-24 md:px-10 md:pt-16 md:pb-32">
+          <ol className="divide-y divide-[hsl(var(--ink))]/10 border-[hsl(var(--ink))]/10 border-y">
+            {posts.map((post, i) => {
+              const idx = String(i + 1).padStart(2, '0');
+              return (
+                <li className="group" key={post.slug}>
+                  <Link
+                    className="block py-8 transition-colors hover:bg-[hsl(var(--ink))]/[0.025]"
+                    href={`/log/${post.slug}`}
+                  >
+                    <article className="grid grid-cols-12 gap-6 px-0 md:gap-8">
+                      <div className="col-span-2 md:col-span-1">
+                        <span className="atelier-numerals block font-medium text-[2.25rem] text-[hsl(var(--rust))] leading-none md:text-[2.75rem]">
+                          {idx}
+                        </span>
+                      </div>
+                      <div className="col-span-10 md:col-span-3">
+                        <Datestamp iso={post.publishedAt} />
+                        {post.tags?.length ? (
+                          <div className="mt-2.5">
+                            <TagRow tags={post.tags} />
+                          </div>
+                        ) : null}
+                      </div>
+                      <div className="col-span-12 md:col-span-8">
+                        <h2 className="atelier-display font-medium text-[clamp(1.3rem,1.05rem+0.85vw,1.75rem)] text-[hsl(var(--ink))] leading-[1.2] transition-colors group-hover:text-[hsl(var(--rust))]">
+                          {post.title}
+                        </h2>
+                        {post.summary ? (
+                          <p className="atelier-body mt-3 max-w-[52ch] text-[0.975rem] text-[hsl(var(--ink))]/72 leading-[1.55]">
+                            {post.summary}
+                          </p>
+                        ) : null}
+                        <span className="atelier-mono mt-4 inline-flex items-center gap-1.5 text-[11px] text-[hsl(var(--paper-muted))] uppercase tracking-[0.14em] transition-colors group-hover:text-[hsl(var(--ink))]">
+                          Read entry
+                          <span
+                            aria-hidden="true"
+                            className="transition-transform group-hover:translate-x-0.5"
+                          >
+                            →
+                          </span>
+                        </span>
+                      </div>
+                    </article>
+                  </Link>
+                </li>
+              );
+            })}
+          </ol>
+        </div>
+      </section>
+    </AtelierShell>
   );
 }

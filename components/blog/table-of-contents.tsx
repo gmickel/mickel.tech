@@ -7,43 +7,61 @@ interface TocItem {
 }
 
 interface TableOfContentsProps {
-  items: TocItem[];
+  items?: TocItem[];
 }
 
-export function TableOfContents({ items }: TableOfContentsProps): ReactElement {
+export function TableOfContents({
+  items = [],
+}: TableOfContentsProps): ReactElement | null {
+  if (!items.length) {
+    return null;
+  }
   return (
-    <nav className="not-prose my-10 rounded-xl border border-white/10 bg-white/[0.02] p-6">
-      <p className="mb-4 font-mono text-[11px] text-emerald-400 uppercase tracking-widest">
-        Contents
+    <nav className="not-prose my-10 border-[hsl(var(--ink))]/15 border-y bg-[hsl(var(--paper))]/40 py-6 pr-6 pl-6 md:pl-8">
+      <p className="atelier-eyebrow mb-5 text-[hsl(var(--rust))]">
+        00 / Contents
       </p>
-      <ul className="space-y-2">
-        {items.map((item) => (
+      <ol className="space-y-3">
+        {items.map((item, i) => (
           <li key={item.id}>
             <a
-              className="group flex items-center gap-2 text-white/70 transition-colors hover:text-white"
+              className="atelier-body group flex items-baseline gap-3 text-[hsl(var(--ink))]/85 transition-colors hover:text-[hsl(var(--rust))]"
               href={`#${item.id}`}
             >
-              <span className="h-px w-4 bg-white/20 transition-all group-hover:w-6 group-hover:bg-emerald-400" />
-              <span className="text-sm">{item.title}</span>
+              <span className="atelier-mono text-[10px] text-[hsl(var(--paper-muted))] tracking-[0.12em]">
+                {String(i + 1).padStart(2, '0')}
+              </span>
+              <span
+                aria-hidden="true"
+                className="h-px w-3 bg-[hsl(var(--ink))]/25 transition-all group-hover:w-6 group-hover:bg-[hsl(var(--rust))]"
+              />
+              <span className="text-[0.98rem]">{item.title}</span>
             </a>
             {item.children && item.children.length > 0 && (
-              <ul className="mt-2 ml-6 space-y-1.5">
-                {item.children.map((child) => (
+              <ol className="mt-2 ml-9 space-y-1.5">
+                {item.children.map((child, j) => (
                   <li key={child.id}>
                     <a
-                      className="group flex items-center gap-2 text-white/50 transition-colors hover:text-white/80"
+                      className="atelier-body group flex items-baseline gap-3 text-[hsl(var(--ink))]/60 transition-colors hover:text-[hsl(var(--ink))]"
                       href={`#${child.id}`}
                     >
-                      <span className="h-px w-2 bg-white/10 transition-all group-hover:w-4 group-hover:bg-cyan-400/50" />
-                      <span className="text-xs">{child.title}</span>
+                      <span className="atelier-mono text-[9.5px] text-[hsl(var(--paper-muted))]/70 tracking-[0.12em]">
+                        {String(i + 1).padStart(2, '0')}.
+                        {String(j + 1).padStart(2, '0')}
+                      </span>
+                      <span
+                        aria-hidden="true"
+                        className="h-px w-2 bg-[hsl(var(--ink))]/15 transition-all group-hover:w-4 group-hover:bg-[hsl(var(--rust))]"
+                      />
+                      <span className="text-[0.88rem]">{child.title}</span>
                     </a>
                   </li>
                 ))}
-              </ul>
+              </ol>
             )}
           </li>
         ))}
-      </ul>
+      </ol>
     </nav>
   );
 }

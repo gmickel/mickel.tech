@@ -29,7 +29,9 @@ export default function AtelierLeadMagnetCard({
   sectionNumber = '06',
 }: LeadMagnetCardProps) {
   const magnet = getLeadMagnet(slug);
-  if (!magnet) return null;
+  if (!magnet) {
+    return null;
+  }
   const labels = locale === 'de' ? labelsDE : labelsEN;
 
   return (

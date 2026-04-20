@@ -8,6 +8,12 @@ export interface AppMeta {
   category: string; // for JSON-LD applicationCategory
   tags: readonly string[];
   image?: string;
+  /**
+   * How the image should render on /apps cards.
+   * - `logo`: small square mark; place inside a graphite tile, contained + padded.
+   * - `shot`: screenshot/product image; cover-fit in a paper-framed tile.
+   */
+  imageKind?: 'logo' | 'shot';
   status: string;
 }
 
@@ -21,6 +27,7 @@ export const APPS: AppMeta[] = [
     category: 'DeveloperApplication',
     tags: ['CLI', 'Search', 'Publishing', 'Open Source'],
     image: '/gno/logo.svg',
+    imageKind: 'logo',
     status: 'Released',
   },
   {
@@ -32,6 +39,7 @@ export const APPS: AppMeta[] = [
     category: 'DeveloperApplication',
     tags: ['Claude Code', 'Plugin', 'Open Source'],
     image: '/flow/logo.svg',
+    imageKind: 'logo',
     status: 'Released',
   },
   {
@@ -43,6 +51,7 @@ export const APPS: AppMeta[] = [
     category: 'BusinessApplication',
     tags: ['AI', 'Legal Tech', 'Enterprise'],
     image: '/sphere/sphere-research.png',
+    imageKind: 'shot',
     status: 'Released',
   },
   {
@@ -54,6 +63,7 @@ export const APPS: AppMeta[] = [
     category: 'BusinessApplication',
     tags: ['AI', 'Privacy', 'Swiss Courts'],
     image: '/shield/shield.png',
+    imageKind: 'shot',
     status: 'Released',
   },
   {
@@ -65,6 +75,7 @@ export const APPS: AppMeta[] = [
     category: 'DeveloperApplication',
     tags: ['Claude Code', 'Plugin', 'Open Source'],
     image: '/flow/logo.svg',
+    imageKind: 'logo',
     status: 'Released',
   },
   {
@@ -76,6 +87,7 @@ export const APPS: AppMeta[] = [
     category: 'DeveloperApplication',
     tags: ['CLI', 'Google Sheets', 'Open Source'],
     image: '/sheets-cli/icon.png',
+    imageKind: 'logo',
     status: 'Released',
   },
   {
@@ -87,6 +99,7 @@ export const APPS: AppMeta[] = [
     category: 'DeveloperApplication',
     tags: ['Windows', 'Python', 'Open Source'],
     image: '/outlookctl/outlookctl-hero.png',
+    imageKind: 'shot',
     status: 'Released',
   },
   {
@@ -98,6 +111,7 @@ export const APPS: AppMeta[] = [
     category: 'DeveloperApplication',
     tags: ['macOS', 'Swift', 'Open Source'],
     image: '/smarttrim-dark.png',
+    imageKind: 'shot',
     status: 'Released',
   },
   {
@@ -109,6 +123,7 @@ export const APPS: AppMeta[] = [
     category: 'BusinessApplication',
     tags: ['Legal Tech', 'NLP', '2017-2020'],
     image: '/dociq/dociq-template-editor.png',
+    imageKind: 'shot',
     status: 'In Production',
   },
 ];

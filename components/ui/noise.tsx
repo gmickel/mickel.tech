@@ -12,9 +12,9 @@ interface NoiseProps {
 }
 
 const Noise: React.FC<NoiseProps> = ({
-  patternSize = 250,
-  patternScaleX = 1,
-  patternScaleY = 1,
+  patternSize: _patternSize = 250,
+  patternScaleX: _patternScaleX = 1,
+  patternScaleY: _patternScaleY = 1,
   patternRefreshInterval = 2,
   patternAlpha = 15,
 }) => {
@@ -22,10 +22,14 @@ const Noise: React.FC<NoiseProps> = ({
 
   useEffect(() => {
     const canvas = grainRef.current;
-    if (!canvas) return;
+    if (!canvas) {
+      return;
+    }
 
     const ctx = canvas.getContext('2d', { alpha: true });
-    if (!ctx) return;
+    if (!ctx) {
+      return;
+    }
 
     let frame = 0;
     let animationId: number;
@@ -33,7 +37,9 @@ const Noise: React.FC<NoiseProps> = ({
     const canvasSize = 1024;
 
     const resize = () => {
-      if (!canvas) return;
+      if (!canvas) {
+        return;
+      }
       canvas.width = canvasSize;
       canvas.height = canvasSize;
 
@@ -72,13 +78,7 @@ const Noise: React.FC<NoiseProps> = ({
       window.removeEventListener('resize', resize);
       window.cancelAnimationFrame(animationId);
     };
-  }, [
-    patternSize,
-    patternScaleX,
-    patternScaleY,
-    patternRefreshInterval,
-    patternAlpha,
-  ]);
+  }, [patternRefreshInterval, patternAlpha]);
 
   return (
     <canvas

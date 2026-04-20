@@ -244,6 +244,7 @@ export default function DecryptedText({
           return (
             <span
               className={isRevealedOrDone ? className : encryptedClassName}
+              // biome-ignore lint/suspicious/noArrayIndexKey: character animation stable within render
               key={index}
             >
               {char}
