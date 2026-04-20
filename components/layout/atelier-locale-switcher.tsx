@@ -1,48 +1,95 @@
 'use client';
 
 import { usePathname } from 'next/navigation';
+import SmartLink from '@/components/atelier/smart-link';
 
-const dePrefix = /^\/de/;
+/**
+ * Paths that have a mirrored `/de/...` route. When on an EN path NOT
+ * in this set (e.g. /log, /apps), clicking DE falls back to `/de` home.
+ * Case study detail pages are handled via the prefix check below.
+ */
+const DE_EQUIVALENT_PATHS = new Set([
+  '/',
+  '/sdlc',
+  '/expert',
+  '/ai-transformation',
+  '/case-studies',
+  '/about',
+  '/imprint',
+  '/privacy',
+]);
+
+const DE_PREFIX_RE = /^\/de/;
+
+function hasDeEquivalent(path: string): boolean {
+  if (DE_EQUIVALENT_PATHS.has(path)) {
+    return true;
+  }
+  return path.startsWith('/case-studies/');
+}
+
+function toEnHref(path: string): string {
+  if (!path.startsWith('/de')) {
+    return path;
+  }
+  const stripped = path.replace(DE_PREFIX_RE, '');
+  return stripped || '/';
+}
+
+function toDeHref(path: string): string {
+  if (path.startsWith('/de')) {
+    return path;
+  }
+  if (path === '/') {
+    return '/de';
+  }
+  if (hasDeEquivalent(path)) {
+    return `/de${path}`;
+  }
+  return '/de';
+}
+
+interface AtelierLocaleSwitcherProps {
+  variant?: 'dark' | 'paper';
+}
 
 export default function AtelierLocaleSwitcher({
   variant = 'dark',
-}: {
-  variant?: 'dark' | 'paper';
-}) {
+}: AtelierLocaleSwitcherProps) {
   const pathname = usePathname();
   const isDE = pathname.startsWith('/de');
-  const targetPath = isDE
-    ? pathname.replace(dePrefix, '') || '/'
-    : `/de${pathname}`;
+  const enHref = toEnHref(pathname);
+  const deHref = toDeHref(pathname);
 
-  const baseStyle =
+  const mutedClass =
     variant === 'paper'
       ? 'text-[hsl(var(--ink))]/55 hover:text-[hsl(var(--rust))]'
       : 'text-[hsl(var(--paper))]/55 hover:text-[hsl(var(--rust))]';
+  const activeClass = 'text-[hsl(var(--rust))]';
+  const linkBase =
+    'cursor-pointer transition-colors focus-visible:outline-none focus-visible:text-[hsl(var(--rust))]';
 
   return (
-    <a
-      className={`atelier-eyebrow inline-flex items-center gap-1 transition-colors ${baseStyle}`}
-      href={targetPath}
-    >
-      <span className="sr-only">
-        {isDE ? 'Switch to English' : 'Sprache auf Deutsch wechseln'}
-      </span>
-      <span
-        aria-hidden="true"
-        className={isDE ? '' : 'text-[hsl(var(--rust))]'}
+    <span className="atelier-eyebrow inline-flex items-center gap-1">
+      <SmartLink
+        aria-current={isDE ? undefined : 'true'}
+        aria-label="Switch to English"
+        className={`${linkBase} ${isDE ? mutedClass : activeClass}`}
+        href={enHref}
       >
         EN
-      </span>
+      </SmartLink>
       <span aria-hidden="true" className="opacity-30">
         /
       </span>
-      <span
-        aria-hidden="true"
-        className={isDE ? 'text-[hsl(var(--rust))]' : ''}
+      <SmartLink
+        aria-current={isDE ? 'true' : undefined}
+        aria-label="Sprache auf Deutsch wechseln"
+        className={`${linkBase} ${isDE ? activeClass : mutedClass}`}
+        href={deHref}
       >
         DE
-      </span>
-    </a>
+      </SmartLink>
+    </span>
   );
 }

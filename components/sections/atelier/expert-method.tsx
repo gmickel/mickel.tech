@@ -39,13 +39,13 @@ const stepsDE = [
     label: 'Erstgespräch',
     detail:
       'Vertrauliches 30-Minuten-Gespräch. Sachverhaltstyp, Jurisdiktion, Frist. Konfliktdeklaration. Auftragsbestätigung und Umfang.',
-    timeframe: 'Innerhalb 48 Stunden',
+    timeframe: 'Innerhalb von 48 Stunden',
   },
   {
     num: '02',
     label: 'Aktendurchsicht',
     detail:
-      'Unterlagen, Verträge, Quellcode-Repositories, Infrastruktur-Zugang. Gespräch zu ersten Eindrücken innerhalb 5-7 Arbeitstagen. Fragenkatalog gemeinsam iteriert.',
+      'Unterlagen, Verträge, Quellcode-Repositories, Infrastruktur-Zugang. Gespräch zu ersten Eindrücken innerhalb von 5-7 Arbeitstagen. Fragenkatalog gemeinsam iteriert.',
     timeframe: 'Tage 1-10',
   },
   {

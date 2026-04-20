@@ -98,7 +98,7 @@ const copyDE = {
     {
       period: '2017-heute',
       title: 'Gründer, DocIQ',
-      body: 'Contract Vault GmbH 2017 in Zug gegründet. DocIQ 1.0 (2018) gebaut und ausgeliefert -- eine der ersten Schweizer Plattformen, die NLP und ML auf den Vertrags- und Dokumentenlebenszyklus anwendet. Produktiv beim Schweizerischen Versicherungsverband, bei Laux Lawyers und bei Kaiser Odermatt & Partner. Sphere + Shield v2 2026 lanciert.',
+      body: 'Contract Vault GmbH 2017 in Zug gegründet. DocIQ 1.0 (2018) gebaut und ausgeliefert -- eine der ersten Schweizer Plattformen, die NLP und ML auf den Vertrags- und Dokumentenlebenszyklus anwenden. Produktiv beim Schweizerischen Versicherungsverband, bei Laux Lawyers und bei Kaiser Odermatt & Partner. Sphere + Shield v2 2026 lanciert.',
     },
     {
       period: '2023-2025',

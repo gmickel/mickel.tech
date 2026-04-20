@@ -38,7 +38,7 @@ const copyDE = {
     'Ein Vendor-Stack, der schneller gewachsen ist, als das Team ihn steuern kann.',
     'Daten in fünf Systemen, die niemand zusammengeführt hat.',
     'Workflows, für die niemand wirklich verantwortlich ist, voll mit menschlichem Klebstoff zwischen Tools.',
-    'Ein Verwaltungsrat, der nach der „KI-Strategie" fragt, ohne dass jemand eine belastbare Antwort hat.',
+    'Ein Verwaltungsrat, der nach der „KI-Strategie“ fragt, ohne dass jemand eine belastbare Antwort hat.',
   ],
   gain: [
     'KI-Systeme, die täglich leise echte Workflows ausführen.',

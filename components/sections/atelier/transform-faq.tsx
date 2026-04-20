@@ -49,14 +49,14 @@ const faqsEN = [
 
 const faqsDE = [
   {
-    question: 'Wie unterscheidet sich das von einer generischen „KI-Beratung"?',
+    question: 'Wie unterscheidet sich das von einer generischen „KI-Beratung“?',
     answer:
       'Generische KI-Beratungen bringen ein Deck und eine Anbieterliste. Ich bringe zwanzig Jahre produktiver Systeme und eine Prozess-zuerst-Methode, die in Ihrem Workflow beginnt, nicht im OpenAI-Katalog. Ich baue mit, ich berate nicht nur.',
   },
   {
     question: 'Arbeiten Sie nur mit PE-gehaltenen Unternehmen?',
     answer:
-      'Nein. PE-Portcos sind ein grosser Teil meiner Arbeit, weil die operative Disziplin zur Methode passt, aber ich nehme auch direkte Mandate von CEOs, COOs und Verwaltungsräten in Mid-Market-Software, Gesundheitswesen, Finanzen und Legal Services an.',
+      'Nein. PE-Portcos sind ein grosser Teil meiner Arbeit, weil die operative Disziplin zur Methode passt, aber ich nehme auch direkte Mandate von CEOs, COOs und Verwaltungsräten in Mid-Market-Software, Gesundheitswesen, Finanzen und Rechtsdienstleistungen an.',
   },
   {
     question: 'Was, wenn wir bereits einen Anbieter / SI engagiert haben?',
@@ -71,7 +71,7 @@ const faqsDE = [
   {
     question: 'Wie lange bis zum ROI?',
     answer:
-      'Der 2-3-wöchige Audit identifiziert den ersten zahlbaren Use Case. Der System-Build läuft 6-16 Wochen. Die meisten Mandate erreichen den Break-even beim ersten Deployment, sofern der Audit ehrlich gemacht wurde.',
+      'Der 2-3-wöchige Audit identifiziert den ersten Use Case mit messbarem Payback. Der System-Build läuft 6-16 Wochen. Die meisten Mandate erreichen den Break-even beim ersten Deployment, sofern der Audit ehrlich gemacht wurde.',
   },
   {
     question: 'Was ist mit Change Management?',

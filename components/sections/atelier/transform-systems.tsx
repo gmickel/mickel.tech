@@ -35,7 +35,7 @@ const systemsDE = [
     body: 'Mehrschritt-Agenten, die in Systems of Record greifen, Aktionen ausführen, alles loggen und bei Unsicherheit an Menschen zurückgeben. Operations-Copilots, Service-Desk-Automatisierung, Dokumentenprüfung. Gebaut für den Tag nach der Demo, nicht für die Demo.',
   },
   {
-    title: 'Wissensplattformen mit verifizierbarer Retrieval',
+    title: 'Wissensplattformen mit verifizierbarem Retrieval',
     body: 'Retrieval für Dokumente, Verträge und Policies, mit Zitations-Grounding. Embeddings, Hybridsuche, Governance und Audit. Produktivsysteme, die Anwälte, Auditoren und Analysten täglich tatsächlich nutzen.',
   },
   {

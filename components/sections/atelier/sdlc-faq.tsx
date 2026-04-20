@@ -50,7 +50,7 @@ const faqsEN = [
 
 const faqsDE = [
   {
-    question: 'Warum „PDLC" statt „SDLC"?',
+    question: 'Warum „PDLC“ statt „SDLC“?',
     answer:
       'SDLC framt das Problem als Softwareentwicklung. Sobald Agenten produktiven Code in Minuten schreiben, wandert die Beschränkung die Wertkette hoch -- zu Produkt-Framing, Anforderungsengineering und Review-Kapazität. PDLC (Product Development Life Cycle) benennt die tatsächliche Arbeitseinheit und erlaubt es, den richtigen Engpass zu optimieren.',
   },

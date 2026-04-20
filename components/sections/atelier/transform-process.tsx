@@ -29,7 +29,7 @@ const copyEN = {
 const copyDE = {
   eyebrow: '02 / Prozess zuerst',
   heading:
-    'KI ist massgeschneidert. Die meisten „KI-Strategien" tun, als wäre sie es nicht.',
+    'KI ist massgeschneidert. Die meisten „KI-Strategien“ tun, als wäre sie es nicht.',
   body: 'Slide-Deck-KI beginnt mit der Technologie und sucht einen Platz für sie. Echte KI beginnt mit dem Workflow, der wehtut. Wo die Daten bereits liegen. Wer entscheidet. Was unter Last bricht. Die Antworten zur Technologie kommen zuletzt -- und sie fallen für unterschiedliche Unternehmen unterschiedlich aus.',
   steps: [
     {

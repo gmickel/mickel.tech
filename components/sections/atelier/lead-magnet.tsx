@@ -17,7 +17,7 @@ const labelsEN = {
 };
 
 const labelsDE = {
-  eyebrow: 'Field guide',
+  eyebrow: 'Leitfaden',
   pages: 'PDF',
   audience: 'Für',
   download: 'PDF herunterladen',

@@ -51,12 +51,12 @@ const faqsDE = [
   {
     question: 'Wie schnell können Sie auf einen neuen Sachverhalt reagieren?',
     answer:
-      'Vertrauliches Erstgespräch innerhalb 48 Stunden. Auftragsbestätigung in der Regel innerhalb von 5 Arbeitstagen ab Erstkontakt. Beschleunigte Sachverhalte können noch in derselben Woche starten, sofern die Konfliktprüfung durchläuft.',
+      'Vertrauliches Erstgespräch innerhalb von 48 Stunden. Auftragsbestätigung in der Regel innerhalb von 5 Arbeitstagen ab Erstkontakt. Beschleunigte Sachverhalte können noch in derselben Woche starten, sofern die Konfliktprüfung durchläuft.',
   },
   {
     question: 'Wie handhaben Sie Interessenkonflikte?',
     answer:
-      'Jedes Erstgespräch enthält eine strukturierte Konfliktdeklaration mit Parteien, Anwaltskanzleien und Gegenparteien. Vor Annahme prüfe ich gegen meine laufenden Mandate und gegen eine dokumentierte Mandatshistorie. Liegt ein Konflikt vor, lehne ich ab und begründe.',
+      'Jedes Erstgespräch enthält eine strukturierte Konfliktdeklaration mit Parteien, Anwaltskanzleien und Gegenparteien. Vor Annahme gleiche ich gegen meine laufenden Mandate und gegen eine dokumentierte Mandatshistorie ab. Liegt ein Konflikt vor, lehne ich ab und begründe.',
   },
   {
     question: 'Sind Sie gerichtlich bestellt oder im Parteiauftrag?',

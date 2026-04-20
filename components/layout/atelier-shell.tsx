@@ -36,9 +36,10 @@ const utilLinksEN = [
   { label: 'Contact', href: '/#contact' },
 ] as const;
 
+// /log and /apps are shared (English content, bilingual audience).
 const utilLinksDE = [
   { label: 'Fallstudien', href: '/de/case-studies' },
-  { label: 'Schriften', href: '/de/log' },
+  { label: 'Schriften', href: '/log' },
   { label: 'Apps', href: '/apps' },
   { label: 'Kontakt', href: '/de/#contact' },
 ] as const;
@@ -68,7 +69,7 @@ export default function AtelierShell({ children }: AtelierShellProps) {
               Mickel<span className="text-[hsl(var(--rust))]">.</span>tech
             </span>
             <span className="atelier-eyebrow hidden text-[hsl(var(--paper))]/45 sm:inline">
-              Independent practice
+              {isDE ? 'Unabhängige Praxis' : 'Independent practice'}
             </span>
           </Link>
 
@@ -251,7 +252,7 @@ function AtelierFooter({ isDE }: { isDE: boolean }) {
 
   const signalsLinks = isDE
     ? [
-        { label: 'Schriften', href: '/de/log' },
+        { label: 'Schriften', href: '/log' },
         { label: 'Apps', href: '/apps' },
         { label: 'Bench', href: '/gmickel-bench' },
       ]

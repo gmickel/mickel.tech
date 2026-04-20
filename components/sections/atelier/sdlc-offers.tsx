@@ -99,7 +99,7 @@ const offersDE: readonly Offer[] = [
     price: 'CHF 3-5k',
     duration: '1 Tag',
     outcome:
-      'Eine vertretbare Antwort auf Ihre konkrete Frage -- kein generisches Deck. Der günstigste Weg, um zu prüfen, ob die Zusammenarbeit passt. Honorar ist innerhalb von 90 Tagen vollständig auf eine Folgeauftrag anrechenbar.',
+      'Eine vertretbare Antwort auf Ihre konkrete Frage -- kein generisches Deck. Der günstigste Weg, um zu prüfen, ob die Zusammenarbeit passt. Honorar ist innerhalb von 90 Tagen vollständig auf einen Folgeauftrag anrechenbar.',
     deliverables: [
       'Arbeitssitzung (4-8 Stunden) mit den richtigen Leuten im Raum',
       'Schriftliche Notizen plus klare Empfehlung für den nächsten Schritt',
@@ -136,7 +136,7 @@ const offersDE: readonly Offer[] = [
     outcome:
       '20-30% messbare Cycle-Time-Reduktion in den ersten 90 Tagen. Ein Team, das die Methodik selbst trägt -- kein Anbieter, der sie für das Team trägt. Bei den Davos-Annahmen für KI-Engineer-EBITDA deckt der Durchsatzgewinn allein bei einer 20-köpfigen Engineering-Organisation das Mandat innerhalb eines Quartals.',
     deliverables: [
-      'Standard-Tooling deployed (Modellauswahl, Lizenzmanagement, Prompt-Registry)',
+      'Standard-Tooling ausgerollt (Modellauswahl, Lizenzmanagement, Prompt-Registry)',
       '1-2 Leuchtturm-Spuren end-to-end mit-ausgeliefert',
       'Cycle-Time- und Review-Zeit-Baseline fixiert',
       'Internes Methodik-Playbook',
