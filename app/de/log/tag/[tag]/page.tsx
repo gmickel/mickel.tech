@@ -1,6 +1,0 @@
-// biome-ignore lint/performance/noBarrelFile: DE shadow route; reuses EN page component so shell auto-detects /de/* and shows DE chrome without duplicating logic.
-export {
-  default,
-  generateMetadata,
-  generateStaticParams,
-} from '@/app/log/tag/[tag]/page';

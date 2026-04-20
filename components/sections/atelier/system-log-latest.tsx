@@ -22,7 +22,7 @@ export default async function AtelierSystemLogLatest({
           intro:
             'Kurze, technische Beiträge zu agentischer PDLC, Plattformen und KI-Systemen. Aus echter Arbeit, nicht aus der Theorie.',
           allLink: 'Alle Beiträge',
-          allHref: '/de/log',
+          allHref: '/log',
           entryLabel: 'Beitrag lesen',
           dateLocale: 'de-CH',
         }

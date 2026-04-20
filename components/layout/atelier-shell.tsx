@@ -36,10 +36,11 @@ const utilLinksEN = [
   { label: 'Contact', href: '/#contact' },
 ] as const;
 
+// /log and /apps are shared EN routes (no DE shadow, for SEO clarity).
 const utilLinksDE = [
   { label: 'Fallstudien', href: '/de/case-studies' },
-  { label: 'Notizen', href: '/de/log' },
-  { label: 'Apps', href: '/de/apps' },
+  { label: 'Notizen', href: '/log' },
+  { label: 'Apps', href: '/apps' },
   { label: 'Kontakt', href: '/de/#contact' },
 ] as const;
 
@@ -251,8 +252,8 @@ function AtelierFooter({ isDE }: { isDE: boolean }) {
 
   const signalsLinks = isDE
     ? [
-        { label: 'Notizen', href: '/de/log' },
-        { label: 'Apps', href: '/de/apps' },
+        { label: 'Notizen', href: '/log' },
+        { label: 'Apps', href: '/apps' },
         { label: 'Bench', href: '/gmickel-bench' },
       ]
     : [

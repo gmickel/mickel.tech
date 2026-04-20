@@ -4,8 +4,10 @@ import { usePathname } from 'next/navigation';
 import SmartLink from '@/components/atelier/smart-link';
 
 /**
- * Paths that have a mirrored `/de/...` route. Anything outside this set
- * (and the prefix checks below) falls back to `/de` home.
+ * Paths that have a mirrored `/de/...` route. /log and /apps deliberately
+ * stay English-only to avoid duplicate-content SEO issues (the body
+ * would be identical; only chrome would change). Clicking DE on those
+ * pages falls back to /de home.
  */
 const DE_EQUIVALENT_PATHS = new Set([
   '/',
@@ -16,11 +18,9 @@ const DE_EQUIVALENT_PATHS = new Set([
   '/about',
   '/imprint',
   '/privacy',
-  '/log',
-  '/apps',
 ]);
 
-const DE_EQUIVALENT_PREFIXES = ['/case-studies/', '/log/', '/apps/'];
+const DE_EQUIVALENT_PREFIXES = ['/case-studies/'];
 
 const DE_PREFIX_RE = /^\/de/;
 
