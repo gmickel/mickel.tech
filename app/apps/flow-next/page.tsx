@@ -90,7 +90,7 @@ const commands = [
   },
   {
     title: '/flow-next:plan-review',
-    description: 'Carmack-level plan review (Codex or RepoPrompt).',
+    description: 'Carmack-level plan review (Codex, Copilot, or RepoPrompt).',
   },
   {
     title: '/flow-next:impl-review',
@@ -172,7 +172,7 @@ const planFlow = [
   {
     title: 'Auto-review',
     description:
-      'Optional Carmack-level review via Codex CLI or RepoPrompt before you start.',
+      'Optional Carmack-level review via Codex CLI, GitHub Copilot CLI, or RepoPrompt before you start.',
   },
 ];
 
