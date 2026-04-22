@@ -257,16 +257,24 @@ const audiences = [
 ];
 
 const specs = [
-  { label: 'Frontend', value: 'Next.js 16 + React 19' },
-  { label: 'Backend', value: 'Convex (TypeScript)' },
-  { label: 'Doc engine', value: 'Python + OOXML' },
-  { label: 'AI models', value: 'Model-agnostic (Claude, GPT, Gemini)' },
+  { label: 'Languages', value: 'DE (CH/DE/AT), FR, IT, EN' },
+  {
+    label: 'Data residency',
+    value: 'Switzerland (managed) or your infrastructure',
+  },
+  {
+    label: 'Document formats',
+    value: 'DOCX in + out with tracked changes, PDF export',
+  },
   {
     label: 'Legal sources',
     value: 'Fedlex, EUR-Lex, BGE, CJEU, HUDOC, Commentary',
   },
-  { label: 'Compliance', value: 'GDPR, FADP, ZertES' },
-  { label: 'Deployment', value: 'Cloud, On-Prem, Air-Gapped' },
+  { label: 'Compliance', value: 'GDPR, FADP' },
+  { label: 'Deployment', value: 'Swiss managed cloud, on-prem, air-gapped' },
+  { label: 'Integrations', value: 'REST API, MCP server, webhooks' },
+  { label: 'Audit export', value: 'JSON, CSV, PDF' },
+  { label: 'Support', value: 'Zürich business hours' },
 ];
 
 export default function DocIQSpherePage() {
@@ -413,7 +421,7 @@ export default function DocIQSpherePage() {
         <AtelierFeatureGrid items={audiences} />
       </AtelierAppSection>
 
-      <AtelierAppSection eyebrow="10 / Spec" title="Stack + security.">
+      <AtelierAppSection eyebrow="10 / Spec" title="Operational details.">
         <div className="grid gap-10 md:grid-cols-2">
           <AtelierSpecList items={specs} />
           <div className="atelier-body space-y-3 text-[0.98rem] text-[hsl(var(--ink))]/80 leading-[1.65]">

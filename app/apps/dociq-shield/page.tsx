@@ -183,10 +183,13 @@ const audiences = [
 const specs = [
   { label: 'Processing', value: '~10 seconds (5 pages)' },
   { label: 'Input', value: '.docx, plain text' },
-  { label: 'Models', value: 'Fine-tuned local NER + LLM' },
-  { label: 'Standard', value: 'Swiss court (Aug 2016)' },
-  { label: 'Deployment', value: 'On-prem, air-gapped, CH cloud' },
+  { label: 'Output', value: 'Annotated DOCX + entity report (JSON)' },
   { label: 'Languages', value: 'DE (CH/DE/AT), FR, IT, EN' },
+  { label: 'Standard', value: 'Swiss court anonymisation (Aug 2016)' },
+  { label: 'Data residency', value: 'Your infrastructure or Switzerland' },
+  { label: 'Deployment', value: 'On-prem, air-gapped, CH managed cloud' },
+  { label: 'Compliance', value: 'FADP, GDPR, FINMA-aligned' },
+  { label: 'Standard updates', value: 'Tracked; redaction format bug-fixed' },
 ];
 
 export default function DocIQShieldPage() {
@@ -415,7 +418,7 @@ export default function DocIQShieldPage() {
         <AtelierFeatureGrid items={audiences} />
       </AtelierAppSection>
 
-      <AtelierAppSection eyebrow="07 / Spec" title="Technical details.">
+      <AtelierAppSection eyebrow="07 / Spec" title="Operational details.">
         <div className="grid gap-10 md:grid-cols-2">
           <AtelierSpecList items={specs} />
           <div className="atelier-body space-y-3 text-[0.98rem] text-[hsl(var(--ink))]/80 leading-[1.65]">

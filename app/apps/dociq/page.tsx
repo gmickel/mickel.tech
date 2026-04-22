@@ -162,12 +162,14 @@ const swisscom = [
 ];
 
 const specs = [
-  { label: 'Frontend', value: 'Vue.js' },
-  { label: 'Backend', value: 'Node.js' },
-  { label: 'Database', value: 'PostgreSQL' },
-  { label: 'API', value: 'GraphQL (Postgraphile)' },
-  { label: 'AI / NLP', value: 'Machine Learning' },
-  { label: 'Signatures', value: 'Swisscom QES' },
+  { label: 'Languages', value: 'DE, FR, IT, EN' },
+  { label: 'Hosting', value: 'Switzerland' },
+  { label: 'Document formats', value: 'DOCX templates, DOCX + PDF output' },
+  { label: 'Signatures', value: 'SES + QES via Swisscom Trust Services' },
+  { label: 'Compliance', value: 'FADP, GDPR, ZertES, eIDAS' },
+  { label: 'Status', value: 'In production since 2020' },
+  { label: 'Used by', value: 'Notaries, law firms, insurance, SMEs' },
+  { label: 'Successor', value: 'DocIQ Sphere' },
 ];
 
 export default function DocIQPage() {
@@ -367,7 +369,7 @@ export default function DocIQPage() {
         </p>
       </AtelierAppSection>
 
-      <AtelierAppSection eyebrow="09 / Spec" title="Technical stack.">
+      <AtelierAppSection eyebrow="09 / Spec" title="Operational details.">
         <div className="grid gap-10 md:grid-cols-2">
           <AtelierSpecList items={specs} />
           <div className="atelier-body space-y-3 text-[0.98rem] text-[hsl(var(--ink))]/80 leading-[1.65]">
