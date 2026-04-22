@@ -20,13 +20,14 @@ const APP_DATA = {
 export const metadata: Metadata = {
   title: 'DocIQ Sphere -- AI that actually edits your Word documents',
   description:
-    'Tracked changes, legal research across six databases, clause negotiation, playbooks, data rooms, and complete audit trails. Swiss-engineered.',
+    'Tracked changes, legal research across six databases, clause negotiation, playbooks, data rooms, and complete audit trails. Swiss-engineered, model-agnostic.',
   openGraph: {
     title: 'DocIQ Sphere · Mickel Tech',
     description:
       'AI that edits your actual DOCX. Six legal databases, playbooks, data rooms. Swiss-engineered.',
     type: 'website',
     url: 'https://mickel.tech/apps/dociq-sphere',
+    siteName: 'Mickel Tech',
   },
   twitter: {
     card: 'summary_large_image',
@@ -35,6 +36,29 @@ export const metadata: Metadata = {
   },
   alternates: { canonical: 'https://mickel.tech/apps/dociq-sphere' },
 };
+
+const problems = [
+  {
+    title: 'Broken formatting',
+    description:
+      'ChatGPT, Claude, Copilot destroy numbering, styles, tables, tracked changes.',
+  },
+  {
+    title: 'No data sovereignty',
+    description:
+      'US-hosted tools fail Swiss + EU requirements. Where is your data going?',
+  },
+  {
+    title: 'No audit trail',
+    description:
+      'No record of what the AI did and why. Regulators want evidence; you can’t provide it.',
+  },
+  {
+    title: 'Generic AI',
+    description:
+      'No legal domain expertise, no firm knowledge, no database access.',
+  },
+];
 
 const capabilities = [
   {
@@ -55,7 +79,7 @@ const capabilities = [
   {
     title: 'Clause bank + negotiation',
     description:
-      'Reusable clauses tagged by type + jurisdiction. Hybrid semantic + keyword search. Generate 2-4 variants at protective / balanced / concessive levels.',
+      'Reusable clauses tagged by type + jurisdiction. Hybrid semantic + keyword search. Generate 2–4 variants at protective / balanced / concessive levels.',
   },
   {
     title: 'Secure data rooms',
@@ -79,7 +103,25 @@ const capabilities = [
   },
 ];
 
-const playbooks = [
+const trackedChangesDetail = [
+  {
+    title: 'OOXML deltas, not plaintext',
+    description:
+      'AI edits map to Word’s own change-tracking XML. Numbering, styles, tables, footnotes, cross-references all survive round-trips.',
+  },
+  {
+    title: 'Conflict-safe',
+    description:
+      'AI edits overlap user edits cleanly; both show up as separate tracked changes with attribution. No silent overwrites.',
+  },
+  {
+    title: 'Measured fidelity',
+    description:
+      'Zero data-loss round-trip on 200-page contracts with footnotes, equations, and embedded objects. Tested on real DOCX.',
+  },
+];
+
+const playbookLibrary = [
   {
     title: 'GDPR Compliance Check',
     description: 'Sub-processor lists, audit rights, cross-border transfers.',
@@ -111,6 +153,86 @@ const playbooks = [
   },
 ];
 
+const playbookMechanics = [
+  {
+    title: 'Natural-language authoring',
+    description:
+      'Describe the workflow in plain English; Sphere compiles it into a structured, versioned prompt tree.',
+  },
+  {
+    title: 'Version history + rollback',
+    description:
+      'Every revision saved. Roll back to v1.3 when v1.7 hallucinates. Diff between versions to audit change rationale.',
+  },
+  {
+    title: 'Prompt protection',
+    description:
+      'The team runs a playbook by name; the prompt itself stays encrypted at rest. Firm IP doesn’t leak to users.',
+  },
+  {
+    title: 'Auto-trigger rules',
+    description:
+      'Upload a DOCX tagged “NDA” → NDA Risk Assessment runs automatically. Condition-based routing on type + jurisdiction + client.',
+  },
+];
+
+const modelRouting = [
+  {
+    label: 'Research + synthesis',
+    value: 'Claude Opus 4 (long context, reasoning)',
+  },
+  {
+    label: 'Bulk extraction',
+    value: 'GPT-5 (structured outputs, throughput)',
+  },
+  {
+    label: 'Clause generation',
+    value: 'Gemini 2.5 Pro (style control)',
+  },
+  {
+    label: 'Fast classification',
+    value: 'Claude Haiku 4.5 (cost + latency)',
+  },
+  {
+    label: 'Override',
+    value: 'User-pinned per matter or playbook',
+  },
+];
+
+const auditSchema = [
+  { label: 'Prompt (text + template id)', value: 'string · versioned' },
+  { label: 'Reasoning chain', value: 'sequence · ordered' },
+  {
+    label: 'Tool calls (db, search, OOXML)',
+    value: 'array · with args + result',
+  },
+  { label: 'Token count (in / out)', value: 'integer · per model' },
+  { label: 'Model id + version', value: 'string' },
+  { label: 'Actor (user id)', value: 'uuid' },
+  { label: 'Matter / data-room id', value: 'uuid' },
+  { label: 'Timestamp (UTC)', value: 'iso8601' },
+  { label: 'IP + user agent (data room)', value: 'string' },
+  { label: 'Export format', value: 'JSON, CSV, PDF report' },
+];
+
+const deployment = [
+  {
+    title: 'Swiss managed cloud',
+    description:
+      'Swiss datacenters (Zürich + Geneva regions). 99.9% SLA. DR across two regions. GDPR + FADP DPA available.',
+  },
+  {
+    title: 'On-premises',
+    description:
+      'Docker / Kubernetes install. Customer-supplied GPU for local models. Air-gap ready with pre-cached Fedlex snapshots.',
+  },
+  {
+    title: 'Air-gapped',
+    description:
+      'Zero outbound network. Local model weights. Legal research served from snapshotted corpora refreshed on a customer schedule.',
+  },
+];
+
 const audiences = [
   {
     title: 'Corporate Legal + RegTech',
@@ -135,19 +257,30 @@ const audiences = [
 ];
 
 const specs = [
-  { label: 'Frontend', value: 'Next.js 16 + React 19' },
-  { label: 'Backend', value: 'Convex (TypeScript)' },
-  { label: 'Doc engine', value: 'Python + OOXML' },
-  { label: 'AI models', value: 'Model-agnostic' },
-  { label: 'Legal sources', value: 'Fedlex, EUR-Lex, BGE, CJEU, ECHR' },
-  { label: 'Compliance', value: 'GDPR, FADP, ZertES' },
-  { label: 'Deployment', value: 'Cloud, On-Prem, Air-Gapped' },
+  { label: 'Languages', value: 'DE (CH/DE/AT), FR, IT, EN' },
+  {
+    label: 'Data residency',
+    value: 'Switzerland (managed) or your infrastructure',
+  },
+  {
+    label: 'Document formats',
+    value: 'DOCX in + out with tracked changes, PDF export',
+  },
+  {
+    label: 'Legal sources',
+    value: 'Fedlex, EUR-Lex, BGE, CJEU, HUDOC, Commentary',
+  },
+  { label: 'Compliance', value: 'GDPR, FADP' },
+  { label: 'Deployment', value: 'Swiss managed cloud, on-prem, air-gapped' },
+  { label: 'Integrations', value: 'REST API, MCP server, webhooks' },
+  { label: 'Audit export', value: 'JSON, CSV, PDF' },
+  { label: 'Support', value: 'Zürich business hours' },
 ];
 
 export default function DocIQSpherePage() {
   return (
     <AtelierShell>
-      <JsonLd data={softwareAppSchema(APP_DATA)} />
+      <JsonLd data={softwareAppSchema({ ...APP_DATA, offer: 'commercial' })} />
       <JsonLd
         data={breadcrumbSchema([
           { name: 'Apps', url: '/apps' },
@@ -157,7 +290,7 @@ export default function DocIQSpherePage() {
 
       <AtelierAppHero
         category="03 / Legal tech"
-        description="Sphere edits your actual DOCX. Tracked changes, six legal databases, clause negotiation, playbooks, and secure data rooms, all inside the document. Every AI interaction auditable. Every edit traceable to the prompt that produced it. Model-agnostic: uses Claude, GPT, or Gemini, selected optimally per task."
+        description="Sphere edits your actual DOCX. Tracked changes, six legal databases, clause negotiation, playbooks, and secure data rooms, all inside the document. Every AI interaction auditable. Every edit traceable to the prompt that produced it. Model-agnostic: Claude, GPT, or Gemini, routed per task for optimal cost and quality."
         idx="03"
         image="/sphere/sphere-research.png"
         imageKind="shot"
@@ -183,30 +316,7 @@ export default function DocIQSpherePage() {
         lede="Legal professionals spend enormous time on repetitive document tasks. Generic AI tools make it worse."
         title="AI that destroys your documents."
       >
-        <AtelierFeatureGrid
-          items={[
-            {
-              title: 'Broken formatting',
-              description:
-                'ChatGPT, Claude, Copilot destroy numbering, styles, tables, tracked changes.',
-            },
-            {
-              title: 'No data sovereignty',
-              description:
-                'US-hosted tools fail Swiss + EU requirements. Where is your data going?',
-            },
-            {
-              title: 'No audit trail',
-              description:
-                "No record of what the AI did and why. Regulators want evidence; you can't provide it.",
-            },
-            {
-              title: 'Generic AI',
-              description:
-                'No legal domain expertise, no firm knowledge, no database access.',
-            },
-          ]}
-        />
+        <AtelierFeatureGrid items={problems} />
       </AtelierAppSection>
 
       <AtelierAppSection
@@ -253,18 +363,65 @@ export default function DocIQSpherePage() {
       </AtelierAppSection>
 
       <AtelierAppSection
-        eyebrow="04 / Playbooks"
-        lede="Institutional expertise at AI speed. Custom playbooks via natural language. Auto-trigger on upload. Version history with rollback."
-        title="Ready-made legal workflows."
+        eyebrow="04 / Tracked changes"
+        lede="Generic AI tools round-trip through plaintext and shred your formatting. Sphere edits the OOXML directly."
+        title="Word-native fidelity."
       >
-        <AtelierFeatureGrid cols={2} items={playbooks} />
+        <AtelierFeatureGrid items={trackedChangesDetail} />
       </AtelierAppSection>
 
-      <AtelierAppSection eyebrow="05 / Audience" title="Who it's for.">
+      <AtelierAppSection
+        eyebrow="05 / Playbooks"
+        lede="Institutional expertise, encoded once and run by the whole team. Version-controlled, protected, and auditable."
+        title="Reusable legal workflows."
+      >
+        <div className="space-y-10">
+          <AtelierFeatureGrid cols={2} items={playbookMechanics} />
+          <div>
+            <p className="atelier-eyebrow text-[hsl(var(--paper-muted))]">
+              Ships with eight ready-made playbooks
+            </p>
+            <div className="mt-4">
+              <AtelierFeatureGrid cols={2} items={playbookLibrary} />
+            </div>
+          </div>
+        </div>
+      </AtelierAppSection>
+
+      <AtelierAppSection
+        eyebrow="06 / Models"
+        lede="Enterprises fear vendor lock-in. Sphere routes each task to the model that wins on that task, and lets you override anywhere."
+        title="Model-agnostic routing."
+      >
+        <AtelierSpecList items={modelRouting} />
+        <p className="atelier-body mt-6 max-w-[60ch] text-[0.95rem] text-[hsl(var(--ink))]/72 leading-[1.6]">
+          When a primary model is unavailable, Sphere falls back to the next
+          best for that task class. Routing decisions land in the audit log
+          alongside the prompt and reasoning chain.
+        </p>
+      </AtelierAppSection>
+
+      <AtelierAppSection
+        eyebrow="07 / Audit"
+        lede="Every AI run and every data-room event captured in a structured log. Exportable as compliance evidence for GDPR Art. 30, FINMA, or internal IT-risk review."
+        title="Audit schema."
+      >
+        <AtelierSpecList items={auditSchema} />
+      </AtelierAppSection>
+
+      <AtelierAppSection
+        eyebrow="08 / Deployment"
+        lede="Same product, three trust boundaries. Pick the one your regulator lives with."
+        title="Where it runs."
+      >
+        <AtelierFeatureGrid items={deployment} />
+      </AtelierAppSection>
+
+      <AtelierAppSection eyebrow="09 / Audience" title="Who it’s for.">
         <AtelierFeatureGrid items={audiences} />
       </AtelierAppSection>
 
-      <AtelierAppSection eyebrow="06 / Spec" title="Stack + security.">
+      <AtelierAppSection eyebrow="10 / Spec" title="Operational details.">
         <div className="grid gap-10 md:grid-cols-2">
           <AtelierSpecList items={specs} />
           <div className="atelier-body space-y-3 text-[0.98rem] text-[hsl(var(--ink))]/80 leading-[1.65]">

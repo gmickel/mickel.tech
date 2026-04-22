@@ -82,13 +82,94 @@ const signatureFeatures = [
   },
 ];
 
+const timeline = [
+  {
+    year: '2017',
+    name: 'Concept',
+    description:
+      'Visual programming language for document logic drafted. First prototype of nested conditionals and SmartObjects.',
+  },
+  {
+    year: '2018',
+    name: 'First customers',
+    description:
+      'Pilot with Laux Lawyers and early boutique firms. Real contracts as templates, not slideware.',
+  },
+  {
+    year: '2019',
+    name: 'NLP pass',
+    description:
+      'Machine-learning parameterisation: one click converts a static DOCX into a dynamic SmartTemplate. Swisscom QES integration certified.',
+  },
+  {
+    year: '2020',
+    name: 'General release',
+    description:
+      'August 2020. SVV (Swiss Insurance Association) adoption, expansion into notaries, tax advisors, accountants. Multi-workspace + client portal shipped.',
+  },
+  {
+    year: '2021+',
+    name: 'In production',
+    description:
+      'Steady-state maintenance. Learnings fold forward into DocIQ Sphere (2024+) and DocIQ Shield (2025+).',
+  },
+];
+
+const smartTemplate = [
+  {
+    title: 'Visual logic, no code',
+    description:
+      'Nested conditionals up to five levels deep. Variables, calculations, reusable SmartObjects. Legal admins author without developer support.',
+  },
+  {
+    title: 'One-click parameterisation',
+    description:
+      'Upload a static DOCX. NLP proposes variables, clause boundaries, and branch points. Editor confirms; the template is live.',
+  },
+  {
+    title: 'Form-based drafting',
+    description:
+      'External clients fill a form. Conditional sections appear or vanish by answer. Produces a lawyer-grade DOCX at the end.',
+  },
+  {
+    title: 'Live preview',
+    description:
+      'Every variable change re-renders the document in real time. What the author sees is what the client receives.',
+  },
+];
+
+const swisscom = [
+  {
+    title: 'Certified partner',
+    description:
+      'Direct integration with Swisscom Trust Services. DocIQ is a named signing application in the Swisscom ecosystem.',
+  },
+  {
+    title: 'Hash-only transmission',
+    description:
+      'The document content never leaves DocIQ. Only the cryptographic hash is sent for signing; signature comes back, binds to the original.',
+  },
+  {
+    title: 'Mobile ID identity proofing',
+    description:
+      'Signatory identified via Swisscom Mobile ID. Legally equivalent to handwritten signature under ZertES (CH) and eIDAS (EU).',
+  },
+  {
+    title: 'Audit-grade record',
+    description:
+      'Every signature carries a verifiable trust-services timestamp and a full chain from identity proofing to document hash.',
+  },
+];
+
 const specs = [
-  { label: 'Frontend', value: 'Vue.js' },
-  { label: 'Backend', value: 'Node.js' },
-  { label: 'Database', value: 'PostgreSQL' },
-  { label: 'API', value: 'GraphQL (Postgraphile)' },
-  { label: 'AI / NLP', value: 'Machine Learning' },
-  { label: 'Signatures', value: 'Swisscom QES' },
+  { label: 'Languages', value: 'DE, FR, IT, EN' },
+  { label: 'Hosting', value: 'Switzerland' },
+  { label: 'Document formats', value: 'DOCX templates, DOCX + PDF output' },
+  { label: 'Signatures', value: 'SES + QES via Swisscom Trust Services' },
+  { label: 'Compliance', value: 'FADP, GDPR, ZertES, eIDAS' },
+  { label: 'Status', value: 'In production since 2020' },
+  { label: 'Used by', value: 'Notaries, law firms, insurance, SMEs' },
+  { label: 'Successor', value: 'DocIQ Sphere' },
 ];
 
 export default function DocIQPage() {
@@ -208,14 +289,59 @@ export default function DocIQPage() {
       </AtelierAppSection>
 
       <AtelierAppSection
-        eyebrow="04 / Signatures"
+        eyebrow="04 / Timeline"
+        lede="A multi-year build that outlived its own era. Still powering enterprise workflows in Switzerland."
+        title="From concept to production."
+      >
+        <ol className="divide-y divide-[hsl(var(--ink))]/10 border-[hsl(var(--ink))]/10 border-y">
+          {timeline.map((t) => (
+            <li
+              className="grid grid-cols-12 gap-4 py-5 md:gap-6 md:py-6"
+              key={t.year}
+            >
+              <div className="col-span-3 md:col-span-2">
+                <span className="atelier-numerals text-[1.6rem] text-[hsl(var(--rust))] leading-none">
+                  {t.year}
+                </span>
+              </div>
+              <div className="col-span-9 md:col-span-3">
+                <h3 className="atelier-display font-medium text-[1.1rem] leading-[1.2]">
+                  {t.name}
+                </h3>
+              </div>
+              <p className="atelier-body col-span-12 text-[0.95rem] text-[hsl(var(--ink))]/80 leading-[1.55] md:col-span-7">
+                {t.description}
+              </p>
+            </li>
+          ))}
+        </ol>
+      </AtelierAppSection>
+
+      <AtelierAppSection
+        eyebrow="05 / SmartTemplate"
+        lede="No code, no developer. Legal admins built five-level-nested conditional contracts and let clients fill them via a form."
+        title="Document logic as a visual language."
+      >
+        <AtelierFeatureGrid items={smartTemplate} />
+      </AtelierAppSection>
+
+      <AtelierAppSection
+        eyebrow="06 / Signatures"
         lede="Certified Swisscom partner. Both simple and qualified, legally equivalent to handwritten signatures in Switzerland and the EU."
         title="Electronic signatures."
       >
         <AtelierFeatureGrid items={signatureFeatures} />
       </AtelierAppSection>
 
-      <AtelierAppSection eyebrow="05 / Customers" title="Who used it.">
+      <AtelierAppSection
+        eyebrow="07 / Swisscom"
+        lede="Hash-only transmission, Mobile ID identity proofing, trust-services timestamps. DocIQ is a named signing application in the Swisscom ecosystem."
+        title="Inside the QES integration."
+      >
+        <AtelierFeatureGrid items={swisscom} />
+      </AtelierAppSection>
+
+      <AtelierAppSection eyebrow="08 / Customers" title="Who used it.">
         <div className="atelier-body grid gap-5 text-[0.98rem] text-[hsl(var(--ink))]/80 leading-[1.65] sm:grid-cols-2 lg:grid-cols-3">
           {[
             'Swiss Insurance Association (SVV)',
@@ -243,7 +369,7 @@ export default function DocIQPage() {
         </p>
       </AtelierAppSection>
 
-      <AtelierAppSection eyebrow="06 / Spec" title="Technical stack.">
+      <AtelierAppSection eyebrow="09 / Spec" title="Operational details.">
         <div className="grid gap-10 md:grid-cols-2">
           <AtelierSpecList items={specs} />
           <div className="atelier-body space-y-3 text-[0.98rem] text-[hsl(var(--ink))]/80 leading-[1.65]">
