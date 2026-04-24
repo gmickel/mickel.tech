@@ -21,7 +21,7 @@ const APP_DATA = {
     'Multi-platform AI agent orchestration with zero external dependencies. Works on Claude Code, Factory Droid, OpenAI Codex, and OpenCode. Task graphs, re-anchoring, cross-model reviews, Ralph autonomous mode.',
   slug: 'flow-next',
   category: 'DeveloperApplication',
-  version: '0.29.0',
+  version: '0.32.1',
   operatingSystem: 'Cross-platform',
   programmingLanguage: 'Python',
 };
@@ -29,7 +29,7 @@ const APP_DATA = {
 export const metadata: Metadata = {
   title: 'Flow-Next -- Zero-dep agent orchestration',
   description:
-    'Multi-platform AI agent orchestration. Claude Code, Factory Droid, OpenAI Codex, OpenCode. 17 subagents, cross-model review, Ralph autonomous mode. Zero deps.',
+    'Multi-platform AI agent orchestration. Claude Code, Factory Droid, OpenAI Codex, OpenCode. 17 subagents, cross-model review with requirement-ID traceability + trivial-diff triage, Ralph autonomous mode. Zero deps.',
   keywords: [
     'Claude Code plugin',
     'Factory Droid',
@@ -39,6 +39,8 @@ export const metadata: Metadata = {
     'task tracking',
     'zero dependencies',
     'cross-model review',
+    'requirement-ID traceability',
+    'trivial-diff triage',
     'Ralph mode',
     'autonomous agents',
     'flowctl',
@@ -97,6 +99,16 @@ const FAQS = [
     question: 'Codex CLI review vs RepoPrompt review?',
     answer:
       'Both deliver Carmack-level cross-model review with identical criteria. Codex CLI is cross-platform and runs GPT-5.2 High by default. RepoPrompt (rp-cli) is macOS-only but offers a visual builder for context selection. GitHub Copilot CLI is the third supported backend. Pick by platform and preference.',
+  },
+  {
+    question: 'What is requirement-ID traceability?',
+    answer:
+      'Epic specs number their acceptance criteria as R1, R2, R3... Tasks optionally declare satisfies: [R1, R3] frontmatter. Impl-review and epic-review produce per-R-ID coverage tables (met / partial / not-addressed / deferred). Any unaddressed R-ID flips verdict to NEEDS_WORK; the receipt carries an unaddressed array so the fix loop has targeted work. Renumber-forbidden after the first review cycle. Plan and plan-sync write R-IDs automatically.',
+  },
+  {
+    question: 'What does flowctl triage-skip do?',
+    answer:
+      'A deterministic whitelist pre-check that returns SHIP without calling a review backend for trivial diffs: lockfile-only bumps, pure docs changes, release chores, generated-file regenerations. The receipt records mode: triage_skip and a one-line reason. On by default in Ralph mode; opt-out via --no-triage or FLOW_RALPH_NO_TRIAGE=1. An optional fast-model LLM judge for ambiguous diffs is gated behind FLOW_TRIAGE_LLM=1. Saves rp / codex / copilot calls on trivial commits.',
   },
   {
     question: 'Does Flow-Next work with Factory Droid?',
@@ -456,6 +468,16 @@ const coreFeatures = [
     title: 'Cross-model review',
     description:
       'Different models catch different blind spots. Same-model self-review is a blind mirror.',
+  },
+  {
+    title: 'Requirement-ID traceability',
+    description:
+      'Epic specs number acceptance criteria (R1, R2, R3). Reviews emit per-R-ID coverage tables; unaddressed IDs flip verdict to NEEDS_WORK with targeted fix-loop hints.',
+  },
+  {
+    title: 'Trivial-diff triage',
+    description:
+      'flowctl triage-skip detects lockfile-only, docs-only, and release-chore diffs and returns SHIP without calling a review backend. Saves cycles on trivial commits.',
   },
   {
     title: 'CI-ready',
