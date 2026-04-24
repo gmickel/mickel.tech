@@ -21,7 +21,7 @@ const APP_DATA = {
     'Multi-platform AI agent orchestration with zero external dependencies. Works on Claude Code, Factory Droid, OpenAI Codex, and OpenCode. Task graphs, re-anchoring, cross-model reviews, Ralph autonomous mode.',
   slug: 'flow-next',
   category: 'DeveloperApplication',
-  version: '0.34.0',
+  version: '0.35.0',
   operatingSystem: 'Cross-platform',
   programmingLanguage: 'Python',
 };
@@ -113,6 +113,12 @@ const FAQS = [
     question: 'What does flowctl triage-skip do?',
     answer:
       'A deterministic whitelist pre-check that returns SHIP without calling a review backend for trivial diffs: lockfile-only bumps, pure docs changes, release chores, generated-file regenerations. The receipt records mode: triage_skip and a one-line reason. On by default in Ralph mode; opt-out via --no-triage or FLOW_RALPH_NO_TRIAGE=1. An optional fast-model LLM judge for ambiguous diffs is gated behind FLOW_TRIAGE_LLM=1. Saves rp / codex / copilot calls on trivial commits.',
+  },
+  {
+    question:
+      'What are the opt-in review flags (--validate, --deep, --interactive)?',
+    answer:
+      'Three opt-in flags on /flow-next:impl-review that layer extra capability on top of the default Carmack-level review. The default review shape is unchanged — all three flags are off by default. --validate (FLOW_VALIDATE_REVIEW=1) drops false-positive findings via a validator pass on NEEDS_WORK and upgrades to SHIP when all findings drop; never downgrades a SHIP or MAJOR_RETHINK verdict. --deep (FLOW_REVIEW_DEEP=1) runs primary then layers adversarial, security, and performance passes in the same backend session, with cross-pass agreement promoting confidence one anchor step. --interactive presents a per-finding walkthrough with Apply / Defer / Skip / Acknowledge plus an "LFG the rest" escape hatch; deferred findings append to .flow/review-deferred/<branch-slug>.md. --interactive is Ralph-incompatible by design and hard-errors when REVIEW_RECEIPT_PATH or FLOW_RALPH=1 is set. Phase order when flags combine: primary → deep → validate → interactive → verdict. Receipt extensions are additive.',
   },
   {
     question: 'How do I handle PR review comments with flow-next?',
@@ -489,6 +495,11 @@ const coreFeatures = [
       'flowctl triage-skip detects lockfile-only, docs-only, and release-chore diffs and returns SHIP without calling a review backend. Saves cycles on trivial commits.',
   },
   {
+    title: 'Opt-in review flags',
+    description:
+      '--validate drops false-positive findings on NEEDS_WORK. --deep layers adversarial, security, and performance passes on top of the primary review. --interactive presents a per-finding Apply/Defer/Skip walkthrough. All off by default — the default Carmack-level review is unchanged; flags add structure, validation, and deep-dives on top without replacing it.',
+  },
+  {
     title: 'PR feedback resolution',
     description:
       '/flow-next:resolve-pr closes out GitHub review threads end-to-end. Fetch via GraphQL, dispatch resolver agents in parallel, validate, commit, reply, resolve. Cross-invocation cluster analysis catches recurring patterns across review rounds. User-triggered only; Ralph-out by design.',
@@ -515,6 +526,11 @@ const optInFeatures = [
     title: 'DESIGN.md awareness',
     description:
       'Scouts read DESIGN.md if present. Pairs well with Google Stitch for design-system-aware frontend work. Opt-in at /flow-next:prime time.',
+  },
+  {
+    title: 'Opt-in review rigor (--validate / --deep / --interactive)',
+    description:
+      'Three additive flags on /flow-next:impl-review. --validate drops false-positive findings via a validator pass (FLOW_VALIDATE_REVIEW=1). --deep layers adversarial + auto-enabled security/performance passes on top of the primary review (FLOW_REVIEW_DEEP=1). --interactive is a per-finding Apply/Defer/Skip walkthrough with an "LFG the rest" escape hatch; Ralph-incompatible by design. Default review is unchanged — flags add structure on top without replacing the Carmack-level baseline.',
   },
 ];
 
