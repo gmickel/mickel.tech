@@ -233,12 +233,12 @@ droid plugin install flow-next`,
   {
     name: 'OpenCode',
     status: 'Experimental',
-    role: 'Community port',
-    install: `# See the port at:
+    role: 'Open-source terminal agent',
+    install: `# Experimental port of flow-next by me:
 # github.com/gmickel/flow-next-opencode`,
     features: [
       'Core plan / work / review loop',
-      'Community-maintained',
+      'Experimental port of flow-next by me',
       'Feature parity drifts behind',
     ],
     uninstall: 'rm -rf .flow/',
