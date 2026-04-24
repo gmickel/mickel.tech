@@ -92,9 +92,9 @@ export default function OutlookctlPage() {
       />
 
       <AtelierAppHero
-        category="07 / CLI"
+        category="08 / CLI"
         description="Can't access Exchange via Microsoft Graph API? Control Outlook directly through COM automation on your Windows workstation. Let Claude help manage email and calendar. No API keys, no OAuth, just your existing Outlook session. Ships with a Claude Code skill for AI-assisted workflows with safety-first defaults."
-        idx="07"
+        idx="08"
         image="/outlookctl/outlookctl-hero.png"
         imageKind="shot"
         meta={[

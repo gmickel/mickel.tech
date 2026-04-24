@@ -184,9 +184,9 @@ export default function DocIQPage() {
       />
 
       <AtelierAppHero
-        category="09 / Archive · Legal tech"
+        category="10 / Archive · Legal tech"
         description="One of the first legal tech platforms to use extensive natural language processing and machine learning for document lifecycle management. Built 2017-2020 and still powering enterprise companies across Switzerland. A contract lifecycle platform where legal counsels and law firms could templatise documents with a single click, using NLP, then let clients complete them through form-based filling with no technical knowledge required."
-        idx="09"
+        idx="10"
         image="/dociq/dociq-template-editor.png"
         imageKind="shot"
         meta={[

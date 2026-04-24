@@ -101,9 +101,9 @@ export default function SheetsCLIPage() {
       />
 
       <AtelierAppHero
-        category="06 / CLI"
+        category="07 / CLI"
         description="A fast, deterministic CLI for reading and writing Google Sheets. Key-based updates instead of fragile row indices. Batch operations for atomic multi-step workflows. JSON everywhere. Designed for humans at the terminal and AI agents that need programmatic spreadsheet access."
-        idx="06"
+        idx="07"
         image="/sheets-cli/icon.png"
         imageKind="logo"
         meta={[

@@ -204,9 +204,9 @@ export default function DocIQShieldPage() {
       />
 
       <AtelierAppHero
-        category="04 / Privacy"
+        category="05 / Privacy"
         description="Swiss-engineered anonymisation for judicial, government, and regulated sectors. Fine-tuned local NER + LLM models; no data leaves your network. Full Swiss court standard compliance. Zero-persistence architecture: no database, no logs, no trace. Documents process entirely in memory and vanish on exit."
-        idx="04"
+        idx="05"
         image="/shield/shield.png"
         imageKind="shot"
         meta={[

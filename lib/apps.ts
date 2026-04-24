@@ -43,6 +43,18 @@ export const APPS: AppMeta[] = [
     status: 'Released',
   },
   {
+    slug: 'dettivo',
+    name: 'Dettivo',
+    tagline: 'Local-first dictation and meeting capture for Mac',
+    description:
+      'Menu-bar Mac app. Dictate into any app with a hotkey. Capture meetings without inviting a bot. Audio, transcripts, analysis stay on your Mac. CLI + loopback REST + MCP for agents. One-time lifetime licence.',
+    category: 'DesktopApplication',
+    tags: ['macOS', 'Dictation', 'Meetings', 'MCP'],
+    image: '/dettivo/home.png',
+    imageKind: 'shot',
+    status: 'Coming Apr 2026',
+  },
+  {
     slug: 'dociq-sphere',
     name: 'DocIQ Sphere',
     tagline: 'AI that actually edits your Word documents',

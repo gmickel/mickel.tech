@@ -98,9 +98,9 @@ export default function SmartTrimPage() {
       />
 
       <AtelierAppHero
-        category="08 / Utility"
+        category="09 / Utility"
         description="Lightweight macOS menu bar utility that automatically fixes formatting issues in clipboard text. Runs silently in the background and cleans up text when you copy-paste between applications."
-        idx="08"
+        idx="09"
         image="/smarttrim-dark.png"
         imageKind="shot"
         meta={[

@@ -12,6 +12,7 @@ const itemsEN = [
   { label: 'SECA 2026', meta: 'Invited speaker, AI in SME growth' },
   { label: 'DocIQ', meta: 'Founder, AI-native CLM platform' },
   { label: 'FlowNext', meta: 'Author · thousands of users' },
+  { label: 'Dettivo', meta: 'Local-first Mac dictation · MCP server' },
   { label: '20+ years', meta: 'Engineering production systems' },
   { label: 'DE / EN', meta: 'Bilingual mandates' },
 ] as const;
@@ -26,6 +27,7 @@ const itemsDE = [
   { label: 'SECA 2026', meta: 'Eingeladener Sprecher, KI im KMU' },
   { label: 'DocIQ', meta: 'Gründer, KI-natives CLM' },
   { label: 'FlowNext', meta: 'Autor · tausende Nutzer' },
+  { label: 'Dettivo', meta: 'Local-first Mac-Diktat · MCP-Server' },
   { label: '20+ Jahre', meta: 'Produktionssysteme entwickelt' },
   { label: 'DE / EN', meta: 'Zweisprachige Mandate' },
 ] as const;

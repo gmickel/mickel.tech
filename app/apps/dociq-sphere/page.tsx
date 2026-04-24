@@ -289,9 +289,9 @@ export default function DocIQSpherePage() {
       />
 
       <AtelierAppHero
-        category="03 / Legal tech"
+        category="04 / Legal tech"
         description="Sphere edits your actual DOCX. Tracked changes, six legal databases, clause negotiation, playbooks, and secure data rooms, all inside the document. Every AI interaction auditable. Every edit traceable to the prompt that produced it. Model-agnostic: Claude, GPT, or Gemini, routed per task for optimal cost and quality."
-        idx="03"
+        idx="04"
         image="/sphere/sphere-research.png"
         imageKind="shot"
         meta={[

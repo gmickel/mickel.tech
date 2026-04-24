@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1024 1024">
+  <defs>
+    <linearGradient id="linear-gradient" x1="296.64" y1="276.86" x2="296.64" y2="766.17" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#2e73f5"/>
+      <stop offset=".38" stop-color="#2565eb"/>
+      <stop offset="1" stop-color="#1a54e0"/>
+    </linearGradient>
+    <clipPath id="clippath">
+      <path d="M152.79,635.31h0c-20.19,0-36.56-16.37-36.56-36.56v-173.48c0-20.19,16.37-36.56,36.56-36.56h0c20.19,0,36.56,16.37,36.56,36.56v173.48c0,20.19-16.37,36.56-36.56,36.56ZM333.21,722.82v-421.63c0-20.19-16.37-36.56-36.56-36.56h0c-20.19,0-36.56,16.37-36.56,36.56v421.63c0,20.19,16.37,36.56,36.56,36.56h0c20.19,0,36.56-16.37,36.56-36.56ZM477.06,690.45v-356.9c0-20.19-16.37-36.56-36.56-36.56h0c-20.19,0-36.56,16.37-36.56,36.56v356.9c0,20.19,16.37,36.56,36.56,36.56h0c20.19,0,36.56-16.37,36.56-36.56Z" fill="none"/>
+    </clipPath>
+    <radialGradient id="radial-gradient" cx="471.32" cy="512" fx="471.32" fy="512" r="73.23" gradientTransform="translate(0 -2572.31) scale(1 6.02)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#00d2ff"/>
+      <stop offset=".11" stop-color="#24d4fd" stop-opacity=".8"/>
+      <stop offset=".28" stop-color="#56d6fc" stop-opacity=".52"/>
+      <stop offset=".43" stop-color="#7ed9fa" stop-opacity=".29"/>
+      <stop offset=".56" stop-color="#9adaf9" stop-opacity=".13"/>
+      <stop offset=".67" stop-color="#acdbf9" stop-opacity=".04"/>
+      <stop offset=".73" stop-color="#b3dcf9" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="radial-gradient-2" cx="331.39" fx="331.39" r="73.23" gradientTransform="translate(0 -3074.78) scale(1 7.01)" xlink:href="#radial-gradient"/>
+    <radialGradient id="radial-gradient-3" cx="189.36" fx="189.36" r="73.23" gradientTransform="translate(0 -2701.21) scale(1 6.28)" xlink:href="#radial-gradient"/>
+    <clipPath id="clippath-1">
+      <path d="M584.35,818.29h0c-14.71,0-26.64-11.93-26.64-26.64V232.35c0-14.71,11.93-26.64,26.64-26.64h0c14.71,0,26.64,11.93,26.64,26.64v559.29c0,14.71-11.93,26.64-26.64,26.64ZM898.11,408.22h-197.6c-5.34,0-9.66,4.33-9.66,9.66v53.8c0,5.34,4.33,9.66,9.66,9.66h62.24v164.2c0,5.34,4.33,9.66,9.66,9.66h53.8c5.34,0,9.66-4.33,9.66-9.66v-164.2h62.24c5.34,0,9.66-4.33,9.66-9.66v-53.8c0-5.34-4.33-9.66-9.66-9.66Z" fill="none"/>
+    </clipPath>
+    <radialGradient id="radial-gradient-4" cx="491.54" cy="512" fx="491.54" fy="512" r="73.23" gradientTransform="translate(246.31 -3010.59) scale(.63 6.88)" xlink:href="#radial-gradient"/>
+  </defs>
+  <path d="M152.79,635.31h0c-20.19,0-36.56-16.37-36.56-36.56v-173.48c0-20.19,16.37-36.56,36.56-36.56h0c20.19,0,36.56,16.37,36.56,36.56v173.48c0,20.19-16.37,36.56-36.56,36.56ZM333.21,722.82v-421.63c0-20.19-16.37-36.56-36.56-36.56h0c-20.19,0-36.56,16.37-36.56,36.56v421.63c0,20.19,16.37,36.56,36.56,36.56h0c20.19,0,36.56-16.37,36.56-36.56ZM477.06,690.45v-356.9c0-20.19-16.37-36.56-36.56-36.56h0c-20.19,0-36.56,16.37-36.56,36.56v356.9c0,20.19,16.37,36.56,36.56,36.56h0c20.19,0,36.56-16.37,36.56-36.56Z" fill="url(#linear-gradient)"/>
+  <g>
+    <path d="M296.64,753.23h0c-20.19,0-36.56-16.37-36.56-36.56v6.15c0,20.19,16.37,36.56,36.56,36.56h0c20.19,0,36.56-16.37,36.56-36.56v-6.15c0,20.19-16.37,36.56-36.56,36.56Z" fill="#2e73f5"/>
+    <path d="M152.79,629.16h0c-20.19,0-36.56-16.37-36.56-36.56v6.15c0,20.19,16.37,36.56,36.56,36.56h0c20.19,0,36.56-16.37,36.56-36.56v-6.15c0,20.19-16.37,36.56-36.56,36.56Z" fill="#2e73f5"/>
+    <path d="M440.5,720.86h0c-20.19,0-36.56-16.37-36.56-36.56v6.15c0,20.19,16.37,36.56,36.56,36.56h0c20.19,0,36.56-16.37,36.56-36.56v-6.15c0,20.19-16.37,36.56-36.56,36.56Z" fill="#2e73f5"/>
+  </g>
+  <path d="M584.35,818.29h0c-14.71,0-26.64-11.93-26.64-26.64V232.35c0-14.71,11.93-26.64,26.64-26.64h0c14.71,0,26.64,11.93,26.64,26.64v559.29c0,14.71-11.93,26.64-26.64,26.64ZM898.11,408.22h-197.6c-5.34,0-9.66,4.33-9.66,9.66v53.8c0,5.34,4.33,9.66,9.66,9.66h62.24v164.2c0,5.34,4.33,9.66,9.66,9.66h53.8c5.34,0,9.66-4.33,9.66-9.66v-164.2h62.24c5.34,0,9.66-4.33,9.66-9.66v-53.8c0-5.34-4.33-9.66-9.66-9.66Z" fill="#fff"/>
+  <g clip-path="url(#clippath)">
+    <ellipse cx="471.32" cy="512" rx="59.72" ry="431.04" fill="url(#radial-gradient)"/>
+    <ellipse cx="331.39" cy="512" rx="59.72" ry="501.26" fill="url(#radial-gradient-2)"/>
+    <ellipse cx="189.36" cy="512" rx="59.72" ry="449.05" fill="url(#radial-gradient-3)"/>
+  </g>
+  <g clip-path="url(#clippath-1)">
+    <ellipse cx="557.71" cy="512" rx="37.83" ry="492.29" fill="url(#radial-gradient-4)"/>
+  </g>
+</svg>

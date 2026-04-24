@@ -124,9 +124,9 @@ export default function FlowPage() {
       />
 
       <AtelierAppHero
-        category="05 / Orchestration"
+        category="06 / Orchestration"
         description="Most failures come from weak planning or drifting from the plan. Flow fixes both with structured research upfront, explicit plan reuse, and plan re-read between tasks. Five commands, six specialised research agents, seven skills. One disciplined workflow that actually ships."
-        idx="05"
+        idx="06"
         image="/flow/logo.svg"
         imageKind="logo"
         meta={[
