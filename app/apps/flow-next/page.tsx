@@ -21,7 +21,7 @@ const APP_DATA = {
     'Multi-platform AI agent orchestration with zero external dependencies. Works on Claude Code, Factory Droid, OpenAI Codex, and OpenCode. Task graphs, re-anchoring, cross-model reviews, Ralph autonomous mode.',
   slug: 'flow-next',
   category: 'DeveloperApplication',
-  version: '0.35.0',
+  version: '0.36.0',
   operatingSystem: 'Cross-platform',
   programmingLanguage: 'Python',
 };
@@ -29,7 +29,7 @@ const APP_DATA = {
 export const metadata: Metadata = {
   title: 'Flow-Next -- Zero-dep agent orchestration',
   description:
-    'Multi-platform AI agent orchestration. Claude Code, Factory Droid, OpenAI Codex, OpenCode. 18 subagents, cross-model review with requirement-ID traceability + trivial-diff triage, PR feedback resolution, categorized memory with overlap detection, Ralph autonomous mode. Zero deps.',
+    'Multi-platform AI agent orchestration. Claude Code, Factory Droid, OpenAI Codex, OpenCode. 18 subagents, cross-model review with requirement-ID traceability + trivial-diff triage, PR feedback resolution, ranked-candidate ideation, categorized memory with overlap detection, Ralph autonomous mode. Zero deps.',
   keywords: [
     'Claude Code plugin',
     'Factory Droid',
@@ -43,6 +43,10 @@ export const metadata: Metadata = {
     'trivial-diff triage',
     'PR feedback resolution',
     'GitHub PR automation',
+    'ideation',
+    'prospect',
+    'ranked candidates',
+    'idea generation',
     'categorized learnings',
     'overlap detection',
     'Ralph mode',
@@ -119,6 +123,11 @@ const FAQS = [
       'What are the opt-in review flags (--validate, --deep, --interactive)?',
     answer:
       'Three opt-in flags on /flow-next:impl-review that layer extra capability on top of the default Carmack-level review. The default review shape is unchanged — all three flags are off by default. --validate (FLOW_VALIDATE_REVIEW=1) drops false-positive findings via a validator pass on NEEDS_WORK and upgrades to SHIP when all findings drop; never downgrades a SHIP or MAJOR_RETHINK verdict. --deep (FLOW_REVIEW_DEEP=1) runs primary then layers adversarial, security, and performance passes in the same backend session, with cross-pass agreement promoting confidence one anchor step. --interactive presents a per-finding walkthrough with Apply / Defer / Skip / Acknowledge plus an "LFG the rest" escape hatch; deferred findings append to .flow/review-deferred/<branch-slug>.md. --interactive is Ralph-incompatible by design and hard-errors when REVIEW_RECEIPT_PATH or FLOW_RALPH=1 is set. Phase order when flags combine: primary → deep → validate → interactive → verdict. Receipt extensions are additive.',
+  },
+  {
+    question: 'When do I use prospect vs interview vs plan?',
+    answer:
+      'Three upstream-of-work commands, three different starting points. /flow-next:prospect [hint] is for the "what should I build?" phase — no target yet. It generates many candidate ideas grounded in the repo, critiques each one with explicit rejection reasons, and surfaces only the survivors bucketed by leverage (High 1-3 / Worth considering 4-7 / If you have the time 8+). Output is a ranked artifact under .flow/prospects/<slug>-<date>.md; promote a survivor to a new epic via flowctl prospect promote <id> --idea N. /flow-next:interview is for the "I have a target, refine it" phase — 40+ deep questions writing back to a single epic spec. /flow-next:plan is for the "I have a target, break it down" phase — research best practices and split into sized tasks with dependencies. Lifecycle: prospect → interview → plan → work for unformed targets; existing flows (Spec → Interview/Plan → Work, Plan → Work) unchanged. Prospect is Ralph-out by design — autonomous loops have no business deciding what a repo should tackle next.',
   },
   {
     question: 'How do I handle PR review comments with flow-next?',
@@ -505,6 +514,11 @@ const coreFeatures = [
       '/flow-next:resolve-pr closes out GitHub review threads end-to-end. Fetch via GraphQL, dispatch resolver agents in parallel, validate, commit, reply, resolve. Cross-invocation cluster analysis catches recurring patterns across review rounds. User-triggered only; Ralph-out by design.',
   },
   {
+    title: 'Ranked-candidate ideation',
+    description:
+      '/flow-next:prospect [hint] fills the "what should I build?" gap above interview/plan. Persona-seeded divergent generation, two-pass critique with rejection taxonomy, prose-only bucketed ranking (High 1-3 / Worth considering 4-7 / If you have the time 8+). Output is a ranked artifact under .flow/prospects/; promote a survivor to a new epic via flowctl prospect promote. User-triggered only; Ralph-out.',
+  },
+  {
     title: 'CI-ready',
     description:
       'flowctl validate --all exits 1 on broken tasks. Drop it into any pipeline.',
@@ -535,6 +549,11 @@ const optInFeatures = [
 ];
 
 const commands = [
+  {
+    title: '/flow-next:prospect',
+    description:
+      'Generate ranked candidate ideas grounded in the repo, upstream of plan/interview.',
+  },
   {
     title: '/flow-next:plan',
     description: 'Research + epic with dependency-ordered tasks.',
@@ -1012,7 +1031,7 @@ flow-next-tui  # auto-selects latest run`}
 
       <AtelierAppSection
         eyebrow="11 / Commands"
-        lede="Ten verbs. One disciplined workflow."
+        lede="Eleven verbs. One disciplined workflow."
         title="Surface area."
       >
         <AtelierFeatureGrid cols={3} items={commands} />
