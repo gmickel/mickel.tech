@@ -275,7 +275,6 @@ const specs = [
   },
   { label: 'Updates', value: 'Sparkle 2.8 · signed artifacts' },
   { label: 'Agent surface', value: 'CLI · loopback REST · MCP (stdio)' },
-  { label: 'Maker', value: 'Independent · Switzerland' },
 ];
 
 export default function DettivoPage() {
@@ -305,7 +304,10 @@ export default function DettivoPage() {
         meta={[
           { label: 'Stage', value: 'Alpha testing' },
           { label: 'Platform', value: 'macOS 14+ · Apple Silicon' },
-          { label: 'Licence', value: 'USD 29 one-time · lifetime' },
+          {
+            label: 'Licence',
+            value: 'USD 29 launch · USD 45 after · one-time',
+          },
         ]}
         name="Dettivo"
         primaryCta={{
