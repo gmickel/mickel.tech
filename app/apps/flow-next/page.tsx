@@ -21,7 +21,7 @@ const APP_DATA = {
     'Multi-platform AI agent orchestration with zero external dependencies. Works on Claude Code, Factory Droid, OpenAI Codex, and OpenCode. Task graphs, re-anchoring, cross-model reviews, Ralph autonomous mode.',
   slug: 'flow-next',
   category: 'DeveloperApplication',
-  version: '0.32.1',
+  version: '0.33.0',
   operatingSystem: 'Cross-platform',
   programmingLanguage: 'Python',
 };
@@ -29,7 +29,7 @@ const APP_DATA = {
 export const metadata: Metadata = {
   title: 'Flow-Next -- Zero-dep agent orchestration',
   description:
-    'Multi-platform AI agent orchestration. Claude Code, Factory Droid, OpenAI Codex, OpenCode. 17 subagents, cross-model review with requirement-ID traceability + trivial-diff triage, Ralph autonomous mode. Zero deps.',
+    'Multi-platform AI agent orchestration. Claude Code, Factory Droid, OpenAI Codex, OpenCode. 17 subagents, cross-model review with requirement-ID traceability + trivial-diff triage, categorized memory with overlap detection, Ralph autonomous mode. Zero deps.',
   keywords: [
     'Claude Code plugin',
     'Factory Droid',
@@ -41,6 +41,8 @@ export const metadata: Metadata = {
     'cross-model review',
     'requirement-ID traceability',
     'trivial-diff triage',
+    'categorized learnings',
+    'overlap detection',
     'Ralph mode',
     'autonomous agents',
     'flowctl',
@@ -289,7 +291,7 @@ const scouts = [
     name: 'memory-scout',
     kind: 'Haiku',
     description:
-      'Searches .flow/memory/ for pitfalls and conventions from prior work.',
+      'Searches .flow/memory/ categorized bug + knowledge entries, prioritizing module-matched hits.',
   },
   {
     name: 'flow-gap-analyst',
@@ -457,7 +459,7 @@ const coreFeatures = [
   {
     title: 'Memory system',
     description:
-      'Persistent learnings survive compaction. Auto-captures pitfalls from NEEDS_WORK reviews.',
+      'Categorized learnings (bug + knowledge tracks, YAML frontmatter) survive compaction. Overlap detection merges duplicates; Ralph auto-captures structured bug entries from NEEDS_WORK reviews.',
   },
   {
     title: 'Investigation targets',
@@ -495,7 +497,7 @@ const optInFeatures = [
   {
     title: 'Memory system',
     description:
-      '.flow/memory/ stores pitfalls.md, conventions.md, decisions.md. Auto-captures learnings from NEEDS_WORK reviews so the next task doesn’t repeat them.',
+      '.flow/memory/ is a tree of bug/ and knowledge/ categories with YAML-frontmatter entries. Overlap detection updates existing entries instead of duplicating. flowctl memory migrate lifts legacy flat files into the new schema via a fast-model classifier.',
   },
   {
     title: 'DESIGN.md awareness',
@@ -959,10 +961,13 @@ flow-next-tui  # auto-selects latest run`}
 │   └── fn-1.1-token-store.md
 ├── tasks/
 │   └── fn-1.1-token-store.json
-└── memory/
-    ├── pitfalls.md
-    ├── conventions.md
-    └── decisions.md`}
+└── memory/             # opt-in, categorized
+    ├── bug/             # build-errors, test-failures,
+    │                    # runtime-errors, performance,
+    │                    # security, integration, data, ui
+    └── knowledge/       # architecture-patterns, conventions,
+                         # tooling-decisions, workflow,
+                         # best-practices`}
           </pre>
         </div>
         <p className="atelier-body mt-6 max-w-[60ch] text-[0.95rem] text-[hsl(var(--ink))]/72 leading-[1.55]">
