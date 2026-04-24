@@ -21,7 +21,7 @@ const APP_DATA = {
     'Multi-platform AI agent orchestration with zero external dependencies. Works on Claude Code, Factory Droid, OpenAI Codex, and OpenCode. Task graphs, re-anchoring, cross-model reviews, Ralph autonomous mode.',
   slug: 'flow-next',
   category: 'DeveloperApplication',
-  version: '0.33.0',
+  version: '0.34.0',
   operatingSystem: 'Cross-platform',
   programmingLanguage: 'Python',
 };
@@ -29,7 +29,7 @@ const APP_DATA = {
 export const metadata: Metadata = {
   title: 'Flow-Next -- Zero-dep agent orchestration',
   description:
-    'Multi-platform AI agent orchestration. Claude Code, Factory Droid, OpenAI Codex, OpenCode. 17 subagents, cross-model review with requirement-ID traceability + trivial-diff triage, categorized memory with overlap detection, Ralph autonomous mode. Zero deps.',
+    'Multi-platform AI agent orchestration. Claude Code, Factory Droid, OpenAI Codex, OpenCode. 18 subagents, cross-model review with requirement-ID traceability + trivial-diff triage, PR feedback resolution, categorized memory with overlap detection, Ralph autonomous mode. Zero deps.',
   keywords: [
     'Claude Code plugin',
     'Factory Droid',
@@ -41,6 +41,8 @@ export const metadata: Metadata = {
     'cross-model review',
     'requirement-ID traceability',
     'trivial-diff triage',
+    'PR feedback resolution',
+    'GitHub PR automation',
     'categorized learnings',
     'overlap detection',
     'Ralph mode',
@@ -111,6 +113,11 @@ const FAQS = [
     question: 'What does flowctl triage-skip do?',
     answer:
       'A deterministic whitelist pre-check that returns SHIP without calling a review backend for trivial diffs: lockfile-only bumps, pure docs changes, release chores, generated-file regenerations. The receipt records mode: triage_skip and a one-line reason. On by default in Ralph mode; opt-out via --no-triage or FLOW_RALPH_NO_TRIAGE=1. An optional fast-model LLM judge for ambiguous diffs is gated behind FLOW_TRIAGE_LLM=1. Saves rp / codex / copilot calls on trivial commits.',
+  },
+  {
+    question: 'How do I handle PR review comments with flow-next?',
+    answer:
+      '/flow-next:resolve-pr is a user-triggered command that closes out GitHub PR review threads end-to-end. It fetches unresolved threads + top-level PR comments + review submission bodies via GraphQL, triages new vs already-answered, dispatches pr-comment-resolver agents (parallel on Claude Code, serial on Codex / Copilot / Droid) with file-overlap avoidance, runs project validation once, commits + pushes fixes, then replies and resolves threads via GraphQL. Cross-invocation cluster analysis catches recurring patterns across review rounds. Flags: --dry-run (fetch + plan, no edits) and --no-cluster. Verify loop bounded at 2 fix-verify cycles. Ralph-out by design — humans review PRs on their own cadence, then run this command once per round. Zero runtime deps beyond gh + jq.',
   },
   {
     question: 'Does Flow-Next work with Factory Droid?',
@@ -482,6 +489,11 @@ const coreFeatures = [
       'flowctl triage-skip detects lockfile-only, docs-only, and release-chore diffs and returns SHIP without calling a review backend. Saves cycles on trivial commits.',
   },
   {
+    title: 'PR feedback resolution',
+    description:
+      '/flow-next:resolve-pr closes out GitHub review threads end-to-end. Fetch via GraphQL, dispatch resolver agents in parallel, validate, commit, reply, resolve. Cross-invocation cluster analysis catches recurring patterns across review rounds. User-triggered only; Ralph-out by design.',
+  },
+  {
     title: 'CI-ready',
     description:
       'flowctl validate --all exits 1 on broken tasks. Drop it into any pipeline.',
@@ -530,6 +542,11 @@ const commands = [
   {
     title: '/flow-next:epic-review',
     description: 'Epic completion gate before close.',
+  },
+  {
+    title: '/flow-next:resolve-pr',
+    description:
+      'Resolve GitHub PR review threads: fetch → triage → fix → reply → resolve.',
   },
   {
     title: '/flow-next:prime',
@@ -979,7 +996,7 @@ flow-next-tui  # auto-selects latest run`}
 
       <AtelierAppSection
         eyebrow="11 / Commands"
-        lede="Nine verbs. One disciplined workflow."
+        lede="Ten verbs. One disciplined workflow."
         title="Surface area."
       >
         <AtelierFeatureGrid cols={3} items={commands} />
