@@ -312,7 +312,8 @@ export default function DettivoPage() {
         name="Dettivo"
         primaryCta={{
           label: 'Request alpha access',
-          href: 'mailto:gordon@mickel.tech?subject=Dettivo%20alpha%20access',
+          href: 'https://dettivo.com',
+          external: true,
         }}
         status="Coming 2026-04-26"
         tagline="Local-first dictation and meeting capture for Mac."
