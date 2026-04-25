@@ -1056,7 +1056,7 @@ flow-next-tui  # auto-selects latest run`}
       </AtelierAppSection>
 
       <AtelierAppSection
-        eyebrow="12 / Commands"
+        eyebrow="14 / Commands"
         lede="Fourteen verbs. One disciplined workflow."
         title="Surface area."
       >
