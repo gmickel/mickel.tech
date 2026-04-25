@@ -29,7 +29,7 @@ const APP_DATA = {
 export const metadata: Metadata = {
   title: 'Flow-Next -- Zero-dep agent orchestration',
   description:
-    'Multi-platform AI agent orchestration. Claude Code, Factory Droid, OpenAI Codex, OpenCode. 18 subagents, cross-model review with requirement-ID traceability + trivial-diff triage, PR feedback resolution, ranked-candidate ideation, categorized memory with overlap detection, Ralph autonomous mode. Zero deps.',
+    'Multi-platform AI agent orchestration. Claude Code, Factory Droid, OpenAI Codex, OpenCode. 21 named subagents, cross-model review with requirement-ID traceability + trivial-diff triage, PR feedback resolution, ranked-candidate ideation, conversation-to-spec capture with source-tagged criteria, categorized memory with overlap detection + agent-native staleness audit, Ralph autonomous mode. Zero deps.',
   keywords: [
     'Claude Code plugin',
     'Factory Droid',
@@ -60,7 +60,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Flow-Next · Mickel Tech',
     description:
-      'Agents that finish what they start. Ralph mode, cross-model review, 17 subagents. Claude Code, Factory Droid, OpenAI Codex, OpenCode.',
+      'Agents that finish what they start. Ralph mode, cross-model review, 21 named subagents. Claude Code, Factory Droid, OpenAI Codex, OpenCode.',
     type: 'website',
     url: 'https://mickel.tech/apps/flow-next',
     siteName: 'Mickel Tech',
@@ -95,7 +95,7 @@ const FAQS = [
   {
     question: 'What is /flow-next:prime?',
     answer:
-      'An agent-readiness assessment. Six parallel Haiku scouts grade your repo across 6 pillars (style, build, testing, docs, dev env, code quality) in ~15 seconds. Proposes non-destructive improvements and calculates a maturity level from 1 (Minimal) to 5 (Autonomous).',
+      'An agent-readiness assessment. Eight parallel Sonnet scouts grade your repo across eight pillars (tooling, build, testing, docs, dev env, workflow, security, observability) in ~15-20 seconds. Proposes non-destructive improvements with consent prompts and calculates a maturity level from 1 (Minimal) to 5 (Autonomous).',
   },
   {
     question: 'How do I install Flow-Next?',
@@ -224,7 +224,7 @@ const platforms = [
   https://github.com/gmickel/flow-next
 /plugin install flow-next`,
     features: [
-      '17 subagents (9 Haiku scouts, 8 Opus specialists)',
+      '21 named subagents (Sonnet for breadth, Opus for depth)',
       'Full Ralph autonomous mode',
       'TUI monitor support',
     ],
@@ -276,7 +276,7 @@ droid plugin install flow-next`,
 const scouts = [
   {
     name: 'repo-scout',
-    kind: 'Haiku',
+    kind: 'Opus',
     description: 'Scans repo for prior patterns, conventions, related modules.',
   },
   {
@@ -287,35 +287,35 @@ const scouts = [
   },
   {
     name: 'practice-scout',
-    kind: 'Haiku',
+    kind: 'Opus',
     description: 'Surfaces modern best practices and common pitfalls.',
   },
   {
     name: 'docs-scout',
-    kind: 'Haiku',
+    kind: 'Opus',
     description: 'Finds the exact framework/library docs relevant to the ask.',
   },
   {
     name: 'docs-gap-scout',
-    kind: 'Haiku',
+    kind: 'Sonnet',
     description:
       'Flags which docs, comments, or READMEs will need updates after the change.',
   },
   {
     name: 'github-scout',
-    kind: 'Haiku',
+    kind: 'Opus',
     description:
       'Searches public + private GitHub for implementations and examples.',
   },
   {
     name: 'epic-scout',
-    kind: 'Haiku',
+    kind: 'Sonnet',
     description:
       'Cross-references other epics for dependencies and shared scope.',
   },
   {
     name: 'memory-scout',
-    kind: 'Haiku',
+    kind: 'Sonnet',
     description:
       'Searches .flow/memory/ categorized bug + knowledge entries, prioritizing module-matched hits.',
   },
@@ -337,8 +337,14 @@ const scouts = [
       'Updates downstream task specs after an implementation diverges.',
   },
   {
+    name: 'pr-comment-resolver',
+    kind: 'Inherit',
+    description:
+      'Resolves a single PR review thread: validate, fix or reply, mark resolved. Spawned by /flow-next:resolve-pr.',
+  },
+  {
     name: 'worker',
-    kind: 'Opus',
+    kind: 'Inherit',
     description:
       'Implements a single task with a fresh context window, re-anchored.',
   },
@@ -347,42 +353,42 @@ const scouts = [
 const primeScouts = [
   {
     name: 'tooling-scout',
-    kind: 'Haiku',
+    kind: 'Sonnet',
     description: 'Biome, ESLint, Prettier, formatter config.',
   },
   {
     name: 'build-scout',
-    kind: 'Haiku',
+    kind: 'Sonnet',
     description: 'Scripts, CI config, reproducible builds.',
   },
   {
     name: 'testing-scout',
-    kind: 'Haiku',
+    kind: 'Sonnet',
     description: 'Test framework, coverage config, commands.',
   },
   {
     name: 'claude-md-scout',
-    kind: 'Haiku',
+    kind: 'Sonnet',
     description: 'CLAUDE.md / AGENTS.md quality, completeness.',
   },
   {
     name: 'env-scout',
-    kind: 'Haiku',
+    kind: 'Sonnet',
     description: 'Env templates, Docker, devcontainer setup.',
   },
   {
     name: 'workflow-scout',
-    kind: 'Haiku',
+    kind: 'Sonnet',
     description: 'PR + issue templates, automation.',
   },
   {
     name: 'security-scout',
-    kind: 'Haiku',
+    kind: 'Sonnet',
     description: 'GitHub settings, CODEOWNERS, dep updates.',
   },
   {
     name: 'observability-scout',
-    kind: 'Haiku',
+    kind: 'Sonnet',
     description: 'Logging, tracing, metrics, health endpoints.',
   },
 ];
@@ -593,8 +599,19 @@ const commands = [
       'Resolve GitHub PR review threads: fetch → triage → fix → reply → resolve.',
   },
   {
+    title: '/flow-next:audit',
+    description:
+      'Agent-native review of .flow/memory/ entries against current code. Keep / Update / Consolidate / Replace / Delete per entry. Never deletes silently.',
+  },
+  {
+    title: '/flow-next:memory-migrate',
+    description:
+      'Lift legacy flat memory files into the categorized schema; agent classifies each entry with full repo context.',
+  },
+  {
     title: '/flow-next:prime',
-    description: 'Assess codebase agent-readiness; propose fixes.',
+    description:
+      'Eight-pillar codebase agent-readiness assessment with parallel scouts; remediation via consent prompts.',
   },
   {
     title: '/flow-next:sync',
@@ -627,7 +644,7 @@ export default function FlowNextPage() {
         meta={[
           { label: 'Stack', value: 'Python 3' },
           { label: 'Platforms', value: '4 (Claude, Droid, Codex, OpenCode)' },
-          { label: 'Subagents', value: '17 (Haiku + Opus)' },
+          { label: 'Subagents', value: '21 (Sonnet + Opus)' },
           { label: 'License', value: 'MIT' },
         ]}
         name="Flow-Next"
@@ -764,7 +781,7 @@ export default function FlowNextPage() {
 
       <AtelierAppSection
         eyebrow="05 / Subagents"
-        lede="Twelve named subagents, split between Haiku for breadth and Opus for depth. Run in parallel so planning finishes in seconds, not minutes."
+        lede="Thirteen named subagents, split between Sonnet for breadth and Opus for depth. Worker + pr-comment-resolver inherit the host's model. Run in parallel so planning finishes in seconds, not minutes."
         title="The company of scouts."
       >
         <div className="[column-fill:balance] md:columns-2 md:gap-x-12">
@@ -941,7 +958,7 @@ flow-next-tui  # auto-selects latest run`}
 
       <AtelierAppSection
         eyebrow="09 / Prime"
-        lede="Six Haiku scouts grade your repo across six pillars in ~15 seconds. Target the Standardized level; go further only if agents live here full-time."
+        lede="Eight Sonnet scouts grade your repo across eight pillars in ~15-20 seconds. Target the Standardized level; go further only if agents live here full-time."
         title="/flow-next:prime — readiness."
       >
         <ol className="divide-y divide-[hsl(var(--ink))]/10 border-[hsl(var(--ink))]/10 border-y">
@@ -1040,7 +1057,7 @@ flow-next-tui  # auto-selects latest run`}
 
       <AtelierAppSection
         eyebrow="12 / Commands"
-        lede="Twelve verbs. One disciplined workflow."
+        lede="Fourteen verbs. One disciplined workflow."
         title="Surface area."
       >
         <AtelierFeatureGrid cols={3} items={commands} />
@@ -1075,7 +1092,10 @@ flow-next-tui  # auto-selects latest run`}
                 label: 'Review backends',
                 value: 'Codex CLI, Copilot CLI, RepoPrompt',
               },
-              { label: 'Subagents', value: '17 (9 Haiku, 8 Opus)' },
+              {
+                label: 'Subagents',
+                value: '21 (11 Sonnet, 8 Opus, 2 Inherit)',
+              },
               { label: 'Install format', value: 'Plugin marketplace' },
               { label: 'Uninstall', value: 'rm -rf .flow/' },
               { label: 'License', value: 'MIT' },
