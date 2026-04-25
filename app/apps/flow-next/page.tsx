@@ -21,7 +21,7 @@ const APP_DATA = {
     'Multi-platform AI agent orchestration with zero external dependencies. Works on Claude Code, Factory Droid, OpenAI Codex, and OpenCode. Task graphs, re-anchoring, cross-model reviews, Ralph autonomous mode.',
   slug: 'flow-next',
   category: 'DeveloperApplication',
-  version: '0.36.0',
+  version: '0.38.0',
   operatingSystem: 'Cross-platform',
   programmingLanguage: 'Python',
 };
@@ -47,6 +47,10 @@ export const metadata: Metadata = {
     'prospect',
     'ranked candidates',
     'idea generation',
+    'capture',
+    'conversation to spec',
+    'source-tagged criteria',
+    'read-back loop',
     'categorized learnings',
     'overlap detection',
     'Ralph mode',
@@ -125,9 +129,9 @@ const FAQS = [
       'Three opt-in flags on /flow-next:impl-review that layer extra capability on top of the default Carmack-level review. The default review shape is unchanged — all three flags are off by default. --validate (FLOW_VALIDATE_REVIEW=1) drops false-positive findings via a validator pass on NEEDS_WORK and upgrades to SHIP when all findings drop; never downgrades a SHIP or MAJOR_RETHINK verdict. --deep (FLOW_REVIEW_DEEP=1) runs primary then layers adversarial, security, and performance passes in the same backend session, with cross-pass agreement promoting confidence one anchor step. --interactive presents a per-finding walkthrough with Apply / Defer / Skip / Acknowledge plus an "LFG the rest" escape hatch; deferred findings append to .flow/review-deferred/<branch-slug>.md. --interactive is Ralph-incompatible by design and hard-errors when REVIEW_RECEIPT_PATH or FLOW_RALPH=1 is set. Phase order when flags combine: primary → deep → validate → interactive → verdict. Receipt extensions are additive.',
   },
   {
-    question: 'When do I use prospect vs interview vs plan?',
+    question: 'When do I use prospect vs capture vs interview vs plan?',
     answer:
-      'Three upstream-of-work commands, three different starting points. /flow-next:prospect [hint] is for the "what should I build?" phase — no target yet. It generates many candidate ideas grounded in the repo, critiques each one with explicit rejection reasons, and surfaces only the survivors bucketed by leverage (High 1-3 / Worth considering 4-7 / If you have the time 8+). Output is a ranked artifact under .flow/prospects/<slug>-<date>.md; promote a survivor to a new epic via flowctl prospect promote <id> --idea N. /flow-next:interview is for the "I have a target, refine it" phase — 40+ deep questions writing back to a single epic spec. /flow-next:plan is for the "I have a target, break it down" phase — research best practices and split into sized tasks with dependencies. Lifecycle: prospect → interview → plan → work for unformed targets; existing flows (Spec → Interview/Plan → Work, Plan → Work) unchanged. Prospect is Ralph-out by design — autonomous loops have no business deciding what a repo should tackle next.',
+      'Four upstream-of-work commands, four different starting points. /flow-next:prospect [hint] is for the "what should I build?" phase — no target yet. It generates many candidate ideas grounded in the repo, critiques each one with explicit rejection reasons, and surfaces only the survivors bucketed by leverage (High 1-3 / Worth considering 4-7 / If you have the time 8+). Output is a ranked artifact under .flow/prospects/<slug>-<date>.md; promote a survivor to a new epic via flowctl prospect promote <id> --idea N (direct path) or hand it to /flow-next:capture for a richer conversation-driven spec. /flow-next:capture (added in 0.38.0) synthesizes the current conversation context into an epic spec at .flow/specs/<epic-id>.md — the automated alternative to manual flowctl epic create + epic set-plan. Source-tags every acceptance criterion ([user] verbatim / [paraphrase] restated / [inferred] agent fill-in); mandatory read-back loop with [inferred] count surfaced; never silently invents requirements; Ralph-blocked. /flow-next:interview is for the "I have a target, refine it" phase — 40+ deep questions writing back to a single epic spec; in 0.38.0 every question now leads with a recommendation + confidence tier ([high] / [judgment-call] / [your-call]) and codebase-answerable questions are investigated via Read/Grep/Glob before being asked. /flow-next:plan is for the "I have a target, break it down" phase — research best practices and split into sized tasks with dependencies. Lifecycle pathways supported: prospect → plan (direct via promote), prospect → capture → interview/plan, free-form → capture → interview/plan, plus the existing flows (Spec → Interview/Plan → Work, Plan → Work, Work direct). All terminate at /flow-next:work. Prospect and capture are Ralph-out by design — autonomous loops have no business deciding what to build, and capture needs conversation context that autonomous loops do not have.',
   },
   {
     question: 'How do I handle PR review comments with flow-next?',
@@ -565,6 +569,11 @@ const commands = [
   {
     title: '/flow-next:interview',
     description: 'Deep interview to flesh out a spec.',
+  },
+  {
+    title: '/flow-next:capture',
+    description:
+      'Synthesize conversation context into an epic spec. Source-tagged criteria + mandatory read-back.',
   },
   {
     title: '/flow-next:plan-review',
@@ -1030,8 +1039,8 @@ flow-next-tui  # auto-selects latest run`}
       </AtelierAppSection>
 
       <AtelierAppSection
-        eyebrow="11 / Commands"
-        lede="Eleven verbs. One disciplined workflow."
+        eyebrow="12 / Commands"
+        lede="Twelve verbs. One disciplined workflow."
         title="Surface area."
       >
         <AtelierFeatureGrid cols={3} items={commands} />
