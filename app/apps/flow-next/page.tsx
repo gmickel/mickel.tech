@@ -534,7 +534,7 @@ const optInFeatures = [
   {
     title: 'Memory system',
     description:
-      '.flow/memory/ is a tree of bug/ and knowledge/ categories with YAML-frontmatter entries. Overlap detection updates existing entries instead of duplicating. flowctl memory migrate lifts legacy flat files into the new schema via a fast-model classifier. /flow-next:audit reviews entries against current code; the agent decides Keep / Update / Consolidate / Replace / Delete per entry. Autofix mode applies unambiguous changes and marks ambiguous as stale. Never deletes silently.',
+      '.flow/memory/ is a tree of bug/ and knowledge/ categories with YAML-frontmatter entries. Overlap detection updates existing entries instead of duplicating. /flow-next:memory-migrate lifts legacy flat files into the new schema with agent-native per-entry classification (full repo context); flowctl memory migrate is the deterministic mechanical-only fallback for automation. /flow-next:audit reviews entries against current code; the agent decides Keep / Update / Consolidate / Replace / Delete per entry. Autofix mode applies unambiguous changes and marks ambiguous as stale. Never deletes silently.',
   },
   {
     title: 'DESIGN.md awareness',
