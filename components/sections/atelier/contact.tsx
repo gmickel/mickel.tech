@@ -75,7 +75,7 @@ export default function AtelierContact({ locale = 'en' }: AtelierContactProps) {
   const labels =
     locale === 'de'
       ? {
-          eyebrow: '06 / Kontakt',
+          eyebrow: '07 / Kontakt',
           heading: 'Reden wir über Ihr Mandat.',
           intro:
             'Eine kleine Zahl ausgewählter Mandate pro Jahr. Erstgespräch in der Regel innerhalb von 48 Stunden. Schriftliche Anfragen schneller.',
@@ -84,7 +84,7 @@ export default function AtelierContact({ locale = 'en' }: AtelierContactProps) {
           statusValue: 'Q2 2026 -- wenige Plätze offen',
         }
       : {
-          eyebrow: '06 / Contact',
+          eyebrow: '07 / Contact',
           heading: "Let's talk about the mandate.",
           intro:
             'A small number of select mandates each year. First call usually within 48 hours. Written enquiries faster.',

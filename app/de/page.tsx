@@ -7,6 +7,7 @@ import AtelierCaseStudiesPreview from '@/components/sections/atelier/case-studie
 import AtelierContact from '@/components/sections/atelier/contact';
 import AtelierHero from '@/components/sections/atelier/hero';
 import AtelierHowIWork from '@/components/sections/atelier/how-i-work';
+import AtelierReleases from '@/components/sections/atelier/releases';
 import AtelierSystemLogLatest from '@/components/sections/atelier/system-log-latest';
 import AtelierTrustStrip from '@/components/sections/atelier/trust-strip';
 import { JsonLd, personSchema, professionalServiceSchema } from '@/lib/json-ld';
@@ -61,6 +62,7 @@ export default function DeHomePage() {
       <AtelierAudienceRouter locale="de" />
       <AtelierCaseStudiesPreview locale="de" />
       <AtelierHowIWork locale="de" />
+      <AtelierReleases locale="de" />
       <Suspense fallback={null}>
         <AtelierSystemLogLatest locale="de" />
       </Suspense>

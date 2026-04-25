@@ -17,7 +17,7 @@ export default async function AtelierSystemLogLatest({
   const labels =
     locale === 'de'
       ? {
-          eyebrow: '05 / Notizen',
+          eyebrow: '06 / Notizen',
           heading: 'Aktuelle Notizen aus der Praxis.',
           intro:
             'Kurze, technische Beiträge zu agentischer PDLC, Plattformen und KI-Systemen. Aus echter Arbeit, nicht aus der Theorie.',
@@ -27,7 +27,7 @@ export default async function AtelierSystemLogLatest({
           dateLocale: 'de-CH',
         }
       : {
-          eyebrow: '05 / Writing',
+          eyebrow: '06 / Writing',
           heading: 'Recent notes from the field.',
           intro:
             'Short, technical dispatches on agentic PDLC, platforms and AI systems. From real work, not theory.',
